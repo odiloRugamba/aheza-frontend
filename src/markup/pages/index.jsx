@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 // Layout
 import Header from "../layout/header";
@@ -13,30 +13,30 @@ import TestimonialSection from "../elements/testimonial";
 import ServicesSliderSection from "../elements/services-slider";
 import LatestNewsSection from "../elements/latest-news-slider";
 
-class Index extends Component{
-	
-	render(){
+class Index extends Component {
+
+	render() {
 		return (
 			<>
-				
+
 				<Header />
-				
+
 				<MainBannerSection />
-				
-				<AboutSection />
-				
+
+				{/* <AboutSection /> */}
+
 				<WorkSection />
-				
+
 				<AppointmentSection />
-				
-				<ServicesSliderSection />
-				
+
+				{/* <ServicesSliderSection /> */}
+
 				<TestimonialSection />
-				
-				<LatestNewsSection />
-				
+
+				<LatestNewsSection title="Aheza News" />
+
 				<Footer />
-				
+
 			</>
 		);
 	}

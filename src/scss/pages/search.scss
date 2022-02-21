@@ -1,0 +1,26 @@
+#usr{
+ height: 38px;
+ border-radius: 5px;
+ width: 300px;
+ border: none;
+ padding-left: 6px;
+}
+	.more{ 
+					background: $primary;
+					padding: 6px 14px;
+					border-radius: $border-radius-base;
+					display: inline-block;
+					margin-top: 12px;
+					font-size: 12px;
+					font-weight: 600;
+					color: #fff;
+					text-transform: uppercase;
+					
+					&:hover{
+						background-color: $primary;
+						color:#fff;
+					}
+     .more-text{
+      color: #fff;
+     }
+}

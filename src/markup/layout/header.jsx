@@ -7,55 +7,6 @@ import logo from '../../images/logo.png';
 import logoWhite from '../../images/logo-white.png';
 
 class Header extends Component {
-
-	// componentDidMount() {
-	//
-	// 	// Search Form Popup
-	// 	var searchBtn = document.getElementById("quikSearchBtn")
-	// 	var searchForm = document.querySelector(".nav-search-bar")
-	// 	var closeBtn = document.getElementById("searchRemove")
-	//
-	// 	searchBtn.addEventListener('click', function () {
-	// 		searchForm.classList.add("show")
-	// 	})
-	//
-	// 	closeBtn.addEventListener('click', function () {
-	// 		searchForm.classList.remove("show")
-	// 	})
-	//
-	// 	// Mobile Menu Open
-	// 	var menuIcon = document.querySelector(".menuicon")
-	// 	var menuLinks = document.querySelector(".menu-links")
-	// 	var menuClose = document.getElementById("menuClose")
-	//
-	// 	menuIcon.addEventListener('click', function () {
-	// 		menuLinks.classList.add("show")
-	// 	})
-	//
-	// 	menuClose.addEventListener('click', function () {
-	// 		menuLinks.classList.remove("show")
-	// 	})
-	//
-	// 	// Mobile Submenu open close function
-	// 	var navMenu = [].slice.call(document.querySelectorAll('.menu-links > ul > li'));
-	// 	for (var y = 0; y < navMenu.length; y++) {
-	// 		navMenu[y].addEventListener('click', function () { menuClick(this) });
-	// 	}
-	//
-	// 	function menuClick(current) {
-	// 		const active = current.classList.contains("open")
-	// 		navMenu.forEach(el => el.classList.remove('open'));
-	//
-	// 		if (active) {
-	// 			current.classList.remove('open')
-	// 			console.log("active")
-	// 		} else {
-	// 			current.classList.add('open');
-	// 			console.log("close")
-	// 		}
-	// 	}
-	// }
-
 	render() {
 		return (
 			<>
@@ -64,7 +15,7 @@ class Header extends Component {
 						<div className="menu-bar clearfix">
 							<div className="container-fluid clearfix">
 								<div className="menu-logo logo-dark">
-									<Link to="/"><img src={logo} alt="" /></Link>
+									<Link className='logoCont' to="/"><img className='logo' src={logo} alt="" />Aheza</Link>
 								</div>
 								<button className="navbar-toggler collapsed menuicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
 									<span></span>
@@ -73,9 +24,8 @@ class Header extends Component {
 								</button>
 								<div className="secondary-menu">
 									<ul>
-										{/* <li className="search-btn"><button id="quikSearchBtn" type="button" className="btn-link"><i className="las la-search"></i></button></li> */}
-										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+01) 999 888 000</a></li>
-										<li className="btn-area"><Link to="/chat" className="btn btn-primary shadow">chat  <i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+25) 0780 000 000</a></li>
+										<li className="btn-area"><Link to="/chat" className="btn btn-primary shadow">Get Help<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
 									</ul>
 								</div>
 								<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
@@ -85,26 +35,23 @@ class Header extends Component {
 									<ul className="nav navbar-nav">
 										<li className="active"><Link to="/">Home</Link></li>
 										<li><Link to="/about-us"><span>About Us</span> <i className="fas fa-plus"></i></Link></li>
-										<li><Link to="/about-us"><span> Updates</span> <i className="fas fa-plus"></i></Link></li>
-										<li><Link to="/about-us"><span> Stories</span> <i className="fas fa-plus"></i></Link></li>
 										<li>
 											<Link to="#">Services <i className="fas fa-plus"></i></Link>
 											<ul className="sub-menu">
 												<li className="add-menu-left">
 													<ul>
-														<li><Link to="/services"><span>Service</span> </Link></li>
-														<li><Link to="/service-detail"><span>Service Detail</span></Link></li>
+														<li><Link to="/mental-services-in-services"><span>Mental services  in Rwanda</span> </Link></li>
+														<li><Link to="/research-findings"><span>Research findings</span></Link></li>
+														<li><Link to="/testimonial"><span>Testimonial</span></Link></li>
+														<li><Link to="/uploads"><span>Uploads</span> </Link></li>
 													</ul>
 												</li>
 											</ul>
 										</li>
-										<li><Link to="#">Blog <i className="fas fa-plus"></i></Link>
-											<ul className="sub-menu left">
-												<li><Link to="/blog-grid"><span>Blogs</span></Link></li>
-												<li><Link to="/blog-details"><span>Blog Details</span></Link></li>
-											</ul>
+										<li><Link to="/blog-grid">Blog <i className="fas fa-plus"></i></Link>
 										</li>
 										<li><Link to="/contact-us">Contact Us</Link></li>
+										<li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li>
 									</ul>
 									<ul className="social-media">
 										<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
