@@ -91,7 +91,7 @@ const LatestNewsSection = ({ title }) => {
 				<div className="container">
 					<div className="heading-bx text-center">
 						<h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6>
-						<h2 className="title">Latest News</h2>
+						<h2 className="title">Latest Newsd</h2>
 					</div>
 					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
 						{content.map((item) => (

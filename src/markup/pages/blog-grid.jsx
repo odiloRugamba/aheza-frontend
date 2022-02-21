@@ -101,26 +101,7 @@ class BlogGrid extends Component {
 
 				<Header />
 
-				<div className="page-content bg-white">
-
-					<div className="banner-wraper">
-						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
-							<div className="container">
-								<div className="page-banner-entry text-center">
-									<h1>Blog Grid 3</h1>
-									<nav aria-label="breadcrumb" className="breadcrumb-row">
-										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Blog Grid 3</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							<img className="pt-img2 animate2" src={circleDots} alt="" />
-							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-						</div>
-					</div>
+				<div className="page-content bg-white" style={{marginTop: 60}}>
 
 					<section className="section-area section-sp1">
 						<div className="container">
@@ -132,12 +113,14 @@ class BlogGrid extends Component {
 												<Link to="/blog-details"><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<ul className="post-meta">
-													<li className="author"><Link to="/blog-details"><img src={item.authorPic} alt="" /> {item.author}</Link></li>
-													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
-												</ul>
 												<h4 className="post-title"><Link to="/blog-details">{item.title}</Link></h4>
-												<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												
+												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
+													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
+													
+													<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												</ul>
+												
 											</div>
 										</div>
 									</div>

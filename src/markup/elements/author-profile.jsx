@@ -14,13 +14,13 @@ class AuthorProfile extends Component{
 						</div>
 						<div className="author-profile-content">
 							<h5>Sonar Z. Moyna</h5>
-							<p className="mb-20">Aenean sollicitudin, lorem quis biber idum auctor anisi elit consequat happ quam vel enim augue.</p>
-							<ul className="social-media mb-0">
+							<p>Aenean sollicitudin, lorem quis biber idum auctor anisi elit consequat happ quam vel enim augue.</p>
+							{/* <ul className="social-media mb-0">
 								<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
 								<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
 								<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
 								<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-							</ul>
+							</ul> */}
 						</div>
 					</div>
 				</div>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 // Import Images
-import testPic1 from "../../images/testimonials/pic1.jpg";
-import testPic2 from "../../images/testimonials/pic2.jpg";
+import testPic1 from "../../../images/testimonials/pic1.jpg";
+import testPic2 from "../../../images/testimonials/pic2.jpg";
 
 class CommentList extends Component{
 	render(){
@@ -23,7 +23,6 @@ class CommentList extends Component{
 							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
 							<div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link> </div>
 						</div>
-						
 					</li>
 					<li className="comment">
 						<div className="comment-body">

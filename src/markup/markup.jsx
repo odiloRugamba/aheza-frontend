@@ -9,8 +9,8 @@ import PageScrollTop from './elements/page-scroll-top';
 import Index from './pages/index';
 import AboutUs from './pages/about-us';
 import Team from './pages/team';
-import Services from './pages/RwandaServices';
-import ServiceDetail from './pages/RwandaserviceDetail';
+import OurServices from './pages/our-services';
+import ServiceDetails from './pages/service-details';
 import FormLogin from './pages/form-login';
 import FormRegister from './pages/form-register';
 import FormForgetPassword from './pages/form-forget-password';
@@ -27,6 +27,7 @@ import ResearchFindingsDetail from "./pages/researchFindingsDetail";
 import Testimonial from "./pages/testimonial";
 import AllTestimonial from "./pages/AllTestimonial";
 import Uploads from "./pages/uploads";
+import ReasearchFindingDetails from './pages/research-finding-details'
 
 
 class Markup extends Component {
@@ -39,8 +40,8 @@ class Markup extends Component {
 						<ProtectRoute path='/' exact component={Index} />
 						<ProtectRoute path='/about-us' exact component={AboutUs} />
 						<ProtectRoute path='/team' exact component={Team} />
-						<ProtectRoute path='/mental-services-in-services' exact component={Services} />
-						<ProtectRoute path='/service-detail' exact component={ServiceDetail} />
+						<ProtectRoute path='/our-services' exact component={OurServices} />
+						<ProtectRoute path='/service-details' exact component={ServiceDetails} />
 						<Route path='/login' exact component={FormLogin} />
 						<Route path='/register' exact component={FormRegister} />
 						<ProtectRoute path='/form-forget-password' exact component={FormForgetPassword} />
@@ -55,6 +56,7 @@ class Markup extends Component {
 						<ProtectRoute path='/testimonial' exact component={Testimonial} />
 						<ProtectRoute path='/testimonials' exact component={AllTestimonial} />
 						<ProtectRoute path='/uploads' exact component={Uploads} />
+						<ProtectRoute path='/research-finding-details' exact component={ReasearchFindingDetails}/>
 						<Route component={Error} />
 
 					</Switch>

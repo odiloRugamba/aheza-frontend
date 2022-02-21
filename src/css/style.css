@@ -12948,7 +12948,17 @@ label.error {
     .blog-card .post-media img {
       width: 100%; }
   .blog-card .post-title {
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    max-lines: 2;
+  }
+  .max-lines-2{
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+  }
   .blog-card .post-info {
     padding: 12px; }
   @media only screen and (max-width: 991px) {

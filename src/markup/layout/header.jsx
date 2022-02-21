@@ -34,24 +34,34 @@ class Header extends Component {
 									</div>
 									<ul className="nav navbar-nav">
 										<li className="active"><Link to="/">Home</Link></li>
-										<li><Link to="/about-us"><span>About Us</span> <i className="fas fa-plus"></i></Link></li>
 										<li>
 											<Link to="#">Services <i className="fas fa-plus"></i></Link>
 											<ul className="sub-menu">
 												<li className="add-menu-left">
 													<ul>
-														<li><Link to="/mental-services-in-services"><span>Mental services  in Rwanda</span> </Link></li>
-														<li><Link to="/research-findings"><span>Research findings</span></Link></li>
-														<li><Link to="/testimonial"><span>Testimonial</span></Link></li>
+														<li><Link to="/mental-services-in-services"><span>Our services</span> </Link></li>
+														<li><Link to="/research-findings"><span>Other institutions</span></Link></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+										<li>
+											<Link to="#">Media <i className="fas fa-plus"></i></Link>
+											<ul className="sub-menu">
+												<li className="add-menu-left">
+													<ul>
+														<li><Link to="/research-findings"><span>Research</span></Link></li>
+														<li><Link to="/testimonial"><span>Stories</span></Link></li>
 														<li><Link to="/uploads"><span>Uploads</span> </Link></li>
 													</ul>
 												</li>
 											</ul>
 										</li>
-										<li><Link to="/blog-grid">Blog <i className="fas fa-plus"></i></Link>
+										<li><Link to="/blog-grid">Blog </Link>
 										</li>
-										<li><Link to="/contact-us">Contact Us</Link></li>
-										<li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li>
+										<li><Link to="/about-us"><span>About Us</span></Link></li>
+										{/* <li><Link to="/contact-us">Contact Us</Link></li>
+										<li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */}
 									</ul>
 									<ul className="social-media">
 										<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
