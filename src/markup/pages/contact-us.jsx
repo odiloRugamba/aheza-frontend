@@ -27,16 +27,11 @@ class ContactUs extends Component{
 				<div className="page-content bg-white">
 					
 					<div className="banner-wraper">
-						<div className="page-banner banner-lg contact-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
+						<div className="page-banner banner-lg contact-banner" style={{backgroundImage: "url("+bnrImg1+")", maxHeight: 400}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Contact Us</h1>
-									<nav aria-label="breadcrumb" className="breadcrumb-row">
-										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Contact Us</li>
-										</ul>
-									</nav>
+									<h2>Contact Us</h2>
+									
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={animateWave} alt=""/>
@@ -63,14 +58,6 @@ class ContactUs extends Component{
 													<input name="phone" type="text" required className="form-control" placeholder="Phone Numbers"/>
 												</div>
 												<div className="form-group col-md-12">
-													<select className="form-select form-control">
-														<option selected>Selecty Department</option>
-														<option value="1">One</option>
-														<option value="2">Two</option>
-														<option value="3">Three</option>
-													</select>
-												</div>
-												<div className="form-group col-md-12">
 													<textarea name="message" required className="form-control" placeholder="Type Message"></textarea>
 												</div>
 												<div className="col-lg-12">
@@ -82,15 +69,15 @@ class ContactUs extends Component{
 									<div className="col-lg-6 mb-30">
 										<div className="contact-info ovpr-dark" style={{backgroundImage: "url("+pic1+")"}}>
 											<div className="info-inner">
-												<h4 className="title mb-30">Contact Us For Any Informations</h4>
+												<h5 className="title mb-20">Contact Us For Any Informations</h5>
 												<div className="icon-box">
 													<h6 className="title"><i className="ti-map-alt"></i>Location</h6>		
-													<p>2005 Stokes Isle Apt. 896, Venaville 10010, USA</p>
+													<p>Bugesera District, Ntarama sector - Rwanda</p>
 												</div>
 												<div className="icon-box">
 													<h6 className="title"><i className="ti-id-badge"></i>Email &amp; Phone</h6>		
-													<Link to="#" className="text-white">info@yourdomain.com</Link>
-													<p>(+68) 120034509</p>
+													<Link to="#" className="text-white">info@aheza.org.rw</Link>
+													<p>(+250) 788 315 809</p>
 												</div>
 												<div className="icon-box">
 													<h6 className="title"><i className="ti-world"></i>Follow Us</h6>
@@ -118,8 +105,8 @@ class ContactUs extends Component{
 										</div>
 										<div className="icon-content">
 											<h5 className="ttr-title">Contact Number</h5>
-											<p>+001 123 456 790</p>
-											<p>+002 3424 44 00</p>
+											<p>(+250) 788 315 809</p>
+											<p>1024</p>
 										</div>
 									</div>
 								</div>
@@ -130,8 +117,8 @@ class ContactUs extends Component{
 										</div>
 										<div className="icon-content">
 											<h5 className="ttr-title">Email Address</h5>
-											<p>info@yourdomain.com</p>
-											<p>example@support.com</p>
+											<p>info@aheza.org.rw</p>
+											<p>support@aheza.org.rw</p>
 										</div>
 									</div>
 								</div>
@@ -142,7 +129,7 @@ class ContactUs extends Component{
 										</div>
 										<div className="icon-content">
 											<h5 className="ttr-title">Address</h5>
-											<p>2005 Stokes Isle Apt. 896, Venaville 10010, USA</p>
+											<p>Bugesera District, Ntarama sector - Rwanda</p>
 										</div>
 									</div>
 								</div>

@@ -106,7 +106,7 @@ class Header extends Component {
 												<li className="add-menu-left">
 													<ul>
 														<li><Link to="/services"><span>Service</span> </Link></li>
-														<li><Link to="/service-detail"><span>Service Detail</span></Link></li>
+														<li><Link to="/service-details"><span>Service Detail</span></Link></li>
 													</ul>
 												</li>
 											</ul>

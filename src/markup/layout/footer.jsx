@@ -43,12 +43,12 @@ class aboutSection extends Component {
 									<div className="widget footer_widget">
 										<h3 className="footer-title">Our Service</h3>
 										<ul>
-											<li><Link to="/service-detail"><span>Dental Care</span></Link></li>
-											<li><Link to="/service-detail"><span>Cardiac Clinic</span></Link></li>
-											<li><Link to="/service-detail"><span>Massege Therapy</span></Link></li>
-											<li><Link to="/service-detail"><span>Cardiology</span></Link></li>
-											<li><Link to="/service-detail"><span>Precise Diagnosis</span></Link></li>
-											<li><Link to="/service-detail"><span>Abmbulance Services</span></Link></li>
+											<li><Link to="/service-details"><span>Dental Care</span></Link></li>
+											<li><Link to="/service-details"><span>Cardiac Clinic</span></Link></li>
+											<li><Link to="/service-details"><span>Massege Therapy</span></Link></li>
+											<li><Link to="/service-details"><span>Cardiology</span></Link></li>
+											<li><Link to="/service-details"><span>Precise Diagnosis</span></Link></li>
+											<li><Link to="/service-details"><span>Abmbulance Services</span></Link></li>
 										</ul>
 									</div>
 								</div>

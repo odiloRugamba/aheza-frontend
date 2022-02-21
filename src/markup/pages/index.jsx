@@ -31,7 +31,7 @@ class Index extends Component {
 
 				{/* <ServicesSliderSection /> */}
 
-				<TestimonialSection />
+				{/* <TestimonialSection /> */}
 
 				<LatestNewsSection title="Aheza News" />
 

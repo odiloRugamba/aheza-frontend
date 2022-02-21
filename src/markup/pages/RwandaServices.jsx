@@ -58,7 +58,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Neuro-Psychiatric  Caraes Ndera</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -78,7 +78,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Icyizere Psychotherapeutic</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -98,7 +98,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Kigali Psycho-Medical Center</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -118,7 +118,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Mental Health Journal Rwanda</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -135,7 +135,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">IMANZI COUNSELING</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -153,7 +153,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">mHub COUNSELING</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -172,7 +172,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Trauma Help Rwanda</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -190,7 +190,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Rwanda Military Hospital</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -208,7 +208,7 @@ class Services extends Component {
 										<div className="icon-content">
 											<h3 className="ttr-title">Rubungo Health Centre</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>

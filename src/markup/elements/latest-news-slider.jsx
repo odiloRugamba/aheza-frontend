@@ -90,23 +90,23 @@ const LatestNewsSection = ({ title }) => {
 			<section className="section-area section-sp1 blog-area" style={{ backgroundImage: "url(" + lingBg2 + ")", backgroundPosition: "center", backgroundSize: "cover", }}>
 				<div className="container">
 					<div className="heading-bx text-center">
-						<h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6>
-						<h2 className="title">Latest Newsd</h2>
+						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
+						<h2 className="title">Stories</h2>
 					</div>
 					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
 						{content.map((item) => (
 							<div className="slider-item">
 								<div className="blog-card">
 									<div className="post-media">
-										<Link to="/blog-details"><img src={item.thumb} alt="" /></Link>
+										<Link to="/story"><img src={item.thumb} alt="" /></Link>
 									</div>
 									<div className="post-info">
-										<ul className="post-meta">
-											<li className="author"><Link to="/blog-details"><img src={item.authorPic} alt="" />{item.author}</Link></li>
+										{/* <ul className="post-meta">
+											<li className="author"><Link to="/story"><img src={item.authorPic} alt="" />{item.author}</Link></li>
 											<li className="date"><i className="far fa-calendar-alt"></i>{item.date}</li>
-										</ul>
-										<h5 className="post-title"><Link to="/blog-details">{item.title}</Link></h5>
-										<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+										</ul> */}
+										<h5 className="post-title"><Link to="/story">{item.title}</Link></h5>
+										<Link to="/story" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 									</div>
 								</div>
 							</div>

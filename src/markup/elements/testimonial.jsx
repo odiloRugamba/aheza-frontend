@@ -34,7 +34,7 @@ class testimonialSection extends Component{
 				<section className="section-area section-sp3 testimonial-wraper">
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h6 className="title-ext text-secondary">Testimonial</h6>
+							<h6 className="title-ext text-secondary">Story</h6>
 							<h2 className="title m-b0">See What Are The Patients <br/>Saying About us</h2>
 						</div>
 						<div className="row align-items-center">

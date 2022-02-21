@@ -25,7 +25,7 @@ class Services extends Component {
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2>Our Services</h2>
+									<h3>All Services available in Rwanda</h3>
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />

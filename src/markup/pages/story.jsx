@@ -36,20 +36,14 @@ class BlogDetails extends Component {
 				<div className="page-content bg-white">
 
 					<div className="banner-wraper">
-						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h1>Testimonial</h1>
-									<nav aria-label="breadcrumb" className="breadcrumb-row">
-										<ul className="breadcrumb">
-											<li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-											<li className="breadcrumb-item active" aria-current="page">Testimonial</li>
-										</ul>
-									</nav>
+									<h2>Story</h2>
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							<img className="pt-img2 animate2" src={circleDots} alt="" />
+							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
 							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
 						</div>
 					</div>
@@ -64,7 +58,6 @@ class BlogDetails extends Component {
 										</div>
 										<div className="info-bx">
 											<ul className="post-meta">
-												<li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
 												<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
 											</ul>
 											<div className="ttr-post-title">
@@ -72,9 +65,6 @@ class BlogDetails extends Component {
 											</div>
 											<div className="ttr-post-text">
 												<p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-												<blockquote className="wp-block-quote">
-													<p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content.</p>
-												</blockquote>
 												<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 												<ul className="wp-block-gallery columns-6 is-cropped">
 													<li className="blocks-gallery-item"><img alt="" src={galleryPic2} /></li>
@@ -123,9 +113,9 @@ class BlogDetails extends Component {
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
 
-										<WidgetSearch placeholder='Search Anything...' />
+										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-										<WidgetRecentPosts title="Recent Testimonials" />
+										<WidgetRecentPosts title="Recent Stories" />
 									</aside>
 								</div>
 							</div>

@@ -6,25 +6,19 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 import testPic1 from "../../images/testimonials/pic1.jpg";
 import testPic2 from "../../images/testimonials/pic2.jpg";
 import testPic3 from "../../images/testimonials/pic3.jpg";
 import testPic4 from "../../images/testimonials/pic4.jpg";
-import testPic5 from "../../images/testimonials/pic5.jpg";
-import testPic6 from "../../images/testimonials/pic6.jpg";
 import blogGridPic1 from "../../images/blog/grid/pic1.jpg";
 import blogGridPic2 from "../../images/blog/grid/pic2.jpg";
 import blogGridPic3 from "../../images/blog/grid/pic3.jpg";
 import blogGridPic4 from "../../images/blog/grid/pic4.jpg";
-import blogGridPic5 from "../../images/blog/grid/pic5.jpg";
-import blogGridPic6 from "../../images/blog/grid/pic6.jpg";
-import blogGridPic7 from "../../images/blog/grid/pic7.jpg";
-import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
-import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
+
+import bnrImg1 from "../../images/banner/img1.jpg";
+import waveBlue from "../../images/shap/wave-blue.png";
+import plusBlue from "../../images/shap/plus-blue.png";
+
 
 // Blog Content
 const content = [
@@ -58,7 +52,7 @@ const content = [
 	}
 ]
 
-class BlogGrid extends Component {
+class ResearchFindings extends Component {
 
 	render() {
 		return (
@@ -68,6 +62,18 @@ class BlogGrid extends Component {
 
 				<div className="page-content bg-white" style={{marginTop: 40}}>
 
+					<div className="banner-wraper">
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
+							<div className="container">
+								<div className="page-banner-entry text-center">
+									<h3>Institutions that offer mental health <br/> services in Rwanda</h3>
+								</div>
+							</div>
+							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						</div>
+					</div>
+
 					<section className="section-area section-sp1">
 						<div className="container">
 							<div className="row">
@@ -75,11 +81,11 @@ class BlogGrid extends Component {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to="/research-finding-details"><img src={item.thumb} alt="" /></Link>
+												<Link to="/institution-profile"><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2" style={{fontSize: 16}}><Link to="/research-finding-details">{item.title}</Link></h4>
-												<Link to="/research-finding-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												<h4 className="post-title max-lines-2" style={{fontSize: 16}}><Link to="/institution-profile">{item.title}</Link></h4>
+												<Link to="/institution-profile" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 											</div>
 										</div>
 									</div>
@@ -110,4 +116,4 @@ class BlogGrid extends Component {
 	}
 }
 
-export default BlogGrid;
+export default ResearchFindings;

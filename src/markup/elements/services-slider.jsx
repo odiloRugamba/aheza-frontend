@@ -64,7 +64,7 @@ class ServicesSliderSection extends Component{
 										<div className="icon-content">
 											<h3 className="ttr-title">Diagnostics</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -84,7 +84,7 @@ class ServicesSliderSection extends Component{
 										<div className="icon-content">
 											<h3 className="ttr-title">Treatment</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -104,7 +104,7 @@ class ServicesSliderSection extends Component{
 										<div className="icon-content">
 											<h3 className="ttr-title">Surgery</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -121,7 +121,7 @@ class ServicesSliderSection extends Component{
 										<div className="icon-content">
 											<h3 className="ttr-title">Vaccine</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>
@@ -141,7 +141,7 @@ class ServicesSliderSection extends Component{
 										<div className="icon-content">
 											<h3 className="ttr-title">Emergency</h3>
 											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
-											<Link to="/service-detail" className="btn btn-primary light">View More</Link>
+											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
 								</div>

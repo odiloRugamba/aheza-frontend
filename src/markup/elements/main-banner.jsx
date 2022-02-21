@@ -19,8 +19,8 @@ class aboutSection extends Component {
 					<div className="container inner-content">
 						<div className="row align-items-center">
 							<div className="col-lg-7 col-md-6 col-sm-7">
-								<h6 className="title-ext text-primary">We Provide All mental Health Care Solution</h6>
-								<h1>Protect Your Health And Take Care To Of Your Health</h1>
+								<h6 className="title-ext text-primary"> Get yourself help today</h6>
+								<h1>We Provide healing and career services</h1>
 								<Link to="/about-us" className="btn btn-secondary btn-lg shadow">Read More</Link>
 							</div>
 							<div className="col-lg-5 col-md-6 col-sm-5">

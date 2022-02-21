@@ -5,140 +5,163 @@ import { Link } from 'react-router-dom';
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
-// Elements
-import AuthorProfile from "../elements/author-profile";
-import CommentList from "../elements/comment-list";
-import CommentRespond from "../elements/comment-respond";
-import WidgetTag from "../elements/widget-tag";
-import WidgetSearch from "../elements/widget-search";
-import WidgetGallery from "../elements/widget-gallery";
-import WidgetRecentPosts from "../elements/widget-recent-posts";
-
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
-import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
+import testPic1 from "../../images/testimonials/pic1.jpg";
+import testPic2 from "../../images/testimonials/pic2.jpg";
 import testPic3 from "../../images/testimonials/pic3.jpg";
-import galleryPic2 from "../../images/gallery/pic2.jpg";
-import galleryPic5 from "../../images/gallery/pic5.jpg";
+import testPic4 from "../../images/testimonials/pic4.jpg";
+import testPic5 from "../../images/testimonials/pic5.jpg";
+import testPic6 from "../../images/testimonials/pic6.jpg";
+import blogGridPic1 from "../../images/blog/grid/pic1.jpg";
+import blogGridPic2 from "../../images/blog/grid/pic2.jpg";
+import blogGridPic3 from "../../images/blog/grid/pic3.jpg";
+import blogGridPic4 from "../../images/blog/grid/pic4.jpg";
+import blogGridPic5 from "../../images/blog/grid/pic5.jpg";
+import blogGridPic6 from "../../images/blog/grid/pic6.jpg";
+import blogGridPic7 from "../../images/blog/grid/pic7.jpg";
+import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
+import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
 
+// Blog Content
+const content = [
+	{
+		thumb: blogGridPic1,
+		authorPic: testPic1,
+		title: "Dental Care for Women is very important",
+		author: "John deo",
+		date: "21 July 2021",
+	},
+	{
+		thumb: blogGridPic2,
+		authorPic: testPic2,
+		title: "In this hospital there are special surgeon",
+		author: "Peter Packer",
+		date: "20 July 2021",
+	},
+	{
+		thumb: blogGridPic3,
+		authorPic: testPic3,
+		title: "Why Is Skin Surgeon Considered Underrated",
+		author: "Sonar Moyna",
+		date: "19 July 2021",
+	},
+	{
+		thumb: blogGridPic4,
+		authorPic: testPic4,
+		title: "Understand Health Before You Regret",
+		author: "Kalina",
+		date: "18 July 2021",
+	},
+	{
+		thumb: blogGridPic5,
+		authorPic: testPic5,
+		title: "Health Will Be A Thing Of The Past And Here",
+		author: "Michel",
+		date: "17 July 2021",
+	},
+	{
+		thumb: blogGridPic6,
+		authorPic: testPic6,
+		title: "Can you get a diflucan prescription online?",
+		author: "Peter Packer",
+		date: "16 July 2021",
+	},
+	{
+		thumb: blogGridPic7,
+		authorPic: testPic1,
+		title: "Ten Gigantic Influences Of Health",
+		author: "Sonar Moyna",
+		date: "15 July 2021",
+	},
+	{
+		thumb: blogGridPic8,
+		authorPic: testPic2,
+		title: "Why Is Skin Surgeon Considered Underrated",
+		author: "Kalina",
+		date: "14 July 2021",
+	},
+	{
+		thumb: blogGridPic9,
+		authorPic: testPic3,
+		title: "Everyone need to go Dentist regularly",
+		author: "Michel",
+		date: "13 July 2021",
+	},
+]
 
-class BlogDetails extends Component {
+class Uploads extends Component {
 
- render() {
-  return (
-   <>
+	render() {
+		return (
+			<>
 
-    <Header />
+				<Header />
 
-    <div className="page-content bg-white">
+				<div className="page-content bg-white">
 
-     <div className="banner-wraper">
-      <div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
-       <div className="container">
-        <div className="page-banner-entry text-center">
-         <h1>Upload</h1>
-         <nav aria-label="breadcrumb" className="breadcrumb-row">
-          <ul className="breadcrumb">
-           <li className="breadcrumb-item"><Link to="/"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</Link></li>
-           <li className="breadcrumb-item active" aria-current="page">Upload</li>
-          </ul>
-         </nav>
-        </div>
-       </div>
-       <img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-       <img className="pt-img2 animate2" src={circleDots} alt="" />
-       <img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-      </div>
-     </div>
+					<div className="banner-wraper" >
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
+							<div className="container">
+								<div className="page-banner-entry text-center">
+									<h2>Media section</h2>
+								</div>
+							</div>
+							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
+							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						</div>
+					</div>
 
-     <section className="section-area section-sp1 bg-white">
-      <div className="container">
-       <div className="row">
-        <div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-         <div className="blog-card blog-single">
-          <div className="post-media">
-           <img src={blogDefaultPic1} alt="" />
-          </div>
-          <div className="info-bx">
-           <ul className="post-meta">
-            <li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
-            <li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
-           </ul>
-           <div className="ttr-post-title">
-            <h2 className="post-title">Precious Tips To Help You Get Better.</h2>
-           </div>
-           <div className="ttr-post-text">
-            <p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-            <blockquote className="wp-block-quote">
-             <p>Once you’ve gotten all the titles and have chosen the best one, the next thing you need to do is to craft a magnetic content. Great content marketers excel at creating content.</p>
-            </blockquote>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-            <ul className="wp-block-gallery columns-6 is-cropped">
-             <li className="blocks-gallery-item"><img alt="" src={galleryPic2} /></li>
-             <li className="blocks-gallery-item"><img alt="" src={galleryPic5} /></li>
-            </ul>
-            <p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
-            <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-           </div>
-           <div className="ttr-post-footer">
-            <div className="post-tags">
-             <strong>Tags:</strong>
-             <Link to="#">placeholder</Link>
-             <Link to="#">selfcare </Link>
-             <Link to="#">motivation</Link>
-             <Link to="#">selflove</Link>
-            </div>
-            <div className="share-post ml-auto">
-             <ul className="social-media mb-0">
-              <li><strong>Share:</strong></li>
-              <li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-              <li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-             </ul>
-            </div>
-           </div>
-          </div>
-         </div>
+					<section className="section-area section-sp1">
+						<div className="container">
+							<div className="row">
+                            {content.map((item) => (
+									<div className="col-xl-4 col-md-6">
+										<div className="blog-card mb-30">
+											<div className="post-media">
+												<Link to="/upload"><img src={item.thumb} alt="" /></Link>
+											</div>
+											<div className="post-info">
+												<h4 className="post-title"><Link to="/upload">{item.title}</Link></h4>
+												
+												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
+													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
+													
+													<Link to="/upload" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												</ul>
+												
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+							<div className="row">
+								<div className="col-lg-12">
+									<div className="pagination-bx text-center mb-30 clearfix">
+										<ul className="pagination">
+											<li className="previous"><Link to="#">Prev</Link></li>
+											<li className="active"><Link to="#">1</Link></li>
+											<li><Link to="#">2</Link></li>
+											<li><Link to="#">3</Link></li>
+											<li className="next"><Link to="#">Next</Link></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
 
-         <AuthorProfile />
+				</div>
 
-         <div className="clear" id="comment-list">
-          <div className="comments-area" id="comments">
-           <h4 className="widget-title">8 Comments</h4>
+				<Footer />
 
-           <div className="clearfix">
-
-            <CommentList />
-
-            <CommentRespond placeholder="What do you thing...?" />
-
-           </div>
-          </div>
-         </div>
-        </div>
-        <div className="col-md-12 col-lg-5 col-xl-4 mb-30">
-         <aside className="side-bar sticky-top aside-bx">
-
-          <WidgetSearch placeholder='Search Anything...' />
-
-          <WidgetRecentPosts title="Recent Uploads" />
-         </aside>
-        </div>
-       </div>
-      </div>
-     </section>
-
-    </div>
-
-    <Footer />
-
-   </>
-  );
- }
+			</>
+		);
+	}
 }
 
-export default BlogDetails;
+export default Uploads;

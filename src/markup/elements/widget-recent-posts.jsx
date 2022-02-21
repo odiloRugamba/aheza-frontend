@@ -46,7 +46,7 @@ const WidgetRecentPosts = ({ title }) => {
 							</ul>
 						</div>
 					</div>
-					<div className="more"> <Link to="/testimonials" className="more-text">More</Link> </div>
+					<div className="more"> <Link to="/stories" className="more-text">More</Link> </div>
 				</div>
 			</div>
 
