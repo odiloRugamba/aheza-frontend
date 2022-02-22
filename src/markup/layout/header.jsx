@@ -5,52 +5,95 @@ import { useLocation } from 'react-router-dom'
 
 // Images
 import logo from '../../images/logo-2.png';
+import twitterLogo from "../../images/twitter.svg"
+import instagramLogo from "../../images/instagram.svg"
+import facebook from "../../images/facebook.svg"
 import logoWhite from '../../images/logo-white.png';
 
 function Header() {
 	const location = useLocation();
 	const route = location.pathname;
 	let homeActive = "";
-	if(route === "/"){
-		homeActive="active"
+	if (route === "/") {
+		homeActive = "active"
 	}
 
 	let ourServicesActive = "";
-	if(route.includes("service")){
-		ourServicesActive="active"
+	if (route.includes("service")) {
+		ourServicesActive = "active"
 	}
 
 	let mediaActive = "";
-	if(route.includes("stor") || route.includes("research") || route.includes("upload")){
-		mediaActive="active"
+	if (route.includes("stor") || route.includes("research") || route.includes("upload")) {
+		mediaActive = "active"
 	}
 
-	
+
 	let blogActive = "";
-	if(route.includes("blog")){
-		blogActive="active"
-	}
-	
-	let institutionActive = "";
-	if(route.includes("/institutions-list") || route.includes("/institution-profile")){
-		institutionActive="active"
+	if (route.includes("blog")) {
+		blogActive = "active"
 	}
 
-	
+	let institutionActive = "";
+	if (route.includes("/institutions-list") || route.includes("/institution-profile")) {
+		institutionActive = "active"
+	}
+
+
 	let aboutUsActive = "";
-	if(route.includes("about-us")){
-		aboutUsActive="active"
+	if (route.includes("about-us")) {
+		aboutUsActive = "active"
 	}
 
 	let contactUsActive = "";
-	if(route.includes("contact-us")){
-		contactUsActive="active"
+	if (route.includes("contact-us")) {
+		contactUsActive = "active"
 	}
 
 	return (
 		<>
 			<header className="header header-transparent rs-nav">
 				<Sticky enabled={true} className="sticky-header navbar-expand-lg">
+					<div id="ahezaInfo">
+						<div id='innerCont'>
+
+							<div id='headerItem'>
+								<div>
+									<span id='HeaderIcon' class="material-icons">schedule</span>
+								</div>
+								<div> Monday - Friday: 08:00 AM - 06:00 PM</div>
+							</div>
+
+							<div id='headerItem'>
+								<div>
+									<span id='HeaderIcon' class="material-icons">
+										email
+									</span>
+								</div>
+								<div>info@aheza.org.rw</div>
+								<div id='socialMedias'>
+									<div><embed src={twitterLogo} width="20" /></div>
+									<div><embed src={instagramLogo} width="20" /></div>
+									<div><embed src={facebook} width="20" /></div>
+								</div>
+							</div>
+
+							<div id='headerItem'>
+								<div>
+									<span id='HeaderIcon' class="material-icons">call</span>
+								</div>
+								<div>(+250) 788 315 809</div>
+							</div>
+
+							<div id='headerItem'>
+								<div>
+									<span id='HeaderIcon' class="material-icons">place</span>
+								</div>
+								<div> Bugesera District, Ntarama sector.</div>
+							</div>
+
+						</div>
+					</div>
 					<div className="menu-bar clearfix">
 						<div className="container-fluid clearfix">
 							<div className="menu-logo logo-dark" >
@@ -74,7 +117,8 @@ function Header() {
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
 									<li className={ourServicesActive}>
-										<Link to="#">Services <i className="fas fa-plus"></i></Link>
+										<Link to="#">Services <i class="fa fa-plus"></i>
+										</Link>
 										<ul className="sub-menu">
 											<li className="add-menu-left">
 												<ul>
@@ -100,7 +144,9 @@ function Header() {
 									<li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-									{/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */}
+
+
+
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
@@ -120,7 +166,8 @@ function Header() {
 
 		</>
 	);
-	
+
 }
+{/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */ }
 
 export default Header;
