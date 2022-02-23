@@ -97,7 +97,7 @@ const LatestNewsSection = ({ title }) => {
 						{content.map((item) => (
 							<div className="slider-item">
 								<div className="blog-card">
-									<div className="post-media">
+									<div className="post-media" style={{maxHeight: 210}}>
 										<Link to="/story"><img src={item.thumb} alt="" /></Link>
 									</div>
 									<div className="post-info">

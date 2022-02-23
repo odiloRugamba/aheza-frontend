@@ -106,8 +106,8 @@ function Header() {
 							</button>
 							<div className="secondary-menu">
 								<ul>
-									<li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li>
-									<li className="btn-area"><Link to="/chat" className="btn btn-primary shadow">Donate<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
+									<li className="btn-area"><Link to="/book-appointment" className="btn btn-primary shadow">Book appointment<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
 								</ul>
 							</div>
 							<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
@@ -141,7 +141,7 @@ function Header() {
 										</ul>
 									</li>
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
-									<li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li>
+									{/* <li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li> */}
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 

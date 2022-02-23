@@ -6,6 +6,9 @@ import recentBlogImg1 from "../../images/blog/recent-blog/pic1.jpg";
 import recentBlogImg2 from "../../images/blog/recent-blog/pic2.jpg";
 import recentBlogImg3 from "../../images/blog/recent-blog/pic3.jpg";
 
+import pdf from "../../images/icon/pdf.png";
+import doc from "../../images/icon/doc.png";
+
 const WidgetRecentPosts = ({ title }) => {
 
 	return (
@@ -48,8 +51,23 @@ const WidgetRecentPosts = ({ title }) => {
 					</div>
 					<div className="more"> <Link to="/stories" className="more-text">More</Link> </div>
 				</div>
+				
+				
 			</div>
-
+			
+			<div className="brochure-bx">
+				<h5 className="title-head">Download</h5>
+				<Link to="#" className="download-link">
+					<img src={pdf} alt="" />
+					<h5 className="title">Download this document</h5>
+					<span>Download</span>
+				</Link>
+				<Link to="#" className="download-link">
+					<img src={doc} alt="" />
+					<h5 className="title">Download this audio file</h5>
+					<span>Download</span>
+				</Link>
+			</div>
 		</>
 	);
 }

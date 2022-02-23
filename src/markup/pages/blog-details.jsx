@@ -76,7 +76,7 @@ class BlogDetails extends Component{
 										</div>
 									</div>
 
-									<AuthorProfile />
+									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">

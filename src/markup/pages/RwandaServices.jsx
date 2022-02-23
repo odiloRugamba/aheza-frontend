@@ -57,7 +57,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Neuro-Psychiatric  Caraes Ndera</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -77,7 +77,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Icyizere Psychotherapeutic</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -97,7 +97,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Kigali Psycho-Medical Center</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -117,7 +117,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Mental Health Journal Rwanda</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -134,7 +134,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">IMANZI COUNSELING</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -152,7 +152,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">mHub COUNSELING</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -171,7 +171,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Trauma Help Rwanda</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -189,7 +189,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Rwanda Military Hospital</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>
@@ -207,7 +207,7 @@ class Services extends Component {
 										</div>
 										<div className="icon-content">
 											<h3 className="ttr-title">Rubungo Health Centre</h3>
-											<p>Phasellus venenatis porta rhoncus. Integer et viverra felis.</p>
+											<p>This clinic offers good services. you can reach out to them to find out more.</p>
 											<Link to="/service-details" className="btn btn-primary light">View More</Link>
 										</div>
 									</div>

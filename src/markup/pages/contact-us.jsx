@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
+import Map from '../elements/map';
+
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import pic1 from "../../images/about/pic-1.jpg";
@@ -94,9 +96,12 @@ class ContactUs extends Component{
 							</div>
 						</div>
 					</section>
-					
+					<div className='row' style={{height: 400, width: "100%", backgroundColor: "red"}}>
+						<Map/>
+					</div>
 					<section className="section-area section-sp1">
 						<div className="container">
+							
 							<div className="row">
 								<div className="col-lg-4 col-md-6 mb-30">
 									<div className="feature-container feature-bx4 feature4">

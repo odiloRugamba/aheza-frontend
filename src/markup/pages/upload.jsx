@@ -54,7 +54,16 @@ class BlogDetails extends Component {
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single">
 										<div className="post-media">
-											<img src={blogDefaultPic1} alt="" />
+											{/* <img src={blogDefaultPic1} alt="" /> */}
+											<iframe
+												width="853"
+												height="480"
+												src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
+												frameBorder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowFullScreen
+												title="Embedded youtube"
+												/>
 										</div>
 										<div className="info-bx">
 											<ul className="post-meta">
@@ -94,7 +103,7 @@ class BlogDetails extends Component {
 										</div>
 									</div>
 
-									<AuthorProfile />
+									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">

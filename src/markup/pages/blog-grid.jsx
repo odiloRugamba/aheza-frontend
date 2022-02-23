@@ -31,28 +31,28 @@ const content = [
 	{
 		thumb: blogGridPic1,
 		authorPic: testPic1,
-		title: "Dental Care for Women is very important",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "John deo",
 		date: "21 July 2021",
 	},
 	{
 		thumb: blogGridPic2,
 		authorPic: testPic2,
-		title: "In this hospital there are special surgeon",
+		title: "Making Mental Health a Centerpiece of the Return to School",
 		author: "Peter Packer",
 		date: "20 July 2021",
 	},
 	{
 		thumb: blogGridPic3,
 		authorPic: testPic3,
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "Sonar Moyna",
 		date: "19 July 2021",
 	},
 	{
 		thumb: blogGridPic4,
 		authorPic: testPic4,
-		title: "Understand Health Before You Regret",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "Kalina",
 		date: "18 July 2021",
 	},
@@ -66,28 +66,28 @@ const content = [
 	{
 		thumb: blogGridPic6,
 		authorPic: testPic6,
-		title: "Can you get a diflucan prescription online?",
+		title: "Why do I Feel Lonelier During The Holidays?",
 		author: "Peter Packer",
 		date: "16 July 2021",
 	},
 	{
 		thumb: blogGridPic7,
 		authorPic: testPic1,
-		title: "Ten Gigantic Influences Of Health",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "Sonar Moyna",
 		date: "15 July 2021",
 	},
 	{
 		thumb: blogGridPic8,
 		authorPic: testPic2,
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "Kalina",
 		date: "14 July 2021",
 	},
 	{
 		thumb: blogGridPic9,
 		authorPic: testPic3,
-		title: "Everyone need to go Dentist regularly",
+		title: "Why do I Feel Lonelier During The Holidays",
 		author: "Michel",
 		date: "13 July 2021",
 	},
@@ -109,11 +109,11 @@ class BlogGrid extends Component {
 								{content.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media">
+											<div className="post-media" style={{maxHeight: 210}}>
 												<Link to="/blog-details"><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title"><Link to="/blog-details">{item.title}</Link></h4>
+												<h4 className="post-title max-lines-2"><Link to="/blog-details">{item.title}</Link></h4>
 												
 												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
 // Import Images
+import background from "../../images/background/footer-2.jpg"
 import testShape from "../../images/testimonials/shape.png"
 import testPic1 from "../../images/testimonials/pic1.jpg"
 import testPic2 from "../../images/testimonials/pic2.jpg"
@@ -31,7 +32,7 @@ class VisionSection extends Component{
 			<>
 					
 				
-				<section className="section-area section-sp3 testimonial-wraper">
+				<section className="section-area section-sp3 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">
 							<h2 className="title m-b0">Our vision</h2>

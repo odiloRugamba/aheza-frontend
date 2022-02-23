@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 // Import Images
 import bg1 from '../../images/main-banner/bg1.jpg';
-import doctorImg from '../../images/main-banner/doctor.png';
+// import doctorImg from '../../images/main-banner/doctor.png';
+import doctorImg from '../../images/appointment/mobile.png';
 import ptImg1 from '../../images/shap/trangle-orange.png';
 import ptImg2 from '../../images/shap/square-blue.png';
 import ptImg3 from '../../images/shap/chicle-blue-2.png';
@@ -15,13 +16,13 @@ class aboutSection extends Component {
 		return (
 			<>
 
-				<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")" }}>
+				<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", paddingTop: 150 }}>
 					<div className="container inner-content">
 						<div className="row align-items-center">
 							<div className="col-lg-7 col-md-6 col-sm-7">
 								<h6 className="title-ext text-primary"> Get yourself help today</h6>
-								<h1>We Provide healing and career services</h1>
-								<Link to="/about-us" className="btn btn-secondary btn-lg shadow">Read More</Link>
+								<h1>We Provide healing and career services online and on-site</h1>
+								<Link to="/about-us" className="btn btn-secondary btn-lg shadow">Book an appointment</Link>
 							</div>
 							<div className="col-lg-5 col-md-6 col-sm-5">
 								<div className="banner-img">

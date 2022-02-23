@@ -63,7 +63,7 @@ class ResearchFindings extends Component {
 								{content.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media">
+											<div className="post-media" style={{maxHeight: 210}}>
 												<Link to="/research-finding-details"><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">

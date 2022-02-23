@@ -53,7 +53,7 @@ class ServiceDetail extends Component {
 									</div>
 									<div className="clearfix">
 										<div className="head-text mb-30">
-											<h2 className="title mb-15">Why Medical Had Been So Popular Till</h2>
+											<h2 className="title mb-15">Why Remote Medical Is So Popular Nowdays</h2>
 											<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
 										</div>
 										<div className="row align-items-center">
@@ -156,7 +156,7 @@ class ServiceDetail extends Component {
 													<h5 className="title">Download our Brochures</h5>
 													<span>Download</span>
 												</Link>
-												<Link to="#" class="download-link">
+												<Link to="#" className="download-link">
 													<img src={doc} alt="" />
 													<h5 className="title">Our Company Details</h5>
 													<span>Download</span>
