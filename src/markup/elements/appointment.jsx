@@ -19,7 +19,7 @@ class aboutSection extends Component{
 			<>
 				
 				<section className="section-area account-wraper1">
-					<div className="container-fluid">
+					<div className="container-fluid" style={{paddingTop: 100}}>
 						<div className="appointment-inner section-sp2" style={{backgroundImage: "url("+lineBg+")", backgroundRepeat:" no-repeat", backgroundPosition: "20px 140px"}}>
 							<div className="container">
 								<div className="row align-items-center">

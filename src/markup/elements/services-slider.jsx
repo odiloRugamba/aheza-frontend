@@ -40,11 +40,11 @@ class ServicesSliderSection extends Component{
 					<div className="row align-items-center">
 						<div className="col-xl-4 col-lg-7 mb-30">	
 							<div className="heading-bx">
-								<h6 className="title-ext text-secondary">Services</h6>
-								<h2 className="title">We offer all mental health services</h2>
-								<p>We provide the special tips and advice’s of heath care treatment and high level of best.</p>
+								{/* <h6 className="title-ext text-secondary">Services</h6> */}
+								<h2 className="title">Join our therapists network</h2>
+								<p>Are you a certified therapist? Please contribute by joining our team to deliver services to those vuneralble in our community</p>
 							</div>
-							<Link to="/our-services" className="btn btn-secondary btn-lg shadow">All Services</Link>
+							<Link to="/apply" className="btn btn-secondary btn-lg shadow">Apply</Link>
 						</div>
 						<div className="col-xl-8 mb-15">	
 							<Slider {...settings} className="service-slide slick-arrow-none">
@@ -62,9 +62,9 @@ class ServicesSliderSection extends Component{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Find information</h5>
-											<p>From our vast database of information, find anything you are looking for.</p>
-											<Link to="/service-details" className="btn btn-primary light">View More</Link>
+											<h5 className="ttr-title">Apply</h5>
+											<p>Click on apply button or call (+250) 788 315 809.</p>
+											<Link to="/apply" className="btn btn-primary light">Apply</Link>
 										</div>
 									</div>
 								</div>
@@ -82,9 +82,9 @@ class ServicesSliderSection extends Component{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Book an appointment</h5>
-											<p>Book an appointment from our qualified conselors that is handled with total privacy.</p>
-											<Link to="/service-details" className="btn btn-primary light">View More</Link>
+											<h3 className="ttr-title">Vetting</h3>
+											<p>Our vetting team will contact you for the vetting process as soon as possible.</p>
+											{/* <Link to="/service-details" className="btn btn-primary light">View More</Link> */}
 										</div>
 									</div>
 								</div>
@@ -102,9 +102,9 @@ class ServicesSliderSection extends Component{
 											</span> 
 										</div>
 										<div className="icon-content">
-											<h5 className="ttr-title">Community healing</h5>
-											<p>You can also join one of communities in our community healing program.</p>
-											<Link to="/service-details" className="btn btn-primary light">View More</Link>
+											<h2 className="ttr-title">More info</h2>
+											<p>For more information, please call (+250) 788 315 809 </p>
+											{/* <Link to="/service-details" className="btn btn-primary light">View More</Link> */}
 										</div>
 									</div>
 								</div>

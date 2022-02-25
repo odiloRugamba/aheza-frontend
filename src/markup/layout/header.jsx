@@ -59,14 +59,14 @@ function Header() {
 
 							<div id='headerItem'>
 								<div>
-									<span id='HeaderIcon' class="material-icons">schedule</span>
+									<span id='HeaderIcon' className="material-icons">schedule</span>
 								</div>
 								<div> Monday - Friday: 08:00 AM - 06:00 PM</div>
 							</div>
 
 							<div id='headerItem'>
 								<div>
-									<span id='HeaderIcon' class="material-icons">
+									<span id='HeaderIcon' className="material-icons">
 										email
 									</span>
 								</div>
@@ -80,14 +80,14 @@ function Header() {
 
 							<div id='headerItem'>
 								<div>
-									<span id='HeaderIcon' class="material-icons">call</span>
+									<span id='HeaderIcon' className="material-icons">call</span>
 								</div>
-								<div>(+250) 788 315 809</div>
+								<div><a href="tel:+250788315809" style={{color: "white"}}>(+250) 788 315 809</a></div>
 							</div>
 
 							<div id='headerItem'>
 								<div>
-									<span id='HeaderIcon' class="material-icons">place</span>
+									<span id='HeaderIcon' className="material-icons">place</span>
 								</div>
 								<div> Bugesera District, Ntarama sector.</div>
 							</div>
@@ -117,7 +117,7 @@ function Header() {
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
 									<li className={ourServicesActive}>
-										<Link to="#">Services <i class="fa fa-plus"></i>
+										<Link to="#">Services <i className="fa fa-plus"></i>
 										</Link>
 										<ul className="sub-menu">
 											<li className="add-menu-left">

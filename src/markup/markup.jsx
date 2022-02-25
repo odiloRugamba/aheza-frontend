@@ -9,6 +9,8 @@ import PageScrollTop from './elements/page-scroll-top';
 import Index from './pages/index';
 import AboutUs from './pages/about-us';
 import Team from './pages/team';
+import Apply from './pages/apply';
+import BookAppointment from './pages/book-appointment';
 import OurServices from './pages/our-services';
 import OtherInstitutionsServices from './pages/other-institutions-services';
 import InstitutionsList from './pages/institutions-list';
@@ -44,6 +46,8 @@ class Markup extends Component {
 						<ProtectRoute path='/' exact component={Index} />
 						<ProtectRoute path='/about-us' exact component={AboutUs} />
 						<ProtectRoute path='/team' exact component={Team} />
+						<ProtectRoute path='/apply' exact component={Apply} />
+						<ProtectRoute path='/book-appointment' exact component={BookAppointment} />
 						<ProtectRoute path='/our-services' exact component={OurServices} />
 						<ProtectRoute path='/other-institutions-services' exact component={OtherInstitutionsServices} />
 						<ProtectRoute path='/service-details' exact component={ServiceDetails} />
