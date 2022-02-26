@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getBlogs } from "../../store/blog/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
-import plusBlue from "../../images/shap/plus-blue.png";
+// import bnrImg1 from "../../images/banner/img1.jpg";
+// import waveBlue from "../../images/shap/wave-blue.png";
+// import circleDots from "../../images/shap/circle-dots.png";
+// import plusBlue from "../../images/shap/plus-blue.png";
 import testPic1 from "../../images/testimonials/pic1.jpg";
 import testPic2 from "../../images/testimonials/pic2.jpg";
 import testPic3 from "../../images/testimonials/pic3.jpg";
@@ -25,6 +27,7 @@ import blogGridPic6 from "../../images/blog/grid/pic6.jpg";
 import blogGridPic7 from "../../images/blog/grid/pic7.jpg";
 import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
 import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
+import moment from 'moment';
 
 // Blog Content
 const content = [
@@ -93,62 +96,77 @@ const content = [
 	},
 ]
 
-class BlogGrid extends Component {
+const BlogGrid = () => {
+	const dispatch = useDispatch()
+	const [data, setdata] = useState([])
+	const dateFormat = moment().format('llll')
 
-	render() {
-		return (
-			<>
+	const blogs = useSelector(state => state.BlogsReducers.data)
 
-				<Header />
+	useEffect(() => {
+		console.log('holl')
+		dispatch(getBlogs())
+	}, [])
 
-				<div className="page-content bg-white" style={{marginTop: 60}}>
+	useEffect(() => {
+		console.log('dd', blogs)
+		setdata(blogs)
+	}, [blogs])
 
-					<section className="section-area section-sp1">
-						<div className="container">
-							<div className="row">
-								{content.map((item) => (
-									<div className="col-xl-4 col-md-6">
-										<div className="blog-card mb-30">
-											<div className="post-media" style={{maxHeight: 210}}>
-												<Link to="/blog-details"><img src={item.thumb} alt="" /></Link>
-											</div>
-											<div className="post-info">
-												<h4 className="post-title max-lines-2"><Link to="/blog-details">{item.title}</Link></h4>
-												
-												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
-													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
-													
-													<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-												</ul>
-												
-											</div>
+	return (
+		<>
+			<Header />
+
+			<div className="page-content bg-white" style={{ marginTop: 60 }}>
+
+				<section className="section-area section-sp1">
+					<div className="container">
+						<div className="row">
+							{data?.map((item) => (
+								<div className="col-xl-4 col-md-6">
+									<div className="blog-card mb-30">
+										<div className="post-media" style={{ maxHeight: 210 }}>
+											<Link to={"/blog-grid/" + item.title + '/' + item._id}><img src={testPic1} alt="" /></Link>
+										</div>
+										<div className="post-info">
+											<h4 className="post-title max-lines-2"><Link to="/blog-details">{item.title}</Link></h4>
+
+											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+												<li className="date"><i className="far fa-calendar-alt"></i> {item.updatedAt}</li>
+
+												<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+											</ul>
+
 										</div>
 									</div>
-								))}
-							</div>
-							<div className="row">
-								<div className="col-lg-12">
-									<div className="pagination-bx text-center mb-30 clearfix">
-										<ul className="pagination">
-											<li className="previous"><Link to="#">Prev</Link></li>
-											<li className="active"><Link to="#">1</Link></li>
-											<li><Link to="#">2</Link></li>
-											<li><Link to="#">3</Link></li>
-											<li className="next"><Link to="#">Next</Link></li>
-										</ul>
-									</div>
+								</div>
+							))}
+						</div>
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="pagination-bx text-center mb-30 clearfix">
+									<ul className="pagination">
+										<li className="previous"><Link to="#">Prev</Link></li>
+										<li className="active"><Link to="#">1</Link></li>
+										<li><Link to="#">2</Link></li>
+										<li><Link to="#">3</Link></li>
+										<li className="next"><Link to="#">Next</Link></li>
+									</ul>
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
+				</section>
 
-				</div>
+			</div>
 
-				<Footer />
+			<Footer />
 
-			</>
-		);
-	}
+		</>
+	);
+
 }
 
 export default BlogGrid;
+
+

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useSelector, useDispatch } from "react-redux";
+import { getResearchs } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -46,57 +47,67 @@ const content = [
 		date: "18 July 2021",
 	}
 ]
+const ResearchFindings = () => {
 
-class ResearchFindings extends Component {
+	const [data, setData] = useState([])
+	const dispatch = useDispatch()
+	const research = useSelector(state => state.ResearchReducers.data)
 
-	render() {
-		return (
-			<>
+	useEffect(() => {
+		dispatch(getResearchs())
+	}, [])
 
-				<Header />
+	useEffect(() => {
+		console.log(research)
+		setData(research)
+	}, [research])
+	return (
+		<>
 
-				<div className="page-content bg-white" style={{marginTop: 40}}>
+			<Header />
 
-					<section className="section-area section-sp1">
-						<div className="container">
-							<div className="row">
-								{content.map((item) => (
-									<div className="col-xl-4 col-md-6">
-										<div className="blog-card mb-30">
-											<div className="post-media" style={{maxHeight: 210}}>
-												<Link to="/research-finding-details"><img src={item.thumb} alt="" /></Link>
-											</div>
-											<div className="post-info">
-												<h4 className="post-title max-lines-2" style={{fontSize: 16}}><Link to="/research-finding-details">{item.title}</Link></h4>
-												<Link to="/research-finding-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-											</div>
+			<div className="page-content bg-white" style={{ marginTop: 40 }}>
+
+				<section className="section-area section-sp1">
+					<div className="container">
+						<div className="row">
+							{research?.map((item) => (
+								<div className="col-xl-4 col-md-6">
+									<div className="blog-card mb-30">
+										<div className="post-media" style={{ maxHeight: 210 }}>
+											<Link to={"/research-finding/" + item.title + '/' + item._id}><img src={item.image} alt="" /></Link>
+										</div>
+										<div className="post-info">
+											<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to="/research-finding-details">{item.title}</Link></h4>
+											<Link to="/research-finding-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 										</div>
 									</div>
-								))}
-							</div>
-							<div className="row">
-								<div className="col-lg-12">
-									<div className="pagination-bx text-center mb-30 clearfix">
-										<ul className="pagination">
-											<li className="previous"><Link to="#">Prev</Link></li>
-											<li className="active"><Link to="#">1</Link></li>
-											<li><Link to="#">2</Link></li>
-											<li><Link to="#">3</Link></li>
-											<li className="next"><Link to="#">Next</Link></li>
-										</ul>
-									</div>
+								</div>
+							))}
+						</div>
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="pagination-bx text-center mb-30 clearfix">
+									<ul className="pagination">
+										<li className="previous"><Link to="#">Prev</Link></li>
+										<li className="active"><Link to="#">1</Link></li>
+										<li><Link to="#">2</Link></li>
+										<li><Link to="#">3</Link></li>
+										<li className="next"><Link to="#">Next</Link></li>
+									</ul>
 								</div>
 							</div>
 						</div>
-					</section>
+					</div>
+				</section>
 
-				</div>
+			</div>
 
-				<Footer />
+			<Footer />
 
-			</>
-		);
-	}
+		</>
+	);
+
 }
 
 export default ResearchFindings;

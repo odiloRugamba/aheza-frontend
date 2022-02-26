@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useHistory, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getStorys } from "../../store/story/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -8,7 +10,7 @@ import Footer from "../layout/footer";
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
+// import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 import testPic1 from "../../images/testimonials/pic1.jpg";
 import testPic2 from "../../images/testimonials/pic2.jpg";
@@ -93,75 +95,85 @@ const content = [
 	},
 ]
 
-class BlogGrid extends Component {
+const StoriesGrid = () => {
+	const [data, setData] = useState([])
+	const dispatch = useDispatch()
+	const res = useSelector(state => state.StorysReducers.data)
+	// const response = useSelector(state => state?.HospitalReducers?.data)
 
-	render() {
-		return (
-			<>
+	useEffect(() => {
+		dispatch(getStorys())
+	}, []);
+	useEffect(() => {
+		setData(res)
+		console.log(res)
+	}, [res])
 
-				<Header />
+	return (
+		<>
 
-				<div className="page-content bg-white">
+			<Header />
 
-					<div className="banner-wraper" >
-						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
-							<div className="container">
-								<div className="page-banner-entry text-center">
-									<h2>Stories</h2>
-								</div>
-							</div>
-							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-						</div>
-					</div>
+			<div className="page-content bg-white">
 
-					<section className="section-area section-sp1">
+				<div className="banner-wraper" >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
 						<div className="container">
-							<div className="row">
-                            {content.map((item) => (
-									<div className="col-xl-4 col-md-6">
-										<div className="blog-card mb-30">
-											<div className="post-media"  style={{maxHeight: 210}}>
-												<Link to="/story"><img src={item.thumb} alt="" /></Link>
-											</div>
-											<div className="post-info">
-												<h4 className="post-title"><Link to="/story">{item.title}</Link></h4>
-												
-												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
-													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
-													
-													<Link to="/story" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-												</ul>
-												
-											</div>
-										</div>
-									</div>
-								))}
-							</div>
-							<div className="row">
-								<div className="col-lg-12">
-									<div className="pagination-bx text-center mb-30 clearfix">
-										<ul className="pagination">
-											<li className="previous"><Link to="#">Prev</Link></li>
-											<li className="active"><Link to="#">1</Link></li>
-											<li><Link to="#">2</Link></li>
-											<li><Link to="#">3</Link></li>
-											<li className="next"><Link to="#">Next</Link></li>
-										</ul>
-									</div>
-								</div>
+							<div className="page-banner-entry text-center">
+								<h2>Stories</h2>
 							</div>
 						</div>
-					</section>
-
+						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
+						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+					</div>
 				</div>
 
-				<Footer />
+				<section className="section-area section-sp1">
+					<div className="container">
+						<div className="row">
+							{data?.map((item) => (
+								<div className="col-xl-4 col-md-6">
+									<div className="blog-card mb-30">
+										<div className="post-media" style={{ maxHeight: 210 }}>
+											<Link to="/story"><img src={item.image} alt="" /></Link>
+										</div>
+										<div className="post-info">
+											<h4 className="post-title"><Link to="/story">{item.title}</Link></h4>
 
-			</>
-		);
-	}
+											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+												<li className="date"><i className="far fa-calendar-alt"></i> {item.updatedAt}</li>
+
+												<Link to={"/story/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+											</ul>
+
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+						<div className="row">
+							<div className="col-lg-12">
+								<div className="pagination-bx text-center mb-30 clearfix">
+									<ul className="pagination">
+										<li className="previous"><Link to="#">Prev</Link></li>
+										<li className="active"><Link to="#">1</Link></li>
+										<li><Link to="#">2</Link></li>
+										<li><Link to="#">3</Link></li>
+										<li className="next"><Link to="#">Next</Link></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			</div>
+
+			<Footer />
+
+		</>
+	);
 }
 
-export default BlogGrid;
+export default StoriesGrid;

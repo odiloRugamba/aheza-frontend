@@ -1,9 +1,9 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getResearchById } from "../../store/research/actions";
+import { getHospitalById } from "../../store/hospital/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -17,89 +17,44 @@ import servicesPic1 from "../../images/services/pic1.jpg";
 import pdf from "../../images/icon/pdf.png";
 import doc from "../../images/icon/doc.png";
 
-const RsearchDetails = () => {
+const ServiceDetail = () => {
+	const [hospital, setHospital] = useState(null)
+	const dispatch = useDispatch();
 	const { id } = useParams()
-	const [research, setResearch] = useState(null)
-	const dispatch = useDispatch()
+	const response = useSelector(state => state?.HospitalReducers?.hospital)
 
 	useEffect(() => {
-		console.log('okkk')
-		dispatch(getResearchById(id))
+		dispatch(getHospitalById(id))
 	}, [])
+
+	useEffect(() => {
+		console.log(response)
+		setHospital(response)
+	}, [response])
+
 	return (
 		<>
 
 			<Header />
 
-			<div className="page-content bg-white">
-
-				<div className="banner-wraper">
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
-						<div className="container">
-							<div className="page-banner-entry text-center">
-								<h1>Service Details</h1>
-								<nav aria-label="breadcrumb" className="breadcrumb-row">
-									<ul className="breadcrumb">
-										<li className="breadcrumb-item"><a href="index.html"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Home</a></li>
-										<li className="breadcrumb-item active" aria-current="page">Service Details</li>
-									</ul>
-								</nav>
-							</div>
-						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-						<img className="pt-img2 animate2" src={circleDots} alt="" />
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-					</div>
-				</div>
-
+			<div className="page-content bg-white" style={{ marginTop: 60 }}>
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-8 mb-30">
 								<div className="ttr-media mb-30">
-									<img src={servicesPic1} className="rounded" alt="" />
+									<img src={hospital?.image} className="rounded" alt="" />
 								</div>
 								<div className="clearfix">
 									<div className="head-text mb-30">
-										<h2 className="title mb-15">Why Remote Medical Is So Popular Nowdays</h2>
+										<h2 className="title mb-15">{hospital?.name}</h2>
 										<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
 									</div>
-									<div className="row align-items-center">
-										<div className="col-md-6 mb-30">
-											<ul className="list-check-squer mb-0">
-												<li>Then along come two they</li>
-												<li>That’s just a little bit more than</li>
-												<li>Standard dummy text ever since</li>
-												<li>Simply dummy text of the printing</li>
-												<li>Make a type specimen book</li>
-											</ul>
-										</div>
-										<div className="col-md-6 mb-30">
-											<div className="skillbar-box mb-30">
-												<h6 className="title">Advanced Technology</h6>
-												<div className="skillbar appear">
-													<p className="skillbar-bar" style={{ width: "96%" }}></p>
-													<span className="skill-bar-percent">96%</span>
-												</div>
-											</div>
-											<div className="skillbar-box mb-30">
-												<h6 className="title">Certified Engineers</h6>
-												<div className="skillbar appear">
-													<p className="skillbar-bar" style={{ width: "79%" }}></p>
-													<span className="skill-bar-percent">79%</span>
-												</div>
-											</div>
-											<div className="skillbar-box mb-0">
-												<h6 className="title">6 years Experience</h6>
-												<div className="skillbar appear">
-													<p className="skillbar-bar" style={{ width: "75%" }}></p>
-													<span className="skill-bar-percent">75%</span>
-												</div>
-											</div>
-										</div>
-									</div>
 								</div>
-								<div className="clearfix">
+								<div>
+									{hospital?.content}
+								</div>
+								{/* <div className="clearfix">
 									<div className="head-text mb-30">
 										<h4 className="title mb-10">Popular Questions</h4>
 										<p className="mb-0">Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
@@ -142,18 +97,25 @@ const RsearchDetails = () => {
 											</Accordion.Body>
 										</Accordion.Item>
 									</Accordion>
-								</div>
+								</div> */}
 							</div>
 							<div className="col-lg-4">
 								<aside className="sticky-top pb-1">
 									<div className="widget">
+
+										<h5 className="title-head">Services offered</h5>
 										<ul className="service-menu">
-											<li className="active"><Link to="/service-details"><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Lube Oil and Filters</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Belts and Hoses</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Air Conditioning</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Brake Repair</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
+											{
+												hospital?.services.map(el =>
+													<li><Link to="/service-details"><span>{el}</span></Link></li>
+												)
+											}
+											{/* <li><Link to="/service-details"><span>Engine Diagnostics</span></Link></li>
+											<li><Link to="/service-details"><span>Lube Oil and Filters</span></Link></li>
+											<li><Link to="/service-details"><span>Belts and Hoses</span></Link></li>
+											<li><Link to="/service-details"><span>Air Conditioning</span></Link></li>
+											<li><Link to="/service-details"><span>Brake Repair</span></Link></li>
+											<li><Link to="/service-details"><span>Tire and Wheel Services</span></Link></li> */}
 										</ul>
 									</div>
 									<div className="widget">
@@ -184,7 +146,6 @@ const RsearchDetails = () => {
 
 		</>
 	);
-
 }
 
-export default RsearchDetails;
+export default ServiceDetail;
