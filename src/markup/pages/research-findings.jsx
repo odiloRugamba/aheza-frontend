@@ -20,28 +20,28 @@ const content = [
 	{
 		thumb: blogGridPic1,
 		authorPic: testPic1,
-		title: "Dental Care for Women is very important",
+		title: "How Kayiranga Clement beat depression!",
 		author: "John deo",
 		date: "21 July 2021",
 	},
 	{
 		thumb: blogGridPic2,
 		authorPic: testPic2,
-		title: "In this hospital there are special surgeon",
+		title: "In this hospital there are special therapist",
 		author: "Peter Packer",
 		date: "20 July 2021",
 	},
 	{
 		thumb: blogGridPic3,
 		authorPic: testPic3,
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why is Mental Health Considered Underrated",
 		author: "Sonar Moyna",
 		date: "19 July 2021",
 	},
 	{
 		thumb: blogGridPic4,
 		authorPic: testPic4,
-		title: "Understand Health Before You Regret",
+		title: "Understand Mental Health Before You Regret",
 		author: "Kalina",
 		date: "18 July 2021",
 	}

@@ -25,7 +25,7 @@ const content = [
 		thumb: blogGridPic1,
 		authorPic: testPic1,
 		author: "John deo",
-		title: "In this hospital there are special surgeon",
+		title: "In this hospital there are special therapist",
 		date: "21 July 2021",
 	},
 	{
@@ -39,14 +39,14 @@ const content = [
 		thumb: blogGridPic3,
 		authorPic: testPic3,
 		author: "Sonar Moyna",
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why is Mental Health Considered Underrated",
 		date: "19 July 2021",
 	},
 	{
 		thumb: blogGridPic4,
 		authorPic: testPic4,
 		author: "Kalina Mollika",
-		title: "Dental Care for Women is very important",
+		title: "How Kayiranga Clement beat depression!",
 		date: "18 July 2021",
 	},
 	{

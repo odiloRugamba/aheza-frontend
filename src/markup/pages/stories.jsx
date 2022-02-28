@@ -31,28 +31,28 @@ const content = [
 	{
 		thumb: blogGridPic1,
 		authorPic: testPic1,
-		title: "Dental Care for Women is very important",
+		title: "How Kayiranga Clement beat depression!",
 		author: "John deo",
 		date: "21 July 2021",
 	},
 	{
 		thumb: blogGridPic2,
 		authorPic: testPic2,
-		title: "In this hospital there are special surgeon",
+		title: "In this hospital there are special therapist",
 		author: "Peter Packer",
 		date: "20 July 2021",
 	},
 	{
 		thumb: blogGridPic3,
 		authorPic: testPic3,
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why is Mental Health Considered Underrated",
 		author: "Sonar Moyna",
 		date: "19 July 2021",
 	},
 	{
 		thumb: blogGridPic4,
 		authorPic: testPic4,
-		title: "Understand Health Before You Regret",
+		title: "Understand Mental Health Before You Regret",
 		author: "Kalina",
 		date: "18 July 2021",
 	},
@@ -80,14 +80,14 @@ const content = [
 	{
 		thumb: blogGridPic8,
 		authorPic: testPic2,
-		title: "Why Is Skin Surgeon Considered Underrated",
+		title: "Why is Mental Health Considered Underrated",
 		author: "Kalina",
 		date: "14 July 2021",
 	},
 	{
 		thumb: blogGridPic9,
 		authorPic: testPic3,
-		title: "Everyone need to go Dentist regularly",
+		title: "Why is Mental Health Considered Underrated",
 		author: "Michel",
 		date: "13 July 2021",
 	},
@@ -126,7 +126,7 @@ class BlogGrid extends Component {
 												<Link to="/story"><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title"><Link to="/story">{item.title}</Link></h4>
+												<h5 className="post-title"><Link to="/story">{item.title}</Link></h5>
 												
 												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
