@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getStorys } from "../../store/story/actions";
+import LoadingComp from "../elements/loading";
+
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -108,6 +110,13 @@ const StoriesGrid = () => {
 		setData(res)
 		console.log(res)
 	}, [res])
+	const convertData = (date) => {
+		const day = new Date(date)
+		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
+		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
+		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
+		return `${da}-${mo}-${ye}`
+	}
 
 	return (
 		<>
@@ -132,25 +141,29 @@ const StoriesGrid = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{data?.map((item) => (
-								<div className="col-xl-4 col-md-6">
-									<div className="blog-card mb-30">
-										<div className="post-media" style={{ maxHeight: 210 }}>
-											<Link to="/story"><img src={item.image} alt="" /></Link>
-										</div>
-										<div className="post-info">
-											<h4 className="post-title"><Link to="/story">{item.title}</Link></h4>
+							{data?.length > 0 ?
+								data?.map((item) => (
+									<div className="col-xl-4 col-md-6">
+										<div className="blog-card mb-30">
+											<div className="post-media" style={{ maxHeight: 210 }}>
+												<Link to={"/story/" + item.title + '/' + item._id}><img src={item.image} alt="" /></Link>
+											</div>
+											<div className="post-info">
+												<h4 className="post-title"><Link to={"/story/" + item.title + '/' + item._id}>{item.title}</Link></h4>
 
-											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-												<li className="date"><i className="far fa-calendar-alt"></i> {item.updatedAt}</li>
+												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+													<li className="date"><i className="far fa-calendar-alt"></i>
+														{convertData(item.updatedAt)}
+													</li>
 
-												<Link to={"/story/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-											</ul>
+													<Link to={"/story/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												</ul>
 
+											</div>
 										</div>
 									</div>
-								</div>
-							))}
+								)) : <LoadingComp />
+							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">

@@ -6,20 +6,19 @@ import { getResearchById } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
 // Elements
 import AuthorProfile from "../elements/author-profile";
 import CommentList from "../elements/comments/research-finding";
 import CommentRespond from "../elements/comment-respond";
 import WidgetTag from "../elements/tag-widgets/research-findings";
 import ResearchFindingWidget from "../elements/related-widgets/research-finding";
-
 // Import Images
 import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
 
-const ResearchFindingDetails = () => {
 
-	console.log('hello')
+
+
+const ResearchFindingDetails = () => {
 	const { id } = useParams()
 	const [research, setResearch] = useState(null)
 	const dispatch = useDispatch()
@@ -30,7 +29,6 @@ const ResearchFindingDetails = () => {
 		dispatch(getResearchById(id))
 	}, [])
 	useEffect(() => {
-		console.log(res)
 		setResearch(res)
 	}, [res])
 
@@ -47,16 +45,15 @@ const ResearchFindingDetails = () => {
 							<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 								<div className="blog-card blog-single">
 									<div className="post-media">
-										<img src={blogDefaultPic1} alt="" />
+										{/* <img src={blogDefaultPic1} alt="" /> */}
 									</div>
 									<div className="info-bx">
 										<div className="ttr-post-title">
 											<h3 className="post-title">{research?.title}</h3>
 										</div>
 										<div className="ttr-post-text">
-											<p>
-												{research?.content}
-											</p>
+											<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
+
 										</div>
 										<div className="ttr-post-footer" >
 											<div className="post-tags">
@@ -77,9 +74,6 @@ const ResearchFindingDetails = () => {
 														<Link to="#">{el}</Link>
 													))
 												}
-												{/* <Link to="#">Health</Link>
-												<Link to="#">Growth</Link>
-												<Link to="#">Life</Link> */}
 											</div>
 											<div className="share-post ml-auto">
 												<ul className="social-media mb-0">
@@ -115,7 +109,7 @@ const ResearchFindingDetails = () => {
 
 									<ResearchFindingWidget />
 
-									<WidgetTag tags={research?.tags} />
+									{/* <WidgetTag tags={research?.tags} /> */}
 
 								</aside>
 							</div>

@@ -318,3 +318,17 @@
 		display: none!important;
 	}
 }
+
+.loadingComp{
+	// display: none;
+	position: relative;
+	bottom: 80px;
+	display: flex;
+	width: 100vw;
+	justify-content: center;
+}
+.loadingComp{ 
+	img{
+		height: 500px;
+	}
+}

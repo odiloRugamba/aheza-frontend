@@ -23,6 +23,7 @@ const ServiceDetail = () => {
 	const { id } = useParams()
 	const response = useSelector(state => state?.HospitalReducers?.hospital)
 
+
 	useEffect(() => {
 		dispatch(getHospitalById(id))
 	}, [])
@@ -42,62 +43,9 @@ const ServiceDetail = () => {
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-8 mb-30">
-								<div className="ttr-media mb-30">
-									<img src={hospital?.image} className="rounded" alt="" />
-								</div>
-								<div className="clearfix">
-									<div className="head-text mb-30">
-										<h2 className="title mb-15">{hospital?.name}</h2>
-										<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-									</div>
-								</div>
 								<div>
-									{hospital?.content}
+									<div dangerouslySetInnerHTML={{ __html: hospital?.content }}></div>
 								</div>
-								{/* <div className="clearfix">
-									<div className="head-text mb-30">
-										<h4 className="title mb-10">Popular Questions</h4>
-										<p className="mb-0">Standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-									</div>
-									<Accordion defaultActiveKey="0" className="accordion ttr-accordion1">
-										<Accordion.Item eventKey="0">
-											<Accordion.Header>How Doctor Can Ease Your Pain?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-										<Accordion.Item eventKey="1">
-											<Accordion.Header>How do I withdraw from a subject?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-										<Accordion.Item eventKey="2">
-											<Accordion.Header>Understand Doctor Before You Regret?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-										<Accordion.Item eventKey="3">
-											<Accordion.Header>What types of systems do you support?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-										<Accordion.Item eventKey="4">
-											<Accordion.Header>We Teach You How To Feel Better?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-										<Accordion.Item eventKey="5">
-											<Accordion.Header>How Can I Contact You?</Accordion.Header>
-											<Accordion.Body>
-												<p className="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-											</Accordion.Body>
-										</Accordion.Item>
-									</Accordion>
-								</div> */}
 							</div>
 							<div className="col-lg-4">
 								<aside className="sticky-top pb-1">
@@ -110,12 +58,6 @@ const ServiceDetail = () => {
 													<li><Link to="/service-details"><span>{el}</span></Link></li>
 												)
 											}
-											{/* <li><Link to="/service-details"><span>Engine Diagnostics</span></Link></li>
-											<li><Link to="/service-details"><span>Lube Oil and Filters</span></Link></li>
-											<li><Link to="/service-details"><span>Belts and Hoses</span></Link></li>
-											<li><Link to="/service-details"><span>Air Conditioning</span></Link></li>
-											<li><Link to="/service-details"><span>Brake Repair</span></Link></li>
-											<li><Link to="/service-details"><span>Tire and Wheel Services</span></Link></li> */}
 										</ul>
 									</div>
 									<div className="widget">

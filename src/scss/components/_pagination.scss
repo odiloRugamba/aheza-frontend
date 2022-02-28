@@ -12,28 +12,29 @@
 .pagination {
     padding: 10px 0;
 	display: block;
-	li{
-		display:inline-block;
-		padding: 0 4px;
+	// .AllPbtn{
+	// 	display:inline-block;
+	// 	padding: 0 4px;
+	// }
+	.AllPbtn{
+		margin: 0px 3px;
 	}
-	& > li{
-		&:first-child{
-			& > a,
-			& > span{
+	.paginationCont{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+.previous{
 				border-bottom-left-radius: 0;
 				border-top-left-radius: 0;
 				margin-left: 0;
 			}
-		}
-		&:last-child{
-			& > a,
-			& > span{
+
+		.next{
 				border-bottom-right-radius: 0;
 				border-top-right-radius: 0;
-			}
 		}
-		& > a,
-		& > span{
+		.AllPbtn{
 			background-color: #fff;
 			color: $primary;
 			padding: 12px 15px;
@@ -44,34 +45,33 @@
 			display: block;			
 			border-radius: $border-radius-base!important;
 			border: 2px solid rgba($primary,0.2);
-			
-			@include transitionMedium;
-			
-			&:hover{
-				border-color: transparent;
-				color: #fff;
-			}
-			@include respond('phone'){
-				padding: 10px 15px;
-			}
+			cursor: pointer;
+
 		}
-	}
-	& > .active{
-		& > a,
-		& > span,
-		& > a:hover,
-		& > span:hover,
-		& > a:focus,
-		& > span:focus {
+		.PBtns{
+				padding: 12px 15px;
+			min-width: 40px;
+			z-index: 30;
+			cursor: pointer;
+		}
+		.PBtns:hover{
+border-color: transparent;
+			background: rgba($primary,0.9);
+			color: #fff;
+		}
+		.BtnActive{
 			border-color: transparent;
+			background: rgba($primary,0.9);
+			color: #fff;
 		}
 	}
 	@include respond('phone'){
-		li{
+		.AllPbtn{
 			margin: 0;
 		}
 	}
-}
+
+
 
 // Pagination SM
 .pagination-sm{

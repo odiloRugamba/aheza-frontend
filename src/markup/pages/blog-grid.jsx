@@ -2,6 +2,8 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getBlogs } from "../../store/blog/actions";
 import { useDispatch, useSelector } from "react-redux";
+import LoadingComp from "../elements/loading";
+
 
 // Layout
 import Header from "../layout/header";
@@ -104,14 +106,21 @@ const BlogGrid = () => {
 	const blogs = useSelector(state => state.BlogsReducers.data)
 
 	useEffect(() => {
-		console.log('holl')
+		// console.log('holl')
 		dispatch(getBlogs())
 	}, [])
 
 	useEffect(() => {
-		console.log('dd', blogs)
+		// console.log('dd', blogs)
 		setdata(blogs)
 	}, [blogs])
+	const convertData = (date) => {
+		const day = new Date(date)
+		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
+		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
+		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
+		return `${da}-${mo}-${ye}`
+	}
 
 	return (
 		<>
@@ -122,25 +131,30 @@ const BlogGrid = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{data?.map((item) => (
-								<div className="col-xl-4 col-md-6">
-									<div className="blog-card mb-30">
-										<div className="post-media" style={{ maxHeight: 210 }}>
-											<Link to={"/blog-grid/" + item.title + '/' + item._id}><img src={testPic1} alt="" /></Link>
-										</div>
-										<div className="post-info">
-											<h4 className="post-title max-lines-2"><Link to="/blog-details">{item.title}</Link></h4>
+							{data?.length > 0 ?
+								data?.map((item) => (
+									<div className="col-xl-4 col-md-6">
+										<div className="blog-card mb-30">
+											<div className="post-media" style={{ maxHeight: 210 }}>
+												<Link to={"/blog-grid/" + item.title + '/' + item._id} ><img src={testPic1} alt="" /></Link>
+											</div>
+											<div className="post-info">
+												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title + '/' + item._id}>{item.title}</Link></h4>
 
-											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-												<li className="date"><i className="far fa-calendar-alt"></i> {item.updatedAt}</li>
+												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+													<li className="date"><i className="far fa-calendar-alt"></i>
+														{/* {item.updatedAt} */}
+														{convertData(item?.updatedAt)}
+													</li>
 
-												<Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-											</ul>
+													<Link to={"/blog-grid/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												</ul>
 
+											</div>
 										</div>
 									</div>
-								</div>
-							))}
+								)) : <LoadingComp />
+							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">

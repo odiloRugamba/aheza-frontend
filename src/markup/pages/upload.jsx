@@ -41,6 +41,13 @@ const UploadsDetails = () => {
 		setUpload(res)
 		console.log(res)
 	}, [res])
+	const convertData = (date) => {
+		const day = new Date(date)
+		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
+		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
+		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
+		return `${da}-${mo}-${ye}`
+	}
 
 	return (
 		<>
@@ -81,13 +88,13 @@ const UploadsDetails = () => {
 									</div>
 									<div className="info-bx">
 										<ul className="post-meta">
-											<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
+											<li className="date"><i className="far fa-calendar-alt"></i>{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
 										</ul>
 										<div className="ttr-post-title">
 											<h2 className="post-title">{upload?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
-											{upload?.content}
+											<div dangerouslySetInnerHTML={{ __html: upload?.content }}></div>
 											{/* <p>You just need to enter the keyword and select the keyword type to generate a list of 6 title ideas and suggestions. If you’re not satisfied with the results, you can always hit the refresh button to generate a new list of unique titles.</p>
 											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 											<ul className="wp-block-gallery columns-6 is-cropped">
@@ -102,7 +109,7 @@ const UploadsDetails = () => {
 											<div className="post-tags">
 												<strong>Tags:</strong>
 												{
-													upload?.tags.map(el => (
+													upload?.tags?.map(el => (
 														<Link to="#">{el}</Link>
 													))
 												}

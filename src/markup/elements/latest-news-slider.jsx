@@ -97,7 +97,7 @@ const LatestNewsSection = ({ title }) => {
 						{content.map((item) => (
 							<div className="slider-item">
 								<div className="blog-card">
-									<div className="post-media" style={{maxHeight: 210}}>
+									<div className="post-media" style={{ maxHeight: 210 }}>
 										<Link to="/story"><img src={item.thumb} alt="" /></Link>
 									</div>
 									<div className="post-info">
@@ -106,7 +106,7 @@ const LatestNewsSection = ({ title }) => {
 											<li className="date"><i className="far fa-calendar-alt"></i>{item.date}</li>
 										</ul> */}
 										<h5 className="post-title"><Link to="/story">{item.title}</Link></h5>
-										<Link to="/story" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+										<Link to="/stories" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 									</div>
 								</div>
 							</div>
