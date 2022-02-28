@@ -106,14 +106,13 @@ const BlogGrid = () => {
 	const blogs = useSelector(state => state.BlogsReducers.data)
 
 	useEffect(() => {
-		// console.log('holl')
 		dispatch(getBlogs())
 	}, [])
 
 	useEffect(() => {
-		// console.log('dd', blogs)
 		setdata(blogs)
 	}, [blogs])
+
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);

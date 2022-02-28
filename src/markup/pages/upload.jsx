@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getUploadById } from "../../store/uploads/actions";
+import { getUploadById, getUploads } from "../../store/uploads/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -29,18 +29,26 @@ import galleryPic5 from "../../images/gallery/pic5.jpg";
 
 const UploadsDetails = () => {
 	const [upload, setUpload] = useState([])
+	const [data, setData] = useState([])
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.UploadsReducers.upload)
+	const resRel = useSelector(state => state.UploadsReducers.data)
 	const { id } = useParams()
 
 	useEffect(() => {
 		dispatch(getUploadById(id))
+		dispatch(getUploads())
 	}, [])
 
 	useEffect(() => {
 		setUpload(res)
-		console.log(res)
 	}, [res])
+
+	useEffect(() => {
+		const revData = resRel?.reverse()
+		setData(revData?.slice(0, 3))
+	}, [resRel])
+
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
@@ -151,7 +159,7 @@ const UploadsDetails = () => {
 
 									{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-									<WidgetRecentPosts title="Recent Stories" />
+									<WidgetRecentPosts data={data} currentPage="/upload/" title="Recent Stories" />
 								</aside>
 							</div>
 						</div>

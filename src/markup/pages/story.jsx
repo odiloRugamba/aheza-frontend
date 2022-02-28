@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getStorysById } from "../../store/story/actions";
+import { getStorysById, getStorys } from "../../store/story/actions";
 
 // Layout
 import Header from "../layout/header";
@@ -29,19 +29,27 @@ import galleryPic5 from "../../images/gallery/pic5.jpg";
 
 
 const StoryDetails = () => {
+	const [data, setData] = useState([])
 	const [story, setStory] = useState(null)
 	const dispatch = useDispatch()
 	const { id } = useParams()
 	const res = useSelector(state => state.StorysReducers.story)
+	const resRel = useSelector(state => state.StorysReducers.data)
 
 	useEffect(() => {
 		dispatch(getStorysById(id))
+		dispatch(getStorys())
 	}, []);
 
 	useEffect(() => {
-		console.log(res)
 		setStory(res)
 	}, [res])
+
+	useEffect(() => {
+		const revData = resRel?.reverse()
+		console.log(revData)
+		setData(revData?.slice(0, 3))
+	}, [resRel])
 	return (
 		<>
 
@@ -124,7 +132,7 @@ const StoryDetails = () => {
 
 									{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-									<WidgetRecentPosts title="Recent Stories" />
+									<WidgetRecentPosts currentPage="/story/" data={data} title="Recent Stories" />
 								</aside>
 							</div>
 						</div>

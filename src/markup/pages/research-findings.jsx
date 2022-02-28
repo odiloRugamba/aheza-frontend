@@ -544,7 +544,6 @@ const ResearchFindings = () => {
 	}, [])
 
 	useEffect(() => {
-		console.log(research)
 		setData(research)
 		setPageCount(content.length / postPerPage)
 		setPageData(content.slice(0, postPerPage))

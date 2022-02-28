@@ -106,10 +106,11 @@ const StoriesGrid = () => {
 	useEffect(() => {
 		dispatch(getStorys())
 	}, []);
+
 	useEffect(() => {
 		setData(res)
-		console.log(res)
 	}, [res])
+
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
@@ -117,6 +118,7 @@ const StoriesGrid = () => {
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
 	}
+
 
 	return (
 		<>

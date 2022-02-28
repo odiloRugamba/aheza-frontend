@@ -68,9 +68,10 @@ class Header extends Component {
 									<Link to="/"><img src={logo} alt="" /></Link>
 								</div>
 								<button className="navbar-toggler collapsed menuicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+									{/* <span></span>
 									<span></span>
-									<span></span>
-									<span></span>
+									<span></span> */}
+									hello
 								</button>
 								<div className="secondary-menu">
 									<ul>

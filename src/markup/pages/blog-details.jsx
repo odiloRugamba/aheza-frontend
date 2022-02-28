@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { getblogById } from "../../store/blog/actions";
+import { getblogById, getBlogs } from "../../store/blog/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -27,17 +27,24 @@ const BlogDetails = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
 	const blogs = useSelector(state => state.BlogsReducers.blog)
+	const resData = useSelector(state => state.BlogsReducers.data)
 	const [blogItem, setBlogItem] = useState(null)
+	const [relData, setRelData] = useState([])
 
 	useEffect(() => {
-		console.log('dssdhgdsjg')
 		dispatch(getblogById(id))
+		dispatch(getBlogs())
 	}, []);
 
 	useEffect(() => {
-		// console.log(blogs)
 		setBlogItem(blogs)
+
 	}, [blogs])
+
+	useEffect(() => {
+		const revData = resData?.reverse()
+		setRelData(revData?.slice(0, 3))
+	}, [resData])
 
 
 	return (
@@ -110,7 +117,7 @@ const BlogDetails = () => {
 
 									{/* <WidgetSearch /> */}
 
-									<WidgetRelatedPosts />
+									<WidgetRelatedPosts data={relData} />
 
 									{/* <WidgetTag tags={blogItem?.tags} /> */}
 

@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getResearchById } from "../../store/research/actions";
+import { getResearchById, getResearchs } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -21,16 +21,25 @@ import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
 const ResearchFindingDetails = () => {
 	const { id } = useParams()
 	const [research, setResearch] = useState(null)
+	const [reletedData, setReletedData] = useState([])
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.ResearchReducers.research)
+	const resetResearch = useSelector(state => state.ResearchReducers.data)
 
 
 	useEffect(() => {
 		dispatch(getResearchById(id))
+		dispatch(getResearchs())
 	}, [])
 	useEffect(() => {
 		setResearch(res)
 	}, [res])
+
+	useEffect(() => {
+		const relData = resetResearch?.reverse()
+		setReletedData(relData?.slice(0, 3))
+	}, [resetResearch])
+
 
 	return (
 		<>
@@ -70,7 +79,7 @@ const ResearchFindingDetails = () => {
 											<div className="post-tags">
 												<strong>Tags:</strong>
 												{
-													research?.tags.map(el => (
+													research?.tags?.map(el => (
 														<Link to="#">{el}</Link>
 													))
 												}
@@ -107,7 +116,7 @@ const ResearchFindingDetails = () => {
 							<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 								<aside className="side-bar sticky-top aside-bx">
 
-									<ResearchFindingWidget />
+									<ResearchFindingWidget data={reletedData} />
 
 									{/* <WidgetTag tags={research?.tags} /> */}
 
