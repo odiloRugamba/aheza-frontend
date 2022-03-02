@@ -26,14 +26,13 @@ class ContactUs extends Component{
 				
 				<Header />
 				
-				<div className="page-content bg-white">
+				<div className="page-content bg-white" style={{paddingTop: 60}}>
 					
 					<div className="banner-wraper">
 						<div className="page-banner banner-lg contact-banner" style={{backgroundImage: "url("+bnrImg1+")", maxHeight: 400}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
 									<h2>Contact Us</h2>
-									
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={animateWave} alt=""/>

@@ -19,7 +19,7 @@ class Services extends Component {
 
 				<Header />
 
-				<div className="page-content bg-white">
+				<div className="page-content bg-white" style={{paddingTop: 60}}>
 
 					<div className="banner-wraper">
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>

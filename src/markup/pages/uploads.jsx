@@ -127,13 +127,11 @@ class Uploads extends Component {
 											</div>
 											<div className="post-info">
 												<h5 className="post-title"><Link to="/upload">{item.title}</Link></h5>
-												
 												<ul className="post-meta" style={{justifyContent: 'space-between'}}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
 													
 													<Link to="/upload" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
-												
 											</div>
 										</div>
 									</div>
