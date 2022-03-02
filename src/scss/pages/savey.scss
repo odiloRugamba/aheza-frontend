@@ -1,0 +1,52 @@
+.saveyCont{
+ .container{
+  width: 40vw;
+  margin-bottom: 40px;
+ }
+ .questionCont ul{
+  margin-left: 30px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+ }
+ .questionCont ul li{
+  line-height: 35px;
+  display: flex;
+  align-items: center;
+ }
+ .questionCont ul li span{
+  margin-top: 6px;
+ }
+ .checkBox{
+  margin-right: 7px;
+ }
+ .checkBox input{
+  cursor: pointer;
+ }
+ .changeQuestionBtn{
+  display: flex;
+  justify-content: space-between;
+ }
+ .positionBtn{
+  	background-color: #fff;
+			color: $primary;
+			padding: 12px 15px;
+			font-weight: 600;
+			font-size: 14px;
+			min-width: 40px;
+			line-height: 1;
+			display: block;			
+			border-radius: $border-radius-base!important;
+			border: 2px solid rgba($primary,0.2);
+			cursor: pointer;
+ }
+ .positionBtn:hover{
+ border-color: transparent;
+			background: rgba($primary,0.9);
+			color: #fff;
+ }
+ .rowCont{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+}

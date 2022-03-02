@@ -1,5 +1,12 @@
 /* ==================
 	8.4 Appointment
+	form-group
+	align-items-center
+	row
+	container
+	container-fluid
+	appointment-inner
+	form-control
 =================== */
 .account-wraper1{
     padding-bottom: 100px;
@@ -11,6 +18,11 @@
 	}
 	@include respond('phone-land'){
 		background-color: lighten($primary,40);
+	}
+	.rowAppo{
+		display: flex;
+		position: relative;
+		left: -200px;
 	}
 	
 	.pt-img1{
@@ -72,6 +84,8 @@
 .form-wraper{
 	.form-group {
 		margin-bottom: 20px;
+		display: flex;
+		justify-content: space-between;
 	}
 	.form-select.bootstrap-select{
 		padding: 0;
@@ -131,7 +145,7 @@
 		font-weight: 500;
 		font-size: 16px;
 		color: #000;
-		
+		margin-left: 5px;
 		&:active,
 		&:focus,
 		&:hover{

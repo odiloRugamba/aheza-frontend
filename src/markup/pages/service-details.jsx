@@ -30,7 +30,7 @@ const ServiceDetail = () => {
 	}, [])
 
 	useEffect(() => {
-		console.log(res)
+		// console.log(res)
 		setService(res)
 	}, [res]);
 

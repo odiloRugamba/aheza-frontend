@@ -34,7 +34,7 @@ class BookAppointment extends Component {
 
 				{/* <VisionSection/> */}
 
-				<hr style={{color: "white"}}/>
+				<hr style={{ color: "white" }} />
 
 				<AppointmentSection />
 
