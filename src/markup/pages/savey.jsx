@@ -39,7 +39,7 @@ const SaveyPage = () => {
      <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
       <div className="container">
        <div className="page-banner-entry text-center">
-        <h2>savey</h2>
+        <h2>survey</h2>
        </div>
       </div>
       <img className="pt-img1 animate-wave" src={animateWave} alt="" />
