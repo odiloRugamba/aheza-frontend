@@ -52,6 +52,9 @@ function Header() {
 	const openNavbar = () => {
 		setClassesList("menu-links  navbar-collapse collapse justify-content-end show")
 	}
+	const closeNavBar = () => {
+		setClassesList("menu-links  navbar-collapse collapse justify-content-end")
+	}
 
 	return (
 		<>
@@ -109,14 +112,12 @@ function Header() {
 								<span></span>
 								<span></span>
 							</button>
-
 							<div className="secondary-menu">
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
 									<li className="btn-area"><Link to="/book-appointment" className="btn btn-primary shadow">Book appointment<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
 								</ul>
 							</div>
-
 							<div className={classesList} id="menuDropdown">
 								<div className="menu-logo">
 									{/* <Link to="/"><img src={logoWhite} alt="" /></Link> */}
@@ -127,7 +128,7 @@ function Header() {
 										<Link to="#">Services <i className="fa fa-plus"></i>
 										</Link>
 										<ul className="sub-menu ">
-											<li className="add-menu-left open">
+											<li className="add-menu-left tab-port">
 												<ul>
 													<li><Link to="/our-services"><span>Our services</span> </Link></li>
 													<li><Link to="/other-institutions-services"><span>Other institutions</span></Link></li>
@@ -135,7 +136,6 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-
 									<li className={mediaActive}>
 										<Link to="#">Media <i className="fas fa-plus"></i></Link>
 										<ul className="sub-menu">
@@ -148,15 +148,10 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
-									{/* <li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li> */}
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 									<li className={contactUsActive}><Link to="/savey">savey</Link></li>
-
-
-
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
@@ -164,19 +159,16 @@ function Header() {
 									<li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/" className="btn btn-primary"><i className="fab fa-linkedin-in"></i></a></li>
 									<li><a target="_blank" rel="noreferrer" href="https://twitter.com/" className="btn btn-primary"><i className="fab fa-twitter"></i></a></li>
 								</ul>
-								<div className="menu-close" id="menuClose">
+								<div onClick={() => closeNavBar()} className="menu-close" id="menuClose">
 									<i className="ti-close"></i>
 								</div>
 							</div>
 						</div>
 					</div>
 				</Sticky>
-
 			</header>
-
 		</>
 	);
-
 }
 {/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */ }
 

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { getBlogs } from "../../store/blog/actions";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingComp from "../elements/loading";
+import ReactPaginate from "react-paginate";
+import EmptyComp from "../elements/empyt";
 
 
 // Layout
@@ -102,7 +104,9 @@ const BlogGrid = () => {
 	const dispatch = useDispatch()
 	const [data, setdata] = useState([])
 	const dateFormat = moment().format('llll')
-
+	const postPerPage = 4
+	const [PageCount, setPageCount] = useState(10)
+	const [pageData, setPageData] = useState([])
 	const blogs = useSelector(state => state.BlogsReducers.data)
 
 	useEffect(() => {
@@ -111,6 +115,8 @@ const BlogGrid = () => {
 
 	useEffect(() => {
 		setdata(blogs)
+		setPageCount(blogs?.length / postPerPage)
+		setPageData(blogs?.slice(0, postPerPage))
 	}, [blogs])
 
 	const convertData = (date) => {
@@ -119,6 +125,12 @@ const BlogGrid = () => {
 		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
+	}
+	const changePage = (page) => {
+		const endingPoint = (page.selected + 1) * postPerPage
+		const statingPoint = endingPoint - postPerPage
+		setPageData(null)
+		setPageData(blogs.slice(statingPoint, endingPoint))
 	}
 
 	return (
@@ -130,8 +142,8 @@ const BlogGrid = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{data?.length > 0 ?
-								data?.map((item) => (
+							{pageData?.length > 0 ?
+								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media" style={{ maxHeight: 210 }}>
@@ -142,28 +154,35 @@ const BlogGrid = () => {
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i>
-														{/* {item.updatedAt} */}
 														{convertData(item?.updatedAt)}
 													</li>
-
 													<Link to={"/blog-grid/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
-
 											</div>
 										</div>
 									</div>
-								)) : <LoadingComp />
+								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no blogs for now" />
 							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="pagination-bx text-center mb-30 clearfix">
 									<ul className="pagination">
-										<li className="previous"><Link to="#">Prev</Link></li>
-										<li className="active"><Link to="#">1</Link></li>
-										<li><Link to="#">2</Link></li>
-										<li><Link to="#">3</Link></li>
-										<li className="next"><Link to="#">Next</Link></li>
+										{
+											pageData?.length && data?.length > postPerPage ?
+												<ReactPaginate
+													previousLabel="Prev"
+													nextLabel="Next"
+													pageCount={PageCount}
+													onPageChange={(page) => { changePage(page) }}
+													containerClassName="paginationCont pointer"
+													previousClassName="previous AllPbtn pointer"
+													nextClassName='next AllPbtn pointer'
+													pageClassName="PBtns AllPbtn pointer"
+													activeClassName="BtnActive pointer"
+													pageRangeDisplayed={3}
+												/> : null
+										}
 									</ul>
 								</div>
 							</div>

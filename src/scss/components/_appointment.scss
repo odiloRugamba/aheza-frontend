@@ -4,12 +4,14 @@
 	align-items-center
 	row
 	container
-	container-fluid
+section-sp2
 	appointment-inner
-	form-control
+	
+
 =================== */
 .account-wraper1{
     padding-bottom: 100px;
+				overflow-x:hidden;
 	.appointment-inner{
 		background-color: lighten($primary,40);
 		border-radius:40px;
@@ -22,7 +24,7 @@
 	.rowAppo{
 		display: flex;
 		position: relative;
-		left: -200px;
+		// left: -200px;
 	}
 	
 	.pt-img1{
@@ -170,6 +172,7 @@
 		}
 	}
 }
+
 .appointment-form{
 	background-color:$white;
 	box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
@@ -373,7 +376,7 @@
 		}
 	}
 	@include respond('laptop-small'){
-		width: 650px;
+		width: 550px;
 		margin-left: 0;
 	}
 	@include respond('tab-land'){
@@ -408,5 +411,33 @@
 		.appointment-form{
 			padding: 30px;
 		}
+	}
+}
+@media only screen and  (max-width: 943px ){
+.appointment-thumb{
+	display: none!important;
+}
+}
+@media screen and  (max-width: 557px ){
+	.form-wraper{
+	.form-group{
+		display: block;
+		input{
+			margin-top: 12px;
+			width: 77vw;
+		}
+		select{
+			margin-top: 12px;
+		}
+	}}
+	.container{
+		position: relative;
+		// left: -10px;
+	}
+}
+@media screen and  (max-width: 400px ){
+	.container{
+		position: relative;
+		left: -5px;
 	}
 }

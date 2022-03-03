@@ -25,7 +25,6 @@ const Index = () => {
 	}, []);
 	useEffect(() => {
 		setData(res)
-		// console.log(res)
 	}, [res])
 	return (
 		<>
@@ -51,7 +50,7 @@ const Index = () => {
 
 			{/* <TestimonialSection /> */}
 
-			<LatestNewsSection data={data} title="Aheza News" />
+			<LatestNewsSection content={data} title="Aheza News" />
 
 			<SocialMediaSection />
 			<Footer />

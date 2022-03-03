@@ -31,6 +31,7 @@
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
     "react-stickynode": "^4.0.0",
+    "react-swipeable-views": "^0.14.0",
     "react-twitter-widgets": "^1.10.0",
     "react-visibility-sensor": "^5.1.1",
     "redux": "^4.1.2",

@@ -22,30 +22,8 @@ class BookAppointment extends Component {
 			<>
 
 				<Header />
-
-				{/* <MainBannerSection /> */}
-
-				{/* <AboutSection /> */}
-
-
-				{/* <WorkSection /> */}
-
-				{/* <hr/> */}
-
-				{/* <VisionSection/> */}
-
 				<hr style={{ color: "white" }} />
-
 				<AppointmentSection />
-
-				{/* <ServicesSliderSection /> */}
-
-				{/* <TestimonialSection /> */}
-
-				{/* <LatestNewsSection title="Aheza News" /> */}
-
-				{/* <SocialMediaSection/> */}
-
 				<Footer />
 
 			</>

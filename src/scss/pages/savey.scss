@@ -1,12 +1,43 @@
+// contact-wraper
+// row
 .saveyCont{
+ span{
+  overflow: hidden;
+ }
  .container{
-  width: 40vw;
+  // width: 45vw;
+  width: 700px;
   margin-bottom: 40px;
  }
+
+ @media screen  and (max-width: 594px){
+   .container{
+  width: 90vw;
+ }
+ .changeQuestionBtn{
+  margin-bottom: 20px;
+ }
+ }
+ @media screen  and (max-width: 594px){
+ .container{
+  width: 95vw;
+ }
+}
+@media screen  and (max-width: 370px){
+ .contact-wraper{
+  padding-left: 5px;
+ }
+ .questionCont ul li{
+  position: relative;
+  // left: -20px;
+ }
+}
  .questionCont ul{
   margin-left: 30px;
   margin-top: 15px;
   margin-bottom: 30px;
+  overflow: hidden;
+
  }
  .questionCont ul li{
   line-height: 35px;
@@ -25,6 +56,7 @@
  .changeQuestionBtn{
   display: flex;
   justify-content: space-between;
+  overflow: hidden;
  }
  .positionBtn{
   	background-color: #fff;
@@ -38,6 +70,8 @@
 			border-radius: $border-radius-base!important;
 			border: 2px solid rgba($primary,0.2);
 			cursor: pointer;
+   overflow: hidden;
+   z-index: 10;
  }
  .positionBtn:hover{
  border-color: transparent;
@@ -48,5 +82,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
  }
 }
+// changeQuestionBtn

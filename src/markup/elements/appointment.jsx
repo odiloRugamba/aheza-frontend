@@ -21,26 +21,11 @@ const AboutSection = () => {
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
 					<div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
 						<div className="container">
-							<div className="rowAppo ">
-								{/* align-items-center */}
+							<div className="rowAppo">
 								<div className="col-xl-8 col-lg-12 col-md-12">
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book Appointment</h3>
 										<form action="#">
-											{/* <div className="form-group">
-												<select className="form-select form-control">
-													<option selected>Selecty Department</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
-												</select>
-												<select className="form-select form-control">
-													<option selected>Selecty Department</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
-												</select>
-											</div> */}
 											<div className="form-group">
 												<input type="text" className="form-control" placeholder="First Name" />
 												<input type="text" className="form-control" placeholder="last Name" />
@@ -98,11 +83,10 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<img className="pt-img1 animate1" src={ptImg1} alt="" />
+						{/* <img className="pt-img1 animate1" src={ptImg1} alt="" /> */}
 						{/* <img className="pt-img2 animate-wave" src={ptImg2} alt=""/>
 							<img className="pt-img3 animate-wave" src={ptImg3} alt=""/> */}
 						{/* <img className="pt-img4 animate2" src={ptImg4} alt=""/> */}
-
 					</div>
 
 				</div>

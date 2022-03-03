@@ -1,9 +1,8 @@
 import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-// import Carousel from 'flat-carousel';
-// Layout
+import SwipeableViews from 'react-swipeable-views';
+
+
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
@@ -23,10 +22,17 @@ import animateRotate from "../../images/shap/plus-blue.png";
 
 const SaveyPage = () => {
  const [startSavey, setStartSavey] = useState(false)
-
+ const [pageIndex, setPageIndex] = useState(0)
 
  const startSaveyFunc = () => {
   setStartSavey(true)
+ }
+ const nextAPrevFunc = (item) => {
+  if (item === 'prev' && pageIndex !== 0) {
+   setPageIndex(pageIndex - 1)
+  } else if (item === 'next' && pageIndex !== 1) {
+   setPageIndex(pageIndex + 1)
+  }
  }
  return (
   <>
@@ -73,52 +79,96 @@ const SaveyPage = () => {
           </form>
          </div>
         </div> :
-         // < Carousel>
-         <div className="row">
-          <div className="page-banner-entry text-center">
-           <h6>What As for WASM, my compiler will require Rust to run in the  do?</h6>
-          </div>
-          <div className='questionCont'>
-           <ul>
-            <li>
-             <span className='checkBox'>
+         <SwipeableViews index={pageIndex} enableMouseEvents>
+          <div className="row">
+           <div className="page-banner-entry text-center">
+            <h6>What As, my compiler will require Rust to run in the  do?</h6>
+           </div>
+           <div className='questionCont'>
+            <ul>
+             <li>
+              <span className='checkBox'>
+               <input type="checkbox" id="scales" name="scales"
+               />
+              </span>
+              I've feeling drepressed
+             </li>
+             <li><span className='checkBox'>
               <input type="checkbox" id="scales" name="scales"
               />
-             </span>
-             I've feeling drepressed
-            </li>
-            <li><span className='checkBox'>
-             <input type="checkbox" id="scales" name="scales"
-             />
-            </span>I feel anxious or overwhelmed</li>
-            <li><span className='checkBox'>
-             <input type="checkbox" id="scales" name="scales"
-             />
-            </span>I am greving</li>
-            <li><span className='checkBox'>
-             <input type="checkbox" id="scales" name="scales"
-             />
-            </span>I have exprerienced trauma</li>
-            <li><span className='checkBox'>
-             <input type="checkbox" id="scales" name="scales"
-             />
-            </span>I want to gain self confidence</li>
-            <li><span className='checkBox'>
-             <input type="checkbox" id="scales" name="scales"
-             />
-            </span>just exploring</li>
-           </ul>
-          </div>
-          <div className='changeQuestionBtn'>
-           <div>
-            <button className='positionBtn'>Prevs</button>
+             </span>I feel anxious or overwhelmed</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I am greving</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I have exprerienced trauma</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I want to gain self confidence</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>just exploring</li>
+            </ul>
            </div>
-           <div>
-            <button className='positionBtn'>Next</button>
+           <div className='changeQuestionBtn'>
+            <div>
+             <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>Prevs</button>
+            </div>
+            <div>
+             <button onClick={() => nextAPrevFunc("next")} className='positionBtn'>Next</button>
+            </div>
            </div>
           </div>
-         </div>
-        // </Carousel>
+          <div className="row">
+           <div className="page-banner-entry text-center">
+            <h6>What As, my compiler will require Rust to run in the  do?</h6>
+           </div>
+           <div className='questionCont'>
+            <ul>
+             <li>
+              <span className='checkBox'>
+               <input type="checkbox" id="scales" name="scales"
+               />
+              </span>
+              I've feeling drepressed
+             </li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I feel anxious or overwhelmed</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I am greving</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I have exprerienced trauma</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>I want to gain self confidence</li>
+             <li><span className='checkBox'>
+              <input type="checkbox" id="scales" name="scales"
+              />
+             </span>just exploring</li>
+            </ul>
+           </div>
+           <div className='changeQuestionBtn'>
+            <div>
+             <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>Prevs</button>
+            </div>
+            <div>
+             <button onClick={() => nextAPrevFunc("next")} className='positionBtn'>Next</button>
+            </div>
+           </div>
+          </div>
+         </SwipeableViews>
        }
       </div>
      </div>
@@ -130,5 +180,7 @@ const SaveyPage = () => {
   </>
  );
 }
+
+
 
 export default SaveyPage;
