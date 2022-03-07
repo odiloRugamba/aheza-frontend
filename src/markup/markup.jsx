@@ -35,7 +35,7 @@ import Stories from "./pages/stories";
 import Uploads from "./pages/uploads";
 import Upload from "./pages/upload";
 import ReasearchFindingDetails from './pages/research-finding-details'
-import saveyPage from './pages/savey'
+import SurveyPage from './pages/surveyy'
 
 
 class Markup extends Component {
@@ -73,7 +73,8 @@ class Markup extends Component {
 						<ProtectRoute path='/uploads' exact component={Uploads} />
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
-						<ProtectRoute path='/savey' exact component={saveyPage} />
+						{/* <ProtectRoute path='/surveyy' exact component={SurveyPage} /> */}
+						<ProtectRoute path='/survey' exact component={SurveyPage} />
 						<Route component={Error} />
 
 					</Switch>

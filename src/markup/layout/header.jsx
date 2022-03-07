@@ -11,6 +11,8 @@ import facebook from "../../images/facebook.svg"
 import logoWhite from '../../images/logo-white.png';
 function Header() {
 	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
+	const [openService, setOpenService] = useState(null)
+	const [openMedia, setOpenMedia] = useState(null)
 	const location = useLocation();
 	const route = location.pathname;
 	let homeActive = "";
@@ -56,6 +58,23 @@ function Header() {
 		setClassesList("menu-links  navbar-collapse collapse justify-content-end")
 	}
 
+	const openMenu = (item) => {
+		if (item === "media") {
+			if (openMedia === "open") {
+				setOpenMedia(null)
+			} else {
+				setOpenMedia("open")
+				setOpenService(null)
+			}
+		} else {
+			if (openService === "open") {
+				setOpenService(null)
+			} else {
+				setOpenService("open")
+				setOpenMedia(null)
+			}
+		}
+	}
 	return (
 		<>
 			<header className="header header-transparent rs-nav">
@@ -124,7 +143,7 @@ function Header() {
 								</div>
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
-									<li className={ourServicesActive}>
+									<li onClick={() => { openMenu("service") }} className={ourServicesActive, openService}>
 										<Link to="#">Services <i className="fa fa-plus"></i>
 										</Link>
 										<ul className="sub-menu ">
@@ -136,10 +155,10 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-									<li className={mediaActive}>
+									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
 										<Link to="#">Media <i className="fas fa-plus"></i></Link>
 										<ul className="sub-menu">
-											<li className="add-menu-left">
+											<li className="add-menu-left ">
 												<ul>
 													<li><Link to="/research-findings"><span>Research</span></Link></li>
 													<li><Link to="/stories"><span>Stories</span></Link></li>
@@ -151,7 +170,7 @@ function Header() {
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-									<li className={contactUsActive}><Link to="/savey">savey</Link></li>
+									{/* <li className={contactUsActive}><Link to="/survey">Survey</Link></li> */}
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
