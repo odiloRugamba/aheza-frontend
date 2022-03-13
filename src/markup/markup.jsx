@@ -74,7 +74,7 @@ class Markup extends Component {
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
 						{/* <ProtectRoute path='/surveyy' exact component={SurveyPage} /> */}
-						<ProtectRoute path='/survey' exact component={SurveyPage} />
+						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
 						<Route component={Error} />
 
 					</Switch>

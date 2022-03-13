@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const URL = "http://localhost:9000/api"
-const IMAGEURL = 'http://localhost:9000/api/uploads'
+const URL = "http://localhost:9001/api"
+const IMAGEURL = 'http://localhost:9001/api/uploads'
 
 const request = async (method, url, data, headers) => {
  try {

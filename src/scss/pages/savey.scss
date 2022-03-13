@@ -1,5 +1,7 @@
 // contact-wraper
-// positionBtn
+// radioBtn
+
+
 .saveyCont{
  span{
   overflow: hidden;
@@ -125,6 +127,7 @@
 .checkBtn{
   cursor: pointer;
 }
+
 .radioBtn input:checked + span{
   background: url('../images/check.png');
 	background-repeat: no-repeat;
@@ -132,11 +135,25 @@
 	background-size:19px 19px;
   border: none;
 }
+.CheckBoxBtn input{
+  	height:19px;
+	width:19px;
+  margin-top: 7px;
+}
  .thnk-par{
    margin: 40px 0px;
    p{
      font-size: 13.5px;
      text-align: left;
+   }
+ }
+ .textAreaCont{
+   textarea{
+   border: 2px solid #bfbfbf;
+   border-radius: 6px;
+   padding-left: 6px;
+   padding-top: 5px;
+   font-size: 14px;
    }
  }
 }
@@ -156,7 +173,9 @@
     width: 5;
     padding: 30px;
     border-radius: 10px;
-    width: 40vw;
+    width: 1000px;
+    max-height: 93vh;
+    // overflow-y: scroll;
   }
   .mainPartCont{
   position: fixed;
@@ -165,7 +184,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  top: 50px;
+  top: 30px;
   z-index: 8000;
   }
   .mainContent{
