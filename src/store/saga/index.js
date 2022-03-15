@@ -5,3 +5,4 @@ export { ServicesSagas } from '../services/saga';
 export { StorysSagas } from '../story/saga';
 export { UploadsSagas } from '../uploads/saga';
 export { surveSagas } from '../survey/saga';
+export { AppointmentSagas } from '../appointment/saga';

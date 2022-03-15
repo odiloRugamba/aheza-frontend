@@ -204,7 +204,6 @@ const SaveyPage = () => {
         })
       }
     });
-    // console.log(answerCopy)
     dispatch(answerQuestion({
       survey: id,
       name,
@@ -212,6 +211,7 @@ const SaveyPage = () => {
       phoneNumber,
       questions: answerCopy
     }))
+    history.push('/')
   }
   const CloseModel = () => {
     setModel(false)

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-
+import React, { Component, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from "react-redux";
 // Images
 import lineBg from '../../images/appointment/line-bg.png';
 import appMobile from '../../images/appointment/mobile.png';
@@ -8,12 +8,74 @@ import appMapPin from '../../images/appointment/map-pin.png';
 import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
-import ptImg1 from '../../images/shap/trangle-orange.png';
-import ptImg2 from '../../images/shap/wave-orange.png';
-import ptImg3 from '../../images/shap/wave-blue.png';
-import ptImg4 from '../../images/shap/circle-orange.png';
+import { getDoctorByDay } from "../../store/appointment/actions";
 
 const AboutSection = () => {
+
+	// formData
+	const [firstName, setFirstName] = useState(null)
+	const [lastName, setLastName] = useState(null)
+	const [gender, setGender] = useState(null)
+	const [dateB, setDateB] = useState(null)
+	const [phoneNumber, setPhoneNumber] = useState(null)
+	const [insuranceId, setInsuranceId] = useState(null)
+	const [email, setEmail] = useState(null)
+	const [nationId, setNationId] = useState(null)
+	const [selectedDay, setSelectedDay] = useState(null)
+	const [selectDoctorIn, setSelectDoctorIn] = useState(null)
+	const [selectSession, setSelectSession] = useState(null)
+
+
+	const [dateCha, setDateCha] = useState(null)
+	const [Session, setSession] = useState(true)
+	const [Doctor, setDoctor] = useState(true)
+	const [DoctorData, setDoctorData] = useState([])
+	const [sessionData, setSessionData] = useState([])
+	const dispatch = useDispatch()
+	const data = useSelector(state => state.AppointmentReducers.data)
+
+	const selectday = (e) => {
+		setSelectedDay(e.target.value)
+		setDoctor(true)
+		setSession(true)
+		dispatch(getDoctorByDay({ day: e.target.value }))
+	}
+
+	const selectDoctor = (e) => {
+		setSelectDoctorIn(e.target.value)
+		setSession(true)
+		DoctorData.forEach(el => {
+			if (el._id === e.target.value) {
+				setSessionData(el.dailySession)
+			}
+		})
+		setSession(false)
+	}
+
+	useEffect(() => {
+		console.log(data)
+		if (data?.length > 0) {
+			setDoctor(false)
+			setDoctorData([...data])
+		}
+	}, [data])
+
+
+	const submitAppointment = () => {
+		console.log(firstName)
+		console.log(lastName)
+		console.log(gender)
+		console.log(dateB)
+		console.log(phoneNumber)
+		console.log(insuranceId)
+		console.log(email)
+		console.log(nationId)
+		console.log(selectedDay)
+		console.log(selectDoctorIn)
+		console.log(selectSession)
+	}
+
+
 
 	return (
 		<>
@@ -27,45 +89,58 @@ const AboutSection = () => {
 										<h3 className="title">Book Appointment</h3>
 										<form action="#">
 											<div className="form-group">
-												<input type="text" className="form-control" placeholder="First Name" />
-												<input type="text" className="form-control" placeholder="last Name" />
+												<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
+												<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
 											</div>
 											<div className="form-group">
-												<select className="form-select form-control">
+												<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
 													<option selected>Gender </option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+													<option value="1">Male</option>
+													<option value="2">Female</option>
+													<option value="3">Not to mention</option>
 												</select>
-												<input type="date" className="form-control" placeholder='date of Birth' />
+												<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
 											</div>
 											<div className="form-group">
-												<select className="form-select form-control">
+												<input value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
+												<input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" />
+											</div>
+											<div className="form-group">
+												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
+											</div>
+											<div className="form-group">
+												<input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" />
+												<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
 													<option selected>Select Day</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+													<option value="MONDAY">Monday</option>
+													<option value="TUESDAY">Tuesday</option>
+													<option value="WENSDAY">Wensday</option>
+													<option value="THUSDAY">Thusday</option>
+													<option value="FRIDAY">Friday</option>
+													<option value="SATURDAY">Saturday</option>
+													<option value="SUNDAY">Sunday</option>
 												</select>
-												<select className="form-select form-control">
+											</div>
+											<div className="form-group">
+												<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
 													<option selected>Select Doctor</option>
-													<option value="1">One</option>
-													<option value="2">Two</option>
-													<option value="3">Three</option>
+													{
+														DoctorData.map(el =>
+															<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>
+														)
+													}
+												</select>
+												<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>
+													<option selected>Select Session</option>
+													{
+														sessionData?.map(el =>
+															el.status === "AVAILABLE" ?
+																<option value={el._id}>Session({el.startTime} - {el.endTime})</option> : null
+														)
+													}
 												</select>
 											</div>
-
-											<div className="form-group">
-												<input type="number" className="form-control" placeholder="Phone Numbers" />
-												<input type="number" className="form-control" placeholder="Insurance  ID" />
-											</div>
-											<div className="form-group">
-												<input type="email" className="form-control" placeholder="ID" />
-												<input type="email" className="form-control" placeholder="Email" />
-											</div>
-											{/* <div className="form-group">
-												<input type="date" className="form-control" />
-											</div> */}
-											<button type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
+											<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
 										</form>
 									</div>
 								</div>
@@ -83,12 +158,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						{/* <img className="pt-img1 animate1" src={ptImg1} alt="" /> */}
-						{/* <img className="pt-img2 animate-wave" src={ptImg2} alt=""/>
-							<img className="pt-img3 animate-wave" src={ptImg3} alt=""/> */}
-						{/* <img className="pt-img4 animate2" src={ptImg4} alt=""/> */}
 					</div>
-
 				</div>
 			</section>
 

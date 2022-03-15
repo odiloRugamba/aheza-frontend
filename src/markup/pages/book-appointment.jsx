@@ -10,7 +10,7 @@ import SelfEvaluation from "../elements/selfEvaluation";
 
 
 const BookAppointment = () => {
-	const [selfCheckup, setSelfCheckup] = useState(true)
+	const [selfCheckup, setSelfCheckup] = useState(false)
 	const declineSelfEvaluation = () => {
 		setSelfCheckup(false)
 	}
@@ -19,13 +19,11 @@ const BookAppointment = () => {
 	}
 	return (
 		<>
-
 			{
 				selfCheckup ? <SelfEvaluation decline={declineSelfEvaluation} accept={acceptSelfEvaluation} /> : <> 	<Header />
 					<hr style={{ color: "white" }} />
 					<AppointmentSection /> <Footer /></>
 			}
-
 		</>
 	);
 }
