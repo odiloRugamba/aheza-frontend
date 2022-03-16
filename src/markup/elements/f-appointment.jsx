@@ -85,8 +85,8 @@ const AboutSection = () => {
             <p>
              From our vast database of information about mental health, you can find anything you are looking for
              From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
+             {/* From our vast database of information about mental health, you can find anything you are looking for
+             From our vast database of information about mental health, you can find anything you are looking for */}
             </p>
 
             <div>
