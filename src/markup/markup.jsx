@@ -36,7 +36,8 @@ import Uploads from "./pages/uploads";
 import Upload from "./pages/upload";
 import ReasearchFindingDetails from './pages/research-finding-details'
 import SurveyPage from './pages/surveyy'
-
+import FinalizeAppointment from "./pages/fianilaze-appointment";
+import Thankyou from "./pages/thankyou";
 
 class Markup extends Component {
 	render() {
@@ -75,6 +76,8 @@ class Markup extends Component {
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
 						{/* <ProtectRoute path='/surveyy' exact component={SurveyPage} /> */}
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
+						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
+						<ProtectRoute path='/thankyou' exact component={Thankyou} />
 						<Route component={Error} />
 
 					</Switch>

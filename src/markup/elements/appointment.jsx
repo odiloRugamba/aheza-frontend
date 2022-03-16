@@ -1,5 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 // Images
 import lineBg from '../../images/appointment/line-bg.png';
 import appMobile from '../../images/appointment/mobile.png';
@@ -8,7 +9,7 @@ import appMapPin from '../../images/appointment/map-pin.png';
 import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
-import { getDoctorByDay } from "../../store/appointment/actions";
+import { getDoctorByDay, createAppointment } from "../../store/appointment/actions";
 
 const AboutSection = () => {
 
@@ -18,13 +19,13 @@ const AboutSection = () => {
 	const [gender, setGender] = useState(null)
 	const [dateB, setDateB] = useState(null)
 	const [phoneNumber, setPhoneNumber] = useState(null)
-	const [insuranceId, setInsuranceId] = useState(null)
+	const [communicationMethod, setCommunicationMethod] = useState(null)
 	const [email, setEmail] = useState(null)
 	const [nationId, setNationId] = useState(null)
 	const [selectedDay, setSelectedDay] = useState(null)
 	const [selectDoctorIn, setSelectDoctorIn] = useState(null)
 	const [selectSession, setSelectSession] = useState(null)
-
+	const history = useHistory()
 
 	const [dateCha, setDateCha] = useState(null)
 	const [Session, setSession] = useState(true)
@@ -62,17 +63,20 @@ const AboutSection = () => {
 
 
 	const submitAppointment = () => {
-		console.log(firstName)
-		console.log(lastName)
-		console.log(gender)
-		console.log(dateB)
-		console.log(phoneNumber)
-		console.log(insuranceId)
-		console.log(email)
-		console.log(nationId)
-		console.log(selectedDay)
-		console.log(selectDoctorIn)
-		console.log(selectSession)
+		dispatch(createAppointment({
+			firstName,
+			lastName,
+			gender,
+			dateObirth: dateB,
+			phoneNumber,
+			CommunicationMethod: communicationMethod,
+			email,
+			nationId,
+			AppointmentDay: selectedDay,
+			doctor: selectDoctorIn,
+			session: selectSession
+		}))
+		history.push('/Finalize')
 	}
 
 
@@ -87,61 +91,69 @@ const AboutSection = () => {
 								<div className="col-xl-8 col-lg-12 col-md-12">
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book Appointment</h3>
-										<form action="#">
-											<div className="form-group">
-												<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
-												<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
-											</div>
-											<div className="form-group">
-												<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
-													<option selected>Gender </option>
-													<option value="1">Male</option>
-													<option value="2">Female</option>
-													<option value="3">Not to mention</option>
-												</select>
-												<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
-											</div>
-											<div className="form-group">
-												<input value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
-												<input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" />
-											</div>
-											<div className="form-group">
-												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
-											</div>
-											<div className="form-group">
-												<input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" />
-												<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
-													<option selected>Select Day</option>
-													<option value="MONDAY">Monday</option>
-													<option value="TUESDAY">Tuesday</option>
-													<option value="WENSDAY">Wensday</option>
-													<option value="THUSDAY">Thusday</option>
-													<option value="FRIDAY">Friday</option>
-													<option value="SATURDAY">Saturday</option>
-													<option value="SUNDAY">Sunday</option>
-												</select>
-											</div>
-											<div className="form-group">
-												<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
-													<option selected>Select Doctor</option>
-													{
-														DoctorData.map(el =>
-															<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>
-														)
-													}
-												</select>
-												<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>
-													<option selected>Select Session</option>
-													{
-														sessionData?.map(el =>
-															el.status === "AVAILABLE" ?
-																<option value={el._id}>Session({el.startTime} - {el.endTime})</option> : null
-														)
-													}
-												</select>
-											</div>
-											<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
-										</form>
+										{/* <form action="#"> */}
+										<div className="form-group">
+											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
+											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
+										</div>
+										<div className="form-group">
+											<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
+												<option selected>Gender </option>
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
+												<option value="NONE">Not to mention</option>
+											</select>
+											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
+										</div>
+										<div className="form-group">
+											<input value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
+											<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
+											{/* <input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" /> */}
+										</div>
+										<div className="form-group">
+											{/* <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" /> */}
+											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
+												<option selected>Method of Communication</option>
+												<option value="INPERSON">In Person</option>
+												<option value="PHONECALL">Phone Call</option>
+												<option value="ZOOMCALL">Zoom Video Call</option>
+												<option value="AHEZACHAT">Aheza Call</option>
+											</select>
+										</div>
+										<div className="form-group">
+											<input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" />
+											<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
+												<option selected>Select Day</option>
+												<option value="MONDAY">Monday</option>
+												<option value="TUESDAY">Tuesday</option>
+												<option value="WENSDAY">Wensday</option>
+												<option value="THUSDAY">Thusday</option>
+												<option value="FRIDAY">Friday</option>
+												<option value="SATURDAY">Saturday</option>
+												<option value="SUNDAY">Sunday</option>
+											</select>
+										</div>
+										<div className="form-group">
+											<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
+												<option selected>Select Doctor</option>
+												{
+													DoctorData.map(el =>
+														<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>
+													)
+												}
+											</select>
+											<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>
+												<option selected>Select Session</option>
+												{
+													sessionData?.map(el =>
+														el.status === "AVAILABLE" ?
+															<option value={"Session" + el.startTime + '-' + el.endTime}>Session({el.startTime} - {el.endTime})</option> : null
+													)
+												}
+											</select>
+										</div>
+										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
+										{/* </form> */}
 									</div>
 								</div>
 								<div className="col-xl-2 col-lg-6 col-md-6">
