@@ -88,55 +88,11 @@ const AboutSection = () => {
              From our vast database of information about mental health, you can find anything you are looking for
              From our vast database of information about mental health, you can find anything you are looking for
             </p>
-            <div className='questionCont'>
-             <ul>
-              <li>
-               <span className='checkBox'>
-                <label className='radioBtn'>
-                 <input type="radio" id="scales" />
-                 <span />
-                </label>
-               </span>
-               <div>
-                <div className="textRepresent">Weakly Payment:</div>
-                <div className='title text-secondary mb-1'>RWF 10,000</div>
-               </div>
-              </li>
-             </ul>
-            </div>
-            <div className='questionCont'>
-             <ul>
-              <li>
-               <span className='checkBox'>
-                <label className='radioBtn'>
-                 <input type="radio" id="scales" />
-                 <span />
-                </label>
-               </span>
-               <div>
-                <div className="textRepresent">Mouthly Payment:</div>
-                <div className="title text-secondary mb-1">RWF 30,000</div>
-               </div>
-              </li>
-             </ul>
-            </div>
-            <div className='questionCont'>
-             <ul>
-              <li>
-               <span className='checkBox'>
-                <label className='radioBtn'>
-                 <input type="radio" id="scales" />
-                 <span />
-                </label>
-               </span>
-               <div>
-                <div className="textRepresent">Year Payment:</div>
-                <div className="title text-secondary mb-1">RWF 300,000</div>
-               </div>
-              </li>
-             </ul>
-            </div>
 
+            <div>
+             <div className="textRepresent">Session Payment:</div>
+             <div className='title text-secondary mb-1'>RWF 10,000</div>
+            </div>
            </div>
            <div>
            </div>

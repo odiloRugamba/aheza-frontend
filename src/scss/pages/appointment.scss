@@ -24,12 +24,14 @@
   // padding-left:3px;
   border-radius: 4px;
   max-width: 400px;
+  border: 1px dashed black;
+
   // position: relative;
  }
  .questionCont ul li:hover{
    padding: 0px;
   // padding-left:3px;
-  border: 1px dashed black;
+  border: 1px solid black;
  }
  .questionCont ul li a{
   padding-right: 8px;
