@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getblogById, getBlogs } from "../../store/blog/actions";
+import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -14,11 +15,6 @@ import CommentRespond from "../elements/comment-respond";
 import WidgetTag from "../elements/widget-tag";
 import WidgetRelatedPosts from "../elements/related-widgets/blog";
 
-// Import Images
-import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
-import testPic3 from "../../images/testimonials/pic3.jpg";
-import galleryPic2 from "../../images/gallery/pic2.jpg";
-import galleryPic5 from "../../images/gallery/pic5.jpg";
 import { NavItem } from 'react-bootstrap';
 
 
@@ -46,6 +42,7 @@ const BlogDetails = () => {
 		setRelData(revData?.slice(0, 3))
 	}, [resData])
 
+	
 
 	return (
 		<>
@@ -60,19 +57,19 @@ const BlogDetails = () => {
 							<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 								<div className="blog-card blog-single">
 									<div className="post-media">
-										{/* <img src={blogDefaultPic1} alt="" /> */}
+										<img src={Dcore.IMAGEURL + "/" + blogItem?.image} alt="" />
 									</div>
 									<div className="info-bx">
 										<div className="ttr-post-title">
 											<h2 className="post-title">{blogItem?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
-											<div dangerouslySetInnerHTML={{ __html: blogItem?.content }}></div>
+											<div dangerouslySetInnerHTML={{ __html: blogItem?.content,  }}></div>
 										</div>
-										<ul className="post-meta">
+										{/* <ul className="post-meta">
 											<li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
 											<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
-										</ul>
+										</ul> */}
 										<div className="ttr-post-footer">
 											<div className="post-tags">
 												<strong>Tags:</strong>

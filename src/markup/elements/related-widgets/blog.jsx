@@ -38,33 +38,7 @@ const WidgetRelatedPosts = ({ title, data }) => {
 							</div>
 						) : null
 					}
-
-
-					{/* <div className="widget-post clearfix">
-						<div className="ttr-post-media"> <img src={recentBlogImg2} width="200" height="160" alt="" /> </div>
-						<div className="ttr-post-info">
-							<div className="ttr-post-header">
-								<h6 className="post-title"><Link to="/blog-details">Ten Doubts You Should Clarify About.</Link></h6>
-							</div>
-							<ul className="post-meta">
-								<li className="date"><i className="far fa-calendar-alt"></i> 20 July 2021</li>
-							</ul>
-						</div>
-					</div> */}
-
-					{/* <div className="widget-post clearfix">
-						<div className="ttr-post-media"> <img src={recentBlogImg3} width="200" height="160" alt="" /> </div>
-						<div className="ttr-post-info">
-							<div className="ttr-post-header">
-								<h6 className="post-title"><Link to="/blog-details">The 10 Steps Needed For Putting.</Link></h6>
-							</div>
-							<ul className="post-meta">
-								<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
-							</ul>
-						</div>
-					</div> */}
-
-					<div className="more"> <Link to="/testimonials" className="more-text">More</Link> </div>
+					<div className="more"> <Link to="/blog-grid" className="more-text">More</Link> </div>
 				</div>
 			</div>
 

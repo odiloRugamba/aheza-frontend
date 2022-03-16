@@ -590,15 +590,15 @@ const ResearchFindings = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media" style={{ maxHeight: 210 }}>
-												<Link to={"/research-finding/" + item.title + '/' + item._id}><img src={item.image} alt="" /></Link>
+												<Link to={"/research-finding/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}><img src={item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title + '/' + item._id} >{item.title}</Link></h4>
+												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title ?.replaceAll(" ","-")+ '/' + item._id} >{item.title}</Link></h4>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {
 														convertData(item?.updatedAt)
 													}</li>
-													<Link to={"/research-finding/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/research-finding/" + item.title ?.replaceAll(" ","-")+ '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 											</div>
 										</div>
