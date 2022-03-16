@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { getblogById, getBlogs } from "../../store/blog/actions";
+import { getblogById, getBlogs, getBlogComment, postblogComment } from "../../store/blog/actions";
 import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
@@ -24,17 +24,19 @@ const BlogDetails = () => {
 	const dispatch = useDispatch()
 	const blogs = useSelector(state => state.BlogsReducers.blog)
 	const resData = useSelector(state => state.BlogsReducers.data)
+	const resComents = useSelector(state => state.BlogsReducers.comments)
 	const [blogItem, setBlogItem] = useState(null)
 	const [relData, setRelData] = useState([])
+	const [coments, setComnets] = useState([])
 
 	useEffect(() => {
 		dispatch(getblogById(id))
 		dispatch(getBlogs())
+		dispatch(getBlogComment(id))
 	}, []);
 
 	useEffect(() => {
 		setBlogItem(blogs)
-
 	}, [blogs])
 
 	useEffect(() => {
@@ -42,7 +44,18 @@ const BlogDetails = () => {
 		setRelData(revData?.slice(0, 3))
 	}, [resData])
 
-	
+	useEffect(() => {
+		console.log('jhsdkhsdkhdskjhsdhkjh')
+		console.log(resComents)
+		setComnets(resComents)
+	}, [resComents])
+
+	const submitFunc = (data) => {
+		console.log(data)
+		dispatch(postblogComment({ ...data, blog: id }))
+	}
+
+
 
 	return (
 		<>
@@ -64,7 +77,7 @@ const BlogDetails = () => {
 											<h2 className="post-title">{blogItem?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
-											<div dangerouslySetInnerHTML={{ __html: blogItem?.content,  }}></div>
+											<div dangerouslySetInnerHTML={{ __html: blogItem?.content, }}></div>
 										</div>
 										{/* <ul className="post-meta">
 											<li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
@@ -101,9 +114,9 @@ const BlogDetails = () => {
 
 										<div className="clearfix">
 
-											<CommentList />
+											<CommentList coments={coments} />
 
-											<CommentRespond />
+											<CommentRespond submit={submitFunc} />
 
 										</div>
 									</div>

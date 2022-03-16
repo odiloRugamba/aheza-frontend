@@ -38,6 +38,7 @@ import ReasearchFindingDetails from './pages/research-finding-details'
 import SurveyPage from './pages/surveyy'
 import FinalizeAppointment from "./pages/fianilaze-appointment";
 import Thankyou from "./pages/thankyou";
+import SelfAssesement from "./pages/self-assesemt";
 
 class Markup extends Component {
 	render() {
@@ -78,6 +79,7 @@ class Markup extends Component {
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
 						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
+						<ProtectRoute path='/self-assesement' exact component={SelfAssesement} />
 						<Route component={Error} />
 
 					</Switch>

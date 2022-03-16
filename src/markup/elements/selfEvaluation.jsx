@@ -108,7 +108,7 @@ const SelftEvaluation = ({ decline, accept }) => {
       if (el._id === id) {
         el.multipleChoice.map(elem => {
           if (elem.answer === ans) {
-            console.log(ans)
+            // console.log(ans)
             elem.checked = true
           } else if (elem.checked === true) {
             elem.checked = false

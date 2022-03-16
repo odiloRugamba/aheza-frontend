@@ -21,7 +21,7 @@ class aboutSection extends Component {
 							<div className="col-lg-7 col-md-6 col-sm-7">
 								<h6 className="title-ext text-primary"> Get yourself help today</h6>
 								<h1>We Provide healing and career services online and on-site</h1>
-								<Link to="/book-appointment" className="btn btn-secondary btn-lg shadow">Book an appointment</Link>
+								<Link to="/self-assesement" className="btn btn-secondary btn-lg shadow">Self-assement</Link>
 							</div>
 							<div className="col-lg-5 col-md-6 col-sm-5">
 								<div className="banner-img">
