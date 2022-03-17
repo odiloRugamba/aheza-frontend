@@ -8,3 +8,4 @@ export { surveSagas } from '../survey/saga';
 export { AppointmentSagas } from '../appointment/saga';
 export { selfAssessmentSaga } from '../selfAssessment/saga';
 export { LinksSagas } from '../links/saga';
+export { DoctorsSagas } from '../doctor/saga';

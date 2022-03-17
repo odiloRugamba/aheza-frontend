@@ -7,9 +7,9 @@ const CommentRespond = ({ placeholder, submit }) => {
 	const [comment, setComment] = useState(null)
 	const localSubmit = () => {
 		submit({ comment, email, name })
-		setName(null)
-		setEmail(null)
-		setComment(null)
+		setName('')
+		setEmail('')
+		setComment('')
 	}
 
 	return (
