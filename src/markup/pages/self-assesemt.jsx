@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
-import { getQuestions, answerQuestion } from "../../store/survey/actions";
+import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions";
 
 
 import Header from "../layout/header";
@@ -27,6 +27,7 @@ const SaveyPage = () => {
  const [title, setTitle] = useState(null)
  const [report, setReport] = useState(null)
  const [opendEndedAns, setOpendEndedAns] = useState(null)
+ const [id, setId] = useState(null)
  const [onBehalfQuestion, setonBehalfQuestion] = useState([
   { name: "Individual", checked: true, id: 1 },
   { name: "Couple", checked: false, id: 2 },
@@ -39,11 +40,12 @@ const SaveyPage = () => {
 
  const [data, setData] = useState([])
  const history = useHistory()
- const { id } = useParams()
+ // const { id } = useParams()
  const dispatch = useDispatch()
- const resData = useSelector(state => state.SurveyReducers.data)
+ const resData = useSelector(state => state.SelfAssessmentReducers.data)
 
  const startSaveyFunc = () => {
+  dispatch(getQuestions('CHILD'))
   setStartSavey(true)
  }
  const nextAPrevFunc = (item, questionType, dataItem) => {
@@ -152,7 +154,7 @@ const SaveyPage = () => {
    }
   });
   dispatch(answerQuestion({
-   survey: id,
+   selfAssessment: id,
    name,
    email,
    phoneNumber,
@@ -163,13 +165,14 @@ const SaveyPage = () => {
  const CloseModel = () => {
   setModel(false)
  }
- useEffect(() => {
-  dispatch(getQuestions(id))
- }, [])
+ // useEffect(() => {
+ //  dispatch(getQuestions(id))
+ // }, [])
  useEffect(() => {
   setQuestions(resData?.questions)
   setReport(resData?.explanation)
   setTitle(resData?.title)
+  setId(resData?._id)
  }, [resData])
 
  return (

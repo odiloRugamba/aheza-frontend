@@ -1,20 +1,30 @@
 import React, { Component, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 import { useLocation } from 'react-router-dom'
 
+// book
 // Images
 import logo from '../../images/logo-2.png';
 import twitterLogo from "../../images/twitter.svg"
 import instagramLogo from "../../images/instagram.svg"
 import facebook from "../../images/facebook.svg"
 import logoWhite from '../../images/logo-white.png';
+
 function Header() {
 	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
 	const [openService, setOpenService] = useState(null)
+	const [model, setModel] = useState(false)
 	const [openMedia, setOpenMedia] = useState(null)
+	const [emgNumber, setEmgNumber] = useState([
+		{ background: " #da751c", number: 'Call 1024', title: 'NH Rapid Response' },
+		{ background: "#7d5787", number: '(+250) 788 315 809', title: 'Schedule an Appointment' },
+		{ background: "#006991", number: '(+250) 788 315 809', title: 'Main Office Line' }
+	])
 	const location = useLocation();
 	const route = location.pathname;
+	const history = useHistory()
+
 	let homeActive = "";
 	if (route === "/") {
 		homeActive = "active"
@@ -75,6 +85,10 @@ function Header() {
 			}
 		}
 	}
+	const onChangeRoute = (link) => {
+		history.push(link)
+		setModel(false)
+	}
 	return (
 		<>
 			<header className="header header-transparent rs-nav">
@@ -134,7 +148,7 @@ function Header() {
 							<div className="secondary-menu">
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
-									<li className="btn-area"><Link to="/book-appointment" className="btn btn-primary shadow">Book appointment<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow">Get Help Now<i className="btn-icon-bx fas fa-chevron-right"></i></a></li>
 								</ul>
 							</div>
 							<div className={classesList} id="menuDropdown">
@@ -186,6 +200,40 @@ function Header() {
 					</div>
 				</Sticky>
 			</header>
+			{
+				model ? <div className='headerCont'>
+					<div className='modelCont'>
+						<div onClick={() => onChangeRoute('/book-appointment')} className='backGround'></div>
+						<div className='mainPartCont'>
+							<div className='mainPart'>
+								<div className='rowCont'>
+									<div className="col-lg-0 mb-0">
+										<div className="page-banner-entry text-center">
+											<h5>If this is an Emergency, Call 1024</h5>
+										</div>
+										<div className='mainContent'>
+											{
+												emgNumber?.map(el =>
+													<div style={{ background: el?.background }} className='boxCont'>
+														<div className='title'>{el?.title}</div>
+														<div>{el?.number}</div>
+													</div>
+												)
+											}
+										</div>
+										<div className="appontiCont page-banner-entry text-center">
+											<div>To book an appointment from website <span onClick={() => onChangeRoute('/book-appointment')}>Click Here</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> : null
+			}
+
+
+
 		</>
 	);
 }

@@ -6,3 +6,5 @@ export { StorysSagas } from '../story/saga';
 export { UploadsSagas } from '../uploads/saga';
 export { surveSagas } from '../survey/saga';
 export { AppointmentSagas } from '../appointment/saga';
+export { selfAssessmentSaga } from '../selfAssessment/saga';
+export { LinksSagas } from '../links/saga';

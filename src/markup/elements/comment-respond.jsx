@@ -5,6 +5,12 @@ const CommentRespond = ({ placeholder, submit }) => {
 	const [name, setName] = useState(null)
 	const [email, setEmail] = useState(null)
 	const [comment, setComment] = useState(null)
+	const localSubmit = () => {
+		submit({ comment, email, name })
+		setName(null)
+		setEmail(null)
+		setComment(null)
+	}
 
 	return (
 		<>
@@ -24,7 +30,7 @@ const CommentRespond = ({ placeholder, submit }) => {
 						<textarea value={comment} onChange={(e) => setComment(e.target.value)} rows="8" name="comment" placeholder={placeholder ? placeholder : "Comment"} id="comment"></textarea>
 					</p>
 					<p className="form-submit">
-						<input onClick={() => submit({ comment, email, name })} type="submit" value="Submit Comment" className="submit" id="submit" name="submit" />
+						<input onClick={() => localSubmit()} type="submit" value="Submit Comment" className="submit" id="submit" name="submit" />
 					</p>
 				</div>
 			</div>

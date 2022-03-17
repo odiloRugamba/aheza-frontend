@@ -60,9 +60,8 @@ const UploadsDetails = () => {
 		return `${da}-${mo}-${ye}`
 	}
 	const submitFunc = (data) => {
-		console.log(data)
+		// console.log(data)
 		dispatch(postUploadCommnets({ ...data, upload: id }))
-
 	}
 
 	return (
