@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 import { getStorys } from "../../store/story/actions";
 import { useDispatch, useSelector } from "react-redux";
-
+import { Dcore } from "../../api/index";
 
 // Import Images
 import lingBg2 from "../../images/background/line-bg2.png"
@@ -24,27 +24,27 @@ import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 
 // Team Content
 const content = [
-	// {
-	// 	thumb: blogGridPic1,
-	// 	authorPic: testPic1,
-	// 	author: "John deo",
-	// 	title: "In this hospital there are special surgeon",
-	// 	date: "21 July 2021",
-	// },
-	// {
-	// 	thumb: blogGridPic2,
-	// 	authorPic: testPic2,
-	// 	author: "Peter Packer",
-	// 	title: "Can you get a diflucan prescription online?",
-	// 	date: "20 July 2021",
-	// },
-	// {
-	// 	thumb: blogGridPic3,
-	// 	authorPic: testPic3,
-	// 	author: "Sonar Moyna",
-	// 	title: "Why Is Skin Surgeon Considered Underrated",
-	// 	date: "19 July 2021",
-	// },
+	{
+		thumb: blogGridPic1,
+		authorPic: testPic1,
+		author: "John deo",
+		title: "In this hospital there are special surgeon",
+		date: "21 July 2021",
+	},
+	{
+		thumb: blogGridPic2,
+		authorPic: testPic2,
+		author: "Peter Packer",
+		title: "Can you get a diflucan prescription online?",
+		date: "20 July 2021",
+	},
+	{
+		thumb: blogGridPic3,
+		authorPic: testPic3,
+		author: "Sonar Moyna",
+		title: "Why Is Skin Surgeon Considered Underrated",
+		date: "19 July 2021",
+	},
 	// {
 	// 	thumb: blogGridPic4,
 	// 	authorPic: testPic4,
@@ -63,7 +63,7 @@ const content = [
 
 const LatestNewsSection = ({ title, content }) => {
 
-
+	console.log(content)
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -85,6 +85,9 @@ const LatestNewsSection = ({ title, content }) => {
 			}
 		]
 	};
+	const openNewWindow = (link) => {
+		window.open(link)
+	}
 
 
 
@@ -95,26 +98,27 @@ const LatestNewsSection = ({ title, content }) => {
 				<div className="container">
 					<div className="heading-bx text-center">
 						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
-						<h2 className="title">Stories</h2>
+						<h2 className="title">Links</h2>
 					</div>
 					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
 
-						<div className="slider-item">
-							{/* {console.log('ccjcj', item)} */}
+						{/* <div className="slider-item"> */}
+						{content?.map((item) => (
 							<div className="blog-card">
-								{content?.map((item) => (
-									<div>
-										<div className="post-media" style={{ maxHeight: 210 }}>
-											<Link to="/story"><img src={item.image} alt="" /></Link>
-										</div>
-										<div className="post-info">
-											<h5 className="post-title"><Link to="/story">{item?.title}</Link></h5>
-											<Link to="/stories" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-										</div>
+
+								<div>
+									<div className="post-media" style={{ maxHeight: 210 }}>
+										<a onClick={() => openNewWindow(item.link)} ><img src={Dcore.IMAGEURL + '/' + item.image} alt="" /></a>
 									</div>
-								))}
+									<div className="post-info">
+										<h5 className="post-title" style={{ "text-overflow": "ellipsis", height: '90px', overflow: "hidden" }}><a onClick={() => openNewWindow(item.link)}>{item?.title}</a></h5>
+										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+									</div>
+								</div>
 							</div>
-						</div>
+
+						))}
+						{/* </div> */}
 					</Slider>
 				</div>
 				<img className="pt-img1 animate1" src={animate1} alt="" />

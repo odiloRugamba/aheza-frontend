@@ -17,9 +17,9 @@ function Header() {
 	const [model, setModel] = useState(false)
 	const [openMedia, setOpenMedia] = useState(null)
 	const [emgNumber, setEmgNumber] = useState([
-		{ background: " #da751c", number: 'Call (833) 710-6477', title: 'NH Rapid Response' },
-		{ background: "#7d5787", number: 'Call (603) 668-4111', title: 'Schedule an Appointment' },
-		{ background: "#006991", number: 'Call (603) 668-4111', title: 'Main Office Line' }
+		{ background: " #da751c", number: 'Call 1024', title: 'NH Rapid Response' },
+		{ background: "#7d5787", number: '(+250) 788 315 809', title: 'Schedule an Appointment' },
+		{ background: "#006991", number: '(+250) 788 315 809', title: 'Main Office Line' }
 	])
 	const location = useLocation();
 	const route = location.pathname;
@@ -209,7 +209,7 @@ function Header() {
 								<div className='rowCont'>
 									<div className="col-lg-0 mb-0">
 										<div className="page-banner-entry text-center">
-											<h5>If this is an Emergency, Call 911</h5>
+											<h5>If this is an Emergency, Call 1024</h5>
 										</div>
 										<div className='mainContent'>
 											{

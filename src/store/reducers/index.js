@@ -8,6 +8,7 @@ import { UploadsReducers } from "../uploads/reducers";
 import { SurveyReducers } from "../survey/reducers";
 import { AppointmentReducers } from "../appointment/reducers";
 import { SelfAssessmentReducers } from "../selfAssessment/reducers";
+import { linksReducers } from "../links/reducers";
 
 const RootReducer = combineReducers({
  BlogsReducers,
@@ -18,7 +19,8 @@ const RootReducer = combineReducers({
  UploadsReducers,
  SurveyReducers,
  AppointmentReducers,
- SelfAssessmentReducers
+ SelfAssessmentReducers,
+ linksReducers
 })
 
 export default RootReducer
