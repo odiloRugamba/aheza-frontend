@@ -29,17 +29,25 @@
 			.mainPart{
 				max-width: 730px;
 			}
+			@media screen and (max-width: 748px) {
+				.mainPart{
+					max-width: 90vw;
+					max-height: 97vh;
+					// overflow-y: scroll;
+				}
+			}
   .mainPartCont{
 			align-items: center;
-  top: 0px;
+   top: 0px;
 		}
 		.mainContent{
 			display: flex;
+			flex-wrap: wrap;
 			justify-content: center;
 			z-index: 99999;
 			.boxCont{
 				background: #da751c;
-				margin: 0px 10px;
+				margin: 5px 10px;
 				color: white;
 				height: 130px;
 				width: 170px;
