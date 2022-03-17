@@ -1,5 +1,6 @@
 /* ==================
 	9.1 Header
+	z-index
 =================== */
 
 	#ahezaInfo{
@@ -23,6 +24,64 @@
 		margin-right: 3px;
 		margin-top: 6px;
 	}
+	.headerCont{
+		.modelCont{
+			.mainPart{
+				max-width: 730px;
+			}
+			@media screen and (max-width: 748px) {
+				.mainPart{
+					max-width: 90vw;
+					max-height: 97vh;
+					// overflow-y: scroll;
+				}
+			}
+  .mainPartCont{
+			align-items: center;
+   top: 0px;
+		}
+		.mainContent{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			z-index: 99999;
+			.boxCont{
+				background: #da751c;
+				margin: 5px 10px;
+				color: white;
+				height: 130px;
+				width: 170px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				border-radius: 8px;
+			}
+			margin-bottom: 20px;
+			.title{
+				font-family: 'Open Sans',sans-serif;
+				font-weight: bold;
+				font-size: 18px;
+				padding: 0px 10px;
+				text-align: center;
+				line-height: 22px;
+				margin-bottom: 10px;
+			}
+		}
+		}
+	}
+		.appontiCont{
+				div{
+				color: #676767;
+				span{
+					 font-size: 17px;
+						border-bottom: 1px solid #676767;
+						cursor: pointer;
+						z-index: 9999999;
+				}
+				}
+			}
+	
 	@media screen and (max-width: 1073px){
 		#innerCont{
 			width: 100%;
@@ -103,7 +162,7 @@
 // Header
 .header {
 	position:relative;
-	z-index:9999;
+	z-index:10;
 	.menu-bar {
 		background: #fff;
 		width: 100%;
@@ -365,7 +424,7 @@
 				opacity: 0;
 				padding: 5px 0;
 				position: absolute;
-				visibility: hidden;
+				// visibility: hidden;
 				width: 220px;
 				z-index: 10;
 				margin-top: 20px;

@@ -1,18 +1,30 @@
 import React, { Component, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 import { useLocation } from 'react-router-dom'
 
+// book
 // Images
 import logo from '../../images/logo-2.png';
 import twitterLogo from "../../images/twitter.svg"
 import instagramLogo from "../../images/instagram.svg"
 import facebook from "../../images/facebook.svg"
 import logoWhite from '../../images/logo-white.png';
+
 function Header() {
 	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
+	const [openService, setOpenService] = useState(null)
+	const [model, setModel] = useState(false)
+	const [openMedia, setOpenMedia] = useState(null)
+	const [emgNumber, setEmgNumber] = useState([
+		{ background: " #da751c", number: 'Call (833) 710-6477', title: 'NH Rapid Response' },
+		{ background: "#7d5787", number: 'Call (603) 668-4111', title: 'Schedule an Appointment' },
+		{ background: "#006991", number: 'Call (603) 668-4111', title: 'Main Office Line' }
+	])
 	const location = useLocation();
 	const route = location.pathname;
+	const history = useHistory()
+
 	let homeActive = "";
 	if (route === "/") {
 		homeActive = "active"
@@ -52,7 +64,31 @@ function Header() {
 	const openNavbar = () => {
 		setClassesList("menu-links  navbar-collapse collapse justify-content-end show")
 	}
+	const closeNavBar = () => {
+		setClassesList("menu-links  navbar-collapse collapse justify-content-end")
+	}
 
+	const openMenu = (item) => {
+		if (item === "media") {
+			if (openMedia === "open") {
+				setOpenMedia(null)
+			} else {
+				setOpenMedia("open")
+				setOpenService(null)
+			}
+		} else {
+			if (openService === "open") {
+				setOpenService(null)
+			} else {
+				setOpenService("open")
+				setOpenMedia(null)
+			}
+		}
+	}
+	const onChangeRoute = (link) => {
+		history.push(link)
+		setModel(false)
+	}
 	return (
 		<>
 			<header className="header header-transparent rs-nav">
@@ -109,25 +145,23 @@ function Header() {
 								<span></span>
 								<span></span>
 							</button>
-
 							<div className="secondary-menu">
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
-									<li className="btn-area"><Link to="/book-appointment" className="btn btn-primary shadow">Book appointment<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow">Get Help Now<i className="btn-icon-bx fas fa-chevron-right"></i></a></li>
 								</ul>
 							</div>
-
 							<div className={classesList} id="menuDropdown">
 								<div className="menu-logo">
 									{/* <Link to="/"><img src={logoWhite} alt="" /></Link> */}
 								</div>
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
-									<li className={ourServicesActive}>
+									<li onClick={() => { openMenu("service") }} className={ourServicesActive, openService}>
 										<Link to="#">Services <i className="fa fa-plus"></i>
 										</Link>
 										<ul className="sub-menu ">
-											<li className="add-menu-left open">
+											<li className="add-menu-left tab-port">
 												<ul>
 													<li><Link to="/our-services"><span>Our services</span> </Link></li>
 													<li><Link to="/other-institutions-services"><span>Other institutions</span></Link></li>
@@ -135,11 +169,10 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-
-									<li className={mediaActive}>
+									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
 										<Link to="#">Media <i className="fas fa-plus"></i></Link>
 										<ul className="sub-menu">
-											<li className="add-menu-left">
+											<li className="add-menu-left ">
 												<ul>
 													<li><Link to="/research-findings"><span>Research</span></Link></li>
 													<li><Link to="/stories"><span>Stories</span></Link></li>
@@ -148,15 +181,10 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
-									{/* <li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li> */}
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-									{/* <li className={contactUsActive}><Link to="/savey">survey</Link></li> */}
-
-
-
+									{/* <li className={contactUsActive}><Link to="/survey">Survey</Link></li> */}
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
@@ -164,19 +192,50 @@ function Header() {
 									<li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/" className="btn btn-primary"><i className="fab fa-linkedin-in"></i></a></li>
 									<li><a target="_blank" rel="noreferrer" href="https://twitter.com/" className="btn btn-primary"><i className="fab fa-twitter"></i></a></li>
 								</ul>
-								<div className="menu-close" id="menuClose">
+								<div onClick={() => closeNavBar()} className="menu-close" id="menuClose">
 									<i className="ti-close"></i>
 								</div>
 							</div>
 						</div>
 					</div>
 				</Sticky>
-
 			</header>
+			{
+				model ? <div className='headerCont'>
+					<div className='modelCont'>
+						<div onClick={() => onChangeRoute('/book-appointment')} className='backGround'></div>
+						<div className='mainPartCont'>
+							<div className='mainPart'>
+								<div className='rowCont'>
+									<div className="col-lg-0 mb-0">
+										<div className="page-banner-entry text-center">
+											<h5>If this is an Emergency, Call 911</h5>
+										</div>
+										<div className='mainContent'>
+											{
+												emgNumber?.map(el =>
+													<div style={{ background: el?.background }} className='boxCont'>
+														<div className='title'>{el?.title}</div>
+														<div>{el?.number}</div>
+													</div>
+												)
+											}
+										</div>
+										<div className="appontiCont page-banner-entry text-center">
+											<div>To book an appointment from website <span onClick={() => onChangeRoute('/book-appointment')}>Click Here</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> : null
+			}
+
+
 
 		</>
 	);
-
 }
 {/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */ }
 

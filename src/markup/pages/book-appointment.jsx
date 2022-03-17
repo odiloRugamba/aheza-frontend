@@ -1,56 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Elements
-import MainBannerSection from "../elements/main-banner";
-import VisionSection from "../elements/vision";
-import AboutSection from "../elements/about";
-import WorkSection from "../elements/work";
 import AppointmentSection from "../elements/appointment";
-import TestimonialSection from "../elements/testimonial";
-import ServicesSliderSection from "../elements/services-slider";
-import LatestNewsSection from "../elements/latest-news-slider";
-import SocialMediaSection from '../elements/social-media';
-
-class BookAppointment extends Component {
-
-	render() {
-		return (
-			<>
-
-				<Header />
-
-				{/* <MainBannerSection /> */}
-
-				{/* <AboutSection /> */}
+import SelfEvaluation from "../elements/selfEvaluation";
 
 
-				{/* <WorkSection /> */}
-
-				{/* <hr/> */}
-
-				{/* <VisionSection/> */}
-
-				<hr style={{ color: "white" }} />
-
-				<AppointmentSection />
-
-				{/* <ServicesSliderSection /> */}
-
-				{/* <TestimonialSection /> */}
-
-				{/* <LatestNewsSection title="Aheza News" /> */}
-
-				{/* <SocialMediaSection/> */}
-
-				<Footer />
-
-			</>
-		);
+const BookAppointment = () => {
+	const [selfCheckup, setSelfCheckup] = useState(false)
+	const declineSelfEvaluation = () => {
+		setSelfCheckup(false)
 	}
+	const acceptSelfEvaluation = () => {
+		setSelfCheckup(false)
+	}
+	return (
+		<>
+			{
+				selfCheckup ? <SelfEvaluation decline={declineSelfEvaluation} accept={acceptSelfEvaluation} /> : <> 	<Header />
+					<hr style={{ color: "white" }} />
+					<AppointmentSection /> <Footer /></>
+			}
+		</>
+	);
 }
 
 export default BookAppointment;

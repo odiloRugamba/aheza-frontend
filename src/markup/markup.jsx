@@ -35,8 +35,10 @@ import Stories from "./pages/stories";
 import Uploads from "./pages/uploads";
 import Upload from "./pages/upload";
 import ReasearchFindingDetails from './pages/research-finding-details'
-import saveyPage from './pages/savey'
-
+import SurveyPage from './pages/surveyy'
+import FinalizeAppointment from "./pages/fianilaze-appointment";
+import Thankyou from "./pages/thankyou";
+import SelfAssesement from "./pages/self-assesemt";
 
 class Markup extends Component {
 	render() {
@@ -73,7 +75,11 @@ class Markup extends Component {
 						<ProtectRoute path='/uploads' exact component={Uploads} />
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
-						<ProtectRoute path='/survey' exact component={saveyPage} />
+						{/* <ProtectRoute path='/surveyy' exact component={SurveyPage} /> */}
+						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
+						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
+						<ProtectRoute path='/thankyou' exact component={Thankyou} />
+						<ProtectRoute path='/self-assesement' exact component={SelfAssesement} />
 						<Route component={Error} />
 
 					</Switch>

@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { getBlogs } from "../../store/blog/actions";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingComp from "../elements/loading";
-
+import ReactPaginate from "react-paginate";
+import EmptyComp from "../elements/empyt";
+import { Dcore } from '../../api';
 
 // Layout
 import Header from "../layout/header";
@@ -31,78 +33,14 @@ import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
 import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
 import moment from 'moment';
 
-// Blog Content
-const content = [
-	{
-		thumb: blogGridPic1,
-		authorPic: testPic1,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "John deo",
-		date: "21 July 2021",
-	},
-	{
-		thumb: blogGridPic2,
-		authorPic: testPic2,
-		title: "Making Mental Health a Centerpiece of the Return to School",
-		author: "Peter Packer",
-		date: "20 July 2021",
-	},
-	{
-		thumb: blogGridPic3,
-		authorPic: testPic3,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "Sonar Moyna",
-		date: "19 July 2021",
-	},
-	{
-		thumb: blogGridPic4,
-		authorPic: testPic4,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "Kalina",
-		date: "18 July 2021",
-	},
-	{
-		thumb: blogGridPic5,
-		authorPic: testPic5,
-		title: "Health Will Be A Thing Of The Past And Here",
-		author: "Michel",
-		date: "17 July 2021",
-	},
-	{
-		thumb: blogGridPic6,
-		authorPic: testPic6,
-		title: "Why do I Feel Lonelier During The Holidays?",
-		author: "Peter Packer",
-		date: "16 July 2021",
-	},
-	{
-		thumb: blogGridPic7,
-		authorPic: testPic1,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "Sonar Moyna",
-		date: "15 July 2021",
-	},
-	{
-		thumb: blogGridPic8,
-		authorPic: testPic2,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "Kalina",
-		date: "14 July 2021",
-	},
-	{
-		thumb: blogGridPic9,
-		authorPic: testPic3,
-		title: "Why do I Feel Lonelier During The Holidays",
-		author: "Michel",
-		date: "13 July 2021",
-	},
-]
 
 const BlogGrid = () => {
 	const dispatch = useDispatch()
 	const [data, setdata] = useState([])
 	const dateFormat = moment().format('llll')
-
+	const postPerPage = 4
+	const [PageCount, setPageCount] = useState(10)
+	const [pageData, setPageData] = useState([])
 	const blogs = useSelector(state => state.BlogsReducers.data)
 
 	useEffect(() => {
@@ -111,6 +49,8 @@ const BlogGrid = () => {
 
 	useEffect(() => {
 		setdata(blogs)
+		setPageCount(blogs?.length / postPerPage)
+		setPageData(blogs?.slice(0, postPerPage))
 	}, [blogs])
 
 	const convertData = (date) => {
@@ -119,6 +59,12 @@ const BlogGrid = () => {
 		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
+	}
+	const changePage = (page) => {
+		const endingPoint = (page.selected + 1) * postPerPage
+		const statingPoint = endingPoint - postPerPage
+		setPageData(null)
+		setPageData(blogs.slice(statingPoint, endingPoint))
 	}
 
 	return (
@@ -130,40 +76,47 @@ const BlogGrid = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{data?.length > 0 ?
-								data?.map((item) => (
+							{pageData?.length > 0 ?
+								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media" style={{ maxHeight: 210 }}>
-												<Link to={"/blog-grid/" + item.title + '/' + item._id} ><img src={testPic1} alt="" /></Link>
+												<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title + '/' + item._id}>{item.title}</Link></h4>
+												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i>
-														{/* {item.updatedAt} */}
 														{convertData(item?.updatedAt)}
 													</li>
-
-													<Link to={"/blog-grid/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
-
 											</div>
 										</div>
 									</div>
-								)) : <LoadingComp />
+								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no blogs for now" />
 							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="pagination-bx text-center mb-30 clearfix">
 									<ul className="pagination">
-										<li className="previous"><Link to="#">Prev</Link></li>
-										<li className="active"><Link to="#">1</Link></li>
-										<li><Link to="#">2</Link></li>
-										<li><Link to="#">3</Link></li>
-										<li className="next"><Link to="#">Next</Link></li>
+										{
+											pageData?.length && data?.length > postPerPage ?
+												<ReactPaginate
+													previousLabel="Prev"
+													nextLabel="Next"
+													pageCount={PageCount}
+													onPageChange={(page) => { changePage(page) }}
+													containerClassName="paginationCont pointer"
+													previousClassName="previous AllPbtn pointer"
+													nextClassName='next AllPbtn pointer'
+													pageClassName="PBtns AllPbtn pointer"
+													activeClassName="BtnActive pointer"
+													pageRangeDisplayed={3}
+												/> : null
+										}
 									</ul>
 								</div>
 							</div>

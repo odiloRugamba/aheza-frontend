@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getStorysById, getStorys } from "../../store/story/actions";
+import { getStorysById, getStorys, getStoryComments, postStoryComments } from "../../store/story/actions";
 
 // Layout
 import Header from "../layout/header";
@@ -35,10 +35,12 @@ const StoryDetails = () => {
 	const { id } = useParams()
 	const res = useSelector(state => state.StorysReducers.story)
 	const resRel = useSelector(state => state.StorysReducers.data)
+	const resComments = useSelector(state => state.StorysReducers.comments)
 
 	useEffect(() => {
 		dispatch(getStorysById(id))
 		dispatch(getStorys())
+		dispatch(getStoryComments(id))
 	}, []);
 
 	useEffect(() => {
@@ -47,9 +49,15 @@ const StoryDetails = () => {
 
 	useEffect(() => {
 		const revData = resRel?.reverse()
-		console.log(revData)
+		// console.log(revData)
 		setData(revData?.slice(0, 3))
 	}, [resRel])
+
+	const submitFunc = (data) => {
+		console.log(data)
+		dispatch(postStoryComments({ ...data, story: id }))
+
+	}
 	return (
 		<>
 
@@ -115,13 +123,13 @@ const StoryDetails = () => {
 
 								<div className="clear" id="comment-list">
 									<div className="comments-area" id="comments">
-										<h4 className="widget-title">8 Comments</h4>
+										<h4 className="widget-title">{resComments?.length} Comments</h4>
 
 										<div className="clearfix">
 
-											<CommentList />
+											<CommentList coments={resComments} />
 
-											<CommentRespond placeholder="What do you thing...?" />
+											<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
 
 										</div>
 									</div>

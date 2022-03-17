@@ -4,6 +4,8 @@ import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getStorys } from "../../store/story/actions";
 import LoadingComp from "../elements/loading";
+import ReactPaginate from "react-paginate";
+import EmptyComp from "../elements/empyt";
 
 // Layout
 import Header from "../layout/header";
@@ -100,8 +102,11 @@ const content = [
 const StoriesGrid = () => {
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
+	const [PageCount, setPageCount] = useState(10)
+	const [pageData, setPageData] = useState([])
 	const res = useSelector(state => state.StorysReducers.data)
 	// const response = useSelector(state => state?.HospitalReducers?.data)
+	const postPerPage = 12
 
 	useEffect(() => {
 		dispatch(getStorys())
@@ -109,6 +114,8 @@ const StoriesGrid = () => {
 
 	useEffect(() => {
 		setData(res)
+		setPageCount(res?.length / postPerPage)
+		setPageData(res?.slice(0, postPerPage))
 	}, [res])
 
 	const convertData = (date) => {
@@ -118,7 +125,12 @@ const StoriesGrid = () => {
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
 	}
-
+	const changePage = (page) => {
+		const endingPoint = (page.selected + 1) * postPerPage
+		const statingPoint = endingPoint - postPerPage
+		setPageData(null)
+		setPageData(res.slice(statingPoint, endingPoint))
+	}
 
 	return (
 		<>
@@ -143,39 +155,49 @@ const StoriesGrid = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{data?.length > 0 ?
-								data?.map((item) => (
+							{pageData?.length > 0 ?
+								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media" style={{ maxHeight: 210 }}>
-												<Link to={"/story/" + item.title + '/' + item._id}><img src={item.image} alt="" /></Link>
+												<Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}><img src={item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title"><Link to={"/story/" + item.title + '/' + item._id}>{item.title}</Link></h4>
+												<h4 className="post-title"><Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i>
 														{convertData(item.updatedAt)}
 													</li>
 
-													<Link to={"/story/" + item.title + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 
 											</div>
 										</div>
 									</div>
-								)) : <LoadingComp />
+								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no stories for now" />
 							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="pagination-bx text-center mb-30 clearfix">
 									<ul className="pagination">
-										<li className="previous"><Link to="#">Prev</Link></li>
-										<li className="active"><Link to="#">1</Link></li>
-										<li><Link to="#">2</Link></li>
-										<li><Link to="#">3</Link></li>
-										<li className="next"><Link to="#">Next</Link></li>
+										{
+											pageData?.length && data?.length > postPerPage ?
+												<ReactPaginate
+													previousLabel="Prev"
+													nextLabel="Next"
+													pageCount={PageCount}
+													onPageChange={(page) => { changePage(page) }}
+													containerClassName="paginationCont pointer"
+													previousClassName="previous AllPbtn pointer"
+													nextClassName='next AllPbtn pointer'
+													pageClassName="PBtns AllPbtn pointer"
+													activeClassName="BtnActive pointer"
+													pageRangeDisplayed={3}
+												/> : null
+										}
 									</ul>
 								</div>
 							</div>

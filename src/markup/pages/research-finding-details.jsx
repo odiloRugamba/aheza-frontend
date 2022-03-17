@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getResearchById, getResearchs } from "../../store/research/actions";
+import { getResearchById, getResearchs, getResearchCommnets, postResearchComments } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -25,20 +25,29 @@ const ResearchFindingDetails = () => {
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.ResearchReducers.research)
 	const resetResearch = useSelector(state => state.ResearchReducers.data)
+	const resCommnets = useSelector(state => state.ResearchReducers.commnets)
 
 
 	useEffect(() => {
 		dispatch(getResearchById(id))
+		dispatch(getResearchCommnets(id))
 		dispatch(getResearchs())
 	}, [])
 	useEffect(() => {
 		setResearch(res)
 	}, [res])
 
+
+
 	useEffect(() => {
 		const relData = resetResearch?.reverse()
 		setReletedData(relData?.slice(0, 3))
 	}, [resetResearch])
+	const submitFunc = (data) => {
+		console.log(data)
+		dispatch(postResearchComments({ ...data, research: id }))
+
+	}
 
 
 	return (
@@ -105,9 +114,9 @@ const ResearchFindingDetails = () => {
 
 										<div className="clearfix">
 
-											<CommentList />
+											<CommentList coments={resCommnets} />
 
-											<CommentRespond />
+											<CommentRespond submit={submitFunc} />
 
 										</div>
 									</div>

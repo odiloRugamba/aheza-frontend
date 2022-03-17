@@ -15,14 +15,13 @@ class aboutSection extends Component {
 	render() {
 		return (
 			<>
-
 				<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", paddingTop: 150 }}>
 					<div className="container inner-content">
 						<div className="row align-items-center">
 							<div className="col-lg-7 col-md-6 col-sm-7">
 								<h6 className="title-ext text-primary"> Get yourself help today</h6>
 								<h1>We Provide healing and career services online and on-site</h1>
-								<Link to="/about-us" className="btn btn-secondary btn-lg shadow">Book an appointment</Link>
+								<Link to="/self-assesement" className="btn btn-secondary btn-lg shadow">Self-assement</Link>
 							</div>
 							<div className="col-lg-5 col-md-6 col-sm-5">
 								<div className="banner-img">
@@ -37,7 +36,6 @@ class aboutSection extends Component {
 					<img className="pt-img4 animate4" src={ptImg4} alt="" />
 					<img className="pt-img5 animate-wave" src={ptImg5} alt="" />
 				</div>
-
 			</>
 		);
 	}

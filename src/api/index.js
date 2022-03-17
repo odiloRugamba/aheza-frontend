@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const URL = "http://192.168.0.109:9000/api"
-const IMAGEURL = 'http://192.168.0.109:9000/api/uploads'
+const URL = "http://139.59.167.170:9001/api"
+const IMAGEURL = 'http://139.59.167.170:9001/uploads'
 
 const request = async (method, url, data, headers) => {
  try {
@@ -23,6 +23,7 @@ const request = async (method, url, data, headers) => {
 }
 
 const get = async (url, data, headers) => {
+ console.log(data)
  return await request('GET', url, data, headers);
 }
 
