@@ -12958,6 +12958,8 @@ label.error {
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
+    line-height: 16px; /* fallback */
+    min-height: 36px; /* fallback */
   }
   .blog-card .post-info {
     padding: 12px; }

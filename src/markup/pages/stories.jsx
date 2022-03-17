@@ -163,7 +163,7 @@ const StoriesGrid = () => {
 												<Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}><img src={item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title"><Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}>{item.title}</Link></h4>
+												<h4 className="post-title max-lines-2"><Link to={"/story/" + item.title ?.replaceAll(" ","-")+ '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i>

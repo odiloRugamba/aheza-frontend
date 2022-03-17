@@ -74,7 +74,7 @@ const BlogDetails = () => {
 									</div>
 									<div className="info-bx">
 										<div className="ttr-post-title">
-											<h2 className="post-title">{blogItem?.title}</h2>
+											<h2 className="post-title max-lines-2">{blogItem?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
 											<div dangerouslySetInnerHTML={{ __html: blogItem?.content, }}></div>
@@ -110,7 +110,7 @@ const BlogDetails = () => {
 
 								<div className="clear" id="comment-list">
 									<div className="comments-area" id="comments">
-										<h4 className="widget-title">8 Comments</h4>
+										<h4 className="widget-title"> {coments?.length} Comments</h4>
 
 										<div className="clearfix">
 

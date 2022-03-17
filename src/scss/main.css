@@ -1320,8 +1320,17 @@ progress {
   .col-xl-10 {
     flex: 0 0 auto;
     width: 83.3333333333%; }
-
-  .col-xl-11 {
+  .max-lines-2{
+    word-break: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    line-height: 16px; /* fallback */
+    min-height: 36px; /* fallback */
+  }
+.col-xl-11 {
     flex: 0 0 auto;
     width: 91.6666666667%; }
 

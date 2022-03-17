@@ -21,7 +21,7 @@ const CommentList = ({ coments }) => {
 						<li className="comment">
 							<div className="comment-body">
 								<div className="comment-author vcard">
-									<img className="avatar photo" src={testPic1} alt="" />
+									{/* <img className="avatar photo" src={testPic1} alt="" /> */}
 									<div className="clearfix">
 										<cite className="fn">{el?.name}</cite>
 										<span className="says">says:</span>

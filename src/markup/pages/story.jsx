@@ -89,7 +89,7 @@ const StoryDetails = () => {
 									<div className="info-bx">
 
 										<div className="ttr-post-title">
-											<h2 className="post-title">{story?.title}</h2>
+											<h2 className="post-title max-lines-2">{story?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
 											<div dangerouslySetInnerHTML={{ __html: story?.content }}>
