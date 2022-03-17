@@ -1,6 +1,6 @@
 import React, { Component, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { getStorys } from "../../store/story/actions";
+import { getLinks } from "../../store/links/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -19,9 +19,9 @@ import SocialMediaSection from '../elements/social-media';
 const Index = () => {
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
-	const res = useSelector(state => state.StorysReducers.data)
+	const res = useSelector(state => state.linksReducers.data)
 	useEffect(() => {
-		dispatch(getStorys())
+		dispatch(getLinks())
 	}, []);
 	useEffect(() => {
 		setData(res)

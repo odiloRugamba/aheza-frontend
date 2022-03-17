@@ -110,7 +110,7 @@ const ResearchFindingDetails = () => {
 
 								<div className="clear" id="comment-list">
 									<div className="comments-area" id="comments">
-										<h4 className="widget-title">8 Comments</h4>
+										<h4 className="widget-title">{resCommnets?.length} Comments</h4>
 
 										<div className="clearfix">
 
