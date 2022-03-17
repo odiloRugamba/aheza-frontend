@@ -67,7 +67,7 @@ const ResearchFindingDetails = () => {
 									</div>
 									<div className="info-bx">
 										<div className="ttr-post-title">
-											<h3 className="post-title">{research?.title}</h3>
+											<h3 className="post-title max-lines-2">{research?.title}</h3>
 										</div>
 										<div className="ttr-post-text">
 											<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>

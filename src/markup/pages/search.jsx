@@ -137,7 +137,7 @@ class SearchPage extends Component {
              <li className="author"><Link to="/blog-details"><img src={item.authorPic} alt="" /> {item.author}</Link></li>
              <li className="date"><i className="far fa-calendar-alt"></i> {item.date}</li>
             </ul>
-            <h4 className="post-title"><Link to="/blog-details">{item.title}</Link></h4>
+            <h4 className="post-title max-lines-2"><Link to="/blog-details">{item.title}</Link></h4>
             <Link to="/blog-details" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
            </div>
           </div>

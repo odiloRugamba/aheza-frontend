@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-// Import Images
-import recentBlogImg1 from "../../../images/blog/recent-blog/pic1.jpg";
-import recentBlogImg2 from "../../../images/blog/recent-blog/pic2.jpg";
-import recentBlogImg3 from "../../../images/blog/recent-blog/pic3.jpg";
+import { Dcore } from '../../../api';
 
 const WidgetRelatedPosts = ({ title, data }) => {
 
@@ -26,10 +23,10 @@ const WidgetRelatedPosts = ({ title, data }) => {
 					{
 						data ? data?.map(el =>
 							<div className="widget-post clearfix">
-								<div className="ttr-post-media"> <img src={recentBlogImg1} width="200" height="143" alt="" /> </div>
+								<div className="ttr-post-media"> <img src={Dcore?.IMAGEURL + "/" + el?.image} width="200" height="143" alt="" /> </div>
 								<div className="ttr-post-info">
 									<div className="ttr-post-header">
-										<h6 className="post-title"><Link to="/blog-details">{el?.title}</Link></h6>
+										<h6 className="post-title max-lines-2"><Link to="/blog-details">{el?.title}</Link></h6>
 									</div>
 									<ul className="post-meta">
 										<li className="date"><i className="far fa-calendar-alt"></i>{convertData(el?.updatedAt)}</li>

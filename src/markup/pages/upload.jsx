@@ -107,7 +107,7 @@ const UploadsDetails = () => {
 											<li className="date"><i className="far fa-calendar-alt"></i>{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
 										</ul>
 										<div className="ttr-post-title">
-											<h2 className="post-title">{upload?.title}</h2>
+											<h2 className="post-title max-lines-2">{upload?.title}</h2>
 										</div>
 										<div className="ttr-post-text">
 											<div dangerouslySetInnerHTML={{ __html: upload?.content }}></div>

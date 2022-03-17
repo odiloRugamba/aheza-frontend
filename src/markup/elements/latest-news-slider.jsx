@@ -108,7 +108,7 @@ const LatestNewsSection = ({ title, content }) => {
 											<Link to="/story"><img src={item.image} alt="" /></Link>
 										</div>
 										<div className="post-info">
-											<h5 className="post-title"><Link to="/story">{item?.title}</Link></h5>
+											<h5 className="post-title max-lines-2"><Link to="/story">{item?.title}</Link></h5>
 											<Link to="/stories" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 										</div>
 									</div>
