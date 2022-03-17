@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getStorysById, getStorys, getStoryComments, postStoryComments } from "../../store/story/actions";
+import LoadingComp from "../elements/loading";
 
 // Layout
 import Header from "../layout/header";
@@ -62,92 +63,94 @@ const StoryDetails = () => {
 		<>
 
 			<Header />
+			{
+				res?._id ? <div className="page-content bg-white">
 
-			<div className="page-content bg-white">
-
-				<div className="banner-wraper">
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
-						<div className="container">
-							<div className="page-banner-entry text-center">
-								<h2>Story</h2>
+					<div className="banner-wraper">
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
+							<div className="container">
+								<div className="page-banner-entry text-center">
+									<h2>Story</h2>
+								</div>
 							</div>
+							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
+							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
 						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
 					</div>
-				</div>
 
-				<section className="section-area section-sp1 bg-white">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-								<div className="blog-card blog-single">
-									<div className="post-media">
-										{/* <img src={blogDefaultPic1} alt="" /> */}
-									</div>
-									<div className="info-bx">
+					<section className="section-area section-sp1 bg-white">
+						<div className="container">
+							<div className="row">
+								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
+									<div className="blog-card blog-single">
+										<div className="post-media">
+											{/* <img src={blogDefaultPic1} alt="" /> */}
+										</div>
+										<div className="info-bx">
 
-										<div className="ttr-post-title">
-											<h2 className="post-title max-lines-2">{story?.title}</h2>
-										</div>
-										<div className="ttr-post-text">
-											<div dangerouslySetInnerHTML={{ __html: story?.content }}>
+											<div className="ttr-post-title">
+												<h2 className="post-title max-lines-2">{story?.title}</h2>
 											</div>
-											<ul className="post-meta">
-												<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2022</li>
-											</ul>
-										</div>
-										<div className="ttr-post-footer">
-											<div className="post-tags">
-												<strong>Tags:</strong>
-												<Link to="#">placeholder</Link>
-												<Link to="#">selfcare </Link>
-												<Link to="#">motivation</Link>
-												<Link to="#">selflove</Link>
-											</div>
-											<div className="share-post ml-auto">
-												<ul className="social-media mb-0">
-													<li><strong>Share:</strong></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
+											<div className="ttr-post-text">
+												<div dangerouslySetInnerHTML={{ __html: story?.content }}>
+												</div>
+												<ul className="post-meta">
+													<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2022</li>
 												</ul>
 											</div>
+											<div className="ttr-post-footer">
+												<div className="post-tags">
+													<strong>Tags:</strong>
+													<Link to="#">placeholder</Link>
+													<Link to="#">selfcare </Link>
+													<Link to="#">motivation</Link>
+													<Link to="#">selflove</Link>
+												</div>
+												<div className="share-post ml-auto">
+													<ul className="social-media mb-0">
+														<li><strong>Share:</strong></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<AuthorProfile />
+
+									<div className="clear" id="comment-list">
+										<div className="comments-area" id="comments">
+											<h4 className="widget-title">{resComments?.length} Comments</h4>
+
+											<div className="clearfix">
+
+												<CommentList coments={resComments} />
+
+												<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
+
+											</div>
 										</div>
 									</div>
 								</div>
+								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
+									<aside className="side-bar sticky-top aside-bx">
 
-								<AuthorProfile />
+										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-								<div className="clear" id="comment-list">
-									<div className="comments-area" id="comments">
-										<h4 className="widget-title">{resComments?.length} Comments</h4>
-
-										<div className="clearfix">
-
-											<CommentList coments={resComments} />
-
-											<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
-
-										</div>
-									</div>
+										<WidgetRecentPosts currentPage="/story/" data={data} title="Recent Stories" />
+									</aside>
 								</div>
-							</div>
-							<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
-								<aside className="side-bar sticky-top aside-bx">
-
-									{/* <WidgetSearch placeholder='Search Anything...' /> */}
-
-									<WidgetRecentPosts currentPage="/story/" data={data} title="Recent Stories" />
-								</aside>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
 
-			</div>
+				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
+			}
+
 
 			<Footer />
 

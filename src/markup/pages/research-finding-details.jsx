@@ -14,6 +14,7 @@ import WidgetTag from "../elements/tag-widgets/research-findings";
 import ResearchFindingWidget from "../elements/related-widgets/research-finding";
 // Import Images
 import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
+import LoadingComp from "../elements/loading";
 
 
 
@@ -54,88 +55,90 @@ const ResearchFindingDetails = () => {
 		<>
 
 			<Header />
+			{
+				res?._id ? <div className="page-content bg-white" style={{ marginTop: 60 }}>
 
-			<div className="page-content bg-white" style={{ marginTop: 60 }}>
+					<section className="section-area section-sp1 bg-white">
+						<div className="container">
+							<div className="row">
+								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
+									<div className="blog-card blog-single">
+										<div className="post-media">
+											{/* <img src={blogDefaultPic1} alt="" /> */}
+										</div>
+										<div className="info-bx">
+											<div className="ttr-post-title">
+												<h3 className="post-title max-lines-2">{research?.title}</h3>
+											</div>
+											<div className="ttr-post-text">
+												<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
 
-				<section className="section-area section-sp1 bg-white">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-								<div className="blog-card blog-single">
-									<div className="post-media">
-										{/* <img src={blogDefaultPic1} alt="" /> */}
+											</div>
+											<div className="ttr-post-footer" >
+												<div className="post-tags">
+													<strong>Price:</strong>
+													<Link to="#" style={{ color: "#f17732" }}>20,000 FRW</Link>
+												</div>
+												<div className="ml-auto widget_tag_cloud">
+													<ul className="tagcloud mb-0">
+														<li><a rel="noreferrer" target="_blank" href="#" style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
+													</ul>
+												</div>
+											</div>
+											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
+												<div className="post-tags">
+													<strong>Tags:</strong>
+													{
+														research?.tags?.map(el => (
+															<Link to="#">{el}</Link>
+														))
+													}
+												</div>
+												<div className="share-post ml-auto">
+													<ul className="social-media mb-0">
+														<li><strong>Share:</strong></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
 									</div>
-									<div className="info-bx">
-										<div className="ttr-post-title">
-											<h3 className="post-title max-lines-2">{research?.title}</h3>
-										</div>
-										<div className="ttr-post-text">
-											<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
 
-										</div>
-										<div className="ttr-post-footer" >
-											<div className="post-tags">
-												<strong>Price:</strong>
-												<Link to="#" style={{ color: "#f17732" }}>20,000 FRW</Link>
-											</div>
-											<div className="ml-auto widget_tag_cloud">
-												<ul className="tagcloud mb-0">
-													<li><a rel="noreferrer" target="_blank" href="#" style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
-												</ul>
-											</div>
-										</div>
-										<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
-											<div className="post-tags">
-												<strong>Tags:</strong>
-												{
-													research?.tags?.map(el => (
-														<Link to="#">{el}</Link>
-													))
-												}
-											</div>
-											<div className="share-post ml-auto">
-												<ul className="social-media mb-0">
-													<li><strong>Share:</strong></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-												</ul>
+									<AuthorProfile />
+
+									<div className="clear" id="comment-list">
+										<div className="comments-area" id="comments">
+											<h4 className="widget-title">{resCommnets?.length} Comments</h4>
+
+											<div className="clearfix">
+
+												<CommentList coments={resCommnets} />
+
+												<CommentRespond submit={submitFunc} />
+
 											</div>
 										</div>
 									</div>
 								</div>
+								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
+									<aside className="side-bar sticky-top aside-bx">
 
-								<AuthorProfile />
+										<ResearchFindingWidget data={reletedData} />
 
-								<div className="clear" id="comment-list">
-									<div className="comments-area" id="comments">
-										<h4 className="widget-title">{resCommnets?.length} Comments</h4>
+										{/* <WidgetTag tags={research?.tags} /> */}
 
-										<div className="clearfix">
-
-											<CommentList coments={resCommnets} />
-
-											<CommentRespond submit={submitFunc} />
-
-										</div>
-									</div>
+									</aside>
 								</div>
-							</div>
-							<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
-								<aside className="side-bar sticky-top aside-bx">
-
-									<ResearchFindingWidget data={reletedData} />
-
-									{/* <WidgetTag tags={research?.tags} /> */}
-
-								</aside>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
 
-			</div>
+				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
+			}
+
 
 			<Footer />
 

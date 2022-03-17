@@ -15,6 +15,7 @@ import WidgetTag from "../elements/widget-tag";
 import WidgetSearch from "../elements/widget-search";
 import WidgetGallery from "../elements/widget-gallery";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
+import LoadingComp from "../elements/loading";
 
 
 // Import Images
@@ -68,101 +69,103 @@ const UploadsDetails = () => {
 		<>
 
 			<Header />
+			{
+				res?._id ? <div className="page-content bg-white">
 
-			<div className="page-content bg-white">
+					<div className="banner-wraper">
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
+							<div className="container">
+								<div className="page-banner-entry text-center">
+									<h2>Details</h2>
+								</div>
+							</div>
+							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
+							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						</div>
+					</div>
 
-				<div className="banner-wraper">
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
+					<section className="section-area section-sp1 bg-white">
 						<div className="container">
-							<div className="page-banner-entry text-center">
-								<h2>Details</h2>
-							</div>
-						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-					</div>
-				</div>
-
-				<section className="section-area section-sp1 bg-white">
-					<div className="container">
-						<div className="row">
-							<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-								<div className="blog-card blog-single">
-									<div className="post-media">
-										{/* <img src={blogDefaultPic1} alt="" /> */}
-										<iframe
-											width="853"
-											height="480"
-											src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
-											frameBorder="0"
-											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-											allowFullScreen
-											title="Embedded youtube"
-										/>
-									</div>
-									<div className="info-bx">
-										<ul className="post-meta">
-											<li className="date"><i className="far fa-calendar-alt"></i>{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
-										</ul>
-										<div className="ttr-post-title">
-											<h2 className="post-title max-lines-2">{upload?.title}</h2>
+							<div className="row">
+								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
+									<div className="blog-card blog-single">
+										<div className="post-media">
+											{/* <img src={blogDefaultPic1} alt="" /> */}
+											<iframe
+												width="853"
+												height="480"
+												src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
+												frameBorder="0"
+												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+												allowFullScreen
+												title="Embedded youtube"
+											/>
 										</div>
-										<div className="ttr-post-text">
-											<div dangerouslySetInnerHTML={{ __html: upload?.content }}></div>
-
-										</div>
-										<div className="ttr-post-footer">
-											<div className="post-tags">
-												<strong>Tags:</strong>
-												{
-													upload?.tags?.map(el => (
-														<Link to="#">{el}</Link>
-													))
-												}
+										<div className="info-bx">
+											<ul className="post-meta">
+												<li className="date"><i className="far fa-calendar-alt"></i>{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
+											</ul>
+											<div className="ttr-post-title">
+												<h2 className="post-title max-lines-2">{upload?.title}</h2>
 											</div>
-											<div className="share-post ml-auto">
-												<ul className="social-media mb-0">
-													<li><strong>Share:</strong></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-												</ul>
+											<div className="ttr-post-text">
+												<div dangerouslySetInnerHTML={{ __html: upload?.content }}></div>
+
+											</div>
+											<div className="ttr-post-footer">
+												<div className="post-tags">
+													<strong>Tags:</strong>
+													{
+														upload?.tags?.map(el => (
+															<Link to="#">{el}</Link>
+														))
+													}
+												</div>
+												<div className="share-post ml-auto">
+													<ul className="social-media mb-0">
+														<li><strong>Share:</strong></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
+														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									{/* <AuthorProfile /> */}
+
+									<div className="clear" id="comment-list">
+										<div className="comments-area" id="comments">
+											<h4 className="widget-title">{resComments?.length} Comments</h4>
+
+											<div className="clearfix">
+
+												<CommentList coments={resComments} />
+
+												<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
+
 											</div>
 										</div>
 									</div>
 								</div>
+								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
+									<aside className="side-bar sticky-top aside-bx">
 
-								{/* <AuthorProfile /> */}
+										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-								<div className="clear" id="comment-list">
-									<div className="comments-area" id="comments">
-										<h4 className="widget-title">{resComments?.length} Comments</h4>
-
-										<div className="clearfix">
-
-											<CommentList coments={resComments} />
-
-											<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
-
-										</div>
-									</div>
+										<WidgetRecentPosts data={data} currentPage="/upload/" title="Recent Stories" />
+									</aside>
 								</div>
 							</div>
-							<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
-								<aside className="side-bar sticky-top aside-bx">
-
-									{/* <WidgetSearch placeholder='Search Anything...' /> */}
-
-									<WidgetRecentPosts data={data} currentPage="/upload/" title="Recent Stories" />
-								</aside>
-							</div>
 						</div>
-					</div>
-				</section>
+					</section>
 
-			</div>
+				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
+			}
+
 
 			<Footer />
 
