@@ -42,51 +42,13 @@ const WidgetRecentPosts = ({ title, data, currentPage }) => {
 						) : null
 					}
 
-
-
-					{/* <div className="widget-post clearfix">
-						<div className="ttr-post-media"> <img src={recentBlogImg2} width="200" height="160" alt="" /> </div>
-						<div className="ttr-post-info">
-							<div className="ttr-post-header">
-								<h6 className="post-title max-lines-2"><Link to="/blog-details">Ten Doubts You Should Clarify About.</Link></h6>
-							</div>
-							<ul className="post-meta">
-								<li className="date"><i className="far fa-calendar-alt"></i> 20 July 2021</li>
-							</ul>
-						</div>
-					</div> */}
-
-					{/* <div className="widget-post clearfix">
-						<div className="ttr-post-media"> <img src={recentBlogImg3} width="200" height="160" alt="" /> </div>
-						<div className="ttr-post-info">
-							<div className="ttr-post-header">
-								<h6 className="post-title max-lines-2"><Link to="/blog-details">The 10 Steps Needed For Putting.</Link></h6>
-							</div>
-							<ul className="post-meta">
-								<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
-							</ul>
-						</div>
-					</div> */}
-
 					<div className="more"> <Link to="/stories" className="more-text">More</Link> </div>
 				</div>
 
 
 			</div>
 
-			<div className="brochure-bx">
-				<h5 className="title-head">Download</h5>
-				<Link to="#" className="download-link">
-					<img src={pdf} alt="" />
-					<h5 className="title">Download this document</h5>
-					<span>Download</span>
-				</Link>
-				<Link to="#" className="download-link">
-					<img src={doc} alt="" />
-					<h5 className="title">Download this audio file</h5>
-					<span>Download</span>
-				</Link>
-			</div>
+			
 		</>
 	);
 }

@@ -33,73 +33,6 @@ import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
 import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
 
 
-// Blog Content
-const content = [
-	{
-		thumb: blogGridPic1,
-		authorPic: testPic1,
-		title: "Dental Care for Women is very important",
-		author: "John deo",
-		date: "21 July 2021",
-	},
-	{
-		thumb: blogGridPic2,
-		authorPic: testPic2,
-		title: "In this hospital there are special surgeon",
-		author: "Peter Packer",
-		date: "20 July 2021",
-	},
-	{
-		thumb: blogGridPic3,
-		authorPic: testPic3,
-		title: "Why Is Skin Surgeon Considered Underrated",
-		author: "Sonar Moyna",
-		date: "19 July 2021",
-	},
-	{
-		thumb: blogGridPic4,
-		authorPic: testPic4,
-		title: "Understand Health Before You Regret",
-		author: "Kalina",
-		date: "18 July 2021",
-	},
-	{
-		thumb: blogGridPic5,
-		authorPic: testPic5,
-		title: "Health Will Be A Thing Of The Past And Here",
-		author: "Michel",
-		date: "17 July 2021",
-	},
-	{
-		thumb: blogGridPic6,
-		authorPic: testPic6,
-		title: "Can you get a diflucan prescription online?",
-		author: "Peter Packer",
-		date: "16 July 2021",
-	},
-	{
-		thumb: blogGridPic7,
-		authorPic: testPic1,
-		title: "Ten Gigantic Influences Of Health",
-		author: "Sonar Moyna",
-		date: "15 July 2021",
-	},
-	{
-		thumb: blogGridPic8,
-		authorPic: testPic2,
-		title: "Why Is Skin Surgeon Considered Underrated",
-		author: "Kalina",
-		date: "14 July 2021",
-	},
-	{
-		thumb: blogGridPic9,
-		authorPic: testPic3,
-		title: "Everyone need to go Dentist regularly",
-		author: "Michel",
-		date: "13 July 2021",
-	},
-]
-
 const Uploads = () => {
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
@@ -132,6 +65,12 @@ const Uploads = () => {
 		setPageData(null)
 		setPageData(res.slice(statingPoint, endingPoint))
 	}
+	const getVideoId = (url) => {
+		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+		var match = url.match(regExp);
+		return (match&&match[7].length==11)? match[7] : false;
+	}
+
 
 	return (
 		<>
@@ -144,7 +83,7 @@ const Uploads = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Media section</h2>
+								<h2>Uploads section</h2>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -161,10 +100,24 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item?.title + '/' + item?._id}><img src={item.image} alt="" /></Link>
+												<Link to={"/upload/" + item?.title + '/' + item?._id}>
+													{
+														item?.youtubeVideo ? 
+														<iframe
+															width="853"
+															height="480"
+															src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
+															frameBorder="0"
+															allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+															allowFullScreen
+															title="Embedded youtube"
+															/>
+															:<img src={item.image} alt="" />
+													}
+												</Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2"><Link to={"/upload/" + item?.title + '/' + item?._id}>{item.title}</Link></h4>
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item?.title + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {

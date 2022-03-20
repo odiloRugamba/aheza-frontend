@@ -12,10 +12,9 @@ import CommentList from "../elements/comments/research-finding";
 import CommentRespond from "../elements/comment-respond";
 import WidgetTag from "../elements/tag-widgets/research-findings";
 import ResearchFindingWidget from "../elements/related-widgets/research-finding";
-// Import Images
-import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
 import LoadingComp from "../elements/loading";
 
+import { Dcore } from '../../api';
 
 
 
@@ -68,23 +67,38 @@ const ResearchFindingDetails = () => {
 										</div>
 										<div className="info-bx">
 											<div className="ttr-post-title">
-												<h3 className="post-title max-lines-2">{research?.title}</h3>
+												<h5 className="post-title">{research?.title}</h5>
 											</div>
+											<hr/>
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
 
 											</div>
+											{
+												research?.publishedByAheza === "YES" ? 
 											<div className="ttr-post-footer" >
 												<div className="post-tags">
 													<strong>Price:</strong>
-													<Link to="#" style={{ color: "#f17732" }}>20,000 FRW</Link>
+													<Link to="#" style={{ color: "#f17732" }}>{research?.price} FRW</Link>
 												</div>
 												<div className="ml-auto widget_tag_cloud">
 													<ul className="tagcloud mb-0">
-														<li><a rel="noreferrer" target="_blank" href="#" style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
+														<li><a rel="noreferrer" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file} style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
 													</ul>
 												</div>
+
+												<div className="brochure-bx">
+													<h5 className="title-head">Download</h5>
+													<Link to="#" className="download-link">
+														<img src="" alt="" />
+														<h5 className="title">Download this document</h5>
+														<span>Download</span>
+													</Link>
+												</div>
 											</div>
+											: null
+											}
+											<hr/>
 											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
 												<div className="post-tags">
 													<strong>Tags:</strong>
@@ -107,7 +121,7 @@ const ResearchFindingDetails = () => {
 										</div>
 									</div>
 
-									<AuthorProfile />
+									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">

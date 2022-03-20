@@ -111,7 +111,9 @@ const LatestNewsSection = ({ title, content }) => {
 										<a onClick={() => openNewWindow(item.link)} ><img src={Dcore.IMAGEURL + '/' + item.image} alt="" /></a>
 									</div>
 									<div className="post-info">
-										<h5 className="post-title" style={{ "text-overflow": "ellipsis", height: '90px', overflow: "hidden" }}><a onClick={() => openNewWindow(item.link)}>{item?.title}</a></h5>
+										<p className="post-title max-lines-2" style={{ "text-overflow": "ellipsis", height: '90px', overflow: "hidden" }}>
+											<a onClick={() => openNewWindow(item.link)}>{item?.title}</a>
+										</p>
 										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
 									</div>
 								</div>

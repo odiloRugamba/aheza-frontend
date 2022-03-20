@@ -1327,8 +1327,6 @@ progress {
     display: -webkit-box;
     -webkit-line-clamp: 2; /* number of lines to show */
     -webkit-box-orient: vertical;
-    line-height: 16px; /* fallback */
-    min-height: 36px; /* fallback */
   }
 .col-xl-11 {
     flex: 0 0 auto;

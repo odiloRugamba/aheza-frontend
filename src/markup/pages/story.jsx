@@ -96,16 +96,17 @@ const StoryDetails = () => {
 												<div dangerouslySetInnerHTML={{ __html: story?.content }}>
 												</div>
 												<ul className="post-meta">
-													<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2022</li>
+													<li className="date"><i className="far fa-calendar-alt"></i> {story?.createdAt }</li>
 												</ul>
 											</div>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
 													<strong>Tags:</strong>
-													<Link to="#">placeholder</Link>
-													<Link to="#">selfcare </Link>
-													<Link to="#">motivation</Link>
-													<Link to="#">selflove</Link>
+													{
+														story?.tags?.map(el => (
+															<Link to="#">{el}</Link>
+														))
+													}
 												</div>
 												<div className="share-post ml-auto">
 													<ul className="social-media mb-0">
@@ -120,7 +121,7 @@ const StoryDetails = () => {
 										</div>
 									</div>
 
-									<AuthorProfile />
+									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
@@ -130,7 +131,7 @@ const StoryDetails = () => {
 
 												<CommentList coments={resComments} />
 
-												<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
+												<CommentRespond submit={submitFunc} placeholder="What do you think...?" />
 
 											</div>
 										</div>

@@ -593,7 +593,7 @@ const ResearchFindings = () => {
 												<Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id}><img src={item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></h4>
+												<p className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {
 														convertData(item?.updatedAt)
