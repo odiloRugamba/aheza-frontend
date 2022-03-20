@@ -26,6 +26,7 @@ const ResearchFindingDetails = () => {
 	const res = useSelector(state => state.ResearchReducers.research)
 	const resetResearch = useSelector(state => state.ResearchReducers.data)
 	const resCommnets = useSelector(state => state.ResearchReducers.commnets)
+	const [loading, setLoading] = useState(false)
 
 
 	useEffect(() => {
@@ -36,6 +37,10 @@ const ResearchFindingDetails = () => {
 	useEffect(() => {
 		setResearch(res)
 	}, [res])
+	useEffect(() => {
+		setLoading(false)
+	}, [resCommnets]);
+
 
 
 
@@ -43,10 +48,11 @@ const ResearchFindingDetails = () => {
 		const relData = resetResearch?.reverse()
 		setReletedData(relData?.slice(0, 3))
 	}, [resetResearch])
-	const submitFunc = (data) => {
+	const submitFunc = async (data) => {
 		console.log(data)
-		dispatch(postResearchComments({ ...data, research: id }))
-
+		setLoading(true)
+		await dispatch(postResearchComments({ ...data, research: id }))
+		await dispatch(getResearchCommnets(id))
 	}
 
 
@@ -69,36 +75,36 @@ const ResearchFindingDetails = () => {
 											<div className="ttr-post-title">
 												<h5 className="post-title">{research?.title}</h5>
 											</div>
-											<hr/>
+											<hr />
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
 
 											</div>
 											{
-												research?.publishedByAheza === "YES" ? 
-											<div className="ttr-post-footer" >
-												<div className="post-tags">
-													<strong>Price:</strong>
-													<Link to="#" style={{ color: "#f17732" }}>{research?.price} FRW</Link>
-												</div>
-												<div className="ml-auto widget_tag_cloud">
-													<ul className="tagcloud mb-0">
-														<li><a rel="noreferrer" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file} style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
-													</ul>
-												</div>
+												research?.publishedByAheza === "YES" ?
+													<div className="ttr-post-footer" >
+														<div className="post-tags">
+															<strong>Price:</strong>
+															<Link to="#" style={{ color: "#f17732" }}>{research?.price} FRW</Link>
+														</div>
+														<div className="ml-auto widget_tag_cloud">
+															<ul className="tagcloud mb-0">
+																<li><a rel="noreferrer" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file} style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
+															</ul>
+														</div>
 
-												<div className="brochure-bx">
-													<h5 className="title-head">Download</h5>
-													<Link to="#" className="download-link">
-														<img src="" alt="" />
-														<h5 className="title">Download this document</h5>
-														<span>Download</span>
-													</Link>
-												</div>
-											</div>
-											: null
+														<div className="brochure-bx">
+															<h5 className="title-head">Download</h5>
+															<Link to="#" className="download-link">
+																<img src="" alt="" />
+																<h5 className="title">Download this document</h5>
+																<span>Download</span>
+															</Link>
+														</div>
+													</div>
+													: null
 											}
-											<hr/>
+											<hr />
 											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
 												<div className="post-tags">
 													<strong>Tags:</strong>
@@ -131,7 +137,7 @@ const ResearchFindingDetails = () => {
 
 												<CommentList coments={resCommnets} />
 
-												<CommentRespond submit={submitFunc} />
+												<CommentRespond loading={loading} submit={submitFunc} />
 
 											</div>
 										</div>

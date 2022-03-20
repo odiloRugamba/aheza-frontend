@@ -108,9 +108,9 @@
  }
  .swipeCont{
    div::-webkit-scrollbar{
-
     display: none;
    }
+   min-height: 250px;
  }
  .radioBtn input{
   visibility: hidden;

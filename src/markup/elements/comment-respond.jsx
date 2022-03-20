@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
-const CommentRespond = ({ placeholder, submit }) => {
+const CommentRespond = ({ placeholder, submit, loading }) => {
 
 	const [name, setName] = useState(null)
 	const [email, setEmail] = useState(null)
@@ -11,6 +11,10 @@ const CommentRespond = ({ placeholder, submit }) => {
 		setEmail('')
 		setComment('')
 	}
+	useEffect(() => {
+		console.log(loading)
+	}, [loading])
+
 
 	return (
 		<>
@@ -30,7 +34,19 @@ const CommentRespond = ({ placeholder, submit }) => {
 						<textarea value={comment} onChange={(e) => setComment(e.target.value)} rows="8" name="comment" placeholder={placeholder ? placeholder : "Comment"} id="comment"></textarea>
 					</p>
 					<p className="form-submit">
-						<input onClick={() => localSubmit()} type="submit" value="Submit Comment" className="submit" id="submit" name="submit" />
+						{/* <input onClick={() => localSubmit()} type="submit" value="Submit Comment" className="submit" id="submit" name="submit" /> */}
+						{/* <button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={"loading"} id="submit" name="submit">
+							<div class="spinner-border" role="status">
+								<span class="sr-only">Loading...</span>
+							</div>
+						</button> */}
+						<button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit">
+							{
+								loading ? <div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div> : <span>Submit Comment  </span>
+							}
+						</button>
 					</p>
 				</div>
 			</div>

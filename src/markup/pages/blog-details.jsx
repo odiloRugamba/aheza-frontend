@@ -29,6 +29,7 @@ const BlogDetails = () => {
 	const [blogItem, setBlogItem] = useState(null)
 	const [relData, setRelData] = useState([])
 	const [coments, setComnets] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
 		dispatch(getblogById(id))
@@ -46,14 +47,14 @@ const BlogDetails = () => {
 	}, [resData])
 
 	useEffect(() => {
-		console.log('jhsdkhsdkhdskjhsdhkjh')
-		console.log(resComents)
 		setComnets(resComents)
+		// setLoading(false)
 	}, [resComents])
 
-	const submitFunc = (data) => {
-		console.log(data)
-		dispatch(postblogComment({ ...data, blog: id }))
+	const submitFunc = async (data) => {
+		setLoading(true)
+		await dispatch(postblogComment({ ...data, blog: id }))
+		await dispatch(getBlogComment(id))
 	}
 
 
@@ -86,7 +87,7 @@ const BlogDetails = () => {
 										</ul> */}
 											<div className="ttr-post-footer">
 												<div className="post-tags">
-													<strong>Tags:</strong>
+													<strong>Tag:</strong>
 													{
 														blogItem?.tags.map((el) => (
 															<Link to="#">{el}</Link>
@@ -117,7 +118,7 @@ const BlogDetails = () => {
 
 												<CommentList coments={coments} />
 
-												<CommentRespond submit={submitFunc} />
+												<CommentRespond loading={loading ? true : false} submit={submitFunc} />
 
 											</div>
 										</div>

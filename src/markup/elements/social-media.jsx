@@ -34,17 +34,19 @@ const SocialMediaSection = ({ title }) => {
 								options={{
 									height: '520'
 								}}
-								/>
+							/>
 						</div>
 						<div className="col-xl-4 col-md-6">
 							<FacebookProvider appId="513240330217367" >
 								<Page href="https://www.facebook.com/GAERGRwanda/" tabs="timeline" />
-							</FacebookProvider>  
+							</FacebookProvider>
 						</div>
 						<div className="col-xl-4 col-md-6">
 							<FacebookProvider appId="513240330217367" >
-								<Page href="https://www.facebook.com/GAERGRwanda/" tabs="timeline" />
-							</FacebookProvider>  
+								{/* <Page href="https://www.facebook.com/GAERGRwanda/" tabs="timeline" /> */}
+								<Page src="https://apps.elfsight.com/p/platform.js" defer></Page>
+								<div class="elfsight-app-a48c5e73-de11-4437-814f-47eb876e0666"></div>
+							</FacebookProvider>
 						</div>
 					</div>
 

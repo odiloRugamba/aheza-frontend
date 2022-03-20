@@ -37,6 +37,8 @@ const UploadsDetails = () => {
 	const resRel = useSelector(state => state.UploadsReducers.data)
 	const resComments = useSelector(state => state.UploadsReducers.comments)
 	const { id } = useParams()
+	const [loading, setLoading] = useState(false)
+
 
 	useEffect(() => {
 		dispatch(getUploadById(id))
@@ -53,6 +55,10 @@ const UploadsDetails = () => {
 		setData(revData?.slice(0, 3))
 	}, [resRel])
 
+	useEffect(() => {
+		setLoading(false)
+	}, [resComments]);
+
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
@@ -60,9 +66,10 @@ const UploadsDetails = () => {
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
 	}
-	const submitFunc = (data) => {
-		// console.log(data)
-		dispatch(postUploadCommnets({ ...data, upload: id }))
+	const submitFunc = async (data) => {
+		setLoading(true)
+		await dispatch(postUploadCommnets({ ...data, upload: id }))
+		await dispatch(getUploadCommnets(id))
 	}
 
 	return (
@@ -145,7 +152,7 @@ const UploadsDetails = () => {
 
 												<CommentList coments={resComments} />
 
-												<CommentRespond submit={submitFunc} placeholder="What do you thing...?" />
+												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you thing...?" />
 
 											</div>
 										</div>

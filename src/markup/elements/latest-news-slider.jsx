@@ -107,11 +107,11 @@ const LatestNewsSection = ({ title, content }) => {
 							<div className="blog-card">
 
 								<div>
-									<div className="post-media" style={{ maxHeight: 210 }}>
+									<div className="post-media" style={{ maxHeight: 210, height: 210 }}>
 										<a onClick={() => openNewWindow(item.link)} ><img src={Dcore.IMAGEURL + '/' + item.image} alt="" /></a>
 									</div>
 									<div className="post-info">
-										<p className="post-title max-lines-2" style={{ "text-overflow": "ellipsis", height: '90px', overflow: "hidden" }}>
+										<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
 											<a onClick={() => openNewWindow(item.link)}>{item?.title}</a>
 										</p>
 										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
@@ -127,7 +127,7 @@ const LatestNewsSection = ({ title, content }) => {
 				<img className="pt-img2 animate2" src={animate2} alt="" />
 				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
 				<img className="pt-img4 animate-wave" src={animateWave} alt="" />
-			</section>
+			</section >
 
 		</>
 	);

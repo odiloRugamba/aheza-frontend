@@ -10,6 +10,7 @@ import { AppointmentReducers } from "../appointment/reducers";
 import { SelfAssessmentReducers } from "../selfAssessment/reducers";
 import { linksReducers } from "../links/reducers";
 import { DoctorReducers } from "../doctor/reducers";
+import { ContactUsReducers } from "../contact-us/reducers";
 
 const RootReducer = combineReducers({
  BlogsReducers,
@@ -22,7 +23,8 @@ const RootReducer = combineReducers({
  AppointmentReducers,
  SelfAssessmentReducers,
  linksReducers,
- DoctorReducers
+ DoctorReducers,
+ ContactUsReducers
 })
 
 export default RootReducer

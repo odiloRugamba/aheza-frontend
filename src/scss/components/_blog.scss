@@ -9,10 +9,16 @@
 	padding:20px;
 	
 	.post-media{
-		border-radius: 6px;
 		overflow:hidden;
+		border-radius: 6px;
 		margin-bottom:20px;
+		a{
+				overflow:hidden;
+				height: 210px;
+		}
 		img{
+		overflow:hidden !important;
+		border-radius: 6px !important;
 			width: 100%;
 		}
 	}

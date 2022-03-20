@@ -37,6 +37,8 @@ const StoryDetails = () => {
 	const res = useSelector(state => state.StorysReducers.story)
 	const resRel = useSelector(state => state.StorysReducers.data)
 	const resComments = useSelector(state => state.StorysReducers.comments)
+	const [loading, setLoading] = useState(false)
+
 
 	useEffect(() => {
 		dispatch(getStorysById(id))
@@ -47,18 +49,22 @@ const StoryDetails = () => {
 	useEffect(() => {
 		setStory(res)
 	}, [res])
+	useEffect(() => {
+		setLoading(false)
+	}, [resComments])
 
 	useEffect(() => {
 		const revData = resRel?.reverse()
-		// console.log(revData)
 		setData(revData?.slice(0, 3))
 	}, [resRel])
 
-	const submitFunc = (data) => {
-		console.log(data)
-		dispatch(postStoryComments({ ...data, story: id }))
-
+	const submitFunc = async (data) => {
+		setLoading(true)
+		await dispatch(postStoryComments({ ...data, story: id }))
+		await dispatch(getStoryComments(id))
 	}
+
+
 	return (
 		<>
 
@@ -96,7 +102,7 @@ const StoryDetails = () => {
 												<div dangerouslySetInnerHTML={{ __html: story?.content }}>
 												</div>
 												<ul className="post-meta">
-													<li className="date"><i className="far fa-calendar-alt"></i> {story?.createdAt }</li>
+													<li className="date"><i className="far fa-calendar-alt"></i> {story?.createdAt}</li>
 												</ul>
 											</div>
 											<div className="ttr-post-footer">
@@ -131,7 +137,7 @@ const StoryDetails = () => {
 
 												<CommentList coments={resComments} />
 
-												<CommentRespond submit={submitFunc} placeholder="What do you think...?" />
+												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you think...?" />
 
 											</div>
 										</div>
