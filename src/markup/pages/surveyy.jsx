@@ -133,7 +133,6 @@ const SaveyPage = () => {
       }
       setSurveyDone(true)
     }
-
   }
   const setOpendEndedAnsData = (item) => {
     if (item) {

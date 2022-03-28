@@ -29,7 +29,7 @@ const CommentList = ({ coments }) => {
 									</div>
 								</div>
 								<p>{el.comment}</p>
-								<div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link> </div>
+								{/* <div className="reply"> <Link to="#" className="comment-reply-link">Reply</Link> </div> */}
 							</div>
 						</li>
 					) : null

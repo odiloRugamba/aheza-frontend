@@ -135,7 +135,7 @@ const SelftEvaluation = ({ decline, accept }) => {
             <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
               <div className="container">
                 <div className="page-banner-entry text-center">
-                  <h2>Survey</h2>
+                  <h2>Self Assesement</h2>
                 </div>
               </div>
               <img className="pt-img1 animate-wave" src={animateWave} alt="" />

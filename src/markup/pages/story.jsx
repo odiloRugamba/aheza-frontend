@@ -148,7 +148,7 @@ const StoryDetails = () => {
 
 										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-										<WidgetRecentPosts currentPage="/story/" data={data} title="Recent Stories" />
+										<WidgetRecentPosts currentPage="/story/" data={data} more="/stories" title="Recent Stories" />
 									</aside>
 								</div>
 							</div>
@@ -157,12 +157,8 @@ const StoryDetails = () => {
 
 				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
 			}
-
-
 			<Footer />
-
 		</>
 	);
 }
-
 export default StoryDetails;

@@ -1,8 +1,11 @@
 import React, { Component, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { postDoctors } from "../../store/doctor/actions";
-const ApplyForm = ({ placeholder }) => {
 
+import CheckImg from '../../images/checked.png'
+
+
+const ApplyForm = ({ placeholder }) => {
 	const [firstName, setFirstName] = useState(null)
 	const [lastName, setLastName] = useState(null)
 	const [phoneNumber, setPhoneNumber] = useState(null)
@@ -10,25 +13,38 @@ const ApplyForm = ({ placeholder }) => {
 	const [gender, setGender] = useState(null)
 	const [expertise, setExpertise] = useState(null)
 	const [joinIngText, setJoinIngText] = useState(null)
+	const [loading, setLoading] = useState(null)
+	const [checked, setChecked] = useState(null)
 	const dispatch = useDispatch()
 
 	const submitFunc = () => {
-		dispatch(postDoctors({
-			firstName,
-			lastName,
-			phoneNumber,
-			email,
-			gender,
-			expertise,
-			joinIngText
-		}))
-		setFirstName('')
-		setLastName('')
-		setPhoneNumber('')
-		setEmail('')
-		setGender('')
-		setExpertise('')
-		setJoinIngText('')
+		if (firstName && lastName && phoneNumber && expertise) {
+			setLoading(true)
+			dispatch(postDoctors({
+				firstName,
+				lastName,
+				phoneNumber,
+				email,
+				gender,
+				expertise,
+				joinIngText
+			}))
+			setFirstName('')
+			setLastName('')
+			setPhoneNumber('')
+			setEmail('')
+			setGender('')
+			setExpertise('')
+			setJoinIngText('')
+			setTimeout(() => {
+				setChecked(true)
+			}, 1000);
+			setTimeout(() => {
+				setChecked(false)
+				setLoading(false)
+			}, 3000);
+		}
+
 	}
 	return (
 		<>
@@ -83,7 +99,15 @@ const ApplyForm = ({ placeholder }) => {
 						<textarea value={joinIngText} onChange={(e) => setJoinIngText(e.target.value)} rows="8" name="reason" placeholder="Why do you want to join?" id="reason"></textarea>
 					</p>
 					<p className="form-submit">
-						<input onClick={() => submitFunc()} type="submit" value="Apply" className="submit" id="submit" name="submit" load />
+						{/* <input onClick={() => submitFunc()} type="submit" value="Apply" className="submit" id="submit" name="submit" load /> */}
+						<button onClick={() => submitFunc()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading && checked ? true : false}>
+							{
+								loading ? !checked ? <div class="spinner-border" role="status">
+									<span class="sr-only">Loading...</span>
+								</div> : <div style={{ display: "flex", justifyContent: "center" }}> <img style={{ height: 29, }} src={CheckImg} /></div>
+									: <div style={{ width: 110 }} >Apply</div>
+							}
+						</button>
 					</p>
 				</div>
 			</div>

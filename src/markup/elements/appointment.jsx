@@ -10,6 +10,9 @@ import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
 import { getDoctorByDay, createAppointment } from "../../store/appointment/actions";
+import Notification from "../elements/notification";
+
+
 
 const AboutSection = () => {
 
@@ -25,6 +28,7 @@ const AboutSection = () => {
 	const [selectedDay, setSelectedDay] = useState(null)
 	const [selectDoctorIn, setSelectDoctorIn] = useState(null)
 	const [selectSession, setSelectSession] = useState(null)
+	const [isVisible, setIsVisible] = useState(false)
 	const history = useHistory()
 
 	const [dateCha, setDateCha] = useState(null)
@@ -54,10 +58,14 @@ const AboutSection = () => {
 	}
 
 	useEffect(() => {
-		console.log(data)
 		if (data?.length > 0) {
 			setDoctor(false)
 			setDoctorData([...data])
+		} else if (data?.length === 0) {
+			setIsVisible(true)
+			setTimeout(() => {
+				setIsVisible(false)
+			}, 2000);
 		}
 	}, [data])
 
@@ -83,6 +91,7 @@ const AboutSection = () => {
 
 	return (
 		<>
+			<Notification isVisible={isVisible} />
 			<section className="section-area account-wraper1">
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
 					<div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>

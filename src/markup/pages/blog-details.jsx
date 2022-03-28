@@ -48,7 +48,7 @@ const BlogDetails = () => {
 
 	useEffect(() => {
 		setComnets(resComents)
-		// setLoading(false)
+		setLoading(false)
 	}, [resComents])
 
 	const submitFunc = async (data) => {

@@ -43,9 +43,7 @@ const SocialMediaSection = ({ title }) => {
 						</div>
 						<div className="col-xl-4 col-md-6">
 							<FacebookProvider appId="513240330217367" >
-								{/* <Page href="https://www.facebook.com/GAERGRwanda/" tabs="timeline" /> */}
-								<Page src="https://apps.elfsight.com/p/platform.js" defer></Page>
-								<div class="elfsight-app-a48c5e73-de11-4437-814f-47eb876e0666"></div>
+								<iframe src="https://widget.taggbox.com/90245" style={{ height: 530, width: 360 }}></iframe>
 							</FacebookProvider>
 						</div>
 					</div>

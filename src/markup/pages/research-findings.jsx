@@ -532,6 +532,7 @@ import blogGridPic4 from "../../images/blog/grid/pic4.jpg";
 // 		date: "18 July 2021",
 // 	}
 // ]
+
 const ResearchFindings = () => {
 
 	const [data, setData] = useState([])

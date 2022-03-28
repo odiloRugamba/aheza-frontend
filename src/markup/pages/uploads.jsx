@@ -47,11 +47,12 @@ const Uploads = () => {
 	}, [])
 
 	useEffect(() => {
-		// console.log(res)
 		setData(res)
 		setPageCount(res?.length / postPerPage)
 		setPageData(res?.slice(0, postPerPage))
+		console.log(res)
 	}, [res])
+
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
@@ -59,16 +60,18 @@ const Uploads = () => {
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
 		return `${da}-${mo}-${ye}`
 	}
+
 	const changePage = (page) => {
 		const endingPoint = (page.selected + 1) * postPerPage
 		const statingPoint = endingPoint - postPerPage
 		setPageData(null)
 		setPageData(res.slice(statingPoint, endingPoint))
 	}
+
 	const getVideoId = (url) => {
 		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
 		var match = url.match(regExp);
-		return (match&&match[7].length==11)? match[7] : false;
+		return (match && match[7].length == 11) ? match[7] : false;
 	}
 
 
@@ -102,17 +105,21 @@ const Uploads = () => {
 											<div className="post-media">
 												<Link to={"/upload/" + item?.title + '/' + item?._id}>
 													{
-														item?.youtubeVideo ? 
-														<iframe
-															width="853"
-															height="480"
-															src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
-															frameBorder="0"
-															allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-															allowFullScreen
-															title="Embedded youtube"
-															/>
-															:<img src={item.image} alt="" />
+														item?.youtubeVideoLink ?
+															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
+															// <iframe
+															// 	width="325"
+															// 	height="300"
+															// 	src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`}
+															// 	// src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
+															// 	// src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
+															// 	frameBorder="0"
+															// 	// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+															// 	allowFullScreen
+															// 	title="Embedded youtube"
+															// />
+
+															: <img src={item.image} alt="" />
 													}
 												</Link>
 											</div>

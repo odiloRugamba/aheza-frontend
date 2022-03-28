@@ -1,5 +1,7 @@
 /* ==================
 	8.12 Home Banner
+	banner-img
+	connentInnerr
 =================== */
 .main-banner{
 	position: relative;
@@ -87,6 +89,93 @@
 		position: relative;	
 		margin-right: -160px;
 		margin-left: -50px;
+		.content{
+			height: 510px;
+			width: 440px;
+			 background-size: 430px 490px;
+				 background-repeat: no-repeat;
+					overflow: hidden;
+					position: absolute;
+					bottom: -233px;
+					right: -50px;
+					overflow: hidden;
+		}
+			.connentInnerr{
+				background: black;
+				color: black;
+				position: absolute;
+				bottom: -200px;
+				right: -20px;
+				height: 457px;
+				width: 390px;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				overflow: hidden;
+				.slideNumber{
+					position: absolute;
+					color: black;
+					top: 30px;
+					z-index: 9999999;
+					right: 11.3vw;
+					background: white;
+					width: 35px;
+					height: 35px;
+					font-size: 15px;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+				}
+					.next{
+						display: flex;
+						justify-content: center;
+						position: absolute;
+						right: 0.5vw;
+					}
+					.prev{
+						position: absolute;
+						left: 4px;
+						z-index: 99999;
+					}
+					.nextPrevIcon{
+					div{
+						width: 20px;
+						height: 20px;
+						background: white;
+					border-radius: 100%;
+					cursor: pointer;
+					}
+					img{
+						width: 10px;
+						height: 10px;
+						position: relative;
+						left: 5px;
+						bottom: 1px;
+					}
+					}
+						 div::-webkit-scrollbar{
+    display: none;
+   }
+			}
+			.connentInner{
+				background: #EDEDF5;
+				height: 457px;
+				width: 390px;
+				padding: 6px;
+				// border-radius: 10px;
+				display: flex;
+						justify-content: center;
+						align-items: center;
+						// padding: 0px 70px  0px 10px;
+					.inneData{
+						// padding-right: 100px;
+						z-index: 999;
+					font-size: 20px;
+					text-align: center;
+					width: 330px;
+					}
+			}
 	}	
 	.inner-content{
 		position: absolute;
@@ -196,4 +285,5 @@
 		bottom: 150px;
 		right: 150px;
 	}
+	
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Accordion } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getResearchById } from "../../store/research/actions";
+import { getResearchById, getResearchCommnets } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -23,9 +23,10 @@ const RsearchDetails = () => {
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		console.log('okkk')
 		dispatch(getResearchById(id))
+		dispatch(getResearchCommnets(id))
 	}, [])
+
 	return (
 		<>
 

@@ -6,10 +6,12 @@ const CommentRespond = ({ placeholder, submit, loading }) => {
 	const [email, setEmail] = useState(null)
 	const [comment, setComment] = useState(null)
 	const localSubmit = () => {
-		submit({ comment, email, name })
-		setName('')
-		setEmail('')
-		setComment('')
+		if (name && email && comment) {
+			submit({ comment, email, name })
+			setName('')
+			setEmail('')
+			setComment('')
+		}
 	}
 	useEffect(() => {
 		console.log(loading)
@@ -34,13 +36,7 @@ const CommentRespond = ({ placeholder, submit, loading }) => {
 						<textarea value={comment} onChange={(e) => setComment(e.target.value)} rows="8" name="comment" placeholder={placeholder ? placeholder : "Comment"} id="comment"></textarea>
 					</p>
 					<p className="form-submit">
-						{/* <input onClick={() => localSubmit()} type="submit" value="Submit Comment" className="submit" id="submit" name="submit" /> */}
-						{/* <button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={"loading"} id="submit" name="submit">
-							<div class="spinner-border" role="status">
-								<span class="sr-only">Loading...</span>
-							</div>
-						</button> */}
-						<button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit">
+						<button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading ? true : false}>
 							{
 								loading ? <div class="spinner-border" role="status">
 									<span class="sr-only">Loading...</span>

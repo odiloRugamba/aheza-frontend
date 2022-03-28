@@ -27,6 +27,13 @@ import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
 import testPic3 from "../../images/testimonials/pic3.jpg";
 import galleryPic2 from "../../images/gallery/pic2.jpg";
 import galleryPic5 from "../../images/gallery/pic5.jpg";
+import PickImage from "../../images/pickImage.png";
+import AudioFle from "../../images/audio.mp3";
+import PauseIcon from "../../images/pause-button.png";
+import playIcon from "../../images/pause.png";
+import prevIcon from "../../images/prev.png";
+import nextIcon from "../../images/next.png";
+import { AudioPlayer } from "./AudioPlayer";
 
 
 const UploadsDetails = () => {
@@ -36,8 +43,11 @@ const UploadsDetails = () => {
 	const res = useSelector(state => state.UploadsReducers.upload)
 	const resRel = useSelector(state => state.UploadsReducers.data)
 	const resComments = useSelector(state => state.UploadsReducers.comments)
+	const [audioData, setAudioData] = useState(null)
 	const { id } = useParams()
 	const [loading, setLoading] = useState(false)
+	const [playing, setPlaying] = useState(false)
+	const [playingStart, setPlayingStart] = useState(true)
 
 
 	useEffect(() => {
@@ -48,6 +58,7 @@ const UploadsDetails = () => {
 
 	useEffect(() => {
 		setUpload(res)
+		setAudioData(new Audio(AudioFle))
 	}, [res])
 
 	useEffect(() => {
@@ -71,6 +82,49 @@ const UploadsDetails = () => {
 		await dispatch(postUploadCommnets({ ...data, upload: id }))
 		await dispatch(getUploadCommnets(id))
 	}
+	const getVideoId = (url) => {
+		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+		var match = url.match(regExp);
+		return (match && match[7].length == 11) ? match[7] : false;
+	}
+
+	const prevFunc = () => {
+		console.log('prev')
+	}
+
+
+	const nextFunc = () => {
+		console.log('next')
+		console.log('dd', audioData.currentTime)
+		console.log('dd', audioData)
+		console.log((audioData?.currentTime / audioData?.duration) * 100)
+	}
+
+	const playPauseFunc = () => {
+		if (playingStart) {
+			audioData.play()
+			setPlaying(!playing)
+			setPlayingStart(false)
+		} else {
+			if (!playing) {
+				console.log('playing')
+				audioData.current.play()
+				console.log('dd', audioData)
+			} else {
+				console.log('amm gete')
+				audioData.current.pause()
+			}
+			setPlaying(!playing)
+		}
+
+	}
+	useEffect(() => {
+		console.log((audioData?.currentTime / audioData?.duration) * 100)
+	}, [audioData?.current])
+
+
+
+
 
 	return (
 		<>
@@ -99,15 +153,40 @@ const UploadsDetails = () => {
 									<div className="blog-card blog-single">
 										<div className="post-media">
 											{/* <img src={blogDefaultPic1} alt="" /> */}
-											<iframe
-												width="853"
-												height="480"
-												src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
-												frameBorder="0"
-												allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-												allowFullScreen
-												title="Embedded youtube"
-											/>
+											{
+												res?.youtubeVideoLink ?
+													<iframe
+														width="853"
+														height="480"
+														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
+														// src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
+														frameBorder="0"
+														allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+														allowFullScreen
+														title="Embedded youtube"
+													/> : <AudioPlayer />
+												//  <div className='audioPlayer'>
+												// 	<img src={PickImage} />
+												// 	<div className='playBg'></div>
+												// 	<div className='audioplayerBtnCont'>
+												// 		<div className='AudioPlayLine'>
+												// 			<div style={{ width: 50 + '%' }} className='linePlayed'></div>
+												// 			<div className='dragPin'></div>
+												// 		</div>
+												// 		<div className='playBtnCont'>
+												// 			<div onClick={() => prevFunc()}>
+												// 				<img src={prevIcon} />
+												// 			</div>
+												// 			<div onClick={() => playPauseFunc()} className='playPuaseBtn'>
+												// 				<img src={playing ? PauseIcon : playIcon} />
+												// 			</div>
+												// 			<div onClick={() => nextFunc()}>
+												// 				<img src={nextIcon} />
+												// 			</div>
+												// 		</div>
+												// 	</div>
+												// </div>
+											}
 										</div>
 										<div className="info-bx">
 											<ul className="post-meta">
@@ -163,19 +242,15 @@ const UploadsDetails = () => {
 
 										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-										<WidgetRecentPosts data={data} currentPage="/upload/" title="Recent Stories" />
+										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent Stories" />
 									</aside>
 								</div>
 							</div>
 						</div>
 					</section>
-
 				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
 			}
-
-
 			<Footer />
-
 		</>
 	);
 }

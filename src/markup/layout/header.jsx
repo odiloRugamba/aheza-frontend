@@ -184,7 +184,7 @@ function Header() {
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-									{/* <li className={contactUsActive}><Link to="/survey">Survey</Link></li> */}
+									<li className={contactUsActive}><Link to="/donation">Donation</Link></li>
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
