@@ -1,58 +1,39 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import { getResearchs } from "../../store/research/actions";
 import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
+import { postPayment } from "../../store/payment/actions";
 
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-import waveBlue from "../../images/shap/wave-blue.png";
-import donation from "../../images/donation.jpg";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 
 
 
 const ResearchFindings = () => {
-
- const [data, setData] = useState([])
- const [pageData, setPageData] = useState([])
- const [PageCount, setPageCount] = useState(10)
+ const [name, setName] = useState(null)
+ const [email, setEmail] = useState(null)
+ const [amount, setAmount] = useState(null)
+ const [phoneNumber, setPhoneNumber] = useState(null)
  const dispatch = useDispatch()
- const research = useSelector(state => state.ResearchReducers.data)
+ const data = useSelector(state => state.PaymentReducers.data)
  const postPerPage = 12
 
- useEffect(() => {
-  dispatch(getResearchs())
- }, [])
+
 
  useEffect(() => {
-  setData(research)
-  setPageCount(research?.length / postPerPage)
-  setPageData(research?.slice(0, postPerPage))
- }, [research])
+  console.log(data)
+ }, [data])
 
- const convertData = (date) => {
-  const day = new Date(date)
-  let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
-  let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
-  let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-  return `${da}-${mo}-${ye}`
+ const paymentFunc = () => {
+  console.log(name, email, amount, phoneNumber)
+  dispatch(postPayment({ name, email, amount, phoneNumber }))
  }
 
- const changePage = (page) => {
-  const endingPoint = (page.selected + 1) * postPerPage
-  const statingPoint = endingPoint - postPerPage
-  setPageData(null)
-  setPageData(research.slice(statingPoint, endingPoint))
- }
 
- const donateFunc = () => {
-  console.log('jshdkhkjd')
- }
 
  return (
   <>
@@ -63,25 +44,20 @@ const ResearchFindings = () => {
      <div className='paymentCont'>
       <div className='title'>Enter your payment details</div>
       <div>
-       <input type="string" placeholder='Names' />
+       <input value={name} onChange={(e) => setName(e.target.value)} type="string" placeholder='Names' />
       </div>
       <div>
-       <input type="email" placeholder='Email' />
-       {/* <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" /> */}
-       {/* <input type="password" class="form-control" id="inputPassword" placeholder="Password" /> */}
-      </div>
-
-      <div>
-       <input placeholder='Amount(RWF)' />
+       <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder='Email' />
       </div>
       <div>
-       <input placeholder='phone number for payment(078)' />
+       <input value={amount} onChange={(e) => setAmount(e.target.value)} placeholder='Amount(RWF)' />
+      </div>
+      <div>
+       <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} placeholder='phone number for payment(078)' />
       </div>
       <p className="form-submit">
-       <button type="submit" value="Submit Comment " className="submitComment" id="submit" name="submit">
-
+       <button onClick={() => paymentFunc()} value="Submit Comment " className="submitComment" id="submit" name="submit">
         <span>Continue</span>
-
        </button>
       </p>
      </div>

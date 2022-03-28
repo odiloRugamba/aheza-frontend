@@ -41,6 +41,7 @@ import Thankyou from "./pages/thankyou";
 import SelfAssesement from "./pages/self-assesemt";
 import Donation from "./pages/donation";
 import Payment from "./pages/payment";
+import PaymentThankyou from "./pages/paymentThankyou";
 
 class Markup extends Component {
 	render() {
@@ -84,6 +85,7 @@ class Markup extends Component {
 						<ProtectRoute path='/self-assesement' exact component={SelfAssesement} />
 						<ProtectRoute path='/donation' exact component={Donation} />
 						<ProtectRoute path='/payment' exact component={Payment} />
+						<ProtectRoute path='/successfull' exact component={PaymentThankyou} />
 						<Route component={Error} />
 
 					</Switch>

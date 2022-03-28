@@ -11,3 +11,4 @@ export { LinksSagas } from '../links/saga';
 export { DoctorsSagas } from '../doctor/saga';
 export { ContactUSSagas } from '../contact-us/saga';
 export { TipsSagas } from '../tips/saga';
+export { PaymnentSagas } from '../payment/saga';

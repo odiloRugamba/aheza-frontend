@@ -12,6 +12,7 @@ import { linksReducers } from "../links/reducers";
 import { DoctorReducers } from "../doctor/reducers";
 import { ContactUsReducers } from "../contact-us/reducers";
 import { TipsReducers } from "../tips/reducers";
+import { PaymentReducers } from "../payment/reducers";
 
 const RootReducer = combineReducers({
  BlogsReducers,
@@ -26,7 +27,8 @@ const RootReducer = combineReducers({
  linksReducers,
  DoctorReducers,
  ContactUsReducers,
- TipsReducers
+ TipsReducers,
+ PaymentReducers
 })
 
 export default RootReducer
