@@ -30,9 +30,8 @@ const AboutSection = () => {
 
 	useEffect(() => {
 		if (res?.length) {
-			console.log('dddd', res[0].tipsArray)
-			setData(res[0].tipsArray)
-			// console.log("kdsdshkjdshj", res[0])
+			console.log('dddd', res[0].tips)
+			setData(res[0].tips)
 		}
 
 	}, [res])
