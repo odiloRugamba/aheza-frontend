@@ -318,7 +318,7 @@ const SaveyPage = () => {
                     </SwipeableViews>
                   </div> : <>
                     <div className="page-banner-entry text-center">
-                      <h4>Thanks for your pariticipation!!!!!!!</h4>
+                      <h4>Thank you for your participation!!!!!!!</h4>
                       <div className='thnk-par'>
                         <p>
                           Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.

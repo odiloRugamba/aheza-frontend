@@ -29,9 +29,13 @@ const AboutSection = () => {
 	}
 
 	useEffect(() => {
+		console.log("-================------->>", res)
 		if (res?.length) {
-			console.log('dddd', res[0].tips)
-			setData(res[0].tips)
+			const all = [res[0].title, ...res[0].tips];
+			// all.append({tip: res[0].title})
+			// all.append(res[0].tips)
+			console.log("=====>", res[0].tips)
+			setData(all)
 		}
 
 	}, [res])
@@ -41,7 +45,7 @@ const AboutSection = () => {
 	}, []);
 
 	const nextFunc = () => {
-		if (slideIndex !== 5) {
+		if (slideIndex < data.length - 1) {
 			setSlideIndex(slideIndex + 1)
 		}
 	}
@@ -63,8 +67,9 @@ const AboutSection = () => {
 					<div className="row align-items-center">
 						<div className="col-lg-7 col-md-6 col-sm-7">
 							<h6 className="title-ext text-primary"> Get yourself help today</h6>
-							<h1>We Provide healing and career services online and on-site</h1>
-							<Link to="/self-assesement" className="btn btn-secondary btn-lg shadow">Self-assement</Link>
+							<h2>You are worth the burden and the dedication of time that is required to help you recover</h2>
+							{/* <h1>We Provide healing and career services online and on-site</h1> */}
+							<Link to="/self-assesement" className="btn btn-secondary btn-lg shadow">Book appointment</Link>
 						</div>
 
 						<div className="col-lg-5 col-md-6 col-sm-5">
@@ -79,7 +84,7 @@ const AboutSection = () => {
 										</div>
 									</div>
 									<div className='slideNumber'>
-										{slideIndex + 1}/6
+										{slideIndex + 1}/{data.length}
 									</div>
 									<SwipeableViews index={slideIndex} enableMouseEvents>
 										{

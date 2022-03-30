@@ -135,7 +135,7 @@ const SelftEvaluation = ({ decline, accept }) => {
             <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
               <div className="container">
                 <div className="page-banner-entry text-center">
-                  <h2>Self Assesement</h2>
+                  <h2>Please take Self Assesment first</h2>
                 </div>
               </div>
               <img className="pt-img1 animate-wave" src={animateWave} alt="" />
@@ -208,10 +208,10 @@ const SelftEvaluation = ({ decline, accept }) => {
                       </SwipeableViews>
                     </div> : <>
                       <div className="page-banner-entry text-center">
-                        <h4>Thanks for your pariticipation!!!!!!!</h4>
+                        <h4>Thank you for your participation!</h4>
                         <div className='thnk-par'>
                           <p>
-                            Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.
+                            Please go ahead and book your appointment. our therapists are waiting for you!
                           </p>
                         </div>
                         <div className="col-lg-12">

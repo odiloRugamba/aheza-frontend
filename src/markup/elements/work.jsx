@@ -34,7 +34,7 @@ class aboutSection extends Component{
 									<div className="work-num-bx">02</div>
 									<div className="work-content">
 										<h5 className="title text-secondary mb-10">Book an appointment</h5>
-										<p>Book an appointment from our qualified conselors that is handled with total privacy and anonymity</p>
+										<p>Book an appointment from our qualified therapist that is handled with total privacy and anonymity</p>
 									</div>
 								</div>
 							</div>

@@ -126,7 +126,7 @@ const AboutSection = () => {
 												<option value="INPERSON">In Person</option>
 												<option value="PHONECALL">Phone Call</option>
 												<option value="ZOOMCALL">Zoom Video Call</option>
-												<option value="AHEZACHAT">Aheza Call</option>
+												<option value="AHEZACHAT">Aheza Chat</option>
 											</select>
 										</div>
 										<div className="form-group">
