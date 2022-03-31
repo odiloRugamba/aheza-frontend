@@ -11,6 +11,7 @@ import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
 import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
 import Notification from "../elements/notification";
+import moment from "moment";
 
 
 
@@ -28,7 +29,6 @@ const AboutSection = () => {
 	const [selectDoctorIn, setSelectDoctorIn] = useState(null)
 	const [selectSession, setSelectSession] = useState(null)
 	const [isVisible, setIsVisible] = useState(false)
-	const [disableBtn, setDisableBtn] = useState()
 	const history = useHistory()
 
 	const [dateCha, setDateCha] = useState(null)
@@ -38,6 +38,7 @@ const AboutSection = () => {
 	const [sessionData, setSessionData] = useState([])
 	const dispatch = useDispatch()
 	const data = useSelector(state => state.AppointmentReducers.data)
+	const [errors, setErrors]  = useState({});
 
 	const selectday = (e) => {
 		setSelectedDay(e.target.value)
@@ -70,7 +71,8 @@ const AboutSection = () => {
 	}, [data])
 
 
-	const submitAppointment = () => {
+	const submitAppointment = (event) => {
+		event.preventDefault();
 		dispatch(postAppointmentData({
 			firstName,
 			lastName,
@@ -87,7 +89,13 @@ const AboutSection = () => {
 		history.push('/Finalize')
 	}
 
-
+	const validateEmail = (email) => {
+		return String(email)
+			.toLowerCase()
+			.match(
+				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			);
+	};
 
 	return (
 		<>
@@ -105,6 +113,9 @@ const AboutSection = () => {
 											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
 											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
 										</div>
+										{errors.firstName && <p className={"text-danger text-left"}>{errors.firstName}</p>}
+										{errors.firstName && <p className={"text-danger text-left"}>{errors.lastName}</p>}
+
 										<div className="form-group">
 											<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
 												<option selected>Gender </option>
@@ -114,11 +125,17 @@ const AboutSection = () => {
 											</select>
 											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
 										</div>
+										{errors.gender && <p className={"text-danger"} >{errors.gender}</p>}
+										{errors.date && <p className={"text-danger"}> {errors.date}</p>}
+
 										<div className="form-group">
 											<input value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
 											<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
 											{/* <input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" /> */}
 										</div>
+										{errors.phoneNumber && <p className={"text-danger"}>{errors.phoneNumber}</p>}
+										{errors.email && <p className={"text-danger"}>{errors.email}</p>}
+
 										<div className="form-group">
 											{/* <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" /> */}
 											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
@@ -142,26 +159,26 @@ const AboutSection = () => {
 												<option value="SUNDAY">Sunday</option>
 											</select>
 										</div>
-										<div className="form-group">
-											<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
-												<option selected>Select Doctor</option>
-												{
-													DoctorData.map(el =>
-														<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>
-													)
-												}
-											</select>
-											<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>
-												<option selected>Select Session</option>
-												{
-													sessionData?.map(el =>
-														el.status === "AVAILABLE" ?
-															<option value={"Session" + el.startTime + '-' + el.endTime}>Session({el.startTime} - {el.endTime})</option> : null
-													)
-												}
-											</select>
-										</div>
-										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay && selectDoctorIn)}>Appointment Now</button>
+										{/*<div className="form-group">*/}
+										{/*	<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>*/}
+										{/*		<option selected>Select Doctor</option>*/}
+										{/*		{*/}
+										{/*			DoctorData.map(el =>*/}
+										{/*				<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>*/}
+										{/*			)*/}
+										{/*		}*/}
+										{/*	</select>*/}
+										{/*	<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>*/}
+										{/*		<option selected>Select Session</option>*/}
+										{/*		{*/}
+										{/*			sessionData?.map(el =>*/}
+										{/*				el.status === "AVAILABLE" ?*/}
+										{/*					<option value={"Session" + el.startTime + '-' + el.endTime}>Session({el.startTime} - {el.endTime})</option> : null*/}
+										{/*			)*/}
+										{/*		}*/}
+										{/*	</select>*/}
+										{/*</div>*/}
+										<button onClick={(event) => submitAppointment(event)} type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
 										{/* </form> */}
 									</div>
 								</div>

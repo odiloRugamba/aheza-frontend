@@ -16,8 +16,6 @@ import icon3 from "../../images/icon/icon3.png";
 import animateWave from "../../images/shap/wave-blue.png";
 import animate2 from "../../images/shap/circle-dots.png";
 import animateRotate from "../../images/shap/plus-blue.png";
-
-
 const ContactUs = () => {
 	const [firstName, setFirstName] = useState(null)
 	const [email, setEmail] = useState(null)
