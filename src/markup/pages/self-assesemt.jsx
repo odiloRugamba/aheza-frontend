@@ -86,7 +86,8 @@ const SurveyPage = () => {
         setQuestions(copyData)
         setOpendEndedAns(null)
       }
-      setSurveyDone(true)
+      // setSurveyDone(true)
+      history.push('/book-appointment')
     }
 
   }
@@ -166,8 +167,8 @@ const SurveyPage = () => {
       phoneNumber,
       questions: answerCopy
     }))
-    setSubmition(true)
-    // history.push('/')
+    // setSubmition(true)
+    // history.push('/book-appointment')
   }
   const CloseModel = () => {
     setModel(false)
@@ -303,49 +304,50 @@ const SurveyPage = () => {
                           ) : <div style={{ display: 'flex', alignItems: "center", justifyContent: 'center' }}><LoadingComp /></div>
                       }
                     </SwipeableViews>
-                  </div> : !submition ?
-                    <div className='rowCont'>
-                      <div className="col-lg-10 mb-30">
-                        <form className="form-wraper contact-form ajax-form">
-                          <div className="ajax-message"></div>
-                          <div className="row">
-                            <div className="form-group col-md-12">
-                              <input value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Your Names" />
-                            </div>
-                            <div className="form-group col-md-12">
-                              <input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
-                            </div>
-                            <div className="form-group col-md-12">
-                              <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
-                            </div>
-                            <div className="col-lg-12">
-                              <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div> :
-                    <>
-                      <div className="page-banner-entry text-center">
-                        <h4>Thank you for your participation!</h4>
-                        <div className='thnk-par'>
-                          <p>
-                            Please go ahead and book your appointment. our therapists are waiting for you!
-                          </p>
-                        </div>
-                        {/* <div className="col-lg-12">
-                          <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit To Aheza</button>
-                        </div> */}
-                        <div className='changeQuestionBtn'>
-                          <div>
-                            <button onClick={() => history.push('/')} className='positionBtn'>Aheza</button>
-                          </div>
-                          <div>
-                            <button onClick={() => history.push('/book-appointment')} className='positionBtn'>Book Appointment</button>
-                          </div>
-                        </div>
-                      </div>
-                    </>
+                  </div> : null
+                // !submition ?
+                //   <div className='rowCont'>
+                //     <div className="col-lg-10 mb-30">
+                //       <form className="form-wraper contact-form ajax-form">
+                //         <div className="ajax-message"></div>
+                //         <div className="row">
+                //           <div className="form-group col-md-12">
+                //             <input value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Your Names" />
+                //           </div>
+                //           <div className="form-group col-md-12">
+                //             <input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
+                //           </div>
+                //           <div className="form-group col-md-12">
+                //             <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
+                //           </div>
+                //           <div className="col-lg-12">
+                //             <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
+                //           </div>
+                //         </div>
+                //       </form>
+                //     </div>
+                //   </div> :
+                //   <>
+                //     <div className="page-banner-entry text-center">
+                //       <h4>Thank you for your participation!</h4>
+                //       <div className='thnk-par'>
+                //         <p>
+                //           Please go ahead and book your appointment. our therapists are waiting for you!
+                //         </p>
+                //       </div>
+                //       {/* <div className="col-lg-12">
+                //         <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit To Aheza</button>
+                //       </div> */}
+                //       <div className='changeQuestionBtn'>
+                //         <div>
+                //           <button onClick={() => history.push('/')} className='positionBtn'>Aheza</button>
+                //         </div>
+                //         <div>
+                //           <button onClick={() => history.push('/book-appointment')} className='positionBtn'>Book Appointment</button>
+                //         </div>
+                //       </div>
+                //     </div>
+                //   </>
               }
             </div>
           </div>
