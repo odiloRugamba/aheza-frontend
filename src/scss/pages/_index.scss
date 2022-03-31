@@ -7,7 +7,18 @@
 .mfp-wrap {
     z-index: 9999999;
 }
-
+.form-group{
+	div{
+		width: 90%;
+		margin-left: 4px;
+		margin-right: 4px;
+		p{
+			display: flex;
+			justify-content: flex-start;
+			margin-left: 10px;
+		}
+	}
+}
 // service
 .service-wraper{
 	position: relative;

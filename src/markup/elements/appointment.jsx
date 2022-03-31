@@ -30,7 +30,7 @@ const AboutSection = () => {
 	const [isVisible, setIsVisible] = useState(false)
 	const [disableBtn, setDisableBtn] = useState()
 	const history = useHistory()
-
+	const { phoneErrorFocus, setPhoneErrorFocus } = useState(null)
 	const [dateCha, setDateCha] = useState(null)
 	const [Session, setSession] = useState(true)
 	const [Doctor, setDoctor] = useState(true)
@@ -87,11 +87,24 @@ const AboutSection = () => {
 		history.push('/Finalize')
 	}
 
+	const validateEmail = (email) => {
+		return String(email)
+			.toLowerCase()
+			.match(
+				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			);
+	};
+
+	const validatePhoneNumber = (phoneNumber) => {
+		return phoneNumber.match(/^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/)
+	}
+
+
 
 
 	return (
 		<>
-			<Notification isVisible={isVisible} />
+			{/* <Notification isVisible={isVisible} /> */}
 			<section className="section-area account-wraper1">
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
 					<div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
@@ -112,11 +125,19 @@ const AboutSection = () => {
 												<option value="Female">Female</option>
 												<option value="NONE">Not to mention</option>
 											</select>
+
 											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
 										</div>
 										<div className="form-group">
-											<input value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
-											<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
+											<div>
+												<input onBlur={() => validatePhoneNumber()} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
+												{/* {validatePhoneNumber ? <p className={"text-danger"}>*Your phone number is required</p> : null} */}
+											</div>
+											<div>
+												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
+												{/* {validateEmail ? <p className={"text-danger"}>*Your email  is required</p> : null} */}
+											</div>
+
 											{/* <input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" /> */}
 										</div>
 										<div className="form-group">
@@ -142,7 +163,7 @@ const AboutSection = () => {
 												<option value="SUNDAY">Sunday</option>
 											</select>
 										</div>
-										<div className="form-group">
+										{/* <div className="form-group">
 											<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
 												<option selected>Select Doctor</option>
 												{
@@ -160,8 +181,8 @@ const AboutSection = () => {
 													)
 												}
 											</select>
-										</div>
-										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay && selectDoctorIn)}>Appointment Now</button>
+										</div> */}
+										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>Appointment Now</button>
 										{/* </form> */}
 									</div>
 								</div>
