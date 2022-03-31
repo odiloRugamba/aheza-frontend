@@ -230,7 +230,7 @@ function Header() {
 											}
 										</div>
 										<div className="appontiCont page-banner-entry text-center">
-											<div>To book an appointment from website <span onClick={() => onChangeRoute('/book-appointment')}>Click Here</span></div>
+											<div>To book an appointment from website <span onClick={() => onChangeRoute('/self-assesement')}>Click Here</span></div>
 										</div>
 									</div>
 								</div>

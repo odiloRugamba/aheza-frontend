@@ -89,7 +89,6 @@ const SurveyPage = () => {
       // setSurveyDone(true)
       history.push('/book-appointment')
     }
-
   }
   const setOpendEndedAnsData = (item) => {
     if (item) {
