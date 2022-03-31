@@ -233,7 +233,9 @@ const SurveyPage = () => {
                                   }}>
                                     <span className='checkBox'>
                                       <label className='radioBtn'>
-                                        <input checked={el.checked} type="radio" id="scales" name="que" value={el.checked} />
+                                        <input onClick={() => {
+                                          selectCategory(el.id)
+                                        }} checked={el.checked} type="radio" id="scales" name="que" value={el.checked} />
                                         <span />
                                       </label>
                                     </span>
