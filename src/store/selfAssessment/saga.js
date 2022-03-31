@@ -6,6 +6,7 @@ import { GET_SELF_ASSESSMENT_QUESTIONS, GET_SELF_ASSESSMENT_QUESTIONS_SUCCESS, A
 
 function* getQuestions(data) {
  try {
+  console.log(data)
   const response = yield call(Dcore.get, `/selfAssessment/get/${data.value}`)
   console.log(response.data.message.data)
   yield put({ type: GET_SELF_ASSESSMENT_QUESTIONS_SUCCESS, value: response.data.message.data })

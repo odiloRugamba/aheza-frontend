@@ -10,14 +10,74 @@ import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
 import verified from '../../images/verified.png';
+import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
+
+
+
 
 const AboutSection = () => {
-
  const [money, setMoney] = useState(null)
+ const [loading, setLoading] = useState(null)
+ const data = useSelector(state => state.AppointmentReducers.postData)
+ const paymentData = useSelector(state => state.AppointmentReducers.paymentData)
+
+ const [appointmentOps, setAppointmentOps] = useState([])
  const history = useHistory()
- const checkOut = () => {
-  history.push('/thankyou')
+ const dispatch = useDispatch()
+ const appOption = [
+  { value: 'INPERSON', selected: false, name: 'In Preson' },
+  { value: 'PHONECALL', selected: false, name: 'Phone Call' },
+  { value: 'ZOOMCALL', selected: false, name: ' Zoom Video Call' },
+  { value: 'AHEZACHAT', selected: false, name: 'Aheza Chat' }
+ ]
+ useEffect(() => {
+  if (data?.firstName) {
+   // console.log('dakkkkkta', data)
+   appOption.forEach(el => {
+    if (el.value === data.CommunicationMethod) {
+     el.selected = true
+     changeMoney(el.value)
+    }
+   })
+   setAppointmentOps(appOption)
+  } else {
+   history.push('/book-appointment')
+  }
+ }, [data]);
+
+ const changeMoney = (item) => {
+  setMoney(item === 'INPERSON' ? 300000 : item === 'PHONECALL' ? 100 : item === 'ZOOMCALL' ? 10000 : item === 'AHEZACHAT' ? 20000 : null)
  }
+ const selectMethod = (item) => {
+  appOption.forEach(el => {
+   if (el.value === item.value) {
+    el.selected = true
+   } else {
+    el.selected = false
+   }
+  })
+  changeMoney(item.value)
+  setAppointmentOps(appOption)
+ }
+
+
+
+ const checkOut = () => {
+  setLoading(true)
+  // history.push('/thankyou')
+  dispatch(createAppointment({
+   ...data,
+   amount: money
+  }))
+ }
+ useEffect(() => {
+  if (paymentData) {
+   console.log('paymentData', paymentData)
+   window.open(paymentData.link)
+   setLoading(false)
+  }
+ }, [paymentData])
+
  return (
   <>
    <section className="section-area account-wraper1">
@@ -41,19 +101,26 @@ const AboutSection = () => {
           <div className='questionCont'>
            <div className='title text-secondary mb-1 chooseText'>Method of Communication </div>
            <ul>
-            <li>
+            {
+             appointmentOps.map(el =>
+              <li onClick={() => selectMethod(el)}>
+               <span className='checkBox'>
+                <label className='radioBtn'>
+                 {console.log(el)}
+                 <input checked={el.selected} name='appointment' type="radio" id="scales" />
+                 <span />
+                </label>
+               </span>
+               <a>{el.name}</a>
+              </li>
+             )
+            }
+
+
+            {/* <li>
              <span className='checkBox'>
               <label className='radioBtn'>
-               <input type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a>In Preson</a>
-            </li>
-            <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input type="radio" id="scales" />
+               <input name='appointment' type="radio" id="scales" />
                <span />
               </label>
              </span>
@@ -62,7 +129,7 @@ const AboutSection = () => {
             <li>
              <span className='checkBox'>
               <label className='radioBtn'>
-               <input type="radio" id="scales" />
+               <input name='appointment' type="radio" id="scales" />
                <span />
               </label>
              </span>
@@ -71,14 +138,17 @@ const AboutSection = () => {
             <li>
              <span className='checkBox'>
               <label className='radioBtn'>
-               <input type="radio" id="scales" />
+               <input name='appointment' type="radio" id="scales" />
                <span />
               </label>
              </span>
              <a> Aheza Chat </a>
-            </li>
+            </li> */}
+
            </ul>
           </div>
+
+
 
           <div>
            <div className="work-content">
@@ -91,14 +161,20 @@ const AboutSection = () => {
 
             <div>
              <div className="textRepresent">Session Payment:</div>
-             <div className='title text-secondary mb-1'>RWF 10,000</div>
+             <div className='title text-secondary mb-1'>RWF {money}</div>
             </div>
            </div>
            <div>
            </div>
           </div>
           <div>
-           <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">CheckOut</button>
+           <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
+            {
+             loading ? <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+             </div> : <span>CheckOut</span>
+            }
+           </button>
           </div>
          </div>
         </div>

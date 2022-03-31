@@ -9,13 +9,12 @@ import appMapPin from '../../images/appointment/map-pin.png';
 import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
-import { getDoctorByDay, createAppointment } from "../../store/appointment/actions";
+import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
 import Notification from "../elements/notification";
 
 
 
 const AboutSection = () => {
-
 	// formData
 	const [firstName, setFirstName] = useState(null)
 	const [lastName, setLastName] = useState(null)
@@ -29,6 +28,7 @@ const AboutSection = () => {
 	const [selectDoctorIn, setSelectDoctorIn] = useState(null)
 	const [selectSession, setSelectSession] = useState(null)
 	const [isVisible, setIsVisible] = useState(false)
+	const [disableBtn, setDisableBtn] = useState()
 	const history = useHistory()
 
 	const [dateCha, setDateCha] = useState(null)
@@ -71,7 +71,7 @@ const AboutSection = () => {
 
 
 	const submitAppointment = () => {
-		dispatch(createAppointment({
+		dispatch(postAppointmentData({
 			firstName,
 			lastName,
 			gender,
@@ -130,7 +130,7 @@ const AboutSection = () => {
 											</select>
 										</div>
 										<div className="form-group">
-											<input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" />
+											{/* <input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" /> */}
 											<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
 												<option selected>Select Day</option>
 												<option value="MONDAY">Monday</option>
@@ -161,7 +161,7 @@ const AboutSection = () => {
 												}
 											</select>
 										</div>
-										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg">Appointment Now</button>
+										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay && selectDoctorIn)}>Appointment Now</button>
 										{/* </form> */}
 									</div>
 								</div>

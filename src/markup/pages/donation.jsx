@@ -52,8 +52,9 @@ const ResearchFindings = () => {
  }
 
  const donateFunc = () => {
-  console.log('jshdkhkjd')
-  history.push('/payment')
+  // console.log('jshdkhkjd')
+  // history.push('/payment')
+  window.open('https://dashboard.flutterwave.com/donate/ojzeswzxl75e')
  }
 
  return (

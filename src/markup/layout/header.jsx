@@ -10,6 +10,9 @@ import twitterLogo from "../../images/twitter.svg"
 import instagramLogo from "../../images/instagram.svg"
 import facebook from "../../images/facebook.svg"
 import logoWhite from '../../images/logo-white.png';
+import { BsXLg } from "react-icons/bs";
+
+
 
 function Header() {
 	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
@@ -207,6 +210,11 @@ function Header() {
 						<div className='mainPartCont'>
 							<div className='mainPart'>
 								<div className='rowCont'>
+									<div className='closeCont'>
+										<div onClick={() => setModel(!model)} className='closeBtn'>
+											<BsXLg />
+										</div>
+									</div>
 									<div className="col-lg-0 mb-0">
 										<div className="page-banner-entry text-center">
 											<h5>If this is an Emergency, Call 1024</h5>

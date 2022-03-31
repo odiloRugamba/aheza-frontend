@@ -10,7 +10,7 @@ import SelfEvaluation from "../elements/selfEvaluation";
 
 
 const BookAppointment = () => {
-	const [selfCheckup, setSelfCheckup] = useState(false)
+	const [selfCheckup, setSelfCheckup] = useState(true)
 	const declineSelfEvaluation = () => {
 		setSelfCheckup(false)
 	}

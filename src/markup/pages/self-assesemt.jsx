@@ -30,12 +30,15 @@ const SaveyPage = () => {
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
   const [submition, setSubmition] = useState(null)
-  const [chosenCategory, setChoseCategory] = useState(null);
-  const [onBehalfQuestion, setonBehalfQuestion] = useState([
+  const [chosenCategory, setChoseCategory] = useState("Individual");
+  const category = [
     { name: "Individual", checked: true, id: 1 },
     { name: "Couple", checked: false, id: 2 },
     { name: "Child", checked: false, id: 3 },
-  ])
+  ]
+
+  const [onBehalfQuestion, setonBehalfQuestion] = useState(category)
+
 
   const [name, setName] = useState(null)
   const [email, setEmail] = useState(null)
@@ -47,11 +50,13 @@ const SaveyPage = () => {
   const dispatch = useDispatch()
   const resData = useSelector(state => state.SelfAssessmentReducers.data)
 
-  const startSaveyFunc = (category) => {
-    console.log("========>", category?.toUpperCase())
-    dispatch(getQuestions(category?.toUpperCase()))
+  const startSaveyFunc = () => {
+    console.log("========>", chosenCategory)
+    console.log("========>", chosenCategory?.toUpperCase())
+    dispatch(getQuestions(chosenCategory?.toUpperCase()))
     setStartSavey(true)
   }
+
   const nextAPrevFunc = (item, questionType, dataItem) => {
     if (item === 'prev' && pageIndex !== 0) {
       setPageIndex(pageIndex - 1)
@@ -179,6 +184,17 @@ const SaveyPage = () => {
     setTitle(resData?.title)
     setId(resData?._id)
   }, [resData])
+  const selectCategory = (id) => {
+    category.map(el => {
+      if (el.id === id) {
+        el.checked = true
+        setChoseCategory(el.name)
+      } else {
+        el.checked = false
+      }
+    })
+    setonBehalfQuestion(category)
+  }
 
 
   return (
@@ -203,7 +219,7 @@ const SaveyPage = () => {
               {
                 !startSavey ? <div className='rowCont'>
                   <div className="col-lg-10 mb-30">
-                    <form className="form-wraper contact-form ajax-form">
+                    <div className="form-wraper contact-form ajax-form">
                       <div className="ajax-message"></div>
                       <div className="row">
                         <div className='onBehalfCont'>
@@ -214,12 +230,12 @@ const SaveyPage = () => {
                             <ul>
                               {
                                 onBehalfQuestion.map(el =>
-                                  <li>
+                                  <li onClick={() => {
+                                    selectCategory(el.id)
+                                  }}>
                                     <span className='checkBox'>
                                       <label className='radioBtn'>
-                                        <input type="radio" id="scales" name="que" value={el.checked} onClick={() => {
-                                          setChoseCategory(el.name)
-                                        } } />
+                                        <input checked={el.checked} type="radio" id="scales" name="que" value={el.checked} />
                                         <span />
                                       </label>
                                     </span>
@@ -232,11 +248,11 @@ const SaveyPage = () => {
                         </div>
 
                         <div className="col-lg-12">
-                          <button onClick={() => startSaveyFunc(chosenCategory)} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Start</button>
+                          <button onClick={() => startSaveyFunc()} className="btn w-100 btn-secondary btn-lg">Start</button>
                         </div>
 
                       </div>
-                    </form>
+                    </div>
                   </div>
                 </div> : !surveyDone ?
                   <div className='swipeCont'>
@@ -287,7 +303,7 @@ const SaveyPage = () => {
                                 </div>
                               </div>
                             </div>
-                          ) : <div style={{ position: "relative", right: "340px" }}><LoadingComp /></div>
+                          ) : <div style={{ display: 'flex', alignItems: "center", justifyContent: 'center' }}><LoadingComp /></div>
                       }
                     </SwipeableViews>
                   </div> : !submition ?
@@ -349,9 +365,9 @@ const SaveyPage = () => {
                   </div>
                   <div className='mainContent'>
                     <p>
-                     Welcome to Aheza developed mental health self assessment. Please take time to answer the following questions carefully and truthfully
-                    </p> 
-                    </div>
+                      Welcome to Aheza developed mental health self assessment. Please take time to answer the following questions carefully and truthfully
+                    </p>
+                  </div>
                   <div className='changeQuestionBtn'>
                     <div>
                       <button onClick={() => history.push('/')} className='positionBtn'>Aheza</button>

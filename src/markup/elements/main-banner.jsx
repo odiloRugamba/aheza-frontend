@@ -91,7 +91,7 @@ const AboutSection = () => {
 											data?.length > 0 ?
 												data.map(el => <div style={{ background: "#EDEDF5" }} className='connentInner'>
 													<div className='inneData'>
-														{console.log('hello')}
+														{/* {console.log('hello')} */}
 														{el}
 													</div>
 												</div>

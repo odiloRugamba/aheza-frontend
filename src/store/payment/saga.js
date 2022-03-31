@@ -7,7 +7,7 @@ import { POST_PAYMENT, POST_PAYMENT_SUCCESS } from "./actions";
 function* postPayment(data) {
  try {
   console.log('okkk', data)
-  const response = yield call(Dcore.post, '/payment', data)
+  const response = yield call(Dcore.post, '/payment', data.value)
   console.log(response)
   yield put({ type: POST_PAYMENT_SUCCESS, value: response.data.data })
  } catch (err) {

@@ -132,11 +132,13 @@
 						justify-content: center;
 						position: absolute;
 						right: 0.5vw;
+						padding-left: 2px;
 					}
 					.prev{
 						position: absolute;
 						left: 4px;
 						z-index: 99999;
+						padding-right: 2px;
 					}
 					.nextPrevIcon{
 					div{
@@ -145,6 +147,10 @@
 						background: white;
 					border-radius: 100%;
 					cursor: pointer;
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					// padding: ;
 					}
 					img{
 						width: 10px;
