@@ -42,8 +42,10 @@ import SelfAssesement from "./pages/self-assesemt";
 import Donation from "./pages/donation";
 import Payment from "./pages/payment";
 import PaymentThankyou from "./pages/paymentThankyou";
+import Terms from "./elements/Terms";
 
 class Markup extends Component {
+
 	render() {
 		return (
 			<>
@@ -78,7 +80,6 @@ class Markup extends Component {
 						<ProtectRoute path='/uploads' exact component={Uploads} />
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
-						{/* <ProtectRoute path='/surveyy' exact component={SurveyPage} /> */}
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
 						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
@@ -86,6 +87,7 @@ class Markup extends Component {
 						<ProtectRoute path='/donation' exact component={Donation} />
 						<ProtectRoute path='/payment' exact component={Payment} />
 						<ProtectRoute path='/successfull' exact component={PaymentThankyou} />
+						<ProtectRoute path='/terms' exact component={Terms} />
 						<Route component={Error} />
 
 					</Switch>

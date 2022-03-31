@@ -29,12 +29,8 @@ const AboutSection = () => {
 	}
 
 	useEffect(() => {
-		console.log("-================------->>", res)
 		if (res?.length) {
 			const all = [res[0].title, ...res[0].tips];
-			// all.append({tip: res[0].title})
-			// all.append(res[0].tips)
-			console.log("=====>", res[0].tips)
 			setData(all)
 		}
 
@@ -77,7 +73,6 @@ const AboutSection = () => {
 								<div style={{ backgroundImage: "url(" + doctorImg + ")", }} class="content">
 								</div>
 								<div className='connentInnerr'>
-
 									<div onClick={() => privFunc()} className='nextPrevIcon prev'>
 										<div>
 											<img src={leftIcon} />
@@ -93,6 +88,7 @@ const AboutSection = () => {
 													<div className='inneData'>
 														{/* {console.log('hello')} */}
 														{el}
+														<p>this</p>
 													</div>
 												</div>
 												) : null

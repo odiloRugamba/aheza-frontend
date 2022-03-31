@@ -28,7 +28,7 @@ const BlogDetails = () => {
 	const resComents = useSelector(state => state.BlogsReducers.comments)
 	const [blogItem, setBlogItem] = useState(null)
 	const [relData, setRelData] = useState([])
-	const [coments, setComnets] = useState([])
+	const [coments, setComments] = useState([])
 	const [loading, setLoading] = useState(false)
 
 	useEffect(() => {
@@ -47,14 +47,20 @@ const BlogDetails = () => {
 	}, [resData])
 
 	useEffect(() => {
-		setComnets(resComents)
+		setComments(resComents)
 		setLoading(false)
 	}, [resComents])
 
 	const submitFunc = async (data) => {
 		setLoading(true)
-		await dispatch(postblogComment({ ...data, blog: id }))
-		await dispatch(getBlogComment(id))
+		try {
+			await dispatch(postblogComment({ ...data, blog: id }));
+			setComments([...coments, {name: data.name, email: data.email, comment: data.comment, updatedAt: new Date()}]);
+		}
+		catch (e) {
+			console.log(e.message);
+		}
+		setLoading(false);
 	}
 
 
