@@ -67,7 +67,7 @@ const ServiceDetail = () => {
 											}
 										</ul>
 									</div>
-									<div className="widget">
+									{/* <div className="widget">
 										<div className="brochure-bx">
 											<h5 className="title-head">Download</h5>
 											<Link to="#" className="download-link">
@@ -81,7 +81,7 @@ const ServiceDetail = () => {
 												<span>Download</span>
 											</Link>
 										</div>
-									</div>
+									</div> */}
 
 								</aside>
 							</div>

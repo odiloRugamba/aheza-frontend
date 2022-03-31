@@ -27,9 +27,9 @@ const SurveyPage = () => {
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
   const [submition, setSubmition] = useState(null)
-  const [chosenCategory, setChoseCategory] = useState("Individuals");
+  const [chosenCategory, setChoseCategory] = useState("Individual");
   const category = [
-    { name: "Individuals", checked: true, id: 1 },
+    { name: "Individual", checked: true, id: 1 },
     { name: "Couple", checked: false, id: 2 },
     { name: "Child", checked: false, id: 3 },
   ]
