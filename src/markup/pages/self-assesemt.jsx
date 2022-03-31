@@ -27,9 +27,9 @@ const SurveyPage = () => {
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
   const [submition, setSubmition] = useState(null)
-  const [chosenCategory, setChoseCategory] = useState("Individual");
+  const [chosenCategory, setChoseCategory] = useState("Individuals");
   const category = [
-    { name: "Individual", checked: true, id: 1 },
+    { name: "Individuals", checked: true, id: 1 },
     { name: "Couple", checked: false, id: 2 },
     { name: "Child", checked: false, id: 3 },
   ]
@@ -245,11 +245,9 @@ const SurveyPage = () => {
                             </ul>
                           </div>
                         </div>
-
                         <div className="col-lg-12">
                           <button onClick={() => startSaveyFunc()} className="btn w-100 btn-secondary btn-lg">Start</button>
                         </div>
-
                       </div>
                     </div>
                   </div>
