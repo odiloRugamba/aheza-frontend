@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 // Images
-import Logo from '../../images/logo.png';
 import footerBg from '../../images/background/footer.jpg';
-import ptImg1 from '../../images/shap/wave-blue.png';
-import ptImg2 from '../../images/shap/circle-dots.png';
-import ptImg3 from '../../images/shap/plus-blue.png';
-import ptImg4 from '../../images/shap/wave-blue.png';
 
-// Social Images
-import facebook from '../../images/social/facebook.png';
-import twitter from '../../images/social/twitter.png';
-import instagram from '../../images/social/instagram.png';
-import linkedin from '../../images/social/linkedin.png';
 
-class aboutSection extends Component {
-	render() {
+
+import {useSelector} from "react-redux";
+
+const Footer  = () => {
+		const services = useSelector(state=> state.servicesReducers.data);
+
 		return (
 			<>
-
 				<footer className="footer" style={{ backgroundImage: "url(" + footerBg + ")" }}>
 					<div className="footer-top" style={{backgroundColor: "rgba(255,255,255,0.7)"}}>
 						<div className="containerr">
@@ -43,12 +36,9 @@ class aboutSection extends Component {
 									<div className="widget footer_widget">
 										<h3 className="footer-title">Our Service</h3>
 										<ul>
-											<li><Link to="/service-details"><span>Career and life coaching</span></Link></li>
-											<li><Link to="/service-details"><span>Psychiatric consultation</span></Link></li>
-											<li><Link to="/service-details"><span>Ergo therapy/occupation service</span></Link></li>
-											<li><Link to="/service-details"><span>counselling and Psychotherapy</span></Link></li>
-											<li><Link to="/service-details"><span>Palliative care and home services</span></Link></li>
-											{/* <li><Link to="/service-details"><span>Abmbulance Services</span></Link></li> */}
+											{services?.length > 0 && services?.map(service => (
+												<li><Link to={"/our-services/" + service?.title + '/' + service?._id}><span>{service?.title}</span></Link></li>
+											))}
 										</ul>
 									</div>
 								</div>
@@ -69,7 +59,7 @@ class aboutSection extends Component {
 										<div className="ft-contact">
 											<p>
 												By using this website you acknowledge that you have read and accepted our terms and conditions. 
-												<a href=""> Read Terms and Conditions here</a>
+												<Link to="/terms"> Read Terms and Conditions here</Link>
 											</p>
 											{/* <div className="contact-bx">
 												<div className="icon"><i className="fas fa-phone-alt"></i></div>
@@ -92,7 +82,6 @@ class aboutSection extends Component {
 
 			</>
 		);
-	}
 }
 
-export default aboutSection;
+export default Footer;

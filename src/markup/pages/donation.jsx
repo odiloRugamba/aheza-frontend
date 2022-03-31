@@ -2,16 +2,12 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchs } from "../../store/research/actions";
-import LoadingComp from "../elements/loading";
-import ReactPaginate from "react-paginate";
-import EmptyComp from "../elements/empyt";
+
 
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-import waveBlue from "../../images/shap/wave-blue.png";
 import donation from "../../images/donation.jpg";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 
 
@@ -66,16 +62,10 @@ const ResearchFindings = () => {
       <img style={{ position: 'relative', bottom: 30 }} className="pt-img3 animate2" src={donation} alt="" />
      </div>
      <div className='content'>
-      <div className='title'>Popular Science</div>
+      <div className='title'>Why should I donate?</div>
       <div className='expText'>
-       Popular Science
-       Media/news company
-       For 149 years, we've pointed readers to the wonders of science, tech, and the
-       For 149 years, we'vews company
-       For 149 years, we've pointed readers to the wonders of science, tech, and the
-       For 149 years, we'vews company
-       For 149 years, we've pointed readers to the wonders of science, tech, and the
-       For 149 years, we've pointed readers to the wonders of science, tech, and the
+       Each year, charitable and subsidized mental health care is provided to individuals throughout our community.
+       With your help, more services can be provided for children, adolescents, adults and families seeking help.
       </div>
       <p className="form-submit">
        <button onClick={() => donateFunc()} type="submit" value="Submit Comment " className={"submitComment"} id="submit" name="submit">

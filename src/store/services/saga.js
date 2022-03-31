@@ -1,12 +1,10 @@
 import { Dcore } from "../../api";
-import Axios from "axios";
 import { call, put, takeEvery, all } from "redux-saga/effects";
 import { GET_SERVICES, GET_SERVICES_SUCCESS, GET_SERVICE_BY_ID, GET_SERVICE_BY_ID_SUCCESS } from "./actions";
 
 
 function* getServices() {
  try {
-  console.log('okkk')
   const response = yield call(Dcore.get, '/our-services')
   yield put({ type: GET_SERVICES_SUCCESS, value: response.data.data })
  } catch (err) {

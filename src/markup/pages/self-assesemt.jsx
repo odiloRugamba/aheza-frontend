@@ -16,10 +16,7 @@ import bnrImg1 from "../../images/banner/img1.jpg";
 import animateWave from "../../images/shap/wave-blue.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 
-// startSaveyFunc
-
-
-const SaveyPage = () => {
+const SurveyPage = () => {
   const [startSavey, setStartSavey] = useState(false)
   const [pageIndex, setPageIndex] = useState(0)
   const [model, setModel] = useState(true)
@@ -373,4 +370,4 @@ const SaveyPage = () => {
 
 
 
-export default SaveyPage;
+export default SurveyPage;

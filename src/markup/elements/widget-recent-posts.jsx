@@ -33,7 +33,6 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 	}
 
 
-
 	return (
 		<>
 			<div className="widget recent-posts-entry">
@@ -43,9 +42,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 						data ? data.map(el =>
 							<div className="widget-post clearfix">
 								{console.log(el.youtubeVideoLink)}
-								<div className="ttr-post-media">
-									<img src={el.youtubeVideoLink ? `http://img.youtube.com/vi/${getVideoId(el?.youtubeVideoLink)}/3.jpg` : el.image ? el.image : recentBlogImg1}
-										width="200" height="143" alt="" /> </div>
+								<div className="ttr-post-media"> <img src={el.image}  alt="" /> </div>
 								<div className="ttr-post-info">
 									<div className="ttr-post-header">
 										<h6 className="post-title max-lines-2"><Link to={currentPage + el?.title + '/' + el?._id}>{el?.title}</Link></h6>

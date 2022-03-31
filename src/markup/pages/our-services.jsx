@@ -17,13 +17,8 @@ import plusBlue from "../../images/shap/plus-blue.png";
 
 
 const Services = () => {
-	const dispatch = useDispatch()
-	const res = useSelector(state => state.servicesReducers.data)
-	const [data, setData] = useState([])
-
-	useEffect(() => {
-		dispatch(getServices())
-	}, [])
+	const res = useSelector(state => state.servicesReducers.data);
+	const [data, setData] = useState([]);
 
 	useEffect(() => {
 		setData(res)
