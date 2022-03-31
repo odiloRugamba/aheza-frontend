@@ -166,6 +166,7 @@ const SurveyPage = () => {
       phoneNumber,
       questions: answerCopy
     }))
+
     setSubmition(true)
     // history.push('/')
   }
