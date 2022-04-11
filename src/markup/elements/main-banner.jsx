@@ -88,7 +88,6 @@ const AboutSection = () => {
 													<div className='inneData'>
 														{/* {console.log('hello')} */}
 														{el}
-														<p>this</p>
 													</div>
 												</div>
 												) : null
