@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const URL = "http://139.59.167.170:9001/api";
-const IMAGEURL = "http://139.59.167.170:9001/uploads";
+const URL = "http://aheza.org.rw/api";
+const IMAGEURL = "http://aheza.org.rw/uploads";
 
 const request = async (method, url, data, headers) => {
   try {
