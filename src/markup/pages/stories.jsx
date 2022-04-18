@@ -137,7 +137,7 @@ const StoriesGrid = () => {
 
 			<Header />
 
-			<div className="page-content bg-white">
+			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >

@@ -70,7 +70,7 @@ const BlogDetails = () => {
 
 			<Header />
 			{
-				blogs?._id ? <div className="page-content bg-white" style={{ marginTop: 60 }}>
+				blogs?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 					<section className="section-area section-sp1 bg-white">
 						<div className="container">
