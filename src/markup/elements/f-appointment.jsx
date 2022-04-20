@@ -25,10 +25,10 @@ const AboutSection = () => {
  const history = useHistory()
  const dispatch = useDispatch()
  const appOption = [
-  { value: 'INPERSON', selected: false, name: 'In Preson' },
-  { value: 'PHONECALL', selected: false, name: 'Phone Call' },
-  { value: 'ZOOMCALL', selected: false, name: ' Zoom Video Call' },
-  { value: 'AHEZACHAT', selected: false, name: 'Aheza Chat' }
+  { value: 'IN-PERSON', selected: false, name: 'In Preson' },
+  { value: 'PHONE-CALL', selected: false, name: 'Phone Call' },
+  { value: 'ZOOM-CALL', selected: false, name: ' Zoom Video Call' },
+  { value: 'AHEZA-CHAT', selected: false, name: 'Aheza Chat' }
  ]
  useEffect(() => {
   if (data?.firstName) {
@@ -46,7 +46,7 @@ const AboutSection = () => {
  }, [data]);
 
  const changeMoney = (item) => {
-  setMoney(item === 'INPERSON' ? 300000 : item === 'PHONECALL' ? 100 : item === 'ZOOMCALL' ? 10000 : item === 'AHEZACHAT' ? 20000 : null)
+  setMoney(item === 'IN-PERSON' ? 300000 : item === 'PHONE-CALL' ? 100 : item === 'ZOOM-CALL' ? 10000 : item === 'AHEZA-CHAT' ? 20000 : null)
  }
  const selectMethod = (item) => {
   appOption.forEach(el => {

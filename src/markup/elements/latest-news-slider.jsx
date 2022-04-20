@@ -114,8 +114,18 @@ const LatestNewsSection = ({ title, content }) => {
 										<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
 											<a onClick={() => openNewWindow(item.link)}>{item?.title}</a>
 										</p>
-										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
 									</div>
+									<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+										<b>
+											<li className="date">
+												<i className="fa fa-user"></i>
+												{item.publisherName}
+											</li>
+										</b>
+										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+									
+										{/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
+									</ul>
 								</div>
 							</div>
 

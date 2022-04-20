@@ -12,7 +12,7 @@ const ApplyForm = ({ placeholder }) => {
 	const [email, setEmail] = useState(null)
 	const [gender, setGender] = useState(null)
 	const [expertise, setExpertise] = useState(null)
-	const [joinIngText, setJoinIngText] = useState(null)
+	const [reasonToJoin, setReasonToJoin] = useState(null)
 	const [loading, setLoading] = useState(null)
 	const [checked, setChecked] = useState(null)
 	const dispatch = useDispatch()
@@ -27,7 +27,7 @@ const ApplyForm = ({ placeholder }) => {
 				email,
 				gender,
 				expertise,
-				joinIngText
+				reasonToJoin
 			}))
 			setFirstName('')
 			setLastName('')
@@ -35,7 +35,7 @@ const ApplyForm = ({ placeholder }) => {
 			setEmail('')
 			setGender('')
 			setExpertise('')
-			setJoinIngText('')
+			setReasonToJoin('')
 			setTimeout(() => {
 				setChecked(true)
 			}, 1000);
@@ -96,7 +96,7 @@ const ApplyForm = ({ placeholder }) => {
 
 					<p className="comment-form-comment">
 						<label for="comment">Why do you want to join</label>
-						<textarea value={joinIngText} onChange={(e) => setJoinIngText(e.target.value)} rows="8" name="reason" placeholder="Why do you want to join?" id="reason"></textarea>
+						<textarea value={reasonToJoin} onChange={(e) => setReasonToJoin(e.target.value)} rows="8" name="reason" placeholder="Why do you want to join?" id="reason"></textarea>
 					</p>
 					<p className="form-submit">
 						{/* <input onClick={() => submitFunc()} type="submit" value="Apply" className="submit" id="submit" name="submit" load /> */}

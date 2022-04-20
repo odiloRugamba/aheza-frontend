@@ -14,24 +14,7 @@ import Footer from "../layout/footer";
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
-import testPic1 from "../../images/testimonials/pic1.jpg";
-import testPic2 from "../../images/testimonials/pic2.jpg";
-import testPic3 from "../../images/testimonials/pic3.jpg";
-import testPic4 from "../../images/testimonials/pic4.jpg";
-import testPic5 from "../../images/testimonials/pic5.jpg";
-import testPic6 from "../../images/testimonials/pic6.jpg";
-import blogGridPic1 from "../../images/blog/grid/pic1.jpg";
-import blogGridPic2 from "../../images/blog/grid/pic2.jpg";
-import blogGridPic3 from "../../images/blog/grid/pic3.jpg";
-import blogGridPic4 from "../../images/blog/grid/pic4.jpg";
-import blogGridPic5 from "../../images/blog/grid/pic5.jpg";
-import blogGridPic6 from "../../images/blog/grid/pic6.jpg";
-import blogGridPic7 from "../../images/blog/grid/pic7.jpg";
-import blogGridPic8 from "../../images/blog/grid/pic8.jpg";
-import blogGridPic9 from "../../images/blog/grid/pic9.jpg";
-
 
 const Uploads = () => {
 	const [data, setData] = useState([])
@@ -103,35 +86,23 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item?.title + '/' + item?._id}>
+												<Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
-															// <iframe
-															// 	width="325"
-															// 	height="300"
-															// 	src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`}
-															// 	// src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
-															// 	// src={`https://www.youtube.com/embed/${getVideoId(item?.youtubeVideoLink)}`}
-															// 	frameBorder="0"
-															// 	// allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-															// 	allowFullScreen
-															// 	title="Embedded youtube"
-															// />
-
 															: <img src={item.image} alt="" />
 													}
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item?.title + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link to={"/upload/" + item?.title + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 
 											</div>

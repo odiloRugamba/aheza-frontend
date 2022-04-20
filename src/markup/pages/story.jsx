@@ -1,68 +1,115 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getStorysById, getStorys, getStoryComments, postStoryComments } from "../../store/story/actions";
-import LoadingComp from "../elements/loading";
-
+import { getStorysById, getStorys, getStoryComments, postStoryComments  } from "../../store/story/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Elements
-import AuthorProfile from "../elements/author-profile";
 import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
-import WidgetTag from "../elements/widget-tag";
-import WidgetSearch from "../elements/widget-search";
-import WidgetGallery from "../elements/widget-gallery";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
+import LoadingComp from "../elements/loading";
+
 
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
-import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
-import testPic3 from "../../images/testimonials/pic3.jpg";
-import galleryPic2 from "../../images/gallery/pic2.jpg";
-import galleryPic5 from "../../images/gallery/pic5.jpg";
+import AudioFle from "../../images/audio.mp3";
+import { AudioPlayer } from "./AudioPlayer";
 
 
-const StoryDetails = () => {
+const StorysDetails = () => {
+	const [story, setStory] = useState([])
 	const [data, setData] = useState([])
-	const [story, setStory] = useState(null)
 	const dispatch = useDispatch()
-	const { id } = useParams()
 	const res = useSelector(state => state.StorysReducers.story)
 	const resRel = useSelector(state => state.StorysReducers.data)
 	const resComments = useSelector(state => state.StorysReducers.comments)
+	const [audioData, setAudioData] = useState(null)
+	const { id } = useParams()
 	const [loading, setLoading] = useState(false)
+	const [playing, setPlaying] = useState(false)
+	const [playingStart, setPlayingStart] = useState(true)
 
 
 	useEffect(() => {
 		dispatch(getStorysById(id))
 		dispatch(getStorys())
 		dispatch(getStoryComments(id))
-	}, []);
+	}, [])
 
 	useEffect(() => {
 		setStory(res)
+		setAudioData(new Audio(AudioFle))
 	}, [res])
-	useEffect(() => {
-		setLoading(false)
-	}, [resComments])
 
 	useEffect(() => {
 		const revData = resRel?.reverse()
 		setData(revData?.slice(0, 3))
 	}, [resRel])
 
+	useEffect(() => {
+		setLoading(false)
+	}, [resComments]);
+
+	const convertData = (date) => {
+		const day = new Date(date)
+		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
+		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
+		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
+		return `${da}-${mo}-${ye}`
+	}
 	const submitFunc = async (data) => {
 		setLoading(true)
 		await dispatch(postStoryComments({ ...data, story: id }))
 		await dispatch(getStoryComments(id))
 	}
+	const getVideoId = (url) => {
+		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+		var match = url.match(regExp);
+		return (match && match[7].length == 11) ? match[7] : false;
+	}
+
+	const prevFunc = () => {
+		console.log('prev')
+	}
+
+
+	const nextFunc = () => {
+		console.log('next')
+		console.log('dd', audioData.currentTime)
+		console.log('dd', audioData)
+		console.log((audioData?.currentTime / audioData?.duration) * 100)
+	}
+
+	const playPauseFunc = () => {
+		if (playingStart) {
+			audioData.play()
+			setPlaying(!playing)
+			setPlayingStart(false)
+		} else {
+			if (!playing) {
+				console.log('playing')
+				audioData.current.play()
+				console.log('dd', audioData)
+			} else {
+				console.log('amm gete')
+				audioData.current.pause()
+			}
+			setPlaying(!playing)
+		}
+
+	}
+	useEffect(() => {
+		console.log((audioData?.currentTime / audioData?.duration) * 100)
+	}, [audioData?.current])
+
+
+
 
 
 	return (
@@ -76,7 +123,7 @@ const StoryDetails = () => {
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2>Story</h2>
+									<h2>Details</h2>
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -92,19 +139,30 @@ const StoryDetails = () => {
 									<div className="blog-card blog-single">
 										<div className="post-media">
 											{/* <img src={blogDefaultPic1} alt="" /> */}
+											{
+												res?.youtubeVideoLink &&
+													<iframe
+														width="853"
+														height="480"
+														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
+														frameBorder="0"
+														allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+														allowFullScreen
+														title="Embedded youtube"
+													/>
+											}
 										</div>
 										<div className="info-bx">
-
 											<div className="ttr-post-title">
 												<h2 className="post-title max-lines-2">{story?.title}</h2>
 											</div>
 											<div className="ttr-post-text">
-												<div dangerouslySetInnerHTML={{ __html: story?.content }}>
-												</div>
-												<ul className="post-meta">
-													<li className="date"><i className="far fa-calendar-alt"></i> {story?.createdAt}</li>
-												</ul>
+												<div dangerouslySetInnerHTML={{ __html: story?.content }}></div>
+
 											</div>
+											<ul className="post-meta">
+												<li className="date"><i className="far fa-calendar-alt"></i>{story?.updatedAt?convertData(story?.updatedAt) : null}</li>
+											</ul>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
 													<strong>Tags:</strong>
@@ -137,7 +195,7 @@ const StoryDetails = () => {
 
 												<CommentList coments={resComments} />
 
-												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you think...?" />
+												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you thing...?" />
 
 											</div>
 										</div>
@@ -148,17 +206,18 @@ const StoryDetails = () => {
 
 										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-										<WidgetRecentPosts currentPage="/story/" data={data} more="/stories" title="Recent Stories" />
+										<WidgetRecentPosts data={data} currentPage="/story/" more="/storys" title="Recent Stories" />
 									</aside>
 								</div>
 							</div>
 						</div>
 					</section>
-
 				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
 			}
 			<Footer />
 		</>
 	);
 }
-export default StoryDetails;
+
+
+export default StorysDetails;
