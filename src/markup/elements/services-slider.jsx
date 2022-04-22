@@ -43,7 +43,7 @@ const ServicesSliderSection = () => {
 						<div className="heading-bx">
 							{/* <h6 className="title-ext text-secondary">Services</h6> */}
 							<h2 className="title">Join our therapists network</h2>
-							<p>Are you a certified therapist? Please contribute by joining our team to deliver services to those vuneralble in our community</p>
+							<p>Are you a certified therapist? Please contribute by joining our team to deliver services to those vulnerable in our community</p>
 						</div>
 						<Link to="/apply" className="btn btn-secondary btn-lg shadow">Apply</Link>
 					</div>
@@ -65,8 +65,8 @@ const ServicesSliderSection = () => {
 									</div>
 									<div className="icon-content">
 										<h5 className="ttr-title">Apply</h5>
-										<p>Click on apply button or call (+250) 788 315 809.</p>
-										<Link to="/apply" className="btn btn-primary light">Apply</Link>
+										<p>You can directly apply on our website or call (+250) 788 315 809.</p>
+										{/* <Link to="/apply" className="btn btn-primary light">Apply</Link> */}
 									</div>
 								</div>
 							</div>
@@ -87,13 +87,14 @@ const ServicesSliderSection = () => {
 									</div>
 									<div className="icon-content">
 										<h3 className="ttr-title">Vetting</h3>
-										<p>Our vetting team will contact you for the vetting process as soon as possible.</p>
-										<Link to="/service-details" className="btn btn-primary light">View More</Link>
+										<p>Our vetting team will contact you to start the process as soon as possible.</p>
+										
+										{/* <Link to="/service-details" className="btn btn-primary light">View More</Link> */}
 									</div>
 								</div>
 							</div>
 							<div className="slider-item">
-								<div className="feature-container feature-bx2 feature3">
+								{/* <div className="feature-container feature-bx2 feature3">
 									<div className="feature-box-xl mb-20">
 										<span className="icon-cell">
 											<svg enable-background="new 0 0 512 512" height="80" viewBox="0 0 512 512" width="80" xmlns="http://www.w3.org/2000/svg">
@@ -108,9 +109,8 @@ const ServicesSliderSection = () => {
 									<div className="icon-content">
 										<h2 className="ttr-title">More info</h2>
 										<p>For more information, please call (+250) 788 315 809 </p>
-										{/* <Link to="/service-details" className="btn btn-primary light">View More</Link> */}
 									</div>
-								</div>
+								</div> */}
 							</div>
 
 						</Slider>

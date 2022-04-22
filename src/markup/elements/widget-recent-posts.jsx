@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
-// Import Images
-import recentBlogImg1 from "../../images/blog/recent-blog/pic1.jpg";
-import recentBlogImg2 from "../../images/blog/recent-blog/pic2.jpg";
-import recentBlogImg3 from "../../images/blog/recent-blog/pic3.jpg";
-
-import pdf from "../../images/icon/pdf.png";
-import doc from "../../images/icon/doc.png";
 
 const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 
@@ -42,10 +35,16 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 						data ? data.map(el =>
 							<div className="widget-post clearfix">
 								{console.log(el.youtubeVideoLink)}
-								<div className="ttr-post-media"> <img src={el.image}  alt="" /> </div>
+								<div className="ttr-post-media">
+									{
+										el?.youtubeVideoLink ?
+										<img src={`http://img.youtube.com/vi/${getVideoId(el?.youtubeVideoLink)}/0.jpg`} alt="" />
+										: <img src={el.image} alt="" />
+									}
+								</div>
 								<div className="ttr-post-info">
 									<div className="ttr-post-header">
-										<h6 className="post-title max-lines-2"><Link to={currentPage + el?.title + '/' + el?._id}>{el?.title}</Link></h6>
+										<p className="post-title max-lines-2"><Link to={currentPage + el?.title + '/' + el?._id}>{el?.title}</Link></p>
 									</div>
 									<ul className="post-meta">
 										<li className="date"><i className="far fa-calendar-alt"></i>{convertData(el?.updatedAt)}</li>
@@ -54,7 +53,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 							</div>
 						) : null
 					}
-					<div onClick={() => moreFunc()} className="more"> <div className="more-text">More</div> </div>
+					<div className="more"> <a href='/stories' className="more-text">See More</a> </div>
 				</div>
 			</div>
 		</>

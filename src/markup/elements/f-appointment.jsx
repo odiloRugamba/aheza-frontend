@@ -46,7 +46,7 @@ const AboutSection = () => {
  }, [data]);
 
  const changeMoney = (item) => {
-  setMoney(item === 'IN-PERSON' ? 300000 : item === 'PHONE-CALL' ? 100 : item === 'ZOOM-CALL' ? 10000 : item === 'AHEZA-CHAT' ? 20000 : null)
+  setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 10000 : null)
  }
  const selectMethod = (item) => {
   appOption.forEach(el => {
@@ -153,10 +153,8 @@ const AboutSection = () => {
           <div>
            <div className="work-content">
             <p>
-             From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
-             {/* From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for */}
+                Once you pay, our program cordinator reviews your answers and match you with the best therapist for you and based on their 
+                schedule we call you to fix time for your session.                                 
             </p>
 
             <div>
@@ -172,7 +170,7 @@ const AboutSection = () => {
             {
              loading ? <div class="spinner-border" role="status">
               <span class="sr-only">Loading...</span>
-             </div> : <span>CheckOut</span>
+             </div> : <span>Pay</span>
             }
            </button>
           </div>

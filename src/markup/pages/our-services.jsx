@@ -61,7 +61,7 @@ const Services = () => {
 												<div className="icon-content">
 													<h5 className="ttr-title">{el?.title}</h5>
 													{/* <p>Occupational therapy is a treatment method that focuses on maintaining and using personal abilities necessary for casual daily work and the recreational activities of people of all ages with any type of handicap (physical, sensorial, mental or social) by sensible engagement in activities.</p> */}
-													<Link to={"/our-services/" + el?.title + '/' + el?._id} className="btn btn-primary light">Read More</Link>
+													<Link to={"/our-services/" + el?.title?.replaceAll(" ","-") + '/' + el?._id} className="btn btn-primary light">Read More</Link>
 												</div>
 											</div>
 										</div>

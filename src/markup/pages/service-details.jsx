@@ -61,8 +61,8 @@ const ServiceDetail = () => {
 										<h5 className="title-head">Services offered</h5>
 										<ul className="service-menu">
 											{
-												service?.tags.map(el =>
-													<li><Link to="/service-details"><span>{el}</span></Link></li>
+												service?.services.map(el =>
+													<li style={{padding: 0}}><Link to="#"><span>{el}</span></Link></li>
 												)
 											}
 										</ul>

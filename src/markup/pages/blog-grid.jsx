@@ -18,7 +18,7 @@ const BlogGrid = () => {
 	const dispatch = useDispatch()
 	const [data, setdata] = useState([])
 	const dateFormat = moment().format('llll')
-	const postPerPage = 4
+	const postPerPage = 9
 	const [PageCount, setPageCount] = useState(10)
 	const [pageData, setPageData] = useState([])
 	const blogs = useSelector(state => state.BlogsReducers.data)

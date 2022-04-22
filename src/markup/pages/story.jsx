@@ -138,10 +138,10 @@ const StorysDetails = () => {
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single">
 										<div className="post-media">
-											{/* <img src={blogDefaultPic1} alt="" /> */}
 											{
 												res?.youtubeVideoLink &&
-													<iframe
+												<>
+												<iframe
 														width="853"
 														height="480"
 														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
@@ -150,11 +150,13 @@ const StorysDetails = () => {
 														allowFullScreen
 														title="Embedded youtube"
 													/>
+													<br/><br/>
+												</>
 											}
 										</div>
 										<div className="info-bx">
 											<div className="ttr-post-title">
-												<h2 className="post-title max-lines-2">{story?.title}</h2>
+												<h4 className="post-title max-lines-2">{story?.title}</h4>
 											</div>
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: story?.content }}></div>

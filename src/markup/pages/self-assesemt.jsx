@@ -202,7 +202,7 @@ const SurveyPage = () => {
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
-                <h2>Self assessment</h2>
+                <h2>Answer this Question</h2>
               </div>
             </div>
             <img className="pt-img1 animate-wave" src={animateWave} alt="" />
@@ -220,7 +220,7 @@ const SurveyPage = () => {
                       <div className="ajax-message"></div>
                       <div className="row">
                         <div className='onBehalfCont'>
-                          <div className="page-banner-entry text-center">
+                          <div className="page-banner-entry">
                             <h6>I am taking this assesement on behalf of</h6>
                           </div>
                           <div className='questionCont'>
@@ -258,7 +258,7 @@ const SurveyPage = () => {
                         questions?.length > 0 ?
                           questions?.map(el =>
                             <div className="row">
-                              <div className="page-banner-entry text-center">
+                              <div className="page-banner-entry">
                                 <h6>{el.question}</h6>
                               </div>
                               <div className='questionCont'>
@@ -293,10 +293,10 @@ const SurveyPage = () => {
                               </div>
                               <div className='changeQuestionBtn'>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>Prevs</button>
+                                  <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'> {"<"} Prevs</button>
                                 </div>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next</button>
+                                  <button onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next {">"}</button>
                                 </div>
                               </div>
                             </div>
@@ -357,21 +357,28 @@ const SurveyPage = () => {
           <div className='mainPartCont'>
             <div className='mainPart'>
               <div className='rowCont'>
-                <div className="col-lg-0 mb-0">
+                <div className="col-lg-00 mb-0">
                   <div className="page-banner-entry text-center">
-                    <h2>Please take Self Assesment first</h2>
+                    <h2>Please fill in this questionaire first</h2>
                   </div>
                   <div className='mainContent'>
                     <p>
-                      Welcome to Aheza developed mental health self assessment. Please take time to answer the following questions carefully and truthfully
+                      <b>Welcome.</b> <br /><br/>
+                      This is Aheza's developed mental health questionaire.<br/>
+                    
+                      Please take time to answer the following questions carefully and truthfully. <br />
+                      
+                      They help us match you with the right therapist for you.<br /><br />
+                      
+                      <b>Note:</b> your answers are confidential, they not shared with anyone else.
                     </p>
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push('/')} className='positionBtn'>Aheza</button>
+                      <button onClick={() => history.push('/')} className='positionBtn'> {"<"} Back to Home</button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} className='positionBtn'>Start Assesement</button>
+                      <button onClick={() => CloseModel()} className='positionBtn'>Yes, Continue {">"}</button>
                     </div>
                   </div>
                 </div>

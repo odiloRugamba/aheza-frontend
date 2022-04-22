@@ -82,26 +82,23 @@ const ResearchFindingDetails = () => {
 											</div>
 											{
 												research?.publishedByAheza === "YES" ?
-													<div className="ttr-post-footer" >
-														<div className="post-tags">
-															<strong>Price:</strong>
-															<Link to="#" style={{ color: "#f17732" }}>{research?.price} FRW</Link>
-														</div>
-														<div className="ml-auto widget_tag_cloud">
-															<ul className="tagcloud mb-0">
-																<li><a rel="noreferrer" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file} style={{ backgroundColor: "#f17732" }}>Dowload File</a></li>
-															</ul>
-														</div>
-
-														<div className="brochure-bx">
-															<h5 className="title-head">Download</h5>
-															<Link to="#" className="download-link">
-																<img src="" alt="" />
-																<h5 className="title">Download this document</h5>
-																<span>Download</span>
-															</Link>
+													<div className="brochure-bx">
+														<h5 className="title-head">Download</h5>
+														<div>
+															<div>
+																<strong>Price: </strong>
+																<Link to="#" style={{ color: "#f17732" }}> {research?.price} FRW</Link>
+															</div>
+															<div>
+																<a rel="noreferrer"  className="download-link" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file}>
+																	<img src="" alt="" />
+																	<h5 className="title">Download this document</h5>
+																	<span>Download</span>
+																</a>
+															</div>
 														</div>
 													</div>
+													
 													: null
 											}
 											<hr />
