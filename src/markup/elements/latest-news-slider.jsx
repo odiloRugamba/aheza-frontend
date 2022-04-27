@@ -4,7 +4,9 @@ import Slider from "react-slick";
 import { getStorys } from "../../store/story/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Dcore } from "../../api/index";
-
+import { Carousel } from '@trendyol-js/react-carousel';
+import leftIcon from '../../images/appointment/left.png';
+import rightIcon from '../../images/appointment/right.png';
 // Import Images
 import lingBg2 from "../../images/background/line-bg2.png"
 import animate1 from "../../images/shap/trangle-orange.png"
@@ -45,31 +47,35 @@ const content = [
 		title: "Why Is Skin Surgeon Considered Underrated",
 		date: "19 July 2021",
 	},
-	// {
-	// 	thumb: blogGridPic4,
-	// 	authorPic: testPic4,
-	// 	author: "Kalina Mollika",
-	// 	title: "Dental Care for Women is very important",
-	// 	date: "18 July 2021",
-	// },
-	// {
-	// 	thumb: blogGridPic5,
-	// 	authorPic: testPic5,
-	// 	author: "Michel",
-	// 	title: "Health Will Be A Thing Of The Past And Here's Why",
-	// 	date: "17 July 2021",
-	// },
+	{
+		thumb: blogGridPic4,
+		authorPic: testPic4,
+		author: "Kalina Mollika",
+		title: "Dental Care for Women is very important",
+		date: "18 July 2021",
+	},
+	{
+		thumb: blogGridPic5,
+		authorPic: testPic5,
+		author: "Michel",
+		title: "Health Will Be A Thing Of The Past And Here's Why",
+		date: "17 July 2021",
+	},
 ]
 
 const LatestNewsSection = ({ title, content }) => {
 
 	console.log(content)
 	const settings = {
-		dots: false,
-		infinite: true,
+		dots: true,
+		infinite: false,
 		speed: 1000,
 		slidesToShow: 3,
-		slidesToScroll: 1,
+		slidesToScroll: 2,
+		autoplay: true,
+		autoplaySpeed: 2000,
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
 		responsive: [
 			{
 				breakpoint: 1191,
@@ -88,8 +94,26 @@ const LatestNewsSection = ({ title, content }) => {
 	const openNewWindow = (link) => {
 		window.open(link)
 	}
-
-
+	function SamplePrevArrow(props) {
+		const { className, style, onClick } = props;
+		return (
+			<div style={{ ...style, cursor: 'pointer', zIndex: 999999999, position: 'absolute', top: 200, left: -50 }} onClick={() => onClick()} className='className'>
+				<div>
+					<img style={{ width: 30 }} src={leftIcon} />
+				</div>
+			</div>
+		);
+	}
+	function SampleNextArrow(props) {
+		const { className, style, onClick } = props;
+		return (
+			<div style={{ ...style, zIndex: 999999999, cursor: 'pointer', position: 'absolute', top: 200, right: -50 }} onClick={() => onClick()} className='className'>
+				<div>
+					<img style={{ width: 30 }} src={rightIcon} />
+				</div>
+			</div>
+		);
+	}
 
 	return (
 		<>
@@ -101,11 +125,10 @@ const LatestNewsSection = ({ title, content }) => {
 						<h2 className="title">Links</h2>
 					</div>
 					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
-
 						{/* <div className="slider-item"> */}
+
 						{content?.map((item) => (
 							<div className="blog-card">
-
 								<div>
 									<div className="post-media" style={{ maxHeight: 210, height: 210 }}>
 										<a onClick={() => openNewWindow(item.link)} ><img src={Dcore.IMAGEURL + '/' + item.image} alt="" /></a>
@@ -123,13 +146,33 @@ const LatestNewsSection = ({ title, content }) => {
 											</li>
 										</b>
 										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
-									
 										{/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
 									</ul>
 								</div>
 							</div>
-
 						))}
+						<div className="blog-card">
+							<div>
+								<div className="post-media" style={{ maxHeight: 210, height: 210 }}>
+									<Link to='links'><img src={Dcore.IMAGEURL + '/'} alt="" /></Link>
+								</div>
+								<div className="post-info">
+									<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
+										<a onClick={() => openNewWindow('jjj')}>The Rwandan genocide, also known as the genocide against the Tutsi, occurred between 7 April and 15 July 1994 during the Rwandan Civil War. During this period of around 100 days, members of the Tutsi minority ethnic grou</a>
+									</p>
+								</div>
+								<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+									<b>
+										<li className="date">
+											<i className="fa fa-user"></i>
+											More Links
+										</li>
+									</b>
+									<Link to='links' className="btn btn-outline-primary btn-sm">For More Links<i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+									{/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
+								</ul>
+							</div>
+						</div>
 						{/* </div> */}
 					</Slider>
 				</div>

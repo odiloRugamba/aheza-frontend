@@ -96,45 +96,7 @@ function Header() {
 		<>
 			<header className="header header-transparent rs-nav">
 				<Sticky enabled={true} className="sticky-header navbar-expand-lg">
-					<div id="ahezaInfo">
-						<div id='innerCont'>
 
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">schedule</span>
-								</div>
-								<div> Monday - Friday: 08:00 AM - 06:00 PM</div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">
-										email
-									</span>
-								</div>
-								<div>info@aheza.org.rw</div>
-								<div id='socialMedias'>
-									<div><embed src={twitterLogo} width="20" /></div>
-									<div><embed src={instagramLogo} width="20" /></div>
-									<div><embed src={facebook} width="20" /></div>
-								</div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">call</span>
-								</div>
-								<div><a href="tel:+250788315809" style={{ color: "white" }}>(+250) 788 315 809</a></div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">place</span>
-								</div>
-								<div> Bugesera District, Ntarama sector.</div>
-							</div>
-						</div>
-					</div>
 
 
 
@@ -179,6 +141,7 @@ function Header() {
 												<ul>
 													<li><Link to="/research-findings"><span>Research</span></Link></li>
 													<li><Link to="/stories"><span>Stories</span></Link></li>
+													<li><Link to="/links"><span>Links</span></Link></li>
 													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
 												</ul>
 											</li>
@@ -230,7 +193,7 @@ function Header() {
 											}
 										</div>
 										<div className="appontiCont page-banner-entry text-center">
-											<div>To book an appointment from website <span onClick={() => onChangeRoute('/self-assesement')}>Click Here</span></div>
+											<div>To book an appointment from website <span onClick={() => onChangeRoute('/appointment-assesement')}>Click Here</span></div>
 										</div>
 									</div>
 								</div>

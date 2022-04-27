@@ -15,6 +15,9 @@ import ptImg5 from '../../images/shap/wave-orange.png';
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
 
+
+
+
 const AboutSection = () => {
 	const [slideIndex, setSlideIndex] = useState(0)
 
@@ -31,10 +34,18 @@ const AboutSection = () => {
 	useEffect(() => {
 		if (res?.length) {
 			const all = [res[0].title, ...res[0].tips];
-			setData(all)
+			setData(shuffleArr(all))
 		}
 
 	}, [res])
+	const shuffleArr = (arr) => {
+		const newArr = arr.slice()
+		for (let i = newArr.length - 1; i > 0; i--) {
+			const rand = Math.floor(Math.random() * (i + 1));
+			[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
+		}
+		return newArr
+	}
 
 	useEffect(() => {
 		dispatch(getTipsFunc())
@@ -45,16 +56,7 @@ const AboutSection = () => {
 			setSlideIndex(slideIndex + 1)
 		}
 	}
-	// const data = [
-	// 	'SIGNS THAT YOUR MENTAL HEALTH MAY BE DECLINING',
-	// 	'You isolate yourself from family and friends and avoid any contact with them ',
-	// 	'You find extremely difficult to get out of bed and do everyday task ',
-	// 	'You have loss of interest Things you used to enjoy',
-	// 	'You have changes in your appetite some people find it hard to eat while others may overeat ',
-	// 	'You find it hard to take care of your personal hygiene, Eg: showering brushing your teeth changing your clothes, etc',
-	// 	'You find it difficult to concentrate on anything and feel a lack of motivation in doing so  ',
-	// 	'You feel disconnected from reality and from those around you',
-	// ]
+
 
 	return (
 		<>
@@ -64,7 +66,6 @@ const AboutSection = () => {
 						<div className="col-lg-7 col-md-6 col-sm-7">
 							<h6 className="title-ext text-primary"> Get yourself help today</h6>
 							<h2>You are worth the burden and the dedication of time that is required to help you recover</h2>
-							{/* <h1>We Provide healing and career services online and on-site</h1> */}
 							<Link to="/self-assesement" className="btn btn-secondary btn-lg shadow">Book appointment</Link>
 						</div>
 
@@ -79,21 +80,24 @@ const AboutSection = () => {
 										</div>
 									</div>
 									<div className='slideNumber'>
-										{slideIndex + 1}/{data.length}
+										<div>
+											{slideIndex + 1}/{data.length}
+										</div>
 									</div>
 									<SwipeableViews index={slideIndex} enableMouseEvents>
 										{
 											data?.length > 0 ?
 												data.map(el => <div style={{ background: "#EDEDF5" }} className='connentInner'>
 													<div className='inneData'>
-														{/* {console.log('hello')} */}
 														{el}
 													</div>
 												</div>
 												) : null
 										}
 									</SwipeableViews>
-
+									<div className='daytitsTitle'>
+										Tips of the day
+									</div>
 									<div onClick={() => nextFunc()} className='nextPrevIcon next'>
 										<div>
 											<img src={rightIcon} />
@@ -105,11 +109,9 @@ const AboutSection = () => {
 						</div>
 					</div>
 				</div>
-				{/* <img className="pt-img1 animate1" src={ptImg1} alt="" /> */}
 				<img className="pt-img2 animate2" src={ptImg2} alt="" />
 				<img className="pt-img3 animate3" src={ptImg3} alt="" />
 				<img className="pt-img4 animate4" src={ptImg4} alt="" />
-				{/* <img className="pt-img5 animate-wave" src={ptImg5} alt="" /> */}
 			</div>
 		</>
 	);

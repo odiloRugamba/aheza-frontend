@@ -16,6 +16,7 @@ import WidgetSearch from "../elements/widget-search";
 import WidgetGallery from "../elements/widget-gallery";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
 import LoadingComp from "../elements/loading";
+import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
@@ -131,7 +132,7 @@ const UploadsDetails = () => {
 
 			<Header />
 			{
-				res?._id ? <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+				res?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 					<div className="banner-wraper">
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
@@ -208,15 +209,7 @@ const UploadsDetails = () => {
 														))
 													}
 												</div>
-												<div className="share-post ml-auto">
-													<ul className="social-media mb-0">
-														<li><strong>Share:</strong></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-													</ul>
-												</div>
+												<SocialMediaComp />
 											</div>
 										</div>
 									</div>
@@ -226,13 +219,9 @@ const UploadsDetails = () => {
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
 											<h4 className="widget-title">{resComments?.length} Comments</h4>
-
 											<div className="clearfix">
-
 												<CommentList coments={resComments} />
-
 												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you thing...?" />
-
 											</div>
 										</div>
 									</div>

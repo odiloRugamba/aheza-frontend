@@ -130,7 +130,7 @@ const SelftEvaluation = ({ decline, accept }) => {
         {
           !model ? <Header /> : null
         }
-        <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+        <div className="page-content bg-white" style={{ marginTop: 100 }}>
           <div className="banner-wraper">
             <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
               <div className="container">
@@ -215,7 +215,7 @@ const SelftEvaluation = ({ decline, accept }) => {
                           </p>
                         </div>
                         <div className="col-lg-12">
-                          <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Start Booking</button>
+                          <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
                         </div>
                       </div>
                     </>

@@ -14,8 +14,9 @@ import Notification from "../elements/notification";
 
 
 
+
+
 const AboutSection = () => {
-	// formData
 	const [firstName, setFirstName] = useState(null)
 	const [lastName, setLastName] = useState(null)
 	const [gender, setGender] = useState(null)
@@ -71,6 +72,7 @@ const AboutSection = () => {
 
 
 	const submitAppointment = () => {
+		const selfAssessmentAnsID = window.localStorage.getItem('selfAssessmentAnsID')
 		dispatch(postAppointmentData({
 			firstName,
 			lastName,
@@ -82,7 +84,8 @@ const AboutSection = () => {
 			nationId,
 			AppointmentDay: selectedDay,
 			doctor: selectDoctorIn,
-			session: selectSession
+			session: selectSession,
+			selfAssessmentAnsID: selfAssessmentAnsID
 		}))
 		history.push('/Finalize')
 	}
@@ -104,7 +107,6 @@ const AboutSection = () => {
 
 	return (
 		<>
-			{/* <Notification isVisible={isVisible} /> */}
 			<section className="section-area account-wraper1">
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
 					<div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
@@ -113,7 +115,6 @@ const AboutSection = () => {
 								<div className="col-xl-8 col-lg-12 col-md-12">
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book Appointment</h3>
-										{/* <form action="#"> */}
 										<div className="form-group">
 											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
 											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
@@ -131,27 +132,22 @@ const AboutSection = () => {
 										<div className="form-group">
 											<div>
 												<input onBlur={() => validatePhoneNumber()} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
-												{/* {validatePhoneNumber ? <p className={"text-danger"}>*Your phone number is required</p> : null} */}
 											</div>
 											<div>
 												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
-												{/* {validateEmail ? <p className={"text-danger"}>*Your email  is required</p> : null} */}
 											</div>
 
-											{/* <input value={insuranceId} onChange={e => setInsuranceId(e.target.value)} type="number" className="form-control" placeholder="Insurance  ID" /> */}
 										</div>
 										<div className="form-group">
-											{/* <input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" /> */}
 											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
 												<option selected>Method of Communication</option>
-												<option value="IN-PERSON">In Person</option>
-												<option value="PHONE-CALL">Phone Call</option>
-												<option value="ZOOM-CALL">Zoom Video Call</option>
-												<option value="AHEZA-CHAT">Aheza Chat</option>
+												<option value="INPERSON">In Person</option>
+												<option value="PHONECALL">Phone Call</option>
+												<option value="ZOOMCALL">Zoom Video Call</option>
+												<option value="AHEZACHAT">Aheza Chat</option>
 											</select>
 										</div>
 										<div className="form-group">
-											{/* <input value={nationId} onChange={e => setNationId(e.target.value)} type="email" className="form-control" placeholder="Nation ID" /> */}
 											<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
 												<option selected>Select Day</option>
 												<option value="MONDAY">Monday</option>
@@ -163,27 +159,8 @@ const AboutSection = () => {
 												<option value="SUNDAY">Sunday</option>
 											</select>
 										</div>
-										{/* <div className="form-group">
-											<select onChange={(e) => selectDoctor(e)} className="form-select form-control" disabled={Doctor}>
-												<option selected>Select Doctor</option>
-												{
-													DoctorData.map(el =>
-														<option value={el._id}>{el.firstName + '  ' + el.lastName}</option>
-													)
-												}
-											</select>
-											<select onChange={(e) => setSelectSession(e.target.value)} className="form-select  form-control" disabled={Session}>
-												<option selected>Select Session</option>
-												{
-													sessionData?.map(el =>
-														el.status === "AVAILABLE" ?
-															<option value={"Session" + el.startTime + '-' + el.endTime}>Session({el.startTime} - {el.endTime})</option> : null
-													)
-												}
-											</select>
-										</div> */}
+
 										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>Appointment Now</button>
-										{/* </form> */}
 									</div>
 								</div>
 								<div className="col-xl-2 col-lg-6 col-md-6">

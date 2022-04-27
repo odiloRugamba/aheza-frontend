@@ -36,29 +36,30 @@ import Uploads from "./pages/uploads";
 import Upload from "./pages/upload";
 import ReasearchFindingDetails from './pages/research-finding-details'
 import SurveyPage from './pages/surveyy'
-import FinalizeAppointment from "./pages/fianilaze-appointment";
+import FinalizeAppointment from "./pages/payment-status";
 import Thankyou from "./pages/thankyou";
 import SelfAssesement from "./pages/self-assesemt";
 import Donation from "./pages/donation";
 import Payment from "./pages/payment";
+import PaymentStatus from "./pages/payment-status";
 import PaymentThankyou from "./pages/paymentThankyou";
 import Terms from "./elements/Terms";
+import SelfEvaluation from './pages/selfEvaluation'
+import LinksComp from './pages/links'
+
 
 class Markup extends Component {
-
 	render() {
 		return (
 			<>
 				<BrowserRouter basename={''}>
 					<Switch>
-
 						<ProtectRoute path='/' exact component={Index} />
 						<ProtectRoute path='/about-us' exact component={AboutUs} />
 						<ProtectRoute path='/team' exact component={Team} />
 						<ProtectRoute path='/apply' exact component={Apply} />
 						<ProtectRoute path='/book-appointment' exact component={BookAppointment} />
 						<ProtectRoute path='/our-services' exact component={OurServices} />
-
 						<ProtectRoute path='/our-services/:title/:id' exact component={ServiceDetails} />
 						<ProtectRoute path='/other-institutions-services' exact component={OtherInstitutionsServices} />
 						<ProtectRoute path='/other-institutions-services/:title/:id' exact component={OtherInstitutionsServicesDetails} />
@@ -83,21 +84,19 @@ class Markup extends Component {
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
 						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
-						<ProtectRoute path='/self-assesement' exact component={SelfAssesement} />
+						<ProtectRoute path='/appointment-assesement' exact component={SelfAssesement} />
 						<ProtectRoute path='/donation' exact component={Donation} />
 						<ProtectRoute path='/payment' exact component={Payment} />
 						<ProtectRoute path='/successfull' exact component={PaymentThankyou} />
+						<ProtectRoute path='/payment-status' exact component={PaymentStatus} />
 						<ProtectRoute path='/terms' exact component={Terms} />
+						<ProtectRoute path='/self-evaluation' exact component={SelfEvaluation} />
+						<ProtectRoute path='/links' exact component={LinksComp} />
 						<Route component={Error} />
-
 					</Switch>
-
 					<PageScrollTop />
-
 				</BrowserRouter>
-
 				<BackToTop />
-
 			</>
 		);
 	}

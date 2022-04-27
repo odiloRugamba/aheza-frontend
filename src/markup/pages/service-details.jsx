@@ -30,7 +30,7 @@ const ServiceDetail = () => {
 	}, [])
 
 	useEffect(() => {
-		// console.log(res)
+		console.log(res)
 		setService(res)
 	}, [res]);
 
@@ -60,9 +60,12 @@ const ServiceDetail = () => {
 
 										<h5 className="title-head">Services offered</h5>
 										<ul className="service-menu">
+											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book Appointment</span></Link></li>
+											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
+
 											{
-												service?.services.map(el =>
-													<li style={{padding: 0}}><Link to="#"><span>{el}</span></Link></li>
+												service?.services?.map(el =>
+													<li style={{ padding: 0 }}><Link to="#"><span>{el}</span></Link></li>
 												)
 											}
 										</ul>

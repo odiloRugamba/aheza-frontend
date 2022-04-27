@@ -59,7 +59,7 @@ const SurveyPage = () => {
       setPageIndex(pageIndex - 1)
     } else if (item === 'next' && pageIndex < questions?.length - 1) {
       if (questionType === 'OPENENDED') {
-        console.log(opendEndedAns)
+        // console.log(opendEndedAns)
         const copyData = questions
         copyData.forEach(el => {
           if (el._id === dataItem._id) {
@@ -74,7 +74,7 @@ const SurveyPage = () => {
       setPageIndex(pageIndex + 1)
     } else if (item === 'next') {
       if (questionType === 'OPENENDED') {
-        console.log(opendEndedAns)
+        // console.log(opendEndedAns)
         const copyData = questions
         copyData.forEach(el => {
           if (el._id === dataItem._id) {
@@ -85,11 +85,13 @@ const SurveyPage = () => {
         });
         setQuestions(copyData)
         setOpendEndedAns(null)
+        // console.log(copyData)
       }
-      // setSurveyDone(true)
-      history.push('/book-appointment')
+      goToAheza()
+      // history.push('/book-appointment')
     }
   }
+
   const setOpendEndedAnsData = (item) => {
     if (item) {
       setOpendEndedAns(item)
@@ -151,7 +153,6 @@ const SurveyPage = () => {
             })
           }
         })
-
         answerCopy.push({
           question: el._id,
           questionType: el.questionType,
@@ -161,13 +162,10 @@ const SurveyPage = () => {
     });
     dispatch(answerQuestion({
       selfAssessment: id,
-      name,
-      email,
-      phoneNumber,
       questions: answerCopy
     }))
     // setSubmition(true)
-    // history.push('/book-appointment')
+    history.push('/book-appointment')
   }
   const CloseModel = () => {
     setModel(false)
@@ -196,7 +194,7 @@ const SurveyPage = () => {
 
   return (
     <>
-      <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+      <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
         <div className="banner-wraper">
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
@@ -304,49 +302,6 @@ const SurveyPage = () => {
                       }
                     </SwipeableViews>
                   </div> : null
-                // !submition ?
-                //   <div className='rowCont'>
-                //     <div className="col-lg-10 mb-30">
-                //       <form className="form-wraper contact-form ajax-form">
-                //         <div className="ajax-message"></div>
-                //         <div className="row">
-                //           <div className="form-group col-md-12">
-                //             <input value={name} onChange={(e) => setName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Your Names" />
-                //           </div>
-                //           <div className="form-group col-md-12">
-                //             <input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
-                //           </div>
-                //           <div className="form-group col-md-12">
-                //             <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
-                //           </div>
-                //           <div className="col-lg-12">
-                //             <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
-                //           </div>
-                //         </div>
-                //       </form>
-                //     </div>
-                //   </div> :
-                //   <>
-                //     <div className="page-banner-entry text-center">
-                //       <h4>Thank you for your participation!</h4>
-                //       <div className='thnk-par'>
-                //         <p>
-                //           Please go ahead and book your appointment. our therapists are waiting for you!
-                //         </p>
-                //       </div>
-                //       {/* <div className="col-lg-12">
-                //         <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit To Aheza</button>
-                //       </div> */}
-                //       <div className='changeQuestionBtn'>
-                //         <div>
-                //           <button onClick={() => history.push('/')} className='positionBtn'>Aheza</button>
-                //         </div>
-                //         <div>
-                //           <button onClick={() => history.push('/book-appointment')} className='positionBtn'>Book Appointment</button>
-                //         </div>
-                //       </div>
-                //     </div>
-                //   </>
               }
             </div>
           </div>
@@ -363,13 +318,13 @@ const SurveyPage = () => {
                   </div>
                   <div className='mainContent'>
                     <p>
-                      <b>Welcome.</b> <br /><br/>
-                      This is Aheza's developed mental health questionaire.<br/>
-                    
+                      <b>Welcome.</b> <br /><br />
+                      This is Aheza's developed mental health questionaire.<br />
+
                       Please take time to answer the following questions carefully and truthfully. <br />
-                      
+
                       They help us match you with the right therapist for you.<br /><br />
-                      
+
                       <b>Note:</b> your answers are confidential, they not shared with anyone else.
                     </p>
                   </div>

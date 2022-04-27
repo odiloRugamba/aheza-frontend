@@ -9,6 +9,7 @@ import appMapPin from '../../images/appointment/map-pin.png';
 import appSetting from '../../images/appointment/setting.png';
 import appCheck from '../../images/appointment/check.png';
 import appChat from '../../images/appointment/chat.png';
+import successPng from '../../images/success.png';
 import verified from '../../images/verified.png';
 import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
 
@@ -40,7 +41,7 @@ const AboutSection = () => {
             })
             setAppointmentOps(appOption)
         } else {
-            history.push('/book-appointment')
+            // history.push('/book-appointment')
         }
     }, [data]);
 
@@ -81,7 +82,7 @@ const AboutSection = () => {
     return (
         <>
             <section className="section-area account-wraper1">
-                <div className="container-fluid" style={{ paddingTop: 100 }}>
+                <div className="container-fluid" style={{ paddingTop: 100, paddingLeft: 100 }}>
                     <div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
                         <div className="container">
                             <div className="rowAppo">
@@ -98,58 +99,6 @@ const AboutSection = () => {
                                             </div>
                                         </div>
 
-                                        <div className='questionCont'>
-                                            <div className='title text-secondary mb-1 chooseText'>Method of Communication </div>
-                                            <ul>
-                                                {
-                                                    appointmentOps.map(el =>
-                                                        <li onClick={() => selectMethod(el)}>
-                                                            <span className='checkBox'>
-                                                                <label className='radioBtn'>
-                                                                    {console.log(el)}
-                                                                    <input checked={el.selected} name='appointment' type="radio" id="scales" />
-                                                                    <span />
-                                                                </label>
-                                                            </span>
-                                                            <a>{el.name}</a>
-                                                        </li>
-                                                    )
-                                                }
-
-
-                                                {/* <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Phone Call</a>
-            </li>
-            <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Zoom Video Call </a>
-            </li>
-            <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Aheza Chat </a>
-            </li> */}
-
-                                            </ul>
-                                        </div>
-
-
-
                                         <div>
                                             <div className="work-content">
                                                 <p>
@@ -157,15 +106,15 @@ const AboutSection = () => {
                                                     schedule we call you to fix time for your session.
                                                 </p>
 
-                                                <div>
-                                                    <div className="textRepresent">Session Payment:</div>
-                                                    <div className='title text-secondary mb-1'>RWF {money}</div>
-                                                </div>
+                                                {/* <div>
+                                                    <div className="textRepresent">Session Payment:</div> */}
+                                                {/* <div className='title text-secondary mb-1'>RWF {money}</div> */}
+                                                {/* </div> */}
                                             </div>
                                             <div>
                                             </div>
                                         </div>
-                                        <div>
+                                        {/* <div>
                                             <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
                                                 {
                                                     loading ? <div class="spinner-border" role="status">
@@ -173,19 +122,7 @@ const AboutSection = () => {
                                                     </div> : <span>Pay</span>
                                                 }
                                             </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-2 col-lg-6 col-md-6">
-                                    <div className="appointment-thumb">
-                                        <img src={appMobile} alt="" />
-                                        <div className="images-group">
-                                            <img className="img1" src={appWomen} alt="" />
-                                            <img className="img2" src={appMapPin} alt="" />
-                                            <img className="img3" src={appSetting} alt="" />
-                                            <img className="img4" src={appCheck} alt="" />
-                                            <img className="img5" src={appChat} alt="" />
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>

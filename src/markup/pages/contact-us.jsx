@@ -33,49 +33,48 @@ const ContactUs = () => {
 		setErrors({});
 		setLoading(true);
 
-		if (firstName === null || firstName === "")
-		{
-			setErrors({...errors, firstName : "Your name is required"});
+		if (firstName === null || firstName === "") {
+			setErrors({ ...errors, firstName: "Your name is required" });
 			setLoading(false)
 			return;
 		}
-		if (email === null || email === "")
-		{
-			setErrors({...errors, email : "Your email is required"});
+		if (email === null || email === "") {
+			setErrors({ ...errors, email: "Your email is required" });
 			setLoading(false)
 			return;
 
 		}
-		if (phoneNumber === null || phoneNumber === "")
-		{
-			setErrors({...errors, phoneNumber : "Your phone is required"});
+		if (phoneNumber === null || phoneNumber === "") {
+			setErrors({ ...errors, phoneNumber: "Your phone is required" });
 			setLoading(false)
 			return;
 		}
-		if (message === null || message === "")
-		{
-			setErrors({...errors, message : "Message is required"});
+		if (message === null || message === "") {
+			setErrors({ ...errors, message: "Message is required" });
 			setLoading(false)
 			return;
 		}
 		try {
-			dispatch(contactUsFunc({name: firstName, email, phone: phoneNumber, message}));
-			setTimeout(()=>{
+			dispatch(contactUsFunc({ name: firstName, email, phone: phoneNumber, message }));
+			setTimeout(() => {
 				setCompleted(true);
 				setLoading(false)
 			}, 3000)
 		}
 		catch (err) {
-			setErrors({...errors, form: "Sorry something went wrong"})
+			setErrors({ ...errors, form: "Sorry something went wrong" })
 			setLoading(false)
 		}
+	}
+	const openLink = (link) => {
+		window.open(link)
 	}
 
 
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper">
 					<div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
 						<div className="container">
@@ -102,40 +101,40 @@ const ContactUs = () => {
 												<button className={"btn w-100 btn-secondary"}>Go Back</button>
 											</Link>
 										</> : <div className="form-wraper contact-form ajax-form">
-										<div className="ajax-message"></div>
-										<div className="row">
-											{errors.form && <div className="alert alert-danger" role="alert">
-												{errors?.form}
-											</div> }
-											<div className="form-group col-md-12">
-												<input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Your Name" />
-											</div>
-											{errors.firstName && <p className={"text-danger"}>{errors.firstName}</p>}
+											<div className="ajax-message"></div>
+											<div className="row">
+												{errors.form && <div className="alert alert-danger" role="alert">
+													{errors?.form}
+												</div>}
+												<div className="form-group col-md-12">
+													<input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Your Name" />
+												</div>
+												{errors.firstName && <p className={"text-danger"}>{errors.firstName}</p>}
 
-											<div className="form-group col-md-12">
-												<input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
-											</div>
-											{errors.email && <p className={"text-danger"}>{errors.email}</p>}
+												<div className="form-group col-md-12">
+													<input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
+												</div>
+												{errors.email && <p className={"text-danger"}>{errors.email}</p>}
 
-											<div className="form-group col-md-12">
-												<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
-											</div>
-											{errors.phoneNumber && <p className={"text-danger"}>{errors.phoneNumber}</p>}
+												<div className="form-group col-md-12">
+													<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
+												</div>
+												{errors.phoneNumber && <p className={"text-danger"}>{errors.phoneNumber}</p>}
 
-											<div className="form-group col-md-12">
-												<textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" required className="form-control" placeholder="Type Message"></textarea>
-											</div>
-											{errors.message && <p className={"text-danger"}>{errors.message}</p>}
+												<div className="form-group col-md-12">
+													<textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" required className="form-control" placeholder="Type Message"></textarea>
+												</div>
+												{errors.message && <p className={"text-danger"}>{errors.message}</p>}
 
-											<div className="col-lg-12">
-												<button onClick={(event) => sendMessage(event)}
+												<div className="col-lg-12">
+													<button onClick={(event) => sendMessage(event)}
 														name="submit"
 														type="submit"
 														value="Submit"
-														className="btn w-100 btn-secondary btn-lg">{ loading ? "Sending..." : "Send"}</button>
+														className="btn w-100 btn-secondary btn-lg">{loading ? "Sending..." : "Send"}</button>
+												</div>
 											</div>
-										</div>
-									</div> }
+										</div>}
 
 								</div>
 								<div className="col-lg-6 mb-30">
@@ -154,9 +153,10 @@ const ContactUs = () => {
 											<div className="icon-box">
 												<h6 className="title"><i className="ti-world"></i>Follow Us</h6>
 												<ul className="social-media">
-													<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin"></i></a></li>
-													<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+													<li onClick={() => openLink('https://twitter.com/Ahezahccenter')}><a rel="noreferrer" target="_blank" ><i className="fab fa-twitter"></i></a></li>
+													<li onClick={() => openLink('https://web.facebook.com/ahezahccenter/photos?_rdc=1&_rdr')}><a rel="noreferrer" target="_blank" ><i className="fab fa-linkedin"></i></a></li>
+													<li onClick={() => openLink('https://web.facebook.com/aheza250/?ref=py_c&_rdc=1&_rdr')}><a rel="noreferrer" target="_blank" ><i className="fab fa-linkedin"></i></a></li>
+													<li onClick={() => openLink('https://www.instagram.com/ahezahccenter/')}><a rel="noreferrer" target="_blank" ><i className="fab fa-instagram"></i></a></li>
 												</ul>
 											</div>
 										</div>

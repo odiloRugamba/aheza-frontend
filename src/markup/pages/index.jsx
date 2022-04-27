@@ -24,6 +24,10 @@ const Index = () => {
 		dispatch(getLinks())
 	}, []);
 	useEffect(() => {
+		// const da = []
+		// res.forEach(el => {
+		// 	da.push(el)
+		// });
 		setData(res)
 	}, [res])
 	return (

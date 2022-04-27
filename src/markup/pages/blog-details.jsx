@@ -15,6 +15,7 @@ import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
 import WidgetTag from "../elements/widget-tag";
 import WidgetRelatedPosts from "../elements/related-widgets/blog";
+import SocialMediaComp from '../elements/shareMedia'
 
 import { NavItem } from 'react-bootstrap';
 
@@ -55,7 +56,7 @@ const BlogDetails = () => {
 		setLoading(true)
 		try {
 			await dispatch(postblogComment({ ...data, blog: id }));
-			setComments([...coments, {name: data.name, email: data.email, comment: data.comment, updatedAt: new Date()}]);
+			setComments([...coments, { name: data.name, email: data.email, comment: data.comment, updatedAt: new Date() }]);
 		}
 		catch (e) {
 			console.log(e.message);
@@ -101,15 +102,7 @@ const BlogDetails = () => {
 														)
 													}
 												</div>
-												<div className="share-post ml-auto">
-													<ul className="social-media mb-0">
-														<li><strong>Share:</strong></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-													</ul>
-												</div>
+												<SocialMediaComp />
 											</div>
 										</div>
 									</div>

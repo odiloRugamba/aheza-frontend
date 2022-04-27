@@ -22,7 +22,9 @@ function* answerQuestion(data) {
   const res = yield call(Dcore.post, `/selfAssessmentAns/create/${data.value.selfAssessment
    }`, data.value)
   console.log(res, 'ress')
-  // yield put({ type: ANSWER_QUESTIONS_SUCCESS, value: res.data.data })
+  window.localStorage.setItem('selfAssessmentAnsID', res.data.message.selfAssessmentAns._id);
+  console.log(res.data.message.selfAssessmentAns._id);
+  yield put({ type: ANSWER_SELF_ASSESSMENT_QUESTIONS_SUCCESS, value: res.data.message.selfAssessmentAns })
 
  } catch (err) {
   console.log(err)

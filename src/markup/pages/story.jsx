@@ -2,7 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getStorysById, getStorys, getStoryComments, postStoryComments  } from "../../store/story/actions";
+import { getStorysById, getStorys, getStoryComments, postStoryComments } from "../../store/story/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -12,6 +12,7 @@ import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
 import LoadingComp from "../elements/loading";
+import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
@@ -117,7 +118,7 @@ const StorysDetails = () => {
 
 			<Header />
 			{
-				res?._id ? <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+				res?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 					<div className="banner-wraper">
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
@@ -141,7 +142,7 @@ const StorysDetails = () => {
 											{
 												res?.youtubeVideoLink &&
 												<>
-												<iframe
+													<iframe
 														width="853"
 														height="480"
 														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
@@ -150,7 +151,7 @@ const StorysDetails = () => {
 														allowFullScreen
 														title="Embedded youtube"
 													/>
-													<br/><br/>
+													<br /><br />
 												</>
 											}
 										</div>
@@ -163,7 +164,7 @@ const StorysDetails = () => {
 
 											</div>
 											<ul className="post-meta">
-												<li className="date"><i className="far fa-calendar-alt"></i>{story?.updatedAt?convertData(story?.updatedAt) : null}</li>
+												<li className="date"><i className="far fa-calendar-alt"></i>{story?.updatedAt ? convertData(story?.updatedAt) : null}</li>
 											</ul>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
@@ -174,15 +175,7 @@ const StorysDetails = () => {
 														))
 													}
 												</div>
-												<div className="share-post ml-auto">
-													<ul className="social-media mb-0">
-														<li><strong>Share:</strong></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-													</ul>
-												</div>
+												<SocialMediaComp />
 											</div>
 										</div>
 									</div>

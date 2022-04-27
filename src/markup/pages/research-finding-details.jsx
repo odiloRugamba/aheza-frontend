@@ -13,12 +13,18 @@ import CommentRespond from "../elements/comment-respond";
 import WidgetTag from "../elements/tag-widgets/research-findings";
 import ResearchFindingWidget from "../elements/related-widgets/research-finding";
 import LoadingComp from "../elements/loading";
-
+import SocialMediaComp from '../elements/shareMedia'
+import pdf from "../../images/icon/pdf.png";
+import doc from "../../images/icon/doc.png";
+import { jsPDF } from "jspdf";
 import { Dcore } from '../../api';
+// import htmlToFormattedText from "html-to-formatted-text";
+import htmlTopdf from 'html2pdf.js'
 
 
 
 const ResearchFindingDetails = () => {
+	const docc = new jsPDF();
 	const { id } = useParams()
 	const [research, setResearch] = useState(null)
 	const [reletedData, setReletedData] = useState([])
@@ -54,15 +60,23 @@ const ResearchFindingDetails = () => {
 		await dispatch(postResearchComments({ ...data, research: id }))
 		await dispatch(getResearchCommnets(id))
 	}
+	const saveFile = () => {
+		var opt = {
+			margin: 1,
+			filename: `${research?.title}.pdf`,
+			image: { type: 'jpeg', quality: 0.98 },
+			html2canvas: { scale: 2 },
+			jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+		};
+		htmlTopdf().from(research?.content).set(opt).save();
+	}
 
 
 	return (
 		<>
-
 			<Header />
 			{
 				res?._id ? <div className="page-content bg-white" style={{ marginTop: 60 }}>
-
 					<section className="section-area section-sp1 bg-white">
 						<div className="container">
 							<div className="row">
@@ -78,7 +92,6 @@ const ResearchFindingDetails = () => {
 											<hr />
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: research?.content }}></div>
-
 											</div>
 											{
 												research?.publishedByAheza === "YES" ?
@@ -90,7 +103,7 @@ const ResearchFindingDetails = () => {
 																<Link to="#" style={{ color: "#f17732" }}> {research?.price} FRW</Link>
 															</div>
 															<div>
-																<a rel="noreferrer"  className="download-link" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file}>
+																<a rel="noreferrer" className="download-link" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file}>
 																	<img src="" alt="" />
 																	<h5 className="title">Download this document</h5>
 																	<span>Download</span>
@@ -98,7 +111,6 @@ const ResearchFindingDetails = () => {
 															</div>
 														</div>
 													</div>
-													
 													: null
 											}
 											<hr />
@@ -111,15 +123,7 @@ const ResearchFindingDetails = () => {
 														))
 													}
 												</div>
-												<div className="share-post ml-auto">
-													<ul className="social-media mb-0">
-														<li><strong>Share:</strong></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
-														<li><a rel="noreferrer" target="_blank" href="https://twitter.com/"><i className="fab fa-twitter"></i></a></li>
-													</ul>
-												</div>
+												<SocialMediaComp />
 											</div>
 										</div>
 									</div>
@@ -129,26 +133,35 @@ const ResearchFindingDetails = () => {
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
 											<h4 className="widget-title">{resCommnets?.length} Comments</h4>
-
 											<div className="clearfix">
-
 												<CommentList coments={resCommnets} />
-
 												<CommentRespond loading={loading} submit={submitFunc} />
-
 											</div>
 										</div>
 									</div>
 								</div>
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
-
 										<ResearchFindingWidget data={reletedData} />
-
 										{/* <WidgetTag tags={research?.tags} /> */}
-
+										<div className="widget">
+											<div className="brochure-bx">
+												<h5 className="title-head">Research</h5>
+												<Link to="#" className="download-link">
+													<img src={pdf} alt="" />
+													<h5 className="title">publish your own</h5>
+													<span>Research</span>
+												</Link>
+												<a onClick={() => { saveFile() }} className="download-link">
+													<img src={doc} alt="" />
+													<h5 className="title">Download</h5>
+													<span>Research</span>
+												</a>
+											</div>
+										</div>
 									</aside>
 								</div>
+
 							</div>
 						</div>
 					</section>

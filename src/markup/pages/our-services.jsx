@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { getServices } from "../../store/services/actions";
 import LoadingComp from "../elements/loading";
 import EmptyComp from "../elements/empyt";
-
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import plusBlue from "../../images/shap/plus-blue.png";
+
+
 
 
 const Services = () => {
@@ -22,12 +22,13 @@ const Services = () => {
 
 	useEffect(() => {
 		setData(res)
+		console.log(res)
 	}, [res])
 
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper">
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
 						<div className="container">
@@ -61,7 +62,7 @@ const Services = () => {
 												<div className="icon-content">
 													<h5 className="ttr-title">{el?.title}</h5>
 													{/* <p>Occupational therapy is a treatment method that focuses on maintaining and using personal abilities necessary for casual daily work and the recreational activities of people of all ages with any type of handicap (physical, sensorial, mental or social) by sensible engagement in activities.</p> */}
-													<Link to={"/our-services/" + el?.title?.replaceAll(" ","-") + '/' + el?._id} className="btn btn-primary light">Read More</Link>
+													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-") + '/' + el?._id} className="btn btn-primary light">Read More</Link>
 												</div>
 											</div>
 										</div>
