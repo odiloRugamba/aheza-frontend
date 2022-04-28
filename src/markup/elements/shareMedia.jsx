@@ -4,13 +4,14 @@ import {
  LinkedinShareButton,
  TwitterShareButton
 } from "react-share";
+import {Dcore} from '../../api/index'
 import { useHistory, useParams, useLocation } from "react-router-dom";
 
 
 
 const SocialMediaComp = () => {
  const { pathname } = useLocation()
- const currentUrl = 'http://localhost:3000' + pathname
+ const currentUrl = Dcore.WEBURL + pathname
  return (
   <>
    <div className="share-post ml-auto">

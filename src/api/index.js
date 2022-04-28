@@ -1,5 +1,6 @@
 import axios from "axios";
 
+const WEBURL = "https://aheza.org.rw";
 const URL = "https://aheza.org.rw/api";
 const IMAGEURL = "https://aheza.org.rw/uploads";
 // const URL = "http://localhost:9001/api";
@@ -52,4 +53,5 @@ export const Dcore = {
   patch,
   URL,
   IMAGEURL,
+  WEBURL,
 };
