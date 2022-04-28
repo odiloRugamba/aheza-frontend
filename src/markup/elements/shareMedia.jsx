@@ -19,7 +19,7 @@ const SocialMediaComp = () => {
      <FacebookShareButton url={currentUrl}>
       <li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
      </FacebookShareButton>
-     <li ><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+     {/* <li ><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li> */}
      <LinkedinShareButton url={currentUrl}>
       <li ><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
      </LinkedinShareButton>

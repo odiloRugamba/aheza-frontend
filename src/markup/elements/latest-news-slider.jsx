@@ -152,25 +152,21 @@ const LatestNewsSection = ({ title, content }) => {
 							</div>
 						))}
 						<div className="blog-card">
-							<div>
-								<div className="post-media" style={{ maxHeight: 210, height: 210 }}>
-									<Link to='links'><img src={Dcore.IMAGEURL + '/'} alt="" /></Link>
-								</div>
-								<div className="post-info">
-									<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
-										<a onClick={() => openNewWindow('jjj')}>The Rwandan genocide, also known as the genocide against the Tutsi, occurred between 7 April and 15 July 1994 during the Rwandan Civil War. During this period of around 100 days, members of the Tutsi minority ethnic grou</a>
-									</p>
-								</div>
-								<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-									<b>
-										<li className="date">
-											<i className="fa fa-user"></i>
-											More Links
-										</li>
-									</b>
-									<Link to='links' className="btn btn-outline-primary btn-sm">For More Links<i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-									{/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
-								</ul>
+							<div style={{
+								paddingTop: 168,
+								paddingBottom: 180,
+								paddingLeft: "20%",
+								justifyContent: "center"
+							}}>
+								<Link
+									to='links'
+									className="btn btn-outline-primary btn-sm"
+									
+								>
+									See All Links
+									<i className="btn-icon-bx fas fa-chevron-right"></i>
+								</Link>
+								
 							</div>
 						</div>
 						{/* </div> */}

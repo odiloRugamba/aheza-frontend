@@ -5,7 +5,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Elements
-import AppointmentSection from "../elements/paymentComp";
+import AppointmentSection from "../elements/f-appointment";
 
 
 const BookAppointment = () => {

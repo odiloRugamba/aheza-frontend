@@ -117,8 +117,8 @@ const AboutSection = () => {
                                         {/* <div>
                                             <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
                                                 {
-                                                    loading ? <div class="spinner-border" role="status">
-                                                        <span class="sr-only">Loading...</span>
+                                                    loading ? <div className="spinner-border" role="status">
+                                                        <span className="sr-only">Loading...</span>
                                                     </div> : <span>Pay</span>
                                                 }
                                             </button>

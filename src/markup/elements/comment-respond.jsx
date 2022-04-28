@@ -38,8 +38,8 @@ const CommentRespond = ({ placeholder, submit, loading }) => {
 					<p className="form-submit">
 						<button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading ? true : false}>
 							{
-								loading ? <div class="spinner-border" role="status">
-									<span class="sr-only">Loading...</span>
+								loading ? <div className="spinner-border" role="status">
+									<span className="sr-only">Loading...</span>
 								</div> : <span>Submit Comment  </span>
 							}
 						</button>
