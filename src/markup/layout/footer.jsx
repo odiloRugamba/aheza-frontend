@@ -22,22 +22,17 @@ const Footer = () => {
 				<div className="footer-top" style={{ backgroundColor: "rgba(255,255,255,0.7)" }}>
 					<div className="containerr">
 						<div className="footer-row row" style={{ paddingLeft: 40 }}>
-							<div className="col-xl-2 col-lg-3 col-md-6">
+
+							{/* <div className="col-xl-2 col-lg-3 col-md-6">
 								<div className="widget widget_info">
 									<h3 className="footer-title">Our vision</h3>
 									<div className="ft-contact">
 										<p>Our vision is of a world where Rwanda’s genocide survivors receive the mental health care they need, and go on to live productive, fulfilling lives free from trauma.</p>
-										<div className="contact-bx">
-											{/* <div className="icon"><i className="fas fa-phone-alt"></i></div> */}
-											{/* <div className="contact-number">
-													<span>Contact Us</span>
-													<h6>(+250) 788 315 809</h6>
-												</div> */}
-										</div>
 									</div>
 								</div>
-							</div>
-							<div className="col-xl-3 col-lg-3 col-md-6 ">
+							</div> */}
+
+							{/* <div className="col-xl-3 col-lg-3 col-md-6 ">
 								<div className="widget footer_widget">
 									<h3 className="footer-title">Our Service</h3>
 									<ul>
@@ -46,7 +41,8 @@ const Footer = () => {
 										))}
 									</ul>
 								</div>
-							</div>
+							</div> */}
+
 							<div className="col-xl-3 col-lg-3 col-md-6">
 								<div className="widget widget_info">
 									<h3 className="footer-title">Privacy</h3>

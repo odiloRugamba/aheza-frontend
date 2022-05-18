@@ -96,10 +96,6 @@ function Header() {
 		<>
 			<header className="header header-transparent rs-nav">
 				<Sticky enabled={true} className="sticky-header navbar-expand-lg">
-
-
-
-
 					<div className="menu-bar clearfix">
 						<div className="container-fluid clearfix">
 							<div className="menu-logo logo-dark" >
@@ -137,7 +133,7 @@ function Header() {
 									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
 										<Link to="#">Media <i className="fas fa-plus"></i></Link>
 										<ul className="sub-menu">
-											<li className="add-menu-left ">
+											<li className="add-menu-left">
 												<ul>
 													<li><Link to="/research-findings"><span>Research</span></Link></li>
 													<li><Link to="/stories"><span>Stories</span></Link></li>
@@ -147,6 +143,7 @@ function Header() {
 											</li>
 										</ul>
 									</li>
+									<li className={blogActive}><Link to="/search">Search</Link> </li>
 									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>

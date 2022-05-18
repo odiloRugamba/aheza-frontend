@@ -4,12 +4,10 @@ import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions";
 import LoadingComp from "../elements/loading";
-
-
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
 import Map from '../elements/map';
+
 
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
@@ -251,7 +249,7 @@ const SurveyPage = () => {
                   </div>
                 </div> : !surveyDone ?
                   <div className='swipeCont'>
-                    <SwipeableViews index={pageIndex} enableMouseEvents>
+                    <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.length > 0 ?
                           questions?.map(el =>

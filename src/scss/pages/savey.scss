@@ -1,169 +1,203 @@
 // contact-wraper
-// mainPart
+// row
 
 
-.saveyCont{
- span{
-  overflow: hidden;
- }
- .container{
-  // width: 45vw;
-  width: 700px;
-  margin-bottom: 40px;
- }
+.saveyCont {
+  span {
+    overflow: hidden;
+  }
 
- @media screen  and (max-width: 594px){
-   .container{
-  width: 90vw;
- }
- .changeQuestionBtn{
-  margin-bottom: 20px;
- }
- }
- @media screen  and (max-width: 594px){
- .container{
-  width: 95vw;
- }
-}
-@media screen  and (max-width: 370px){
- .contact-wraper{
-  padding-left: 5px;
- }
- .questionCont ul li{
-  position: relative;
-  // left: -20px;
- }
-}
- .questionCont ul{
-  margin-left: 30px;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  overflow: hidden;
+  .container {
+    // width: 45vw;
+    width: 700px;
+    margin-bottom: 40px;
+  }
 
- }
- .questionCont ul li{
-  line-height: 35px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 5px;
-  padding: 1px;
-  // padding-left:3px;
-  border-radius: 4px;
-  max-width: 400px;
-  // position: relative;
- }
- .questionCont ul li:hover{
-   padding: 0px;
-  // padding-left:3px;
-  border: 1px dashed black;
- }
- .questionCont ul li span{
-  margin-top: 6px;
- }
- .checkBox{
-  margin-right: 7px;
-  margin-left: 4px;
- }
- .checkBox input{
-   cursor: pointer;
-   font-size: 30px;
- }
- .changeQuestionBtn{
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
- }
- .positionBtn{
-  	background-color: #fff;
-			color: $primary;
-			padding: 12px 15px;
-			font-weight: 600;
-			font-size: 14px;
-			min-width: 40px;
-			line-height: 1;
-			display: block;			
-			border-radius: $border-radius-base!important;
-			border: 2px solid rgba($primary,0.2);
-			cursor: pointer;
-   overflow: hidden;
-   z-index: 10;
- }
- .positionBtn:hover{
- border-color: transparent;
-			background: rgba($primary,0.9);
-			color: #fff;
- }
- .rowCont{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
- }
- .row{
-   width: auto;
-   div::-webkit-scrollbar {
-    display: none;
-   }
- }
- .swipeCont{
-   div::-webkit-scrollbar{
-    display: none;
-   }
-   min-height: 250px;
- }
- .radioBtn input{
-  visibility: hidden;
-}
-.radioBtn span{
-  display: inline-block;
-	padding: 0px;
-	height:19px;
-	width:19px;
-	background: none;
-  border: .8px solid #333e48;
-  border-radius: 50%;
-}
-.checkBtn{
-  cursor: pointer;
+  @media screen and (max-width: 594px) {
+    .container {
+      width: 90vw;
+    }
+
+    .changeQuestionBtn {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (max-width: 594px) {
+    .container {
+      width: 95vw;
+    }
+  }
+
+  @media screen and (max-width: 370px) {
+    .contact-wraper {
+      padding-left: 5px;
+    }
+
+    .questionCont ul li {
+      position: relative;
+      // left: -20px;
+    }
+  }
+
+  .questionCont ul {
+    margin-left: 30px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    overflow: hidden;
+
+  }
+
+  .questionCont ul li {
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+    padding: 1px;
+    // padding-left:3px;
+    border-radius: 4px;
+    max-width: 400px;
+    // position: relative;
+  }
+
+  .questionCont ul li:hover {
+    padding: 0px;
+    // padding-left:3px;
+    border: 1px dashed black;
+  }
+
+  .questionCont ul li span {
+    margin-top: 6px;
+  }
+
+  .checkBox {
+    margin-right: 7px;
+    margin-left: 4px;
+  }
+
+  .checkBox input {
+    cursor: pointer;
+    font-size: 30px;
+  }
+
+  .changeQuestionBtn {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+
+  .positionBtn {
+    background-color: #fff;
+    color: $primary;
+    padding: 12px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 40px;
+    line-height: 1;
+    display: block;
+    border-radius: $border-radius-base !important;
+    border: 2px solid rgba($primary, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .positionBtn:hover {
+    border-color: transparent;
+    background: rgba($primary, 0.9);
+    color: #fff;
+  }
+
+  .rowCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .row {
+    width: auto;
+    height: fit-content(5em) !important;
+
+    div::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .swipeCont {
+    div::-webkit-scrollbar {
+      display: none;
+    }
+
+    height: auto;
+    //  min-height: 250px;
+  }
+
+  .react-swipeable-view-container {
+    // align-items: ;
+  }
+
+  .radioBtn input {
+    visibility: hidden;
+  }
+
+  .radioBtn span {
+    display: inline-block;
+    padding: 0px;
+    height: 19px;
+    width: 19px;
+    background: none;
+    border: .8px solid #333e48;
+    border-radius: 50%;
+  }
+
+  .checkBtn {
+    cursor: pointer;
+  }
+
+  .radioBtn input:checked+span {
+    background: url('../images/check.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 19px 19px;
+    border: none;
+  }
+
+  .CheckBoxBtn input {
+    height: 19px;
+    width: 19px;
+    margin-top: 7px;
+  }
+
+  .thnk-par {
+    margin: 40px 0px;
+
+    p {
+      font-size: 13.5px;
+      text-align: left;
+    }
+  }
+
+  .textAreaCont {
+    textarea {
+      border: 2px solid #bfbfbf;
+      border-radius: 6px;
+      padding-left: 6px;
+      padding-top: 5px;
+      font-size: 14px;
+    }
+  }
+
+  .onBehalfCont {
+    h6 {
+      text-align: start;
+    }
+  }
 }
 
-.radioBtn input:checked + span{
-  background: url('../images/check.png');
-	background-repeat: no-repeat;
-	background-position:center center;
-	background-size:19px 19px;
-  border: none;
-}
-.CheckBoxBtn input{
-  	height:19px;
-	width:19px;
-  margin-top: 7px;
-}
- .thnk-par{
-   margin: 40px 0px;
-   p{
-     font-size: 13.5px;
-     text-align: left;
-   }
- }
- .textAreaCont{
-   textarea{
-   border: 2px solid #bfbfbf;
-   border-radius: 6px;
-   padding-left: 6px;
-   padding-top: 5px;
-   font-size: 14px;
-   }
- }
- .onBehalfCont{
-   h6{
-     text-align: start;
-   }
- }
-}
-.modelCont{
-  .backGround{
+.modelCont {
+  .backGround {
     background: black;
     width: 100vw;
     height: 100vh;
@@ -173,7 +207,8 @@
     left: 0px;
     opacity: 0.7;
   }
-  .mainPart{
+
+  .mainPart {
     background: white;
     width: 5;
     padding: 30px;
@@ -182,48 +217,52 @@
     max-height: 93vh;
     // overflow-y: scroll;
   }
-  .mainPartCont{
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0px;
-  z-index: 8000;
+
+  .mainPartCont {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    z-index: 8000;
   }
-  .mainContent{
+
+  .mainContent {
     margin-top: 30px;
-    p{
+
+    p {
       font-size: 13.5px;
     }
   }
-   .changeQuestionBtn{
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  margin-top: 40px;
- }
- .positionBtn{
-     	background-color: #fff;
-			color: $primary;
-			padding: 12px 15px;
-			font-weight: 600;
-			font-size: 14px;
-			min-width: 40px;
-			line-height: 1;
-			display: block;			
-			border-radius: $border-radius-base!important;
-			border: 2px solid rgba($primary,0.2);
-			cursor: pointer;
-   overflow: hidden;
-   z-index: 10;
- }
- .positionBtn:hover{
- border-color: transparent;
-			background: rgba($primary,0.9);
-			color: #fff;
- }
-}
 
- 
+  .changeQuestionBtn {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+
+  .positionBtn {
+    background-color: #fff;
+    color: $primary;
+    padding: 12px 15px;
+    font-weight: 600;
+    font-size: 14px;
+    min-width: 40px;
+    line-height: 1;
+    display: block;
+    border-radius: $border-radius-base !important;
+    border: 2px solid rgba($primary, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 10;
+  }
+
+  .positionBtn:hover {
+    border-color: transparent;
+    background: rgba($primary, 0.9);
+    color: #fff;
+  }
+}

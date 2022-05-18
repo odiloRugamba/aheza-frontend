@@ -31,18 +31,18 @@ class aboutSection extends Component {
 							<div className="col-lg-6 mb-30">
 								<div className="heading-bx">
 									{/* <h6 className="title-ext text-secondary">About Us</h6> */}
-									<h1 className="title">Introduction</h1>
+									{/* <h1 className="title">Introduction</h1> */}
 									<p>
-										AHEZA Healing & Careers Center opened in 2019 and is managed by GAERG,
+										Aheza Healing & Careers Center opened in 2019 and is managed by <a href='https://gaerg.org.rw/'>GAERG</a>,
 										an organisation founded by graduate student survivors of the 1994
 										<a href='https://gaerg.org.rw/' target="_blank"> Genocide Against the Tutsi.</a>
 									</p>
 									<p>
 										The building was originally donated by <a href='http://reg.rw/'>Rwanda’s Energy Utility Corporation</a> in 2016,
 										to be used as a care home for elderly widowed survivors. In 2018, First Lady Janette Kagame
-										helped to move those widows into sheltered accommodation in partnership with <a href='https://avega.org.rw/'>AVEGA-Agahozo</a>
-										The Energy Utility Corporation continue to sponsor the building whilst <a href='https://gaerg.org.rw/'>GAERG</a> develop and
-										facilitate the health and career services.
+										helped to move those widows into sheltered accommodation in partnership with <a href='https://avega.org.rw/'>AVEGA-Agahozo. </a>
+										The Energy Utility Corporation continue to sponsor the building whilst <a href='https://gaerg.org.rw/'>GAERG</a> develops and
+										facilitates the health and career services.
 									</p>
 								</div>
 							</div>

@@ -28,17 +28,17 @@ class PartnersSection extends Component {
 						<div className="row align-items-center">
 							<div className="col-lg-6 mb-30">
 								<div className="heading-bx">
-									<h1 className="title">Partnership</h1>
+									<h1 className="title">Partnerships</h1>
 									<div className="ttr-post-text">
 										<p>
-											Aheza Healing and Career Center partner with a variety of organizations and businesses throughout
-											our community to raise awareness of, and offer adequate mental health care to the genocide survivors
-											for them to go on living productive, fulfilling lives free from trauma. Being a partner means supporting
-											programs that are dedicated to treat issues related to survivors mental health fitness, child abuse and
-											neglect, offering addiction treatment and recovery services, and provide mental health services.
+											Aheza Healing and Career Center partners with a variety of organizations and businesses throughout
+											our community to raise awareness. and offer adequate mental health care.
+											Being a partner means supporting
+											programs that are dedicated to treat issues related to  child abuse and
+											neglect, addiction treatment and recovery.
 										</p>
 										<p>
-											For more information about how your business or organization can become a partner <a href='/contact-us'>contact us.</a>
+											For more information about how your business or organization can become a partner, <a href='/contact-us'>contact us.</a>
 										</p>
 									</div>
 								</div>

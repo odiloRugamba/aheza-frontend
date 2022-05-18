@@ -21,8 +21,10 @@ import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
-class AboutUs extends Component {
 
+
+
+class AboutUs extends Component {
 	render() {
 		return (
 			<>
