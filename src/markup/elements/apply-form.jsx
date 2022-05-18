@@ -102,8 +102,8 @@ const ApplyForm = ({ placeholder }) => {
 						{/* <input onClick={() => submitFunc()} type="submit" value="Apply" className="submit" id="submit" name="submit" load /> */}
 						<button onClick={() => submitFunc()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading && checked ? true : false}>
 							{
-								loading ? !checked ? <div class="spinner-border" role="status">
-									<span class="sr-only">Loading...</span>
+								loading ? !checked ? <div className="spinner-border" role="status">
+									<span className="sr-only">Loading...</span>
 								</div> : <div style={{ display: "flex", justifyContent: "center" }}> <img style={{ height: 29, }} src={CheckImg} /></div>
 									: <div style={{ width: 110 }} >Apply</div>
 							}

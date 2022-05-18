@@ -54,7 +54,7 @@ const Index = () => {
 
 			{/* <TestimonialSection /> */}
 
-			<LatestNewsSection content={data} title="Aheza News" />
+			<LatestNewsSection content={data} title="Aheza links News" />
 
 			<SocialMediaSection />
 			<Footer />

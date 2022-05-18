@@ -32,20 +32,21 @@ const AboutSection = () => {
 	}
 
 	useEffect(() => {
-		if (res?.length) {
-			const all = [res[0].title, ...res[0].tips];
-			setData(shuffleArr(all))
+		if (res) {
+			const all = [res.title, ...res.tips];
+			setData(all)
 		}
 
 	}, [res])
-	const shuffleArr = (arr) => {
-		const newArr = arr.slice()
-		for (let i = newArr.length - 1; i > 0; i--) {
-			const rand = Math.floor(Math.random() * (i + 1));
-			[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
-		}
-		return newArr
-	}
+
+	// const shuffleArr = (arr) => {
+	// 	const newArr = arr.slice()
+	// 	for (let i = newArr.length - 1; i > 0; i--) {
+	// 		const rand = Math.floor(Math.random() * (i + 1));
+	// 		[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
+	// 	}
+	// 	return newArr
+	// }
 
 	useEffect(() => {
 		dispatch(getTipsFunc())
@@ -71,7 +72,7 @@ const AboutSection = () => {
 
 						<div className="col-lg-5 col-md-6 col-sm-5">
 							<div className="banner-img">
-								<div style={{ backgroundImage: "url(" + doctorImg + ")", }} class="content">
+								<div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
 								</div>
 								<div className='connentInnerr'>
 									<div onClick={() => privFunc()} className='nextPrevIcon prev'>
@@ -95,8 +96,22 @@ const AboutSection = () => {
 												) : null
 										}
 									</SwipeableViews>
-									<div className='daytitsTitle'>
-										Tips of the day
+									<div
+										className='daytitsTitle'
+										
+									>
+										<span
+											style={{
+												backgroundColor: "#565acf",
+												color: "white",
+												padding: 10,
+												paddingLeft: 20,
+												paddingRight: 20,
+												borderRadius: 30
+											}}
+										>
+											Tips of the day
+										</span>
 									</div>
 									<div onClick={() => nextFunc()} className='nextPrevIcon next'>
 										<div>

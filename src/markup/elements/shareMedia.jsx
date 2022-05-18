@@ -4,13 +4,14 @@ import {
  LinkedinShareButton,
  TwitterShareButton
 } from "react-share";
+import {Dcore} from '../../api/index'
 import { useHistory, useParams, useLocation } from "react-router-dom";
 
 
 
 const SocialMediaComp = () => {
  const { pathname } = useLocation()
- const currentUrl = 'http://localhost:3000' + pathname
+ const currentUrl = Dcore.WEBURL + pathname
  return (
   <>
    <div className="share-post ml-auto">
@@ -19,7 +20,7 @@ const SocialMediaComp = () => {
      <FacebookShareButton url={currentUrl}>
       <li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
      </FacebookShareButton>
-     <li ><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li>
+     {/* <li ><a rel="noreferrer" target="_blank" href="https://www.instagram.com/"><i className="fab fa-instagram"></i></a></li> */}
      <LinkedinShareButton url={currentUrl}>
       <li ><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/"><i className="fab fa-linkedin-in"></i></a></li>
      </LinkedinShareButton>

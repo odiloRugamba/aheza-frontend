@@ -141,10 +141,10 @@ const AboutSection = () => {
 										<div className="form-group">
 											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
 												<option selected>Method of Communication</option>
-												<option value="INPERSON">In Person</option>
-												<option value="PHONECALL">Phone Call</option>
-												<option value="ZOOMCALL">Zoom Video Call</option>
-												<option value="AHEZACHAT">Aheza Chat</option>
+												<option value="IN-PERSON">In Person</option>
+												<option value="PHONE-CALL">Phone Call</option>
+												<option value="ZOOM-CALL">Zoom Video Call</option>
+												<option value="AHEZA-CHAT">Aheza Chat</option>
 											</select>
 										</div>
 										<div className="form-group">
