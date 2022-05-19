@@ -8,6 +8,8 @@ import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
 import { getBlogs } from "../../store/blog/actions";
 import searchIcon from '../../images/searchh.png';
+import defualtImage from '../../images/defualt.jpeg';
+import { Dcore } from '../../api/index'
 import { getLinks } from "../../store/links/actions";
 import { getUploads } from "../../store/uploads/actions";
 
@@ -33,6 +35,7 @@ const Stories = () => {
   const resLink = useSelector(state => state.linksReducers.data)
   const resUploads = useSelector(state => state.UploadsReducers.data)
   const [loading, setLoading] = useState(false)
+  const [searchLoading, setSearchLoading] = useState(false)
   useEffect(() => {
     dispatch(getStorys())
     dispatch(getBlogs())
@@ -98,6 +101,7 @@ const Stories = () => {
   }
   const searchFunc = (e) => {
     setsearchText(e.target.value)
+    console.log(data)
     const researchData = []
     dataGlobal.forEach((list) => {
       if (list.title.toLocaleLowerCase().search(searchText.toLocaleLowerCase()) > -1) {
@@ -109,6 +113,7 @@ const Stories = () => {
     if (!e.target.value.trim()) {
       setData(dataGlobal)
     }
+    setSearchLoading(true)
   }
 
 
@@ -151,13 +156,12 @@ const Stories = () => {
                           {
                             item?.youtubeVideoLink ?
                               <img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
-                              : <img src={item.image} alt="" />
+                              : item?.image ? <img src={Dcore.IMAGEURL + '/' + item.image} alt="" /> : <img src={defualtImage} alt="" />
                           }
                         </Link>
                       </div>
                       <div className="post-info">
                         <h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
-
                         <ul className="post-meta" style={{ justifyContent: 'space-between' }}>
                           <li className="date"><i className="far fa-calendar-alt"></i> {
                             convertData(item?.updatedAt)
@@ -169,7 +173,7 @@ const Stories = () => {
                       </div>
                     </div>
                   </div>
-                )) : data?.length !== 0 ? <LoadingComp /> : loading ? <EmptyComp title="We have no data for now" /> : null
+                )) : data?.length !== 0 ? <LoadingComp /> : searchLoading ? <EmptyComp title="Not Data Found" /> : loading ? <EmptyComp title="We have no data for now" /> : null
               }
             </div>
             <div className="row">

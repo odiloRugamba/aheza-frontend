@@ -6,6 +6,7 @@ import { getStorys } from "../../store/story/actions";
 import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
+import { Dcore } from '../../api/index'
 
 // Layout
 import Header from "../layout/header";
@@ -63,7 +64,7 @@ const Stories = () => {
 
 			<Header />
 
-			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
@@ -86,23 +87,23 @@ const Stories = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>
+												<Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
-															: <img src={item.image} alt="" />
+															: <img src={Dcore.IMAGEURL + '/' + item.image} alt="" />
 													}
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 
 											</div>
