@@ -21,7 +21,7 @@
 		left: 0;
 		bottom: 0;
 		position: absolute;
-		background-image: url(../../images/main-banner/shape1.png);
+		// background-image: url(../../images/main-banner/shape1.png);
 		background-repeat: no-repeat;
 		background-position: bottom left;
 		background-size: 100%;
@@ -113,21 +113,25 @@
 			bottom: -233px;
 			right: -50px;
 			overflow: hidden;
+			display: none;
 		}
 
 		.connentInnerr {
-			background: black;
-			color: black;
-			position: absolute;
-			bottom: -200px;
-			right: -20px;
-			height: 457px;
+			border-color: black;
+			border-width: 3px;
+			background: whitesmoke;
+			padding: 0;
+			// color: black;
+			// position: absolute;
+			// bottom: -200px;
+			// right: -20px;
+			// height: 457px;
 			width: 390px;
 			border-radius: 10px;
 			display: flex;
 			align-items: center;
 			overflow: hidden;
-
+			// display: none;
 			.slideNumber {
 				position: absolute;
 				color: black;
@@ -160,14 +164,14 @@
 			.next {
 				display: flex;
 				justify-content: center;
-				position: absolute;
-				right: 0.5vw;
+				// position: relative;
+				// right: 0.5vw;
 				padding-left: 2px;
 			}
 
 			.prev {
-				position: absolute;
-				left: 4px;
+				// position: absolute;
+				// left: 4px;
 				z-index: 99999;
 				padding-right: 2px;
 			}
@@ -202,7 +206,7 @@
 		.connentInner {
 			background: #EDEDF5;
 			height: 457px;
-			width: 390px;
+			// width: 390px;
 			padding: 6px;
 			// border-radius: 10px;
 			display: flex;
@@ -217,6 +221,10 @@
 				text-align: center;
 				width: 330px;
 			}
+			
+		}
+		@include respond('tab-port') {
+			display: none;
 		}
 	}
 
@@ -295,6 +303,7 @@
 		.main-banner {
 			height: 500px;
 		}
+		
 	}
 
 	@include respond('phone') {

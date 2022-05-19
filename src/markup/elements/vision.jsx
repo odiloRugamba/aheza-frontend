@@ -56,7 +56,7 @@ class VisionSection extends Component {
 									<div className="testimonial-bx">
 										<div className="testimonial-content">
 											<p>
-												Our vision is of a world where Rwandans genocide survivors receive
+												Our vision is of a world where Rwandans receive
 												the mental health care they need, and go on to live productive,
 												fulfilling lives free from trauma.
 											</p>

@@ -35,7 +35,7 @@ class aboutSection extends Component {
 								<div className="work-bx active">
 									<div className="work-num-bx">2</div>
 									<div className="work-content">
-										<h5 className="title text-secondary mb-10">Book an appointment</h5>
+										<h5 className="title text-secondary mb-10">Book an Appointment</h5>
 										<p>That is handled with total privacy and anonymity.</p>
 									</div>
 								</div>
@@ -45,7 +45,7 @@ class aboutSection extends Component {
 									<div className="work-num-bx">3</div>
 									<div className="work-content">
 										<h5 className="title text-secondary mb-10">Community Healing</h5>
-										<p>Join one our of communities.</p>
+										<p>Join one of our communities.</p>
 									</div>
 								</div>
 							</div>
