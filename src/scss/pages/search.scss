@@ -7,6 +7,35 @@
 	background: #EFEFEF;
 }
 
+.searchInput {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	input {
+		width: 400px;
+		height: 38px;
+		border: 1px solid #CACCFA;
+		padding-left: 10px;
+		font-size: 15px;
+		border-radius: 4px 0px 0px 4px;
+		// border-right: none;
+	}
+
+	button {
+		height: 38px;
+		width: 60px;
+		border: 1px solid #CACCFA;
+		border-radius: 0px 4px 4px 0px;
+		border-left: none;
+		background: #CACCFA;
+
+		img {
+			width: 24px;
+		}
+	}
+}
+
 .more {
 	background: $primary;
 	padding: 6px 14px;
