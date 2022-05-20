@@ -30,7 +30,7 @@ const AboutSection = () => {
           <div className='appointmentF'>
            <div>
             <h3 className="title">
-             Thank you
+             Appointment booked successfully
             </h3>
            </div>
            <div>
@@ -40,17 +40,17 @@ const AboutSection = () => {
           <div>
            <div className="work-content">
             <p>
-             From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
-             From our vast database of information about mental health, you can find anything you are looking for
+             Our team will contact you shortly about your appointment arrangements.
+             
+             <br/><br/><br/>                          
+             Thank you.
             </p>
            </div>
            <div>
            </div>
           </div>
           <div>
-           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg">Aheza</button>
+           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg">Go Home</button>
           </div>
          </div>
         </div>

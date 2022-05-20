@@ -4,6 +4,7 @@ import { Accordion } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getServiceById } from "../../store/services/actions";
+import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -40,10 +41,13 @@ const ServiceDetail = () => {
 			<div className="page-content bg-white" style={{ marginTop: 60 }}>
 				<section className="section-area section-sp1">
 					<div className="container">
-						<div className="row">
+						<div className="row"> 
 							<div className="col-lg-8 mb-30">
 								<div className="ttr-media mb-30">
 								</div>
+								<div className="post-media">
+									<img style={{width: "100%"}} src={Dcore.IMAGEURL + "/" + service?.image} alt="" />
+								</div> 
 								<div className="clearfix">
 									<div className="head-text mb-30">
 										<h2 className="title mb-15">{service?.title}</h2>
@@ -60,15 +64,20 @@ const ServiceDetail = () => {
 
 										<h5 className="title-head">Services offered</h5>
 										<ul className="service-menu">
-											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book Appointment</span></Link></li>
-											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
-
+											
 											{
 												service?.services?.map(el =>
 													<li style={{ padding: 0 }}><Link to="#"><span>{el}</span></Link></li>
 												)
 											}
+											<br/>
+											<hr />
+											<br/>
+											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book an Appointment</span></Link></li>
+											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
+
 										</ul>
+										
 									</div>
 									{/* <div className="widget">
 										<div className="brochure-bx">

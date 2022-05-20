@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 import { useLocation } from 'react-router-dom'
+import searchIcon from '../../images/search.svg';
 
 // book
 // Images
@@ -117,6 +118,12 @@ function Header() {
 									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow">Get Help Now<i className="btn-icon-bx fas fa-chevron-right"></i></a></li>
 								</ul>
 							</div>
+							<div className="secondary-menu">
+								<ul>
+									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
+									<li className="bt-aea"><a onClick={() => setModel(true)} className=""> <Link to="/search"><img className='searchHIcon' src={searchIcon} alt="" /></Link></a></li>
+								</ul>
+							</div>
 							<div className={classesList} id="menuDropdown">
 								<div className="menu-logo">
 									{/* <Link to="/"><img src={logoWhite} alt="" /></Link> */}
@@ -148,7 +155,7 @@ function Header() {
 											</li>
 										</ul>
 									</li>
-									<li className={blogActive}><Link to="/search">Search</Link> </li>
+									{/* <li className={blogActive}><Link to="/search">Search</Link> </li> */}
 									<li className={blogActive}><Link to="/blog-grid">Resources </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>

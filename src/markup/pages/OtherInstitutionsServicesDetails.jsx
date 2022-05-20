@@ -4,6 +4,7 @@ import { Accordion } from 'react-bootstrap';
 import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getHospitalById } from "../../store/hospital/actions";
+import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -42,6 +43,14 @@ const ServiceDetail = () => {
 					<div className="container">
 						<div className="row">
 							<div className="col-lg-8 mb-30">
+								<div className="post-media">
+									<img style={{width: "100%", marginBottom: 30}} src={Dcore.IMAGEURL + "/" + hospital?.image} alt="" />
+								</div> 
+								<div className="clearfix">
+									<div className="head-text mb-30">
+										<h2 className="title mb-15">{hospital?.name}</h2>
+									</div>
+								</div>
 								<div>
 									<div dangerouslySetInnerHTML={{ __html: hospital?.content }}></div>
 								</div>
@@ -59,7 +68,7 @@ const ServiceDetail = () => {
 											}
 										</ul>
 									</div>
-									<div className="widget">
+									{/* <div className="widget">
 										<div className="brochure-bx">
 											<h5 className="title-head">Download</h5>
 											<Link to="#" className="download-link">
@@ -73,7 +82,7 @@ const ServiceDetail = () => {
 												<span>Download</span>
 											</Link>
 										</div>
-									</div>
+									</div> */}
 
 								</aside>
 							</div>

@@ -19,7 +19,7 @@ class aboutSection extends Component {
 					<div className="container-sm">
 						<div className="heading-bx text-center">
 							{/* <h2 className="title">Welcome.</h2> */}
-							<h2 className="title">How it Works?</h2>
+							{/* <h2 className="title">How it Works?</h2> */} 
 						</div>
 						<div className="row justify-content-center">
 							<div className="col-lg-4 col-sm-6 mb-30">
@@ -32,7 +32,7 @@ class aboutSection extends Component {
 								</div>
 							</div>
 							<div className="col-lg-4 col-sm-6 mb-30">
-								<div className="work-bx active">
+								<div className="work-bx active" style={{backgroundColor: "#1f61dc"}}>
 									<div className="work-num-bx">2</div>
 									<div className="work-content">
 										<h5 className="title text-secondary mb-10">Book an Appointment</h5>
