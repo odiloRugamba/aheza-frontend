@@ -31,11 +31,8 @@ class PartnersSection extends Component {
 									<h1 className="title">Partnerships</h1>
 									<div className="ttr-post-text">
 										<p>
-											Aheza Healing and Career Center partners with a variety of organizations and businesses throughout
-											our community to raise awareness. and offer adequate mental health care.
-											Being a partner means supporting
-											programs that are dedicated to treat issues related to  child abuse and
-											neglect, addiction treatment and recovery.
+											Aheza Healing and Career Center partners with a variety of organizations and businesses to raise awareness and offer adequate mental health care.
+											Being a partner means supporting programs that are dedicated to treat issues related to  child abuse and neglect, addiction treatment and recovery.
 										</p>
 										<p>
 											For more information about how your business or organization can become a partner, <a href='/contact-us'>contact us.</a>

@@ -33,9 +33,9 @@ class aboutSection extends Component {
 									{/* <h6 className="title-ext text-secondary">About Us</h6> */}
 									{/* <h1 className="title">Introduction</h1> */}
 									<p>
-										Aheza Healing & Careers Center opened in 2019 and is managed by <a href='https://gaerg.org.rw/'>GAERG</a>,
+										Aheza Healing & Careers Center opened in 2019 and is managed by <a target="_blank" href="https://twitter.com/GAERGRwanda">GAERG</a>,
 										an organisation founded by graduate student survivors of the 1994
-										<a href='https://gaerg.org.rw/' target="_blank"> Genocide Against the Tutsi.</a>
+										<a  href='https://gaerg.org.rw/' target="_blank"> Genocide Against the Tutsi.</a>
 									</p>
 									<p>
 										The building was originally donated by <a href='http://reg.rw/'>Rwanda’s Energy Utility Corporation</a> in 2016,

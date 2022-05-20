@@ -66,7 +66,7 @@ const AboutSection = () => {
 		<>
 			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")"}}>
 				<div style={{
-					backgroundColor: "rgba(255,255,255,0.3)",
+					backgroundColor: "rgba(255,255,255,0.6)",
 					height: "100%", 
 					paddingTop: 20,
 					paddingBottom: 30,
@@ -135,9 +135,9 @@ const AboutSection = () => {
 							</div>
 						</div>
 					</div>
-					<img className="pt-img2 animate2" src={ptImg2} alt="" />
+					{/* <img className="pt-img2 animate2" src={ptImg2} alt="" /> */}
 					<img className="pt-img3 animate3" src={ptImg3} alt="" />
-					<img className="pt-img4 animate4" src={ptImg4} alt="" />
+					{/* <img className="pt-img4 animate4" src={ptImg4} alt="" /> */}
 				</div>
 			</div>
 		</>

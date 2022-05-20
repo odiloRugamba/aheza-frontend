@@ -136,7 +136,7 @@ function Header() {
 										</ul>
 									</li>
 									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
-										<Link to="#">Media <i className="fas fa-plus"></i></Link>
+										<Link to="#">Updates <i className="fas fa-plus"></i></Link>
 										<ul className="sub-menu">
 											<li className="add-menu-left">
 												<ul>
@@ -149,7 +149,7 @@ function Header() {
 										</ul>
 									</li>
 									<li className={blogActive}><Link to="/search">Search</Link> </li>
-									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
+									<li className={blogActive}><Link to="/blog-grid">Resources </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 									<li className={donationActive}><Link to="/donation">Donation</Link></li>
