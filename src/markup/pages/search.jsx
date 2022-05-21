@@ -138,9 +138,9 @@ const Stories = () => {
               </div>
             </div>
 
-            <img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+            {/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" /> */}
             {/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-            <img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+            {/* <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
           </div>
         </div>
 

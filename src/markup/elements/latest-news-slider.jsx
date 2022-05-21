@@ -122,7 +122,7 @@ const LatestNewsSection = ({ title, content }) => {
 				<div className="container">
 					<div className="heading-bx text-center">
 						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
-						<h2 className="title">Links</h2>
+						{/* <h2 className="title">Links</h2> */}
 					</div>
 					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
 						{/* <div className="slider-item"> */}
@@ -141,7 +141,7 @@ const LatestNewsSection = ({ title, content }) => {
 									<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 										<b>
 											<li className="date">
-												<i className="fa fa-user"></i>
+												{/* <i className="fa fa-user"></i> */}
 												{item.publisherName}
 											</li>
 										</b>
@@ -172,10 +172,10 @@ const LatestNewsSection = ({ title, content }) => {
 						{/* </div> */}
 					</Slider>
 				</div>
-				<img className="pt-img1 animate1" src={animate1} alt="" />
+				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
 				<img className="pt-img2 animate2" src={animate2} alt="" />
 				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
-				<img className="pt-img4 animate-wave" src={animateWave} alt="" />
+				<img className="pt-img4 animate-wave" src={animateWave} alt="" /> */}
 			</section >
 
 		</>

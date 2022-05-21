@@ -49,10 +49,10 @@ const SocialMediaSection = ({ title }) => {
 					</div>
 
 				</div>
-				<img className="pt-img1 animate1" src={animate1} alt="" />
+				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
 				<img className="pt-img2 animate2" src={animate2} alt="" />
 				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
-				<img className="pt-img4 animate-wave" src={animateWave} alt="" />
+				<img className="pt-img4 animate-wave" src={animateWave} alt="" /> */}
 			</section>
 
 		</>

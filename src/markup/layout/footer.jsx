@@ -23,42 +23,49 @@ const Footer = () => {
 					<div className="containerr">
 						<div className="footer-row row" style={{ paddingLeft: 40 }}>
 
-							{/* <div className="col-xl-2 col-lg-3 col-md-6">
-								<div className="widget widget_info">
+							<div className="col-xl-2 col-lg-3 col-md-6">
+								{/* <div className="widget widget_info">
 									<h3 className="footer-title">Our vision</h3>
 									<div className="ft-contact">
 										<p>Our vision is of a world where Rwanda’s genocide survivors receive the mental health care they need, and go on to live productive, fulfilling lives free from trauma.</p>
 									</div>
-								</div>
-							</div> */}
+								</div> */}
+							</div>
 
-							{/* <div className="col-xl-3 col-lg-3 col-md-6 ">
-								<div className="widget footer_widget">
+							<div className="col-xl-3 col-lg-3 col-md-6 ">
+								{/* <div className="widget footer_widget">
 									<h3 className="footer-title">Our Service</h3>
 									<ul>
 										{services?.length > 0 && services?.map(service => (
 											<li><Link to={"/our-services/" + service?.title + '/' + service?._id}><span>{service?.title}</span></Link></li>
 										))}
 									</ul>
-								</div>
-							</div> */}
+								</div> */}
+							</div>
 
 							<div className="col-xl-3 col-lg-3 col-md-6">
-								<div className="widget widget_info">
-									<h3 className="footer-title">Privacy</h3>
+								
+							</div>
+							<div className="col-xl-3 col-lg-3 col-md-6">
+								{/* <div className="widget widget_info">
 									<div className="ft-contact">
-										<p>
+										<p style={{ fontSize: 14 }}>
+											<h3 className="footer-title" style={{ fontSize: 17, padding: 0,  margin: 0}}>Privacy</h3>
 											We assure total privacy for everyone who use our services. we use user's code
 											to seal your identity from the community and staff where necessary
 										</p>
 									</div>
-								</div>
-							</div>
-							<div className="col-xl-3 col-lg-3 col-md-6">
+								</div> */}
 								<div className="widget widget_info">
-									<h3 className="footer-title">Terms and Conditions</h3>
+									
 									<div className="ft-contact">
-										<p>
+										<p style={{ fontSize: 14, margin: 0 }} >
+											<h3 className="footer-title" style={{ fontSize: 17, padding: 0,  margin: 0}}>Privacy</h3>
+											We assure total privacy for everyone who use our services. we use user's code
+											to seal your identity from the community and staff where necessary
+										</p>
+										<p style={{ fontSize: 14 }}>
+											<h3 className="footer-title" style={{ fontSize: 17, padding: 0,  margin: 0}}>Terms and Conditions</h3>
 											By using this website you acknowledge that you have read and accepted our terms and conditions.
 											<Link to="/terms"> Read Terms and Conditions here</Link>
 										</p>

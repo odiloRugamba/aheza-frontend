@@ -115,7 +115,9 @@ function Header() {
 							<div className="secondary-menu">
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
-									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow">Get Help Now<i className="btn-icon-bx fas fa-chevron-right"></i></a></li>
+									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{color: "white", fontSize: 20}}><u>Talk to Us</u></b>
+										{/* <i className="btn-icon-bx fas fa-chevron-right"></i> */}
+									</a></li>
 								</ul>
 							</div>
 							<div className="secondary-menu">
@@ -131,7 +133,8 @@ function Header() {
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
 									<li onClick={() => { openMenu("service") }} className={ourServicesActive, openService}>
-										<Link to="#">Services <i className="fa fa-plus"></i>
+										<Link to="#">Services
+											{/* <i className="fa fa-plus"></i> */}
 										</Link>
 										<ul className="sub-menu ">
 											<li className="add-menu-left tab-port">
@@ -143,7 +146,9 @@ function Header() {
 										</ul>
 									</li>
 									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
-										<Link to="#">Updates <i className="fas fa-plus"></i></Link>
+										<Link to="#">Updates
+											{/* <i className="fas fa-plus"></i> */}
+										</Link>
 										<ul className="sub-menu">
 											<li className="add-menu-left">
 												<ul>
@@ -159,7 +164,7 @@ function Header() {
 									<li className={blogActive}><Link to="/blog-grid">Resources </Link> </li>
 									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-									<li className={donationActive}><Link to="/donation">Donation</Link></li>
+									<li className={donationActive}><Link to="/donation">Donate</Link></li>
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>

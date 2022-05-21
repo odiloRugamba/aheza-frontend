@@ -5,7 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTipsFunc } from "../../store/tips/actions";
 // Import Images
 // import bg1 from '../../images/main-banner/bg1.jpg';
-import bg1 from '../../images/main-banner/home-image.jpeg';
+// import bg1 from '../../images/main-banner/home-image.jpeg';
+import bg1 from '../../images/main-banner/barner.jpeg';
+
+
 
 
 // import doctorImg from '../../images/main-banner/doctor.png';
@@ -64,9 +67,9 @@ const AboutSection = () => {
 
 	return (
 		<>
-			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")"}}>
+			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", marginTop: 100}}>
 				<div style={{
-					backgroundColor: "rgba(255,255,255,0.6)",
+					backgroundColor: "rgba(255,255,255,0)",
 					height: "100%", 
 					paddingTop: 20,
 					paddingBottom: 30,
@@ -75,13 +78,14 @@ const AboutSection = () => {
 				}}>
 					<div className="container inner-content">
 						<div className="row align-items-center">
-							<div className="col-lg-7 col-md-12 col-sm-12">
-								<h6 className="title-ext text-primary"> Get yourself help today</h6>
-								<h2>You are worth the burden and the dedication of time that is required to help you recover</h2>
-								<Link to="/appointment-assesement" className="btn btn-secondary btn-lg shadow">Book appointment</Link>
+							<div className="col-lg-11 col-md-12 col-sm-12">
+								{/* <h6 className="title-ext text-primary"> Get yourself help today</h6> */}
+								<h2>"You can fall, but you can rise also." </h2>
+								<h6 style={{textAlign: "center"}}><span style={{ fontSize: 20 }}>Angelique Kidjo</span></h6>
+								<Link to="/appointment-assesement" className="btn btn-secondary btn-lg shadow"><b style={{color: "white", fontSize: 20}}><u>Book Appointment</u></b></Link>
 							</div>
 
-							<div className="col-lg-5 col-md-12 col-sm-5">
+							{/* <div className="col-lg-5 col-md-12 col-sm-5">
 								<div className="banner-img" style={{ margin: 30}}>
 									<div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
 									</div>
@@ -132,11 +136,11 @@ const AboutSection = () => {
 
 									</div>
 								</div>
-							</div>
+							</div> */}
 						</div>
 					</div>
 					{/* <img className="pt-img2 animate2" src={ptImg2} alt="" /> */}
-					<img className="pt-img3 animate3" src={ptImg3} alt="" />
+					{/* <img className="pt-img3 animate3" src={ptImg3} alt="" /> */}
 					{/* <img className="pt-img4 animate4" src={ptImg4} alt="" /> */}
 				</div>
 			</div>

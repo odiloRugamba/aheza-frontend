@@ -192,7 +192,7 @@ const SurveyPage = () => {
 
   return (
     <>
-      <div className="page-content bg-white" style={{ marginTop: 100 }}>
+      <div className="page-content bg-white" >
 
         <div className="banner-wraper">
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>

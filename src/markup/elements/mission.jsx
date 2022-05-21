@@ -29,7 +29,7 @@ class MissionSection extends Component {
 				<section className="section-area section-sp3 testimonial-wraper">
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h2 className="title m-b0">Our mission</h2>
+							<h2 className="title m-b0">Mission</h2>
 						</div>
 						<div className="row align-items-center">
 

@@ -4,13 +4,14 @@ import Slider from "react-slick";
 
 // Import Images
 import background from "../../images/background/footer-2.jpg"
+// import background from "../../images/services/aheza/aheza-svc-14.jpeg"
 import testShape from "../../images/testimonials/shape.png"
-import testPic1 from "../../images/testimonials/pic1.jpg"
-import testPic2 from "../../images/testimonials/pic2.jpg"
-import testPic3 from "../../images/testimonials/pic3.jpg"
-import testPic4 from "../../images/testimonials/pic4.jpg"
-import testPic5 from "../../images/testimonials/pic5.jpg"
-import testPic6 from "../../images/testimonials/pic6.jpg"
+import testPic1 from "../../images/services/aheza/aheza-svc-14.jpeg"
+import testPic2 from "../../images/services/aheza/aheza-svc-15.jpeg"
+import testPic3 from "../../images/services/aheza/aheza-svc-3.jpeg"
+import testPic4 from "../../images/services/aheza/aheza-svc-6.jpeg"
+import testPic5 from "../../images/services/aheza/aheza-svc-10.jpeg"
+import testPic6 from "../../images/services/aheza/aheza-svc-9.jpeg"
 import plusOrange from "../../images/shap/plus-orange.png"
 import squareBlue from "../../images/shap/square-blue.png"
 import circleDots from "../../images/shap/circle-dots.png"
@@ -35,19 +36,19 @@ class VisionSection extends Component {
 				<section className="section-area section-sp3 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h2 className="title m-b0">Our Vision</h2>
+							<h1 className="title m-b0" style={{fontSize: 80}}>Vision</h1>
 						</div>
 						<div className="row align-items-center">
 							<div className="col-lg-6 text-center">
 								<div className="thumb-wraper">
 									<img className="bg-img" src={testShape} alt="" />
 									<ul>
-										<li data-member="1"><Link to="#"><img src={testPic1} alt="" /></Link></li>
-										<li data-member="2"><Link to="#"><img src={testPic2} alt="" /></Link></li>
-										<li data-member="3"><Link to="#"><img src={testPic3} alt="" /></Link></li>
-										<li data-member="4"><Link to="#"><img src={testPic4} alt="" /></Link></li>
-										<li data-member="5"><Link to="#"><img src={testPic5} alt="" /></Link></li>
-										<li data-member="6"><Link to="#"><img src={testPic6} alt="" /></Link></li>
+										<li data-member="1" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic1} alt="" /></Link></li>
+										<li data-member="2" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic2} alt="" /></Link></li>
+										<li data-member="3" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic3} alt="" /></Link></li>
+										<li data-member="4" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic4} alt="" /></Link></li>
+										<li data-member="5" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic5} alt="" /></Link></li>
+										<li data-member="6" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic6} alt="" /></Link></li>
 									</ul>
 								</div>
 							</div>
@@ -56,9 +57,11 @@ class VisionSection extends Component {
 									<div className="testimonial-bx">
 										<div className="testimonial-content">
 											<p>
+												<b style={{color: "white", fontSize: 20}}>
 												Our vision is of a world where Rwandans receive
 												the mental health care they need, and go on to live productive,
 												fulfilling lives free from trauma.
+												</b>
 											</p>
 										</div>
 										<div className="quote-icon">

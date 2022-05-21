@@ -24,10 +24,11 @@ class aboutSection extends Component {
 						<div className="row justify-content-center">
 							<div className="col-lg-4 col-sm-6 mb-30">
 								<div className="work-bx">
-									<div className="work-num-bx">1</div>
-									<div className="work-content">
-										<h5 className="title text-secondary mb-10">Find Information</h5>
-										<p>From our vast database.</p>
+									{/* <div className="work-num-bx">1</div> */}
+									<div className="work-content" style={{display: "flex", justifyContent: "space-around"}}>
+										<h4 className="title  mb-10" style={{ fontSize: 35, color: "#565acf" , paddingTop: -10 }}><span style={{fontSize: 50}}>1</span></h4>
+										<h4 className="title  mb-10" style={{fontSize: 25, color: "#565acf"}}>Find Information</h4>
+										{/* <p>From our vast database.</p> */}
 									</div>
 								</div>
 							</div>
@@ -51,9 +52,9 @@ class aboutSection extends Component {
 							</div>
 						</div>
 					</div>
-					<img className="pt-img1 animate1" src={ptImg1} alt="" />
+					{/* <img className="pt-img1 animate1" src={ptImg1} alt="" />
 					<img className="pt-img2 animate2" src={ptImg2} alt="" />
-					<img className="pt-img3 animate3" src={ptImg3} alt="" />
+					<img className="pt-img3 animate3" src={ptImg3} alt="" /> */}
 				</section>
 
 			</>
