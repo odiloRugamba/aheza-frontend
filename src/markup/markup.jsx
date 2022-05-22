@@ -85,6 +85,7 @@ class Markup extends Component {
 						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
 						<ProtectRoute path='/appointment-assesement' exact component={SelfAssesement} />
+						<ProtectRoute path='/survey' exact component={SelfAssesement} />
 						<ProtectRoute path='/donation' exact component={Donation} />
 						<ProtectRoute path='/payment' exact component={Payment} />
 						<ProtectRoute path='/successfull' exact component={PaymentThankyou} />

@@ -1,50 +1,59 @@
 /* ==================
 	8.23 Work Box
+		slideNumber
 =================== */
-.work-area{
-	.pt-img1{
+.work-area {
+	.pt-img1 {
 		bottom: 15%;
 		left: 5%;
 	}
-	.pt-img2{
+
+	.pt-img2 {
 		top: 50%;
 		right: 5%;
-		@include respond('tab-port'){
+
+		@include respond('tab-port') {
 			top: 250px;
 			width: 100px;
 			height: 100px;
 			right: 10px;
 		}
 	}
-	.pt-img3{
+
+	.pt-img3 {
 		bottom: 10%;
 		right: 20%;
-		@include respond('tab-port'){
+
+		@include respond('tab-port') {
 			bottom: 120px;
 			right: 430px;
 		}
 	}
-	.work-bx{
+
+	.work-bx {
 		margin-top: 30px;
-		@include respond('tab-port'){
-			margin-top: 0;			
+
+		@include respond('tab-port') {
+			margin-top: 0;
 		}
 	}
-	.work-bx.active{
+
+	.work-bx.active {
 		margin-top: 0;
 	}
 }
-.work-bx{
-	position:relative;
+
+.work-bx {
+	position: relative;
 	box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
-	padding:40px 30px;
-	border-radius:20px;
-	background-color:$light;
+	padding: 40px 30px;
+	border-radius: 20px;
+	background-color: $light;
 	@include transitionMedium;
 	overflow: hidden;
 	z-index: 1;
 
-	&:after{
+	&:after {
 		content: "";
 		height: 0;
 		width: 100%;
@@ -60,10 +69,10 @@
 		-webkit-transform-origin: top;
 		-o-transform-origin: top;
 	}
-	
+
 	.work-num-bx {
 		@include transitionMedium;
-		z-index:9;
+		z-index: 9;
 		font-size: 80px;
 		font-weight: 900;
 		margin-bottom: 30px;
@@ -72,21 +81,25 @@
 		text-shadow: 0 10px 0 #ffe3d3;
 		color: transparent;
 	}
-	.work-content{
+
+	.work-content {
 		transition: all 0.5s;
 		@include transitionMedium;
-		p{
-			font-size:14px;
-			line-height:24px;
-			font-weight:500;
-			margin-bottom:30px;
+
+		p {
+			font-size: 14px;
+			line-height: 24px;
+			font-weight: 500;
+			margin-bottom: 30px;
 		}
 	}
-	.btn{
+
+	.btn {
 		font-weight: 600;
 	}
+
 	&.active,
-	&:hover{
+	&:hover {
 		&:after {
 			height: 100%;
 			top: auto;
@@ -98,24 +111,160 @@
 			-o-transform-origin: bottom;
 			animation-duration: 0.5s;
 		}
+
 		.work-num-bx {
 			text-shadow: 0 10px 0 #f38f5e;
 			-webkit-text-stroke: 2px #fff;
 		}
-		.work-content{
+
+		.work-content {
+
 			p,
-			.title{
-				color:$light !important;
+			.title {
+				color: $light  !important;
 			}
 		}
-		.btn{
+
+		.btn {
 			background-color: #fff;
 			border-color: #fff;
 			color: $secondary;
+
 			.btn-icon-bx {
 				background-color: $secondary;
 				color: #fff;
 			}
 		}
 	}
+
+}
+
+.outContainer {
+	display: flex;
+	padding-top: 20px;
+}
+
+.applePhone {
+	width: 382px;
+	height: 762px;
+	position: absolute;
+	top: 30px;
+}
+
+.connentInnerr {
+	border-width: 3px;
+	background: whitesmoke;
+	padding: 0;
+	width: 360px;
+	height: 722px;
+	border-radius: 30px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	position: relative;
+	left: 10px;
+
+	// display: none;
+	.slideNumber {
+		position: absolute;
+		color: black;
+		top: 50px;
+		width: 370px;
+		display: flex;
+		justify-content: center;
+
+		div {
+			background: white;
+			width: 35px;
+			height: 35px;
+			font-size: 15px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			z-index: 9999999;
+		}
+	}
+
+	.daytitsTitle {
+		position: absolute;
+		width: 360px;
+		display: flex;
+		justify-content: center;
+		bottom: 70px;
+		// : 400px;
+	}
+
+	.next {
+		display: flex;
+		justify-content: center;
+		// position: relative;
+		// right: 0.5vw;
+		padding-left: 2px;
+		margin-right: 16px;
+		z-index: 99999;
+		right: -4px;
+		position: absolute;
+	}
+
+	.prev {
+		// position: absolute;
+		// left: 4px;
+		z-index: 99999;
+		padding-right: 2px;
+		// margin-left: 15px;
+		left: 15px;
+		position: absolute;
+	}
+
+	.nextPrevIcon {
+		div {
+			width: 20px;
+			height: 20px;
+			background: white;
+			border-radius: 100%;
+			cursor: pointer;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			// padding: ;
+		}
+
+		img {
+			width: 10px;
+			height: 10px;
+			position: relative;
+			left: 5px;
+			bottom: 1px;
+		}
+	}
+
+	div::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.connentInner {
+	background: #EDEDF5;
+	height: 457px;
+	// width: 390px;
+	padding: 10px;
+	// border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	// padding: 0px 70px  0px 10px;
+	.inneData {
+		z-index: 999;
+		font-size: 20px;
+		text-align: center;
+		width: 330px;
+		font-family: "Montserrat", sans-serif;
+		color: #fff;
+		font-size: 20px;
+		font-weight: 700;
+		// padding: 5px;
+	}
+
 }

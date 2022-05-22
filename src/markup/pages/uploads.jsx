@@ -33,7 +33,6 @@ const Uploads = () => {
 		setData(res)
 		setPageCount(res?.length / postPerPage)
 		setPageData(res?.slice(0, postPerPage))
-		console.log(res)
 	}, [res])
 
 	const convertData = (date) => {

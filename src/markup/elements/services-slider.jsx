@@ -88,7 +88,7 @@ const ServicesSliderSection = () => {
 									<div className="icon-content">
 										<h3 className="ttr-title">Vetting</h3>
 										<p>Our vetting team will contact you to start the process as soon as possible.</p>
-										
+
 										{/* <Link to="/service-details" className="btn btn-primary light">View More</Link> */}
 									</div>
 								</div>

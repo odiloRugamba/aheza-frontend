@@ -16,6 +16,7 @@ import plusOrange from "../../images/shap/plus-orange.png"
 import squareBlue from "../../images/shap/square-blue.png"
 import circleDots from "../../images/shap/circle-dots.png"
 import circleOrange2 from "../../images/shap/circle-orange-2.png"
+import logo from '../../images/logo-2.png';
 
 class VisionSection extends Component {
 
@@ -33,22 +34,25 @@ class VisionSection extends Component {
 			<>
 
 
-				<section className="section-area section-sp3 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
+				<section className="section-area section-sp1 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h1 className="title m-b0" style={{fontSize: 80}}>Vision</h1>
+							<h1 className="title m-b0" style={{ fontSize: 80 }}>Vision</h1>
 						</div>
 						<div className="row align-items-center">
-							<div className="col-lg-6 text-center">
+							<div className="col-lg-6">
+
 								<div className="thumb-wraper">
 									<img className="bg-img" src={testShape} alt="" />
 									<ul>
-										<li data-member="1" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic1} alt="" /></Link></li>
-										<li data-member="2" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic2} alt="" /></Link></li>
-										<li data-member="3" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic3} alt="" /></Link></li>
-										<li data-member="4" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic4} alt="" /></Link></li>
-										<li data-member="5" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic5} alt="" /></Link></li>
-										<li data-member="6" style={{border: "4px solid #f17732", borderRadius: 100}}><Link to="#"><img src={testPic6} alt="" /></Link></li>
+										<li data-member="1" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic1} alt="" /></Link></li>
+										<li data-member="2" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic2} alt="" /></Link></li>
+										<li data-member="3" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic3} alt="" /></Link></li>
+										<li data-member="4" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic4} alt="" /></Link></li>
+										<li data-member="5" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic5} alt="" /></Link></li>
+										<li data-member="6" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic6} alt="" /></Link></li>
+										<Link id='logoCont' to="/"><img className='logo' src={logo} alt="" /></Link>
+
 									</ul>
 								</div>
 							</div>
@@ -57,10 +61,10 @@ class VisionSection extends Component {
 									<div className="testimonial-bx">
 										<div className="testimonial-content">
 											<p>
-												<b style={{color: "white", fontSize: 20}}>
-												Our vision is of a world where Rwandans receive
-												the mental health care they need, and go on to live productive,
-												fulfilling lives free from trauma.
+												<b style={{ color: "white", fontSize: 20 }}>
+													Our vision is of a world where Rwandans receive
+													the mental health care they need, and go on to live productive,
+													fulfilling lives free from trauma.
 												</b>
 											</p>
 										</div>

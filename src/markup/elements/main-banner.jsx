@@ -22,7 +22,7 @@ import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
 
 
- 
+
 
 const AboutSection = () => {
 	const [slideIndex, setSlideIndex] = useState(0)
@@ -67,10 +67,10 @@ const AboutSection = () => {
 
 	return (
 		<>
-			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", marginTop: 100}}>
+			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", marginTop: 100 }}>
 				<div style={{
 					backgroundColor: "rgba(255,255,255,0)",
-					height: "100%", 
+					height: "100%",
 					paddingTop: 20,
 					paddingBottom: 30,
 					// paddingTop: 150,
@@ -81,8 +81,8 @@ const AboutSection = () => {
 							<div className="col-lg-11 col-md-12 col-sm-12">
 								{/* <h6 className="title-ext text-primary"> Get yourself help today</h6> */}
 								<h2>"You can fall, but you can rise also." </h2>
-								<h6 style={{textAlign: "center"}}><span style={{ fontSize: 20 }}>Angelique Kidjo</span></h6>
-								<Link to="/appointment-assesement" className="btn btn-secondary btn-lg shadow"><b style={{color: "white", fontSize: 20}}><u>Book Appointment</u></b></Link>
+								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20 }}>Angelique Kidjo</span></h6>
+								<Link to="/appointment-assesement" className="btn btn-secondary btn-lg shadow"><b style={{ color: "white", fontSize: 20 }}><u>Book Appointment</u></b></Link>
 							</div>
 
 							{/* <div className="col-lg-5 col-md-12 col-sm-5">
@@ -137,6 +137,7 @@ const AboutSection = () => {
 									</div>
 								</div>
 							</div> */}
+
 						</div>
 					</div>
 					{/* <img className="pt-img2 animate2" src={ptImg2} alt="" /> */}
