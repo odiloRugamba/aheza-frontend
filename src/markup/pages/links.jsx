@@ -56,6 +56,12 @@ const Uploads = () => {
 		window.open(link)
 	}
 
+	const routeChange = (link) => {
+		const rouLink = link.split('/')[2]
+		console.log(rouLink)
+		window.open('https:' + rouLink)
+	}
+
 
 	const getVideoId = (url) => {
 		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -95,13 +101,18 @@ const Uploads = () => {
 													<img src={Dcore.IMAGEURL + '/' + item.image} alt="" />
 												</a>
 											</div>
-											<div className="post-info">
-												<h6 className="post-title max-lines-2"><a onClick={() => openNewWindow(item.link)}>{item.title}</a></h6>
+											<div className="post-info" >
+												{/* <h6 className="post-title max-lines-2"><a onClick={() => openNewWindow(item.link)}>{item.title}</a></h6> */}
+												<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
+													<a onClick={() => openNewWindow(item.link)} style={{ fontSize: 15, fontFamily: 700 }}>{item?.title}</a>
+												</p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date"><i className="far fa-calendar-alt"></i> {
-														convertData(item?.updatedAt)
-													}</li>
-													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
+														{/* <i className="fa fa-user"></i> */}
+														{item.publisherName}
+													</li>
+													{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a> */}
+													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
 												</ul>
 											</div>
 										</div>
