@@ -43,7 +43,9 @@ const AboutSection = () => {
             history.push('/book-appointment')
         }
     }, [data]);
-
+    function numberWithCommas(x) {
+        return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
     const changeMoney = (item) => {
         setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 10000 : null)
     }
@@ -93,9 +95,9 @@ const AboutSection = () => {
                                                     Finalize  Appointment
                                                 </h3>
                                             </div>
-                                            <div>
+                                            {/* <div>
                                                 <img src={verified} />
-                                            </div>
+                                            </div> */}
                                         </div>
 
                                         <div className='questionCont'>
@@ -123,26 +125,31 @@ const AboutSection = () => {
                                         <div>
                                             <div className="work-content">
                                                 <p>
-                                                    Once you pay, our program cordinator reviews your answers and match you with the best therapist for you and based on their
-                                                    schedule we call you to fix time for your session.
+                                                    Once you pay, our program cordinator reviews your answers and matches you with the best therapist for you.
+                                                    Based on the therapist's schedule, we will call you to confirm your session.
                                                 </p>
 
                                                 <div>
-                                                    <div className="textRepresent">Session Payment:</div>
-                                                    <div className='title text-secondary mb-1'>RWF {money}</div>
+                                                    <u><div className="textRepresent">Session Payment:</div></u>
+                                                    <div className='title text-secondary mb-1'>RWF {numberWithCommas(money)}</div>
                                                 </div>
                                             </div>
                                             <div>
                                             </div>
                                         </div>
                                         <div>
-                                            <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
-                                                {
-                                                    loading ? <div className="spinner-border" role="status">
-                                                        <span className="sr-only">Loading...</span>
-                                                    </div> : <span>Pay</span>
-                                                }
-                                            </button>
+                                            <b>
+                                                <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
+                                                    {
+                                                        loading ?
+                                                        <div className="spinner-border" role="status">
+                                                                <span className="sr-only">
+                                                                    <b style={{ fontSize: 20, color: "white" }} >Loading... </b>
+                                                                </span>
+                                                            </div> : <span><b style={{ fontSize: 20, color: "white" }} >Pay </b></span>
+                                                    }
+                                                </button>
+                                            </b>
                                         </div>
                                     </div>
                                 </div>
