@@ -43,7 +43,7 @@ const SocialMediaSection = ({ title }) => {
 						</div>
 						<div className="col-xl-4 col-md-6">
 							<FacebookProvider appId="513240330217367" >
-								<iframe src="https://widget.taggbox.com/90245" style={{ height: 530, width: 360 }}></iframe>
+								<iframe src="https://widget.taggbox.com/96226" style={{ height: 530, width: 360 }}></iframe>
 							</FacebookProvider>
 						</div>
 					</div>
