@@ -47,7 +47,7 @@ const Index = () => {
 
 			<VisionSection />
 
-			<hr style={{ color: "white" }} />
+			{/* <hr style={{ color: "white" }} /> */}
 
 			{/* <AppointmentSection /> */}
 

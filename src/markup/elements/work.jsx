@@ -44,8 +44,9 @@ const AboutSection = () => {
 				
 
 				{
-					tip: "Signs the your mental health may be declining.",
-					color: '#565acf'
+					tip: "Signs the your mental health may be declining",
+					color: '#565acf',
+					title: true
 				},{
 					tip: "You isolate yourself from family and friends and avoid any contact with them.",
 					color: '#565acf'
@@ -63,7 +64,7 @@ const AboutSection = () => {
 					color: '#f17731'
 				},
 				{
-					tip: "You find it hard to take care of your personal hygiene (e.g. showering, brushing your teeth, changing your clothes).",
+					tip: "You find it hard to take care of your personal hygiene",
 					color: '#565acf'
 				},
 				{
@@ -100,24 +101,28 @@ const AboutSection = () => {
 			<section className="section-area section-p5 tips-wraper  row" style={{ }}>
 				<div className="col-lg-7 col-md-6 col-sm-12" style={{marginTop: 30}}>
 					<div className="col-lg-8 col-sm-12 mb-30" >
-						<div className="work-bx " style={{ backgroundColor: "#565acf"}}>
-							<div className="work-content" style={{ display: "flex"}}>
-								<div className="work-num-bx" >1</div>
-								<div >
-									<br/>
-									<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10 }}>Find Information</h4>
+						<a href='/our-services'>
+							<div className="work-bx " style={{ backgroundColor: "#565acf"}}>
+								<div className="work-content" style={{ display: "flex"}}>
+									<div className="work-num-bx" >1</div>
+									<div >
+										<br/>
+										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10 }}>Find Information</h4>
+									</div>
 								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 					<div className="col-lg-8 col-sm-12 mb-30">
-						<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf"}}>
-							<div className="work-num-bx">2</div>
-							<div className="work-content" >
-								<br/>
-								<h5 className="mb-10"  style={{ fontSize: 25, color: "#fff" , paddingLeft: 10}}>Book an Appointment</h5>
+						<a href='/appointment-assesement'>
+							<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf"}}>
+								<div className="work-num-bx">2</div>
+								<div className="work-content" >
+									<br/>
+									<h5 className="mb-10"  style={{ fontSize: 25, color: "#fff" , paddingLeft: 10}}>Book an Appointment</h5>
+								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 					<div className="col-lg-8 col-sm-12 mb-30">
 						<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf" }}>
@@ -148,8 +153,13 @@ const AboutSection = () => {
 								{
 									data?.length > 0 ?
 										data.map(el => <div style={{ background: el.color }} className='connentInner'>
-											<div className='inneData' style={{padding: 20}}>
-												{el.tip}
+											
+											<div className='inneData' style={{ padding: 50 }}>
+												{
+													el.title ? 
+														<div style={{fontSize: 25}}><>{el.tip}</></div> :
+														<span>{el.tip}</span>
+												}
 											</div>
 										</div>
 										) : null
