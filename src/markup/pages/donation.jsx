@@ -8,8 +8,8 @@ import { getResearchs } from "../../store/research/actions";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import donation from "../../images/donation.jpg";
-import donateImage from "../../images/donate.png";
-
+import donateImage from "../../images/donate.jpg";
+import { BackgroundImage } from "react-image-and-background-image-fade";
 
 
 
@@ -61,19 +61,36 @@ const ResearchFindings = () => {
 
     <section className="section-area mainBanner section-sp1">
      <div>
-      <img style={{ position: 'relative', bottom: 30 }} className="pt-img3 animate2" src={donateImage} alt="" />
+      <BackgroundImage
+       src={donateImage}
+       width='800px'
+       height='400px'
+       isResponsive
+      />
+      {/* <img style={{ position: 'relative', bottom: 30, maxWidth: 700 }} className="pt-img3 animate2" src={donateImage} alt="" /> */}
      </div>
      <div className='content'>
       <div className='title'>Why should I donate?</div>
       <div className='expText'>
        Each year, charitable and subsidized mental health care is provided to individuals throughout our community.
-       With your help, more services can be provided for children, adolescents, adults and families seeking help.
+       With your help, more services can be provided for children, adolescents, adults,  and families seeking help.
       </div>
-      <p className="form-submit">
+      {/* <p className="form-submit">
        <button onClick={() => donateFunc()} type="submit" value="Submit Comment " className={"submitComment"} id="submit" name="submit">
         <div className='btnText'>Make Donation  </div>
        </button>
-      </p>
+      </p> */}
+      <div className="blog-car" style={{ display: 'flex', }}>
+       <Link
+        to='links'
+        className="btn btn-outline-primary btn-sm"
+        style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+       >
+        <span>
+         Donate
+        </span>
+       </Link>
+      </div>
      </div>
     </section>
    </div>

@@ -127,7 +127,7 @@ const LatestNewsSection = ({ title, content }) => {
 				<div className="container">
 					<div className="heading-bx text-center">
 						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
-						<h2 className="title" style={{fontSize: 80, marginTop: 20}}>News</h2>
+						<h2 className="title" style={{ fontSize: 80, marginTop: 20 }}>News</h2>
 					</div>
 					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{/* <div className="slider-item"> */}
@@ -135,9 +135,9 @@ const LatestNewsSection = ({ title, content }) => {
 						{content?.map((item) => (
 							<div className="col-xl-4 col-md-6">
 								<div className="blog-card mb-30">
-									<div className="post-media" style={{overflow: "hidden", marginRight: 20, height: 180}}>
+									<div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
 										<a onClick={() => openNewWindow(item.link)}>
-											<img src={Dcore.IMAGEURL + '/' + item.image} alt=""  style={{width: "100%"}}/>
+											<img src={Dcore.IMAGEURL + '/' + item.image} alt="" style={{ width: "100%" }} />
 										</a>
 									</div>
 									<div className="post-info" >
@@ -162,7 +162,7 @@ const LatestNewsSection = ({ title, content }) => {
 					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
 						<Link
 							to='links'
-							className="btn btn-outline-primary btn-sm seeMoreLinks"
+							className="btn btn-outline-primary btn-sm"
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>
 							<span>
