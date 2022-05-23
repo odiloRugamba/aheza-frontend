@@ -94,7 +94,7 @@ const Footer = () => {
 						<div>
 							<span id='HeaderIcon' className="material-icons">schedule</span>
 						</div>
-						<div> Monday - Friday: 08:00 AM - 06:00 PM</div>
+						<div> Monday - Friday: 8:00 AM - 6:00 PM</div>
 					</div>
 
 					<div id='headerItem'>
@@ -122,7 +122,7 @@ const Footer = () => {
 						<div>
 							<span id='HeaderIcon' className="material-icons">place</span>
 						</div>
-						<div> Bugesera District, Ntarama sector.</div>
+						<div> Bugesera District, Ntarama Sector</div>
 					</div>
 				</div>
 			</div>
