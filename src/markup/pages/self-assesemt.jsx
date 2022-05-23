@@ -198,11 +198,11 @@ const SurveyPage = () => {
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
-                <h2>Answer this Question</h2>
+                <h2>Answer this question</h2>
               </div>
             </div>
-            <img className="pt-img1 animate-wave" src={animateWave} alt="" />
-            <img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
+            {/* <img className="pt-img1 animate-wave" src={animateWave} alt="" />
+            <img className="pt-img3 animate-rotate" src={animateRotate} alt="" /> */}
           </div>
         </div>
 
@@ -323,7 +323,7 @@ const SurveyPage = () => {
 
                       They help us match you with the right therapist for you.<br /><br />
 
-                      <b>Note:</b> your answers are confidential, they not shared with anyone else.
+                      <b>Note:</b> Your answers are confidential, They will not be shared with anyone else.
                     </p>
                   </div>
                   <div className='changeQuestionBtn'>

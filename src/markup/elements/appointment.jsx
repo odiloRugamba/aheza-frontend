@@ -109,15 +109,15 @@ const AboutSection = () => {
 		<>
 			<section className="section-area account-wraper1">
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
-					<div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
+					<div className="appointment-inner section-sp2" >
 						<div className="container">
 							<div className="rowAppo">
-								<div className="col-xl-8 col-lg-12 col-md-12">
+								<div className="col-xl-12 col-lg-12 col-md-12">
 									<div className="appointment-form form-wraper">
-										<h3 className="title">Book Appointment</h3>
+										<h3 className="title">Book an Appointment</h3>
 										<div className="form-group">
 											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
-											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="last Name" />
+											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="Last Name" />
 										</div>
 										<div className="form-group">
 											<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
@@ -127,7 +127,7 @@ const AboutSection = () => {
 												<option value="NONE">Not to mention</option>
 											</select>
 
-											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='date of Birth' />
+											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='Date of Birth' />
 										</div>
 										<div className="form-group">
 											<div>
@@ -160,10 +160,15 @@ const AboutSection = () => {
 											</select>
 										</div>
 
-										<button onClick={() => submitAppointment()} type="submit" className="btn btn-secondary btn-lg" disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>Appointment Now</button>
+										<button
+											onClick={() => submitAppointment()}
+											type="submit"
+											className="btn btn-secondary btn-lg"
+											style={{fontSize: 20}}
+											disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}><u>Book an Appointment</u></button>
 									</div>
 								</div>
-								<div className="col-xl-2 col-lg-6 col-md-6">
+								{/* <div className="col-xl-2 col-lg-6 col-md-6">
 									<div className="appointment-thumb">
 										<img src={appMobile} alt="" />
 										<div className="images-group">
@@ -174,7 +179,7 @@ const AboutSection = () => {
 											<img className="img5" src={appChat} alt="" />
 										</div>
 									</div>
-								</div>
+								</div> */}
 							</div>
 						</div>
 					</div>

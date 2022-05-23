@@ -85,7 +85,7 @@ const AboutSection = () => {
                     <div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
                         <div className="container">
                             <div className="rowAppo">
-                                <div className="col-xl-8 col-lg-12 col-md-12">
+                                <div className="col-xl-12 col-lg-12 col-md-12">
                                     <div className="appointment-form form-wraper appointmentCont">
                                         <div className='appointmentF'>
                                             <div>
@@ -115,36 +115,6 @@ const AboutSection = () => {
                                                         </li>
                                                     )
                                                 }
-
-
-                                                {/* <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Phone Call</a>
-            </li>
-            <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Zoom Video Call </a>
-            </li>
-            <li>
-             <span className='checkBox'>
-              <label className='radioBtn'>
-               <input name='appointment' type="radio" id="scales" />
-               <span />
-              </label>
-             </span>
-             <a> Aheza Chat </a>
-            </li> */}
-
                                             </ul>
                                         </div>
 
@@ -173,18 +143,6 @@ const AboutSection = () => {
                                                     </div> : <span>Pay</span>
                                                 }
                                             </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-2 col-lg-6 col-md-6">
-                                    <div className="appointment-thumb">
-                                        <img src={appMobile} alt="" />
-                                        <div className="images-group">
-                                            <img className="img1" src={appWomen} alt="" />
-                                            <img className="img2" src={appMapPin} alt="" />
-                                            <img className="img3" src={appSetting} alt="" />
-                                            <img className="img4" src={appCheck} alt="" />
-                                            <img className="img5" src={appChat} alt="" />
                                         </div>
                                     </div>
                                 </div>

@@ -162,7 +162,7 @@ function Header() {
 									</li>
 									{/* <li className={blogActive}><Link to="/search">Search</Link> </li> */}
 									<li className={blogActive}><Link to="/blog-grid">Resources </Link> </li>
-									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
+									{/* <li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li> */}
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 									<li className={donationActive}><Link to="/donation">Donate</Link></li>
 								</ul>
