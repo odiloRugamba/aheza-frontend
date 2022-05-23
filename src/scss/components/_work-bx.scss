@@ -131,8 +131,9 @@
 			color: $secondary;
 
 			.btn-icon-bx {
-				background-color: $secondary;
-				color: #fff;
+				// background-color: $secondary;
+				background-color: #fff;
+				color: $secondary;
 			}
 		}
 	}
@@ -267,4 +268,10 @@
 		// padding: 5px;
 	}
 
+}
+
+.seeMoreLinks {}
+
+.seeMoreLinks span {
+	text-decoration: underline 2px;
 }

@@ -94,6 +94,11 @@ const LatestNewsSection = ({ title, content }) => {
 	const openNewWindow = (link) => {
 		window.open(link)
 	}
+	const routeChange = (link) => {
+		const rouLink = link.split('/')[2]
+		console.log(rouLink)
+		window.open('https:' + rouLink)
+	}
 	function SamplePrevArrow(props) {
 		const { className, style, onClick } = props;
 		return (
@@ -124,53 +129,47 @@ const LatestNewsSection = ({ title, content }) => {
 						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
 						{/* <h2 className="title">Links</h2> */}
 					</div>
-					<Slider {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none">
+					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{/* <div className="slider-item"> */}
 
 						{content?.map((item) => (
-							<div className="blog-card">
-								<div>
-									<div className="post-media" style={{ maxHeight: 210, height: 210 }}>
-										<a onClick={() => openNewWindow(item.link)} ><img src={Dcore.IMAGEURL + '/' + item.image} alt="" /></a>
+							<div className="col-xl-4 col-md-6">
+								<div className="blog-card mb-30">
+									<div className="post-media">
+										<a onClick={() => openNewWindow(item.link)}>
+											<img src={Dcore.IMAGEURL + '/' + item.image} alt="" />
+										</a>
 									</div>
-									<div className="post-info">
+									<div className="post-info" >
+										{/* <h6 className="post-title max-lines-2"><a onClick={() => openNewWindow(item.link)}>{item.title}</a></h6> */}
 										<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
-											<a onClick={() => openNewWindow(item.link)}>{item?.title}</a>
+											<a onClick={() => openNewWindow(item.link)} style={{ fontSize: 15, fontFamily: 700 }}>{item?.title}</a>
 										</p>
-									</div>
-									<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-										<b>
-											<li className="date">
+										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+											<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 												{/* <i className="fa fa-user"></i> */}
 												{item.publisherName}
 											</li>
-										</b>
-										<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
-										{/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
-									</ul>
+											{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a> */}
+											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+										</ul>
+									</div>
 								</div>
 							</div>
 						))}
-						<div className="blog-card">
-							<div style={{
-								paddingTop: 168,
-								paddingBottom: 180,
-								paddingLeft: "20%",
-								justifyContent: "center"
-							}}>
-								<Link
-									to='links'
-									className="btn btn-outline-primary btn-sm"
-									
-								>
-									See All Links
-									<i className="btn-icon-bx fas fa-chevron-right"></i>
-								</Link>
-								
-							</div>
-						</div>
 						{/* </div> */}
-					</Slider>
+					</div>
+					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
+						<Link
+							to='links'
+							className="btn btn-outline-primary btn-sm seeMoreLinks"
+							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+						>
+							<span>
+								See More Links
+							</span>
+						</Link>
+					</div>
 				</div>
 				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
 				<img className="pt-img2 animate2" src={animate2} alt="" />
