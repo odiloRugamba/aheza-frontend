@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
 // Import Images
-import background from "../../images/background/footer-2.jpg"
+// import background from "../../images/background/footer-2.jpg"
+import background from "../../images/background/aheza-bg-6.png"
 // import background from "../../images/services/aheza/aheza-svc-14.jpeg"
 import testShape from "../../images/testimonials/shape.png"
 import testPic1 from "../../images/services/aheza/aheza-svc-14.jpeg"

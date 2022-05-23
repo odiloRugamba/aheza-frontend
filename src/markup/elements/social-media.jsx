@@ -28,7 +28,7 @@ const SocialMediaSection = ({ title }) => {
 							<Timeline
 								dataSource={{
 									sourceType: 'url',
-									url: "https://twitter.com/Ahezahccenter?s=20&t=xXTCtFMnP5fGt0anSGLcoQ",
+									url: "https://twitter.com/Ahezahcenter?s=20&t=xXTCtFMnP5fGt0anSGLcoQ",
 									screenName: 'TwitterDev'
 								}}
 								options={{
@@ -38,7 +38,7 @@ const SocialMediaSection = ({ title }) => {
 						</div>
 						<div className="col-xl-4 col-md-6">
 							<FacebookProvider appId="513240330217367" >
-								<Page href="https://www.facebook.com/GAERGRwanda/" tabs="timeline" />
+								<Page href="https://www.facebook.com/Ahezahcenter/" tabs="timeline" />
 							</FacebookProvider>
 						</div>
 						<div className="col-xl-4 col-md-6">
