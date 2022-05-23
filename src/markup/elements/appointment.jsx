@@ -153,19 +153,24 @@ const AboutSection = () => {
 												<option value="MONDAY">Monday</option>
 												<option value="TUESDAY">Tuesday</option>
 												<option value="WENSDAY">Wensday</option>
-												<option value="THUSDAY">Thusday</option>
+												<option value="THURSDAY">Thursday</option>
 												<option value="FRIDAY">Friday</option>
 												<option value="SATURDAY">Saturday</option>
 												<option value="SUNDAY">Sunday</option>
 											</select>
 										</div>
-
-										<button
-											onClick={() => submitAppointment()}
-											type="submit"
-											className="btn btn-secondary btn-lg"
-											style={{fontSize: 20}}
-											disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}><u>Book an Appointment</u></button>
+										
+											<button
+												onClick={() => submitAppointment()}
+												type="submit"
+												className="btn btn-secondary btn-lg"
+												disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>
+											<b 
+												style={{ fontSize: 20, color: "white" }}
+											>
+												Book an Appointment
+											</b>
+											</button>
 									</div>
 								</div>
 								{/* <div className="col-xl-2 col-lg-6 col-md-6">
