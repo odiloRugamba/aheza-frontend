@@ -8,6 +8,7 @@ import { getResearchs } from "../../store/research/actions";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import donation from "../../images/donation.jpg";
+import donateImage from "../../images/donate.png";
 
 
 
@@ -60,7 +61,7 @@ const ResearchFindings = () => {
 
     <section className="section-area mainBanner section-sp1">
      <div>
-      <img style={{ position: 'relative', bottom: 30 }} className="pt-img3 animate2" src={donation} alt="" />
+      <img style={{ position: 'relative', bottom: 30 }} className="pt-img3 animate2" src={donateImage} alt="" />
      </div>
      <div className='content'>
       <div className='title'>Why should I donate?</div>
