@@ -34,7 +34,7 @@ const Services = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Our Services</h2>
+								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Our Services</h2>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -44,20 +44,20 @@ const Services = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							{ 
+							{
 								data?.length > 0 ?
 									data?.map(el => (
-										<div className="col-lg-4 col-md-6 mb-30" style={{overflow: "hidden"}}>
-											
-											<div className="feature-container feature-bx2" style={{padding: 0}}> 
+										<div className="col-lg-4 col-md-6 mb-30" style={{ overflow: "hidden" }}>
+
+											<div className="feature-container feature-bx2" style={{ padding: 0 }}>
 												<div style={{
 													height: 200,
 													overflow: "hidden"
 												}}>
-													<img style={{minHeight: 200}} src={Dcore.IMAGEURL + '/' + el?.image} alt="" />
+													<img style={{ minHeight: 200 }} src={Dcore.IMAGEURL + '/' + el?.image} alt="" />
 
 												</div>
-												<div className="icon-content" style={{padding: 20, paddingBottom: 20}}>
+												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
 													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-") + '/' + el?._id} className="btn btn-primary light">Read More</Link>
 												</div>

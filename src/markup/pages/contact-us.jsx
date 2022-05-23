@@ -16,6 +16,7 @@ import icon3 from "../../images/icon/icon3.png";
 import animateWave from "../../images/shap/wave-blue.png";
 import animate2 from "../../images/shap/circle-dots.png";
 import animateRotate from "../../images/shap/plus-blue.png";
+import contactImage from "../../images/imagge.png";
 
 
 const ContactUs = () => {
@@ -74,24 +75,22 @@ const ContactUs = () => {
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white" style={{ marginTop: 100 }}>
-				<div className="banner-wraper">
+			<div className="page-content bg-white" style={{ marginTop: 100, marginBottom: 50 }}>
+				<div className="banner-wraper" style={{ marginBottom: 50 }}>
 					<div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Contact Us</h2>
+								<h2 style={{ fontSize: 80 }}>Contact Us</h2>
 
 							</div>
 						</div>
-						<img className="pt-img1 animate-wave" src={animateWave} alt="" />
-						{/* <img className="pt-img2 animate2" src={animate2} alt=""/> */}
-						<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
 					</div>
 				</div>
 
 				<section className="">
 					<div className="container">
-						<div className="contact-wraper">
+						<div className="contact-wraper contactCard">
+
 							<div className="row">
 								<div className="col-lg-6 mb-30">
 									{completed ?
@@ -134,84 +133,17 @@ const ContactUs = () => {
 														className="btn w-100 btn-secondary btn-lg">{loading ? "Sending..." : "Send"}</button>
 												</div>
 											</div>
+
 										</div>}
+								</div>
+							</div>
 
-								</div>
-								<div className="col-lg-6 mb-30">
-									<div className="contact-info ovpr-dark" style={{ backgroundImage: "url(" + pic1 + ")" }}>
-										<div className="info-inner">
-											<h5 className="title mb-20">Contact Us For Any Informations</h5>
-											<div className="icon-box">
-												<h6 className="title"><i className="ti-map-alt"></i>Location</h6>
-												<p>Bugesera District, Ntarama sector - Rwanda</p>
-											</div>
-											<div className="icon-box">
-												<h6 className="title"><i className="ti-id-badge"></i>Email &amp; Phone</h6>
-												<Link to="#" className="text-white">info@aheza.org.rw</Link>
-												<p>(+250) 788 315 809</p>
-											</div>
-											<div className="icon-box">
-												<h6 className="title"><i className="ti-world"></i>Follow Us</h6>
-												<ul className="social-media">
-													<li onClick={() => openLink('https://twitter.com/Ahezahccenter')}><a rel="noreferrer" target="_blank" ><i className="fab fa-twitter"></i></a></li>
-													<li onClick={() => openLink('https://web.facebook.com/ahezahccenter/photos?_rdc=1&_rdr')}><a rel="noreferrer" target="_blank" ><i className="fab fa-linkedin"></i></a></li>
-													<li onClick={() => openLink('https://web.facebook.com/aheza250/?ref=py_c&_rdc=1&_rdr')}><a rel="noreferrer" target="_blank" ><i className="fab fa-linkedin"></i></a></li>
-													<li onClick={() => openLink('https://www.instagram.com/ahezahccenter/')}><a rel="noreferrer" target="_blank" ><i className="fab fa-instagram"></i></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+							<div>
+								<img src={contactImage} alt="" />
 							</div>
 						</div>
 					</div>
 				</section>
-				<div className='row' style={{ height: 400, width: "100%", backgroundColor: "red" }}>
-					<Map />
-				</div>
-				<section className="section-area section-sp1">
-					<div className="container">
-
-						<div className="row">
-							<div className="col-lg-4 col-md-6 mb-30">
-								<div className="feature-container feature-bx4 feature4">
-									<div className="icon-md feature-icon">
-										<img src={icon1} alt="" />
-									</div>
-									<div className="icon-content">
-										<h5 className="ttr-title">Contact Number</h5>
-										<p>(+250) 788 315 809</p>
-										<p>1024</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-4 col-md-6 mb-30">
-								<div className="feature-container feature-bx4 feature3">
-									<div className="icon-md feature-icon">
-										<img src={icon3} alt="" />
-									</div>
-									<div className="icon-content">
-										<h5 className="ttr-title">Email Address</h5>
-										<p>info@aheza.org.rw</p>
-										<p>support@aheza.org.rw</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-4 col-md-6 mb-30">
-								<div className="feature-container feature-bx4 feature2">
-									<div className="icon-md feature-icon">
-										<img src={icon2} alt="" />
-									</div>
-									<div className="icon-content">
-										<h5 className="ttr-title">Address</h5>
-										<p>Bugesera District, Ntarama sector - Rwanda</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
 			</div>
 
 			<Footer />
