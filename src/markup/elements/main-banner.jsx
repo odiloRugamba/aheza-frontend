@@ -82,7 +82,7 @@ const AboutSection = () => {
 								{/* <h6 className="title-ext text-primary"> Get yourself help today</h6> */}
 								<h2>"You can fall, but you can rise also." </h2>
 								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20 }}>Angelique Kidjo</span></h6>
-								<Link to="/appointment-assesement" className="btn btn-secondary btn-lg shadow"><b style={{ color: "white", fontSize: 20 }}><u>Book Appointment</u></b></Link>
+								<Link to="/appointment-assesement" className="btn btn-secondary  shadow"><b style={{ color: "white", fontSize: 20 }}>Book Appointment</b></Link>
 							</div>
 
 							{/* <div className="col-lg-5 col-md-12 col-sm-5">
