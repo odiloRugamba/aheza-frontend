@@ -70,7 +70,7 @@ const Stories = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Stories section</h2>
+								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Stories section</h2>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -103,7 +103,7 @@ const Stories = () => {
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 
 											</div>

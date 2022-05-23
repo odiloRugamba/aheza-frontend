@@ -37,13 +37,13 @@ const Services = () => {
 
 			<Header />
 
-			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper">
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h3>All Services available in Rwanda</h3>
+								<h3 style={{ fontSize: 80, paddingBottom: 50 }}>All Services available in Rwanda</h3>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -58,18 +58,18 @@ const Services = () => {
 								data?.length ?
 									data?.map(el => (
 										<div className="col-lg-4 col-md-6 mb-30">
-											<div className="feature-container feature-bx2" style={{padding: 0}}> 
+											<div className="feature-container feature-bx2" style={{ padding: 0 }}>
 												<div style={{
 													height: 200,
 													overflow: "hidden"
 												}}>
-													<img style={{minHeight: 200}} src={Dcore.IMAGEURL + '/' + el?.image} alt="" />
+													<img style={{ minHeight: 200 }} src={Dcore.IMAGEURL + '/' + el?.image} alt="" />
 
 												</div>
-												<div className="icon-content" style={{padding: 20, paddingBottom: 20}}>
+												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h3 className="ttr-title">{el?.name}</h3>
 													{/* <p>This clinic offers good services. you can reach out to them to find out more.</p> */}
-													<Link to={"/other-institutions-services/" + el.name + '/' + el._id} className="btn btn-primary light">View More</Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/other-institutions-services/" + el.name + '/' + el._id} className="btn btn-primary light">View More</Link>
 												</div>
 											</div>
 										</div>

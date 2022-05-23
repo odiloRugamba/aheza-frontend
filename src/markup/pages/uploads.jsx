@@ -62,13 +62,13 @@ const Uploads = () => {
 
 			<Header />
 
-			<div className="page-content bg-white"  style={{ marginTop: 100 }}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Uploads section</h2>
+								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Uploads section</h2>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
@@ -85,7 +85,7 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>
+												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -94,14 +94,14 @@ const Uploads = () => {
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"><i className="far fa-calendar-alt"></i> {
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link to={"/upload/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 
 											</div>

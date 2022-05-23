@@ -81,7 +81,7 @@ const Uploads = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2>Links</h2>
+								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Links</h2>
 							</div>
 						</div>
 						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />

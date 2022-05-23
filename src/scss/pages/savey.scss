@@ -96,7 +96,7 @@
     min-width: 40px;
     line-height: 1;
     display: block;
-    border-radius: $border-radius-base !important;
+    border-radius: $border-radius-base  !important;
     border: 2px solid rgba($primary, 0.2);
     cursor: pointer;
     overflow: hidden;
@@ -226,7 +226,7 @@
     justify-content: center;
     align-items: center;
     top: 0px;
-    z-index: 8000;
+    z-index: 9999999;
   }
 
   .mainContent {
@@ -253,7 +253,7 @@
     min-width: 40px;
     line-height: 1;
     display: block;
-    border-radius: $border-radius-base !important;
+    border-radius: $border-radius-base  !important;
     border: 2px solid rgba($primary, 0.2);
     cursor: pointer;
     overflow: hidden;

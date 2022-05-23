@@ -7,6 +7,7 @@ import LoadingComp from "../elements/loading";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import Map from '../elements/map';
+import logo from '../../images/logo-2.png';
 
 
 // Import Images
@@ -193,7 +194,9 @@ const SurveyPage = () => {
   return (
     <>
       <div className="page-content bg-white" >
-
+        <div className='logoImageCont'>
+          <Link to="/"><img className='logo' src={logo} alt="" /></Link>
+        </div>
         <div className="banner-wraper">
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
             <div className="container">
