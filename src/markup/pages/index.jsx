@@ -13,6 +13,7 @@ import WorkSection from "../elements/work";
 import AppointmentSection from "../elements/appointment";
 import TestimonialSection from "../elements/testimonial";
 import ServicesSliderSection from "../elements/services-slider";
+import MissionSection from "../elements/mission-section";
 import LatestNewsSection from "../elements/latest-news-slider";
 import SocialMediaSection from '../elements/social-media';
 
@@ -50,7 +51,9 @@ const Index = () => {
 
 			{/* <AppointmentSection /> */}
 
-			<ServicesSliderSection />
+			{/* <ServicesSliderSection /> */}
+
+			<MissionSection />
 
 			{/* <TestimonialSection /> */}
 

@@ -41,25 +41,30 @@ const AboutSection = () => {
 	useEffect(() => {
 		if (res) {
 			const exData = [
+				
+
 				{
+					tip: "Signs the your mental health may be declining.",
+					color: '#565acf'
+				},{
 					tip: "You isolate yourself from family and friends and avoid any contact with them.",
-					color: '#565ACF'
+					color: '#565acf'
 				},
 				{
-					tip: "You find extremely difficult to get out of bed and do everyday task.",
+					tip: "You find it extremely difficult to get out of bed and complete everyday tasks.",
 					color: '#f17731'
 				},
 				{
-					tip: "You have loss of interest Things you used to enjoy. ",
-					color: '#4cae4c'
+					tip: "You have loss of interest in things you used to enjoy. ",
+					color: '#565acf'
 				},
 				{
-					tip: "You have changes in your appetite some people find it hard to eat while others may overeat. ",
-					color: '#E36039'
+					tip: "You have changes in your appetite. Some people find it hard to eat while others may overeat. ",
+					color: '#f17731'
 				},
 				{
-					tip: "You find it hard to take care of your personal hygiene, Eg: showering brushing your teeth changing your clothes, etc.",
-					color: '#565ACF'
+					tip: "You find it hard to take care of your personal hygiene (e.g. showering, brushing your teeth, changing your clothes).",
+					color: '#565acf'
 				},
 				{
 					tip: "You find it difficult to concentrate on anything and feel a lack of motivation in doing so.",
@@ -67,7 +72,7 @@ const AboutSection = () => {
 				},
 				{
 					tip: "You feel disconnected from reality and from those around you.",
-					color: '#E36039'
+					color: '#565acf'
 				}
 			]
 			// exData.push({
@@ -92,43 +97,40 @@ const AboutSection = () => {
 	return (
 		<>
 
-			<section className="section-area section-p5 service-wraper  outContainer" style={{ backgroundImage: "url(" + bg1 + ")", backgroundRepeat: " no-repeat", backgroundPosition: "center", backgroundSize: "100%" }}>
-				<div className="container-sm">
-					<div className="rw justify-content-centr">
-						<div className="col-lg-8 col-sm-6 mb-30" >
-							<div className="work-bx " style={{ backgroundColor: "#1f2278" }}>
-								{/* <div className="work-num-bx">1</div> */}
-								<div className="work-content" style={{ display: "flex", justifyContent: "space-around" }}>
-									<div className="work-num-bx">1</div>
-									<div >
-										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff" }}>Find Information</h4>
-										<p style={{ color: "#fff" }}>From our vast database.</p>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div className="col-lg-8 col-sm-6 mb-30">
-							<div className="work-bx active" style={{ display: "flex", justifyContent: "space-around", alignItems: 'center', backgroundColor: "#1f61dc" }}>
-								<div className="work-num-bx">2</div>
-								<div className="work-content ml-20" >
-									<h5 className="title text-secondary mb-10">Book an Appointment</h5>
-									<p>That is handled with total privacy and anonymity.</p>
-								</div>
-							</div>
-						</div>
-						<div className="col-lg-8 col-sm-6 mb-30">
-							<div className="work-bx" style={{ display: "flex", justifyContent: "space-around", alignItems: 'center' }}>
-								<div className="work-num-bx">3</div>
-								<div className="work-content">
-									<h5 className="title text-secondary mb-10">Community Healing</h5>
-									<p>Join one of our communities.</p>
+			<section className="section-area section-p5 tips-wraper  row" style={{ }}>
+				<div className="col-lg-7 col-md-6 col-sm-12" style={{marginTop: 30}}>
+					<div className="col-lg-8 col-sm-12 mb-30" >
+						<div className="work-bx " style={{ backgroundColor: "#565acf"}}>
+							<div className="work-content" style={{ display: "flex"}}>
+								<div className="work-num-bx" >1</div>
+								<div >
+									<br/>
+									<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10 }}>Find Information</h4>
 								</div>
 							</div>
 						</div>
 					</div>
+					<div className="col-lg-8 col-sm-12 mb-30">
+						<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf"}}>
+							<div className="work-num-bx">2</div>
+							<div className="work-content" >
+								<br/>
+								<h5 className="mb-10"  style={{ fontSize: 25, color: "#fff" , paddingLeft: 10}}>Book an Appointment</h5>
+							</div>
+						</div>
+					</div>
+					<div className="col-lg-8 col-sm-12 mb-30">
+						<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf" }}>
+							<div className="work-num-bx">3</div>
+							<div className="work-content">
+								<br/>
+								<h5 className="mb-10"  style={{ fontSize: 25, color: "white" , paddingLeft: 10}}>Connect with a Community</h5>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div className="col-lg-5 col-md-12 col-sm-5">
-					<div className="banner-img" style={{ margin: 30 }}>
+				<div className="col-lg-5 col-md-6 col-sm-12" style={{padding: 0}}>
+					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30 }}>
 						{/* <div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
 						</div> */}
 						<div className='connentInnerr'>
@@ -137,23 +139,23 @@ const AboutSection = () => {
 									<img src={leftIcon} />
 								</div>
 							</div>
-							<div className='slideNumber'>
+							{/* <div className='slideNumber'>
 								<div>
 									{slideIndex + 1}/{data.length}
 								</div>
-							</div>
+							</div> */}
 							<SwipeableViews index={slideIndex} enableMouseEvents>
 								{
 									data?.length > 0 ?
 										data.map(el => <div style={{ background: el.color }} className='connentInner'>
-											<div className='inneData'>
+											<div className='inneData' style={{padding: 20}}>
 												{el.tip}
 											</div>
 										</div>
 										) : null
 								}
 							</SwipeableViews>
-							<div
+							{/* <div
 								className='daytitsTitle'
 
 							>
@@ -167,9 +169,9 @@ const AboutSection = () => {
 										borderRadius: 30
 									}}
 								>
-									Tips of the day
+									Tips of the Day
 								</span>
-							</div>
+							</div> */}
 							<div onClick={() => nextFunc()} className='nextPrevIcon next'>
 								<div>
 									<img src={rightIcon} />
