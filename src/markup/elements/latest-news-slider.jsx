@@ -24,48 +24,12 @@ import blogGridPic3 from "../../images/blog/grid/pic3.jpg"
 import blogGridPic4 from "../../images/blog/grid/pic4.jpg"
 import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 
-// Team Content
-const content = [
-	{
-		thumb: blogGridPic1,
-		authorPic: testPic1,
-		author: "John deo",
-		title: "In this hospital there are special surgeon",
-		date: "21 July 2021",
-	},
-	{
-		thumb: blogGridPic2,
-		authorPic: testPic2,
-		author: "Peter Packer",
-		title: "Can you get a diflucan prescription online?",
-		date: "20 July 2021",
-	},
-	{
-		thumb: blogGridPic3,
-		authorPic: testPic3,
-		author: "Sonar Moyna",
-		title: "Why Is Skin Surgeon Considered Underrated",
-		date: "19 July 2021",
-	},
-	{
-		thumb: blogGridPic4,
-		authorPic: testPic4,
-		author: "Kalina Mollika",
-		title: "Dental Care for Women is very important",
-		date: "18 July 2021",
-	},
-	{
-		thumb: blogGridPic5,
-		authorPic: testPic5,
-		author: "Michel",
-		title: "Health Will Be A Thing Of The Past And Here's Why",
-		date: "17 July 2021",
-	},
-]
+
 
 const LatestNewsSection = ({ title, content }) => {
 
-	console.log(content)
+	content = content?.slice(0,3)
+
 	const settings = {
 		dots: true,
 		infinite: false,

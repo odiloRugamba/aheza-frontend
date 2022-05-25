@@ -13,7 +13,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-1.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
@@ -84,9 +84,9 @@ const Uploads = () => {
 								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Links</h2>
 							</div>
 						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+						{/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" /> */}
 						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						{/* <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
 					</div>
 				</div>
 				<section className="section-area section-sp1">

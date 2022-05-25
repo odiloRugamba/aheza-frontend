@@ -6,11 +6,13 @@ import { getResearchs } from "../../store/research/actions";
 
 // Layout
 import Header from "../layout/header";
+import background from '../../images/aheza-donate-1.jpg';
 import Footer from "../layout/footer";
 import donation from "../../images/donation.jpg";
 // import donateImage from "../../images/donate.jpg";
 import donateImage from "../../images/background/aheza-bg-donate.jpg";
 import { BackgroundImage } from "react-image-and-background-image-fade";
+
 
 
 
@@ -58,35 +60,41 @@ const ResearchFindings = () => {
  return (
   <>
    <Header />
-   <div className="page-content bg-white" style={{ marginTop: 70 }}>
+   <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
-    <section className="section-area mainBanner section-sp1">
-     <div className='donateImg'>
-      <img style={{ position: 'relative', bottom: 0, maxWidth: 700 }} className="pt-img3" src={donateImage} alt="" />
+    <section className="section-area">
 
-     </div>
-     <div className='content'>
-      <div className='title'>Why should I donate?</div>
-      <div className='expText'>
-       Each year, charitable and subsidized mental health care is provided to individuals throughout our community.
-       With your help, more services can be provided for children, adolescents, adults,  and families seeking help.
+     <div className='row' style={{ backgroundColor: "white" }}>
+      <div className='content col-md-7' style={{ padding: 100 }}>
+
+       <br></br>
+       <br></br>
+       <h3 className='title' style={{ fontSize: 80 }}>Why should I donate?</h3>
+
+       <br></br>
+       <br></br>
+       <div className='expText' style={{ fontSize: 20 }}>
+        Each year, charitable and subsidized mental health care is provided to individuals throughout our community.
+        With your help, more services can be provided for children, adolescents, adults,  and families seeking help.
+       </div>
+       <br></br>
+       <br></br>
+       <div className="blog-car" style={{ display: 'flex', }}>
+
+        <Link
+         to='links'
+         className="btn btn-outline-primary btn-sm"
+         style={{ background: '#565ACF', color: '#fff', fontSize: 20, fontWeight: 700, padding: 20, paddingLeft: 50, paddingRight: 50 }}
+        >
+         <span>
+          Donate
+         </span>
+        </Link>
+       </div>
       </div>
-      {/* <p className="form-submit">
-       <button onClick={() => donateFunc()} type="submit" value="Submit Comment " className={"submitComment"} id="submit" name="submit">
-        <div className='btnText'>Make Donation  </div>
-       </button>
-      </p> */}
-      <div className="blog-car" style={{ display: 'flex', }}>
-       <Link
-        to='links'
-        className="btn btn-outline-primary btn-sm"
-        style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
-       >
-        <span>
-         Donate
-        </span>
-       </Link>
+      <div className='col-md-5' style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
       </div>
+
      </div>
     </section>
    </div>

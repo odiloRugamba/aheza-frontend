@@ -133,35 +133,35 @@ function Header() {
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
 									<li onClick={() => { openMenu("service") }} className={ourServicesActive, openService}>
-										<Link to="#">Services
+										<Link to="/our-services">Services
 											{/* <i className="fa fa-plus"></i> */}
 										</Link>
-										<ul className="sub-menu ">
+										{/* <ul className="sub-menu ">
 											<li className="add-menu-left tab-port">
 												<ul>
 													<li><Link to="/our-services"><span>Our services</span> </Link></li>
 													<li><Link to="/other-institutions-services"><span>Other institutions</span></Link></li>
 												</ul>
 											</li>
-										</ul>
+										</ul> */}
 									</li>
 									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
-										<Link to="#">Updates
+										<Link to="/news">News
 											{/* <i className="fas fa-plus"></i> */}
 										</Link>
-										<ul className="sub-menu">
+										{/* <ul className="sub-menu">
 											<li className="add-menu-left">
 												<ul>
-													<li><Link to="/research-findings"><span>Research</span></Link></li>
+													<li><Link to="/news"><span>Research</span></Link></li>
 													<li><Link to="/stories"><span>Stories</span></Link></li>
 													<li><Link to="/links"><span>Links</span></Link></li>
 													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
 												</ul>
 											</li>
-										</ul>
+										</ul> */}
 									</li>
 									{/* <li className={blogActive}><Link to="/search">Search</Link> </li> */}
-									<li className={blogActive}><Link to="/blog-grid">Resources </Link> </li>
+									{/* <li className={blogActive}><Link to="/blog-grid">Resources </Link> </li> */}
 									{/* <li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li> */}
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 									<li className={donationActive}><Link to="/donation">Donate</Link></li>

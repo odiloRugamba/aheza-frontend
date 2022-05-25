@@ -55,6 +55,7 @@ const Index = () => {
 			{/* <ServicesSliderSection /> */}
 
 			<MissionSection />
+			
 			<PartnerSection />
 			{/* <TestimonialSection /> */}
 

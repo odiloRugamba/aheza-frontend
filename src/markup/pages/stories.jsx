@@ -13,7 +13,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-4.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
@@ -68,14 +68,14 @@ const Stories = () => {
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
-						<div className="container">
+						<div className="" style={{ backgroundColor: "rgba(255,255,255,.5)" }}>
 							<div className="page-banner-entry text-center">
 								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Stories section</h2>
 							</div>
 						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+						{/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" /> */}
 						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						{/* <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
 					</div>
 				</div>
 

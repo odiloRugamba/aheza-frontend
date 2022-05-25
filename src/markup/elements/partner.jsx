@@ -3,14 +3,17 @@ import React, { Component, useState, useEffect } from 'react';
 import bg1 from '../../images/background/line-bg1.png';
 import image1 from '../../images/services/aheza/aheza-svc-15.jpeg'
 import background from "../../images/background/aheza-bg-9-2.jpg"
-import background2 from "../../images/background/aheza-bg-10.jpg"
+
+// import background2 from "../../images/background/aheza-bg-10.jpg"
+
+import background2 from "../../images/background/aheza-bg-11.jpg"
 
 
 
 const AboutSection = () => {
 	return (
 		<>
-			<section className="section-area section-p5 mission-wraper  row" style={{ paddingRight: 20 }}>
+			<section className="section-area section-p5 mission-wraper  row" style={{ paddingRight: 0 }}>
 				<div className="heading-bx text-center" style={{ margin: 10, marginTop: 70 }}>
 					<h1 className="title m-b0" style={{ fontSize: 80 }}>Partnerships</h1>
 				</div>
