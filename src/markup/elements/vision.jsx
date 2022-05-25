@@ -33,8 +33,6 @@ class VisionSection extends Component {
 
 		return (
 			<>
-
-
 				<section className="section-area section-sp1 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">

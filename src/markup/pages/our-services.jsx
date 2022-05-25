@@ -23,7 +23,7 @@ const Services = () => {
 
 	useEffect(() => {
 		setData(res)
-		console.log(res)
+		// console.log(res)
 	}, [res])
 
 	return (
@@ -31,14 +31,14 @@ const Services = () => {
 			<Header />
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper">
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }}>
+					<div className="page-banner" style={{ maxHeight: 300 }}>
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Our Services</h2>
+								<h2 style={{ fontSize: 80, bottom: 100, position: 'relative', zIndex: 99999 }}>Our Services</h2>
 							</div>
 						</div>
-						<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
+						{/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
 					</div>
 				</div>
 				<section className="section-area section-sp1">

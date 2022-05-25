@@ -3,10 +3,9 @@ import React, { Component, useState, useEffect } from 'react';
 import bg1 from '../../images/background/line-bg1.png';
 import image1 from '../../images/services/aheza/aheza-svc-15.jpeg'
 import background from "../../images/background/aheza-bg-9-2.jpg"
-
-// import background2 from "../../images/background/aheza-bg-10.jpg"
-
-import background2 from "../../images/background/aheza-bg-11.jpg"
+import background2 from "../../images/background/aheza-bg-10.jpg"
+// import background2 from "../../images/background/aheza-bg-11.jpg"
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,20 +25,27 @@ const AboutSection = () => {
 								<div className="testimonial-content">
 									<p>
 										<b style={{ color: "white" }}>
-											Aheza Healing and Career Center partners with a variety of organizations and business
-											to raise awareness and offer adequate mental health care.
+											Aheza Healing & Career Center  works with a variety of organizations and businesses
+											to raise awareness as well as offer mental health care to its clients.
 										</b>
 									</p>
 									<p>
 										<b style={{ color: "white" }}>
-											Being a partner means supporting programs that are dedicated to treat issues related to child abuse and neglect, addiction treatment and recovery.
+											Being a partner means supporting Aheza projects and  programs which are focused on  <span> </span>
+											<u><Link style={{ color: '#fff' }} to='/our-services/Counseling-and-Psychotherapy/6244aeae79decbcc46684172'>counseling and psychotherapy</Link></u>, <span> </span>
+											<u> <Link style={{ color: '#fff' }} to='/our-services/Palliative-Care-And-Home-Services/6244af7c79decbcc46684186'>palliative care and home services</Link></u>, <span> </span>
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a'>ergo therapy / occupation therapy</Link></u>,  <span> </span>
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a'>professional training</Link></u> <span> </span>
+											as well as  <span> </span>
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'> group therapy</Link></u>.
+
 
 										</b>
 
 									</p>
 									<p>
 										<b style={{ color: "white" }}>
-											for more information about how your business or organization can become a partners  <a href='/contact-us'>contact us.</a>
+											For more information about how your business or organization can become a partner,  <a href='/contact-us'>contact us.</a>
 										</b>
 									</p>
 									{/* <p>

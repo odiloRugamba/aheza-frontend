@@ -5,13 +5,19 @@ import LoadingImage from "../../images/loading.gif";
 
 
 const LoadingComp = () => {
- console.log('loading')
+ // console.log('loading')
  return (
-  <div className='loadingComp'>
-   <img src={LoadingImage} />
+  <div>
+   <div className='loadingComp'>
+    <div className="page-banner-entry text-center">
+     <h2 style={{ fontSize: 80 }}>Loading</h2>
+    </div>
+    <div>
+     <img src={LoadingImage} />
+    </div>
+   </div>
   </div>
  );
-
 }
 
 export default LoadingComp;

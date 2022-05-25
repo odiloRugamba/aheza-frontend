@@ -28,7 +28,7 @@ import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 
 const LatestNewsSection = ({ title, content }) => {
 
-	content = content?.slice(0,3)
+	content = content?.slice(0, 3)
 
 	const settings = {
 		dots: true,
@@ -114,7 +114,7 @@ const LatestNewsSection = ({ title, content }) => {
 												{item.publisherName}
 											</li>
 											{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a> */}
-											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More</a>
 										</ul>
 									</div>
 								</div>

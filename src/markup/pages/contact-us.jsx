@@ -76,12 +76,13 @@ const ContactUs = () => {
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white" style={{ marginTop: 100, marginBottom: 0}}>
-				<div className="banner-wraper" style={{ }}>
-					<div className="page-banner banner-lg contact-banner" style={{height: 200}}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
+
+				<div className="banner-wraper" style={{}}>
+					<div className="page-banner banner-lg contact-banner" style={{ maxHeight: 250 }}>
 						<div className="container">
-							<div className="page-banner-entry text-center" style={{height: 200 }}>
-								<h2 style={{ fontSize: 80, marginTop: 15 }}>Contact Us</h2>
+							<div className="page-banner-entry text-center" >
+								<h2 style={{ fontSize: 80, bottom: 130, position: 'relative', zIndex: 99999 }}>Contact Us</h2>
 
 							</div>
 						</div>
@@ -90,13 +91,13 @@ const ContactUs = () => {
 
 				<section className="">
 					<div className="" >
-						<div className="contact- "  style={{marginBottom: 100}}>
+						<div className="contact- " style={{ marginBottom: 100 }}>
 
 							<div className="row">
-								<div className='col-md-7' style={{backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
+								<div className='col-md-7' style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 
 								</div>
-								<div className="col-lg-5 mb-30" style={{padding: 30, paddingTop: 70}}>
+								<div className="col-lg-5 mb-30" style={{ padding: 30, paddingTop: 70 }}>
 									{completed ?
 										<>
 											<p className={"text-center h6"}>Thank you !!!</p>
@@ -109,22 +110,22 @@ const ContactUs = () => {
 												{errors.form && <div className="alert alert-danger" role="alert">
 													{errors?.form}
 												</div>}
-												<div className="form-group col-md-12" style={{marginBottom: 50}}>
+												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
 													<input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Name" />
 												</div>
 												{errors.firstName && <p className={"text-danger"}>{errors.firstName}</p>}
 
-												<div className="form-group col-md-12" style={{marginBottom: 50}}>
+												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
 													<input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
 												</div>
 												{errors.email && <p className={"text-danger"}>{errors.email}</p>}
 
-												<div className="form-group col-md-12" style={{marginBottom: 50}}>
+												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
 													<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Number" />
 												</div>
 												{errors.phoneNumber && <p className={"text-danger"}>{errors.phoneNumber}</p>}
 
-												<div className="form-group col-md-12" style={{marginBottom: 50}}>
+												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
 													<textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" required className="form-control" placeholder="Message "></textarea>
 												</div>
 												{errors.message && <p className={"text-danger"}>{errors.message}</p>}
@@ -134,8 +135,8 @@ const ContactUs = () => {
 														name="submit"
 														type="submit"
 														value="Submit"
-														style={{padding: "30px 35px"}}
-														className="btn w-100 btn-secondary btn-lg"><b style={{fontSize: 20, color: "white"}}>{loading ? "Sending..." : "Send"}</b></button>
+														style={{ padding: "30px 35px" }}
+														className="btn w-100 btn-secondary btn-lg"><b style={{ fontSize: 20, color: "white" }}>{loading ? "Sending..." : "Send"}</b></button>
 												</div>
 											</div>
 
