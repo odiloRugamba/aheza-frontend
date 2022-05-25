@@ -1,64 +1,72 @@
 // playPause
-.audioPlayer{
- .audioplayerBtnCont{
-  position: relative;
-  display: flex;
-  // flex-direction: column;
-  align-items: center;
-  bottom: 155px;
-  padding-left: 4px;
-   .AudioPlayLine{
-  background: white;
-  width: 97%;
-  border-radius: 50px;
-  height: 6px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  // .linePlayed{
-  //  background: #54D6D3;
-  // height: 6px; 
-  // //  width: 70%;
-  // border-radius: 50px 0px 0px 50px ;
-  // }
-  .dragPin{
-   background: #54D6D3;
-   height: 14px;
-   width: 14px;
-   border-radius: 50%;
-  cursor: pointer;
+.audioPlayer {
+  .audioplayerBtnCont {
+    position: relative;
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    bottom: 155px;
+    padding-left: 4px;
+
+    .AudioPlayLine {
+      background: white;
+      width: 97%;
+      border-radius: 50px;
+      height: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      // .linePlayed{
+      //  background: #54D6D3;
+      // height: 6px; 
+      // //  width: 70%;
+      // border-radius: 50px 0px 0px 50px ;
+      // }
+      .dragPin {
+        background: #54D6D3;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    .playBtnCont {
+      display: flex;
+      align-items: center;
+
+      div {
+        cursor: pointer;
+        background: white;
+        padding: 5px;
+        border-radius: 50%;
+      }
+
+      img {
+        width: 20px;
+      }
+
+      .playPuaseBtn {
+        margin: 0px 30px;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
   }
- }
- .playBtnCont{
-   display: flex;
-   align-items: center;
-  div{
-   cursor: pointer;
-   background: white;
-   padding: 5px;
-   border-radius: 50%;
+
+  .playBg {
+    background: black;
+    opacity: .3;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    bottom: 80px;
+    border-radius: 0px 0px 7px 7px;
   }
-  img{
-   width: 20px;
-  }
-  .playPuaseBtn{
-   margin: 0px 30px;
-   img{
-   width: 40px;
-  }
-  }
- }
- } 
- .playBg{
-  background: black;
-  opacity: .3;
-  width: 100%;
-  height: 80px;
-  position: relative;
-  bottom: 80px;
-  border-radius: 0px 0px 7px 7px ;
- }
 }
 
 .audioPlayer {
@@ -81,15 +89,16 @@
   color: white;
   font-size: 30px;
 }
- .linePlayed{
-   background: #54D6D3;
-  height: 6px; 
+
+.linePlayed {
+  background: #54D6D3;
+  height: 6px;
   //  width: 70%;
   border-radius: 50px 0px 0px 50px;
   margin-left: 5px;
   position: relative;
   bottom: 6px;
-  }
+}
 
 .forwardBackward:hover {
   color: var(--primary);
@@ -105,7 +114,7 @@
   color: var(--secondary);
   display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   margin: 0px 10px;
 }
 
@@ -133,7 +142,8 @@
   --selectedKnobby: #26c9c3;
 
   appearance: none;
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
+  ;
   border-radius: 10px;
   // position: relative;
   width: 500px;
@@ -144,14 +154,16 @@
   align-items: flex-start;
   cursor: pointer;
 }
-.currentCont{
+
+.currentCont {
   display: flex;
   // align-items: center;
 }
 
 /* progress bar - safari */
 .progressBar::-webkit-slider-runnable-track {
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
+  ;
   border-radius: 10px;
   position: relative;
   // width: 100;
@@ -161,7 +173,8 @@
 
 /* progress bar - firefox */
 .progressBar::-moz-range-track {
-  background: var(--bar-bg);;
+  background: var(--bar-bg);
+  ;
   border-radius: 10px;
   position: relative;
   width: 100%;
@@ -234,4 +247,15 @@
 .progressBar:active::-moz-range-thumb {
   transform: scale(1.2);
   background: var(--selectedKnobby);
+}
+
+
+.partenerImage {
+  // background: url('../../images/background/aheza-bg-10.jpg');
+  // background-size: 'cover',
+  box-shadow: inset 200px 60px 80px 0px white;
+}
+
+.donateImg {
+  box-shadow: inset 200px 100px 100px 0px white;
 }

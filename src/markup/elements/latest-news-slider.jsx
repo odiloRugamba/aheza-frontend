@@ -96,8 +96,8 @@ const LatestNewsSection = ({ title, content }) => {
 	}
 	const routeChange = (link) => {
 		const rouLink = link.split('/')[2]
-		console.log(rouLink)
-		window.open('https:' + rouLink)
+		const httpLink = link.split('/')[0]
+		window.open(`${httpLink}//${rouLink}`, '_blank')
 	}
 	function SamplePrevArrow(props) {
 		const { className, style, onClick } = props;

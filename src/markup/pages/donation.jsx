@@ -8,7 +8,8 @@ import { getResearchs } from "../../store/research/actions";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import donation from "../../images/donation.jpg";
-import donateImage from "../../images/donate.jpg";
+// import donateImage from "../../images/donate.jpg";
+import donateImage from "../../images/background/aheza-bg-donate.jpg";
 import { BackgroundImage } from "react-image-and-background-image-fade";
 
 
@@ -60,14 +61,9 @@ const ResearchFindings = () => {
    <div className="page-content bg-white" style={{ marginTop: 70 }}>
 
     <section className="section-area mainBanner section-sp1">
-     <div>
-      <BackgroundImage
-       src={donateImage}
-       width='800px'
-       height='400px'
-       isResponsive
-      />
-      {/* <img style={{ position: 'relative', bottom: 30, maxWidth: 700 }} className="pt-img3 animate2" src={donateImage} alt="" /> */}
+     <div className='donateImg'>
+      <img style={{ position: 'relative', bottom: 0, maxWidth: 700 }} className="pt-img3" src={donateImage} alt="" />
+
      </div>
      <div className='content'>
       <div className='title'>Why should I donate?</div>

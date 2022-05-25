@@ -3,13 +3,11 @@ import React, { Component, useState, useEffect } from 'react';
 import bg1 from '../../images/background/line-bg1.png';
 import image1 from '../../images/services/aheza/aheza-svc-15.jpeg'
 import background from "../../images/background/aheza-bg-9-2.jpg"
-import background2 from "../../images/background/aheza-bg-9-4.png"
+import background2 from "../../images/background/aheza-bg-10.jpg"
 
 
 
 const AboutSection = () => {
-
-
 	return (
 		<>
 			<section className="section-area section-p5 mission-wraper  row" style={{ paddingRight: 20 }}>
@@ -53,7 +51,7 @@ const AboutSection = () => {
 							</div>
 						</div>
 					</div>
-					<div className="col-lg-6 col-md-6 col-sm-12" style={{ backgroundImage: "url(" + background2 + ")", backgroundSize: 'cover' }}>
+					<div className="col-lg-6 col-md-6 col-sm-12 partenerImage" style={{ backgroundImage: "url(" + background2 + ")", backgroundSize: 'cover', }}>
 					</div>
 				</div>
 

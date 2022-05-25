@@ -163,12 +163,12 @@ const Stories = () => {
                       <div className="post-info">
                         <h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
                         <ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-                          
 
-                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+
+                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
                           <li className="date"><i className="far fa-calendar-alt"></i> {
-                              convertData(item?.updatedAt)
-                            }</li>
+                            convertData(item?.updatedAt)
+                          }</li>
                         </ul>
 
                       </div>
