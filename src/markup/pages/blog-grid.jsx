@@ -60,7 +60,7 @@ const BlogGrid = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ height: 210 }}>
+											<div className="post-media" style={{ height: 200, overflow: "hidden" }}>
 												<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
@@ -70,7 +70,7 @@ const BlogGrid = () => {
 													<li className="date"><i className="far fa-calendar-alt"></i>
 														{convertData(item?.updatedAt)}
 													</li>
-													<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}  className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
 												</ul>
 											</div>
 										</div>

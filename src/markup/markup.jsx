@@ -29,6 +29,7 @@ import Error from './pages/error-404';
 import ProtectRoute from "./protectRoute";
 import SearchPage from "./pages/search";
 import ResearchFindings from "./pages/research-findings";
+import News from "./pages/news";
 import ResearchFindingsDetail from "./pages/researchFindingsDetail";
 import Story from "./pages/story";
 import Stories from "./pages/stories";
@@ -73,6 +74,7 @@ class Markup extends Component {
 						<ProtectRoute path='/blog-grid/:title/:id' exact component={BlogDetails} />
 						<ProtectRoute path='/search' exact component={SearchPage} />
 						<ProtectRoute path='/research-findings' exact component={ResearchFindings} />
+						<ProtectRoute path='/news' exact component={News} />
 						<ProtectRoute path='/research-finding/:title/:id' exact component={ReasearchFindingDetails} />
 						<ProtectRoute path='/research-Findings/123' exact component={ResearchFindingsDetail} />
 						<ProtectRoute path='/story/:title/:id' exact component={Story} />

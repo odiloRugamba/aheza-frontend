@@ -10,6 +10,7 @@ import MainBannerSection from "../elements/main-banner";
 import VisionSection from "../elements/vision";
 import AboutSection from "../elements/about";
 import WorkSection from "../elements/work";
+import PartnerSection from "../elements/partner";
 import AppointmentSection from "../elements/appointment";
 import TestimonialSection from "../elements/testimonial";
 import ServicesSliderSection from "../elements/services-slider";
@@ -54,7 +55,8 @@ const Index = () => {
 			{/* <ServicesSliderSection /> */}
 
 			<MissionSection />
-
+			
+			<PartnerSection />
 			{/* <TestimonialSection /> */}
 
 			<LatestNewsSection content={data} title="Aheza links News" />
