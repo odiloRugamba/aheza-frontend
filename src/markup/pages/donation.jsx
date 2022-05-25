@@ -65,23 +65,100 @@ const ResearchFindings = () => {
     <section className="section-area">
 
      <div className='row' style={{ backgroundColor: "white" }}>
-      <div className='content col-md-7' style={{ padding: 100 }}>
+      <div className='content col-md-8' style={{ padding: 100, paddingRight: 0 }}>
 
        <br></br>
        <br></br>
-       <h3 className='title' style={{ fontSize: 80 }}>Why should I donate?</h3>
+                         <h3 className='title' style={{ fontSize: 80 }}>Why
+                                <Link
+                                to='links'
+                                className="btn btn-outline-primary btn-sm"
+                                style={{ background: '#f17732', borderColor: "#f17732", color: '#fff', fontSize: 80, fontWeight: 700, padding: 20, marginLeft: 20, marginRight: 20, paddingLeft: 50, paddingRight: 50 }}
+                                >
+                                <span>
+                                Donate
+                                </span>
+                                </Link> <br/>
+                             to Aheza Healing
+                             <br /> & Career Center?</h3>
 
-       <br></br>
-       <br></br>
-       <div className='expText' style={{ fontSize: 20 }}>
+     
+       {/* <div className='expText' style={{ fontSize: 20 }}>
         Each year, charitable and subsidized mental health care is provided to individuals throughout our community.
         With your help, more services can be provided for children, adolescents, adults,  and families seeking help.
-       </div>
-       <br></br>
+                         </div> */}
+                         
+
+                         
+                            <div className="testimonial-bx" style={{ backgroundColor: "#F17731", padding: 50, margin: 50, marginTop: 70, marginLeft: 0 }}>
+                             <div className="testimonial-content" style={{ fontSize: 20 }}>
+                                    <br></br>
+                                    <p>
+                                        <span style={{color: "white", fontSize: 25}}>
+                                         <b style={{ color: "white" }}>Accurate, age-appropriate and culturally-sensitive information</b> to support   personal and professional development, with particular focus on  leadership and entrepreneurship.
+                                        </span>
+                                    </p>    
+                                    <p>     
+                                        <span style={{color: "white", fontSize: 25}}>
+                                            <b style={{ color: "white" }}>Work techniques</b> such as peer support groups, psychoeducation, community outreach and one-to-one sessions. 
+                                    </span>
+                                    </p>
+                                 
+                                    <p>
+                                        <span style={{color: "white", fontSize: 25}}>
+                                            <b style={{ color: "white" }}>Resilience-oriented therapy protocol</b> for emotion regulation, behavioral self-management and identity development.
+                                        </span>
+                                    </p>
+                                   
+                                                     
+                                    
+                                </div>
+								<div className="quote-icon">
+									<i className="fas fa-quote-left"></i>
+								</div>
+							</div>
+                          <div className="testimonial-bx" style={{ backgroundColor: "#565acf", padding: 50, margin: 50, marginTop: 70, marginLeft: 0 }}>
+                             <div className="testimonial-content" style={{ fontSize: 20 }}>
+                                 <br></br>
+                                     <p>
+                                        <span style={{color: "white", fontSize: 25}}>
+                                            <b style={{ color: "white" }}>Proposed treatment with combined elements of process</b> which include  clinical and community interventions to build up agency, responsibility and motivation for change. 
+                                        </span>
+                                    </p>
+                                    <p>
+                                        
+                                        <span style={{color: "white", fontSize: 25}}>
+                                            <b style={{ color: "white" }}>Cooperation with local officials to: </b>
+                                            <ul style={{paddingLeft: 40}}>
+                                                <li> - Promote mental health care and  awareness. </li>
+                                                <li> - Create safe and supportive environments. </li>
+                                                <li> - Address harmful social and behavioral norms.</li>
+                                                <li> - Improve coordinated  responses.</li>
+                                             </ul>
+                                        </span>
+                                    </p>
+                             <p>
+                                 
+                                        <span style={{color: "white", fontSize: 25}}>
+                                            <b style={{ color: "white" }}>Holistic approach to: </b>
+                                            <ul style={{ paddingLeft: 40 }}>
+                                                <li> - Career coaching. </li>
+                                                <li> - Make informed decisions.</li>
+                                                <li> - Mental health care and awareness. </li>
+                                            
+                                            </ul>   
+                                     </span>
+                                    </p>                     
+                                    
+                                </div>
+								<div className="quote-icon-2">
+									<i className="fas fa-quote-left"></i>
+								</div>
+							</div>
        <br></br>
        <div className="blog-car" style={{ display: 'flex', }}>
 
-        <Link
+        {/* <Link
          to='links'
          className="btn btn-outline-primary btn-sm"
          style={{ background: '#565ACF', color: '#fff', fontSize: 20, fontWeight: 700, padding: 20, paddingLeft: 50, paddingRight: 50 }}
@@ -89,10 +166,10 @@ const ResearchFindings = () => {
          <span>
           Donate
          </span>
-        </Link>
+        </Link> */}
        </div>
       </div>
-      <div className='col-md-5' style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
+      <div className='col-md-4' style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
       </div>
 
      </div>

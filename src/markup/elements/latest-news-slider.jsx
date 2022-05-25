@@ -87,7 +87,7 @@ const LatestNewsSection = ({ title, content }) => {
 	return (
 		<>
 
-			<section className="section-area section-sp1 blog-area" style={{ backgroundImage: "url(" + lingBg2 + ")", backgroundPosition: "center", backgroundSize: "cover", }}>
+			<section className="section-area section-sp1 blog-area">
 				<div className="container">
 					<div className="heading-bx text-center">
 						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
