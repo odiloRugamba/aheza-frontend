@@ -1,22 +1,23 @@
 /* ==================
 	8.19 Service Menu
 =================== */
-.service-menu{
+.service-menu {
 	position: relative;
 	background-color: #fff;
 	border-radius: 6px 6px 4px 4px !important;
 	padding: 30px 30px;
 	box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.06);
-	border: 1px solid rgba($primary,0.2);
+	border: 1px solid rgba($primary, 0.2);
 	border-width: 1px 1px 3px 1px;
 	border-bottom-color: $primary;
-    
-	li{
+
+	li {
 		margin-bottom: 10px;
-		a{
+
+		a {
 			display: block;
 			padding: 10px;
-			text-transform: capitalize;
+			// text-transform: capitalize;
 			font-weight: 600;
 			position: relative;
 			z-index: 1;
@@ -26,8 +27,8 @@
 			font-size: 16px;
 			border-radius: $border-radius-base;
 			background-color: $primary;
-			
-			i{
+
+			i {
 				font-size: 18px;
 				text-align: center;
 				border-radius: 35px;
@@ -43,47 +44,57 @@
 				color: $primary;
 			}
 		}
-		&:last-child{
-			margin-bottom:0;
+
+		&:last-child {
+			margin-bottom: 0;
 		}
+
 		&.active,
-		&:hover{
-			a{
+		&:hover {
+			a {
 				background-color: $secondary;
-				i{
+
+				i {
 					color: $secondary;
 				}
 			}
 		}
 	}
-	&.style-1{
+
+	&.style-1 {
 		li a i {
 			font-size: 24px;
 		}
 	}
-	@include respond('tab-land'){
+
+	@include respond('tab-land') {
 		padding: 15px;
 	}
 }
-.left-border-1{
+
+.left-border-1 {
 	padding-left: 30px;
-    border-left: 1px solid rgba(0,0,0,0.1);
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
-.contact-infolist{
+
+.contact-infolist {
 	margin: 0 0 40px;
-    padding: 25px 0 5px;
-    list-style: none;
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom: 1px solid rgba(0,0,0,.1);
+	padding: 25px 0 5px;
+	list-style: none;
+	border-top: 1px solid rgba(0, 0, 0, .1);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+
 	li {
 		position: relative;
 		padding: 0 20px 20px 80px;
+
 		img {
 			position: absolute;
 			left: 0;
 			top: 10px;
 			width: 60px;
 		}
+
 		.contact-title {
 			color: #020d26;
 			font-size: 20px;
@@ -91,7 +102,8 @@
 			font-weight: 600;
 			margin-bottom: 2px;
 		}
-		a, 
+
+		a,
 		p {
 			font-size: 16px;
 			line-height: 24px;

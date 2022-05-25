@@ -115,7 +115,7 @@ function Header() {
 							<div className="secondary-menu">
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
-									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{color: "white", fontSize: 20}}><u>Talk to Us</u></b>
+									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{ color: "white", fontSize: 20 }}><u>Talk to Us</u></b>
 										{/* <i className="btn-icon-bx fas fa-chevron-right"></i> */}
 									</a></li>
 								</ul>
@@ -147,6 +147,21 @@ function Header() {
 									</li>
 									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
 										<Link to="/resources">Resources
+											{/* <i className="fas fa-plus"></i> */}
+										</Link>
+										{/* <ul className="sub-menu">
+											<li className="add-menu-left">
+												<ul>
+													<li><Link to="/news"><span>Research</span></Link></li>
+													<li><Link to="/stories"><span>Stories</span></Link></li>
+													<li><Link to="/links"><span>Links</span></Link></li>
+													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
+												</ul>
+											</li>
+										</ul> */}
+									</li>
+									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
+										<Link to="/resources">Other  Institutions
 											{/* <i className="fas fa-plus"></i> */}
 										</Link>
 										{/* <ul className="sub-menu">
