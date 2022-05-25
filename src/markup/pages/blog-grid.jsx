@@ -38,7 +38,7 @@ const BlogGrid = () => {
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
 		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-		return `${da}-${mo}-${ye}`
+		return `${da} ${mo} ${ye}`
 	}
 	const changePage = (page) => {
 		const endingPoint = (page.selected + 1) * postPerPage
@@ -70,7 +70,7 @@ const BlogGrid = () => {
 													<li className="date"><i className="far fa-calendar-alt"></i>
 														{convertData(item?.updatedAt)}
 													</li>
-													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
 												</ul>
 											</div>
 										</div>

@@ -41,7 +41,7 @@ const ResearchFindings = () => {
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-  return `${da}-${mo}-${ye}`
+  return `${da} ${mo} ${ye}`
  }
 
  const changePage = (page) => {
@@ -70,15 +70,15 @@ const ResearchFindings = () => {
        <br></br>
        <br></br>
                          <h3 className='title' style={{ fontSize: 80 }}>Why
-                                <Link
-                                to='links'
+                                <a
+                                href='https://dashboard.flutterwave.com/donate/ryb56zpwivpe'
                                 className="btn btn-outline-primary btn-sm"
                                 style={{ background: '#f17732', borderColor: "#f17732", color: '#fff', fontSize: 80, fontWeight: 700, padding: 20, marginLeft: 20, marginRight: 20, paddingLeft: 50, paddingRight: 50 }}
                                 >
                                 <span>
                                 Donate
                                 </span>
-                                </Link> <br/>
+                                </a> <br/>
                              to Aheza Healing
                              <br /> & Career Center?</h3>
 

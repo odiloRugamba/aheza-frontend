@@ -116,7 +116,7 @@ function Header() {
 								<ul>
 									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
 									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{color: "white", fontSize: 20}}><u>Talk to Us</u></b>
-										{/* <i className="btn-icon-bx fas fa-chevron-right"></i> */}
+										{/*  */}
 									</a></li>
 								</ul>
 							</div>

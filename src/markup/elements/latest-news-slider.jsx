@@ -84,6 +84,14 @@ const LatestNewsSection = ({ title, content }) => {
 		);
 	}
 
+	const convertData = (date) => {
+		const day = new Date(date)
+		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
+		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
+		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
+		return `${da} ${mo} ${ye}`
+	}
+
 	return (
 		<>
 
@@ -111,10 +119,11 @@ const LatestNewsSection = ({ title, content }) => {
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 											<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 												{/* <i className="fa fa-user"></i> */}
-												{item.publisherName}
+												{item.publisherName} <br></br>
+												<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 											</li>
-											{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a> */}
-											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More</a>
+											{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a> */}
+											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</a>
 										</ul>
 									</div>
 								</div>
@@ -129,7 +138,7 @@ const LatestNewsSection = ({ title, content }) => {
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>
 							<span>
-								See More Links
+								See More News
 							</span>
 						</Link>
 					</div>

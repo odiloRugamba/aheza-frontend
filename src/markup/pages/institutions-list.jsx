@@ -85,7 +85,7 @@ class ResearchFindings extends Component {
 											</div>
 											<div className="post-info">
 												<h4 className="post-title max-lines-2" style={{fontSize: 16}}><Link to="/institution-profile">{item.title}</Link></h4>
-												<Link to="/institution-profile" className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
+												<Link to="/institution-profile" className="btn btn-outline-primary btn-sm">Read More </Link>
 											</div>
 										</div>
 									</div>

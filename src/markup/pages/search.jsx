@@ -84,7 +84,7 @@ const Stories = () => {
     let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
     let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
     let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-    return `${da}-${mo}-${ye}`
+    return `${da} ${mo} ${ye}`
   }
 
   const changePage = (page) => {
@@ -165,8 +165,8 @@ const Stories = () => {
                         <ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 
 
-                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-                          <li className="date"><i className="far fa-calendar-alt"></i> {
+                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
+                          <li className="date">{
                             convertData(item?.updatedAt)
                           }</li>
                         </ul>

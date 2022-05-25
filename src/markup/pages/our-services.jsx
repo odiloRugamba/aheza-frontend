@@ -59,8 +59,8 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
-													{/* <Link to={"/our-services/" + el?.title?.replaceAll(" ", "-") + '/' + el?._id} onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
-													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More</Link>
+													{/* <Link to={"/our-services/" + el?.title?.replaceAll(" ", "-") + '/' + el?._id} onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link> */}
+													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</Link>
 												</div>
 											</div>
 										</div>

@@ -62,8 +62,8 @@ class VisionSection extends Component {
 											<p>
 												<b style={{ color: "white", fontSize: 20 }}>
 													Our vision is of a world where Rwandans receive
-													the mental health care they need, and go on to live productive,
-													fulfilling lives free from trauma.
+													the mental health care they need, and go on to live productive and 
+													fulfilling lives.
 												</b>
 											</p>
 										</div>

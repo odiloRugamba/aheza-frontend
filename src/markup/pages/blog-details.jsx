@@ -90,7 +90,7 @@ const BlogDetails = () => {
 											</div>
 											{/* <ul className="post-meta">
 											<li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
-											<li className="date"><i className="far fa-calendar-alt"></i> 19 July 2021</li>
+											<li className="date">19 July 2021</li>
 										</ul> */}
 											<div className="ttr-post-footer">
 												<div className="post-tags">

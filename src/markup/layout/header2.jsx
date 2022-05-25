@@ -77,7 +77,7 @@ class Header extends Component {
 									<ul>
 										<li className="search-btn"><button id="quikSearchBtn" type="button" className="btn-link"><i className="las la-search"></i></button></li>
 										<li className="num-bx"><a href="tel:(+01)999888777"><i className="fas fa-phone-alt"></i> (+01) 999 888 777</a></li>
-										<li className="btn-area"><Link to="/contact-us" className="btn btn-primary shadow">CONTACT US <i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+										<li className="btn-area"><Link to="/contact-us" className="btn btn-primary shadow">CONTACT US </Link></li>
 									</ul>
 								</div>
 								<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">

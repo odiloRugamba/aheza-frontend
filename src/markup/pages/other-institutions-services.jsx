@@ -67,7 +67,7 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h3 className="ttr-title">{el?.name}</h3>
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/other-institutions-services/" + el.name + '/' + el._id} className="btn btn-primary light">View More</Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/other-institutions-services/" + el.name + '/' + el._id} className="btn btn-primary light">View More</Link>
 												</div>
 											</div>
 										</div>

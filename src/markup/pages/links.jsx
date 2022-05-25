@@ -7,13 +7,17 @@ import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
 import { getLinks } from "../../store/links/actions";
+
+import { getUploads } from '../../store/uploads/actions';
+
+
 import { Dcore } from "../../api/index";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/aheza-barnner-1.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-5.jpg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
@@ -24,10 +28,14 @@ const Uploads = () => {
 	const postPerPage = 12
 	const [PageCount, setPageCount] = useState(10)
 	const [pageData, setPageData] = useState([])
+	const [uploads, setUploads] = useState([])
+
+    const uploadsData = useSelector(state => state.UploadsReducers?.data)
 
 
 	useEffect(() => {
 		dispatch(getLinks())
+		dispatch(getUploads())
 	}, [])
 
 	useEffect(() => {
@@ -35,14 +43,15 @@ const Uploads = () => {
 		setPageCount(res?.length / postPerPage)
 		setPageData(res?.slice(0, postPerPage))
 		console.log(res)
-	}, [res])
+        setUploads(uploadsData)
+	}, [res, uploadsData])
 
 	const convertData = (date) => {
 		const day = new Date(date)
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
 		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-		return `${da}-${mo}-${ye}`
+		return `${da} ${mo} ${ye}`
 	}
 
 	const changePage = (page) => {
@@ -70,7 +79,7 @@ const Uploads = () => {
 	}
 
 
-	return (
+	return ( 
 		<>
 
 			<Header />
@@ -78,15 +87,13 @@ const Uploads = () => {
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300}} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Links</h2>
+								<h2 style={{ fontSize: 80, paddingBottom: 50, color: "#fff" }}>News</h2>
 							</div>
 						</div>
-						{/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" /> */}
-						{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-						{/* <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
+
 					</div>
 				</div>
 				<section className="section-area section-sp1">
@@ -110,15 +117,48 @@ const Uploads = () => {
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 														{/* <i className="fa fa-user"></i> */}
 														{item.publisherName}
+														<br></br>
+														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 													</li>
-													{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a> */}
-													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }}>Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
+													{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a> */}
+													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </a>
 												</ul>
 											</div>
 										</div>
 									</div>
 								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no media section for now" />
 							}
+							{
+							uploads?.map(item =>
+							<div className="col-xl-4 col-md-6">
+										<div className="blog-card mb-30">
+											<div className="post-media">
+												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+													{
+														item?.youtubeVideoLink ?
+															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
+															: <img src={item.image} alt="" />
+													}
+												</Link>
+											</div>
+											<div className="post-info">
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+
+												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
+												<li className="date" onClick={() => { routeChange(Dcore.WEBURL) }}>
+														Aheza
+														<br></br>
+														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+													</li>
+
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More</Link>
+												</ul>
+
+											</div>
+										</div>
+									</div> 
+						) 
+						}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">

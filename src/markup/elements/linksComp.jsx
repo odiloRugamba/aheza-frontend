@@ -113,8 +113,8 @@ const LatestNewsSection = ({ title, content }) => {
           {item.publisherName}
          </li>
         </b>
-        <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></a>
-        {/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
+        <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a>
+        {/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link> */}
        </ul>
       </div>
      </div>

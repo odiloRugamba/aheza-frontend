@@ -37,7 +37,7 @@ const ResearchFindings = () => {
 		let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
 		let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
 		let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-		return `${da}-${mo}-${ye}`
+		return `${da} ${mo} ${ye}`
 	}
 
 	const changePage = (page) => {
@@ -52,7 +52,7 @@ const ResearchFindings = () => {
 			<Header />
 			<div className="page-content bg-white" style={{marginTop: 100}}>
 				<div className="banner-wraper" >
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }} >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
 						<div style={{ paddingTop: 40, backgroundColor: "rgba(255,255,255,0.7)" }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
@@ -75,11 +75,9 @@ const ResearchFindings = () => {
 											<div className="post-info">
 												<p className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 15, fontWeight: 600 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More <i className="btn-icon-bx fas fa-chevron-right"></i></Link>
-													<li className="date"><i className="far fa-calendar-alt"></i> {
-														convertData(item?.updatedAt)
-													}</li>
+													<li className="date"> { convertData(item?.updatedAt) }</li>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+													
 												</ul>
 											</div>
 										</div>

@@ -41,7 +41,7 @@ const ResearchFindings = () => {
   let ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(day);
   let mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(day);
   let da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(day);
-  return `${da}-${mo}-${ye}`
+  return `${da} ${mo} ${ye}`
  }
 
  const changePage = (page) => {
