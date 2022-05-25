@@ -19,7 +19,7 @@ function Header() {
 	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
 	const [openService, setOpenService] = useState(null)
 	const [model, setModel] = useState(false)
-	const [openMedia, setOpenMedia] = useState(null)
+	const [openResources, setopenResources] = useState(null)
 	const [emgNumber, setEmgNumber] = useState([
 		{ background: " #da751c", number: 'Call 1024', title: 'NH Rapid Response' },
 		{ background: "#7d5787", number: '(+250) 788 315 809', title: 'Schedule an Appointment' },
@@ -39,9 +39,9 @@ function Header() {
 		ourServicesActive = "active"
 	}
 
-	let mediaActive = "";
+	let resourcesActive = "";
 	if (route.includes("stor") || route.includes("research") || route.includes("upload")) {
-		mediaActive = "active"
+		resourcesActive = "active"
 	}
 
 
@@ -78,11 +78,11 @@ function Header() {
 	}
 
 	const openMenu = (item) => {
-		if (item === "media") {
-			if (openMedia === "open") {
-				setOpenMedia(null)
+		if (item === "resources") {
+			if (openResources === "open") {
+				setopenResources(null)
 			} else {
-				setOpenMedia("open")
+				setopenResources("open")
 				setOpenService(null)
 			}
 		} else {
@@ -90,7 +90,7 @@ function Header() {
 				setOpenService(null)
 			} else {
 				setOpenService("open")
-				setOpenMedia(null)
+				setopenResources(null)
 			}
 		}
 	}
@@ -145,8 +145,8 @@ function Header() {
 											</li>
 										</ul> */}
 									</li>
-									<li onClick={() => { openMenu("media") }} className={mediaActive, openMedia}>
-										<Link to="/news">News
+									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
+										<Link to="/resources">Resources
 											{/* <i className="fas fa-plus"></i> */}
 										</Link>
 										{/* <ul className="sub-menu">

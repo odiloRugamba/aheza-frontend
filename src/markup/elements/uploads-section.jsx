@@ -35,7 +35,7 @@ const LatestNewsSection = ({ title, content }) => {
 	return (
 		<>
 
-			<section className="section-area section-sp1 blog-area" style={{ backgroundImage: "url(" + lingBg2 + ")", backgroundPosition: "center", backgroundSize: "cover", }}>
+			<section className="section-area section-sp1 blog-area">
 				<div className="container">
 					<div className="heading-bx text-center">
 						<h2 className="title" style={{ fontSize: 80}}>Uploads</h2>

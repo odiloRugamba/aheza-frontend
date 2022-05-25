@@ -35,10 +35,10 @@ const LatestNewsSection = ({ title, content }) => {
 	return (
 		<>
 
-			<section className="section-area section-sp1 blog-area" style={{ backgroundImage: "url(" + lingBg2 + ")", backgroundPosition: "center", backgroundSize: "cover", }}>
+			<section className="section-area section-sp1 blog-area">
 				<div className="container">
 					<div className="heading-bx text-center">
-						<h2 className="title" style={{ fontSize: 80}}>Stories</h2>
+						<h2 className="title" style={{ fontSize: 80}}>Testimonies</h2>
 					</div>
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
@@ -80,7 +80,7 @@ const LatestNewsSection = ({ title, content }) => {
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>
 							<span>
-								See More Stories
+								See More testimonies
 							</span>
 						</Link>
 					</div>
