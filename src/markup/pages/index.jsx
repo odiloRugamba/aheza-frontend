@@ -59,7 +59,7 @@ const Index = () => {
 			<PartnerSection />
 			{/* <TestimonialSection /> */}
 
-			<LatestNewsSection content={data} title="Aheza links News" />
+			<LatestNewsSection content={data} title="Aheza links News" isHomePage={true}/>
 
 			<SocialMediaSection />
 			<Footer />

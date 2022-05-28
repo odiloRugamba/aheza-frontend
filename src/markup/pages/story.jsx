@@ -164,7 +164,7 @@ const StorysDetails = () => {
 
 											</div>
 											<ul className="post-meta">
-												<li className="date"><i className="far fa-calendar-alt"></i>{story?.updatedAt ? convertData(story?.updatedAt) : null}</li>
+												<li className="date">{story?.updatedAt ? convertData(story?.updatedAt) : null}</li>
 											</ul>
 											<div className="ttr-post-footer">
 												<div className="post-tags">

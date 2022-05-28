@@ -35,10 +35,23 @@ const LatestNewsSection = ({ title, content }) => {
 	return (
 		<>
 
-			<section className="section-area section-sp1 blog-area" >
+			<section className="section-area  blog-area" >
 				<div className="container">
-					<div className="heading-bx text-center">
+					{/* <div className="heading-bx text-center">
 						<h2 className="title" style={{ fontSize: 80}}>Blog</h2>
+					</div> */}
+					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
+						<h2 className="title" style={{ fontSize: 80 }}>Blog</h2>
+						<div>
+							<br></br>
+							<Link
+								to='/blog-grid'
+								className="btn btn-outline-primary btn-sm"
+								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+							>
+									See More Blog articles
+							</Link>
+						</div>
 					</div>
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
@@ -52,7 +65,7 @@ const LatestNewsSection = ({ title, content }) => {
 												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date"><i className="far fa-calendar-alt"></i>
+													<li className="date">
 														{convertData(item?.updatedAt)}
 													</li>
 													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}  className="btn btn-outline-primary btn-sm">Read More </Link>
@@ -63,7 +76,7 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+					{/* <div className="blog-car" style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
 						<Link
 							to='/blog-grid'
 							className="btn btn-outline-primary btn-sm"
@@ -73,8 +86,11 @@ const LatestNewsSection = ({ title, content }) => {
 								See More on our Blog
 							</span>
 						</Link>
-					</div>
+					</div> */}
 				</div>
+				<br></br>
+				<br></br>
+				<br></br>
 			</section >
 
 		</>

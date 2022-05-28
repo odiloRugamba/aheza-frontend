@@ -37,8 +37,21 @@ const LatestNewsSection = ({ title, content }) => {
 
 			<section className="section-area section-sp1 blog-area">
 				<div className="container">
-					<div className="heading-bx text-center">
+					{/* <div className="heading-bx text-center">
 						<h2 className="title" style={{ fontSize: 80}}>Testimonies</h2>
+					</div> */}
+					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
+						<h2 className="title" style={{ fontSize: 80 }}>Testimonies</h2>
+						<div>
+							<br></br>
+							<Link
+								to='/stories'
+								className="btn btn-outline-primary btn-sm"
+								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+							>
+									See More Testimonies
+							</Link>
+						</div>
 					</div>
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
@@ -73,7 +86,7 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
+					{/* <div className="blog-car" style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
 						<Link
 							to='/stories'
 							className="btn btn-outline-primary btn-sm"
@@ -83,7 +96,7 @@ const LatestNewsSection = ({ title, content }) => {
 								See More testimonies
 							</span>
 						</Link>
-					</div>
+					</div> */}
 				</div>
 			</section >
 

@@ -77,13 +77,11 @@ const ContactUs = () => {
 		<>
 			<Header />
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
-
 				<div className="banner-wraper" style={{}}>
-					<div className="page-banner banner-lg contact-banner" style={{ maxHeight: 250 }}>
+					<div className="page-banner banner-lg contact-banner" style={{ maxHeight: 280 }}>
 						<div className="container">
 							<div className="page-banner-entry text-center" >
-								<h2 style={{ fontSize: 80, bottom: 130, position: 'relative', zIndex: 99999 }}>Contact Us</h2>
-
+								<h2 style={{ fontSize: 80, bottom: 120, position: 'relative', zIndex: 99999 }}>Contact Us</h2>
 							</div>
 						</div>
 					</div>

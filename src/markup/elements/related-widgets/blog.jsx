@@ -33,7 +33,7 @@ const WidgetRelatedPosts = ({ title, data }) => {
 										<h6 onClick={() => changeRoute("/blog-grid" + '/' + el.title?.replaceAll(" ", "-") + '/' + el._id)} className="post-title max-lines-2"><a  >{el?.title}</a></h6>
 									</div>
 									<ul className="post-meta">
-										<li className="date"><i className="far fa-calendar-alt"></i>{convertData(el?.updatedAt)}</li>
+										<li className="date">{convertData(el?.updatedAt)}</li>
 									</ul>
 								</div>
 							</div>

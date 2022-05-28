@@ -67,7 +67,7 @@ const BlogGrid = () => {
 												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date"><i className="far fa-calendar-alt"></i>
+													<li className="date">
 														{convertData(item?.updatedAt)}
 													</li>
 													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>

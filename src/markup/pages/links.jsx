@@ -17,7 +17,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/aheza-barnner-5.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-8.png";
 import waveBlue from "../../images/shap/wave-blue.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
@@ -66,9 +66,10 @@ const Uploads = () => {
 	}
 
 	const routeChange = (link) => {
-		const rouLink = link.split('/')[2]
-		console.log(rouLink)
-		window.open('https:' + rouLink)
+		// const rouLink = link.split('/')[2]
+		// console.log(rouLink)
+		// window.open('https:' + rouLink)
+		window.open(link)
 	}
 
 

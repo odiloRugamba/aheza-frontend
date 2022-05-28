@@ -191,7 +191,7 @@ const UploadsDetails = () => {
 										</div>
 										<div className="info-bx">
 											<ul className="post-meta">
-												<li className="date"><i className="far fa-calendar-alt"></i>{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
+												<li className="date">{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
 											</ul>
 											<div className="ttr-post-title">
 												<h2 className="post-title max-lines-2">{upload?.title}</h2>

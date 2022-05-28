@@ -69,9 +69,9 @@ const ResearchFindings = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ maxHeight: 210 }}>
+											{/* <div className="post-media" style={{ maxHeight: 210 }}>
 												<Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id}><img src={item.image} alt="" /></Link>
-											</div>
+											</div> */}
 											<div className="post-info">
 												<p className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>

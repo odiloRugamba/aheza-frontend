@@ -47,7 +47,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 										<p className="post-title max-lines-2"><Link to={currentPage + el?.title + '/' + el?._id}>{el?.title}</Link></p>
 									</div>
 									<ul className="post-meta">
-										<li className="date"><i className="far fa-calendar-alt"></i>{convertData(el?.updatedAt)}</li>
+										<li className="date">{convertData(el?.updatedAt)}</li>
 									</ul>
 								</div>
 							</div>

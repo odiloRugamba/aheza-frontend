@@ -26,7 +26,7 @@ import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
 
 
 
-const LatestNewsSection = ({ title, content }) => {
+const LatestNewsSection = ({ title, content, isHomePage }) => {
 
 	content = content?.slice(0, 3)
 
@@ -97,10 +97,32 @@ const LatestNewsSection = ({ title, content }) => {
 
 			<section className="section-area section-sp1 blog-area">
 				<div className="container">
-					<div className="heading-bx text-center">
-						{/* <h6 className="title-ext text-secondary">{title ? title : ' Latest News'}</h6> */}
-						<h2 className="title" style={{ fontSize: 80, marginTop: 20 }}>News</h2>
-					</div>
+
+					{!isHomePage ?
+						<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
+							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
+							{
+								!isHomePage &&
+								<div>
+									<br></br>
+									<Link
+										to='/links'
+										className="btn btn-outline-primary btn-sm"
+										style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+									>
+											See More News
+									</Link>
+								</div>
+							}
+						</div>
+						:
+						<div className="heading-bx text-center">
+							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
+							
+						</div>
+					}
+
+
 					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{/* <div className="slider-item"> */}
 						{content?.map((item) => (
@@ -112,7 +134,6 @@ const LatestNewsSection = ({ title, content }) => {
 										</a>
 									</div>
 									<div className="post-info" >
-										{/* <h6 className="post-title max-lines-2"><a onClick={() => openNewWindow(item.link)}>{item.title}</a></h6> */}
 										<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
 											<a onClick={() => openNewWindow(item.link)} style={{ fontSize: 15, fontFamily: 700 }}>{item?.title}</a>
 										</p>
@@ -129,19 +150,22 @@ const LatestNewsSection = ({ title, content }) => {
 								</div>
 							</div>
 						))}
-						{/* </div> */}
 					</div>
-					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
-						<Link
-							to='links'
-							className="btn btn-outline-primary btn-sm"
-							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
-						>
-							<span>
-								See More News
-							</span>
-						</Link>
-					</div>
+					{
+						isHomePage &&
+						<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
+							<Link
+								to='links'
+								className="btn btn-outline-primary btn-sm"
+								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+							>
+								<span>
+									See More News
+								</span>
+							</Link>
+						</div> 
+					}
+					
 				</div>
 				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
 				<img className="pt-img2 animate2" src={animate2} alt="" />

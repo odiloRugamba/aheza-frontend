@@ -67,7 +67,15 @@
 		/* number of lines to show */
 		-webkit-box-orient: vertical;
 	}
-
+	.max-lines-3 {
+		word-break: break-word;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		/* number of lines to show */
+		-webkit-box-orient: vertical;
+	}
 	@include respond('tab-port') {
 		padding: 15px;
 

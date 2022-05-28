@@ -27,21 +27,31 @@ const LatestNewsSection = ({ title, content }) => {
 	return (
 		<>
 
-			<section className="section-area section- blog-area" style={{paddingTop: 30}}>
+			<section className="section-area section- blog-area" style={{paddingTop: 20}}>
 				<div className="container">
-					<div className="heading-bx text-center">
-						<h2 className="title" style={{ fontSize: 80}}>Research</h2>
+					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
+						<h2 className="title" style={{ fontSize: 80 }}>Publications</h2>
+						<div>
+							<br></br>
+							<Link
+								to='/research-findings'
+								className="btn btn-outline-primary btn-sm"
+								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+							>
+									See More Publications
+							</Link>
+						</div>
 					</div>
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
 						content ? content.map(item =>
 							<div className="col-xl-4 col-md-6">
 								<div className="blog-card mb-30">
-									<div className="post-media" style={{ maxHeight: 210 }}>
+									{/* <div className="post-media" style={{ maxHeight: 210 }}>
 										<Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id}><img src={item.image} alt="" /></Link>
-									</div>
+									</div> */}
 									<div className="post-info">
-										<p className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
+										<p className="post-title max-lines-3" style={{ fontSize: 20 }}><a href={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</a></p>
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 											<li className="date">{ convertData(item?.updatedAt) }</li>
 											<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
@@ -53,7 +63,7 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
+					{/* <div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
 						<Link
 							to='/research-findings'
 							className="btn btn-outline-primary btn-sm"
@@ -63,7 +73,7 @@ const LatestNewsSection = ({ title, content }) => {
 								See More Researches
 							</span>
 						</Link>
-					</div>
+					</div> */}
 				</div>
 			</section >
 
