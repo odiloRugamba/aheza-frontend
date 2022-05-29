@@ -10,7 +10,8 @@ import EmptyComp from "../elements/empyt";
 import Header from "../layout/header";
 import Footer from "../layout/footer"; 
 
-import bnrImg1 from "../../images/banner/aheza-barnner-2.jpg";
+// import bnrImg1 from "../../images/banner/aheza-barnner-2.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-12.jpg";
 
 
 const ResearchFindings = () => {
@@ -53,10 +54,10 @@ const ResearchFindings = () => {
 			<div className="page-content bg-white" style={{marginTop: 100}}>
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
-						<div style={{ paddingTop: 40, backgroundColor: "rgba(255,255,255,0.7)" }}>
+						<div style={{ paddingTop: 40}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2 style={{ fontSize: 80, paddingBottom: 50 }}>Research</h2>
+									<h2 style={{ fontSize: 80, paddingBottom: 50, color: "white" }}>Research</h2>
 								</div>
 							</div>
 						</div>
@@ -69,11 +70,8 @@ const ResearchFindings = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											{/* <div className="post-media" style={{ maxHeight: 210 }}>
-												<Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id}><img src={item.image} alt="" /></Link>
-											</div> */}
 											<div className="post-info">
-												<p className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
+												<p className="post-title max-lines-3" style={{ fontSize: 20 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"> { convertData(item?.updatedAt) }</li>
 													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>

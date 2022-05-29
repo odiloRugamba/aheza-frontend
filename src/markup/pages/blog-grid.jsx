@@ -14,6 +14,10 @@ import Footer from "../layout/footer";
 import moment from 'moment';
 
 
+
+import bnrImg1 from "../../images/banner/aheza-barnner-16.jpg";
+
+
 const BlogGrid = () => {
 	const dispatch = useDispatch()
 	const [data, setdata] = useState([])
@@ -51,8 +55,18 @@ const BlogGrid = () => {
 		<>
 			<Header />
 
-			<div className="page-content bg-white" style={{ marginTop: 60 }}>
-
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
+				<div className="banner-wraper" >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
+						<div style={{ paddingTop: 40}}>
+							<div className="container">
+								<div className="page-banner-entry text-center">
+									<h2 style={{ fontSize: 80, paddingBottom: 50, color: "white" }}>Blog</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
@@ -60,11 +74,11 @@ const BlogGrid = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ height: 210 }}>
+											<div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
 												<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h4>
+												<h4 className="post-title max-lines-1"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h4>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date">

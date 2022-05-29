@@ -53,7 +53,7 @@ const ServiceDetail = () => {
 										<h2 className="title mb-15">{service?.title}</h2>
 									</div>
 								</div>
-								<div>
+								<div className='designDetails'>
 									<div dangerouslySetInnerHTML={{ __html: service?.content }}>
 									</div>
 								</div>

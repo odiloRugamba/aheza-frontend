@@ -47,9 +47,6 @@ const LatestNewsSection = ({ title, content }) => {
 						content ? content.map(item =>
 							<div className="col-xl-4 col-md-6">
 								<div className="blog-card mb-30">
-									{/* <div className="post-media" style={{ maxHeight: 210 }}>
-										<Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id}><img src={item.image} alt="" /></Link>
-									</div> */}
 									<div className="post-info">
 										<p className="post-title max-lines-3" style={{ fontSize: 20 }}><a href={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</a></p>
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
@@ -63,17 +60,7 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					{/* <div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
-						<Link
-							to='/research-findings'
-							className="btn btn-outline-primary btn-sm"
-							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
-						>
-							<span>
-								See More Researches
-							</span>
-						</Link>
-					</div> */}
+					
 				</div>
 			</section >
 

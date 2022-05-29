@@ -57,8 +57,15 @@
 	.post-info {
 		padding: 12px;
 	}
-
-	.max-lines-2 {
+	.max-lines-1 {
+		word-break: break-word;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		/* number of lines to show */
+		-webkit-box-orient: vertical;
+	}.max-lines-2 {
 		word-break: break-word;
 		overflow: hidden;
 		text-overflow: ellipsis;

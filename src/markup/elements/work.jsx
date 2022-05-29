@@ -138,7 +138,7 @@ const AboutSection = () => {
 					</div>
 				</div>
 				<div className="col-lg-5 col-md-6 col-sm-12" style={{padding: 0}}>
-					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30 }}>
+					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
 						{/* <div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
 						</div> */}
 						<div className='connentInnerr'>

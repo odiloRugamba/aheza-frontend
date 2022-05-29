@@ -58,7 +58,7 @@ const LatestNewsSection = ({ title, content }) => {
 						content ? content.map(item =>
 							<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ height: 200, overflow: "hidden" }}>
+											<div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
 												<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">

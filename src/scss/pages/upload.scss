@@ -259,3 +259,17 @@
 .donateImg {
   box-shadow: inset 200px 100px 100px 0px white;
 }
+
+.designDetails {
+  h6 {
+    font-size: 14px;
+    line-height: 20px;
+    // color: #454545;
+    // color: #343a40;
+    color: #464B54;
+    font-weight: 500;
+    // font-family: 'Montserrat', sans-serif;
+    font-family: var(--bs-font-sans-serif);
+    margin-left: 30px;
+  }
+}
