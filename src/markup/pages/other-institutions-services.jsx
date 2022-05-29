@@ -225,35 +225,9 @@ const ServiceDetail = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-<<<<<<< HEAD
-							{
-								data?.length ?
-									data?.map(el => (
-										<div className="col-lg-4 col-md-6 mb-30">
-											<div className="feature-container feature-bx2" style={{ padding: 0 }}>
-												<div style={{
-													height: 200,
-													overflow: "hidden"
-												}}>
-													<img style={{ minHeight: 200 }} src={Dcore.IMAGEURL + '/' + el?.image} alt="" />
-
-												</div>
-												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
-													<h3 className="ttr-title">{el?.name}</h3>
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/other-institutions-services/" + el.name + '/' + el._id} className="btn btn-primary light">View More</Link>
-												</div>
-											</div>
-										</div>
-									)) : data?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no services" />
-							}
-						</div>
-					</div>
-				</section>
-=======
 							<div className="col-lg-4">
 								<aside className="sticky-top pb-1">
 									<div className="widget">
->>>>>>> 2471b461dbc4405ea4c2b330308aeb5f4f1c6c5c
 
 										<h5 className="title-head">Institutions</h5>
 										<ul className="service-menu">
