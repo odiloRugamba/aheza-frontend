@@ -161,7 +161,7 @@ function Header() {
 										</ul> */}
 									</li>
 									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
-										<Link to="/resources">Other  Institutions
+										<Link to="/other-institutions-services">Other  Institutions
 											{/* <i className="fas fa-plus"></i> */}
 										</Link>
 										{/* <ul className="sub-menu">

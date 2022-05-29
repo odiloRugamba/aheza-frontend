@@ -214,7 +214,8 @@ const ServiceDetail = () => {
 
 
 	const selectNewCurrent = (i) => {
-		setCurrentOrganition(data[i])
+		console.log(i)
+		setCurrentOrganition(el => ({ ...el, ...data[i] }))
 		console.log(data[i])
 	}
 
@@ -232,8 +233,8 @@ const ServiceDetail = () => {
 										<h5 className="title-head">Institutions</h5>
 										<ul className="service-menu">
 											{
-												dataTitles?.map((el, i) =>
-													<li onClick={(i) => selectNewCurrent(i)}><Link><span>{el.name}</span></Link></li>
+												dataTitles?.map((el, index) =>
+													<li onClick={() => selectNewCurrent(index)}><Link><span>{el.name}</span></Link></li>
 												)
 											}
 										</ul>
@@ -243,25 +244,149 @@ const ServiceDetail = () => {
 
 							<div className="col-lg-8 mb-30">
 								<div className="post-media">
-									{/* <img style={{ width: "100%", marginBottom: 30 }} src={Dcore.IMAGEURL + "/" + hospital?.image} alt="" /> */}
 								</div>
 								<div className="clearfix">
 									<div className="head-text mb-30">
 										<h2 className="title mb-15">{currentOrganition?.name}</h2>
 									</div>
 								</div>
-								<div>
-									<div>
-										{currentOrganition?.category}
-									</div>
-									{/* <div dangerouslySetInnerHTML={{ __html: hospital?.content }}></div> */}
-								</div>
-							</div>
 
+								<div className='tableName'>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											Category (RBC)
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.category}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											Core business/Basis for categorisation
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.core}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											Category
+											(PVP)
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.pvp}
+										</div>
+									</div>
+									<div className='tableRow'>
+										<div className='titles'>
+											10. What type of mental health services does your organization provide?
+											- MH & Psychosocial Services
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.psychosocial}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											2. What is your organization’s location&street address?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.location}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											4. What is the mailing address of your organization (if different than Q2)?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.mailling}
+										</div>
+									</div>
+									<div className='tableRow'>
+										<div className='titles'>
+											10. What type of mental health services does your organization provide?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.type}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											12. How would you best describe the setting where you perform mental health services?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.setting}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											14. Is your organization a public private organization, or an NGO?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.public}
+										</div>
+									</div>
+									<div className='tableRow'>
+										<div className='titles'>
+											21. What types of mental health concerns does your organization address?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.concerns}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											1.  What is the name and address of your organization?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.nameAddress}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											12. What is your website?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.website}
+										</div>
+									</div>
+
+									<div className='tableRow'>
+										<div className='titles'>
+											13. What is your phone number?
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.phoneNumber}
+										</div>
+									</div>
+									<div className='tableRow'>
+										<div className='titles'>
+											15. Email address of contact persons
+										</div>
+										<div className='dataParty'>
+											{currentOrganition?.eAddress}
+										</div>
+									</div>
+
+								</div>
+
+
+
+
+							</div>
 						</div>
 					</div>
 				</section>
-			</div>
+			</div >
 			<Footer />
 		</>
 
