@@ -261,15 +261,22 @@
 }
 
 .designDetails {
-  h6 {
+  p {
+    color: #444;
     font-size: 14px;
-    line-height: 20px;
-    // color: #454545;
-    // color: #343a40;
-    color: #464B54;
-    font-weight: 500;
-    // font-family: 'Montserrat', sans-serif;
-    font-family: var(--bs-font-sans-serif);
-    margin-left: 30px;
+    // line-height: 20px;
+    // font-family: var(--bs-font-sans-serif);
   }
+
+  p strong {
+    font-size: 18px;
+    line-height: 28px;
+    color: #1f2278;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    // font-family: var(--bs-font-sans-serif);
+    // margin-left: 30px;
+  }
+
+  h6 {}
 }

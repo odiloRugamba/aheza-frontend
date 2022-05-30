@@ -10,6 +10,8 @@
 	border: 1px solid rgba($primary, 0.2);
 	border-width: 1px 1px 3px 1px;
 	border-bottom-color: $primary;
+	max-height: 100vh;
+	overflow-y: scroll;
 
 	li {
 		margin-bottom: 10px;

@@ -31,9 +31,49 @@ const ServiceDetail = () => {
 	}, [])
 
 	useEffect(() => {
-		console.log(res)
+		// console.log(res)
 		setService(res)
 	}, [res]);
+
+	const hyperLinkFunc = (el) => {
+		let divElement = null
+		if (el === 'Children and Adolescents') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(1)')
+		} else if (el.trim() === 'Chronic Disease') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(4)')
+		} else if (el.trim() === 'Conflict') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(6)')
+		} else if (el.trim() === 'Divorce') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(8)')
+		} else if (el.trim() === 'Grief') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(10)')
+		} else if (el.trim() === 'Individual Therapy') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(13)')
+		} else if (el.trim() === 'Marriage and Family') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(16)')
+		} else if (el.trim() === 'Mental Disorders') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(17)')
+		} else if (el.trim() === 'Students and School') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(19)')
+		} else if (el.trim() === 'Substance Abuse and Addiction') {
+			console.log(el)
+			divElement = document.querySelector('.designDetails  :nth-child(21)')
+		}
+		console.log(el.trim(' '))
+		if (divElement) {
+			divElement.scrollIntoView({ behavior: 'smooth' });
+		}
+	}
+
 
 	return (
 		<>
@@ -42,6 +82,28 @@ const ServiceDetail = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
+							<div className="col-lg-4">
+								<aside className="sticky-top pb-1">
+									<div className="widget">
+
+										<h5 className="title-head">Services Offered</h5>
+										<ul className="service-menu">
+
+											{
+												service?.services?.map(el =>
+													<li style={{ padding: 0 }} onClick={() => hyperLinkFunc(el)}><Link to="#"><span>{el}</span></Link></li>
+												)
+											}
+											<br />
+											<hr />
+											<br />
+											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book an Appointment</span></Link></li>
+											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
+										</ul>
+									</div>
+								</aside>
+							</div>
+
 							<div className="col-lg-8 mb-30">
 								<div className="ttr-media mb-30">
 								</div>
@@ -58,43 +120,9 @@ const ServiceDetail = () => {
 									</div>
 								</div>
 							</div>
-							<div className="col-lg-4">
-								<aside className="sticky-top pb-1">
-									<div className="widget">
 
-										<h5 className="title-head">Services Offered</h5>
-										<ul className="service-menu">
 
-											{
-												service?.services?.map(el =>
-													<li style={{ padding: 0 }}><Link to="#"><span>{el}</span></Link></li>
-												)
-											}
-											<br />
-											<hr />
-											<br />
-											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book an Appointment</span></Link></li>
-											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
-										</ul>
-									</div>
-									{/* <div className="widget">
-										<div className="brochure-bx">
-											<h5 className="title-head">Download</h5>
-											<Link to="#" className="download-link">
-												<img src={pdf} alt="" />
-												<h5 className="title">Download our Brochures</h5>
-												<span>Download</span>
-											</Link>
-											<Link to="#" className="download-link">
-												<img src={doc} alt="" />
-												<h5 className="title">Our Company Details</h5>
-												<span>Download</span>
-											</Link>
-										</div>
-									</div> */}
 
-								</aside>
-							</div>
 						</div>
 					</div>
 				</section>

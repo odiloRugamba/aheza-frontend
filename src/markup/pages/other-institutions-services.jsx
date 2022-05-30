@@ -215,7 +215,7 @@ const ServiceDetail = () => {
 
 	const selectNewCurrent = (i) => {
 		console.log(i)
-		setCurrentOrganition(el => ({ ...el, ...data[i] }))
+		setCurrentOrganition(el => ({ ...data[i] }))
 		console.log(data[i])
 	}
 
@@ -230,11 +230,11 @@ const ServiceDetail = () => {
 								<aside className="sticky-top pb-1">
 									<div className="widget">
 
-										<h5 className="title-head">Institutions</h5>
+										<h5 className="title-head">Other Mental Health Institutions</h5>
 										<ul className="service-menu">
 											{
 												dataTitles?.map((el, index) =>
-													<li onClick={() => selectNewCurrent(index)}><Link><span>{el.name}</span></Link></li>
+													<li onClick={() => selectNewCurrent(index)}><Link to="#"><span>{el.name}</span></Link></li>
 												)
 											}
 										</ul>
