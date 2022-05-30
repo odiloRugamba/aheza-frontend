@@ -35,10 +35,10 @@ const AboutSection = () => {
 											<u><Link style={{ color: '#fff' }} to='/our-services/Counseling-and-Psychotherapy/6244aeae79decbcc46684172'>counseling and psychotherapy</Link></u>, <span> </span>
 											<u> <Link style={{ color: '#fff' }} to='/our-services/Palliative-Care-And-Home-Services/6244af7c79decbcc46684186'>palliative care and home services</Link></u>, <span> </span>
 											<u>  <Link style={{ color: '#fff' }} to='/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a'>ergo therapy / occupation therapy</Link></u>,  <span> </span>
-											<u>  <Link style={{ color: '#fff' }} to='/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a'>professional training</Link></u> <span> </span>
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a'>professional training</Link></u>, <span> </span>
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'> group therapy</Link></u><span> </span>
 											as well as  <span> </span>
-											<u>  <Link style={{ color: '#fff' }} to='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'> group therapy</Link></u>.
-
+											<u>  <Link style={{ color: '#fff' }} to='/our-services/Mental-Health-Awareness/628de72aff2243060367e347'>Mental health awareness</Link></u>.
 
 										</b>
 

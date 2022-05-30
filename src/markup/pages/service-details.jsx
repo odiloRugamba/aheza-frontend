@@ -22,7 +22,7 @@ import doc from "../../images/icon/doc.png";
 const ServiceDetail = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
-
+	const history = useHistory()
 	const [service, setService] = useState(null)
 	const res = useSelector(state => state.servicesReducers.service)
 
@@ -39,25 +39,25 @@ const ServiceDetail = () => {
 		let divElement = null
 		if (el === 'Children and Adolescents') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(1)')
+			divElement = document.querySelector('.designDetails  :nth-child(6)')
 		} else if (el.trim() === 'Chronic Disease') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(4)')
+			divElement = document.querySelector('.designDetails  :nth-child(8)')
 		} else if (el.trim() === 'Conflict') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(6)')
+			divElement = document.querySelector('.designDetails  :nth-child(10)')
 		} else if (el.trim() === 'Divorce') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(8)')
+			divElement = document.querySelector('.designDetails  :nth-child(12)')
 		} else if (el.trim() === 'Grief') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(10)')
+			divElement = document.querySelector('.designDetails  :nth-child(14)')
 		} else if (el.trim() === 'Individual Therapy') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(13)')
+			divElement = document.querySelector('.designDetails  :nth-child(16)')
 		} else if (el.trim() === 'Marriage and Family') {
 			console.log(el)
-			divElement = document.querySelector('.designDetails  :nth-child(16)')
+			divElement = document.querySelector('.designDetails  :nth-child(17)')
 		} else if (el.trim() === 'Mental Disorders') {
 			console.log(el)
 			divElement = document.querySelector('.designDetails  :nth-child(17)')
@@ -72,6 +72,10 @@ const ServiceDetail = () => {
 		if (divElement) {
 			divElement.scrollIntoView({ behavior: 'smooth' });
 		}
+	}
+	const routeFunc = (link) => {
+		history.push(link)
+		window.location.reload()
 	}
 
 
@@ -111,18 +115,30 @@ const ServiceDetail = () => {
 									<img style={{ width: "100%" }} src={Dcore.IMAGEURL + "/" + service?.image} alt="" />
 								</div>
 								<div className="clearfix">
-									<div className="head-text mb-30">
+									<div className="head-text mb-15 mt-15">
 										<h2 className="title mb-15">{service?.title}</h2>
 									</div>
 								</div>
 								<div className='designDetails'>
+									<p style={{ fontStyle: 'italic' }}>
+										Our services are designed to improve relationships, increase awareness and manage resources. In this regard, we will work with the client to choose a treatment (or a combination of treatments) which work best. All of the said services are in line with
+										<Link to='#' onClick={() => routeFunc('/terms')}> Aheza privacy statement</Link>.
+										We offer six general services to our clients (see below).<br />
+									</p>
+									<p className='ql-align-justify'>
+										{/* <div style={{ fontStyle: 'italic' }}></div> */}
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Counseling-and-Psychotherapy/6244aeae79decbcc46684172')}> Counseling and Psychotherapy Services </Link><br />
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Palliative-Care-And-Home-Services/6244af7c79decbcc46684186')}>  Palliative Care and Home Services </Link> <br />
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Ergo-Therapy--Occupation-Therapy/6244b01079decbcc4668418a')}> Ergo Therapy / Occupational Therapy Services </Link> <br />
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Professional-Training/6244b06979decbcc4668418e')}>  Professional Training Services </Link><br />
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Community-Healing-Groups/628b9811cd12fb7c164eb02c')}>  Community Healing Services </Link> <br />
+										{/* and <span> </span> */}
+										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Mental-Health-Awareness/628de72aff2243060367e347')}>   Mental Health Awareness Services</Link> <br /><br /><br />
+									</p>
 									<div dangerouslySetInnerHTML={{ __html: service?.content }}>
 									</div>
 								</div>
 							</div>
-
-
-
 						</div>
 					</div>
 				</section>
