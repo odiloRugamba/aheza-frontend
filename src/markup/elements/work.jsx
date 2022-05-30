@@ -119,7 +119,7 @@ const AboutSection = () => {
 								<div className="work-num-bx">2</div>
 								<div className="work-content" >
 									<br />
-									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Book an Appointment</h5>
+									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Book Appointment</h5>
 								</div>
 							</div>
 						</a>
@@ -136,18 +136,18 @@ const AboutSection = () => {
 							</div>
 						</a>
 					</div>
-					<div className="col-lg-8 col-sm-12 mb-30">
+					{/* <div className="col-lg-8 col-sm-12 mb-30">
 
 						<a href='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'>
 							<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
 								<div className="work-num-bx">4</div>
 								<div className="work-content">
 									<br />
-									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Do a Self Diagnosis</h5>
+									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Self Diagnosis</h5>
 								</div>
 							</div>
 						</a>
-					</div>
+					</div> */}
 				</div>
 				<div className="col-lg-5 col-md-6 col-sm-12" style={{ padding: 0 }}>
 					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
