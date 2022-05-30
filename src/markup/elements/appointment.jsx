@@ -114,7 +114,7 @@ const AboutSection = () => {
 							<div className="rowAppo">
 								<div className="col-xl-12 col-lg-12 col-md-12">
 									<div className="appointment-form form-wraper">
-										<h3 className="title">Book an Appointment</h3>
+										<h3 className="title">Book  Appointment</h3>
 										<div className="form-group">
 											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
 											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="Last Name" />
@@ -152,25 +152,25 @@ const AboutSection = () => {
 												<option selected>Select Day</option>
 												<option value="MONDAY">Monday</option>
 												<option value="TUESDAY">Tuesday</option>
-												<option value="WENSDAY">Wensday</option>
+												<option value="WENSDAY">Wednesday</option>
 												<option value="THURSDAY">Thursday</option>
 												<option value="FRIDAY">Friday</option>
 												<option value="SATURDAY">Saturday</option>
 												<option value="SUNDAY">Sunday</option>
 											</select>
 										</div>
-										
-											<button
-												onClick={() => submitAppointment()}
-												type="submit"
-												className="btn btn-secondary btn-lg"
-												disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>
-											<b 
+
+										<button
+											onClick={() => submitAppointment()}
+											type="submit"
+											className="btn btn-secondary btn-lg"
+											disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>
+											<b
 												style={{ fontSize: 20, color: "white" }}
 											>
-												Book an Appointment
+												Book  Appointment
 											</b>
-											</button>
+										</button>
 									</div>
 								</div>
 								{/* <div className="col-xl-2 col-lg-6 col-md-6">

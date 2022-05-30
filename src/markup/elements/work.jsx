@@ -44,11 +44,11 @@ const AboutSection = () => {
 
 
 				{
-					tip: "Signs the your mental health may be declining",
+					tip: "Signs that your mental health may be declining",
 					color: '#565acf',
 					title: true
 				}, {
-					tip: "You isolate yourself from family and friends and avoid any contact with them.",
+					tip: "You isolate yourself from family and friends.",
 					color: '#565acf'
 				},
 				{
@@ -56,7 +56,7 @@ const AboutSection = () => {
 					color: '#f17731'
 				},
 				{
-					tip: "You have loss of interest in things you used to enjoy. ",
+					tip: "You have lost interest in things you used to enjoy. ",
 					color: '#565acf'
 				},
 				{
@@ -64,7 +64,7 @@ const AboutSection = () => {
 					color: '#f17731'
 				},
 				{
-					tip: "You find it hard to take care of your personal hygiene",
+					tip: "You find it hard to take care of your personal hygiene.",
 					color: '#565acf'
 				},
 				{

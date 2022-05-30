@@ -198,7 +198,7 @@ const SurveyPage = () => {
           <Link to="/"><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
-          <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
+          <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
                 <h2>Answer this question</h2>
@@ -218,9 +218,9 @@ const SurveyPage = () => {
                     <div className="form-wraper contact-form ajax-form">
                       <div className="ajax-message"></div>
                       <div className="row">
-                        <div className='onBehalfCont'>
+                        <div style={{ paddingTop: 40 }} className='onBehalfCont'>
                           <div className="page-banner-entry">
-                            <h6>I am taking this assesement on behalf of</h6>
+                            <h4>I am taking this assesement on behalf of:</h4>
                           </div>
                           <div className='questionCont'>
                             <ul>
@@ -228,7 +228,7 @@ const SurveyPage = () => {
                                 onBehalfQuestion.map(el =>
                                   <li onClick={() => {
                                     selectCategory(el.id)
-                                  }}>
+                                  }} style={{ fontSize: 18 }}>
                                     <span className='checkBox'>
                                       <label className='radioBtn'>
                                         <input onClick={() => {
@@ -245,29 +245,29 @@ const SurveyPage = () => {
                           </div>
                         </div>
                         <div className="col-lg-12">
-                          <button onClick={() => startSaveyFunc()} className="btn w-100 btn-secondary btn-lg">Start</button>
+                          <button onClick={() => startSaveyFunc()} style={{ fontSize: 20, fontWeight: 700 }} className="btn w-100 btn-secondary btn-lg">Start</button>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div> : !surveyDone ?
-                  <div className='swipeCont'>
+                  <div className='swipeCont' style={{ padding: 15 }}>
                     <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.length > 0 ?
                           questions?.map(el =>
-                            <div className="row">
+                            <div style={{ paddingTop: 40, paddingLeft: 30, paddingRight: 30 }} className="row">
                               <div className="page-banner-entry">
-                                <h6>{el.question}</h6>
+                                <h4>{el.question}</h4>
                               </div>
-                              <div className='questionCont'>
+                              <div className='questionCont onBehalfCont' >
                                 <ul>
                                   {
                                     el?.questionType === 'RADIO' ?
                                       el?.answers.map(ans =>
-                                        <li onClick={() => { checkQuestion(el?._id, ans?._id) }} >
+                                        <li style={{ fontSize: 18 }} onClick={() => { checkQuestion(el?._id, ans?._id) }} >
                                           <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
-                                            <label className='radioBtn'>
+                                            <label style={{ marginRight: 5 }} className='radioBtn'>
                                               <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans.checked} type="radio" id="scales" name={el.question} />
                                               <span />
                                             </label>
@@ -275,9 +275,9 @@ const SurveyPage = () => {
                                           {ans?.ans}
                                         </li>
                                       ) : el.questionType === 'MUTLIPLECHECK' ? el?.answers.map(ans =>
-                                        <li onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
+                                        <li style={{ fontSize: 18 }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
                                           <span onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
-                                            <label className='CheckBoxBtn'>
+                                            <label style={{ marginRight: 5 }} className='CheckBoxBtn'>
                                               <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans.checked} type="checkbox" id="scales" name={el.question} />
                                               <span />
                                             </label>
@@ -290,12 +290,12 @@ const SurveyPage = () => {
                                   }
                                 </ul>
                               </div>
-                              <div className='changeQuestionBtn'>
+                              <div style={{ paddingLeft: 15, paddingRight: 20 }} className='changeQuestionBtn'>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'> {"<"} Prevs</button>
+                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("prev")} className='positionBtn'> Previous</button>
                                 </div>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next {">"}</button>
+                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next</button>
                                 </div>
                               </div>
                             </div>
@@ -315,26 +315,25 @@ const SurveyPage = () => {
               <div className='rowCont'>
                 <div className="col-lg-00 mb-0">
                   <div className="page-banner-entry text-center">
-                    <h2>Please fill in this questionaire first</h2>
+                    <h2>Welcome!</h2>
                   </div>
-                  <div className='mainContent'>
+                  <div className='mainContent appointmentText'>
                     <p>
-                      <b>Welcome.</b> <br /><br />
-                      This is Aheza's developed mental health questionaire.<br />
+                      <h4 style={{ marginBottom: 7 }}>Please fill in this questionaire first. </h4>
+                      1. This is Aheza's  mental health questionaire.<br />
 
-                      Please take time to answer the following questions carefully and truthfully. <br />
+                      2. Please take time to answer the following questions carefully and truthfully. <br />
 
-                      They help us match you with the right therapist for you.<br /><br />
-
-                      <b>Note:</b> Your answers are confidential, They will not be shared with anyone else.
+                      3. They will help us match you with the right therapist.<br />
+                      4. Your answers are confidential.
                     </p>
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push('/')} className='positionBtn'> {"<"} Back to Home</button>
+                      <button onClick={() => history.push('/')} style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} className='positionBtn'>Back to Home</button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} className='positionBtn'>Yes, Continue {">"}</button>
+                      <button onClick={() => CloseModel()} style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} className='positionBtn'>Yes, Continue</button>
                     </div>
                   </div>
                 </div>
