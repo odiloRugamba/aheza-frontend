@@ -84,7 +84,7 @@ const AboutSection = () => {
         <>
             <section className="section-area account-wraper1">
                 <div className="container-fluid" style={{ paddingTop: 100 }}>
-                    <div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
+                    <div className="appointment-inner section-sp2" >
                         <div className="container">
                             <div className="rowAppo">
                                 <div className="col-xl-12 col-lg-12 col-md-12">
@@ -92,7 +92,7 @@ const AboutSection = () => {
                                         <div className='appointmentF'>
                                             <div>
                                                 <h3 className="title">
-                                                    Finalize  Appointment
+                                                    Finalize Appointment
                                                 </h3>
                                             </div>
                                             {/* <div>
@@ -105,7 +105,7 @@ const AboutSection = () => {
                                             <ul>
                                                 {
                                                     appointmentOps.map(el =>
-                                                        <li onClick={() => selectMethod(el)}>
+                                                        <li onClick={() => selectMethod(el)} style={{marginLeft: 10}}>
                                                             <span className='checkBox'>
                                                                 <label className='radioBtn'>
                                                                     {console.log(el)}

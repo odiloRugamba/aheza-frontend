@@ -22,19 +22,16 @@ const AboutSection = () => {
   <>
    <section className="section-area account-wraper1">
     <div className="container-fluid" style={{ paddingTop: 100 }}>
-     <div className="appointment-inner section-sp2" style={{ backgroundImage: "url(" + lineBg + ")", backgroundRepeat: " no-repeat", backgroundPosition: "20px 140px" }}>
+     <div className="appointment-inner section-sp2">
       <div className="container">
        <div className="rowAppo">
-        <div className="col-xl-8 col-lg-12 col-md-12">
+        <div className="col-xl-12 col-lg-12 col-md-12">
          <div className="appointment-form form-wraper appointmentCont">
           <div className='appointmentF'>
            <div>
             <h3 className="title">
              Appointment booked successfully
             </h3>
-           </div>
-           <div>
-            <img src={verified} />
            </div>
           </div>
           <div>
@@ -50,19 +47,7 @@ const AboutSection = () => {
            </div>
           </div>
           <div>
-           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg">Go Home</button>
-          </div>
-         </div>
-        </div>
-        <div className="col-xl-2 col-lg-6 col-md-6">
-         <div className="appointment-thumb">
-          <img src={appMobile} alt="" />
-          <div className="images-group">
-           <img className="img1" src={appWomen} alt="" />
-           <img className="img2" src={appMapPin} alt="" />
-           <img className="img3" src={appSetting} alt="" />
-           <img className="img4" src={appCheck} alt="" />
-           <img className="img5" src={appChat} alt="" />
+           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{fontSize: 20, fontWeight: 700}}>Go Home</button>
           </div>
          </div>
         </div>
