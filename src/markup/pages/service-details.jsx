@@ -92,15 +92,18 @@ const ServiceDetail = () => {
 
 										<h5 className="title-head">Services Offered</h5>
 										<ul className="service-menu">
-
 											{
-												service?.services?.map(el =>
-													<li style={{ padding: 0 }} onClick={() => hyperLinkFunc(el)}><Link to="#"><span>{el}</span></Link></li>
-												)
+												service?.services.length ? <div>
+													{
+														service?.services?.map(el =>
+															<li style={{ padding: 0 }} onClick={() => hyperLinkFunc(el)}><Link to="#"><span>{el}</span></Link></li>
+														)
+													}
+													<br />
+													<hr />
+													<br />
+												</div> : null
 											}
-											<br />
-											<hr />
-											<br />
 											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book an Appointment</span></Link></li>
 											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
 										</ul>
@@ -125,7 +128,7 @@ const ServiceDetail = () => {
 										<Link to='#' onClick={() => routeFunc('/terms')}> Aheza privacy statement</Link>.
 										We offer six general services to our clients (see below).<br />
 									</p>
-									<p className='ql-align-justify'>
+									<p className='ql-align-justify' style={{ marginBottom: 30 }}>
 										{/* <div style={{ fontStyle: 'italic' }}></div> */}
 										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Counseling-and-Psychotherapy/6244aeae79decbcc46684172')}> Counseling and Psychotherapy Services </Link><br />
 										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Palliative-Care-And-Home-Services/6244af7c79decbcc46684186')}>  Palliative Care and Home Services </Link> <br />
@@ -133,7 +136,7 @@ const ServiceDetail = () => {
 										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Professional-Training/6244b06979decbcc4668418e')}>  Professional Training Services </Link><br />
 										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Community-Healing-Groups/628b9811cd12fb7c164eb02c')}>  Community Healing Services </Link> <br />
 										{/* and <span> </span> */}
-										<Link to='#' style={{ paddingLeft: 20 }} onClick={() => routeFunc('/our-services/Mental-Health-Awareness/628de72aff2243060367e347')}>   Mental Health Awareness Services</Link> <br /><br /><br />
+										<Link to='#' style={{ paddingLeft: 20, }} onClick={() => routeFunc('/our-services/Mental-Health-Awareness/628de72aff2243060367e347')}>   Mental Health Awareness Services</Link> <br />
 									</p>
 									<div dangerouslySetInnerHTML={{ __html: service?.content }}>
 									</div>
