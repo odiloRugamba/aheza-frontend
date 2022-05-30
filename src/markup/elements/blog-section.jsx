@@ -62,7 +62,7 @@ const LatestNewsSection = ({ title, content }) => {
 												<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}>{item.title}</Link></h4>
+												<h6 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date">
@@ -76,17 +76,6 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					{/* <div className="blog-car" style={{ display: 'flex', justifyContent: 'center', marginTop: 30 }}>
-						<Link
-							to='/blog-grid'
-							className="btn btn-outline-primary btn-sm"
-							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
-						>
-							<span>
-								See More on our Blog
-							</span>
-						</Link>
-					</div> */}
 				</div>
 				<br></br>
 				<br></br>

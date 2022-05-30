@@ -110,10 +110,9 @@ const Uploads = () => {
 												</a>
 											</div>
 											<div className="post-info" >
-												{/* <h6 className="post-title max-lines-2"><a onClick={() => openNewWindow(item.link)}>{item.title}</a></h6> */}
-												<p className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
-													<a onClick={() => openNewWindow(item.link)} style={{ fontSize: 15, fontFamily: 700 }}>{item?.title}</a>
-												</p>
+												<h6 className="post-title max-lines-2" style={{ "-webkit-line-clamp": 3 }}>
+													<a onClick={() => openNewWindow(item.link)} style={{ fontFamily: 700 }}>{item?.title}</a>
+												</h6>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 														{/* <i className="fa fa-user"></i> */}
