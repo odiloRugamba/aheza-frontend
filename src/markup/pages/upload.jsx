@@ -134,24 +134,11 @@ const UploadsDetails = () => {
 			{
 				res?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
-					<div className="banner-wraper">
-						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
-							<div className="container">
-								<div className="page-banner-entry text-center">
-									<h2>Details</h2>
-								</div>
-							</div>
-							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-						</div>
-					</div>
-
 					<section className="section-area section-sp1 bg-white">
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single">
+									<div className="blog-card blog-single" style={{width: "100%"}}>
 										<div className="post-media">
 											{/* <img src={blogDefaultPic1} alt="" /> */}
 											{
@@ -166,27 +153,7 @@ const UploadsDetails = () => {
 														allowFullScreen
 														title="Embedded youtube"
 													/> : <AudioPlayer />
-												//  <div className='audioPlayer'>
-												// 	<img src={PickImage} />
-												// 	<div className='playBg'></div>
-												// 	<div className='audioplayerBtnCont'>
-												// 		<div className='AudioPlayLine'>
-												// 			<div style={{ width: 50 + '%' }} className='linePlayed'></div>
-												// 			<div className='dragPin'></div>
-												// 		</div>
-												// 		<div className='playBtnCont'>
-												// 			<div onClick={() => prevFunc()}>
-												// 				<img src={prevIcon} />
-												// 			</div>
-												// 			<div onClick={() => playPauseFunc()} className='playPuaseBtn'>
-												// 				<img src={playing ? PauseIcon : playIcon} />
-												// 			</div>
-												// 			<div onClick={() => nextFunc()}>
-												// 				<img src={nextIcon} />
-												// 			</div>
-												// 		</div>
-												// 	</div>
-												// </div>
+											
 											}
 										</div>
 										<div className="info-bx">
@@ -221,7 +188,7 @@ const UploadsDetails = () => {
 											<h4 className="widget-title">{resComments?.length} Comments</h4>
 											<div className="clearfix">
 												<CommentList coments={resComments} />
-												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you thing...?" />
+												<CommentRespond loading={loading} submit={submitFunc} placeholder="Comment" />
 											</div>
 										</div>
 									</div>
@@ -229,9 +196,8 @@ const UploadsDetails = () => {
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
 
-										{/* <WidgetSearch placeholder='Search Anything...' /> */}
 
-										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent Stories" />
+										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent News" />
 									</aside>
 								</div>
 							</div>

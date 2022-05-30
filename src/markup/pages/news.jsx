@@ -72,7 +72,7 @@ const ResearchFindings = () => {
                 {/* <hr></hr> */}
                 <StoriesSection content={stories} />
                 {/* <hr></hr> */}
-                <BlogSection content={blog} />
+                {/* <BlogSection content={blog} /> */}
 
 
 			</div>

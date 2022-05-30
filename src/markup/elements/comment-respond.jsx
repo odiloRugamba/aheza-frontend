@@ -21,7 +21,7 @@ const CommentRespond = ({ placeholder, submit, loading }) => {
 	return (
 		<>
 			<div className="comment-respond" id="respond">
-				<h4 className="widget-title">Leave a comment</h4>
+				<h4 className="widget-title">Leave Comment</h4>
 				<div className="comment-form" id="commentform">
 					<p className="comment-form-name">
 						<label for="name">Name <span className="required">*</span></label>
@@ -40,7 +40,7 @@ const CommentRespond = ({ placeholder, submit, loading }) => {
 							{
 								loading ? <div className="spinner-border" role="status">
 									<span className="sr-only">Loading...</span>
-								</div> : <span>Submit Comment  </span>
+								</div> : <span style={{fontWeight: 700}}>Submit Comment  </span>
 							}
 						</button>
 					</p>

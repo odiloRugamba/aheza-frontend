@@ -50,6 +50,11 @@ const BlogGrid = () => {
 		setPageData(null)
 		setPageData(blogs.slice(statingPoint, endingPoint))
 	}
+	const routeChange = (link) => {
+		const rouLink = link.split('/')[2]
+		const httpLink = link.split('/')[0]
+		window.open(`${httpLink}//${rouLink}`, '_blank')
+	}
 
 	return (
 		<>
@@ -74,15 +79,16 @@ const BlogGrid = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
+											{/* <div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
 												<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
-											</div>
+											</div> */}
 											<div className="post-info">
-												<h4 className="post-title max-lines-1"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h4>
+												<h6 className="post-title max-lines-1"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date">
-														{convertData(item?.updatedAt)}
+													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
+														Aheza<br></br>
+														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 													</li>
 													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
 												</ul>

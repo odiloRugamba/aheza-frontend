@@ -40,17 +40,17 @@
 	border-radius: 6px 6px 4px 4px !important;
 	padding: 30px 30px;
 	box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.06);
-	border: 1px solid rgba($primary,0.2);
+	// border: 1px solid rgba($primary,0.2);
 	border-width: 1px 1px 3px 1px;
-	border-bottom-color: $primary;
+	// border-bottom-color: $primary;
 	
 	.title-head {
-		border-bottom: 1px solid rgba(0,0,0,0.15);
+		// border-bottom: 1px solid rgba(0,0,0,0.15);
 		padding-bottom: 8px;
 		position: relative;
 		margin-bottom: 30px;	
 		&:after {
-			background:$primary;
+			// background:$primary;
 			content:"";
 			width:30px;
 			height:3px;
@@ -75,14 +75,14 @@
     background-color: $primary;
 	
 	.title{
-		font-size: 15px;
+		font-size: 20px;
 		margin: 0;
 		line-height: 22px;
 		color: #fff;
 	}
 	span{
 		color: #fff;
-		font-size: 14px;
+		font-size: 20px;
 		line-height: 18px;	
 	}
 	img{

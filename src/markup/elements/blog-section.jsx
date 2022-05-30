@@ -24,7 +24,11 @@ const LatestNewsSection = ({ title, content }) => {
 		return `${da} ${mo} ${ye}`
 	}
 
-
+	const routeChange = (link) => {
+		const rouLink = link.split('/')[2]
+		const httpLink = link.split('/')[0]
+		window.open(`${httpLink}//${rouLink}`, '_blank')
+	}
 
 	const getVideoId = (url) => {
 		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -41,7 +45,7 @@ const LatestNewsSection = ({ title, content }) => {
 						<h2 className="title" style={{ fontSize: 80}}>Blog</h2>
 					</div> */}
 					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
-						<h2 className="title" style={{ fontSize: 80 }}>Blog</h2>
+						<h2 className="title" style={{ fontSize: 80, textAlign: "left" }}>Additional Information</h2>
 						<div>
 							<br></br>
 							<Link
@@ -58,15 +62,13 @@ const LatestNewsSection = ({ title, content }) => {
 						content ? content.map(item =>
 							<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											<div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
-												<Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
-											</div>
 											<div className="post-info">
 												<h6 className="post-title max-lines-2"><Link to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date">
-														{convertData(item?.updatedAt)}
+													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
+														Aheza<br></br>
+														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 													</li>
 													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/blog-grid/" + item.title?.replaceAll(" ","-") + '/' + item._id}  className="btn btn-outline-primary btn-sm">Read More </Link>
 												</ul>

@@ -139,11 +139,9 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 										</h6>
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 											<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
-												{/* <i className="fa fa-user"></i> */}
 												{item.publisherName} <br></br>
 												<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 											</li>
-											{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a> */}
 											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</a>
 										</ul>
 									</div>

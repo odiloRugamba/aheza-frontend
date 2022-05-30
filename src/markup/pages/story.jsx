@@ -120,7 +120,7 @@ const StorysDetails = () => {
 			{
 				res?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
-					<div className="banner-wraper">
+					{/* <div className="banner-wraper">
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
@@ -128,16 +128,15 @@ const StorysDetails = () => {
 								</div>
 							</div>
 							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							{/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
 							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
 						</div>
-					</div>
+					</div> */}
 
 					<section className="section-area section-sp1 bg-white">
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single">
+									<div className="blog-card blog-single" style={{width: "100%"}}>
 										<div className="post-media">
 											{
 												res?.youtubeVideoLink &&
@@ -157,7 +156,7 @@ const StorysDetails = () => {
 										</div>
 										<div className="info-bx">
 											<div className="ttr-post-title">
-												<h4 className="post-title max-lines-2">{story?.title}</h4>
+												<h4 className="post-title">{story?.title}</h4>
 											</div>
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: story?.content }}></div>
@@ -190,7 +189,7 @@ const StorysDetails = () => {
 
 												<CommentList coments={resComments} />
 
-												<CommentRespond loading={loading} submit={submitFunc} placeholder="What do you thing...?" />
+												<CommentRespond loading={loading} submit={submitFunc} placeholder="Comment" />
 
 											</div>
 										</div>

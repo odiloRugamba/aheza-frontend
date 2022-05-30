@@ -16,7 +16,7 @@ const SocialMediaComp = () => {
   <>
    <div className="share-post ml-auto">
     <ul className="social-media mb-0">
-     <li><strong>Share:</strong></li>
+     <li><strong style={{fontSize: 20}}>Share:</strong></li>
      <FacebookShareButton url={currentUrl}>
       <li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/"><i className="fab fa-facebook-f"></i></a></li>
      </FacebookShareButton>

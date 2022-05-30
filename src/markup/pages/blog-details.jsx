@@ -77,10 +77,10 @@ const BlogDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single">
-										<div className="post-media">
+									<div className="blog-card blog-single" style={{width: "100%"}}>
+										{/* <div className="post-media">
 											<img src={Dcore.IMAGEURL + "/" + blogItem?.image} alt="" />
-										</div>
+										</div> */}
 										<div className="info-bx">
 											<div className="ttr-post-title">
 												<h2 className="post-title max-lines-2">{blogItem?.title}</h2>

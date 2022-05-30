@@ -81,7 +81,7 @@ const ResearchFindingDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single">
+									<div className="blog-card blog-single" style={{width: "100%"}}>
 										<div className="post-media">
 											{/* <img src={blogDefaultPic1} alt="" /> */}
 										</div>
@@ -115,14 +115,14 @@ const ResearchFindingDetails = () => {
 											}
 											<hr />
 											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
-												<div className="post-tags">
+												{/* <div className="post-tags">
 													<strong>Tags:</strong>
 													{
 														research?.tags?.map(el => (
 															<Link to="#">{el}</Link>
 														))
 													}
-												</div>
+												</div> */}
 												<SocialMediaComp />
 											</div>
 										</div>
@@ -144,13 +144,13 @@ const ResearchFindingDetails = () => {
 									<aside className="side-bar sticky-top aside-bx">
 										<ResearchFindingWidget data={reletedData} />
 										{/* <WidgetTag tags={research?.tags} /> */}
-										<div className="widget">
+										{/* <div className="widget"> */}
 											<div className="brochure-bx">
 												<h5 className="title-head">Research</h5>
-												<Link to="#" className="download-link">
+												<Link to="/contact-us" className="download-link">
 													<img src={pdf} alt="" />
-													<h5 className="title">publish your own</h5>
-													<span>Research</span>
+													<h5 className="title">Publish Your Own</h5>
+													<h5 className="title">Research</h5>
 												</Link>
 												<a onClick={() => { saveFile() }} className="download-link">
 													<img src={doc} alt="" />
@@ -158,7 +158,7 @@ const ResearchFindingDetails = () => {
 													<span>Research</span>
 												</a>
 											</div>
-										</div>
+										{/* </div> */}
 									</aside>
 								</div>
 

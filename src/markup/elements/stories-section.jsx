@@ -25,7 +25,12 @@ const LatestNewsSection = ({ title, content }) => {
 	}
 
 
-
+	const routeChange = (link) => {
+		const rouLink = link.split('/')[2]
+		const httpLink = link.split('/')[0]
+		window.open(`${httpLink}//${rouLink}`, '_blank')
+	}
+	
 	const getVideoId = (url) => {
 		var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
 		var match = url.match(regExp);
@@ -72,10 +77,10 @@ const LatestNewsSection = ({ title, content }) => {
 										<h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-											<li className="date">{
-												convertData(item?.updatedAt)
-											}</li>
-
+											<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
+												Aheza<br></br>
+												<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+											</li>
 											<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 										</ul>
 

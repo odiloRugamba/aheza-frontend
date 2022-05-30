@@ -68,21 +68,7 @@ const ServiceDetail = () => {
 											}
 										</ul>
 									</div>
-									{/* <div className="widget">
-										<div className="brochure-bx">
-											<h5 className="title-head">Download</h5>
-											<Link to="#" className="download-link">
-												<img src={pdf} alt="" />
-												<h5 className="title">publish your own</h5>
-												<span>Publish</span>
-											</Link>
-											<Link to="#" className="download-link">
-												<img src={doc} alt="" />
-												<h5 className="title">Research</h5>
-												<span>Download</span>
-											</Link>
-										</div>
-									</div> */}
+							
 
 								</aside>
 							</div>

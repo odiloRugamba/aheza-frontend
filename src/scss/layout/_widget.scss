@@ -19,7 +19,7 @@
 		left: 0;
 		width: 85px;
 		height: 7px;
-		background-image: url(../../images/shap/footer-line.png);
+		// background-image: url(../../images/shap/footer-line.png);
 		background-repeat: no-repeat;
 	}
 	@include respond('phone-land'){
@@ -40,9 +40,9 @@
 		border-radius: 6px 6px 4px 4px;
 		padding: 30px 30px;
 		box-shadow: 0px 10px 30px 0 rgba(0, 0, 0, 0.06);
-		border: 1px solid rgba($primary,0.2);
+		// border: 1px solid rgba($primary,0.2);
 		border-width: 1px 1px 3px 1px;
-		border-bottom-color: $primary;
+		// border-bottom-color: $primary;
 		@include respond('phone'){
 			margin-bottom: 30px;
 		}
@@ -237,7 +237,7 @@
 		margin-bottom: 15px;
 		align-items: center;
 		display: flex;
-		border-bottom: 1px solid #eee;
+		// border-bottom: 1px solid #eee;
 		padding-bottom: 15px;
 		
 		&:last-child{

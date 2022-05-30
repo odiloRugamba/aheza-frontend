@@ -41,7 +41,7 @@ const LatestNewsSection = ({ title, content }) => {
 									See More Publications
 							</Link>
 						</div>
-					</div>
+					</div> 
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
 						content ? content.map(item =>
@@ -50,7 +50,8 @@ const LatestNewsSection = ({ title, content }) => {
 									<div className="post-info">
 										<p className="post-title max-lines-3" style={{ fontSize: 20 }}><a href={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</a></p>
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-											<li className="date">{ convertData(item?.updatedAt) }</li>
+											<li className="date">
+												{convertData(item?.updatedAt)}</li>
 											<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 											
 										</ul>
