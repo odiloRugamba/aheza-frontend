@@ -41,13 +41,13 @@ const AboutSection = () => {
 	useEffect(() => {
 		if (res) {
 			const exData = [
-				
+
 
 				{
 					tip: "Signs the your mental health may be declining",
 					color: '#565acf',
 					title: true
-				},{
+				}, {
 					tip: "You isolate yourself from family and friends and avoid any contact with them.",
 					color: '#565acf'
 				},
@@ -98,16 +98,16 @@ const AboutSection = () => {
 	return (
 		<>
 
-			<section className="section-area section-p5 tips-wraper  row" style={{ }}>
-				<div className="col-lg-7 col-md-6 col-sm-12" style={{marginTop: 30}}>
+			<section className="section-area section-p5 tips-wraper  row" style={{}}>
+				<div className="col-lg-7 col-md-6 col-sm-12" style={{ marginTop: 30 }}>
 					<div className="col-lg-8 col-sm-12 mb-30" >
 						<a href='/our-services'>
-							<div className="work-bx " style={{ backgroundColor: "#565acf"}}>
-								<div className="work-content" style={{ display: "flex"}}>
+							<div className="work-bx " style={{ backgroundColor: "#565acf" }}>
+								<div className="work-content" style={{ display: "flex", alignItems: 'center' }}>
 									<div className="work-num-bx" >1</div>
 									<div >
-										<br/>
-										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10 }}>Find Information</h4>
+										<br />
+										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Find Information</h4>
 									</div>
 								</div>
 							</div>
@@ -115,29 +115,29 @@ const AboutSection = () => {
 					</div>
 					<div className="col-lg-8 col-sm-12 mb-30">
 						<a href='/appointment-assesement'>
-							<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf"}}>
+							<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
 								<div className="work-num-bx">2</div>
 								<div className="work-content" >
-									<br/>
-									<h5 className="mb-10"  style={{ fontSize: 25, color: "#fff" , paddingLeft: 10}}>Book an Appointment</h5>
+									<br />
+									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Book an Appointment</h5>
 								</div>
 							</div>
 						</a>
 					</div>
 					<div className="col-lg-8 col-sm-12 mb-30">
-						
+
 						<a href='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'>
-						<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf" }}>
-							<div className="work-num-bx">3</div>
-							<div className="work-content">
-								<br/>
-								<h5 className="mb-10"  style={{ fontSize: 25, color: "white" , paddingLeft: 10}}>Connect with a Community</h5>
+							<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
+								<div className="work-num-bx">3</div>
+								<div className="work-content">
+									<br />
+									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Connect with a Community</h5>
+								</div>
 							</div>
-						</div>
 						</a>
 					</div>
 				</div>
-				<div className="col-lg-5 col-md-6 col-sm-12" style={{padding: 0}}>
+				<div className="col-lg-5 col-md-6 col-sm-12" style={{ padding: 0 }}>
 					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
 						{/* <div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
 						</div> */}
@@ -156,11 +156,11 @@ const AboutSection = () => {
 								{
 									data?.length > 0 ?
 										data.map(el => <div style={{ background: el.color }} className='connentInner'>
-											
+
 											<div className='inneData' style={{ padding: 50 }}>
 												{
-													el.title ? 
-														<div style={{fontSize: 25}}><>{el.tip}</></div> :
+													el.title ?
+														<div style={{ fontSize: 25 }}><>{el.tip}</></div> :
 														<span>{el.tip}</span>
 												}
 											</div>
