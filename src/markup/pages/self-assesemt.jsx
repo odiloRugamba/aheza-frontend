@@ -265,14 +265,18 @@ const SurveyPage = () => {
                                   {
                                     el?.questionType === 'RADIO' ?
                                       el?.answers.map(ans =>
-                                        <li style={{ fontSize: 18 }} onClick={() => { checkQuestion(el?._id, ans?._id) }} >
-                                          <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
-                                            <label style={{ marginRight: 5 }} className='radioBtn'>
-                                              <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans.checked} type="radio" id="scales" name={el.question} />
-                                              <span />
-                                            </label>
-                                          </span>
-                                          {ans?.ans}
+                                        <li style={{ fontSize: 18, display: 'flex', alignItems: 'center' }} onClick={() => { checkQuestion(el?._id, ans?._id) }} >
+                                          <div>
+                                            <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
+                                              <label style={{ marginRight: 5 }} className='radioBtn'>
+                                                <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans.checked} type="radio" id="scales" name={el.question} />
+                                                <span />
+                                              </label>
+                                            </span>
+                                          </div>
+                                          <div>
+                                            {ans?.ans}
+                                          </div>
                                         </li>
                                       ) : el.questionType === 'MUTLIPLECHECK' ? el?.answers.map(ans =>
                                         <li style={{ fontSize: 18 }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
