@@ -60,9 +60,17 @@ const Footer = () => {
 				</div>
 
 				<div className='col-md-3' >
-					<span id='HeaderIcon' className="material-icons"></span>
-					<b style={{ color: "white" }}><u>Call:</u></b>
-					<a href="tel:+250788315809" style={{ color: "white" }}> (+250) 788 315 809</a>
+					<div>
+						<span id='HeaderIcon' className="material-icons"></span>
+						<b style={{ color: "white" }}><u>Help line:</u></b>
+						<a href="tel:+250788315809" style={{ color: "white" }}> 1024</a>
+					</div>
+					<div>
+						<span id='HeaderIcon' className="material-icons"></span>
+						<b style={{ color: "white" }}><u>Call:</u></b>
+						<a href="tel:+250788315809" style={{ color: "white" }}> (+250) 788 315 809</a>
+					</div>
+
 				</div>
 
 				<div style={{ cursor: 'pointer' }} onClick={() => window.open('https://www.google.com/maps/place/Nyarutarama,+Kigali/@-1.9399231,30.091306,15z/data=!3m1!4b1!4m5!3m4!1s0x19dca6c43a09d8a5:0xfb4f1ab02ad0cbab!8m2!3d-1.9388762!4d30.1040715')} className='col-md-3' >
