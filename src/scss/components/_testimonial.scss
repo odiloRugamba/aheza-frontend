@@ -1,6 +1,7 @@
 /* ==================
 	8.22 Story
 	img
+	15
 
 =================== */
 .thumb-wraper {
@@ -9,7 +10,7 @@
 	width: 500px;
 
 	@include respond('phone') {
-		padding: 15px;
+		// padding: 15px;
 	}
 
 	.bg-img {
@@ -92,11 +93,28 @@
 
 			@include respond('phone') {
 				&:nth-child(2) {
-					top: 10px;
+					top: 20px;
+					left: 50%;
+				}
+
+				&:nth-child(1) {
+					top: 90px;
+					left: 40px;
+				}
+
+				&:nth-child(4) {
+					right: 45px;
+					bottom: 110px;
 				}
 
 				&:nth-child(5) {
-					bottom: 32px;
+					bottom: 45px;
+					left: 50%;
+				}
+
+				&:nth-child(6) {
+					left: 40px;
+					bottom: 115px;
 				}
 
 				a {
@@ -105,6 +123,24 @@
 				}
 			}
 		}
+	}
+}
+
+@media screen and (max-width: 390px) {
+	.thumb-wraper {
+		width: 98vw;
+	}
+
+	.testimonial-bx {
+		margin: 0px !important;
+		padding: 30px !important;
+		margin-left: 10px !important;
+		margin-right: 10px !important;
+
+	}
+
+	.partnerTitle {
+		font-size: 55px !important;
 	}
 }
 
@@ -156,39 +192,42 @@
 			margin-bottom: 0;
 		}
 	}
-.quote-icon {
-	position: absolute;
-	top: -50px;
-	left: 50px;
 
-	i {
-		font-size: 36px;
-		color: #f17732;
-		width: 75px;
-		height: 75px;
-		text-align: center;
-		background-color: #fff;
-		line-height: 75px;
-		border-radius: 20px;
-		box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
-	}
-}.quote-icon-2 {
-	position: absolute;
-	top: -50px;
-	left: 50px;
+	.quote-icon {
+		position: absolute;
+		top: -50px;
+		left: 50px;
 
-	i {
-		font-size: 36px;
-		color: #565acf;
-		width: 75px;
-		height: 75px;
-		text-align: center;
-		background-color: #fff;
-		line-height: 75px;
-		border-radius: 20px;
-		box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
+		i {
+			font-size: 36px;
+			color: #f17732;
+			width: 75px;
+			height: 75px;
+			text-align: center;
+			background-color: #fff;
+			line-height: 75px;
+			border-radius: 20px;
+			box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
+		}
 	}
-}
+
+	.quote-icon-2 {
+		position: absolute;
+		top: -50px;
+		left: 50px;
+
+		i {
+			font-size: 36px;
+			color: #565acf;
+			width: 75px;
+			height: 75px;
+			text-align: center;
+			background-color: #fff;
+			line-height: 75px;
+			border-radius: 20px;
+			box-shadow: 0px 10px 60px 0px rgba(31, 34, 120, 0.1);
+		}
+	}
 
 	@include respond('tab-land') {
 		border-radius: 30px 0 30px 30px;
@@ -472,5 +511,13 @@
 
 	.logo {
 		width: 190px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	#logoCont {
+		.logo {
+			width: 100px;
+		}
 	}
 }

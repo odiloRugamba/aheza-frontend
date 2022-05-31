@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
 const AboutSection = () => {
 	return (
 		<>
-			<section className="section-area section-p5 mission-wraper  row" style={{ paddingRight: 0 }}>
+			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 0, marginRight: 15 }}>
 				<div className="heading-bx text-center" style={{ margin: 10, marginTop: 70 }}>
-					<h1 className="title m-b0" style={{ fontSize: 80 }}>Partnerships</h1>
+					<h1 className="title m-b0 partnerTitle gobalTitle">Partnerships</h1>
 				</div>
 				<div className="row">
 					<div className="col-lg-6 col-md-6 col-sm-12" style={{ marginTop: 10 }}>

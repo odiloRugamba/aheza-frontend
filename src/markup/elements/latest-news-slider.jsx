@@ -123,7 +123,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 					}
 
 
-					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
+					<div {...settings}  className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{/* <div className="slider-item"> */}
 						{content?.map((item) => (
 							<div className="col-xl-4 col-md-6">

@@ -36,7 +36,7 @@ class VisionSection extends Component {
 				<section className="section-area section-sp1 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h1 className="title m-b0" style={{ fontSize: 80 }}>Vision</h1>
+							<h1 className="title m-b0 gobalTitle">Vision</h1>
 						</div>
 						<div className="row align-items-center">
 							<div className="col-lg-6">
@@ -44,12 +44,12 @@ class VisionSection extends Component {
 								<div className="thumb-wraper">
 									<img className="bg-img" src={testShape} alt="" />
 									<ul>
-										<li data-member="1" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic1} alt="" /></Link></li>
-										<li data-member="2" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic2} alt="" /></Link></li>
-										<li data-member="3" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic3} alt="" /></Link></li>
-										<li data-member="4" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic4} alt="" /></Link></li>
-										<li data-member="5" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic5} alt="" /></Link></li>
-										<li data-member="6" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic6} alt="" /></Link></li>
+										<li className='nthOne' data-member="1" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic1} alt="" /></Link></li>
+										<li className="nthTwo" data-member="2" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic2} alt="" /></Link></li>
+										<li className='nthThree' data-member="3" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic3} alt="" /></Link></li>
+										<li className='nthFour' data-member="4" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic4} alt="" /></Link></li>
+										<li className='nthFive' data-member="5" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic5} alt="" /></Link></li>
+										<li className='nthSix' data-member="6" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic6} alt="" /></Link></li>
 										<Link id='logoCont' to="/"><img className='logo' src={logo} alt="" /></Link>
 
 									</ul>
@@ -62,7 +62,7 @@ class VisionSection extends Component {
 											<p>
 												<b style={{ color: "white", fontSize: 20 }}>
 													Our vision is of a world where Rwandans receive
-													the mental health care they need; and go on to live productive and 
+													the mental health care they need; and go on to live productive and
 													fulfilling lives.
 												</b>
 											</p>
