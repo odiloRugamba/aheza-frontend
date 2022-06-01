@@ -3,9 +3,9 @@ import axios from "axios";
 // const WEBURL = "https://aheza.org.rw";
 // const URL = "https://aheza.org.rw/api";
 // const IMAGEURL = "https://aheza.org.rw/uploads";
-const WEBURL = "http://192.168.43.26:3000";
-const URL = "http://192.168.43.26:9001/api";
-const IMAGEURL = "http://192.168.43.26:9001/uploads";
+const WEBURL = "http://localhost:3000";
+const URL = "http://localhost:9001/api";
+const IMAGEURL = "http://localhost:9001/uploads";
 
 const request = async (method, url, data, headers) => {
   try {
