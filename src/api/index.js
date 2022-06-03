@@ -27,7 +27,6 @@ const request = async (method, url, data, headers) => {
 };
 
 const get = async (url, data, headers) => {
-  console.log(data);
   return await request("GET", url, data, headers);
 };
 

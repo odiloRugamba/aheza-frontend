@@ -1,0 +1,38 @@
+.g-header {
+ .g-title {
+  font-size: 80px;
+
+  @include respond('phone') {
+   font-size: 10vw;
+  }
+ }
+
+ .e-follow {
+  position: relative;
+  bottom: 60px;
+ }
+
+ .g-space {
+  // margin: 10px;
+  // margin-top: 70px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond('phone') {
+   margin: 0vw;
+   margin-top: 0vw;
+  }
+ }
+}
+
+@include respond('phone') {
+ *div {
+  overflow-x: hidden;
+ }
+
+ *section {
+  overflow: hidden;
+ }
+}

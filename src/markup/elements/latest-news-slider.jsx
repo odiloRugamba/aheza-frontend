@@ -1,28 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-import { getStorys } from "../../store/story/actions";
-import { useDispatch, useSelector } from "react-redux";
 import { Dcore } from "../../api/index";
-import { Carousel } from '@trendyol-js/react-carousel';
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
-// Import Images
-import lingBg2 from "../../images/background/line-bg2.png"
-import animate1 from "../../images/shap/trangle-orange.png"
-import animate2 from "../../images/shap/square-dots-orange.png"
-import animateRotate from "../../images/shap/line-circle-blue.png"
-import animateWave from "../../images/shap/wave-blue.png"
-import testPic1 from "../../images/testimonials/pic1.jpg"
-import testPic2 from "../../images/testimonials/pic2.jpg"
-import testPic3 from "../../images/testimonials/pic3.jpg"
-import testPic4 from "../../images/testimonials/pic4.jpg"
-import testPic5 from "../../images/testimonials/pic5.jpg"
-import blogGridPic1 from "../../images/blog/grid/pic1.jpg"
-import blogGridPic2 from "../../images/blog/grid/pic2.jpg"
-import blogGridPic3 from "../../images/blog/grid/pic3.jpg"
-import blogGridPic4 from "../../images/blog/grid/pic4.jpg"
-import blogGridPic5 from "../../images/blog/grid/pic5.jpg"
+
+
 
 
 
@@ -99,7 +82,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 				<div className="container">
 
 					{!isHomePage ?
-						<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
+						<div className="heading-bx text-center" style={{ display: "flex", justifyContent: "space-between" }}>
 							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
 							{
 								!isHomePage &&
@@ -110,21 +93,21 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 										className="btn btn-outline-primary btn-sm"
 										style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 									>
-											See More News
+										See More News
 									</Link>
 								</div>
 							}
 						</div>
 						:
-						<div className="heading-bx text-center">
-							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
-							
+						<div className='container g-header'>
+							<div className="heading-bx text-center g-space e-follow">
+								<h1 className="title m-b0 g-title">News</h1>
+							</div>
 						</div>
 					}
 
 
-					<div {...settings}  className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
-						{/* <div className="slider-item"> */}
+					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{content?.map((item) => (
 							<div className="col-xl-4 col-md-6">
 								<div className="blog-card mb-30">
@@ -140,7 +123,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 										<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 											<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 												{item.publisherName} <br></br>
-												<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+												<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 											</li>
 											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</a>
 										</ul>
@@ -161,14 +144,9 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 									See More News
 								</span>
 							</Link>
-						</div> 
+						</div>
 					}
-					
 				</div>
-				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
-				<img className="pt-img2 animate2" src={animate2} alt="" />
-				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
-				<img className="pt-img4 animate-wave" src={animateWave} alt="" /> */}
 			</section >
 
 		</>

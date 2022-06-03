@@ -1,6 +1,7 @@
 /* ==================
 	8.23 Work Box
 		slideNumber
+				applePhone
 =================== */
 .work-area {
 	.pt-img1 {
@@ -150,6 +151,11 @@
 	height: 762px;
 	position: absolute;
 	top: -16px;
+
+	@include respond('phone') {
+		left: 5px;
+		// width: 87vw !important;
+	}
 }
 
 .connentInnerr {
@@ -164,6 +170,12 @@
 	overflow: hidden;
 	position: relative;
 	left: 10px;
+
+	@include respond('phone') {
+		// width: 80vw;
+		height: auto;
+		min-height: 730px;
+	}
 
 	// display: none;
 	.slideNumber {
@@ -274,4 +286,11 @@
 
 .seeMoreLinks span {
 	text-decoration: underline 2px;
+}
+
+@include respond('phone') {
+	.workPhone {
+		display: flex;
+		justify-content: center;
+	}
 }

@@ -1,14 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
-// Import Images
-import bg1 from '../../images/background/line-bg1.png';
-import doctorImg from '../../images/appointment/mobileee.png';
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
 import applePhone from '../../images/apple.png';
-
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getTipsFunc } from "../../store/tips/actions";
+
 
 
 
@@ -98,7 +95,7 @@ const AboutSection = () => {
 	return (
 		<>
 
-			<section className="section-area section-p5 tips-wraper  row" style={{}}>
+			<section className="section-area section-p5 tips-wraper  row">
 				<div className="col-lg-7 col-md-6 col-sm-12" style={{ marginTop: 30 }}>
 					<div className="col-lg-8 col-sm-12 mb-30" >
 						<a href='/our-services'>
@@ -136,34 +133,18 @@ const AboutSection = () => {
 							</div>
 						</a>
 					</div>
-					{/* <div className="col-lg-8 col-sm-12 mb-30">
 
-						<a href='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'>
-							<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
-								<div className="work-num-bx">4</div>
-								<div className="work-content">
-									<br />
-									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Self Diagnosis</h5>
-								</div>
-							</div>
-						</a>
-					</div> */}
 				</div>
-				<div className="col-lg-5 col-md-6 col-sm-12" style={{ padding: 0 }}>
+				<div className="col-lg-5 col-md-6 col-sm-12 workPhone" style={{ padding: 0 }}>
 					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
-						{/* <div style={{ backgroundImage: "url(" + doctorImg + ")", }} className="content">
-						</div> */}
+
 						<div className='connentInnerr'>
 							<div onClick={() => privFunc()} className='nextPrevIcon prev'>
 								<div>
 									<img src={leftIcon} />
 								</div>
 							</div>
-							{/* <div className='slideNumber'>
-								<div>
-									{slideIndex + 1}/{data.length}
-								</div>
-							</div> */}
+
 							<SwipeableViews index={slideIndex} enableMouseEvents>
 								{
 									data?.length > 0 ?
@@ -180,23 +161,6 @@ const AboutSection = () => {
 										) : null
 								}
 							</SwipeableViews>
-							{/* <div
-								className='daytitsTitle'
-
-							>
-								<span
-									style={{
-										backgroundColor: "#565acf",
-										color: "white",
-										padding: 10,
-										paddingLeft: 20,
-										paddingRight: 20,
-										borderRadius: 30
-									}}
-								>
-									Tips of the Day
-								</span>
-							</div> */}
 							<div onClick={() => nextFunc()} className='nextPrevIcon next'>
 								<div>
 									<img src={rightIcon} />
