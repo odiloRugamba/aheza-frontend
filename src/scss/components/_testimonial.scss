@@ -1,6 +1,7 @@
 /* ==================
 	8.22 Story
 	img
+	15
 
 =================== */
 .thumb-wraper {
@@ -493,5 +494,13 @@
 
 	.logo {
 		width: 190px;
+	}
+}
+
+@media screen and (max-width: 390px) {
+	#logoCont {
+		.logo {
+			width: 100px;
+		}
 	}
 }

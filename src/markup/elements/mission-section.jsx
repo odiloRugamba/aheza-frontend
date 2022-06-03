@@ -54,18 +54,12 @@ const AboutSection = () => {
 											We also provide career counseling and entrepreneurship training.
 										</b>
 									</p>
-									{/* <p>
-										<b style={{color: "white"}}>
-										Aheza's mission is to listen, understand and support.
-										</b>
-									</p> */}
 								</div>
 								<div className="quote-icon-2">
 									<i className="fas fa-quote-left"></i>
 								</div>
 							</div>
 						</div>
-
 					</div>
 				</div>
 
