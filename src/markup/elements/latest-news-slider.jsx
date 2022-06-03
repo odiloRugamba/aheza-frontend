@@ -99,9 +99,10 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 							}
 						</div>
 						:
-						<div className="heading-bx text-center">
-							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
-
+						<div className='container g-header'>
+							<div className="heading-bx text-center g-space e-follow">
+								<h1 className="title m-b0 g-title">News</h1>
+							</div>
 						</div>
 					}
 
@@ -145,12 +146,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 							</Link>
 						</div>
 					}
-
 				</div>
-				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
-				<img className="pt-img2 animate2" src={animate2} alt="" />
-				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
-				<img className="pt-img4 animate-wave" src={animateWave} alt="" /> */}
 			</section >
 
 		</>

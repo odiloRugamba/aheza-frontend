@@ -15,11 +15,14 @@ const SocialMediaSection = ({ title }) => {
 	return (
 		<>
 
-			<section className="section-area section-sp1 blog-area" style={{ paddingTop: 0 }}>
-				<div className="container">
-					<div className="heading-bx text-center">
-						<h6 className="title-ext text-" style={{ fontSize: 80, color: "#565acf !important" }} color="#565acf !important">Follow Us on Social Media</h6>
+			<section className="section-area section-sp1 blog-area">
+				<div className="container g-header" >
+					<div className="heading-bx text-center g-space e-follow">
+						<h1 className="title m-b0 g-title">Follow Us on Social Media</h1>
 					</div>
+					{/* <div className="heading-bx text-center">
+						<h6 className="title-ext text- " style={{ fontSize: 80, color: "#565acf !important" }} color="#565acf !important">Follow Us on Social Media</h6>
+					</div> */}
 					<div className='row'>
 						<div className="col-xl-4 col-md-6">
 							<Timeline
