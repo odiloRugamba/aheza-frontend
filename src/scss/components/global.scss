@@ -1,0 +1,20 @@
+.g-header {
+ .g-title {
+  font-size: 80px;
+
+  @include respond('phone') {
+   font-size: 10vw;
+  }
+ }
+
+ .g-space {
+  margin: 10px;
+  margin-top: 70px;
+
+  @include respond('phone') {
+   margin: 0vw;
+   margin-top: 0vw;
+  }
+ }
+
+}

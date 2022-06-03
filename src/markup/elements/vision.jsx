@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
-
-// Import Images
-// import background from "../../images/background/footer-2.jpg"
 import background from "../../images/background/aheza-bg-6.png"
-// import background from "../../images/services/aheza/aheza-svc-14.jpeg"
 import testShape from "../../images/testimonials/shape.png"
 import testPic1 from "../../images/services/aheza/aheza-svc-14.jpeg"
 import testPic2 from "../../images/services/aheza/aheza-svc-15.jpeg"
@@ -13,16 +9,12 @@ import testPic3 from "../../images/services/aheza/aheza-svc-3.jpeg"
 import testPic4 from "../../images/services/aheza/aheza-svc-6.jpeg"
 import testPic5 from "../../images/services/aheza/aheza-svc-10.jpeg"
 import testPic6 from "../../images/services/aheza/aheza-svc-9.jpeg"
-import plusOrange from "../../images/shap/plus-orange.png"
-import squareBlue from "../../images/shap/square-blue.png"
-import circleDots from "../../images/shap/circle-dots.png"
-import circleOrange2 from "../../images/shap/circle-orange-2.png"
 import logo from '../../images/logo-2.png';
 
+
+
 class VisionSection extends Component {
-
 	render() {
-
 		const settings = {
 			dots: false,
 			infinite: true,
@@ -62,7 +54,7 @@ class VisionSection extends Component {
 											<p>
 												<b style={{ color: "white", fontSize: 20 }}>
 													Our vision is of a world where Rwandans receive
-													the mental health care they need; and go on to live productive and 
+													the mental health care they need; and go on to live productive and
 													fulfilling lives.
 												</b>
 											</p>

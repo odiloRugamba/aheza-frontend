@@ -21,7 +21,7 @@ function Header() {
 	const [model, setModel] = useState(false)
 	const [openResources, setopenResources] = useState(null)
 	const [emgNumber, setEmgNumber] = useState([
-		{ background: " #da751c", number: 'Call 1024', title: 'NH Rapid Response' },
+		{ background: " #da751c", number: 'Call 1024', title: 'Helpline' },
 		{ background: "#7d5787", number: '(+250) 788 315 809', title: 'Schedule an Appointment' },
 		{ background: "#006991", number: '(+250) 788 315 809', title: 'Main Office Line' }
 	])

@@ -62,7 +62,7 @@ const Footer = () => {
 				<div className='col-md-3' >
 					<div>
 						<span id='HeaderIcon' className="material-icons"></span>
-						<b style={{ color: "white" }}><u>Help line:</u></b>
+						<b style={{ color: "white" }}><u>Helpline:</u></b>
 						<a href="tel:+250788315809" style={{ color: "white" }}> 1024</a>
 					</div>
 					<div>
