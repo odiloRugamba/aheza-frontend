@@ -204,8 +204,6 @@ const SurveyPage = () => {
                 <h2>Answer this question</h2>
               </div>
             </div>
-            {/* <img className="pt-img1 animate-wave" src={animateWave} alt="" />
-            <img className="pt-img3 animate-rotate" src={animateRotate} alt="" /> */}
           </div>
         </div>
 
@@ -218,7 +216,7 @@ const SurveyPage = () => {
                     <div className="form-wraper contact-form ajax-form">
                       <div className="ajax-message"></div>
                       <div className="row">
-                        <div style={{ paddingTop: 40 }} className='onBehalfCont'>
+                        <div className='onBehalfCont'>
                           <div className="page-banner-entry">
                             <h4>I am taking this assesement on behalf of:</h4>
                           </div>
@@ -256,7 +254,7 @@ const SurveyPage = () => {
                       {
                         questions?.length > 0 ?
                           questions?.map(el =>
-                            <div style={{ paddingTop: 40, paddingLeft: 30, paddingRight: 30 }} className="row">
+                            <div className="row">
                               <div className="page-banner-entry">
                                 <h4>{el.question}</h4>
                               </div>
@@ -289,7 +287,7 @@ const SurveyPage = () => {
                                           {ans?.ans}
                                         </li>
                                       ) : <div className='textAreaCont'>
-                                        <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" cols="66" />
+                                        <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" style={{width: "100%"}} />
                                       </div>
                                   }
                                 </ul>

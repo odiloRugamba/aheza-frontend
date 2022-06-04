@@ -67,10 +67,6 @@ class VisionSection extends Component {
 							</div>
 						</div>
 					</div>
-					{/* <img className="pt-img1 animate1" src={plusOrange} alt=""/>
-					<img className="pt-img2 animate2" src={squareBlue} alt=""/>
-					<img className="pt-img3 animate3" src={circleDots} alt=""/>
-					<img className="pt-img4 animate4" src={circleOrange2} alt=""/> */}
 				</section>
 
 			</>

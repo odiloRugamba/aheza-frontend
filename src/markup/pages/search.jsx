@@ -51,14 +51,14 @@ const Stories = () => {
     }
   }, [res])
 
-  useEffect(() => {
-    if (blogs?.length) {
-      setData([...data, ...blogs])
-      setDataGlobal([...data, ...blogs])
-      setLoading(true)
+  // useEffect(() => {
+  //   if (blogs?.length) {
+  //     setData([...data, ...blogs])
+  //     setDataGlobal([...data, ...blogs])
+  //     setLoading(true)
 
-    }
-  }, [blogs])
+  //   }
+  // }, [blogs])
 
   useEffect(() => {
     if (resLink?.length) {
@@ -120,27 +120,18 @@ const Stories = () => {
   return (
     <>
       <Header />
-      <div className="page-content bg-white" style={{ marginTop: 100 }}>
+      <div className="page-content bg-white" style={{ marginTop: 130 }}>
 
         <div className="banner-wraper" >
-          <div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
-            <div className="container">
-              <div className="page-banner-entry text-center">
-                {/* <h2>Search</h2> */}
-                <div className='searchInput'>
-                  <input value={searchText} onChange={e => searchFunc(e)} type="" name="" placeholder='Search....' />
-                  <div >
-                    <button onClick={searchFunc}>
-                      <img src={searchIcon} alt="" />
-                    </button>
-                  </div>
-                </div>
+          <div className="container">
+            <div className='searchInput'>
+              <input value={searchText} onChange={e => searchFunc(e)} type="" name="" placeholder='Search....' />
+              <div >
+                <button onClick={searchFunc}>
+                  <img src={searchIcon} alt="" />
+                </button>
               </div>
             </div>
-
-            {/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" /> */}
-            {/* <img className="pt-img2 animate2" src={circleDots} alt="" /> */}
-            {/* <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
           </div>
         </div>
 
@@ -164,11 +155,11 @@ const Stories = () => {
                         <h6 className="post-title max-lines-2"><Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
                         <ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 
-
-                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
                           <li className="date">{
                             convertData(item?.updatedAt)
                           }</li>
+                          <Link to={"/story/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
+                          
                         </ul>
 
                       </div>

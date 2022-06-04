@@ -29,13 +29,16 @@ const LatestNewsSection = ({ title, content }) => {
 
 			<section className="section-area section- blog-area" style={{paddingTop: 20}}>
 				<div className="container">
-					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
-						<h2 className="title" style={{ fontSize: 80 }}>Publications</h2>
+					<div className="heading-bx" style={{display: "flex", justifyContent: "space-between"}}>
+						<h2 className="title title-80" >Publications
+						
+						</h2>
+						
 						<div>
 							<br></br>
 							<Link
 								to='/research-findings'
-								className="btn btn-outline-primary btn-sm"
+								className="btn btn-outline-primary btn-sm big-screen-only "
 								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 							>
 									See More Publications
@@ -61,7 +64,16 @@ const LatestNewsSection = ({ title, content }) => {
 						) : null
 						}
 					</div>
-					
+					<div className="mobile-only" style={{paddingLeft: "10%"}}>
+
+							<Link
+								to='/research-findings'
+								className="btn btn-outline-primary btn-sm"
+								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
+							>
+									See More Publications
+							</Link>
+					</div> 
 				</div>
 			</section >
 

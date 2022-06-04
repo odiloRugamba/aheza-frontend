@@ -66,7 +66,7 @@ const BlogGrid = () => {
 						<div style={{ paddingTop: 40}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2 style={{ fontSize: 80, paddingBottom: 50, color: "white" }}>Blog</h2>
+									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Blog</h2>
 								</div>
 							</div>
 						</div>
@@ -79,9 +79,6 @@ const BlogGrid = () => {
 								pageData?.map((item) => (
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
-											{/* <div className="post-media" style={{ overflow: "hidden", marginRight: 20, height: 180 }}>
-												<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} ><img src={Dcore.IMAGEURL + "/" + item.image} alt="" /></Link>
-											</div> */}
 											<div className="post-info">
 												<h6 className="post-title max-lines-1"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h6>
 

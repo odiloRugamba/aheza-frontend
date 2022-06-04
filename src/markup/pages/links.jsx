@@ -91,7 +91,7 @@ const Uploads = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300}} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{ fontSize: 80, paddingBottom: 50, color: "#fff" }}>News</h2>
+								<h2 className='title-80' style={{ paddingBottom: 50, color: "#fff" }}>News</h2>
 							</div>
 						</div>
 
@@ -115,12 +115,10 @@ const Uploads = () => {
 												</h6>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
-														{/* <i className="fa fa-user"></i> */}
 														{item.publisherName}
 														<br></br>
 														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
 													</li>
-													{/* <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a> */}
 													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </a>
 												</ul>
 											</div>

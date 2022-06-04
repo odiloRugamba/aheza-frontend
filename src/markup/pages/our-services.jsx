@@ -31,14 +31,12 @@ const Services = () => {
 			<Header />
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper">
-					<div className="page-banner" style={{ maxHeight: 300 }}>
+					<div className="page-" >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{ fontSize: 80, bottom: 100, position: 'relative', zIndex: 99999 }}>Our Services</h2>
+								<h2 style={{fontSize: 80}}>Our Services</h2>
 							</div>
 						</div>
-						{/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-						<img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
 					</div>
 				</div>
 				<section className="section-area section-sp1">
@@ -59,7 +57,6 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
-													{/* <Link to={"/our-services/" + el?.title?.replaceAll(" ", "-") + '/' + el?._id} onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link> */}
 													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</Link>
 												</div>
 											</div>

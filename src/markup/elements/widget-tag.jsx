@@ -27,14 +27,6 @@ const widgetTag = ({ tags }) => {
 								<Link to="#">{el}</Link>
 							))
 					}
-					{/* <Link to="#">Health</Link> 
-						<Link to="#">Life</Link> 
-						<Link to="#">Covid</Link> 
-						<Link to="#">Healthy</Link> 
-						<Link to="#">Growth</Link>
-						<Link to="#">Education</Link> 
-						<Link to="#">Manage</Link> 
-						<Link to="#">General</Link> */}
 				</div>
 			</div>
 

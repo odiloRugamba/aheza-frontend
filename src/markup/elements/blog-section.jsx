@@ -41,11 +41,8 @@ const LatestNewsSection = ({ title, content }) => {
 
 			<section className="section-area  blog-area" >
 				<div className="container">
-					{/* <div className="heading-bx text-center">
-						<h2 className="title" style={{ fontSize: 80}}>Blog</h2>
-					</div> */}
 					<div className="heading-bx text-center" style={{display: "flex", justifyContent: "space-between"}}>
-						<h2 className="title" style={{ fontSize: 80, textAlign: "left" }}>Additional Information</h2>
+						<h2 className="title title-80" style={{ textAlign: "left" }}>Additional Information</h2>
 						<div>
 							<br></br>
 							<Link

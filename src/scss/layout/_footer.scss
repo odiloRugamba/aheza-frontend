@@ -267,3 +267,17 @@ footer{
 		}
 	}
 }
+
+
+.footer-section{
+	background-color: black;
+	color: white;
+	padding: 20px;
+	padding-left: 70px;
+	font-size: 12px;
+	margin-right: 0;
+
+	@include respond('phone-land') {
+		padding-left: 20px;
+	}
+}

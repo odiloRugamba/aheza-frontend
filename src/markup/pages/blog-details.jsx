@@ -78,9 +78,6 @@ const BlogDetails = () => {
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single" style={{width: "100%"}}>
-										{/* <div className="post-media">
-											<img src={Dcore.IMAGEURL + "/" + blogItem?.image} alt="" />
-										</div> */}
 										<div className="info-bx">
 											<div className="ttr-post-title">
 												<h2 className="post-title max-lines-2">{blogItem?.title}</h2>
@@ -88,10 +85,6 @@ const BlogDetails = () => {
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: blogItem?.content, }}></div>
 											</div>
-											{/* <ul className="post-meta">
-											<li className="author"><Link to="/blog-details"><img src={testPic3} alt="" /> Sonar Moyna</Link></li>
-											<li className="date">19 July 2021</li>
-										</ul> */}
 											<div className="ttr-post-footer">
 												<div className="post-tags">
 													<strong>Tag:</strong>
@@ -106,8 +99,6 @@ const BlogDetails = () => {
 											</div>
 										</div>
 									</div>
-
-									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
@@ -126,11 +117,7 @@ const BlogDetails = () => {
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
 
-										{/* <WidgetSearch /> */}
-
 										<WidgetRelatedPosts data={relData} />
-
-										{/* <WidgetTag tags={blogItem?.tags} /> */}
 
 									</aside>
 								</div>

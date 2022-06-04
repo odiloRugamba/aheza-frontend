@@ -78,23 +78,6 @@ const AudioPlayer = () => {
       <div className='audioPlayer'>
         <img src={PickImage} />
         <div className='playBg'></div>
-        {/* <div className='audioplayerBtnCont'>
-          <div className='AudioPlayLine'>
-            <div style={{ width: 50 + '%' }} className='linePlayed'></div>
-            <div className='dragPin'></div>
-          </div>
-          <div className='playBtnCont'>
-            <div onClick={() => prevFunc()}>
-              <img src={prevIcon} />
-            </div>
-            <div onClick={() => playPauseFunc()} className='playPuaseBtn'>
-              <img src={playing ? PauseIcon : playIcon} />
-            </div>
-            <div onClick={() => nextFunc()}>
-              <img src={nextIcon} />
-            </div>
-          </div>
-        </div> */}
         <div className='audioplayerBtnCont'>
           <button className="forwardBackward" onClick={backThirty}><FaAngleDoubleLeft /></button>
           <button onClick={togglePlayPause} className="playPause">

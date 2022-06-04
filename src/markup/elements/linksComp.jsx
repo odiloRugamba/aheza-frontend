@@ -114,8 +114,7 @@ const LatestNewsSection = ({ title, content }) => {
          </li>
         </b>
         <a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm">Read More </a>
-        {/* <Link to={"/story/" + item.title?.replaceAll(" ","-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link> */}
-       </ul>
+        </ul>
       </div>
      </div>
     ))}

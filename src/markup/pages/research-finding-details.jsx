@@ -83,7 +83,6 @@ const ResearchFindingDetails = () => {
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single" style={{width: "100%"}}>
 										<div className="post-media">
-											{/* <img src={blogDefaultPic1} alt="" /> */}
 										</div>
 										<div className="info-bx">
 											<div className="ttr-post-title">
@@ -115,20 +114,11 @@ const ResearchFindingDetails = () => {
 											}
 											<hr />
 											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
-												{/* <div className="post-tags">
-													<strong>Tags:</strong>
-													{
-														research?.tags?.map(el => (
-															<Link to="#">{el}</Link>
-														))
-													}
-												</div> */}
+												
 												<SocialMediaComp />
 											</div>
 										</div>
 									</div>
-
-									{/* <AuthorProfile /> */}
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
@@ -143,8 +133,6 @@ const ResearchFindingDetails = () => {
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
 										<ResearchFindingWidget data={reletedData} />
-										{/* <WidgetTag tags={research?.tags} /> */}
-										{/* <div className="widget"> */}
 											<div className="brochure-bx">
 												<h5 className="title-head">Research</h5>
 												<Link to="/contact-us" className="download-link">
@@ -158,7 +146,6 @@ const ResearchFindingDetails = () => {
 													<span>Research</span>
 												</a>
 											</div>
-										{/* </div> */}
 									</aside>
 								</div>
 

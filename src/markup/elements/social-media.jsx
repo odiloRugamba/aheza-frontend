@@ -20,9 +20,6 @@ const SocialMediaSection = ({ title }) => {
 					<div className="heading-bx text-center g-space e-follow">
 						<h1 className="title m-b0 g-title">Follow Us on Social Media</h1>
 					</div>
-					{/* <div className="heading-bx text-center">
-						<h6 className="title-ext text- " style={{ fontSize: 80, color: "#565acf !important" }} color="#565acf !important">Follow Us on Social Media</h6>
-					</div> */}
 					<div className='row'>
 						<div className="col-xl-4 col-md-6">
 							<Timeline
@@ -49,10 +46,6 @@ const SocialMediaSection = ({ title }) => {
 					</div>
 
 				</div>
-				{/* <img className="pt-img1 animate1" src={animate1} alt="" />
-				<img className="pt-img2 animate2" src={animate2} alt="" />
-				<img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
-				<img className="pt-img4 animate-wave" src={animateWave} alt="" /> */}
 			</section>
 
 		</>

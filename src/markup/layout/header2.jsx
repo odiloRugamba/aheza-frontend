@@ -68,9 +68,6 @@ class Header extends Component {
 									<Link to="/"><img src={logo} alt="" /></Link>
 								</div>
 								<button className="navbar-toggler collapsed menuicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
-									{/* <span></span>
-									<span></span>
-									<span></span> */}
 									hello
 								</button>
 								<div className="secondary-menu">
@@ -120,15 +117,7 @@ class Header extends Component {
 										</li>
 										<li><Link to="/contact-us">Contact Us</Link></li>
 									</ul>
-									{/* <ul className="social-media">
-										<li><a rel="noreferrer" target="_blank" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
-										<li><a rel="noreferrer" target="_blank" href="https://www.google.com/" className="btn btn-primary"><i className="fab fa-google"></i></a></li>
-										<li><a rel="noreferrer" target="_blank" href="https://www.linkedin.com/" className="btn btn-primary"><i className="fab fa-linkedin-in"></i></a></li>
-										<li><a rel="noreferrer" target="_blank" href="https://twitter.com/" className="btn btn-primary"><i className="fab fa-twitter"></i></a></li>
-									</ul> */}
-									{/* <div className="menu-close" id="menuClose">
-										<i className="ti-close"></i>
-									</div> */}
+
 								</div>
 							</div>
 						</div>

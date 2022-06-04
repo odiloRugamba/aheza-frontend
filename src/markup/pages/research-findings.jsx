@@ -57,7 +57,7 @@ const ResearchFindings = () => {
 						<div style={{ paddingTop: 40}}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2 style={{ fontSize: 80, paddingBottom: 50, color: "white" }}>Research</h2>
+									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Research</h2>
 								</div>
 							</div>
 						</div>

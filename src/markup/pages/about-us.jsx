@@ -58,13 +58,6 @@ class AboutUs extends Component {
 					
 					<PartnersSection/>
 					
-					{/* <FeatureSection3 />
-
-					<TeamSection />
-
-					<TestimonialSection />
-
-					<LatestNewsSection /> */}
 
 				</div>
 

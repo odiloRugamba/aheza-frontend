@@ -12,18 +12,18 @@ import { Link } from 'react-router-dom';
 const AboutSection = () => {
 	return (
 		<>
-			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 0 }}>
+			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 0}}>
 				<div className="container g-header">
 					<div className="heading-bx text-center g-space">
 						<h1 className="title m-b0 g-title">Partnerships</h1>
 					</div>
 				</div>
-				<div className="row">
+				<div className="row" style={{marginRight: 0 }}>
 					<div className="col-lg-6 col-md-6 col-sm-12" style={{ marginTop: 10 }}>
 						<div className="ttr-post-text missionText" style={{ padding: 10 }}>
 						</div>
 						<div className="slider-item">
-							<div className="testimonial-bx" style={{ backgroundColor: "#F17731", padding: 50, margin: 50, marginTop: 70, marginLeft: 0 }}>
+							<div className="testimonial-bx partnerships-box">
 								<div className="testimonial-content">
 									<p>
 										<b style={{ color: "white" }}>
@@ -50,11 +50,6 @@ const AboutSection = () => {
 											For more information about how your business or organization can become a partner,  <a href='/contact-us'>contact us.</a>
 										</b>
 									</p>
-									{/* <p>
-										<b style={{color: "white"}}>
-										Aheza's mission is to listen, understand and support.
-										</b>
-									</p> */}
 								</div>
 								<div className="quote-icon">
 									<i className="fas fa-quote-left"></i>

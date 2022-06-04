@@ -83,7 +83,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 
 					{!isHomePage ?
 						<div className="heading-bx text-center" style={{ display: "flex", justifyContent: "space-between" }}>
-							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
+							<h2 className="title title-80">News</h2>
 							{
 								!isHomePage &&
 								<div>

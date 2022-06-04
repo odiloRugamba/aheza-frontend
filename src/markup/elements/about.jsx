@@ -30,8 +30,6 @@ class aboutSection extends Component {
 							</div>
 							<div className="col-lg-6 mb-30">
 								<div className="heading-bx">
-									{/* <h6 className="title-ext text-secondary">About Us</h6> */}
-									{/* <h1 className="title">Introduction</h1> */}
 									<p>
 										Aheza Healing & Careers Center opened in 2019 and is managed by <a target="_blank" href="https://twitter.com/GAERGRwanda">GAERG</a>,
 										an organisation founded by graduate student survivors of the 1994

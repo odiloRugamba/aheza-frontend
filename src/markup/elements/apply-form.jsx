@@ -99,7 +99,6 @@ const ApplyForm = ({ placeholder }) => {
 						<textarea value={reasonToJoin} onChange={(e) => setReasonToJoin(e.target.value)} rows="8" name="reason" placeholder="Why do you want to join?" id="reason"></textarea>
 					</p>
 					<p className="form-submit">
-						{/* <input onClick={() => submitFunc()} type="submit" value="Apply" className="submit" id="submit" name="submit" load /> */}
 						<button onClick={() => submitFunc()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading && checked ? true : false}>
 							{
 								loading ? !checked ? <div className="spinner-border" role="status">

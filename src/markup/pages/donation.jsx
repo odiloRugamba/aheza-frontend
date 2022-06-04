@@ -64,17 +64,17 @@ const ResearchFindings = () => {
 
     <section className="section-area">
 
-        <div className='row' style={{ backgroundColor: "white" }}>
+        <div className='row' style={{ backgroundColor: "white", margin: 0 }}>
             <div  style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
-                <div className='content col-md-8' style={{ padding: 100, paddingRight: 0 }} >
+                <div className='content col-md-8 donation-section' >
 
                     <br></br>
                     <br></br>
-                    <h3 className='title' style={{ fontSize: 80 }}>Why
+                    <h3 className='title title-80' >Why
                             <a
                             href='https://dashboard.flutterwave.com/donate/ryb56zpwivpe'
-                            className="btn btn-outline-primary btn-sm"
-                            style={{ background: '#f17732', borderColor: "#f17732", color: '#fff', fontSize: 80, fontWeight: 700, padding: 20, marginLeft: 20, marginRight: 20, paddingLeft: 50, paddingRight: 50 }}
+                            className="btn btn-outline-primary btn-sm title-80 donate-btn"
+                            
                             >
                             <span>
                             Donate
@@ -83,22 +83,22 @@ const ResearchFindings = () => {
                             to Aheza Healing
                     <br /> & Career Center?</h3>
                         
-                    <div className="testimonial-bx" style={{ backgroundColor: "#F17731", padding: 50, margin: 50, marginTop: 70, marginLeft: 0 }}>
+                    <div className="testimonial-bx donation-text-first-box" >
                         <div className="testimonial-content" style={{ fontSize: 20 }}>
                             <br></br>
                             <p>
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Accurate, age-appropriate and culturally-sensitive information</b> to support   personal and professional development, with particular focus on  leadership and entrepreneurship.
                                 </span>
                             </p>    
                             <p>     
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Work techniques</b> such as peer support groups, psychoeducation, community outreach and one-to-one sessions. 
                             </span>
                             </p>
                             
                             <p>
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Resilience-oriented therapy protocol</b> for emotion regulation, behavioral self-management and identity development.
                                 </span>
                             </p>
@@ -110,16 +110,16 @@ const ResearchFindings = () => {
                             <i className="fas fa-quote-left"></i>
                         </div>
                     </div>
-                    <div className="testimonial-bx" style={{ backgroundColor: "#565acf", padding: 50, margin: 50, marginTop: 70, marginLeft: 0 }}>
+                    <div className="testimonial-bx donation-text-second-box" >
                         <div className="testimonial-content" style={{ fontSize: 20 }}>
                             <br></br>
                             <p>
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Proposed treatment with combined elements of process</b> which include  clinical and community interventions to build up agency, responsibility and motivation for change. 
                                 </span>
                             </p>
                             <p>
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Cooperation with local officials to: </b>
                                     <ul style={{paddingLeft: 40}}>
                                         <li> - Promote mental health care and  awareness. </li>
@@ -130,7 +130,7 @@ const ResearchFindings = () => {
                                 </span>
                             </p>
                             <p>
-                                <span style={{color: "white", fontSize: 25}}>
+                                <span className='donation-text'>
                                     <b style={{ color: "white" }}>Holistic approaches that include: </b>
                                     <ul style={{ paddingLeft: 40 }}>
                                         <li> - Mental health care and awareness. </li>

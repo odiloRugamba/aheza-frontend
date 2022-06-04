@@ -95,7 +95,7 @@ const AboutSection = () => {
 	return (
 		<>
 
-			<section className="section-area section-p5 tips-wraper  row">
+			<section className="section-area section-p5 tips-wraper  row" style={{marginRight: 0}}>
 				<div className="col-lg-7 col-md-6 col-sm-12" style={{ marginTop: 30 }}>
 					<div className="col-lg-8 col-sm-12 mb-30" >
 						<a href='/our-services'>

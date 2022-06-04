@@ -359,6 +359,36 @@
 	}
 }
 
+.mission-box {
+	background-color: #565acf;
+	padding: 50px;
+	margin: 50px;
+	margin-top: 70px;
+	margin-left: 0;
+
+	@include respond('phone') {
+		margin: 0px;
+		margin-left: 10px;
+		padding: 30px;
+	}
+}
+
+
+.partnerships-box {
+	background-color: #F17731;
+	padding: 50px;
+	margin: 50px;
+	margin-top: 70px;
+	margin-left: 0;
+
+	@include respond('phone') {
+		margin: 0px;
+		margin-left: 10px;
+		padding: 30px;
+		padding-bottom: 45px;
+	}
+}
+
 .contact-info {
 	padding: 50px 50px 30px;
 	color: #fff;
@@ -602,5 +632,141 @@
 .missionText {
 	p {
 		font-size: 15px;
+	}
+}
+
+.title-80 {
+	font-size: 80px;
+
+
+	@include respond('tab-land') {
+		font-size: 60px;
+	}
+
+	@include respond('phone-land') {
+		font-size: 40px;
+	}
+}
+
+.mobile-only {
+		display: none;
+		
+		@include respond('phone-land') {
+			display: block;
+		}
+}
+
+.big-screen-only {
+	display: block;
+
+	@include respond('phone-land') {
+		display: none;
+	}
+}
+
+
+.donate-btn{
+	background: #f17732;
+	border-color: #f17732;
+	color:#fff;
+	font-weight: 700;
+	padding: 20px;
+	margin-left: 20px;
+	padding-left: 50px;
+	padding-right: 50px;
+
+	@include respond('phone-land') {
+		margin-left: 0px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+ 
+.donation-section{
+	padding: 80px;
+	padding-right: 0px;
+	padding-bottom: 0;
+
+	@include respond('phone-land') {
+		padding: 10px;
+		padding-right: 0px;
+	}
+}
+
+.donation-text-first-box{
+	
+	background-color: #F17731;
+	padding: 50px;
+	margin: 50px;
+	margin-top: 70px;
+	margin-left: 0;
+
+	@include respond('phone-land') {
+			padding: 20px;
+			margin: 0;
+			margin-top: 70px;
+			margin-left: 0;
+			padding-bottom: 70px;
+	}
+
+}
+
+.donation-text-second-box {
+
+	background-color: #565acf;
+	padding: 50px;
+	margin: 50px;
+	margin-top: 70px;
+	margin-left: 0;
+
+	@include respond('phone-land') {
+		padding: 20px;
+		margin: 0;
+		margin-top: 70px;
+		margin-left: 0;
+		margin-bottom: 70px;
+		padding-bottom: 70px;
+	}
+
+}
+
+.donation-text{
+	color: white;
+	font-size: 25px;
+
+	@include respond('phone-land') {
+		font-size: 20px;
+	}
+}
+
+.contact-us-title{
+	margin-bottom: 70px;
+
+	@include respond('phone-land') {
+		margin-bottom: 0px;
+	}
+}
+
+.service-sidebar{
+	@include respond('phone-land') {
+		display: none;
+	}
+}
+
+.no-padding-on-mobile-only{
+	@include respond('phone-land') {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+.youtube-frame{
+
+	height: 380px;
+	width:  753px;
+
+	@include respond('phone-land') {
+		height: 280px;
+		width: 350px;
 	}
 }

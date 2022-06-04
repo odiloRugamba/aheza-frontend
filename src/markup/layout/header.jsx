@@ -7,10 +7,6 @@ import searchIcon from '../../images/search.svg';
 // book
 // Images
 import logo from '../../images/logo-2.png';
-import twitterLogo from "../../images/twitter.svg"
-import instagramLogo from "../../images/instagram.svg"
-import facebook from "../../images/facebook.svg"
-import logoWhite from '../../images/logo-white.png';
 import { BsXLg } from "react-icons/bs";
 
 
@@ -35,32 +31,23 @@ function Header() {
 	}
 
 	let ourServicesActive = "";
-	if (route.includes("service")) {
+	if (route === "/our-services") {
 		ourServicesActive = "active"
 	}
 
+	
+	let otherInstitutionsServices = "";
+	if (route === "/other-institutions-services") {
+		otherInstitutionsServices = "active"
+	}
+
+
 	let resourcesActive = "";
-	if (route.includes("stor") || route.includes("research") || route.includes("upload")) {
+	if (route === "/resources") {
 		resourcesActive = "active"
 	}
 
-
-	let blogActive = "";
-	if (route.includes("blog")) {
-		blogActive = "active"
-	}
-
-	let institutionActive = "";
-	if (route.includes("/institutions-list") || route.includes("/institution-profile")) {
-		institutionActive = "active"
-	}
-
-
-	let aboutUsActive = "";
-	if (route.includes("about-us")) {
-		aboutUsActive = "active"
-	}
-
+	
 	let contactUsActive = "";
 	if (route.includes("contact-us")) {
 		contactUsActive = "active"
@@ -77,23 +64,6 @@ function Header() {
 		setClassesList("menu-links  navbar-collapse collapse justify-content-end")
 	}
 
-	const openMenu = (item) => {
-		if (item === "resources") {
-			if (openResources === "open") {
-				setopenResources(null)
-			} else {
-				setopenResources("open")
-				setOpenService(null)
-			}
-		} else {
-			if (openService === "open") {
-				setOpenService(null)
-			} else {
-				setOpenService("open")
-				setopenResources(null)
-			}
-		}
-	}
 	const onChangeRoute = (link) => {
 		history.push(link)
 		setModel(false)
@@ -114,70 +84,23 @@ function Header() {
 							</button>
 							<div className="secondary-menu">
 								<ul>
-									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
 									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{ color: "white", fontSize: 20 }}><u>Talk to Us</u></b>
-										{/* <i className="btn-icon-bx fas fa-chevron-right"></i> */}
 									</a></li>
 								</ul>
 							</div>
 							<div className="secondary-menu">
 								<ul>
-									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
 									<li className="bt-aea"><a onClick={() => setModel(true)} className=""> <Link to="/search"><img className='searchHIcon' src={searchIcon} alt="" /></Link></a></li>
 								</ul>
 							</div>
 							<div className={classesList} id="menuDropdown">
 								<div className="menu-logo">
-									{/* <Link to="/"><img src={logoWhite} alt="" /></Link> */}
 								</div>
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
-									<li onClick={() => { openMenu("service") }} className={ourServicesActive, openService}>
-										<Link to="/our-services">Services
-											{/* <i className="fa fa-plus"></i> */}
-										</Link>
-										{/* <ul className="sub-menu ">
-											<li className="add-menu-left tab-port">
-												<ul>
-													<li><Link to="/our-services"><span>Our services</span> </Link></li>
-													<li><Link to="/other-institutions-services"><span>Other institutions</span></Link></li>
-												</ul>
-											</li>
-										</ul> */}
-									</li>
-									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
-										<Link to="/resources">Resources
-											{/* <i className="fas fa-plus"></i> */}
-										</Link>
-										{/* <ul className="sub-menu">
-											<li className="add-menu-left">
-												<ul>
-													<li><Link to="/news"><span>Research</span></Link></li>
-													<li><Link to="/stories"><span>Stories</span></Link></li>
-													<li><Link to="/links"><span>Links</span></Link></li>
-													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
-												</ul>
-											</li>
-										</ul> */}
-									</li>
-									<li onClick={() => { openMenu("media") }} className={resourcesActive, openResources}>
-										<Link to="/other-institutions-services">Other  Institutions
-											{/* <i className="fas fa-plus"></i> */}
-										</Link>
-										{/* <ul className="sub-menu">
-											<li className="add-menu-left">
-												<ul>
-													<li><Link to="/news"><span>Research</span></Link></li>
-													<li><Link to="/stories"><span>Stories</span></Link></li>
-													<li><Link to="/links"><span>Links</span></Link></li>
-													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
-												</ul>
-											</li>
-										</ul> */}
-									</li>
-									{/* <li className={blogActive}><Link to="/search">Search</Link> </li> */}
-									{/* <li className={blogActive}><Link to="/blog-grid">Resources </Link> </li> */}
-									{/* <li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li> */}
+									<li className={ourServicesActive}> <Link to="/our-services">Services </Link> </li>
+									<li className={resourcesActive}> <Link to="/resources">Resources </Link> </li>
+									<li className={otherInstitutionsServices}> <Link to="/other-institutions-services">Other  Institutions </Link> </li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
 									<li className={donationActive}><Link to="/donation">Donate</Link></li>
 								</ul>
@@ -237,6 +160,5 @@ function Header() {
 		</>
 	);
 }
-{/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */ }
 
 export default Header;

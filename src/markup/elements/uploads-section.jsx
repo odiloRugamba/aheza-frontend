@@ -38,7 +38,7 @@ const LatestNewsSection = ({ title, content }) => {
 			<section className="section-area section-sp1 blog-area">
 				<div className="container">
 					<div className="heading-bx text-center">
-						<h2 className="title" style={{ fontSize: 80}}>Uploads</h2>
+						<h2 className="title title-80">Uploads</h2>
 					</div>
 					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{

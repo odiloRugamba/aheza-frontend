@@ -27,7 +27,6 @@ const WidgetRelatedPosts = ({ title, data }) => {
 					{
 						data ? data?.map(el =>
 							<div className="widget-post clearfix">
-								{/* <div className="ttr-post-media"> <img src={Dcore?.IMAGEURL + "/" + el?.image} width="200" height="143" alt="" /> </div> */}
 								<div className="ttr-post-info">
 									<div className="ttr-post-header">
 										<p className="post-title  "
@@ -41,9 +40,6 @@ const WidgetRelatedPosts = ({ title, data }) => {
 											}}
 										><Link onClick={() => changeRoute("/blog-grid" + '/' + el.title?.replaceAll(" ", "-") + '/' + el._id)} style={{fontSize: 20}}>{el?.title}</Link></p>
 									</div>
-									{/* <div className="ttr-post-header">
-										<h6 onClick={() => changeRoute("/blog-grid" + '/' + el.title?.replaceAll(" ", "-") + '/' + el._id)} className="post-title max-lines-2"><a>{el?.title}</a></h6>
-									</div> */}
 									<ul className="post-meta">
 										<li className="date">{convertData(el?.updatedAt)}</li>
 									</ul>
@@ -51,8 +47,6 @@ const WidgetRelatedPosts = ({ title, data }) => {
 							</div>
 						) : null
 					}
-					{/* <div className="more"> <Link to={"/blog-grid"} className="more-text">See All</Link> </div> */}
-
 					<div className="more">
 						<Link to={"/blog-grid"}  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
 					</div>

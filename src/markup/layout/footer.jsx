@@ -18,9 +18,9 @@ const Footer = () => {
 
 	return (
 		<>
-			<div className='row' style={{ backgroundColor: "black", color: "white", padding: 20, paddingLeft: 70, fontSize: 12 }}>
+			<div className='row footer-section'>
 
-				<div className='row'>
+				<div className='row' style={{marginRight: 0}}>
 					<div className='col-md-6'>
 						<p style={{ fontSize: 14, margin: 0 }} >
 							<u><h3 className="footer-" style={{ fontSize: 17, padding: 0, margin: 0, color: "white" }}>Privacy</h3></u>
@@ -50,12 +50,6 @@ const Footer = () => {
 						<b style={{ color: "white" }}><u>Email:</u> </b>
 						info@aheza.org.rw
 
-						{/* <span >
-							<embed src={twitterLogo} width="20" /> 
-							<embed src={instagramLogo} width="20" />
-							<embed src={facebook} width="20" />
-						</span> */}
-
 					</div>
 				</div>
 
@@ -80,7 +74,6 @@ const Footer = () => {
 						Bugesera District, Ntarama Sector
 					</u>
 				</div>
-				{/* </div> */}
 			</div>
 		</>
 	);

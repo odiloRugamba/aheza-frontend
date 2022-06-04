@@ -95,9 +95,6 @@ const AboutSection = () => {
                                                     Finalize Appointment
                                                 </h3>
                                             </div>
-                                            {/* <div>
-                                                <img src={verified} />
-                                            </div> */}
                                         </div>
 
                                         <div className='questionCont'>

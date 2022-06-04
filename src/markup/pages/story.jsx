@@ -119,31 +119,17 @@ const StorysDetails = () => {
 			<Header />
 			{
 				res?._id ? <div className="page-content bg-white" style={{ marginTop: 100 }}>
-
-					{/* <div className="banner-wraper">
-						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 250 }}>
-							<div className="container">
-								<div className="page-banner-entry text-center">
-									<h2>Details</h2>
-								</div>
-							</div>
-							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
-						</div>
-					</div> */}
-
 					<section className="section-area section-sp1 bg-white">
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single" style={{width: "100%"}}>
-										<div className="post-media">
+										<div className="post-">
 											{
 												res?.youtubeVideoLink &&
 												<>
 													<iframe
-														width="853"
-														height="480"
+														className="youtube-frame"
 														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
 														frameBorder="0"
 														allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -178,9 +164,6 @@ const StorysDetails = () => {
 											</div>
 										</div>
 									</div>
-
-									{/* <AuthorProfile /> */}
-
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
 											<h4 className="widget-title">{resComments?.length} Comments</h4>
@@ -197,9 +180,6 @@ const StorysDetails = () => {
 								</div>
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
-
-										{/* <WidgetSearch placeholder='Search Anything...' /> */}
-
 										<WidgetRecentPosts data={data} currentPage="/story/" more="/storys" title="Recent Stories" />
 									</aside>
 								</div>

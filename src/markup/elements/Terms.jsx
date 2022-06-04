@@ -17,8 +17,6 @@ const Terms = () => {
                                 <h2>Terms and Conditions</h2>
                             </div>
                         </div>
-                        {/* <img className="pt-img1 animate-wave" src={waveBlue} alt="" />
-                        <img className="pt-img3 animate-rotate" src={plusBlue} alt="" /> */}
                     </div>
                 </div>
                 <div className="container">

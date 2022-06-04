@@ -39,29 +39,18 @@ const Index = () => {
 
 			<MainBannerSection />
 
-			{/* <AboutSection /> */}
-
-
 			<WorkSection />
 
-			{/* <hr/> */}
-
 			<VisionSection />
-
-			{/* <hr style={{ color: "white" }} /> */}
-
-			{/* <AppointmentSection /> */}
-
-			{/* <ServicesSliderSection /> */}
 
 			<MissionSection />
 			
 			<PartnerSection />
-			{/* <TestimonialSection /> */}
 
 			<LatestNewsSection content={data} title="Aheza links News" isHomePage={true}/>
 
 			<SocialMediaSection />
+
 			<Footer />
 
 		</>

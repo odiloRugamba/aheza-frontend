@@ -140,14 +140,11 @@ const UploadsDetails = () => {
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
 									<div className="blog-card blog-single" style={{width: "100%"}}>
 										<div className="post-media">
-											{/* <img src={blogDefaultPic1} alt="" /> */}
 											{
 												res?.youtubeVideoLink ?
 													<iframe
-														width="853"
-														height="480"
+														className="youtube-frame"
 														src={`https://www.youtube.com/embed/${getVideoId(res?.youtubeVideoLink)}`}
-														// src={`https://www.youtube.com/embed/YtoYJtgVUUM`}
 														frameBorder="0"
 														allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 														allowFullScreen
@@ -180,9 +177,6 @@ const UploadsDetails = () => {
 											</div>
 										</div>
 									</div>
-
-									{/* <AuthorProfile /> */}
-
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
 											<h4 className="widget-title">{resComments?.length} Comments</h4>

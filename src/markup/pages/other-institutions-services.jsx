@@ -26038,8 +26038,8 @@ const ServiceDetail = () => {
 			<Header />
 			<div className="page-content bg-white" style={{ marginTop: 60 }}>
 				<section className="section-area section-sp1">
-					<div className="container">
-						<div className="row">
+					<div className="container no-padding-on-mobile-only">
+						<div className="row" style={{marginRight: 0,}}>
 							<div className="col-lg-4">
 								<aside className="sticky-top pb-1">
 									<div className="widget">
@@ -26057,7 +26057,7 @@ const ServiceDetail = () => {
 								</aside>
 							</div>
 
-							<div className="col-lg-8 mb-30">
+							<div className="col-lg-8 mb-30" style={{ padding: 0, paddingLeft: 20}}>
 								<div className="post-media">
 								</div>
 								<div className="clearfix">
@@ -26074,9 +26074,7 @@ const ServiceDetail = () => {
 
 									<div className='tableRow' style={{background: "#C0C0C0"}}>
 										 <div className='titles'>
-{/* <i> */}
 											<b>Title</b>
-										{/* </i> */}
 </div>
 										<div className='dataParty'>
 											<b>Description</b>
@@ -26139,64 +26137,64 @@ const ServiceDetail = () => {
 									</div>
 
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											What is the mailing address of your organization (if different than Q2)?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        What is the mailing address of your organization (if different than Q2)?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["4. What is the mailing address of your organization (if different than Q2)?"]}
 										</div>
 									</div>
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											What type of mental health services does your organization provide?
-										</i>
-</div>
+									  <div className='titles'>
+                      <i>
+                        What type of mental health services does your organization provide?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["10. What type of mental health services does your organization provide?  - All Other Services"]}
 										</div>
 									</div>
 
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											How would you best describe the setting where you perform mental health services?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        How would you best describe the setting where you perform mental health services?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["12. How would you best describe the setting where you perform mental health services? "]}
 										</div>
 									</div>
 
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											Is your organization a public private organization, or an NGO?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        Is your organization a public private organization, or an NGO?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["14. Is your organization a public private organization, or an NGO?"]}
 										</div>
 									</div>
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											What types of mental health concerns does your organization address?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        What types of mental health concerns does your organization address?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["21. What types of mental health concerns does your organization address? "]}
 										</div>
 									</div>
 
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											What is the name and address of your organization?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        What is the name and address of your organization?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["1.  What is the name and address of your organization?"]}
 										</div>
@@ -26204,10 +26202,10 @@ const ServiceDetail = () => {
 
 									<div className='tableRow'>
 										 <div className='titles'>
-<i>
-											What is your website?
-										</i>
-</div>
+                      <i>
+                        What is your website?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											
 											<a target="_blank" href={"//" + currentOrganition["12. What is your website?"]}>{currentOrganition["12. What is your website?"]}</a>
@@ -26215,21 +26213,21 @@ const ServiceDetail = () => {
 									</div>
 
 									<div className='tableRow'>
-										 <div className='titles'>
-<i>
-											What is your phone number?
-										</i>
-</div>
+										<div className='titles'>
+                      <i>
+                        What is your phone number?
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["13. What is your phone number?"]}
 										</div>
 									</div>
 									<div className='tableRow'>
 										 <div className='titles'>
-<i>
-											Email address of contact persons
-										</i>
-</div>
+                      <i>
+                        Email address of contact persons
+                      </i>
+                    </div>
 										<div className='dataParty'>
 											{currentOrganition["15. Email address of contact persons"]}
 										</div>

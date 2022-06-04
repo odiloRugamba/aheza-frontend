@@ -173,18 +173,6 @@ const AboutSection = () => {
 										</button>
 									</div>
 								</div>
-								{/* <div className="col-xl-2 col-lg-6 col-md-6">
-									<div className="appointment-thumb">
-										<img src={appMobile} alt="" />
-										<div className="images-group">
-											<img className="img1" src={appWomen} alt="" />
-											<img className="img2" src={appMapPin} alt="" />
-											<img className="img3" src={appSetting} alt="" />
-											<img className="img4" src={appCheck} alt="" />
-											<img className="img5" src={appChat} alt="" />
-										</div>
-									</div>
-								</div> */}
 							</div>
 						</div>
 					</div>

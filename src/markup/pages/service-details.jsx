@@ -80,11 +80,9 @@ const ServiceDetail = () => {
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
-							<div className="col-lg-4">
+							<div className="col-lg-4 service-sidebar">
 								<aside className="sticky-top pb-1">
 									<div className="widget">
-
-										{/* <h5 className="title-head">Services Offered</h5> */}
 										<ul className="service-menu">
 											{
 												service?.services.length ? <div>

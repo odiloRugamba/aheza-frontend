@@ -24,15 +24,15 @@ section{
 		}
 	}
 	h2.title{
-		font-size:45px;
+		font-size:80px;
 		@include respond('laptop-small'){
-			font-size: 36px;		
+			font-size: 80px;		
 		}
 		@include respond('phone-land'){
-			font-size: 32px;
+			font-size: 60px;
 		}
 		@include respond('phone'){
-			font-size: 28px;
+			font-size: 40px;
 		}
 	}
 	@include respond('tab-port'){

@@ -105,24 +105,10 @@ const AboutSection = () => {
                                                     Once you pay, our program cordinator reviews your answers and match you with the best therapist for you and based on their
                                                     schedule we call you to fix time for your session.
                                                 </p>
-
-                                                {/* <div>
-                                                    <div className="textRepresent">Session Payment:</div> */}
-                                                {/* <div className='title text-secondary mb-1'>RWF {money}</div> */}
-                                                {/* </div> */}
                                             </div>
                                             <div>
                                             </div>
                                         </div>
-                                        {/* <div>
-                                            <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
-                                                {
-                                                    loading ? <div className="spinner-border" role="status">
-                                                        <span className="sr-only">Loading...</span>
-                                                    </div> : <span>Pay</span>
-                                                }
-                                            </button>
-                                        </div> */}
                                     </div>
                                 </div>
                             </div>

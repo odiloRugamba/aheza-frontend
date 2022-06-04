@@ -65,15 +65,8 @@ const ResearchFindings = () => {
 
 				
                 <LatestNewsSection content={links} title="Aheza links News" />
-                {/* <hr></hr>  */}
                 <ResearchSection content={research} />
-                {/* <hr></hr> */}
-                {/* <UploadsSection content={uploads} /> */}
-                {/* <hr></hr> */}
                 <StoriesSection content={stories} />
-                {/* <hr></hr> */}
-                {/* <BlogSection content={blog} /> */}
-
 
 			</div>
 
