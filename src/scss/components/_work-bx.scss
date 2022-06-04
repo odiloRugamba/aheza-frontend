@@ -2,6 +2,7 @@
 	8.23 Work Box
 		slideNumber
 				applePhone
+								connentInner
 =================== */
 .work-area {
 	.pt-img1 {
@@ -153,14 +154,16 @@
 	top: -16px;
 
 	@include respond('phone') {
-		left: 5px;
+		// left: 5px;
 		// width: 87vw !important;
+		width: 382px !important;
 	}
 }
 
 .connentInnerr {
 	border-width: 3px;
-	background: whitesmoke;
+	// background: whitesmoke;
+	background: black;
 	padding: 0;
 	width: 360px;
 	height: 730px;
@@ -174,6 +177,7 @@
 	@include respond('phone') {
 		// width: 80vw;
 		height: auto;
+		width: 310px !important;
 		min-height: 730px;
 	}
 
@@ -185,6 +189,13 @@
 		width: 370px;
 		display: flex;
 		justify-content: center;
+
+		@include respond('phone') {
+			// width: 80vw;
+			height: auto;
+			width: 360px !important;
+			min-height: 730px;
+		}
 
 		div {
 			background: white;
@@ -267,6 +278,10 @@
 	justify-content: center;
 	align-items: center;
 
+	@include respond('phone') {
+		// width: 300px;
+	}
+
 	// padding: 0px 70px  0px 10px;
 	.inneData {
 		z-index: 999;
@@ -278,6 +293,7 @@
 		font-size: 20px;
 		font-weight: 700;
 		// padding: 5px;
+
 	}
 
 }

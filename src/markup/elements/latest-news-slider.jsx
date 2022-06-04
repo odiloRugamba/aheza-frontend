@@ -80,7 +80,6 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 
 			<section className="section-area section-sp1 blog-area">
 				<div className="container">
-
 					{!isHomePage ?
 						<div className="heading-bx text-center" style={{ display: "flex", justifyContent: "space-between" }}>
 							<h2 className="title" style={{ fontSize: 80 }}>News</h2>
@@ -105,8 +104,6 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 							</div>
 						</div>
 					}
-
-
 					<div {...settings} className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{content?.map((item) => (
 							<div className="col-xl-4 col-md-6">
@@ -151,7 +148,6 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 
 		</>
 	);
-
 }
 
 export default LatestNewsSection;
