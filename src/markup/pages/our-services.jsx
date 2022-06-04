@@ -23,18 +23,17 @@ const Services = () => {
 
 	useEffect(() => {
 		setData(res)
-		// console.log(res)
 	}, [res])
 
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white" style={{ marginTop: 100 }}>
+			<div className="page-content bg-white page-min" style={{ marginTop: 100 }}>
 				<div className="banner-wraper">
 					<div className="page-" >
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{fontSize: 80}}>Our Services</h2>
+								<h2 style={{ fontSize: 80 }}>Our Services</h2>
 							</div>
 						</div>
 					</div>

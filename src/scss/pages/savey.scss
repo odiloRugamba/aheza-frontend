@@ -1,7 +1,9 @@
 // contact-wraper
 // radioBtn
 // CheckBoxBtn
-
+// swipeContout
+// contact-wraper
+// onBehalfCont
 
 .saveyCont {
   span {
@@ -12,6 +14,12 @@
     // width: 45vw;
     width: 700px;
     margin-bottom: 40px;
+    border-radius: 10px;
+  }
+
+  .contact-wraper {
+    border-radius: 10px !important;
+    overflow: hidden;
   }
 
   @media screen and (max-width: 594px) {
@@ -131,7 +139,7 @@
       display: none;
     }
 
-    height: auto;
+    // height: auto;
     //  min-height: 250px;
   }
 
@@ -191,7 +199,9 @@
   }
 
   .onBehalfCont {
-    h6 {
+    padding-top: 10px;
+
+    h4 {
       text-align: start;
     }
   }
@@ -265,5 +275,25 @@
     border-color: transparent;
     background: rgba($primary, 0.9);
     color: #fff;
+  }
+}
+
+.swipeCont {
+  #swipeContout {
+    .react-swipeable-view-container {
+      height: min-content;
+
+      // div {
+      //   background: yellow;
+      //   display: none !important;
+      // }
+
+      div[aria-hidden=true] {
+        height: 0px !important;
+        height: fit-content;
+        // display: none !important;
+        background: yellow;
+      }
+    }
   }
 }

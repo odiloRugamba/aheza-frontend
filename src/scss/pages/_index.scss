@@ -1,5 +1,7 @@
 /* ==================
 	10.1 Index
+		loadingComp
+				ourServicesCont
 =================== */
 .mfp-bg {
 	z-index: 999999;
@@ -611,21 +613,16 @@
 }
 
 .loadingComp {
-	// display: none;
 	position: relative;
-	// bottom: 80px;
 	display: flex;
 	flex-direction: column;
-	width: 73vw;
 	justify-content: center;
 	align-items: center;
 }
 
 .loadingComp {
 	img {
-		height: 500px;
 		position: relative;
-		bottom: 150px;
 	}
 }
 
@@ -649,11 +646,11 @@
 }
 
 .mobile-only {
-		display: none;
-		
-		@include respond('phone-land') {
-			display: block;
-		}
+	display: none;
+
+	@include respond('phone-land') {
+		display: block;
+	}
 }
 
 .big-screen-only {
@@ -665,10 +662,10 @@
 }
 
 
-.donate-btn{
+.donate-btn {
 	background: #f17732;
 	border-color: #f17732;
-	color:#fff;
+	color: #fff;
 	font-weight: 700;
 	padding: 20px;
 	margin-left: 20px;
@@ -681,8 +678,8 @@
 		padding-right: 20px;
 	}
 }
- 
-.donation-section{
+
+.donation-section {
 	padding: 80px;
 	padding-right: 0px;
 	padding-bottom: 0;
@@ -693,8 +690,8 @@
 	}
 }
 
-.donation-text-first-box{
-	
+.donation-text-first-box {
+
 	background-color: #F17731;
 	padding: 50px;
 	margin: 50px;
@@ -702,11 +699,11 @@
 	margin-left: 0;
 
 	@include respond('phone-land') {
-			padding: 20px;
-			margin: 0;
-			margin-top: 70px;
-			margin-left: 0;
-			padding-bottom: 70px;
+		padding: 20px;
+		margin: 0;
+		margin-top: 70px;
+		margin-left: 0;
+		padding-bottom: 70px;
 	}
 
 }
@@ -730,7 +727,7 @@
 
 }
 
-.donation-text{
+.donation-text {
 	color: white;
 	font-size: 25px;
 
@@ -739,7 +736,7 @@
 	}
 }
 
-.contact-us-title{
+.contact-us-title {
 	margin-bottom: 70px;
 
 	@include respond('phone-land') {
@@ -747,23 +744,23 @@
 	}
 }
 
-.service-sidebar{
+.service-sidebar {
 	@include respond('phone-land') {
 		display: none;
 	}
 }
 
-.no-padding-on-mobile-only{
+.no-padding-on-mobile-only {
 	@include respond('phone-land') {
 		padding: 0;
 		margin: 0;
 	}
 }
 
-.youtube-frame{
+.youtube-frame {
 
 	height: 380px;
-	width:  753px;
+	width: 753px;
 
 	@include respond('phone-land') {
 		height: 280px;

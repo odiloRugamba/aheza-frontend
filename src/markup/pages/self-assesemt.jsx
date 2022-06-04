@@ -3,17 +3,12 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions";
+
 import LoadingComp from "../elements/loading";
-import Header from "../layout/header";
-import Footer from "../layout/footer";
-import Map from '../elements/map';
+// Import Images
 import logo from '../../images/logo-2.png';
 
 
-// Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import animateWave from "../../images/shap/wave-blue.png";
-import animateRotate from "../../images/shap/plus-blue.png";
 
 const SurveyPage = () => {
   const [startSavey, setStartSavey] = useState(false)
@@ -32,17 +27,13 @@ const SurveyPage = () => {
     { name: "Couple", checked: false, id: 2 },
     { name: "Child", checked: false, id: 3 },
   ]
-
   const [onBehalfQuestion, setonBehalfQuestion] = useState(category)
-
-
   const [name, setName] = useState(null)
   const [email, setEmail] = useState(null)
   const [phoneNumber, setPhoneNumber] = useState(null)
 
   const [data, setData] = useState([])
   const history = useHistory()
-  // const { id } = useParams()
   const dispatch = useDispatch()
   const resData = useSelector(state => state.SelfAssessmentReducers.data)
 
@@ -287,7 +278,7 @@ const SurveyPage = () => {
                                           {ans?.ans}
                                         </li>
                                       ) : <div className='textAreaCont'>
-                                        <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" style={{width: "100%"}} />
+                                        <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" style={{ width: "100%" }} />
                                       </div>
                                   }
                                 </ul>
