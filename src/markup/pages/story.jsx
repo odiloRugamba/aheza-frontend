@@ -16,11 +16,7 @@ import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 import AudioFle from "../../images/audio.mp3";
-import { AudioPlayer } from "./AudioPlayer";
 
 
 const StorysDetails = () => {
