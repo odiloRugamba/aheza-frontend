@@ -167,7 +167,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<img src={applePhone} alt="" className='applePhone' />
+						<img src={applePhone} alt="" className='applePhone'  style={{maxWidth: "150%"}}/>
 					</div>
 				</div>
 				<div>

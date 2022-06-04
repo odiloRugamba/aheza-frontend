@@ -39,8 +39,8 @@ const SocialMediaSection = ({ title }) => {
 							</FacebookProvider>
 						</div>
 						<div className="col-xl-4 col-md-6">
-							<FacebookProvider appId="513240330217367" >
-								<Page href="https://www.facebook.com/Ahezahcenter/" tabs="timeline" />
+							<FacebookProvider appId="513240330217367">
+								<Page href="https://www.facebook.com/Ahezahcenter/" tabs="timeline" style={{ height: 530, width: 360 }} />
 							</FacebookProvider>
 						</div>
 					</div>
@@ -50,7 +50,6 @@ const SocialMediaSection = ({ title }) => {
 
 		</>
 	);
-
 }
 
 export default SocialMediaSection;
