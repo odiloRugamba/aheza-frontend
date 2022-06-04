@@ -136,7 +136,6 @@ const AboutSection = () => {
 											<div>
 												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
 											</div>
-
 										</div>
 										<div className="form-group">
 											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
