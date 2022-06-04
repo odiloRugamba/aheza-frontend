@@ -142,11 +142,8 @@ const Stories = () => {
           No Results...
         </div>
         }
-
       </div>
-
       <Footer />
-
     </>
   );
 }

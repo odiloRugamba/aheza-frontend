@@ -240,7 +240,7 @@ const SurveyPage = () => {
                     </div>
                   </div>
                 </div> : !surveyDone ?
-                  <div className='swipeCont' style={{ padding: 15 }}>
+                  <div className='swipeCont' style={{ padding: 0 }}>
                     <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.length > 0 ?
