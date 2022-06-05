@@ -3,15 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 // Images
 import lineBg from '../../images/appointment/line-bg.png';
-import appMobile from '../../images/appointment/mobile.png';
-import appWomen from '../../images/appointment/women.png';
-import appMapPin from '../../images/appointment/map-pin.png';
-import appSetting from '../../images/appointment/setting.png';
-import appCheck from '../../images/appointment/check.png';
-import appChat from '../../images/appointment/chat.png';
-import successPng from '../../images/success.png';
+
 import verified from '../../images/verified.png';
-import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
+import { createAppointment } from "../../store/appointment/actions";
 
 
 

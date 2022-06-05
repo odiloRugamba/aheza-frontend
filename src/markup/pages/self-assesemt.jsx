@@ -16,11 +16,9 @@ const SurveyPage = () => {
   const [model, setModel] = useState(true)
   const [surveyDone, setSurveyDone] = useState(false)
   const [questions, setQuestions] = useState([])
-  const [title, setTitle] = useState(null)
-  const [report, setReport] = useState(null)
+  
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
-  const [submition, setSubmition] = useState(null)
   const [chosenCategory, setChoseCategory] = useState("Individual");
   const category = [
     { name: "Individual", checked: true, id: 1 },
@@ -28,9 +26,7 @@ const SurveyPage = () => {
     { name: "Child", checked: false, id: 3 },
   ]
   const [onBehalfQuestion, setonBehalfQuestion] = useState(category)
-  const [name, setName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [phoneNumber, setPhoneNumber] = useState(null)
+
 
   const [data, setData] = useState([])
   const history = useHistory()
@@ -38,8 +34,6 @@ const SurveyPage = () => {
   const resData = useSelector(state => state.SelfAssessmentReducers.data)
 
   const startSaveyFunc = () => {
-    console.log("========>", chosenCategory)
-    console.log("========>", chosenCategory?.toUpperCase())
     dispatch(getQuestions(chosenCategory?.toUpperCase()))
     setStartSavey(true)
   }
@@ -77,7 +71,7 @@ const SurveyPage = () => {
         setOpendEndedAns(null)
         // console.log(copyData)
       }
-      goToAheza()
+      submitForm()
       // history.push('/book-appointment')
     }
   }
@@ -90,6 +84,7 @@ const SurveyPage = () => {
       return ''
     }
   }
+
   const checkQuestion = (id, ansID) => {
     const copyData = questions
     copyData.map(el => {
@@ -105,13 +100,15 @@ const SurveyPage = () => {
     })
     setData([...copyData])
   }
+
   const checkBoxQuestion = (id, ansID) => {
     const copyData = questions
     copyData.map(el => {
       if (el._id === id) {
         el.answers.map(elem => {
           if (elem?._id === ansID && !elem?.checked) {
-            elem.checked = true
+
+            // elem.checked = true
           } else if (elem?._id === ansID && elem?.checked) {
             elem.checked = false
           }
@@ -121,54 +118,51 @@ const SurveyPage = () => {
     setData([...copyData])
   }
 
-  const goToAheza = () => {
-    const answerCopy = []
+  const submitForm = () => {
+    const cleanAnswers = []
     questions.forEach(el => {
       if (el.questionType === 'OPENENDED') {
-        answerCopy.push({
-          question: el._id,
-          questionType: el.questionType,
-          answers: [
-            {
-              ans: el?.answers?.[0].ans
-            }
-          ]
+        cleanAnswers.push({
+          _id: el._id,
+          question: el.question,
+          answers: [el?.answers?.[0]?.ans]
         })
       } else {
-        const anses = []
+
+        const answersList = []
         el.answers.forEach(elem => {
           if (elem?.checked === true) {
-            anses.push({
-              ansID: elem?._id
-            })
+            answersList.push(elem?.ans)
           }
         })
-        answerCopy.push({
-          question: el._id,
-          questionType: el.questionType,
-          answer: anses
+
+        cleanAnswers.push({
+          _id: el._id,
+          question: el.question,
+          answers: answersList
         })
+
       }
     });
+    
     dispatch(answerQuestion({
       selfAssessment: id,
-      questions: answerCopy
+      questions: cleanAnswers
     }))
-    // setSubmition(true)
     history.push('/book-appointment')
   }
   const CloseModel = () => {
     setModel(false)
   }
-  // useEffect(() => {
-  //  dispatch(getQuestions(id))
-  // }, [])
+
+  
   useEffect(() => {
     setQuestions(resData?.questions)
-    setReport(resData?.explanation)
-    setTitle(resData?.title)
+    // setReport(resData?.explanation)
+    // setTitle(resData?.title)
     setId(resData?._id)
   }, [resData])
+
   const selectCategory = (id) => {
     category.map(el => {
       if (el.id === id) {
@@ -258,7 +252,7 @@ const SurveyPage = () => {
                                           <div>
                                             <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
                                               <label style={{ marginRight: 5 }} className='radioBtn'>
-                                                <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans.checked} type="radio" id="scales" name={el.question} />
+                                                <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans?.checked} type="radio" id="scales" name={el.question} />
                                                 <span />
                                               </label>
                                             </span>
@@ -271,7 +265,7 @@ const SurveyPage = () => {
                                         <li style={{ fontSize: 18, display: 'flex', alignItems: 'center' }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
                                           <div onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
                                             <label style={{ marginRight: 5 }} className='CheckBoxBtn'>
-                                              <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans.checked} type="checkbox" id="scales" name={el.question} />
+                                              <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans?.checked} type="checkbox" id="scales" name={el.question} />
                                               <span />
                                             </label>
                                           </div>
