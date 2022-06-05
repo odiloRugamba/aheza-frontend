@@ -1,12 +1,12 @@
 import axios from "axios";
 
-// const WEBURL = "https://aheza.org.rw";
-// const URL = "https://aheza.org.rw/api";
-// const IMAGEURL = "https://aheza.org.rw/uploads";
+const WEBURL = "https://aheza.org.rw";
+const URL = "https://aheza.org.rw/api";
+const IMAGEURL = "https://aheza.org.rw/uploads";
 
-const WEBURL = "http://localhost:3000";
-const URL = "http://localhost:9001/api";
-const IMAGEURL = "http://localhost:9001/uploads";
+// const WEBURL = "http://localhost:3000";
+// const URL = "http://localhost:9001/api";
+// const IMAGEURL = "http://localhost:9001/uploads";
 
 const request = async (method, url, data, headers) => {
   try {
