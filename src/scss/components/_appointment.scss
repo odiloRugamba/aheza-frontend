@@ -529,7 +529,8 @@ section-sp2
 @include respond('phone') {
 	.container {
 		position: relative;
-		left: -5px;
+		// left: -5px;
 		padding-left: 5px;
+		margin-left: 6px;
 	}
 }

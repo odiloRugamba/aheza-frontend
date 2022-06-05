@@ -35,7 +35,11 @@
 
   @media screen and (max-width: 594px) {
     .container {
-      width: 100vw;
+      // width: 100vw;
+    }
+
+    .cardCont {
+      // margin-left: 10px !important;
     }
   }
 
