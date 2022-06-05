@@ -44,7 +44,7 @@ const Services = () => {
 							{
 								data?.length > 0 ?
 									data?.map(el => (
-										<div className="col-lg-4 col-md-6 mb-30" style={{ overflow: "hidden" }}>
+										<div className="col-lg-4 col-md-6 mb-30 cardCont" style={{ overflow: "hidden" }}>
 
 											<div className="feature-container feature-bx2" style={{ padding: 0 }}>
 												<div style={{
