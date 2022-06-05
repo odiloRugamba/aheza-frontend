@@ -2,7 +2,7 @@
 	8.23 Work Box
 		slideNumber
 				applePhone
-								connentInner
+																nextPrevIcon
 =================== */
 .work-area {
 	.pt-img1 {
@@ -153,10 +153,13 @@
 	position: absolute;
 	top: -16px;
 
-	@include respond('phone') {
+	@media screen and (max-width: 375px) {
 		// left: 5px;
 		// width: 87vw !important;
-		width: 335px !important;
+		// width: 335px !important;
+		// height: 662px;
+		width: 342px;
+		height: auto;
 	}
 }
 
@@ -173,11 +176,9 @@
 	position: relative;
 	left: 10px;
 
-	@include respond('phone') {
-		// width: 80vw;
-		height: auto;
-		width: 310px !important;
-		min-height: 730px;
+	@media screen and (max-width: 375px) {
+		width: 322px;
+		height: 659px !important;
 	}
 
 	// display: none;
@@ -238,6 +239,12 @@
 		// margin-left: 15px;
 		left: 15px;
 		position: absolute;
+
+		@media screen and (max-width: 375px) {
+			left: 15px;
+
+
+		}
 	}
 
 	.nextPrevIcon {
@@ -250,7 +257,12 @@
 			display: flex;
 			justify-content: flex-start;
 			align-items: center;
+
 			// padding: ;
+			@media screen and (max-width: 375px) {
+				width: 30px;
+				height: 30px;
+			}
 		}
 
 		img {
@@ -259,7 +271,35 @@
 			position: relative;
 			left: 10px;
 			bottom: 1px;
+
+			@media screen and (max-width: 375px) {
+				width: 15px;
+				height: 15px;
+				left: 7px;
+				top: 1px;
+			}
 		}
+
+		.prev {
+			img {
+				position: relative;
+				left: 10px;
+				bottom: 1px;
+
+				@media screen and (max-width: 375px) {
+					left: 15px;
+				}
+			}
+
+		}
+
+		.next img {
+			left: 10px;
+			bottom: 1px;
+
+			@media screen and (max-width: 375px) {}
+		}
+
 	}
 
 	div::-webkit-scrollbar {
