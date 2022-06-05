@@ -199,7 +199,7 @@ const SurveyPage = () => {
         </div>
 
         <section className="saveyCont">
-          <div className="container">
+          <div className="container saveyContainer">
             <div className="contact-wraper">
               {
                 !startSavey ? <div className='rowCont'>
@@ -240,7 +240,7 @@ const SurveyPage = () => {
                     </div>
                   </div>
                 </div> : !surveyDone ?
-                  <div className='swipeCont' style={{ padding: 0 }}>
+                  <div className='swipeCont' style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 15 }}>
                     <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.length > 0 ?
@@ -268,13 +268,13 @@ const SurveyPage = () => {
                                           </div>
                                         </li>
                                       ) : el.questionType === 'MUTLIPLECHECK' ? el?.answers.map(ans =>
-                                        <li style={{ fontSize: 18 }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
-                                          <span onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
+                                        <li style={{ fontSize: 18, display: 'flex', alignItems: 'center' }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
+                                          <div onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
                                             <label style={{ marginRight: 5 }} className='CheckBoxBtn'>
                                               <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans.checked} type="checkbox" id="scales" name={el.question} />
                                               <span />
                                             </label>
-                                          </span>
+                                          </div>
                                           {ans?.ans}
                                         </li>
                                       ) : <div className='textAreaCont'>

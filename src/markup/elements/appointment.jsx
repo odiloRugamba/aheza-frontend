@@ -112,7 +112,7 @@ const AboutSection = () => {
 					<div className="appointment-inner section-sp2" >
 						<div className="container">
 							<div className="rowAppo">
-								<div className="col-xl-12 col-lg-12 col-md-12">
+								<div className="col-xl-12 col-lg-12 col-md-12 ">
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book  Appointment</h3>
 										<div className="form-group">

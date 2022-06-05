@@ -4,6 +4,7 @@
 // swipeCont
 // contact-wraper
 // onBehalfCont
+// rowCont
 
 .saveyCont {
   span {
@@ -291,9 +292,16 @@
       div[aria-hidden=true] {
         height: 0px !important;
         height: fit-content;
-        // display: none !important;
-        background: yellow;
       }
     }
+  }
+}
+
+.saveyContainer {
+  @include respond('phone') {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-left: 10px;
   }
 }
