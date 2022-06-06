@@ -69,7 +69,7 @@ const AboutSection = () => {
 			firstName,
 			lastName,
 			gender,
-			dateObirth: dateB,
+			dateOfBirth: dateB,
 			phoneNumber,
 			CommunicationMethod: communicationMethod,
 			email,

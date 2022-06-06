@@ -3,8 +3,9 @@ import { useHistory } from "react-router-dom";
 
 
 
-const AboutSection = () => {
 
+
+const AboutSection = () => {
  const [money, setMoney] = useState(null)
  const history = useHistory()
  const gotoAheza = () => {
@@ -53,4 +54,8 @@ const AboutSection = () => {
  );
 }
 
+
+
+
 export default AboutSection;
+

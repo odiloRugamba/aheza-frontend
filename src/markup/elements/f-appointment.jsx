@@ -57,7 +57,6 @@ const AboutSection = () => {
 
     const checkOut = () => {
         setLoading(true)
-        // history.push('/thankyou')
         dispatch(createAppointment({
             ...data,
             amount: money
@@ -66,7 +65,6 @@ const AboutSection = () => {
     useEffect(() => {
         if (paymentData) {
             console.log('paymentData', paymentData)
-            // window.open(paymentData.link)
             window.location.replace(paymentData.link)
             setLoading(false)
         }
