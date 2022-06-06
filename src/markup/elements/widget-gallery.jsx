@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SimpleReactLightbox, {SRLWrapper} from 'simple-react-lightbox';
+import SimpleReactLightbox, { SRLWrapper } from 'simple-react-lightbox';
 
 // Import Images
 import galleryPic1 from "../../images/gallery/pic1.jpg";
@@ -51,34 +51,30 @@ const options = {
 	}
 };
 
-function GalleryImg(){
-	return(
+function GalleryImg() {
+	return (
 		<>
 			<SimpleReactLightbox>
 				<SRLWrapper options={options}>
 					<ul className="magnific-image">
 						{content.map((item) => (
-							<li><img src={item.thumb} alt=""/></li>
+							<li><img src={item.thumb} alt="" /></li>
 						))}
 					</ul>
 				</SRLWrapper>
-			</SimpleReactLightbox>	
+			</SimpleReactLightbox>
 		</>
 	);
 }
 
-class WidgetGallery extends Component{
-	render(){
-		return(
+class WidgetGallery extends Component {
+	render() {
+		return (
 			<>
-				
 				<div className="widget widget_gallery gallery-grid-3">
 					<h4 className="widget-title">Our Gallery</h4>
-					
 					<GalleryImg />
-					
 				</div>
-				
 			</>
 		);
 	}

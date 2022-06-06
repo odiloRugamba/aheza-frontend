@@ -28,16 +28,6 @@ const AboutSection = () => {
 		}
 
 	}, [res])
-
-	// const shuffleArr = (arr) => {
-	// 	const newArr = arr.slice()
-	// 	for (let i = newArr.length - 1; i > 0; i--) {
-	// 		const rand = Math.floor(Math.random() * (i + 1));
-	// 		[newArr[i], newArr[rand]] = [newArr[rand], newArr[i]];
-	// 	}
-	// 	return newArr
-	// }
-
 	useEffect(() => {
 		dispatch(getTipsFunc())
 	}, []);
@@ -63,7 +53,7 @@ const AboutSection = () => {
 							<div className="col-lg-11 col-md-12 col-sm-12">
 								<h2>"You can fall, but you can rise also." </h2>
 								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20 }}>Angelique Kidjo</span></h6>
-								
+
 								<Link to="/appointment-assesement" className="btn btn-secondary  shadow"><b style={{ color: "white", fontSize: 20 }}>Book Appointment</b></Link>
 								<br></br>
 								<br></br>

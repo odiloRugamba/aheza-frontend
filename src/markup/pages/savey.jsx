@@ -1,8 +1,5 @@
-import React, { Component, useState } from 'react';
-import { Link } from 'react-router-dom';
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-// import Carousel from 'flat-carousel';
+import React, { useState } from 'react';
+
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -11,12 +8,7 @@ import Map from '../elements/map';
 
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
-import pic1 from "../../images/about/pic-1.jpg";
-import icon1 from "../../images/icon/icon1.png";
-import icon2 from "../../images/icon/icon2.png";
-import icon3 from "../../images/icon/icon3.png";
 import animateWave from "../../images/shap/wave-blue.png";
-import animate2 from "../../images/shap/circle-dots.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 
 
@@ -33,7 +25,7 @@ const SaveyPage = () => {
 
    <Header />
 
-   <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+   <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
     <div className="banner-wraper">
      <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
@@ -46,7 +38,6 @@ const SaveyPage = () => {
       <img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
      </div>
     </div>
-
     <section className="saveyCont">
      <div className="container">
       <div className="contact-wraper">
@@ -72,7 +63,6 @@ const SaveyPage = () => {
           </form>
          </div>
         </div> :
-         // < Carousel>
          <div className="row">
           <div className="page-banner-entry text-center">
            <h6>What As for WASM, my compiler will require Rust to run in the  do?</h6>
@@ -117,7 +107,6 @@ const SaveyPage = () => {
            </div>
           </div>
          </div>
-        // </Carousel>
        }
       </div>
      </div>

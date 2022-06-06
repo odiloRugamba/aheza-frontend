@@ -1,18 +1,12 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, {  useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getServices } from "../../store/services/actions";
+import { useSelector } from "react-redux";
 import LoadingComp from "../elements/loading";
 import EmptyComp from "../elements/empyt";
 import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-// Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 
 

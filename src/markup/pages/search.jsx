@@ -1,15 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { getStorys } from "../../store/story/actions";
-import LoadingComp from "../elements/loading";
-import ReactPaginate from "react-paginate";
-import EmptyComp from "../elements/empyt";
 import { getBlogs } from "../../store/blog/actions";
 import searchIcon from '../../images/searchh.png';
-import defualtImage from '../../images/defualt.jpeg';
-import { Dcore } from '../../api/index'
 import { getLinks } from "../../store/links/actions";
 import { getResearchs } from "../../store/research/actions";
 import { getUploads } from "../../store/uploads/actions";

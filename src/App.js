@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import Markup from './markup/markup';
 
 // Plugins Stylesheet
@@ -9,15 +9,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // StyleSheet
-// import './css/style.css';
-// import './scss/main.css';
 import './scss/main.scss';
-import {getServices} from "./store/services/actions";
-import {useDispatch} from "react-redux";
+import { getServices } from "./store/services/actions";
+import { useDispatch } from "react-redux";
 
 
 function App() {
-	const dispatch  = useDispatch();
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		dispatch(getServices())

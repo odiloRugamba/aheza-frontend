@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getStorys } from "../../store/story/actions";
 import LoadingComp from "../elements/loading";
@@ -13,7 +12,6 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-// import bnrImg1 from "../../images/banner/aheza-barnner-4.jpg";
 import bnrImg1 from "../../images/banner/aheza-barnner-14.jpg";
 
 const Stories = () => {
@@ -67,7 +65,7 @@ const Stories = () => {
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
-						<div style={{ paddingTop: 40}}>
+						<div style={{ paddingTop: 40 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
 									<h2 className='title title-80' style={{ paddingBottom: 50, color: "white" }}>Testimonies</h2>

@@ -1,13 +1,10 @@
-import React, { Component, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 
 
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
-import Map from './map';
-
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
 import animateWave from "../../images/shap/wave-blue.png";
@@ -108,7 +105,6 @@ const SelftEvaluation = ({ decline, accept }) => {
       if (el._id === id) {
         el.multipleChoice.map(elem => {
           if (elem.answer === ans) {
-            // console.log(ans)
             elem.checked = true
           } else if (elem.checked === true) {
             elem.checked = false

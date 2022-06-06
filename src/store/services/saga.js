@@ -1,5 +1,5 @@
 import { Dcore } from "../../api";
-import { call, put, takeEvery, all } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { GET_SERVICES, GET_SERVICES_SUCCESS, GET_SERVICE_BY_ID, GET_SERVICE_BY_ID_SUCCESS } from "./actions";
 
 
@@ -15,11 +15,8 @@ function* getServices() {
 
 function* getServiceById(data) {
  try {
-  console.log(data, 'dskdskhid')
   const res = yield call(Dcore.get, `/our-services/${data.value}`)
-  console.log(res, 'ress')
   yield put({ type: GET_SERVICE_BY_ID_SUCCESS, value: res.data.data })
-
  } catch (err) {
   console.log(err)
  }

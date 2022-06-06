@@ -7,8 +7,6 @@ import PageScrollTop from './elements/page-scroll-top';
 
 // All Pages Router
 import Index from './pages/index';
-import AboutUs from './pages/about-us';
-import Team from './pages/team';
 import Apply from './pages/apply';
 import BookAppointment from './pages/book-appointment';
 import OurServices from './pages/our-services';
@@ -17,9 +15,6 @@ import InstitutionsList from './pages/institutions-list';
 import InstitutionProfile from './pages/institution-profile';
 import ServiceDetails from './pages/service-details';
 import OtherInstitutionsServicesDetails from './pages/OtherInstitutionsServicesDetails';
-import FormLogin from './pages/form-login';
-import FormRegister from './pages/form-register';
-import FormForgetPassword from './pages/form-forget-password';
 import Faq from './pages/faq';
 import ContactUs from './pages/contact-us';
 import Booking from './pages/booking';
@@ -49,6 +44,8 @@ import SelfEvaluation from './pages/selfEvaluation'
 import LinksComp from './pages/links'
 
 
+
+
 class Markup extends Component {
 	render() {
 		return (
@@ -56,17 +53,12 @@ class Markup extends Component {
 				<BrowserRouter basename={''}>
 					<Switch>
 						<ProtectRoute path='/' exact component={Index} />
-						<ProtectRoute path='/about-us' exact component={AboutUs} />
-						<ProtectRoute path='/team' exact component={Team} />
 						<ProtectRoute path='/apply' exact component={Apply} />
 						<ProtectRoute path='/book-appointment' exact component={BookAppointment} />
 						<ProtectRoute path='/our-services' exact component={OurServices} />
 						<ProtectRoute path='/our-services/:title/:id' exact component={ServiceDetails} />
 						<ProtectRoute path='/other-institutions-services' exact component={OtherInstitutionsServices} />
 						<ProtectRoute path='/other-institutions-services/:title/:id' exact component={OtherInstitutionsServicesDetails} />
-						<Route path='/login' exact component={FormLogin} />
-						<Route path='/register' exact component={FormRegister} />
-						<ProtectRoute path='/form-forget-password' exact component={FormForgetPassword} />
 						<ProtectRoute path='/faq' exact component={Faq} />
 						<ProtectRoute path='/contact-us' exact component={ContactUs} />
 						<ProtectRoute path='/booking' exact component={Booking} />

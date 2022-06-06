@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUploads } from "../../store/uploads/actions";
 import LoadingComp from "../elements/loading";
@@ -12,10 +11,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-
 import bnrImg1 from "../../images/banner/aheza-barnner-3.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 const Uploads = () => {
 	const [data, setData] = useState([])
@@ -67,7 +63,7 @@ const Uploads = () => {
 
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
-						<div className="" style={{backgroundColor: "rgba(255,255,255,.5)", textAlign: "center"}}>
+						<div className="" style={{ backgroundColor: "rgba(255,255,255,.5)", textAlign: "center" }}>
 							<div className="page-banner-entry text-center">
 								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: "center" }}>Uploads section</h2>
 							</div>

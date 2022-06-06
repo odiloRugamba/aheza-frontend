@@ -1,6 +1,6 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUploadById, getUploads, getUploadCommnets, postUploadCommnets } from "../../store/uploads/actions";
 // Layout
@@ -8,32 +8,15 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Elements
-import AuthorProfile from "../elements/author-profile";
 import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
-import WidgetTag from "../elements/widget-tag";
-import WidgetSearch from "../elements/widget-search";
-import WidgetGallery from "../elements/widget-gallery";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
 import LoadingComp from "../elements/loading";
 import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
-import plusBlue from "../../images/shap/plus-blue.png";
-import blogDefaultPic1 from "../../images/blog/default/pic1.jpg";
-import testPic3 from "../../images/testimonials/pic3.jpg";
-import galleryPic2 from "../../images/gallery/pic2.jpg";
-import galleryPic5 from "../../images/gallery/pic5.jpg";
-import PickImage from "../../images/pickImage.png";
 import AudioFle from "../../images/audio.mp3";
-import PauseIcon from "../../images/pause-button.png";
-import playIcon from "../../images/pause.png";
-import prevIcon from "../../images/prev.png";
-import nextIcon from "../../images/next.png";
 import { AudioPlayer } from "./AudioPlayer";
 
 
@@ -108,20 +91,15 @@ const UploadsDetails = () => {
 			setPlayingStart(false)
 		} else {
 			if (!playing) {
-				console.log('playing')
 				audioData.current.play()
-				console.log('dd', audioData)
 			} else {
-				console.log('amm gete')
 				audioData.current.pause()
 			}
 			setPlaying(!playing)
 		}
 
 	}
-	useEffect(() => {
-		console.log((audioData?.currentTime / audioData?.duration) * 100)
-	}, [audioData?.current])
+
 
 
 
@@ -138,7 +116,7 @@ const UploadsDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single" style={{width: "100%"}}>
+									<div className="blog-card blog-single" style={{ width: "100%" }}>
 										<div className="post-media">
 											{
 												res?.youtubeVideoLink ?
@@ -150,7 +128,7 @@ const UploadsDetails = () => {
 														allowFullScreen
 														title="Embedded youtube"
 													/> : <AudioPlayer />
-											
+
 											}
 										</div>
 										<div className="info-bx">
@@ -189,8 +167,6 @@ const UploadsDetails = () => {
 								</div>
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
-
-
 										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent News" />
 									</aside>
 								</div>

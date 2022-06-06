@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
@@ -28,7 +28,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 
 	return (
 		<>
-			<div className="widget recent-posts-entry" style={{padding: 10}}>
+			<div className="widget recent-posts-entry" style={{ padding: 10 }}>
 				<h4 className="widget-title">{title ? title : "Recent Posts"}</h4>
 				<div className="widget-post-bx">
 					{
@@ -38,22 +38,22 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 								<div className="ttr-post-media">
 									{
 										el?.youtubeVideoLink ?
-										<img src={`http://img.youtube.com/vi/${getVideoId(el?.youtubeVideoLink)}/0.jpg`} alt="" />
-										: <img src={el.image} alt="" />
+											<img src={`http://img.youtube.com/vi/${getVideoId(el?.youtubeVideoLink)}/0.jpg`} alt="" />
+											: <img src={el.image} alt="" />
 									}
 								</div>
 								<div className="ttr-post-info">
 									<div className="ttr-post-header">
 										<p className="post-title  "
-										style={{
-										WebkitLineClamp: 3,
-										wordBreak: "break-word",
-										overflow: "hidden",
-										textOverflow: "ellipsis",
-										display: "-webkit-box",
-										WebkitBoxOrient: "vertical"
+											style={{
+												WebkitLineClamp: 3,
+												wordBreak: "break-word",
+												overflow: "hidden",
+												textOverflow: "ellipsis",
+												display: "-webkit-box",
+												WebkitBoxOrient: "vertical"
 											}}
-										><Link to={currentPage + el?.title + '/' + el?._id} style={{fontSize: 20}}>{el?.title}</Link></p>
+										><Link to={currentPage + el?.title + '/' + el?._id} style={{ fontSize: 20 }}>{el?.title}</Link></p>
 									</div>
 									<ul className="post-meta">
 										<li className="date">{convertData(el?.updatedAt)}</li>
@@ -63,7 +63,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 						) : null
 					}
 					<div className="more">
-						<Link to="/links"  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
+						<Link to="/links" style={{ fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700 }}>See All</Link>
 					</div>
 				</div>
 			</div>

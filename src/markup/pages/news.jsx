@@ -1,5 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchs } from "../../store/research/actions";
 import { getLinks } from '../../store/links/actions';
@@ -12,9 +11,7 @@ import { getUploads } from '../../store/uploads/actions';
 
 import LatestNewsSection from "../elements/latest-news-slider";
 import ResearchSection from "../elements/research-section";
-import UploadsSection from "../elements/uploads-section";
 import StoriesSection from "../elements/stories-section";
-import BlogSection from "../elements/blog-section";
 
 // Layout
 import Header from "../layout/header";
@@ -31,12 +28,12 @@ const ResearchFindings = () => {
 	const [blog, setBlogs] = useState([])
 	const [uploads, setUploads] = useState([])
 	const dispatch = useDispatch()
-    const researchData = useSelector(state => state.ResearchReducers?.data)
-    const linksData = useSelector(state => state.linksReducers?.data)
-    const storiesData = useSelector(state => state.StorysReducers?.data)
-    const blogData = useSelector(state => state.BlogsReducers?.data)
-    const uploadsData = useSelector(state => state.UploadsReducers?.data)
-    
+	const researchData = useSelector(state => state.ResearchReducers?.data)
+	const linksData = useSelector(state => state.linksReducers?.data)
+	const storiesData = useSelector(state => state.StorysReducers?.data)
+	const blogData = useSelector(state => state.BlogsReducers?.data)
+	const uploadsData = useSelector(state => state.UploadsReducers?.data)
+
 
 
 	useEffect(() => {
@@ -47,13 +44,13 @@ const ResearchFindings = () => {
 		dispatch(getUploads())
 	}, [])
 
-    useEffect(() => {
-        setResearch(researchData)
-        setLinks(linksData)
-        setStories(storiesData)
-        setBlogs(blogData)
-        setUploads(uploadsData)
-    },[researchData, linksData, storiesData, blogData, uploadsData])
+	useEffect(() => {
+		setResearch(researchData)
+		setLinks(linksData)
+		setStories(storiesData)
+		setBlogs(blogData)
+		setUploads(uploadsData)
+	}, [researchData, linksData, storiesData, blogData, uploadsData])
 
 
 
@@ -61,13 +58,10 @@ const ResearchFindings = () => {
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white" style={{marginTop: 50}}>
-
-				
-                <LatestNewsSection content={links} title="Aheza links News" />
-                <ResearchSection content={research} />
-                <StoriesSection content={stories} />
-
+			<div className="page-content bg-white" style={{ marginTop: 50 }}>
+				<LatestNewsSection content={links} title="Aheza links News" />
+				<ResearchSection content={research} />
+				<StoriesSection content={stories} />
 			</div>
 
 			<Footer />

@@ -1,8 +1,5 @@
 import React from 'react';
 import Header from "../layout/header";
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 import "../../scss/pages/donation.scss";
 
 const Terms = () => {

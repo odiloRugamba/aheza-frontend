@@ -1,8 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-// import { getUploads } from "../../store/uploads/actions";
 import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
@@ -18,8 +16,6 @@ import Footer from "../layout/footer";
 
 // Import Images
 import bnrImg1 from "../../images/banner/aheza-barnner-8.png";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 const Uploads = () => {
 	const [data, setData] = useState([])
@@ -30,7 +26,7 @@ const Uploads = () => {
 	const [pageData, setPageData] = useState([])
 	const [uploads, setUploads] = useState([])
 
-    const uploadsData = useSelector(state => state.UploadsReducers?.data)
+	const uploadsData = useSelector(state => state.UploadsReducers?.data)
 
 
 	useEffect(() => {
@@ -42,8 +38,7 @@ const Uploads = () => {
 		setData(res)
 		setPageCount(res?.length / postPerPage)
 		setPageData(res?.slice(0, postPerPage))
-		console.log(res)
-        setUploads(uploadsData)
+		setUploads(uploadsData)
 	}, [res, uploadsData])
 
 	const convertData = (date) => {
@@ -66,9 +61,6 @@ const Uploads = () => {
 	}
 
 	const routeChange = (link) => {
-		// const rouLink = link.split('/')[2]
-		// console.log(rouLink)
-		// window.open('https:' + rouLink)
 		window.open(link)
 	}
 
@@ -80,7 +72,7 @@ const Uploads = () => {
 	}
 
 
-	return ( 
+	return (
 		<>
 
 			<Header />
@@ -88,7 +80,7 @@ const Uploads = () => {
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300}} >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
 						<div className="container">
 							<div className="page-banner-entry text-center">
 								<h2 className='title-80' style={{ paddingBottom: 50, color: "#fff" }}>News</h2>
@@ -117,7 +109,7 @@ const Uploads = () => {
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 														{item.publisherName}
 														<br></br>
-														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
 													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </a>
 												</ul>
@@ -127,8 +119,8 @@ const Uploads = () => {
 								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no media section for now" />
 							}
 							{
-							uploads?.map(item =>
-							<div className="col-xl-4 col-md-6">
+								uploads?.map(item =>
+									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
 												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
@@ -143,10 +135,10 @@ const Uploads = () => {
 												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-												<li className="date" onClick={() => { routeChange(Dcore.WEBURL) }}>
+													<li className="date" onClick={() => { routeChange(Dcore.WEBURL) }}>
 														Aheza
 														<br></br>
-														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
 
 													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More</Link>
@@ -154,9 +146,9 @@ const Uploads = () => {
 
 											</div>
 										</div>
-									</div> 
-						) 
-						}
+									</div>
+								)
+							}
 						</div>
 						<div className="row">
 							<div className="col-lg-12">

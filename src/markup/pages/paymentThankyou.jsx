@@ -1,17 +1,11 @@
-import React, { Component, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchs } from "../../store/research/actions";
-import LoadingComp from "../elements/loading";
-import ReactPaginate from "react-paginate";
-import EmptyComp from "../elements/empyt";
-
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-import waveBlue from "../../images/shap/wave-blue.png";
 import donation from "../../images/donation.jpg";
-import plusBlue from "../../images/shap/plus-blue.png";
 
 
 

@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
 // Import Images
-
-
 import aboutThumb1 from '../../images/about/pic-1.jpg';
 import aboutThumb2 from '../../images/about/pic-2.jpg';
 import aboutThumb3 from '../../images/about/pic-3.jpg';

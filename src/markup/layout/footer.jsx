@@ -1,12 +1,7 @@
-import React, { Component, useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Images
-import footerBg from '../../images/background/footer.jpg';
-import twitterLogo from "../../images/twitter.svg"
-import instagramLogo from "../../images/instagram.svg"
-import facebook from "../../images/facebook.svg"
-import logoWhite from '../../images/logo-white.png';
 import { useSelector } from "react-redux";
 
 
@@ -15,12 +10,11 @@ import { useSelector } from "react-redux";
 
 const Footer = () => {
 	const services = useSelector(state => state.servicesReducers.data);
-
 	return (
 		<>
 			<div className='row footer-section'>
 
-				<div className='row' style={{marginRight: 0}}>
+				<div className='row' style={{ marginRight: 0 }}>
 					<div className='col-md-6'>
 						<p style={{ fontSize: 14, margin: 0 }} >
 							<u><h3 className="footer-" style={{ fontSize: 17, padding: 0, margin: 0, color: "white" }}>Privacy</h3></u>

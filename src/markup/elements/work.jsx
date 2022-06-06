@@ -95,7 +95,7 @@ const AboutSection = () => {
 	return (
 		<>
 
-			<section className="section-area section-p5 tips-wraper  row" style={{marginRight: 0}}>
+			<section className="section-area section-p5 tips-wraper  row" style={{ marginRight: 0 }}>
 				<div className="col-lg-7 col-md-6 col-sm-12" style={{ marginTop: 30 }}>
 					<div className="col-lg-8 col-sm-12 mb-30" >
 						<a href='/our-services'>
@@ -122,7 +122,6 @@ const AboutSection = () => {
 						</a>
 					</div>
 					<div className="col-lg-8 col-sm-12 mb-30">
-
 						<a href='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'>
 							<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
 								<div className="work-num-bx">3</div>
@@ -133,8 +132,8 @@ const AboutSection = () => {
 							</div>
 						</a>
 					</div>
-
 				</div>
+
 				<div className="col-lg-5 col-md-6 col-sm-12 workPhone" style={{ padding: 0 }}>
 					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
 
@@ -167,7 +166,7 @@ const AboutSection = () => {
 								</div>
 							</div>
 						</div>
-						<img src={applePhone} alt="" className='applePhone'  style={{maxWidth: "150%"}}/>
+						<img src={applePhone} alt="" className='applePhone' style={{ maxWidth: "150%" }} />
 					</div>
 				</div>
 				<div>

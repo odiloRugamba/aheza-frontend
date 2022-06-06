@@ -1,19 +1,16 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { getblogById, getBlogs, getBlogComment, postblogComment } from "../../store/blog/actions";
-import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import LoadingComp from "../elements/loading";
 
 // Elements
-import AuthorProfile from "../elements/author-profile";
 import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
-import WidgetTag from "../elements/widget-tag";
 import WidgetRelatedPosts from "../elements/related-widgets/blog";
 import SocialMediaComp from '../elements/shareMedia'
 
@@ -77,7 +74,7 @@ const BlogDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single" style={{width: "100%"}}>
+									<div className="blog-card blog-single" style={{ width: "100%" }}>
 										<div className="info-bx">
 											<div className="ttr-post-title">
 												<h2 className="post-title max-lines-2">{blogItem?.title}</h2>

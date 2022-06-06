@@ -1,4 +1,4 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchs } from "../../store/research/actions";
@@ -8,9 +8,7 @@ import EmptyComp from "../elements/empyt";
 
 // Layout
 import Header from "../layout/header";
-import Footer from "../layout/footer"; 
-
-// import bnrImg1 from "../../images/banner/aheza-barnner-2.jpg";
+import Footer from "../layout/footer";
 import bnrImg1 from "../../images/banner/aheza-barnner-12.jpg";
 
 
@@ -51,10 +49,10 @@ const ResearchFindings = () => {
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white" style={{marginTop: 100}}>
+			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
-						<div style={{ paddingTop: 40}}>
+						<div style={{ paddingTop: 40 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
 									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Research</h2>
@@ -73,9 +71,9 @@ const ResearchFindings = () => {
 											<div className="post-info">
 												<p className="post-title max-lines-3" style={{ fontSize: 20 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
-													<li className="date"> { convertData(item?.updatedAt) }</li>
+													<li className="date"> {convertData(item?.updatedAt)}</li>
 													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
-													
+
 												</ul>
 											</div>
 										</div>

@@ -1,16 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 // Images
-import lineBg from '../../images/appointment/line-bg.png';
-import appMobile from '../../images/appointment/mobile.png';
-import appWomen from '../../images/appointment/women.png';
-import appMapPin from '../../images/appointment/map-pin.png';
-import appSetting from '../../images/appointment/setting.png';
-import appCheck from '../../images/appointment/check.png';
-import appChat from '../../images/appointment/chat.png';
-import verified from '../../images/verified.png';
-import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
+import { createAppointment } from "../../store/appointment/actions";
 
 
 
@@ -102,7 +94,7 @@ const AboutSection = () => {
                                             <ul>
                                                 {
                                                     appointmentOps.map(el =>
-                                                        <li onClick={() => selectMethod(el)} style={{marginLeft: 10}}>
+                                                        <li onClick={() => selectMethod(el)} style={{ marginLeft: 10 }}>
                                                             <span className='checkBox'>
                                                                 <label className='radioBtn'>
                                                                     {console.log(el)}
@@ -139,7 +131,7 @@ const AboutSection = () => {
                                                 <button onClick={() => checkOut()} type="submit" className="btn btn-secondary btn-lg">
                                                     {
                                                         loading ?
-                                                        <div className="spinner-border" role="status">
+                                                            <div className="spinner-border" role="status">
                                                                 <span className="sr-only">
                                                                     <b style={{ fontSize: 20, color: "white" }} >Loading... </b>
                                                                 </span>

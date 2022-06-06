@@ -1,23 +1,15 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/survey/actions";
 
 
-import Header from "../layout/header";
-import Footer from "../layout/footer";
 
-import Map from '../elements/map';
 
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpg";
-import pic1 from "../../images/about/pic-1.jpg";
-import icon1 from "../../images/icon/icon1.png";
-import icon2 from "../../images/icon/icon2.png";
-import icon3 from "../../images/icon/icon3.png";
 import animateWave from "../../images/shap/wave-blue.png";
-import animate2 from "../../images/shap/circle-dots.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 
 
@@ -37,60 +29,7 @@ const SaveyPage = () => {
   const [email, setEmail] = useState(null)
   const [phoneNumber, setPhoneNumber] = useState(null)
 
-  const [data, setData] = useState([
-    // {
-    //   question: "What As, my compiler will require Rust to run in the  do?",
-    //   _id: 1,
-    //   multipleChoice: [
-    //     {
-    //       answer: "I've feeling drepressed",
-    //       checked: true
-    //     },
-    //     {
-    //       answer: "Management / C-Level",
-    //       checked: false
-    //     },
-    //     {
-    //       answer: "Volunteer",
-    //       checked: false
-    //     },
-    //     {
-    //       answer: "Regional Manager",
-    //       checked: false
-    //     },
-    //   ],
-    //   questionType: "RADIO",
-    // },
-    // {
-    //   question: "During the past two weeks, how often has your mental health affected your relationships?",
-    //   _id: 2,
-    //   multipleChoice: [
-    //     {
-    //       answer: "I've feeling drepressed",
-    //       checked: true
-    //     },
-    //     {
-    //       answer: "Management / C-Level",
-    //       checked: false
-    //     },
-    //     {
-    //       answer: "Volunteer",
-    //       checked: false
-    //     },
-    //     {
-    //       answer: "Regional Manager",
-    //       checked: false
-    //     },
-    //   ],
-    //   questionType: "MUTLIPLECHECK",
-    // },
-    // {
-    //   question: "Have you felt particularly low or down for more than 2 weeks in a row?",
-    //   _id: 3,
-    //   answer: "",
-    //   questionType: "OPENENDED",
-    // }
-  ])
+  const [data, setData] = useState([])
   const history = useHistory()
   const { id } = useParams()
   const dispatch = useDispatch()
@@ -226,7 +165,7 @@ const SaveyPage = () => {
 
   return (
     <>
-      <div className="page-content bg-white"  style={{ marginTop: 100 }}>
+      <div className="page-content bg-white" style={{ marginTop: 100 }}>
 
         <div className="banner-wraper">
           <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>

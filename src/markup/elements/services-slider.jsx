@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
 
-// Import Images
-import lineCircleBlue from "../../images/shap/line-circle-blue.png";
-import squareDotsOrange from "../../images/shap/square-dots-orange.png";
-import waveBlue from "../../images/shap/wave-blue.png";
-import squareRotate from "../../images/shap/square-rotate.png";
+
 
 const ServicesSliderSection = () => {
 

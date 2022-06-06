@@ -3,8 +3,8 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions";
-
 import LoadingComp from "../elements/loading";
+
 // Import Images
 import logo from '../../images/logo-2.png';
 
@@ -20,7 +20,6 @@ const SurveyPage = () => {
   const [report, setReport] = useState(null)
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
-  const [submition, setSubmition] = useState(null)
   const [chosenCategory, setChoseCategory] = useState("Individual");
   const category = [
     { name: "Individual", checked: true, id: 1 },
@@ -28,9 +27,6 @@ const SurveyPage = () => {
     { name: "Child", checked: false, id: 3 },
   ]
   const [onBehalfQuestion, setonBehalfQuestion] = useState(category)
-  const [name, setName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [phoneNumber, setPhoneNumber] = useState(null)
 
   const [data, setData] = useState([])
   const history = useHistory()
@@ -38,8 +34,6 @@ const SurveyPage = () => {
   const resData = useSelector(state => state.SelfAssessmentReducers.data)
 
   const startSaveyFunc = () => {
-    console.log("========>", chosenCategory)
-    console.log("========>", chosenCategory?.toUpperCase())
     dispatch(getQuestions(chosenCategory?.toUpperCase()))
     setStartSavey(true)
   }
@@ -49,7 +43,6 @@ const SurveyPage = () => {
       setPageIndex(pageIndex - 1)
     } else if (item === 'next' && pageIndex < questions?.length - 1) {
       if (questionType === 'OPENENDED') {
-        // console.log(opendEndedAns)
         const copyData = questions
         copyData.forEach(el => {
           if (el._id === dataItem._id) {
@@ -64,7 +57,6 @@ const SurveyPage = () => {
       setPageIndex(pageIndex + 1)
     } else if (item === 'next') {
       if (questionType === 'OPENENDED') {
-        // console.log(opendEndedAns)
         const copyData = questions
         copyData.forEach(el => {
           if (el._id === dataItem._id) {
@@ -75,10 +67,8 @@ const SurveyPage = () => {
         });
         setQuestions(copyData)
         setOpendEndedAns(null)
-        // console.log(copyData)
       }
       goToAheza()
-      // history.push('/book-appointment')
     }
   }
 
@@ -154,15 +144,11 @@ const SurveyPage = () => {
       selfAssessment: id,
       questions: answerCopy
     }))
-    // setSubmition(true)
     history.push('/book-appointment')
   }
   const CloseModel = () => {
     setModel(false)
   }
-  // useEffect(() => {
-  //  dispatch(getQuestions(id))
-  // }, [])
   useEffect(() => {
     setQuestions(resData?.questions)
     setReport(resData?.explanation)

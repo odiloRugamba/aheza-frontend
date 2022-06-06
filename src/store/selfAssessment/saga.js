@@ -1,14 +1,11 @@
 import { Dcore } from "../../api";
-import Axios from "axios";
-import { call, put, takeEvery, all } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { GET_SELF_ASSESSMENT_QUESTIONS, GET_SELF_ASSESSMENT_QUESTIONS_SUCCESS, ANSWER_SELF_ASSESSMENT_QUESTIONS, ANSWER_SELF_ASSESSMENT_QUESTIONS_SUCCESS } from "./actions";
 
 
 function* getQuestions(data) {
  try {
-  console.log(data)
   const response = yield call(Dcore.get, `/selfAssessment/get/${data.value}`)
-  console.log(response.data.message.data)
   yield put({ type: GET_SELF_ASSESSMENT_QUESTIONS_SUCCESS, value: response.data.message.data })
  } catch (err) {
   console.error(err)
@@ -18,12 +15,9 @@ function* getQuestions(data) {
 
 function* answerQuestion(data) {
  try {
-  console.log(data)
   const res = yield call(Dcore.post, `/selfAssessmentAns/create/${data.value.selfAssessment
    }`, data.value)
-  console.log(res, 'ress')
   window.localStorage.setItem('selfAssessmentAnsID', res.data.message.selfAssessmentAns._id);
-  console.log(res.data.message.selfAssessmentAns._id);
   yield put({ type: ANSWER_SELF_ASSESSMENT_QUESTIONS_SUCCESS, value: res.data.message.selfAssessmentAns })
 
  } catch (err) {

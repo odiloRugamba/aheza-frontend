@@ -6,25 +6,14 @@
 }
 
 .table {
-    // border-collapse: separate;
-    // border-spacing : 0 1rem;
-    // line-height    : 1;
-    margin-bottom     : 0px;
-    // font-family    : $barlow;
-    font-weight       : 400;
+    margin-bottom: 0px;
+    font-weight: 400;
 
     tr {
 
         td,
         th {
-            // border           : 0px;
-            // vertical-align   : middle;
-            // padding       : 5px 7px;
-            padding          : 15px;
-
-            // &:last-child {
-            //     text-align: right;
-            // }
+            padding: 15px;
         }
     }
 }
@@ -32,10 +21,8 @@
 .table {
     tr {
         th {
-            // padding     : 0px 5px;
-            color       : $headings-color;
-            font-weight : 500;
-            // font-size: 14px;
+            color: $headings-color;
+            font-weight: 500;
         }
     }
 }
@@ -44,7 +31,7 @@
     thead {
         tr {
             th {
-                padding-bottom: 15px!important;
+                padding-bottom: 15px !important;
             }
         }
     }
@@ -53,10 +40,11 @@
         background-color: $body-bg;
     }
 
-    tfoot{
+    tfoot {
         border-top: 2px solid $border-color;
-        tr{
-            th{
+
+        tr {
+            th {
                 padding-top: 10px;
             }
         }

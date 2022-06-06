@@ -1,6 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import Slider from "react-slick";
 import { Dcore } from "../../api/index";
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';

@@ -1,9 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-
-// Import Images
-import testPic1 from "../../images/testimonials/pic1.jpg";
-import testPic2 from "../../images/testimonials/pic2.jpg";
 
 const CommentList = ({ coments }) => {
 	const convertData = (date) => {

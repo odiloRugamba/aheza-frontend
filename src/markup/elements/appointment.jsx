@@ -1,16 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 // Images
-import lineBg from '../../images/appointment/line-bg.png';
-import appMobile from '../../images/appointment/mobile.png';
-import appWomen from '../../images/appointment/women.png';
-import appMapPin from '../../images/appointment/map-pin.png';
-import appSetting from '../../images/appointment/setting.png';
-import appCheck from '../../images/appointment/check.png';
-import appChat from '../../images/appointment/chat.png';
-import { getDoctorByDay, createAppointment, postAppointmentData } from "../../store/appointment/actions";
-import Notification from "../elements/notification";
+import { getDoctorByDay, postAppointmentData } from "../../store/appointment/actions";
 
 
 

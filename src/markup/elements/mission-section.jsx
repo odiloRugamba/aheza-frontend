@@ -1,8 +1,5 @@
-import React, { Component, useState, useEffect } from 'react';
+import React from 'react';
 // Import Images
-import bg1 from '../../images/background/line-bg1.png';
-import image1 from '../../images/services/aheza/aheza-svc-15.jpeg'
-import background from "../../images/background/aheza-bg-9-2.jpg"
 import background2 from "../../images/background/aheza-bg-9-4.png"
 
 

@@ -1,23 +1,14 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import { contactUsFunc } from "../../store/contact-us/actions";
-import Map from '../elements/map';
+
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
 import background from "../../images/background/aheza-bg-12-5.png";
-import pic1 from "../../images/about/pic-1.jpg";
-import icon1 from "../../images/icon/icon1.png";
-import icon2 from "../../images/icon/icon2.png";
-import icon3 from "../../images/icon/icon3.png";
-import animateWave from "../../images/shap/wave-blue.png";
-import animate2 from "../../images/shap/circle-dots.png";
-import animateRotate from "../../images/shap/plus-blue.png";
-import contactImage from "../../images/imagge.png";
 
 
 const ContactUs = () => {
@@ -78,11 +69,11 @@ const ContactUs = () => {
 			<Header />
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper contact-us-title">
-						<div className="container">
-							<div className="page-banner-entry text-center" >
-								<h2 style={{ fontSize: 80 }}>Contact Us</h2>
-							</div>
+					<div className="container">
+						<div className="page-banner-entry text-center" >
+							<h2 style={{ fontSize: 80 }}>Contact Us</h2>
 						</div>
+					</div>
 				</div>
 
 				<section className="">

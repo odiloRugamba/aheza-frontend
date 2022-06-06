@@ -1,9 +1,7 @@
-// playPause
 .audioPlayer {
   .audioplayerBtnCont {
     position: relative;
     display: flex;
-    // flex-direction: column;
     align-items: center;
     bottom: 155px;
     padding-left: 4px;
@@ -18,12 +16,6 @@
       align-items: center;
       cursor: pointer;
 
-      // .linePlayed{
-      //  background: #54D6D3;
-      // height: 6px; 
-      // //  width: 70%;
-      // border-radius: 50px 0px 0px 50px ;
-      // }
       .dragPin {
         background: #54D6D3;
         height: 14px;
@@ -72,10 +64,6 @@
 .audioPlayer {
   --primary: #565acf;
   --secondary: #ffd200;
-
-  // align-items: center;
-  // display: flex;
-  // width: 700px;
 }
 
 .forwardBackward {
@@ -93,7 +81,6 @@
 .linePlayed {
   background: #54D6D3;
   height: 6px;
-  //  width: 70%;
   border-radius: 50px 0px 0px 50px;
   margin-left: 5px;
   position: relative;
@@ -125,7 +112,6 @@
 
 .currentTime,
 .duration {
-  // font-family: monospace;
   font-size: 16px;
   color: white;
 }
@@ -145,9 +131,7 @@
   background: var(--bar-bg);
   ;
   border-radius: 10px;
-  // position: relative;
   width: 500px;
-  // margin: 0px 5px;
   height: 6px;
   outline: none;
   display: flex;
@@ -157,7 +141,6 @@
 
 .currentCont {
   display: flex;
-  // align-items: center;
 }
 
 /* progress bar - safari */
@@ -166,7 +149,6 @@
   ;
   border-radius: 10px;
   position: relative;
-  // width: 100;
   height: 6px;
   outline: none;
 }
@@ -251,8 +233,6 @@
 
 
 .partenerImage {
-  // background: url('../../images/background/aheza-bg-10.jpg');
-  // background-size: 'cover',
   box-shadow: inset 200px 60px 80px 0px white;
 }
 
@@ -264,8 +244,6 @@
   p {
     color: #444;
     font-size: 20px;
-    // line-height: 20px;
-    // font-family: var(--bs-font-sans-serif);
   }
 
   p strong {
@@ -274,8 +252,6 @@
     color: #1f2278;
     font-weight: 700;
     font-family: 'Montserrat', sans-serif;
-    // font-family: var(--bs-font-sans-serif);
-    // margin-left: 30px;
   }
 
   h6 {}

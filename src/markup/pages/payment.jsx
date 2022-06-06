@@ -1,9 +1,5 @@
-import React, { Component, useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import LoadingComp from "../elements/loading";
-import ReactPaginate from "react-paginate";
-import EmptyComp from "../elements/empyt";
 import { postPayment } from "../../store/payment/actions";
 
 // Layout
@@ -39,7 +35,6 @@ const ResearchFindings = () => {
   <>
    <Header />
    <div className="page-content bg-white" style={{ marginTop: 70 }}>
-
     <section className="section-area paymentContent section-sp1">
      <div className='paymentCont'>
       <div className='title'>Enter your payment details</div>

@@ -1,18 +1,9 @@
-// contact-wraper
-// radioBtn
-// CheckBoxBtn
-// swipeCont
-// contact-wraper
-// onBehalfCont
-// rowCont
-
 .saveyCont {
   span {
     overflow: hidden;
   }
 
   .container {
-    // width: 45vw;
     width: 700px;
     margin-bottom: 40px;
     border-radius: 10px;
@@ -24,10 +15,6 @@
   }
 
   @media screen and (max-width: 594px) {
-    // .container {
-    //   width: 90vw;
-    // }
-
     .changeQuestionBtn {
       margin-bottom: 20px;
     }
@@ -35,11 +22,7 @@
 
   @media screen and (max-width: 594px) {
     .container {
-      // width: 100vw;
-    }
-
-    .cardCont {
-      // margin-left: 10px !important;
+      width: 96vw;
     }
   }
 
@@ -50,12 +33,10 @@
 
     .questionCont ul li {
       position: relative;
-      // left: -20px;
     }
   }
 
   .questionCont ul {
-    // margin-left: 30px;
     margin-top: 15px;
     margin-bottom: 30px;
     overflow: hidden;
@@ -69,15 +50,12 @@
     cursor: pointer;
     margin-bottom: 5px;
     padding: 1px;
-    // padding-left:3px;
     border-radius: 4px;
     max-width: 800px;
-    // position: relative;
   }
 
   .questionCont ul li:hover {
     padding: 0px;
-    // padding-left:3px;
     border: 1px dashed black;
   }
 
@@ -143,14 +121,9 @@
     div::-webkit-scrollbar {
       display: none;
     }
-
-    // height: auto;
-    //  min-height: 250px;
   }
 
-  .react-swipeable-view-container {
-    // align-items: ;
-  }
+  .react-swipeable-view-container {}
 
   .radioBtn input {
     visibility: hidden;
@@ -231,7 +204,6 @@
     border-radius: 10px;
     width: 1000px;
     max-height: 93vh;
-    // overflow-y: scroll;
   }
 
   .mainPartCont {
@@ -288,11 +260,6 @@
     .react-swipeable-view-container {
       height: min-content;
 
-      // div {
-      //   background: yellow;
-      //   display: none !important;
-      // }
-
       div[aria-hidden=true] {
         height: 0px !important;
         height: fit-content;
@@ -306,6 +273,6 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    margin-left: 10px;
+    padding-left: 10px;
   }
 }

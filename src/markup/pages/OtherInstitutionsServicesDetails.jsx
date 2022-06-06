@@ -1,7 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Accordion } from 'react-bootstrap';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getHospitalById } from "../../store/hospital/actions";
 import { Dcore } from '../../api';
@@ -9,14 +8,6 @@ import { Dcore } from '../../api';
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 
-// Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import circleDots from "../../images/shap/circle-dots.png";
-import plusBlue from "../../images/shap/plus-blue.png";
-import servicesPic1 from "../../images/services/pic1.jpg";
-import pdf from "../../images/icon/pdf.png";
-import doc from "../../images/icon/doc.png";
 
 const ServiceDetail = () => {
 	const [hospital, setHospital] = useState(null)
@@ -30,7 +21,6 @@ const ServiceDetail = () => {
 	}, [])
 
 	useEffect(() => {
-		console.log(response)
 		setHospital(response)
 	}, [response])
 
@@ -44,8 +34,8 @@ const ServiceDetail = () => {
 						<div className="row">
 							<div className="col-lg-8 mb-30">
 								<div className="post-media">
-									<img style={{width: "100%", marginBottom: 30}} src={Dcore.IMAGEURL + "/" + hospital?.image} alt="" />
-								</div> 
+									<img style={{ width: "100%", marginBottom: 30 }} src={Dcore.IMAGEURL + "/" + hospital?.image} alt="" />
+								</div>
 								<div className="clearfix">
 									<div className="head-text mb-30">
 										<h2 className="title mb-15">{hospital?.name}</h2>
@@ -68,18 +58,13 @@ const ServiceDetail = () => {
 											}
 										</ul>
 									</div>
-							
-
 								</aside>
 							</div>
 						</div>
 					</div>
 				</section>
-
 			</div>
-
 			<Footer />
-
 		</>
 	);
 }

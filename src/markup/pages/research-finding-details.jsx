@@ -1,16 +1,14 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getResearchById, getResearchs, getResearchCommnets, postResearchComments } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 // Elements
-import AuthorProfile from "../elements/author-profile";
 import CommentList from "../elements/comments/research-finding";
 import CommentRespond from "../elements/comment-respond";
-import WidgetTag from "../elements/tag-widgets/research-findings";
 import ResearchFindingWidget from "../elements/related-widgets/research-finding";
 import LoadingComp from "../elements/loading";
 import SocialMediaComp from '../elements/shareMedia'
@@ -18,7 +16,6 @@ import pdf from "../../images/icon/pdf.png";
 import doc from "../../images/icon/doc.png";
 import { jsPDF } from "jspdf";
 import { Dcore } from '../../api';
-// import htmlToFormattedText from "html-to-formatted-text";
 import htmlTopdf from 'html2pdf.js'
 
 
@@ -55,7 +52,6 @@ const ResearchFindingDetails = () => {
 		setReletedData(relData?.slice(0, 3))
 	}, [resetResearch])
 	const submitFunc = async (data) => {
-		console.log(data)
 		setLoading(true)
 		await dispatch(postResearchComments({ ...data, research: id }))
 		await dispatch(getResearchCommnets(id))
@@ -81,7 +77,7 @@ const ResearchFindingDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single" style={{width: "100%"}}>
+									<div className="blog-card blog-single" style={{ width: "100%" }}>
 										<div className="post-media">
 										</div>
 										<div className="info-bx">
@@ -114,7 +110,7 @@ const ResearchFindingDetails = () => {
 											}
 											<hr />
 											<div className="ttr-post-footer" style={{ borderTop: 0, marginTop: 0 }}>
-												
+
 												<SocialMediaComp />
 											</div>
 										</div>
@@ -133,32 +129,27 @@ const ResearchFindingDetails = () => {
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
 										<ResearchFindingWidget data={reletedData} />
-											<div className="brochure-bx">
-												<h5 className="title-head">Research</h5>
-												<Link to="/contact-us" className="download-link">
-													<img src={pdf} alt="" />
-													<h5 className="title">Publish Your Own</h5>
-													<h5 className="title">Research</h5>
-												</Link>
-												<a onClick={() => { saveFile() }} className="download-link">
-													<img src={doc} alt="" />
-													<h5 className="title">Download</h5>
-													<span>Research</span>
-												</a>
-											</div>
+										<div className="brochure-bx">
+											<h5 className="title-head">Research</h5>
+											<Link to="/contact-us" className="download-link">
+												<img src={pdf} alt="" />
+												<h5 className="title">Publish Your Own</h5>
+												<h5 className="title">Research</h5>
+											</Link>
+											<a onClick={() => { saveFile() }} className="download-link">
+												<img src={doc} alt="" />
+												<h5 className="title">Download</h5>
+												<span>Research</span>
+											</a>
+										</div>
 									</aside>
 								</div>
-
 							</div>
 						</div>
 					</section>
-
 				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
 			}
-
-
 			<Footer />
-
 		</>
 	);
 }

@@ -21,7 +21,6 @@
 		left: 0;
 		bottom: 0;
 		position: absolute;
-		// background-image: url(../../images/main-banner/shape1.png);
 		background-repeat: no-repeat;
 		background-position: bottom left;
 		background-size: 100%;
@@ -116,113 +115,6 @@
 			display: none;
 		}
 
-		// .connentInnerr {
-		// 	// border-color: black;
-		// 	border-width: 3px;
-		// 	background: whitesmoke;
-		// 	padding: 0;
-		// 	// color: black;
-		// 	// position: absolute;
-		// 	// bottom: -200px;
-		// 	// right: -20px;
-		// 	// height: 457px;
-		// 	width: 390px;
-		// 	border-radius: 10px;
-		// 	display: flex;
-		// 	align-items: center;
-		// 	overflow: hidden;
-		// 	// display: none;
-		// 	.slideNumber {
-		// 		position: absolute;
-		// 		color: black;
-		// 		top: 30px;
-		// 		width: 385px;
-		// 		display: flex;
-		// 		justify-content: center;
-
-		// 		div {
-		// 			background: white;
-		// 			width: 35px;
-		// 			height: 35px;
-		// 			font-size: 15px;
-		// 			border-radius: 50%;
-		// 			display: flex;
-		// 			align-items: center;
-		// 			justify-content: center;
-		// 			z-index: 9999999;
-		// 		}
-		// 	}
-
-		// 	.daytitsTitle {
-		// 		position: absolute;
-		// 		width: 400px;
-		// 		display: flex;
-		// 		justify-content: center;
-		// 		bottom: 70px;
-		// 	}
-
-		// 	.next {
-		// 		display: flex;
-		// 		justify-content: center;
-		// 		// position: relative;
-		// 		// right: 0.5vw;
-		// 		padding-left: 2px;
-		// 	}
-
-		// 	.prev {
-		// 		// position: absolute;
-		// 		// left: 4px;
-		// 		z-index: 99999;
-		// 		padding-right: 2px;
-		// 	}
-
-		// 	.nextPrevIcon {
-		// 		div {
-		// 			width: 20px;
-		// 			height: 20px;
-		// 			background: white;
-		// 			border-radius: 100%;
-		// 			cursor: pointer;
-		// 			display: flex;
-		// 			justify-content: flex-start;
-		// 			align-items: center;
-		// 			// padding: ;
-		// 		}
-
-		// 		img {
-		// 			width: 10px;
-		// 			height: 10px;
-		// 			position: relative;
-		// 			left: 5px;
-		// 			bottom: 1px;
-		// 		}
-		// 	}
-
-		// 	div::-webkit-scrollbar {
-		// 		display: none;
-		// 	}
-		// }
-
-		// .connentInner {
-		// 	background: #EDEDF5;
-		// 	height: 457px;
-		// 	// width: 390px;
-		// 	padding: 6px;
-		// 	// border-radius: 10px;
-		// 	display: flex;
-		// 	justify-content: center;
-		// 	align-items: center;
-
-		// 	// padding: 0px 70px  0px 10px;
-		// 	.inneData {
-		// 		// padding-right: 100px;
-		// 		z-index: 999;
-		// 		font-size: 20px;
-		// 		text-align: center;
-		// 		width: 330px;
-		// 	}
-
-		// }
 		@include respond('tab-port') {
 			display: none;
 		}

@@ -3,8 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 import { useLocation } from 'react-router-dom'
 import searchIcon from '../../images/search.svg';
-
-// book
 // Images
 import logo from '../../images/logo-2.png';
 import { BsXLg } from "react-icons/bs";
@@ -35,7 +33,7 @@ function Header() {
 		ourServicesActive = "active"
 	}
 
-	
+
 	let otherInstitutionsServices = "";
 	if (route === "/other-institutions-services") {
 		otherInstitutionsServices = "active"
@@ -47,7 +45,7 @@ function Header() {
 		resourcesActive = "active"
 	}
 
-	
+
 	let contactUsActive = "";
 	if (route.includes("contact-us")) {
 		contactUsActive = "active"
@@ -154,9 +152,6 @@ function Header() {
 					</div>
 				</div> : null
 			}
-
-
-
 		</>
 	);
 }

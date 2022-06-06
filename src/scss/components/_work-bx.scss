@@ -1,8 +1,5 @@
 /* ==================
 	8.23 Work Box
-		slideNumber
-				applePhone
-																nextPrevIcon
 =================== */
 .work-area {
 	.pt-img1 {
@@ -79,7 +76,6 @@
 		font-weight: 900;
 		margin-bottom: 30px;
 		line-height: 80px;
-		// -webkit-text-stroke: 2px white;
 		text-shadow: 0 10px 0 #ffe3d3;
 		color: transparent;
 	}
@@ -133,7 +129,6 @@
 			color: $secondary;
 
 			.btn-icon-bx {
-				// background-color: $secondary;
 				background-color: #fff;
 				color: $secondary;
 			}
@@ -154,10 +149,6 @@
 	top: -16px;
 
 	@media screen and (max-width: 375px) {
-		// left: 5px;
-		// width: 87vw !important;
-		// width: 335px !important;
-		// height: 662px;
 		width: 342px;
 		height: auto;
 	}
@@ -181,7 +172,6 @@
 		height: 659px !important;
 	}
 
-	// display: none;
 	.slideNumber {
 		position: absolute;
 		color: black;
@@ -191,7 +181,6 @@
 		justify-content: center;
 
 		@include respond('phone') {
-			// width: 80vw;
 			height: auto;
 			width: 360px !important;
 			min-height: 730px;
@@ -216,14 +205,11 @@
 		display: flex;
 		justify-content: center;
 		bottom: 70px;
-		// : 400px;
 	}
 
 	.next {
 		display: flex;
 		justify-content: center;
-		// position: relative;
-		// right: 0.5vw;
 		padding-left: 2px;
 		margin-right: 16px;
 		z-index: 99999;
@@ -232,11 +218,8 @@
 	}
 
 	.prev {
-		// position: absolute;
-		// left: 4px;
 		z-index: 99999;
 		padding-right: 2px;
-		// margin-left: 15px;
 		left: 15px;
 		position: absolute;
 
@@ -258,7 +241,6 @@
 			justify-content: flex-start;
 			align-items: center;
 
-			// padding: ;
 			@media screen and (max-width: 375px) {
 				width: 30px;
 				height: 30px;
@@ -310,18 +292,11 @@
 .connentInner {
 	background: #EDEDF5;
 	height: 357px;
-	// width: 390px;
 	padding: 10px;
-	// border-radius: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	@include respond('phone') {
-		// width: 300px;
-	}
-
-	// padding: 0px 70px  0px 10px;
 	.inneData {
 		z-index: 999;
 		font-size: 20px;
@@ -331,8 +306,6 @@
 		color: #fff;
 		font-size: 20px;
 		font-weight: 700;
-		// padding: 5px;
-
 	}
 
 }

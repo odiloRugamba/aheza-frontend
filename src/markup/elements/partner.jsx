@@ -1,10 +1,6 @@
-import React, { Component, useState, useEffect } from 'react';
+import React from 'react';
 // Import Images
-import bg1 from '../../images/background/line-bg1.png';
-import image1 from '../../images/services/aheza/aheza-svc-15.jpeg'
-import background from "../../images/background/aheza-bg-9-2.jpg"
 import background2 from "../../images/background/aheza-bg-10.jpg"
-// import background2 from "../../images/background/aheza-bg-11.jpg"
 import { Link } from 'react-router-dom';
 
 
@@ -12,13 +8,13 @@ import { Link } from 'react-router-dom';
 const AboutSection = () => {
 	return (
 		<>
-			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 0}}>
+			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 0 }}>
 				<div className="container g-header">
 					<div className="heading-bx text-center g-space">
 						<h1 className="title m-b0 g-title">Partnerships</h1>
 					</div>
 				</div>
-				<div className="row" style={{marginRight: 0 }}>
+				<div className="row" style={{ marginRight: 0 }}>
 					<div className="col-lg-6 col-md-6 col-sm-12" style={{ marginTop: 10 }}>
 						<div className="ttr-post-text missionText" style={{ padding: 10 }}>
 						</div>

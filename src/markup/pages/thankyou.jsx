@@ -1,15 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-// Images
-import lineBg from '../../images/appointment/line-bg.png';
-import appMobile from '../../images/appointment/mobile.png';
-import appWomen from '../../images/appointment/women.png';
-import appMapPin from '../../images/appointment/map-pin.png';
-import appSetting from '../../images/appointment/setting.png';
-import appCheck from '../../images/appointment/check.png';
-import appChat from '../../images/appointment/chat.png';
-import verified from '../../images/verified.png';
+
+
 
 const AboutSection = () => {
 
@@ -38,8 +30,8 @@ const AboutSection = () => {
            <div className="work-content">
             <p>
              Our team will contact you shortly about your appointment arrangements.
-             
-             <br/><br/><br/>                          
+
+             <br /><br /><br />
              Thank you.
             </p>
            </div>
@@ -47,7 +39,7 @@ const AboutSection = () => {
            </div>
           </div>
           <div>
-           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{fontSize: 20, fontWeight: 700}}>Go Home</button>
+           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{ fontSize: 20, fontWeight: 700 }}>Go Home</button>
           </div>
          </div>
         </div>

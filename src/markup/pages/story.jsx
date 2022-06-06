@@ -1,6 +1,6 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getStorysById, getStorys, getStoryComments, postStoryComments } from "../../store/story/actions";
 // Layout
@@ -16,11 +16,7 @@ import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import waveBlue from "../../images/shap/wave-blue.png";
-import plusBlue from "../../images/shap/plus-blue.png";
 import AudioFle from "../../images/audio.mp3";
-import { AudioPlayer } from "./AudioPlayer";
 
 
 const StorysDetails = () => {
@@ -81,9 +77,6 @@ const StorysDetails = () => {
 
 
 	const nextFunc = () => {
-		console.log('next')
-		console.log('dd', audioData.currentTime)
-		console.log('dd', audioData)
 		console.log((audioData?.currentTime / audioData?.duration) * 100)
 	}
 
@@ -94,11 +87,8 @@ const StorysDetails = () => {
 			setPlayingStart(false)
 		} else {
 			if (!playing) {
-				console.log('playing')
 				audioData.current.play()
-				console.log('dd', audioData)
 			} else {
-				console.log('amm gete')
 				audioData.current.pause()
 			}
 			setPlaying(!playing)
@@ -123,7 +113,7 @@ const StorysDetails = () => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12 col-lg-7 col-xl-8 mb-30 mb-md-50">
-									<div className="blog-card blog-single" style={{width: "100%"}}>
+									<div className="blog-card blog-single" style={{ width: "100%" }}>
 										<div className="post-">
 											{
 												res?.youtubeVideoLink &&

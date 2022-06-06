@@ -1,11 +1,9 @@
-import React, { Component, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-// Layout
-import Header from "../layout/header";
-import Footer from "../layout/footer";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
+
 
 // Elements
-import AppointmentSection from "../elements/appointment";
 import SelfEvaluation from "../elements/selfEvaluation";
 
 

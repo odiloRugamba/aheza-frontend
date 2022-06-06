@@ -1,6 +1,5 @@
 import { Dcore } from "../../api";
-import Axios from "axios";
-import { call, put, takeEvery, all } from "redux-saga/effects";
+import { call, put, takeEvery } from "redux-saga/effects";
 import { GET_DOCTOR_BY_DAY, GET_DOCTOR_BY_DAY_SUCCESS, CREATE_APPOINTMENT, CREATE_APPOINTMENT_SUCESS, POST_APPOINTMENT_DATA, POST_APPOINTMENT_DATA_SUCESS } from "./actions";
 
 
@@ -25,9 +24,7 @@ function* postAppointmentData(data) {
 
 function* createAppointment(data) {
  try {
-  console.log(data)
   const response = yield call(Dcore.post, `/appointment`, data.value)
-  console.log(response)
   yield put({ type: CREATE_APPOINTMENT_SUCESS, value: response.data.data.data.data })
  } catch (err) {
   console.log(err)
