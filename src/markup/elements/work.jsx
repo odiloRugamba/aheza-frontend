@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
 import applePhone from '../../images/apple.png';
@@ -37,55 +37,20 @@ const AboutSection = () => {
 
 	useEffect(() => {
 		if (res) {
-			const exData = [
-
-
-				{
-					tip: "Signs that your mental health may be declining",
-					color: '#565acf',
-					title: true
-				}, {
-					tip: "You isolate yourself from family and friends.",
-					color: '#565acf'
-				},
-				{
-					tip: "You find it extremely difficult to get out of bed and complete everyday tasks.",
-					color: '#f17731'
-				},
-				{
-					tip: "You have lost interest in things you used to enjoy. ",
-					color: '#565acf'
-				},
-				{
-					tip: "You have changes in your appetite. Some people find it hard to eat while others may overeat. ",
-					color: '#f17731'
-				},
-				{
-					tip: "You find it hard to take care of your personal hygiene.",
-					color: '#565acf'
-				},
-				{
-					tip: "You find it difficult to concentrate on anything and feel a lack of motivation in doing so.",
-					color: '#f17731'
-				},
-				{
-					tip: "You feel disconnected from reality and from those around you.",
-					color: '#565acf'
+			const exData = []
+			res.tips.forEach((el, index) => {
+				if (index % 2 !== 0) {
+					exData.push({
+						tip: el,
+						color: '#f17731',
+					})
+				} else {
+					exData.push({
+						tip: el,
+						color: '#565acf',
+					})
 				}
-			]
-			// exData.push({
-			// 	tip: res.title,
-			// 	color: '#565ACF'
-			// })
-			// res.tips.forEach(el => {
-			// 	exData.push({
-			// 		tip: el,
-			// 		color: '#f17731'
-			// 	})
-			// });
-			// const all = [res.title, ...res.tips];
-			// console.log(res)
-			// console.log(res.tips)
+			});
 			setData(exData)
 		}
 

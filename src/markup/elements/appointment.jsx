@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 // Images
 import { getDoctorByDay, postAppointmentData } from "../../store/appointment/actions";
 
-
+import { BsExclamationCircle } from "react-icons/bs";
 
 
 
@@ -25,6 +25,7 @@ const AboutSection = () => {
 	const history = useHistory()
 	const { phoneErrorFocus, setPhoneErrorFocus } = useState(null)
 	const [dateCha, setDateCha] = useState(null)
+	const [dateChaApp, setDateChaApp] = useState(null)
 	const [Session, setSession] = useState(true)
 	const [Doctor, setDoctor] = useState(true)
 	const [DoctorData, setDoctorData] = useState([])
@@ -36,7 +37,7 @@ const AboutSection = () => {
 		setSelectedDay(e.target.value)
 		setDoctor(true)
 		setSession(true)
-		dispatch(getDoctorByDay({ day: e.target.value }))
+		// dispatch(getDoctorByDay({ day: e.target.value }))
 	}
 
 	const selectDoctor = (e) => {
@@ -108,49 +109,92 @@ const AboutSection = () => {
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book  Appointment</h3>
 										<div className="form-group">
-											<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
-											<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="Last Name" />
+											<div>
+												<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
+											</div>
+											<div>
+												<div>
+													<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="Last Name" />
+													<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+														<span style={{ fontSize: 18 }}>
+															<BsExclamationCircle />
+														</span> Required
+													</div>
+												</div>
+
+											</div>
 										</div>
 										<div className="form-group">
-											<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
-												<option selected>Gender </option>
-												<option value="Male">Male</option>
-												<option value="Female">Female</option>
-												<option value="NONE">Not to mention</option>
-											</select>
-
-											<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='Date of Birth' />
+											<div>
+												<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
+													<option selected>Gender </option>
+													<option value="Male">Male</option>
+													<option value="Female">Female</option>
+													<option value="NONE">Not to mention</option>
+												</select>
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
+											</div>
+											<div>
+												<input value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='Date of Birth' />
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
+											</div>
 										</div>
 										<div className="form-group">
 											<div>
 												<input onBlur={() => validatePhoneNumber()} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
 											</div>
 											<div>
 												<input value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Email is not valid
+												</div>
 											</div>
 										</div>
 										<div className="form-group">
-											<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
-												<option selected>Method of Communication</option>
-												<option value="IN-PERSON">In Person</option>
-												<option value="PHONE-CALL">Phone Call</option>
-												<option value="ZOOM-CALL">Zoom Video Call</option>
-												<option value="AHEZA-CHAT">Aheza Chat</option>
-											</select>
-										</div>
-										<div className="form-group">
-											<select value={selectedDay} onChange={(e) => { selectday(e) }} className="form-select form-control">
-												<option selected>Select Day</option>
-												<option value="MONDAY">Monday</option>
-												<option value="TUESDAY">Tuesday</option>
-												<option value="WENSDAY">Wednesday</option>
-												<option value="THURSDAY">Thursday</option>
-												<option value="FRIDAY">Friday</option>
-												<option value="SATURDAY">Saturday</option>
-												<option value="SUNDAY">Sunday</option>
-											</select>
-										</div>
+											<div>
+												<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
+													<option selected>Method of Communication</option>
+													<option value="IN-PERSON">In Person</option>
+													<option value="PHONE-CALL">Phone Call</option>
+													<option value="ZOOM-CALL">Zoom Video Call</option>
+													<option value="AHEZA-CHAT">Aheza Chat</option>
+												</select>
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
+											</div>
+											<div>
+												<input value={selectedDay} onChange={(e) => { setSelectedDay(e.target.value) }} type={dateChaApp} className="form-control" onFocus={() => { setDateChaApp('date') }} placeholder='Appointment day' />
+												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10 }}>
+													<span style={{ fontSize: 18 }}>
+														<BsExclamationCircle />
+													</span> Required
+												</div>
+											</div>
 
+										</div>
 										<button
 											onClick={() => submitAppointment()}
 											type="submit"
