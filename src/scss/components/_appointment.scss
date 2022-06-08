@@ -2,6 +2,7 @@
 	8.4 Appointment
 	form-group
 	input
+	container
 =================== */
 .account-wraper1 {
 	padding-bottom: 100px;
@@ -493,12 +494,23 @@
 
 			input,
 			select {
-				margin-top: 12px;
-				width: 84vw;
+				// margin-top: 12px;
 			}
 
 			select {
 				margin-top: 12px;
+			}
+		}
+	}
+
+	.phonePadding {
+		.form-wraper {
+			.form-group {
+
+				input,
+				select {
+					width: 84vw;
+				}
 			}
 		}
 	}
@@ -511,8 +523,8 @@
 @include respond('phone') {
 	.container {
 		position: relative;
-		padding-left: 5px;
-		margin-left: 6px;
+		// padding-left: 0px;
+		// margin-left: 0px;
 	}
 }
 

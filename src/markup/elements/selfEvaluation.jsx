@@ -2,11 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 
-
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
 import animateWave from "../../images/shap/wave-blue.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 
@@ -128,7 +126,7 @@ const SelftEvaluation = ({ decline, accept }) => {
         }
         <div className="page-content bg-white" style={{ marginTop: 100 }}>
           <div className="banner-wraper">
-            <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
+            <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
               <div className="container">
                 <div className="page-banner-entry text-center">
                   <h2>Please take Self Assesment first</h2>

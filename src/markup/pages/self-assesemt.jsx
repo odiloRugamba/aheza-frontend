@@ -235,7 +235,7 @@ const SurveyPage = () => {
                               <div className="page-banner-entry">
                                 <h4>{el.question}</h4>
                               </div>
-                              <div className='questionCont onBehalfCont' >
+                              <div className='questionCont onBehalfCont'>
                                 <ul>
                                   {
                                     el?.questionType === 'RADIO' ?
@@ -309,10 +309,10 @@ const SurveyPage = () => {
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push('/')} style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} className='positionBtn'>Back to Home</button>
+                      <button onClick={() => history.push('/')} className='positionBtn'>Back to Home</button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} className='positionBtn'>Yes, Continue</button>
+                      <button onClick={() => CloseModel()} className='positionBtn'>Yes, Continue</button>
                     </div>
                   </div>
                 </div>

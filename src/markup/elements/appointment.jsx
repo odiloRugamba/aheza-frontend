@@ -34,15 +34,6 @@ const AboutSection = () => {
 	const data = useSelector(state => state.AppointmentReducers.data)
 
 
-	const [firstNameError, setFirstNameError] = useState(false)
-	const [lastNameError, setLastNameError] = useState(false)
-	const [genderError, setGenderError] = useState(false)
-	const [dateBError, setDateBError] = useState(false)
-	const [phoneNumberError, setPhoneNumberError] = useState(false)
-	const [emailError, setEmailError] = useState(false)
-	const [communicationMethodError, setCommunicationMethodError] = useState(false)
-	const [selectedDayError, setSelectedDayError] = useState(false)
-
 	const selectday = (e) => {
 		setSelectedDay(e.target.value)
 		setDoctor(true)
@@ -106,54 +97,6 @@ const AboutSection = () => {
 	}
 
 
-	const checkError = (item) => {
-		// if (item === 'firstName') {
-		// 	if (firstName?.trim() === '' || firstName !== '') {
-		// 		setFirstNameError(true)
-		// 		console.log('true')
-		// 	} else {
-		// 		setFirstNameError(false)
-		// 		console.log('false')
-		// 	}
-		// } else if (item === 'lastName') {
-		// 	if (lastName?.trim() === '' || lastName !== '') {
-		// 		setLastNameError(true)
-		// 	} else {
-		// 		setLastNameError(false)
-		// 	}
-		// } else if (item === 'gender') {
-		// 	if (gender?.trim() === '' || gender !== '') {
-		// 		setGenderError(true)
-		// 	} else {
-		// 		setGenderError(false)
-		// 	}
-		// } else if (item === 'date') {
-		// 	if (dateB?.trim() === '' || dateB !== '') {
-		// 		setDateBError(true)
-		// 	} else {
-		// 		setDateBError(false)
-		// 	}
-		// } else if (item === 'email') {
-		// 	if (email?.trim() === '' || email !== '') {
-		// 		setEmailError(true)
-		// 	} else {
-		// 		setEmailError(false)
-		// 	}
-		// } else if (item === 'method') {
-		// 	if (communicationMethod?.trim() === '' || communicationMethod !== '') {
-		// 		setCommunicationMethodError(true)
-		// 	} else {
-		// 		setCommunicationMethodError(false)
-		// 	}
-		// } else if (item === 'appointment') {
-		// 	if (selectedDay?.trim() === '' || selectedDay !== '') {
-		// 		setSelectedDayError(true)
-		// 	} else {
-		// 		setSelectedDayError(false)
-		// 	}
-		// }
-	}
-
 
 
 
@@ -162,7 +105,7 @@ const AboutSection = () => {
 			<section className="section-area account-wraper1">
 				<div className="container-fluid" style={{ paddingTop: 100 }}>
 					<div className="appointment-inner section-sp2" >
-						<div className="container">
+						<div className="container phonePadding">
 							<div className="rowAppo">
 								<div className="col-xl-12 col-lg-12 col-md-12 ">
 									<div className="appointment-form form-wraper">
@@ -187,30 +130,15 @@ const AboutSection = () => {
 										</div>
 										<div className="form-group">
 											<div>
-												<select onBlur={() => checkError('gender')} value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
+												<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
 													<option selected>Gender </option>
 													<option value="Male">Male</option>
 													<option value="Female">Female</option>
 													<option value="NONE">Not to mention</option>
 												</select>
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{genderError ? <><span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> Required</span>
-													</>
-														: null}
 												</div>
 											</div>
-
-											{/* <div>
-												<input onBlur={() => checkError('date')} value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='Date of Birth' />
-												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{dateBError ? <><span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> Required</span>
-													</>
-														: null}
-												</div>
-											</div> */}
-
 											<Input
 												placeholder='Date of Birth'
 												onChange={(e) => { setDateB(e.target.value) }}
@@ -233,6 +161,7 @@ const AboutSection = () => {
 												validerrorMessage='Input is not Valid'
 												id='lastName'
 												type='number'
+											// pattern='^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$'
 											/>
 											<Input
 												placeholder="Email"
@@ -245,29 +174,10 @@ const AboutSection = () => {
 												type='Email'
 												pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
 											/>
-											{/* <div>
-												<input onBlur={() => validatePhoneNumber()} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
-												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{phoneNumberError ? <><span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> Required</span>
-													</>
-														: null}
-												</div>
-											</div> */}
-
-											{/* <div>
-												<input onBlur={() => checkError('email')} value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
-												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{emailError ? <> <span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> 			</span> Email is not valid</>
-														: null}
-												</div>
-											</div> */}
-
 										</div>
 										<div className="form-group">
 											<div>
-												<select onBlur={() => checkError('method')} value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
+												<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
 													<option selected>Method of Communication</option>
 													<option value="IN-PERSON">In Person</option>
 													<option value="PHONE-CALL">Phone Call</option>
@@ -275,10 +185,6 @@ const AboutSection = () => {
 													<option value="AHEZA-CHAT">Aheza Chat</option>
 												</select>
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{communicationMethodError ? <><span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> Required </span>
-													</>
-														: null}
 												</div>
 											</div>
 
@@ -292,17 +198,6 @@ const AboutSection = () => {
 												type={dateChaApp}
 												onFocus={() => { setDateChaApp('date') }}
 											/>
-
-											{/* <div>
-												<input onBlur={() => checkError('appointment')} value={selectedDay} onChange={(e) => { setSelectedDay(e.target.value) }} type={dateChaApp} className="form-control" onFocus={() => { setDateChaApp('date') }} placeholder='Appointment day' />
-												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{selectedDayError ? <><span style={{ fontSize: 18 }}>
-														<BsExclamationCircle /> Required</span>
-													</>
-														: null}
-												</div>
-											</div> */}
-
 										</div>
 										<button
 											onClick={() => submitAppointment()}

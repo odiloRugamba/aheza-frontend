@@ -1,3 +1,5 @@
+// questionCont
+
 .saveyCont {
   span {
     overflow: hidden;
@@ -17,12 +19,20 @@
   @media screen and (max-width: 594px) {
     .changeQuestionBtn {
       margin-bottom: 20px;
+
+      button {
+        font-size: 14px !important;
+      }
+
+      // font-size: 1px;
     }
   }
 
   @media screen and (max-width: 594px) {
     .container {
-      width: 96vw;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
     }
   }
 
@@ -51,7 +61,7 @@
     margin-bottom: 5px;
     padding: 1px;
     border-radius: 4px;
-    max-width: 800px;
+    max-width: 620px;
   }
 
   .questionCont ul li:hover {
@@ -167,6 +177,8 @@
   }
 
   .textAreaCont {
+    max-width: 620px;
+
     textarea {
       border: 2px solid #bfbfbf;
       border-radius: 6px;
@@ -204,6 +216,10 @@
     border-radius: 10px;
     width: 1000px;
     max-height: 93vh;
+
+    @include respond('phone') {
+      padding: 30px 10px;
+    }
   }
 
   .mainPartCont {
@@ -233,11 +249,12 @@
   }
 
   .positionBtn {
-    background-color: #fff;
-    color: $primary;
+    background-color: #565ACF;
+    // color: $primary;
+    color: #fff;
     padding: 12px 15px;
-    font-weight: 600;
-    font-size: 14px;
+    font-weight: 700;
+    font-size: 17px;
     min-width: 40px;
     line-height: 1;
     display: block;
@@ -246,6 +263,12 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 10;
+
+    @include respond('phone') {
+      padding: 10px 15px;
+      font-weight: 600;
+      font-size: 14px;
+    }
   }
 
   .positionBtn:hover {
@@ -273,6 +296,12 @@
     display: flex;
     justify-content: center;
     width: 100vw;
-    padding-left: 10px;
+    // padding-left: 0px;
+  }
+}
+
+.phonePadding {
+  @include respond('phone') {
+    padding-left: 0px !important;
   }
 }
