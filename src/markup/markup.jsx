@@ -33,7 +33,9 @@ import Upload from "./pages/upload";
 import ReasearchFindingDetails from './pages/research-finding-details'
 import SurveyPage from './pages/surveyy'
 import FinalizeAppointment from "./pages/payment-status";
-import Thankyou from "./pages/thankyou";
+import Thankyou from "./pages/redirectpage";
+import FailThank from "./pages/failThank";
+import SuccessThank from "./pages/successThank";
 import SelfAssesement from "./pages/self-assesemt";
 import Donation from "./pages/donation";
 import Payment from "./pages/payment";
@@ -77,7 +79,6 @@ class Markup extends Component {
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
 						<ProtectRoute path='/finalize' exact component={FinalizeAppointment} />
-						<ProtectRoute path='/thankyou' exact component={Thankyou} />
 						<ProtectRoute path='/appointment-assesement' exact component={SelfAssesement} />
 						<ProtectRoute path='/survey' exact component={SelfAssesement} />
 						<ProtectRoute path='/donation' exact component={Donation} />
@@ -87,6 +88,9 @@ class Markup extends Component {
 						<ProtectRoute path='/terms' exact component={Terms} />
 						<ProtectRoute path='/self-evaluation' exact component={SelfEvaluation} />
 						<ProtectRoute path='/links' exact component={LinksComp} />
+						<ProtectRoute path='/thankyou' exact component={Thankyou} />
+						<ProtectRoute path='/successful' exact component={SuccessThank} />
+						<ProtectRoute path='/failed' exact component={FailThank} />
 						<Route component={Error} />
 					</Switch>
 					<PageScrollTop />

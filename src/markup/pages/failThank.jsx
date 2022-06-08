@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams, useLocation } from "react-router-dom";
 
 
 
@@ -8,9 +8,23 @@ import { useHistory } from "react-router-dom";
 const AboutSection = () => {
  const [money, setMoney] = useState(null)
  const history = useHistory()
+ const routerData = useParams()
+ const routerLink = useLocation()
  const gotoAheza = () => {
   history.push('/')
  }
+
+ // useEffect(() => {
+ //  console.log(routerLink.search.split('&')[0].split('=')[1])
+ //  if (routerLink.search.split('&')[0].split('=')[1] === "successful") {
+ //   console.log('done suceesss')
+ //   history.push('/')
+ //  } else if (routerLink.search.split('&')[0].split('=')[1] === "failed") {
+ //   console.log('done failer')
+ //   history.push('/')
+ //  }
+ // }, [])
+
  return (
   <>
    <section className="section-area account-wraper1">
@@ -31,7 +45,6 @@ const AboutSection = () => {
            <div className="work-content">
             <p>
              Our team will contact you shortly about your appointment arrangements.
-
              <br /><br /><br />
              Thank you.
             </p>
@@ -49,7 +62,6 @@ const AboutSection = () => {
      </div>
     </div>
    </section>
-
   </>
  );
 }

@@ -39,7 +39,7 @@ const AboutSection = () => {
         return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     const changeMoney = (item) => {
-        setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 10000 : null)
+        setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 100 : null)
     }
     const selectMethod = (item) => {
         appOption.forEach(el => {

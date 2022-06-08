@@ -1,6 +1,7 @@
 /* ==================
 	8.4 Appointment
 	form-group
+	input
 =================== */
 .account-wraper1 {
 	padding-bottom: 100px;
@@ -513,4 +514,13 @@
 		padding-left: 5px;
 		margin-left: 6px;
 	}
+}
+
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0px;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
 }

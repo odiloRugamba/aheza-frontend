@@ -1,8 +1,8 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion } from 'react-bootstrap';
-import { useHistory, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { getResearchById, getResearchCommnets } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
@@ -26,6 +26,8 @@ const RsearchDetails = () => {
 		dispatch(getResearchById(id))
 		dispatch(getResearchCommnets(id))
 	}, [])
+
+
 
 	return (
 		<>
