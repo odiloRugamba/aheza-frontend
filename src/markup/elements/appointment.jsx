@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import { getDoctorByDay, postAppointmentData } from "../../store/appointment/actions";
 
 import { BsExclamationCircle } from "react-icons/bs";
-
+import Input from "./tag-widgets/input";
 
 
 const AboutSection = () => {
@@ -107,16 +107,13 @@ const AboutSection = () => {
 
 
 	const checkError = (item) => {
-		console.log(item)
 		// if (item === 'firstName') {
-		// 	console.log(firstName?.trim() === '')
-		// 	console.log(firstName)
-		// 	console.log(firstName?.trim() === '' || firstName !== '')
-		// 	console.log(firstName?.trim() === '' && firstName !== '')
 		// 	if (firstName?.trim() === '' || firstName !== '') {
 		// 		setFirstNameError(true)
+		// 		console.log('true')
 		// 	} else {
 		// 		setFirstNameError(false)
+		// 		console.log('false')
 		// 	}
 		// } else if (item === 'lastName') {
 		// 	if (lastName?.trim() === '' || lastName !== '') {
@@ -171,24 +168,22 @@ const AboutSection = () => {
 									<div className="appointment-form form-wraper">
 										<h3 className="title">Book  Appointment</h3>
 										<div className="form-group">
-											<div>
-												<input onBlur={() => checkError('firstName')} value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" className="form-control" placeholder="First Name" />
-												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-													{firstNameError ? <><span style={{ fontSize: 16 }}>
-														<BsExclamationCircle />
-													</span> Required</> : null}
-												</div>
-											</div>
-											<div>
-												<div>
-													<input onBlur={() => checkError('lastName')} value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" className="form-control" placeholder="Last Name" />
-													<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
-														{lastNameError ? <> <span style={{ fontSize: 18 }}>
-															<BsExclamationCircle /> </span> Required</>
-															: null}
-													</div>
-												</div>
-											</div>
+											<Input
+												placeholder="First Name"
+												onChange={(e) => { setFirstName(e.target.value) }}
+												value={firstName}
+												required={true}
+												errorMessage='Required'
+												id='firstName'
+											/>
+											<Input
+												placeholder="Last Name"
+												onChange={(e) => { setLastName(e.target.value) }}
+												value={lastName}
+												required={true}
+												errorMessage='Required'
+												id='lastName'
+											/>
 										</div>
 										<div className="form-group">
 											<div>
@@ -205,7 +200,8 @@ const AboutSection = () => {
 														: null}
 												</div>
 											</div>
-											<div>
+
+											{/* <div>
 												<input onBlur={() => checkError('date')} value={dateB} onChange={(e) => setDateB(e.target.value)} type={dateCha} className="form-control" onFocus={() => { setDateCha('date') }} placeholder='Date of Birth' />
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 													{dateBError ? <><span style={{ fontSize: 18 }}>
@@ -213,10 +209,43 @@ const AboutSection = () => {
 													</>
 														: null}
 												</div>
-											</div>
+											</div> */}
+
+											<Input
+												placeholder='Date of Birth'
+												onChange={(e) => { setDateB(e.target.value) }}
+												value={dateB}
+												required={true}
+												errorMessage='Required'
+												id='lastName'
+												type={dateCha}
+												onFocus={() => { setDateCha('date') }}
+											/>
+
 										</div>
 										<div className="form-group">
-											<div>
+											<Input
+												placeholder="Phone Number"
+												onChange={(e) => { setPhoneNumber(e.target.value) }}
+												value={phoneNumber}
+												required={true}
+												errorMessage='Required'
+												validerrorMessage='Input is not Valid'
+												id='lastName'
+												type='number'
+											/>
+											<Input
+												placeholder="Email"
+												onChange={(e) => { setEmail(e.target.value) }}
+												value={email}
+												required={true}
+												errorMessage='Required'
+												validerrorMessage='Input is not Valid'
+												id='lastName'
+												type='Email'
+												pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+											/>
+											{/* <div>
 												<input onBlur={() => validatePhoneNumber()} value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} type="number" className="form-control" placeholder="Phone Number" />
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 													{phoneNumberError ? <><span style={{ fontSize: 18 }}>
@@ -224,15 +253,17 @@ const AboutSection = () => {
 													</>
 														: null}
 												</div>
-											</div>
-											<div>
+											</div> */}
+
+											{/* <div>
 												<input onBlur={() => checkError('email')} value={email} onChange={e => setEmail(e.target.value)} type="email" className="form-control" placeholder="Email" />
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 													{emailError ? <> <span style={{ fontSize: 18 }}>
 														<BsExclamationCircle /> 			</span> Email is not valid</>
 														: null}
 												</div>
-											</div>
+											</div> */}
+
 										</div>
 										<div className="form-group">
 											<div>
@@ -250,7 +281,19 @@ const AboutSection = () => {
 														: null}
 												</div>
 											</div>
-											<div>
+
+											<Input
+												placeholder="Appointment day"
+												onChange={(e) => { setSelectedDay(e.target.value) }}
+												value={selectedDay}
+												required={true}
+												errorMessage='Required'
+												id='lastName'
+												type={dateChaApp}
+												onFocus={() => { setDateChaApp('date') }}
+											/>
+
+											{/* <div>
 												<input onBlur={() => checkError('appointment')} value={selectedDay} onChange={(e) => { setSelectedDay(e.target.value) }} type={dateChaApp} className="form-control" onFocus={() => { setDateChaApp('date') }} placeholder='Appointment day' />
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 													{selectedDayError ? <><span style={{ fontSize: 18 }}>
@@ -258,7 +301,8 @@ const AboutSection = () => {
 													</>
 														: null}
 												</div>
-											</div>
+											</div> */}
+
 										</div>
 										<button
 											onClick={() => submitAppointment()}
