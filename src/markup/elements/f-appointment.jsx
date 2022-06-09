@@ -89,10 +89,10 @@ const AboutSection = () => {
 
                                         <div className='questionCont'>
                                             <div className='title text-secondary mb-1 chooseText'>Method of Communication </div>
-                                            <ul>
+                                            <ul className='finalize'>
                                                 {
                                                     appointmentOps.map(el =>
-                                                        <li onClick={() => selectMethod(el)} style={{ marginLeft: 10 }}>
+                                                        <li onClick={() => selectMethod(el)} style={{ marginLeft: 10, marginBottom: 10 }}>
                                                             <span className='checkBox'>
                                                                 <label className='radioBtn'>
                                                                     {console.log(el)}
