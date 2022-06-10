@@ -44,7 +44,7 @@ import PaymentThankyou from "./pages/paymentThankyou";
 import Terms from "./elements/Terms";
 import SelfEvaluation from './pages/selfEvaluation'
 import LinksComp from './pages/links'
-
+import SurveyDone from "./pages/surveyDone";
 
 
 
@@ -91,6 +91,7 @@ class Markup extends Component {
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
 						<ProtectRoute path='/successful' exact component={SuccessThank} />
 						<ProtectRoute path='/failed' exact component={FailThank} />
+						<ProtectRoute path='/suveryThankyou' exact component={SurveyDone} />
 						<Route component={Error} />
 					</Switch>
 					<PageScrollTop />

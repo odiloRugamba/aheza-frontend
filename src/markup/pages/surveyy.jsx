@@ -149,7 +149,7 @@ const SaveyPage = () => {
       phoneNumber: phoneNumber,
       questions: answerCopy
     }))
-    history.push('/')
+    history.push('/suveryThankyou')
   }
 
   const CloseModel = () => {
