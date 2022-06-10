@@ -16,6 +16,7 @@ function* getQuestions(data) {
 function* answerQuestion(data) {
  try {
   yield call(Dcore.post, `/surveyAns/create/${data.value.survey}`, data.value)
+  console.log(data)
  } catch (err) {
   console.log(err)
  }
