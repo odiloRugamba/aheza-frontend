@@ -113,10 +113,11 @@ const SaveyPage = () => {
   const goToAheza = () => {
     const answerCopy = []
     questions.forEach(el => {
-      if (el.questionType === 'OPENENDED') {
+      if (el.questionTpe === 'OPENENDED') {
+        // console.log(el)
         answerCopy.push({
-          question: el._id,
-          questionType: el.questionType,
+          question: el.question,
+          questionType: el.questionTpe,
           answers: [
             {
               ans: el?.answers?.[0].ans
@@ -128,33 +129,38 @@ const SaveyPage = () => {
         el.answers.forEach(elem => {
           if (elem?.checked === true) {
             anses.push({
-              ansID: elem?._id
+              ansID: elem?._id,
+              ans: elem?.ans
             })
           }
         })
-
         answerCopy.push({
-          question: el._id,
-          questionType: el.questionType,
-          answer: anses
+          question: el.question,
+          questionType: el.questionTpe,
+          answers: anses
         })
       }
     });
+    console.log(name, email, phoneNumber)
     dispatch(answerQuestion({
       survey: id,
-      name,
-      email,
-      phoneNumber,
+      name: name,
+      email: email,
+      phoneNumber: phoneNumber,
       questions: answerCopy
     }))
-    history.push('/')
+    // history.push('/')
   }
+
   const CloseModel = () => {
     setModel(false)
   }
+
+
   useEffect(() => {
     dispatch(getQuestions(id))
   }, [])
+
   useEffect(() => {
     setQuestions(resData?.questions)
     console.log(resData?.questions)
@@ -293,7 +299,7 @@ const SaveyPage = () => {
                   
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => goToAheza()} className='positionBtn'>Go Home</button>
+                      <button onClick={() => history.push('/')} className='positionBtn'>Go Home</button>
                     </div>
                     <div>
                       <button onClick={() => CloseModel()} className='positionBtn'>Start survey</button>
