@@ -96,13 +96,13 @@ const SurveyPage = () => {
   }
 
   const checkBoxQuestion = (id, ansID) => {
+    console.log('checkBoxQuestion')
     const copyData = questions
     copyData.map(el => {
       if (el._id === id) {
         el.answers.map(elem => {
           if (elem?._id === ansID && !elem?.checked) {
-
-            // elem.checked = true
+            elem.checked = true
           } else if (elem?._id === ansID && elem?.checked) {
             elem.checked = false
           }
@@ -138,7 +138,6 @@ const SurveyPage = () => {
 
       }
     });
-
     dispatch(answerQuestion({
       selfAssessment: id,
       questions: cleanAnswers
