@@ -38,16 +38,20 @@ const AboutSection = () => {
 	useEffect(() => {
 		if (res) {
 			const exData = []
+			exData.push({
+						tip: res.title,
+						color: '#565acf',
+					})
 			res.tips.forEach((el, index) => {
 				if (index % 2 !== 0) {
 					exData.push({
 						tip: el,
-						color: '#f17731',
+						color: '#565acf',
 					})
 				} else {
 					exData.push({
 						tip: el,
-						color: '#565acf',
+						color: '#f17731',
 					})
 				}
 			});

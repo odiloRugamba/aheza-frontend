@@ -14,17 +14,6 @@ const AboutSection = () => {
   history.push('/')
  }
 
- // useEffect(() => {
- //  console.log(routerLink.search.split('&')[0].split('=')[1])
- //  if (routerLink.search.split('&')[0].split('=')[1] === "successful") {
- //   console.log('done suceesss')
- //   history.push('/')
- //  } else if (routerLink.search.split('&')[0].split('=')[1] === "failed") {
- //   console.log('done failer')
- //   history.push('/')
- //  }
- // }, [])
-
  return (
   <>
    <section className="section-area account-wraper1">
@@ -37,14 +26,14 @@ const AboutSection = () => {
           <div className='appointmentF'>
            <div>
             <h3 className="title">
-             Appointment booked successfully
+             Failed to book appointment
             </h3>
            </div>
           </div>
           <div>
            <div className="work-content">
             <p>
-             Our team will contact you shortly about your appointment arrangements.
+             We apologise for your inconvenience, Please try again or contact us for support.
              <br /><br /><br />
              Thank you.
             </p>
