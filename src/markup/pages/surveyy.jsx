@@ -197,7 +197,7 @@ const SaveyPage = () => {
                           <input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
                         </div>
                         <div className="col-lg-12">
-                          <button onClick={() => startSaveyFunc()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Start</button>
+                          <button onClick={() => startSaveyFunc()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg startSurvBtn">Start</button>
                         </div>
                       </div>
                     </form>

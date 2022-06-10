@@ -212,8 +212,13 @@
 	@media screen and (max-width: 557px) {
 
 		input,
-		select {
-			width: 81vw;
+		select,
+		.startSurvBtn {
+			width: 81vw !important;
+		}
+
+		.startSurvBtn {
+			margin-left: 5px;
 		}
 	}
 }
