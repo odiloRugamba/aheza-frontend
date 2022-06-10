@@ -287,8 +287,8 @@ const SaveyPage = () => {
             <div className='mainPart'>
               <div className='rowCont'>
                 <div className="col-lg-00 mb-0">
-                  <div className="page-banner-entry text-center">
-                    <h2>Welcome!</h2>
+                  <div className="page-banner-entry text-">
+                    {/* <h2>Welcome!</h2> */}
                     <h2>{title}</h2>
                   </div>
                   <div className='mainContent appointmentText'>
