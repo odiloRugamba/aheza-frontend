@@ -536,3 +536,11 @@ input::-webkit-inner-spin-button {
 input[type=number] {
 	-moz-appearance: textfield;
 }
+
+@include respond('phone') {
+	.finalize {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+}
