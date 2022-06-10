@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { Link, useHistory, useParams } from 'react-router-dom';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/survey/actions";
 
+import logo from '../../images/logo-2.png';
 
 
 
-// Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
-import animateWave from "../../images/shap/wave-blue.png";
-import animateRotate from "../../images/shap/plus-blue.png";
+
 
 
 
@@ -159,32 +157,33 @@ const SaveyPage = () => {
   }, [])
   useEffect(() => {
     setQuestions(resData?.questions)
+    console.log(resData?.questions)
     setReport(resData?.explanation)
     setTitle(resData?.title)
   }, [resData])
 
   return (
     <>
-      <div className="page-content bg-white" style={{ marginTop: 100 }}>
-
+      <div className="page-content bg-white">
+        <div className='logoImageCont'>
+          <Link to="/"><img className='logo' src={logo} alt="" /></Link>
+        </div>
         <div className="banner-wraper">
-          <div className="page-banner banner-lg contact-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 400 }}>
+          <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
                 <h2>Survey</h2>
               </div>
             </div>
-            <img className="pt-img1 animate-wave" src={animateWave} alt="" />
-            <img className="pt-img3 animate-rotate" src={animateRotate} alt="" />
           </div>
         </div>
 
         <section className="saveyCont">
-          <div className="container">
+          <div className="container saveyContainer">
             <div className="contact-wraper">
               {
-                !startSavey ? <div className='rowCont'>
-                  <div className="col-lg-10 mb-30">
+                !startSavey ? <div className='rowCont survey'>
+                  <div className="col-lg-10 mb-30 pt-30 ">
                     <form className="form-wraper contact-form ajax-form">
                       <div className="ajax-message"></div>
                       <div className="row">
@@ -204,50 +203,54 @@ const SaveyPage = () => {
                     </form>
                   </div>
                 </div> : !surveyDone ?
-                  <div className='swipeCont'>
-                    <SwipeableViews index={pageIndex} enableMouseEvents>
+                  <div className='swipeCont' style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 15 }}>
+                    <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.map(el =>
                           <div className="row">
-                            <div className="page-banner-entry text-center">
-                              <h6>{el.question}</h6>
+                            <div className="page-banner-entry">
+                              <h4>{el.question}</h4>
                             </div>
-                            <div className='questionCont'>
+                            <div className='questionCont onBehalfCont'>
                               <ul>
                                 {
-                                  el?.questionType === 'RADIO' ?
+                                  el?.questionTpe === 'RADIO' ?
                                     el?.answers.map(ans =>
-                                      <li onClick={() => { checkQuestion(el?._id, ans?._id) }} >
-                                        <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
-                                          <label className='radioBtn'>
-                                            <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans.checked} type="radio" id="scales" name={el.question} />
-                                            <span />
-                                          </label>
-                                        </span>
-                                        {ans?.ans}
+                                      <li style={{ fontSize: 18, display: 'flex', alignItems: 'center' }} onClick={() => { checkQuestion(el?._id, ans?._id) }} >
+                                        <div>
+                                          <span onClick={() => { checkQuestion(el?._id, ans?._id) }} className='checkBox'>
+                                            <label style={{ marginRight: 5 }} className='radioBtn'>
+                                              <input onClick={() => { checkQuestion(el?._id, ans?._id) }} checked={ans?.checked} type="radio" id="scales" name={el.question} />
+                                              <span />
+                                            </label>
+                                          </span>
+                                        </div>
+                                        <div>
+                                          {ans?.ans}
+                                        </div>
                                       </li>
-                                    ) : el.questionType === 'MUTLIPLECHECK' ? el?.answers.map(ans =>
-                                      <li onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
-                                        <span onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
-                                          <label className='CheckBoxBtn'>
-                                            <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans.checked} type="checkbox" id="scales" name={el.question} />
+                                    ) : el.questionTpe === 'MUTLIPLECHECK' ? el?.answers.map(ans =>
+                                      <li style={{ fontSize: 18, display: 'flex', alignItems: 'center' }} onClick={() => { checkBoxQuestion(el._id, ans?._id) }} >
+                                        <div onClick={() => { checkBoxQuestion(el._id, ans?._id) }} className='checkBox'>
+                                          <label style={{ marginRight: 5 }} className='CheckBoxBtn'>
+                                            <input onClick={() => { checkBoxQuestion(el._id, ans?._id) }} checked={ans?.checked} type="checkbox" id="scales" name={el.question} />
                                             <span />
                                           </label>
-                                        </span>
+                                        </div>
                                         {ans?.ans}
                                       </li>
                                     ) : <div className='textAreaCont'>
-                                      <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" cols="66" />
+                                      <textarea value={opendEndedAns ? opendEndedAns : setOpendEndedAnsData(el?.answers[0]?.ans)} onChange={(e => setOpendEndedAns(e.target.value))} placeholder='Write your answer here ' rows="10" style={{ width: "100%" }} />
                                     </div>
                                 }
                               </ul>
                             </div>
-                            <div className='changeQuestionBtn'>
+                            <div style={{ paddingLeft: 15, paddingRight: 20 }} className='changeQuestionBtn'>
                               <div>
-                                <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>Prevs</button>
+                                <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("prev")} className='positionBtn'> Previous</button>
                               </div>
                               <div>
-                                <button onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next</button>
+                                <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next</button>
                               </div>
                             </div>
                           </div>
@@ -255,14 +258,14 @@ const SaveyPage = () => {
                       }
                     </SwipeableViews>
                   </div> : <>
-                    <div className="page-banner-entry text-center">
+                    <div className="page-banner-entry text-center pt-20 pl-20 pr-20 pb-20">
                       <h4>Thank you for your participation!!!!!!!</h4>
                       <div className='thnk-par'>
                         <p>
                           Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.
                         </p>
                       </div>
-                      <div className="col-lg-12">
+                      <div className="col-lg-12 m-20">
                         <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit To Aheza</button>
                       </div>
                     </div>
@@ -277,19 +280,22 @@ const SaveyPage = () => {
           <div className='mainPartCont'>
             <div className='mainPart'>
               <div className='rowCont'>
-                <div className="col-lg-0 mb-0">
+                <div className="col-lg-00 mb-0">
                   <div className="page-banner-entry text-center">
+                    <h2>Welcome!</h2>
                     <h2>{title}</h2>
                   </div>
-                  <div className='mainContent'>
-                    {report}
+                  <div className='mainContent appointmentText'>
+                    <p>
+                      <div dangerouslySetInnerHTML={{ __html: report }}></div>
+                    </p>
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
                       <button onClick={() => goToAheza()} className='positionBtn'>Aheza</button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} className='positionBtn'>Start Survey</button>
+                      <button onClick={() => CloseModel()} className='positionBtn'>Start survey</button>
                     </div>
                   </div>
                 </div>
