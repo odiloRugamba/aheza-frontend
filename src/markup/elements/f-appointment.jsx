@@ -39,7 +39,7 @@ const AboutSection = () => {
         return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
     const changeMoney = (item) => {
-        setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 100 : null)
+        setMoney(item === 'IN-PERSON' ? 30000 : item === 'PHONE-CALL' ? 10000 : item === 'ZOOM-CALL' ? 15000 : item === 'AHEZA-CHAT' ? 10000 : null)
     }
     const selectMethod = (item) => {
         appOption.forEach(el => {
@@ -62,13 +62,15 @@ const AboutSection = () => {
             amount: money
         }))
     }
+
+
     useEffect(() => {
         if (paymentData) {
-            console.log('paymentData', paymentData)
             window.location.replace(paymentData.link)
             setLoading(false)
         }
     }, [paymentData])
+
 
     return (
         <>

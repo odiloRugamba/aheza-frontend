@@ -17,9 +17,9 @@ const AboutSection = () => {
  return (
   <>
    <section className="section-area account-wraper1">
-    <div className="container-fluid" style={{ paddingTop: 100 }}>
+    <div className="container-fluid" style={{ paddingTop: 100, minHeight: 100 + 'vh' }}>
      <div className="appointment-inner section-sp2">
-      <div className="container">
+      <div className="container" style={{ padding: 0 }}>
        <div className="rowAppo">
         <div className="col-xl-12 col-lg-12 col-md-12">
          <div className="appointment-form form-wraper appointmentCont">
