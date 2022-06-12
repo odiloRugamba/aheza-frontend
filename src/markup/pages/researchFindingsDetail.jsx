@@ -22,6 +22,8 @@ const RsearchDetails = () => {
 	const [research, setResearch] = useState(null)
 	const dispatch = useDispatch()
 
+
+
 	useEffect(() => {
 		dispatch(getResearchById(id))
 		dispatch(getResearchCommnets(id))
