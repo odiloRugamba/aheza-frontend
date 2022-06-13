@@ -6,10 +6,9 @@ import { getResearchs } from "../../store/research/actions";
 
 // Layout
 import Header from "../layout/header";
-import background from '../../images/aheza-donate-3.png';
+import background from '../../images/aheza-donate-3.jpeg';
 import Footer from "../layout/footer";
-import donation from "../../images/donation.jpg";
-import donateImage from "../../images/background/aheza-bg-donate.jpg";
+import donateImage from "../../images/background/aheza-bg-donate.jpeg";
 import { BackgroundImage } from "react-image-and-background-image-fade";
 
 

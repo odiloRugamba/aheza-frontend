@@ -5,7 +5,7 @@ import { getResearchs } from "../../store/research/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-import donation from "../../images/donation.jpg";
+import donation from "../../images/donation.jpeg";
 
 
 
@@ -46,7 +46,6 @@ const ResearchFindings = () => {
  }
 
  const donateFunc = () => {
-  console.log('jshdkhkjd')
   history.push('/payment')
  }
 

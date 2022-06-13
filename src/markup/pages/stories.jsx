@@ -12,7 +12,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/aheza-barnner-14.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-14.jpeg";
 
 const Stories = () => {
 	const [data, setData] = useState([])

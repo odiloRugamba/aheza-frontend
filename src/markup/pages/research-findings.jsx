@@ -9,7 +9,7 @@ import EmptyComp from "../elements/empyt";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-import bnrImg1 from "../../images/banner/aheza-barnner-12.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-12.jpeg";
 
 
 const ResearchFindings = () => {

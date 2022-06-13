@@ -39,9 +39,9 @@ const AboutSection = () => {
 		if (res) {
 			const exData = []
 			exData.push({
-						tip: res.title,
-						color: '#565acf',
-					})
+				tip: res.title,
+				color: '#565acf',
+			})
 			res.tips.forEach((el, index) => {
 				if (index % 2 !== 0) {
 					exData.push({

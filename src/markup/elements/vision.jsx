@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import background from "../../images/background/aheza-bg-6.png"
+import background from "../../images/background/aheza-bg-6.jpeg"
 import testShape from "../../images/testimonials/shape.png"
 import testPic1 from "../../images/services/aheza/aheza-svc-14.jpeg"
 import testPic2 from "../../images/services/aheza/aheza-svc-15.jpeg"

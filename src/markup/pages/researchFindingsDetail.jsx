@@ -9,11 +9,11 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/img1.jpeg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
-import servicesPic1 from "../../images/services/pic1.jpg";
+import servicesPic1 from "../../images/services/pic1.jpeg";
 import pdf from "../../images/icon/pdf.png";
 import doc from "../../images/icon/doc.png";
 
@@ -21,6 +21,8 @@ const RsearchDetails = () => {
 	const { id } = useParams()
 	const [research, setResearch] = useState(null)
 	const dispatch = useDispatch()
+
+
 
 	useEffect(() => {
 		dispatch(getResearchById(id))

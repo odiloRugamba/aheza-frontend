@@ -7,9 +7,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import servicesPic1 from "../../images/services/pic1.jpg";
-import pdf from "../../images/icon/pdf.png";
-import doc from "../../images/icon/doc.png";
+import servicesPic1 from "../../images/services/pic1.jpeg";
 
 class ServiceDetail extends Component {
 
