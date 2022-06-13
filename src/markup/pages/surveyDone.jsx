@@ -31,14 +31,14 @@ const SaveyPage = () => {
             <div className="contact-wraper">
               <>
                 <div className="page-banner-entry text-center pt-20 pl-20 pr-20 pb-20">
-                  <h4>Thank you for your !!!!!!!</h4>
+                  <h4>Thank you</h4>
                   <div className='thnk-par'>
                     <p>
-                      Your contibution has been submited successfully
+                      Your responses have been submited successfully
                     </p>
                   </div>
                   <div className="col-lg-12 m-20">
-                    <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg"> Go Aheza</button>
+                    <button onClick={() => goToAheza()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg"> Go Home</button>
                   </div>
                 </div>
               </>
