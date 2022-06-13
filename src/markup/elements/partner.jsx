@@ -1,6 +1,6 @@
 import React from 'react';
 // Import Images
-import background2 from "../../images/background/aheza-bg-10.jpg"
+import background2 from "../../images/background/aheza-bg-10.jpeg"
 import { Link } from 'react-router-dom';
 
 

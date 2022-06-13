@@ -15,7 +15,7 @@ import moment from 'moment';
 
 
 
-import bnrImg1 from "../../images/banner/aheza-barnner-16.jpg";
+import bnrImg1 from "../../images/banner/aheza-barnner-16.jpeg";
 
 
 const BlogGrid = () => {
@@ -63,7 +63,7 @@ const BlogGrid = () => {
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 				<div className="banner-wraper" >
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
-						<div style={{ paddingTop: 40}}>
+						<div style={{ paddingTop: 40 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
 									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Blog</h2>
@@ -85,7 +85,7 @@ const BlogGrid = () => {
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 														Aheza<br></br>
-														<h5 style={{fontSize: 15}}>{convertData(item.updatedAt)} </h5>
+														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
 													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
 												</ul>

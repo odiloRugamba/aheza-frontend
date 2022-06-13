@@ -7,7 +7,7 @@ import Footer from "../layout/footer";
 
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/img1.jpeg";
 import animateWave from "../../images/shap/wave-blue.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 

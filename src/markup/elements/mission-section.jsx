@@ -1,6 +1,6 @@
 import React from 'react';
 // Import Images
-import background2 from "../../images/background/aheza-bg-9-4.png"
+import background2 from "../../images/background/aheza-bg-9-4.jpeg"
 
 
 

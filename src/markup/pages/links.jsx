@@ -15,7 +15,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/aheza-barnner-8.png";
+import bnrImg1 from "../../images/banner/aheza-barnner-8.jpeg";
 
 const Uploads = () => {
 	const [data, setData] = useState([])

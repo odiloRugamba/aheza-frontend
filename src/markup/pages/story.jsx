@@ -16,7 +16,6 @@ import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
-import AudioFle from "../../images/audio.mp3";
 
 
 const StorysDetails = () => {
@@ -41,7 +40,6 @@ const StorysDetails = () => {
 
 	useEffect(() => {
 		setStory(res)
-		setAudioData(new Audio(AudioFle))
 	}, [res])
 
 	useEffect(() => {

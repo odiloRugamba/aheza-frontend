@@ -8,7 +8,7 @@ import { contactUsFunc } from "../../store/contact-us/actions";
 
 
 // Import Images
-import background from "../../images/background/aheza-bg-12-5.png";
+import background from "../../images/background/aheza-bg-12-5.jpeg";
 
 
 const ContactUs = () => {

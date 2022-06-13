@@ -16,7 +16,6 @@ import SocialMediaComp from '../elements/shareMedia'
 
 
 // Import Images
-import AudioFle from "../../images/audio.mp3";
 import { AudioPlayer } from "./AudioPlayer";
 
 
@@ -42,7 +41,6 @@ const UploadsDetails = () => {
 
 	useEffect(() => {
 		setUpload(res)
-		setAudioData(new Audio(AudioFle))
 	}, [res])
 
 	useEffect(() => {

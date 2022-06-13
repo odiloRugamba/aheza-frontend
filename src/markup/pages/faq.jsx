@@ -10,7 +10,7 @@ import Footer from "../layout/footer";
 import LatestNewsSection from "../elements/latest-news-slider";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/img1.jpeg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";

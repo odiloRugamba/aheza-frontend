@@ -4,12 +4,12 @@ import Slider from "react-slick";
 
 // Import Images
 import testShape from "../../images/testimonials/shape.png"
-import testPic1 from "../../images/testimonials/pic1.jpg"
-import testPic2 from "../../images/testimonials/pic2.jpg"
-import testPic3 from "../../images/testimonials/pic3.jpg"
-import testPic4 from "../../images/testimonials/pic4.jpg"
-import testPic5 from "../../images/testimonials/pic5.jpg"
-import testPic6 from "../../images/testimonials/pic6.jpg"
+import testPic1 from "../../images/testimonials/pic1.jpeg"
+import testPic2 from "../../images/testimonials/pic2.jpeg"
+import testPic3 from "../../images/testimonials/pic3.jpeg"
+import testPic4 from "../../images/testimonials/pic4.jpeg"
+import testPic5 from "../../images/testimonials/pic5.jpeg"
+import testPic6 from "../../images/testimonials/pic6.jpeg"
 import plusOrange from "../../images/shap/plus-orange.png"
 import squareBlue from "../../images/shap/square-blue.png"
 import circleDots from "../../images/shap/circle-dots.png"

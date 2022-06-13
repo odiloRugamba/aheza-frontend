@@ -3,8 +3,6 @@ import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa"
 // import { FaAnglesRight } from "react-icons/fa"
 import { FaPlay } from "react-icons/fa"
 import { FaPause } from "react-icons/fa"
-import AudioFle from "../../images/audio.mp3";
-import PickImage from "../../images/pickImage.png";
 
 const AudioPlayer = () => {
   // state
@@ -74,9 +72,7 @@ const AudioPlayer = () => {
 
   return (
     <div className="audioPlayer">
-      <audio ref={audioPlayer} src={AudioFle} preload="metadata"></audio>
       <div className='audioPlayer'>
-        <img src={PickImage} />
         <div className='playBg'></div>
         <div className='audioplayerBtnCont'>
           <button className="forwardBackward" onClick={backThirty}><FaAngleDoubleLeft /></button>
@@ -93,6 +89,7 @@ const AudioPlayer = () => {
 
             <div className="duration">{duration ? (duration && !isNaN(duration)) && calculateTime(duration) : '00:00'}</div>
           </div>
+
 
         </div>
       </div>
