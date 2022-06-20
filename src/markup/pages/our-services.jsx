@@ -11,6 +11,7 @@ import Footer from "../layout/footer";
 
 
 
+
 const Services = () => {
 	const res = useSelector(state => state.servicesReducers.data);
 	const [data, setData] = useState([]);
@@ -22,12 +23,12 @@ const Services = () => {
 	return (
 		<>
 			<Header />
-			<div className="page-content bg-white page-min" style={{ marginTop: 100 }}>
+			<div className="page-content bg-white pageContainer">
 				<div className="banner-wraper">
-					<div className="page-" >
+					<div className="page-banner pageHeader">
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 style={{ fontSize: 80 }}>Our Services</h2>
+								<h2 className='titleText' >Our Services</h2>
 							</div>
 						</div>
 					</div>
