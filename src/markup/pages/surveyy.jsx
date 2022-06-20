@@ -175,7 +175,7 @@ const SaveyPage = () => {
           <Link to="/"><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
-          <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
+          <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400,paddingTop:150  }}>
             <div className="container">
               <div className="page-banner-entry text-center">
                 <h2>Survey</h2>
@@ -184,7 +184,7 @@ const SaveyPage = () => {
           </div>
         </div>
 
-        <section className="saveyCont">
+        <section className="saveyCont" style={{zIndex: 9}}>
           <div className="container saveyContainer">
             <div className="contact-wraper">
               {
@@ -267,7 +267,7 @@ const SaveyPage = () => {
                     <div className="page-banner-entry text-center pt-20 pl-20 pr-20 pb-20">
                       <h4>Thank you for your participation!</h4>
                       <div className='thnk-par'>
-                        <p> 
+                        <p>
                           We appreciated so much time and effort you put into this
                         </p>
                       </div>
@@ -282,7 +282,7 @@ const SaveyPage = () => {
         </section>
       </div>
       {
-        model ? <div className='modelCont'>
+        model ? <div style={{ zIndex:99 }}  className='modelCont'>
           <div className='mainPartCont'>
             <div className='mainPart'>
               <div className='rowCont'>
@@ -296,7 +296,7 @@ const SaveyPage = () => {
                       <div dangerouslySetInnerHTML={{ __html: report }}></div>
                     </p>
                   </div>
-                  
+
                   <div className='changeQuestionBtn'>
                     <div>
                       <button onClick={() => history.push('/')} className='positionBtn'>Go Home</button>

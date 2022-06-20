@@ -22,8 +22,7 @@ const SaveyPage = () => {
           <Link to="/"><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
-          <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
-
+          <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400, paddingTop:150 }}>
           </div>
         </div>
         <section className="saveyCont">
