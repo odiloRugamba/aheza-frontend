@@ -174,7 +174,7 @@ const SurveyPage = () => {
           <Link to="/"><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
-          <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
+          <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400,paddingTop:150 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
                 <h2>Answer this question</h2>
@@ -183,7 +183,7 @@ const SurveyPage = () => {
           </div>
         </div>
 
-        <section className="saveyCont">
+        <section className="saveyCont" style={{zIndex: 9}}>
           <div className="container saveyContainer">
             <div className="contact-wraper">
               {
@@ -225,8 +225,8 @@ const SurveyPage = () => {
                     </div>
                   </div>
                 </div> : !surveyDone ?
-                  <div className='swipeCont' style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 15 }}>
-                    <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start' }} index={pageIndex} enableMouseEvents>
+                  <div className='swipeCont' style={{ paddingLeft: 15, paddingTop: 15, paddingBottom: 15, zIndex:0  }}>
+                    <SwipeableViews id='swipeContout' style={{ alignItem: 'flex-start', width: '100%' }} index={pageIndex} enableMouseEvents>
                       {
                         questions?.length > 0 ?
                           questions?.map(el =>
@@ -287,7 +287,7 @@ const SurveyPage = () => {
         </section>
       </div>
       {
-        model ? <div className='modelCont'>
+        model ? <div style={{ zIndex:99 }} className='modelCont'>
           <div className='mainPartCont'>
             <div className='mainPart'>
               <div className='rowCont'>

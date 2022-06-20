@@ -1,6 +1,8 @@
-// questionCont
+// banner-wraper
+
 
 .saveyCont {
+  margin-top: 200px;
   span {
     overflow: hidden;
   }
@@ -17,6 +19,7 @@
   }
 
   @media screen and (max-width: 594px) {
+    margin-top:0px;
     .changeQuestionBtn {
       margin-bottom: 20px;
 
@@ -24,7 +27,6 @@
         font-size: 14px !important;
       }
 
-      // font-size: 1px;
     }
   }
 
@@ -33,6 +35,7 @@
       width: 100vw;
       display: flex;
       justify-content: center;
+      padding-top: 200px;
     }
   }
 

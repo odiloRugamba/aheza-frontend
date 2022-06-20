@@ -27,7 +27,7 @@
 
 @include respond('phone') {
  *div {
-  overflow-x: hidden;
+  // overflow-x: hidden;
  }
 
  *section {
