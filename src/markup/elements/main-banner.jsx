@@ -1,46 +1,73 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { getTipsFunc } from "../../store/tips/actions";
+import bg1 from '../../images/main-banner/barner.jpeg';
 
-// Import Images
-import bg1 from '../../images/main-banner/bg1.jpg';
-// import doctorImg from '../../images/main-banner/doctor.png';
-import doctorImg from '../../images/appointment/mobile.png';
-import ptImg1 from '../../images/shap/trangle-orange.png';
-import ptImg2 from '../../images/shap/square-blue.png';
-import ptImg3 from '../../images/shap/chicle-blue-2.png';
-import ptImg4 from '../../images/shap/plus-orange.png';
-import ptImg5 from '../../images/shap/wave-orange.png';
 
-class aboutSection extends Component {
-	render() {
-		return (
-			<>
 
-				<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", paddingTop: 150 }}>
+
+
+const AboutSection = () => {
+	const [slideIndex, setSlideIndex] = useState(0)
+
+	const [data, setData] = useState([])
+	const dispatch = useDispatch()
+	const res = useSelector(state => state.TipsReducers.data)
+
+	const privFunc = () => {
+		if (slideIndex !== 0) {
+			setSlideIndex(slideIndex - 1)
+		}
+	}
+
+	useEffect(() => {
+		if (res) {
+			const all = [res.title, ...res.tips];
+			setData(all)
+		}
+
+	}, [res])
+	useEffect(() => {
+		dispatch(getTipsFunc())
+	}, []);
+
+	const nextFunc = () => {
+		if (slideIndex < data.length - 1) {
+			setSlideIndex(slideIndex + 1)
+		}
+	}
+
+
+	return (
+		<>
+			<div className="main-banner" style={{ backgroundImage: "url(" + bg1 + ")", marginTop: 100 }}>
+				<div style={{
+					backgroundColor: "rgba(255,255,255,0)",
+					height: "100%",
+					paddingTop: 20,
+					paddingBottom: 30,
+				}}>
 					<div className="container inner-content">
 						<div className="row align-items-center">
-							<div className="col-lg-7 col-md-6 col-sm-7">
-								<h6 className="title-ext text-primary"> Get yourself help today</h6>
-								<h1>We Provide healing and career services online and on-site</h1>
-								<Link to="/about-us" className="btn btn-secondary btn-lg shadow">Book an appointment</Link>
+							<div className="col-lg-11 col-md-12 col-sm-12">
+								<h2 style={{ color: '#f17732' }}>"You can fall, but you can rise also." </h2>
+								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20, color: '#f17732' }}>Angelique Kidjo</span></h6>
+
+								<Link to="/appointment-assesement" className="btn btn-secondary  shadow"><b style={{ color: "white", fontSize: 20 }}>Book Appointment</b></Link>
+								<br></br>
+								<br></br>
+								<br></br>
+								<br></br>
 							</div>
-							<div className="col-lg-5 col-md-6 col-sm-5">
-								<div className="banner-img">
-									<img src={doctorImg} alt="" />
-								</div>
-							</div>
+
+
 						</div>
 					</div>
-					<img className="pt-img1 animate1" src={ptImg1} alt="" />
-					<img className="pt-img2 animate2" src={ptImg2} alt="" />
-					<img className="pt-img3 animate3" src={ptImg3} alt="" />
-					<img className="pt-img4 animate4" src={ptImg4} alt="" />
-					<img className="pt-img5 animate-wave" src={ptImg5} alt="" />
 				</div>
-
-			</>
-		);
-	}
+			</div>
+		</>
+	);
 }
 
-export default aboutSection;
+export default AboutSection;

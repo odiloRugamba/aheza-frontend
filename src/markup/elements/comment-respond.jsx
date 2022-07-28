@@ -1,32 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
 
-const commentRespond = ({ placeholder }) => {
+const CommentRespond = ({ placeholder, submit, loading }) => {
+
+	const [name, setName] = useState(null)
+	const [email, setEmail] = useState(null)
+	const [comment, setComment] = useState(null)
+	const localSubmit = () => {
+		if (name && email && comment) {
+			submit({ comment, email, name })
+			setName('')
+			setEmail('')
+			setComment('')
+		}
+	}
+	useEffect(() => {
+		console.log(loading)
+	}, [loading])
+
 
 	return (
 		<>
 			<div className="comment-respond" id="respond">
-				<h4 className="widget-title">Leave a comment</h4>
-				<form className="comment-form" id="commentform">
+				<h4 className="widget-title">Leave Comment</h4>
+				<div className="comment-form" id="commentform">
 					<p className="comment-form-name">
 						<label for="name">Name <span className="required">*</span></label>
-						<input type="text" value="" name="Name" placeholder="Name" id="name" />
+						<input value={name} onChange={(e) => setName(e.target.value)} type="text" name="Name" placeholder="Name" id="name" />
 					</p>
 					<p className="comment-form-email">
 						<label for="email">Email <span className="required">*</span></label>
-						<input type="text" value="" placeholder="Email" name="email" id="email" />
+						<input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" name="email" id="email" />
 					</p>
 					<p className="comment-form-comment">
 						<label for="comment">Comment</label>
-						<textarea rows="8" name="comment" placeholder={placeholder ? placeholder : "Comment"} id="comment"></textarea>
+						<textarea value={comment} onChange={(e) => setComment(e.target.value)} rows="8" name="comment" placeholder={placeholder ? placeholder : "Comment"} id="comment"></textarea>
 					</p>
 					<p className="form-submit">
-						<input type="submit" value="Submit Comment" className="submit" id="submit" name="submit" />
+						<button onClick={() => localSubmit()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading ? true : false}>
+							{
+								loading ? <div className="spinner-border" role="status">
+									<span className="sr-only">Loading...</span>
+								</div> : <span style={{fontWeight: 700}}>Submit Comment  </span>
+							}
+						</button>
 					</p>
-				</form>
+				</div>
 			</div>
 
 		</>
 	);
 }
 
-export default commentRespond;
+export default CommentRespond;

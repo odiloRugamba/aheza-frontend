@@ -7,9 +7,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import servicesPic1 from "../../images/services/pic1.jpg";
-import pdf from "../../images/icon/pdf.png";
-import doc from "../../images/icon/doc.png";
+import servicesPic1 from "../../images/services/pic1.jpeg";
 
 class ServiceDetail extends Component {
 
@@ -19,7 +17,7 @@ class ServiceDetail extends Component {
 
 				<Header />
 
-				<div className="page-content bg-white" style={{marginTop: 60}}>
+				<div className="page-content bg-white" style={{ marginTop: 60 }}>
 					<section className="section-area section-sp1">
 						<div className="container">
 							<div className="row">
@@ -81,7 +79,7 @@ class ServiceDetail extends Component {
 								<div className="col-lg-4">
 									<aside className="sticky-top pb-1">
 										<div className="widget">
-											
+
 											<h5 className="title-head">Services</h5>
 											<ul className="service-menu">
 												<li><Link to="/service-details"><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
@@ -92,15 +90,12 @@ class ServiceDetail extends Component {
 												<li><Link to="/service-details"><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
 											</ul>
 										</div>
-
 									</aside>
 								</div>
 							</div>
 						</div>
 					</section>
-
 				</div>
-
 				<Footer />
 
 			</>

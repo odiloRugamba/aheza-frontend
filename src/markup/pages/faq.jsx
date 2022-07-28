@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {Accordion} from 'react-bootstrap';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Accordion } from 'react-bootstrap';
 
 // Layout
 import Header from "../layout/header";
@@ -10,23 +10,20 @@ import Footer from "../layout/footer";
 import LatestNewsSection from "../elements/latest-news-slider";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/img1.jpeg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
 
-class Faq extends Component{
-	
-	render(){
+class Faq extends Component {
+	render() {
 		return (
 			<>
-				
 				<Header />
-				
-				<div className="page-content bg-white">
-					
+				<div className="page-content bg-white" style={{ marginTop: 100 }}>
+
 					<div className="banner-wraper">
-						<div className="page-banner" style={{backgroundImage: "url("+bnrImg1+")"}}>
+						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
 									<h1>Faq's</h1>
@@ -38,12 +35,12 @@ class Faq extends Component{
 									</nav>
 								</div>
 							</div>
-							<img className="pt-img1 animate-wave" src={waveBlue} alt=""/>
-							<img className="pt-img2 animate2" src={circleDots} alt=""/>
-							<img className="pt-img3 animate-rotate" src={plusBlue} alt=""/>
+							<img className="pt-img1 animate-wave" src={waveBlue} alt="" />
+							<img className="pt-img2 animate2" src={circleDots} alt="" />
+							<img className="pt-img3 animate-rotate" src={plusBlue} alt="" />
 						</div>
 					</div>
-					
+
 					<section className="section-sp3">
 						<div className="container">
 							<div className="row">
@@ -130,13 +127,9 @@ class Faq extends Component{
 							</div>
 						</div>
 					</section>
-					
 					<LatestNewsSection />
-					
 				</div>
-				
 				<Footer />
-				
 			</>
 		);
 	}
