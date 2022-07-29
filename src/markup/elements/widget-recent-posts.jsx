@@ -25,10 +25,16 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 		history.push(more)
 	}
 
+	const seeChangePageFunc = (el) => {
+		history.push(currentPage + el?.title + '/' + el?._id)
+		window.location.reload()
+
+	}
+
 
 	return (
 		<>
-			<div className="widget recent-posts-entry" style={{ padding: 10 }}>
+			<div className="widget recent-posts-entry" style={{ padding: 10, borderRadius: 10 }}>
 				<h4 className="widget-title">{title ? title : "Recent Posts"}</h4>
 				<div className="widget-post-bx">
 					{
@@ -51,11 +57,12 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 												overflow: "hidden",
 												textOverflow: "ellipsis",
 												display: "-webkit-box",
-												WebkitBoxOrient: "vertical"
+												WebkitBoxOrient: "vertical",
+												marginTop: 20
 											}}
-										><Link to={currentPage + el?.title + '/' + el?._id} style={{ fontSize: 20 }}>{el?.title}</Link></p>
+										><Link to="#" onClick={() => seeChangePageFunc(el)} style={{ fontSize: 14 }}>{el?.title}</Link></p>
 									</div>
-									<ul className="post-meta">
+									<ul className="post-meta" style={{ paddingBottom: 15 }}>
 										<li className="date">{convertData(el?.updatedAt)}</li>
 									</ul>
 								</div>
@@ -63,7 +70,7 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 						) : null
 					}
 					<div className="more">
-						<Link to="/links" style={{ fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700 }}>See All</Link>
+						<Link to="#" onClick={moreFunc} style={{ fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700 }}>See All</Link>
 					</div>
 				</div>
 			</div>

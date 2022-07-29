@@ -147,7 +147,7 @@ const ResearchFindingDetails = () => {
 							</div>
 						</div>
 					</section>
-				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
+				</div> : <div style={{ position: "relative", top: "200px", minHeight: 500 }}><LoadingComp /></div>
 			}
 			<Footer />
 		</>

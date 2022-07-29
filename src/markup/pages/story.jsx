@@ -168,13 +168,13 @@ const StorysDetails = () => {
 								</div>
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
-										<WidgetRecentPosts data={data} currentPage="/story/" more="/storys" title="Recent Stories" />
+										<WidgetRecentPosts data={data} currentPage="/story/" more="/stories" title="Recent Stories" />
 									</aside>
 								</div>
 							</div>
 						</div>
 					</section>
-				</div> : <div style={{ position: "relative", top: "200px" }}><LoadingComp /></div>
+				</div> : <div style={{ position: "relative", top: "200px", minHeight: 500 }}><LoadingComp /></div>
 			}
 			<Footer />
 		</>

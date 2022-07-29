@@ -1,5 +1,7 @@
 /* ==================
 	9.3 Widget
+	widget-post
+	.recent-posts-entry .ttr-post-info .post-title
 =================== */
 .widget {
 	margin-bottom: 40px;
@@ -10,9 +12,9 @@
 }
 
 .widget-title {
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	position: relative;
-	padding-bottom: 15px;
+	// padding-bottom: 15px;
 
 	&:after {
 		content: "";
@@ -261,10 +263,10 @@
 /*widget recent-posts*/
 .recent-posts-entry {
 	.widget-post {
-		margin-bottom: 15px;
+		// margin-bottom: 15px;
 		align-items: center;
 		display: flex;
-		padding-bottom: 15px;
+		// padding-bottom: 15px;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -288,7 +290,7 @@
 		padding-right: 0;
 
 		.post-title {
-			margin-bottom: 12px;
+			margin-bottom: 5px;
 			font-size: 16px;
 
 			a {
