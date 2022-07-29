@@ -74,7 +74,7 @@ class Markup extends Component {
 						<ProtectRoute path='/story/:title/:id' exact component={Story} />
 						<ProtectRoute path='/stories' exact component={Stories} />
 						<ProtectRoute path='/upload/:title/:id' exact component={Upload} />
-						<ProtectRoute path='/Theaters' exact component={Uploads} />
+						<ProtectRoute path='/uploads' exact component={Uploads} />
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />

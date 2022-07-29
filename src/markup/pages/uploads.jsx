@@ -62,10 +62,10 @@ const Uploads = () => {
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
-					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", maxHeight: 300 }} >
+					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
 						<div className="" style={{ backgroundColor: "rgba(255,255,255,.5)", textAlign: "center" }}>
-							<div className="page-banner-entry text-center">
-								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: "center" }}>Uploads section</h2>
+							<div className="page-banner-entry text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: 'center' }}>Uploads</h2>
 							</div>
 						</div>
 					</div>
