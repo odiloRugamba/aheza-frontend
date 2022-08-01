@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "../layout/header";
+import Footer from "../layout/footer";
 import "../../scss/pages/donation.scss";
 
 const Terms = () => {
@@ -22,8 +23,7 @@ const Terms = () => {
                             <p className={"h5"}>Acceptance</p>
                             <p className={"expText"}>
                                 It is important that you read all the following terms and conditions carefully. This Terms of Use Agreement
-                                (“Agreement”) is a legal agreement between you and [name of legal owner of the website, i.e. Dr. John Smith or
-                                John Smith Professional Corporation; if multiple owners, contact the CMPA for advice], tthe owner and operator (“Owner”) of
+                                (“Agreement”) is a legal agreement between you and AHEZA HEALING AND CAREER CENTER, the owner and operator (“Owner”) of
                                 this Website (the “Website”). It states the terms and conditions under which you may access and use the Website and all
                                 written and other materials displayed or made available through the Website, including, without limitation, articles, text,
                                 photographs, images, illustrations, audio clips, video clips, computer software, and code (the “Content”). By accessing and
@@ -38,9 +38,11 @@ const Terms = () => {
 
                             <p>
                                 Do NOT use the Website for medical emergencies. If you have a medical emergency, call a physician or qualified
-                                healthcare provider, or CALL 911 immediately. Under no circumstances should you attempt self-treatment based on
+                                healthcare provider, or our line 1024 immediately. Under no circumstances should you attempt self-treatment based on
                                 anything you have seen or read on the Website.
-                                General information is not medical advice
+                                <br></br><br></br>
+                                <b>General information is not medical advice</b>
+                                <br></br>
                                 The general information provided on the Website is for informational purposes only and is not professional medical
                                 advice, diagnosis, treatment, or care, nor is it intended to be a substitute therefore. Always seek the advice of your
                                 physician or other qualified health provider properly licensed to practise medicine or general healthcare in your
@@ -60,7 +62,9 @@ const Terms = () => {
                                 you and the Owner (or any of its physicians) and is not intended as a solicitation of individuals to become patients or
                                 clients of the Owner (or any of its physicians). This section does not apply to the extent that you are using the Website to
                                 communicate with a physician with whom you have an existing physician-patient relationship.
-                                No endorsements
+                                <br></br><br></br>
+                                <b>No endorsements</b>
+                                <br></br>
                                 Unless specifically stated, the Owner does not recommend or endorse any specific brand of products, services,
                                 procedures, or other information that appears or that may be advertised on the Website.
                             </p>
@@ -69,6 +73,7 @@ const Terms = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     );
 };

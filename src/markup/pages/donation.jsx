@@ -49,10 +49,6 @@ const ResearchFindings = () => {
         setPageData(research.slice(statingPoint, endingPoint))
     }
 
-    const donateFunc = () => {
-        window.open('https://dashboard.flutterwave.com/donate/ojzeswzxl75e')
-    }
-
     return (
         <>
             <Header />
@@ -68,7 +64,7 @@ const ResearchFindings = () => {
                                 <br></br>
                                 <h3 className='title title-80' >Why
                                     <a
-                                        href='https://dashboard.flutterwave.com/donate/ryb56zpwivpe'
+                                        href='https://dashboard.flutterwave.com/donate/adl69olzsnch'
                                         className="btn btn-outline-primary btn-sm title-80 donate-btn"
 
                                     >
