@@ -134,11 +134,10 @@ const UploadsDetails = () => {
 												<li className="date">{upload?.updatedAt ? convertData(upload?.updatedAt) : null}</li>
 											</ul>
 											<div className="ttr-post-title">
-												<h2 className="post-title max-lines-2">{upload?.title}</h2>
+												<h2 className="post-title">{upload?.title}</h2>
 											</div>
 											<div className="ttr-post-text">
 												<div dangerouslySetInnerHTML={{ __html: upload?.content }}></div>
-
 											</div>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
@@ -165,7 +164,7 @@ const UploadsDetails = () => {
 								</div>
 								<div className="col-md-12 col-lg-5 col-xl-4 mb-30">
 									<aside className="side-bar sticky-top aside-bx">
-										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent News" />
+										<WidgetRecentPosts data={data} currentPage="/upload/" more="/uploads" title="Recent uploads" />
 									</aside>
 								</div>
 							</div>

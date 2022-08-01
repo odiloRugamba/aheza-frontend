@@ -56,9 +56,7 @@ const Uploads = () => {
 
 	return (
 		<>
-
 			<Header />
-
 			<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 				<div className="banner-wraper" >
@@ -70,7 +68,6 @@ const Uploads = () => {
 						</div>
 					</div>
 				</div>
-
 				<section className="section-area section-sp1">
 					<div className="container">
 						<div className="row">
