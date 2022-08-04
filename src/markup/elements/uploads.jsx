@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom';
 import { Dcore } from "../../api/index";
 
 
-
-
-
-
-
-
 const LatestNewsSection = ({ title, content }) => {
 
 	content = content?.slice(0, 3)
@@ -41,15 +35,15 @@ const LatestNewsSection = ({ title, content }) => {
 			<section className="section-area section-sp1 blog-area">
 				<div className="container">
 					<div className="heading-bx text-center" style={{ display: "flex", justifyContent: "space-between" }}>
-						<h2 className="title title-80" >Theaters</h2>
+						<h2 className="title title-80" >Uploads</h2>
 						<div>
 							<br></br>
 							<Link
-								to='/theaters'
+								to='/uploads'
 								className="btn btn-outline-primary btn-sm big-screen-only"
 								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 							>
-								See More Theaters
+								See More Uploads
 							</Link>
 						</div>
 					</div>
@@ -60,7 +54,7 @@ const LatestNewsSection = ({ title, content }) => {
 								<div className="col-xl-4 col-md-6">
 									<div className="blog-card mb-30">
 										<div className="post-media">
-											<Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+											<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 												{
 													item?.youtubeVideoLink ?
 														<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -69,7 +63,7 @@ const LatestNewsSection = ({ title, content }) => {
 											</Link>
 										</div>
 										<div className="post-info">
-											<h6 className="post-title max-lines-2"><Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+											<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 												<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
@@ -89,7 +83,7 @@ const LatestNewsSection = ({ title, content }) => {
 					<div className="mobile-only" style={{ paddingLeft: "10%" }}>
 
 						<Link
-							to='/theaters'
+							to='/stories'
 							className="btn btn-outline-primary btn-sm"
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>

@@ -13,22 +13,24 @@ import { DoctorReducers } from "../doctor/reducers";
 import { ContactUsReducers } from "../contact-us/reducers";
 import { TipsReducers } from "../tips/reducers";
 import { PaymentReducers } from "../payment/reducers";
+import { TheaterReducers } from "../theater/reducers";
 
 const RootReducer = combineReducers({
- BlogsReducers,
- ResearchReducers,
- HospitalReducers,
- servicesReducers,
- StorysReducers,
- UploadsReducers,
- SurveyReducers,
- AppointmentReducers,
- SelfAssessmentReducers,
- linksReducers,
- DoctorReducers,
- ContactUsReducers,
- TipsReducers,
- PaymentReducers
+    BlogsReducers,
+    ResearchReducers,
+    HospitalReducers,
+    servicesReducers,
+    StorysReducers,
+    UploadsReducers,
+    SurveyReducers,
+    AppointmentReducers,
+    SelfAssessmentReducers,
+    linksReducers,
+    DoctorReducers,
+    ContactUsReducers,
+    TipsReducers,
+    PaymentReducers,
+    TheaterReducers
 })
 
 export default RootReducer

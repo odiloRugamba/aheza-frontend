@@ -45,6 +45,9 @@ import Terms from "./elements/Terms";
 import SelfEvaluation from './pages/selfEvaluation'
 import LinksComp from './pages/links'
 import SurveyDone from "./pages/surveyDone";
+import TheatersPage from "./pages/Theaters";
+import TheaterDetails from "./pages/Theater";
+
 
 
 
@@ -75,6 +78,8 @@ class Markup extends Component {
 						<ProtectRoute path='/stories' exact component={Stories} />
 						<ProtectRoute path='/upload/:title/:id' exact component={Upload} />
 						<ProtectRoute path='/uploads' exact component={Uploads} />
+						<ProtectRoute path='/theater/:title/:id' exact component={TheaterDetails} />
+						<ProtectRoute path='/theaters' exact component={TheatersPage} />
 						<ProtectRoute path='/institutions-list' exact component={InstitutionsList} />
 						<ProtectRoute path='/institution-profile' exact component={InstitutionProfile} />
 						<ProtectRoute path='/survey/:id' exact component={SurveyPage} />
@@ -91,6 +96,7 @@ class Markup extends Component {
 						<ProtectRoute path='/thankyou' exact component={Thankyou} />
 						<ProtectRoute path='/successful' exact component={SuccessThank} />
 						<ProtectRoute path='/failed' exact component={FailThank} />
+						<ProtectRoute path='/suveryThankyou' exact component={SurveyDone} />
 						<ProtectRoute path='/suveryThankyou' exact component={SurveyDone} />
 						<Route component={Error} />
 					</Switch>

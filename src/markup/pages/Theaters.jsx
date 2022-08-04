@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { getUploads } from "../../store/uploads/actions";
+import { getTheater } from "../../store/theater/actions";
 import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
@@ -13,17 +13,20 @@ import Footer from "../layout/footer";
 // Import Images
 import bnrImg1 from "../../images/banner/aheza-barnner-3.jpeg";
 
+
+
+
 const Uploads = () => {
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
-	const res = useSelector(state => state.UploadsReducers.data)
+	const res = useSelector(state => state.TheaterReducers.data)
 	const postPerPage = 12
 	const [PageCount, setPageCount] = useState(10)
 	const [pageData, setPageData] = useState([])
 
 
 	useEffect(() => {
-		dispatch(getUploads())
+		dispatch(getTheater())
 	}, [])
 
 	useEffect(() => {
@@ -63,7 +66,7 @@ const Uploads = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
 						<div className="" style={{ backgroundColor: "rgba(255,255,255,.5)", textAlign: "center" }}>
 							<div className="page-banner-entry text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: 'center' }}>Uploads</h2>
+								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: 'center' }}>Theaters</h2>
 							</div>
 						</div>
 					</div>
@@ -76,7 +79,7 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+												<Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -85,15 +88,15 @@ const Uploads = () => {
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date">{
 														convertData(item?.updatedAt)
 													}</li>
-
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 												</ul>
+
 											</div>
 										</div>
 									</div>
