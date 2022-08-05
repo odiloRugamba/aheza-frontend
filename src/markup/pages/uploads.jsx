@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { getUploads } from "../../store/uploads/actions";
 import LoadingComp from "../elements/loading";
@@ -16,6 +16,7 @@ import bnrImg1 from "../../images/banner/aheza-barnner-3.jpeg";
 const Uploads = () => {
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
+	const history = useHistory()
 	const res = useSelector(state => state.UploadsReducers.data)
 	const postPerPage = 12
 	const [PageCount, setPageCount] = useState(10)
@@ -53,6 +54,14 @@ const Uploads = () => {
 		return (match && match[7].length == 11) ? match[7] : false;
 	}
 
+	const changeRoutePage = (item) => {
+
+
+		console.log(item.title?.replaceAll(" ", "-").replaceAll('/', ''))
+
+		history.push("/upload/" + item.title?.replaceAll(" ", "-").replaceAll("/", "") + '/' + item?._id)
+	}
+
 
 	return (
 		<>
@@ -76,7 +85,7 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+												<Link to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -85,14 +94,14 @@ const Uploads = () => {
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date">{
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 												</ul>
 											</div>
 										</div>
@@ -100,7 +109,6 @@ const Uploads = () => {
 								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no media section for now" />
 							}
 						</div>
-
 						<div className="row">
 							<div className="col-lg-12">
 								<div className="pagination-bx text-center mb-30 clearfix">

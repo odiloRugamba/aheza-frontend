@@ -47,7 +47,7 @@ const LatestNewsSection = ({ title, content }) => {
 							</Link>
 						</div>
 					</div>
-					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none ">
+					<div className="tt-slider blog-slide slider-sp0 slick-arrow-none blogCard">
 						{
 							content ? content.map(item =>
 
@@ -79,7 +79,6 @@ const LatestNewsSection = ({ title, content }) => {
 							) : null
 						}
 					</div>
-
 					<div className="mobile-only" style={{ paddingLeft: "10%" }}>
 
 						<Link

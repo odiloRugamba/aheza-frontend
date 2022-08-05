@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const WEBURL = process.env.REACT_APP_WEBURL
-const URL = process.env.REACT_APP_URL
-const IMAGEURL = process.env.REACT_APP_IMAGEURL
+// const WEBURL = process.env.REACT_APP_WEBURL
+// const URL = process.env.REACT_APP_URL
+// const IMAGEURL = process.env.REACT_APP_IMAGEURL
 
-// const WEBURL = "http://localhost:3000";
-// const URL = "http://192.168.0.102:9001/api";
-// const IMAGEURL = "http://192.168.0.102:9001/uploads";
-//
+const WEBURL = "http://localhost:3000";
+const URL = "http://192.168.0.103:9001/api";
+const IMAGEURL = "http://192.168.0.103:9001/uploads";
+
 
 
 const request = async (method, url, data, headers) => {
@@ -47,6 +47,9 @@ const destroy = async (url, data, headers) => {
   return await request("DELETE", url, data, headers);
 };
 
+
+
+
 export const Dcore = {
   request,
   get,
@@ -58,3 +61,7 @@ export const Dcore = {
   IMAGEURL,
   WEBURL,
 };
+
+
+
+

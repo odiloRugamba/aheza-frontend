@@ -123,7 +123,7 @@ const Uploads = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+												<Link to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id}>
 													{
 														item?.youtubeVideoLink ?
 															<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -132,7 +132,7 @@ const Uploads = () => {
 												</Link>
 											</div>
 											<div className="post-info">
-												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date" onClick={() => { routeChange(Dcore.WEBURL) }}>
@@ -141,7 +141,7 @@ const Uploads = () => {
 														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
 
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More</Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More</Link>
 												</ul>
 
 											</div>
