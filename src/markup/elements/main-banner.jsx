@@ -51,6 +51,12 @@ const AboutSection = () => {
 					<div className="container inner-content">
 						<div className="row align-items-center">
 							<div className="col-lg-11 col-md-12 col-sm-12">
+								<br></br>
+								<br></br>
+								<br></br>
+								<br></br>
+								<br></br>
+								<br></br>
 								<h2 style={{ color: '#f17732' }}>"You can fall, but you can rise also." </h2>
 								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20, color: '#f17732' }}>Angelique Kidjo</span></h6>
 

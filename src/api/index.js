@@ -4,9 +4,13 @@ import axios from "axios";
 // const URL = process.env.REACT_APP_URL
 // const IMAGEURL = process.env.REACT_APP_IMAGEURL
 
-const WEBURL = "http://139.59.167.170:3000";
+const WEBURL = "http://139.59.167.170:9002";
 const URL = "http://139.59.167.170:9001/api";
 const IMAGEURL = "http://139.59.167.170:9001/uploads";
+
+// const WEBURL = "http://localhost:3000";
+// const URL = "http://localhost:9001/api";
+// const IMAGEURL = "http://localhost:9001/uploads";
 
 
 
