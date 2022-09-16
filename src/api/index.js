@@ -13,8 +13,8 @@ const IMAGEURL = "https://aheza.org.rw/uploads";
 // const IMAGEURL = "http://139.59.167.170:9001/uploads";
 
 // const WEBURL = "http://localhost:3000";
-// const URL = "http://localhost:9001/api";
-// const IMAGEURL = "http://localhost:9001/uploads";
+// const URL = "http://localhost:9002/api";
+// const IMAGEURL = "http://localhost:9002/uploads";
 
 
 
