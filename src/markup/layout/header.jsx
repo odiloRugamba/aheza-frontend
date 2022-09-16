@@ -16,8 +16,8 @@ function Header() {
 	const [openResources, setopenResources] = useState(null)
 	const [emgNumber, setEmgNumber] = useState([
 		{ background: " #da751c", number: 'Call 1024', title: 'Helpline' },
-		{ background: "#7d5787", number: '(+250) 788 315 809', title: 'Schedule an Appointment' },
-		{ background: "#006991", number: '(+250) 788 315 809', title: 'Main Office Line' }
+		{ background: "#7d5787", number: '(+250) 780 375 505', title: 'Schedule an Appointment' },
+		{ background: "#006991", number: '(+250) 788 353 940', title: 'Main Office Line' }
 	])
 	const location = useLocation();
 	const route = location.pathname;
