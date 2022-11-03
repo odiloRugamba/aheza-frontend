@@ -1,25 +1,31 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class widgetTag extends Component{
-	render(){
-		return(
-			<>
-				<div className="widget widget_tag_cloud">
-					<h4 className="widget-title">Tags</h4>
-					<div className="tagcloud"> 
-						<Link to="#">Improvement</Link> 
-						<Link to="#">Health</Link> 
-						<Link to="#">Life</Link> 
-						<Link to="#">Covid</Link> 
-						<Link to="#">Healthy</Link>
-						<Link to="#">Education</Link> 
-					</div>
+const widgetTag = ({ tags }) => {
+	const data = [
+		"Improvement",
+		"Life",
+		"Improvement",
+		"Life",
+		"Improvement",
+		"Life",
+	]
+	return (
+		<>
+			<div className="widget widget_tag_cloud">
+				<h4 className="widget-title">Tags</h4>
+				<div className="tagcloud"> {
+					tags.length > 0 ? tags.map(el =>
+						<Link to="#">{el}</Link>
+					) : data.map(el =>
+						<Link to="#">{el}</Link>
+					)
+				}
 				</div>
-				
-			</>
-		);
-	}
+			</div>
+
+		</>
+	);
 }
 
 export default widgetTag;

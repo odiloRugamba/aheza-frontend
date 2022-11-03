@@ -1,0 +1,88 @@
+.g-header {
+ .g-title {
+  font-size: 80px;
+
+  @include respond('phone') {
+   font-size: 10vw;
+  }
+ }
+
+ .e-follow {
+  position: relative;
+  bottom: 60px;
+ }
+
+ .g-space {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include respond('phone') {
+   margin: 0vw;
+   margin-top: 0vw;
+  }
+ }
+}
+
+@include respond('phone') {
+ *div {
+  // overflow-x: hidden;
+ }
+
+ *section {
+  overflow: hidden;
+ }
+}
+
+.page-min {
+ min-height: 80vh;
+}
+
+.searchNoresults {
+ min-height: 80vh;
+ display: flex;
+ justify-content: center;
+ margin-top: 70px;
+ color: #1f2278;
+ font-size: 80px;
+ font-family: "Montserrat", sans-serif;
+ font-weight: 700;
+}
+
+.searchDataCont {
+ min-height: 80vh;
+}
+
+.pageContainer {
+ margin-top: 100px;
+
+ @include respond('phone') {
+  margin-top: 50px;
+  // position: relative;
+  // top: 100px;
+ }
+
+ .pageHeader {
+  max-height: 300px;
+
+  @include respond('phone') {
+   max-height: 120px;
+
+  }
+ }
+
+ .titleText {
+  font-size: 80px;
+  bottom: 100px;
+  position: relative;
+  z-index: 99999;
+
+
+  @include respond('phone') {
+   font-size: 50px;
+   bottom: 30px;
+  }
+ }
+
+}
