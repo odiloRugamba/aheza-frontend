@@ -81,7 +81,7 @@ const AboutSection = () => {
 			// session: selectSession,
 			selfAssessmentAnsID: selfAssessmentAnsID
 		}))
-		history.push('/Finalize')
+		history.push('/thankyou')
 	}
 
 	const validateEmail = (email) => {
