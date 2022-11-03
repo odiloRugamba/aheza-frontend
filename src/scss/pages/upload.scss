@@ -1,0 +1,258 @@
+.audioPlayer {
+  .audioplayerBtnCont {
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom: 155px;
+    padding-left: 4px;
+
+    .AudioPlayLine {
+      background: white;
+      width: 97%;
+      border-radius: 50px;
+      height: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .dragPin {
+        background: #54D6D3;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    .playBtnCont {
+      display: flex;
+      align-items: center;
+
+      div {
+        cursor: pointer;
+        background: white;
+        padding: 5px;
+        border-radius: 50%;
+      }
+
+      img {
+        width: 20px;
+      }
+
+      .playPuaseBtn {
+        margin: 0px 30px;
+
+        img {
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .playBg {
+    background: black;
+    opacity: .3;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    bottom: 80px;
+    border-radius: 0px 0px 7px 7px;
+  }
+}
+
+.audioPlayer {
+  --primary: #565acf;
+  --secondary: #ffd200;
+}
+
+.forwardBackward {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  font-size: 16px;
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+}
+
+.linePlayed {
+  background: #54D6D3;
+  height: 6px;
+  border-radius: 50px 0px 0px 50px;
+  margin-left: 5px;
+  position: relative;
+  bottom: 6px;
+}
+
+.forwardBackward:hover {
+  color: var(--primary);
+}
+
+.playPause {
+  background: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  font-size: 25px;
+  color: var(--secondary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+}
+
+.play {
+  position: relative;
+  left: 5px;
+}
+
+.currentTime,
+.duration {
+  font-size: 16px;
+  color: white;
+}
+
+.currentTime {
+  margin-left: 25px;
+}
+
+.progressBar {
+  --bar-bg: white;
+  --seek-before-width: 40%;
+  --seek-before-color: #ffc2a1;
+  --knobby: #3452a5;
+  --selectedKnobby: #26c9c3;
+
+  appearance: none;
+  background: var(--bar-bg);
+  ;
+  border-radius: 10px;
+  width: 500px;
+  height: 6px;
+  outline: none;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.currentCont {
+  display: flex;
+}
+
+/* progress bar - safari */
+.progressBar::-webkit-slider-runnable-track {
+  background: var(--bar-bg);
+  ;
+  border-radius: 10px;
+  position: relative;
+  height: 6px;
+  outline: none;
+}
+
+/* progress bar - firefox */
+.progressBar::-moz-range-track {
+  background: var(--bar-bg);
+  ;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 6px;
+  outline: none;
+}
+
+.progressBar::-moz-focus-outer {
+  border: 0;
+}
+
+/* progress bar - chrome and safari */
+.progressBar::before {
+  content: '';
+  height: 6px;
+  width: var(--seek-before-width);
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* progress bar - firefox */
+.progressBar::-moz-range-progress {
+  background-color: var(--seek-before-color);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  height: 6px;
+}
+
+/* knobby - chrome and safari */
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--knobby);
+  cursor: pointer;
+  position: relative;
+  margin: -2px 0 0 0;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+/* knobby while dragging - chrome and safari */
+.progressBar:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+  background: var(--selectedKnobby);
+}
+
+/* knobby - firefox */
+.progressBar::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: transparent;
+  background-color: var(--knobby);
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+/* knobby while dragging - firefox */
+.progressBar:active::-moz-range-thumb {
+  transform: scale(1.2);
+  background: var(--selectedKnobby);
+}
+
+
+.partenerImage {
+  box-shadow: inset 200px 60px 80px 0px white;
+}
+
+.donateImg {
+  box-shadow: inset 200px 100px 100px 0px white;
+}
+
+.designDetails {
+  p {
+    color: #444;
+    font-size: 20px;
+  }
+
+  p strong {
+    font-size: 24px;
+    line-height: 28px;
+    color: #1f2278;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h6 {}
+}

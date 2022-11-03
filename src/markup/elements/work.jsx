@@ -1,63 +1,148 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import leftIcon from '../../images/appointment/left.png';
+import rightIcon from '../../images/appointment/right.png';
+import applePhone from '../../images/apple.png';
+import SwipeableViews from 'react-swipeable-views';
+import { useDispatch, useSelector } from "react-redux";
+import { getTipsFunc } from "../../store/tips/actions";
 
-// Import Images
-import bg1 from '../../images/background/line-bg1.png';
-import ptImg1 from '../../images/shap/circle-orange.png';
-import ptImg2 from '../../images/shap/plus-orange.png';
-import ptImg3 from '../../images/shap/circle-dots.png';
 
-class aboutSection extends Component{
-	render(){
-		return(
-			<>
-				
-				<section className="section-area section-sp5 work-area" style={{backgroundImage: "url("+bg1+")", backgroundRepeat:" no-repeat", backgroundPosition: "center", backgroundSize: "100%"}}>
-					<div className="container-sm">
-						<div className="heading-bx text-center">
-							{/* <h6 className="title-ext text-secondary">Working Process</h6> */}
-							<h2 className="title">How it works?</h2>
-						</div>
-						<div className="row justify-content-center">
-							<div className="col-lg-4 col-sm-6 mb-30">
-								<div className="work-bx">
-									<div className="work-num-bx">01</div>
-									<div className="work-content">
-										<h5 className="title text-secondary mb-10">Find information</h5>
-										<p>From our vast database of information about mental health, you can find anything you are looking for</p>
-									</div>
-									{/* <Link to="/booking" className="btn btn-primary light">View More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
-								</div>
-							</div>
-							<div className="col-lg-4 col-sm-6 mb-30">
-								<div className="work-bx active">
-									<div className="work-num-bx">02</div>
-									<div className="work-content">
-										<h5 className="title text-secondary mb-10">Book an appointment</h5>
-										<p>Book an appointment from our qualified conselors that is handled with total privacy and anonymity</p>
-									</div>
-								</div>
-							</div>
-							<div className="col-lg-4 col-sm-6 mb-30">
-								<div className="work-bx">
-									<div className="work-num-bx">03</div>
-									<div className="work-content">
-										<h5 className="title text-secondary mb-10">Community healing</h5>
-										<p>You can also join one of communities in our community healing program</p>
-									</div>
-									{/* <Link to="/contact-us" className="btn btn-primary light">View More <i className="btn-icon-bx fas fa-chevron-right"></i></Link> */}
-								</div>
-							</div>
-						</div>
-					</div>
-					<img className="pt-img1 animate1" src={ptImg1} alt=""/>
-					<img className="pt-img2 animate2" src={ptImg2} alt=""/>
-					<img className="pt-img3 animate3" src={ptImg3} alt=""/>
-				</section>
-				
-			</>
-		);
+
+
+
+const AboutSection = () => {
+	const [slideIndex, setSlideIndex] = useState(0)
+
+	const [data, setData] = useState([])
+	const dispatch = useDispatch()
+	const res = useSelector(state => state.TipsReducers.data)
+
+
+	useEffect(() => {
+		dispatch(getTipsFunc())
+	}, []);
+	const privFunc = () => {
+		if (slideIndex !== 0) {
+			setSlideIndex(slideIndex - 1)
+		}
 	}
+
+	const nextFunc = () => {
+		if (slideIndex < data.length - 1) {
+			setSlideIndex(slideIndex + 1)
+		}
+	}
+
+
+
+	useEffect(() => {
+		if (res) {
+			const exData = []
+			exData.push({
+				tip: res.title,
+				color: '#565acf',
+			})
+			res.tips.forEach((el, index) => {
+				if (index % 2 !== 0) {
+					exData.push({
+						tip: el,
+						color: '#565acf',
+					})
+				} else {
+					exData.push({
+						tip: el,
+						color: '#f17731',
+					})
+				}
+			});
+			setData(exData)
+		}
+
+	}, [res])
+
+
+	return (
+		<>
+
+			<section className="section-area section-p5 tips-wraper  row" style={{ marginRight: 0 }}>
+				<div className="col-lg-7 col-md-6 col-sm-12" style={{ marginTop: 30 }}>
+					<div className="col-lg-8 col-sm-12 mb-30" >
+						<a href='/our-services'>
+							<div className="work-bx " style={{ backgroundColor: "#565acf" }}>
+								<div className="work-content" style={{ display: "flex", alignItems: 'center' }}>
+									<div className="work-num-bx" >1</div>
+									<div >
+										<br />
+										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Find Information</h4>
+									</div>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div className="col-lg-8 col-sm-12 mb-30">
+						<a href='/appointment-assesement'>
+							<div className="work-bx " style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
+								<div className="work-num-bx">2</div>
+								<div className="work-content" >
+									<br />
+									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Book Appointment</h5>
+								</div>
+							</div>
+						</a>
+					</div>
+					<div className="col-lg-8 col-sm-12 mb-30">
+						<a href='/our-services/Group-therapy/628b9811cd12fb7c164eb02c'>
+							<div className="work-bx" style={{ display: "flex", backgroundColor: "#565acf", alignItems: 'center' }}>
+								<div className="work-num-bx">3</div>
+								<div className="work-content">
+									<br />
+									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Connect with a Community</h5>
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+				<div className="col-lg-5 col-md-6 col-sm-12 workPhone" style={{ padding: 0 }}>
+					<div className="banner-img" style={{ marginTop: 50, marginBottom: 30, position: "relative" }}>
+
+						<div className='connentInnerr'>
+							<div onClick={() => privFunc()} className='nextPrevIcon prev'>
+								<div>
+									<img src={leftIcon} />
+								</div>
+							</div>
+
+							<SwipeableViews index={slideIndex} enableMouseEvents>
+								{
+									data?.length > 0 ?
+										data.map(el => <div style={{ background: el.color }} className='connentInner'>
+
+											<div className='inneData' style={{ padding: 50 }}>
+												{
+													el.title ?
+														<div style={{ fontSize: 25 }}><>{el.tip}</></div> :
+														<span>{el.tip}</span>
+												}
+											</div>
+										</div>
+										) : null
+								}
+							</SwipeableViews>
+							<div onClick={() => nextFunc()} className='nextPrevIcon next'>
+								<div>
+									<img src={rightIcon} />
+								</div>
+							</div>
+						</div>
+						<img src={applePhone} alt="" className='applePhone' style={{ maxWidth: "150%" }} />
+					</div>
+				</div>
+				<div>
+				</div>
+			</section>
+		</>
+	);
 }
 
-export default aboutSection;
+export default AboutSection;

@@ -1,152 +1,106 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component, useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import Sticky from 'react-stickynode';
 import { useLocation } from 'react-router-dom'
-
+import searchIcon from '../../images/search.svg';
 // Images
 import logo from '../../images/logo-2.png';
-import twitterLogo from "../../images/twitter.svg"
-import instagramLogo from "../../images/instagram.svg"
-import facebook from "../../images/facebook.svg"
-import logoWhite from '../../images/logo-white.png';
+import { BsXLg } from "react-icons/bs";
+
+
 
 function Header() {
+	const [classesList, setClassesList] = useState("menu-links  navbar-collapse collapse justify-content-end")
+	const [openService, setOpenService] = useState(null)
+	const [model, setModel] = useState(false)
+	const [openResources, setopenResources] = useState(null)
+	const [emgNumber, setEmgNumber] = useState([
+		{ background: " #da751c", number: 'Call 1024', title: 'Helpline' },
+		{ background: "#7d5787", number: '(+250) 780 375 505', title: 'Schedule an Appointment' },
+		{ background: "#006991", number: '(+250) 788 353 940', title: 'Main Office Line' }
+	])
 	const location = useLocation();
 	const route = location.pathname;
+	const history = useHistory()
+
 	let homeActive = "";
 	if (route === "/") {
 		homeActive = "active"
 	}
 
 	let ourServicesActive = "";
-	if (route.includes("service")) {
+	if (route === "/our-services") {
 		ourServicesActive = "active"
 	}
 
-	let mediaActive = "";
-	if (route.includes("stor") || route.includes("research") || route.includes("upload")) {
-		mediaActive = "active"
+
+	let otherInstitutionsServices = "";
+	if (route === "/other-institutions-services") {
+		otherInstitutionsServices = "active"
 	}
 
 
-	let blogActive = "";
-	if (route.includes("blog")) {
-		blogActive = "active"
+	let resourcesActive = "";
+	if (route === "/resources") {
+		resourcesActive = "active"
 	}
 
-	let institutionActive = "";
-	if (route.includes("/institutions-list") || route.includes("/institution-profile")) {
-		institutionActive = "active"
-	}
-
-
-	let aboutUsActive = "";
-	if (route.includes("about-us")) {
-		aboutUsActive = "active"
-	}
 
 	let contactUsActive = "";
 	if (route.includes("contact-us")) {
 		contactUsActive = "active"
 	}
 
+	let donationActive = "";
+	if (route.includes("donation")) {
+		donationActive = "active"
+	}
+	const openNavbar = () => {
+		setClassesList("menu-links  navbar-collapse collapse justify-content-end show")
+	}
+	const closeNavBar = () => {
+		setClassesList("menu-links  navbar-collapse collapse justify-content-end")
+	}
+
+	const onChangeRoute = (link) => {
+		history.push(link)
+		setModel(false)
+	}
 	return (
 		<>
 			<header className="header header-transparent rs-nav">
 				<Sticky enabled={true} className="sticky-header navbar-expand-lg">
-					<div id="ahezaInfo">
-						<div id='innerCont'>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">schedule</span>
-								</div>
-								<div> Monday - Friday: 08:00 AM - 06:00 PM</div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">
-										email
-									</span>
-								</div>
-								<div>info@aheza.org.rw</div>
-								<div id='socialMedias'>
-									<div><embed src={twitterLogo} width="20" /></div>
-									<div><embed src={instagramLogo} width="20" /></div>
-									<div><embed src={facebook} width="20" /></div>
-								</div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">call</span>
-								</div>
-								<div><a href="tel:+250788315809" style={{color: "white"}}>(+250) 788 315 809</a></div>
-							</div>
-
-							<div id='headerItem'>
-								<div>
-									<span id='HeaderIcon' className="material-icons">place</span>
-								</div>
-								<div> Bugesera District, Ntarama sector.</div>
-							</div>
-
-						</div>
-					</div>
 					<div className="menu-bar clearfix">
 						<div className="container-fluid clearfix">
 							<div className="menu-logo logo-dark" >
 								<Link to="/"><img className='logo' src={logo} alt="" /></Link>
 							</div>
-							<button className="navbar-toggler collapsed menuicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
+							<button onClick={() => openNavbar()} className="navbar-toggler collapsed menuicon justify-content-end" type="button" data-bs-toggle="collapse" data-bs-target="#menuDropdown" aria-controls="menuDropdown" aria-expanded="false" aria-label="Toggle navigation">
 								<span></span>
 								<span></span>
 								<span></span>
 							</button>
 							<div className="secondary-menu">
 								<ul>
-									{/* <li className="num-bx"><a href="tel:+250788315809"><i className="fas fa-phone-alt"></i> (+250) 788 315 809</a></li> */}
-									<li className="btn-area"><Link to="/book-appointment" className="btn btn-primary shadow">Book appointment<i className="btn-icon-bx fas fa-chevron-right"></i></Link></li>
+									<li className="btn-area"><a onClick={() => setModel(true)} className="btn btn-primary shadow"><b style={{ color: "white", fontSize: 20 }}><u>Talk to Us</u></b>
+									</a></li>
 								</ul>
 							</div>
-							<div className="menu-links navbar-collapse collapse justify-content-end" id="menuDropdown">
+							<div className="secondary-menu">
+								<ul>
+									<li className="bt-aea"><a onClick={() => setModel(true)} className=""> <Link to="/search"><img className='searchHIcon' src={searchIcon} alt="" /></Link></a></li>
+								</ul>
+							</div>
+							<div className={classesList} id="menuDropdown">
 								<div className="menu-logo">
-									<Link to="/"><img src={logoWhite} alt="" /></Link>
 								</div>
 								<ul className="nav navbar-nav">
 									<li className={homeActive} ><Link to="/">Home</Link></li>
-									<li className={ourServicesActive}>
-										<Link to="#">Services <i className="fa fa-plus"></i>
-										</Link>
-										<ul className="sub-menu">
-											<li className="add-menu-left">
-												<ul>
-													<li><Link to="/our-services"><span>Our services</span> </Link></li>
-													<li><Link to="/other-institutions-services"><span>Other institutions</span></Link></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li className={mediaActive}>
-										<Link to="#">Media <i className="fas fa-plus"></i></Link>
-										<ul className="sub-menu">
-											<li className="add-menu-left">
-												<ul>
-													<li><Link to="/research-findings"><span>Research</span></Link></li>
-													<li><Link to="/stories"><span>Stories</span></Link></li>
-													<li><Link to="/uploads"><span>Uploads</span> </Link></li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-									<li className={blogActive}><Link to="/blog-grid">Blog </Link> </li>
-									{/* <li className={institutionActive}><Link to="/institutions-list">Institutions </Link> </li> */}
-									<li className={aboutUsActive}><Link to="/about-us"><span>About Us</span></Link></li>
+									<li className={ourServicesActive}> <Link to="/our-services">Services </Link> </li>
+									<li className={resourcesActive}> <Link to="/resources">Resources </Link> </li>
+									<li className={otherInstitutionsServices}> <Link to="/other-institutions-services">Other  Institutions </Link> </li>
 									<li className={contactUsActive}><Link to="/contact-us">Contact Us</Link></li>
-
-
-
+									<li className={donationActive}><Link to="/donation">Donate</Link></li>
 								</ul>
 								<ul className="social-media">
 									<li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" className="btn btn-primary"><i className="fab fa-facebook-f"></i></a></li>
@@ -154,20 +108,52 @@ function Header() {
 									<li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/" className="btn btn-primary"><i className="fab fa-linkedin-in"></i></a></li>
 									<li><a target="_blank" rel="noreferrer" href="https://twitter.com/" className="btn btn-primary"><i className="fab fa-twitter"></i></a></li>
 								</ul>
-								<div className="menu-close" id="menuClose">
+								<div onClick={() => closeNavBar()} className="menu-close" id="menuClose">
 									<i className="ti-close"></i>
 								</div>
 							</div>
 						</div>
 					</div>
 				</Sticky>
-
 			</header>
-
+			{
+				model ? <div className='headerCont'>
+					<div className='modelCont'>
+						<div onClick={() => onChangeRoute('/book-appointment')} className='backGround'></div>
+						<div className='mainPartCont'>
+							<div className='mainPart'>
+								<div className='rowCont'>
+									<div className='closeCont'>
+										<div onClick={() => setModel(!model)} className='closeBtn'>
+											<BsXLg />
+										</div>
+									</div>
+									<div className="col-lg-0 mb-0">
+										<div className="page-banner-entry text-center">
+											<h5>If this is an Emergency, Call 1024</h5>
+										</div>
+										<div className='mainContent'>
+											{
+												emgNumber?.map(el =>
+													<div style={{ background: el?.background }} className='boxCont'>
+														<div className='title'>{el?.title}</div>
+														<div>{el?.number}</div>
+													</div>
+												)
+											}
+										</div>
+										<div className="appontiCont page-banner-entry text-center">
+											<div>To book an appointment from website <span onClick={() => onChangeRoute('/appointment-assesement')}>Click Here</span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div> : null
+			}
 		</>
 	);
-
 }
-{/* <li><Link to="/search"><span> Search</span> <i className="fas fa-plus"></i></Link></li> */ }
 
 export default Header;

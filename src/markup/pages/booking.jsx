@@ -6,7 +6,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 
 // Import Images
-import bnrImg1 from "../../images/banner/img1.jpg";
+import bnrImg1 from "../../images/banner/img1.jpeg";
 import waveBlue from "../../images/shap/wave-blue.png";
 import circleDots from "../../images/shap/circle-dots.png";
 import plusBlue from "../../images/shap/plus-blue.png";
@@ -19,7 +19,7 @@ class Booking extends Component {
 
 				<Header />
 
-				<div className="page-content bg-white">
+				<div className="page-content bg-white" style={{ marginTop: 100 }}>
 
 					<div className="banner-wraper">
 						<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")" }}>
