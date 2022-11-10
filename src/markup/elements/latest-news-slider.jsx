@@ -103,7 +103,7 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 						:
 						<div className='container g-header'>
 							<div className="heading-bx text-center g-space e-follow">
-								<h1 className="title m-b0 g-title">News</h1>
+								<h1 className="title m-b0 g-title"><FormattedMessage id="News" defaultMessage="News" /></h1>
 							</div>
 						</div>
 					}

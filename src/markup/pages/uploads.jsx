@@ -74,7 +74,9 @@ const Uploads = () => {
 					<div className="page-banner" style={{ backgroundImage: "url(" + bnrImg1 + ")", height: 300 }} >
 						<div className="" style={{ backgroundColor: "rgba(255,255,255,.5)", textAlign: "center" }}>
 							<div className="page-banner-entry text-center" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: 'center' }}>Uploads</h2>
+								<h2 className='text-center title title-80' style={{ paddingBottom: 50, textAlign: 'center' }}>
+								<FormattedMessage id="Uploads" defaultMessage="Uploads" />
+								</h2>
 							</div>
 						</div>
 					</div>
@@ -103,8 +105,9 @@ const Uploads = () => {
 														convertData(item?.updatedAt)
 													}</li>
 
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+ "/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm">											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
- </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+ "/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm">
+														<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+													</Link>
 												</ul>
 											</div>
 										</div>

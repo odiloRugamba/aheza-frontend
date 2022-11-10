@@ -12,7 +12,9 @@ const AboutSection = () => {
 		<>
 			<section className="section-area section-sp1 testimonial-wraper" style={{ paddingRight: 20 }}>
 				<div className="heading-bx text-center" style={{ margin: 10, marginTop: 70 }}>
-					<h1 className="title m-b0 title-80" >Mission</h1>
+					<h1 className="title m-b0 title-80" >
+						<FormattedMessage id="Mission" defaultMessage="Mission" />
+					</h1>
 				</div>
 				<div className="row">
 					<div className="col-lg-6 col-md-6 col-sm-12" style={{ backgroundImage: "url(" + background2 + ")", backgroundSize: 'cover' }}>

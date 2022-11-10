@@ -6,7 +6,7 @@ import { getStorysById, getStorys, getStoryComments, postStoryComments } from ".
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
+import { FormattedMessage } from 'react-intl';
 // Elements
 import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
@@ -141,7 +141,7 @@ const StorysDetails = () => {
 											</ul>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
-													<strong>Tags:</strong>
+													<strong><FormattedMessage id="Tag" defaultMessage="Tag" />:</strong>
 													{
 														story?.tags?.map(el => (
 															<Link to="#">{el}</Link>
@@ -154,7 +154,7 @@ const StorysDetails = () => {
 									</div>
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
-											<h4 className="widget-title">{resComments?.length} Comments</h4>
+											<h4 className="widget-title">{resComments?.length} <FormattedMessage id="commets" defaultMessage="commets" /></h4>
 
 											<div className="clearfix">
 

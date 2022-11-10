@@ -7,6 +7,7 @@ import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
+import { FormattedMessage } from 'react-intl';
 
 
 const ServiceDetail = () => {
@@ -50,7 +51,7 @@ const ServiceDetail = () => {
 								<aside className="sticky-top pb-1">
 									<div className="widget">
 
-										<h5 className="title-head">Services offered</h5>
+										<h5 className="title-head"><FormattedMessage id="ServicesOffered" defaultMessage="ServicesOffered" /></h5>
 										<ul className="service-menu">
 											{
 												hospital?.services.map(el =>

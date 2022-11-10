@@ -7,6 +7,7 @@ import { getResearchById, getResearchCommnets } from "../../store/research/actio
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
+import { FormattedMessage } from 'react-intl';
 
 // Import Images
 import bnrImg1 from "../../images/banner/img1.jpeg";

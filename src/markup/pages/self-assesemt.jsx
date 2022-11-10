@@ -6,6 +6,7 @@ import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions
 import LoadingComp from "../elements/loading";
 // Import Images
 import logo from '../../images/logo-2.png';
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -179,7 +180,9 @@ const SurveyPage = () => {
           <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400,paddingTop:150 }}>
             <div className="container">
               <div className="page-banner-entry text-center">
-                <h2>Answer this question</h2>
+                <h2>
+                  <FormattedMessage id="AnswerThis" defaultMessage="AnswerThis" />
+                </h2>
               </div>
             </div>
           </div>
@@ -196,7 +199,9 @@ const SurveyPage = () => {
                       <div className="row">
                         <div className='onBehalfCont'>
                           <div className="page-banner-entry">
-                            <h4>I am taking this assesement on behalf of:</h4>
+                            <h4>
+                              <FormattedMessage id="IAmTaking" defaultMessage="IAmTaking" />
+                            </h4>
                           </div>
                           <div className='questionCont'>
                             <ul>
@@ -221,7 +226,9 @@ const SurveyPage = () => {
                           </div>
                         </div>
                         <div className="col-lg-12">
-                          <button onClick={() => startSaveyFunc()} style={{ fontSize: 20, fontWeight: 700 }} className="btn w-100 btn-secondary btn-lg">Start</button>
+                          <button onClick={() => startSaveyFunc()} style={{ fontSize: 20, fontWeight: 700 }} className="btn w-100 btn-secondary btn-lg">
+                          <FormattedMessage id="Start" defaultMessage="Start" />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -272,10 +279,14 @@ const SurveyPage = () => {
                               </div>
                               <div style={{ paddingLeft: 15, paddingRight: 20 }} className='changeQuestionBtn'>
                                 <div>
-                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("prev")} className='positionBtn'> Previous</button>
+                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("prev")} className='positionBtn'> 
+                                  <FormattedMessage id="Previous" defaultMessage="Previous" />
+                                  </button>
                                 </div>
                                 <div>
-                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>Next</button>
+                                  <button style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} onClick={() => nextAPrevFunc("next", el.questionType, el)} className='positionBtn'>
+                                  <FormattedMessage id="Next" defaultMessage="Next" />
+                                  </button>
                                 </div>
                               </div>
                             </div>
@@ -295,25 +306,36 @@ const SurveyPage = () => {
               <div className='rowCont'>
                 <div className="col-lg-00 mb-0">
                   <div className="page-banner-entry text-center">
-                    <h2>Welcome!</h2>
+                    <h2>
+                      <FormattedMessage id="Welcome" defaultMessage="Welcome" />
+                    </h2>
                   </div>
                   <div className='mainContent appointmentText'>
                     <p>
-                      <h4 style={{ marginBottom: 7 }}>Please fill in this questionaire first. </h4>
-                      1. This is Aheza's  mental health questionaire.<br />
+                      <h4 style={{ marginBottom: 7 }}>
+                       
+                        <FormattedMessage id="PleaseFill" defaultMessage="PleaseFill" />
+                        </h4>
+                      
+                      <FormattedMessage id="ThisIsAheza" defaultMessage="ThisIsAheza" />
+                      <br />
+                      <FormattedMessage id="PleaseTakeTime" defaultMessage="PleaseTakeTime" /> <br />
 
-                      2. Please take time to answer the following questions carefully and truthfully. <br />
-
-                      3. They will help us match you with the right therapist.<br />
-                      4. Your answers are confidential.
+                      <FormattedMessage id="TheyWillHelp" defaultMessage="TheyWillHelp" />.<br />
+                      
+                      <FormattedMessage id="YourAnswers" defaultMessage="YourAnswers" />
                     </p>
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push(`/${lang}`)} className='positionBtn'>Back to Home</button>
+                      <button onClick={() => history.push(`/${lang}`)} className='positionBtn'>
+                        <FormattedMessage id="BacktoHome" defaultMessage="BacktoHome" />
+                        </button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} className='positionBtn'>Yes, Continue</button>
+                      <button onClick={() => CloseModel()} className='positionBtn'>
+                        <FormattedMessage id="YesContinue" defaultMessage="YesContinue" />
+                        </button>
                     </div>
                   </div>
                 </div>

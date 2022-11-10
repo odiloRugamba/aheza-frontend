@@ -9,6 +9,8 @@ import { getUploads } from "../../store/uploads/actions";
 import LatestNewsSection from "../elements/latest-news-slider";
 import ResearchSection from "../elements/research-section";
 import StoriesSection from "../elements/stories-section";
+import { FormattedMessage } from 'react-intl';
+
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -132,7 +134,7 @@ const Stories = () => {
           {research?.length ? <ResearchSection content={research} /> : null}
           {stories?.length ? <StoriesSection content={stories} /> : null}
         </div> : <div className='searchNoresults'>
-          No Results...
+           <FormattedMessage id="NoResults" defaultMessage="NoResults" /> ...
         </div>
         }
       </div>

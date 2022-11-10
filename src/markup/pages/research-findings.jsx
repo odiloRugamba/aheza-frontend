@@ -56,7 +56,9 @@ const ResearchFindings = () => {
 						<div style={{ paddingTop: 40 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Research</h2>
+									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>
+										<FormattedMessage id="Research" defaultMessage="Research" />
+										</h2>
 								</div>
 							</div>
 						</div>
@@ -73,8 +75,7 @@ const ResearchFindings = () => {
 												<p className="post-title max-lines-3" style={{ fontSize: 20 }}><Link to={`/${lang}`+ "/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"> {convertData(item?.updatedAt)}</li>
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={ `/${lang}` + "/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
- </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={ `/${lang}` + "/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm"><FormattedMessage id="ReadMore" defaultMessage="ReadMore" /></Link>
 
 												</ul>
 											</div>

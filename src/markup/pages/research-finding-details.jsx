@@ -17,6 +17,8 @@ import doc from "../../images/icon/doc.png";
 import { jsPDF } from "jspdf";
 import { Dcore } from '../../api';
 import htmlTopdf from 'html2pdf.js'
+import { FormattedMessage } from 'react-intl';
+
 
 
 const ResearchFindingDetails = () => {
@@ -91,7 +93,7 @@ const ResearchFindingDetails = () => {
 											{
 												research?.publishedByAheza === "YES" ?
 													<div className="brochure-bx">
-														<h5 className="title-head">Download</h5>
+														<h5 className="title-head"><FormattedMessage id="Download" defaultMessage="Download" /></h5>
 														<div>
 															<div>
 																<strong>Price: </strong>
@@ -100,8 +102,8 @@ const ResearchFindingDetails = () => {
 															<div>
 																<a rel="noreferrer" className="download-link" target="_blank" href={Dcore.IMAGEURL + "/files/" + research?.file}>
 																	<img src="" alt="" />
-																	<h5 className="title">Download this document</h5>
-																	<span>Download</span>
+																	<h5 className="title"><FormattedMessage id="DownloadThisDocument" defaultMessage="DownloadThisDocument" /></h5>
+																	<span><FormattedMessage id="Download" defaultMessage="Download" /></span>
 																</a>
 															</div>
 														</div>
@@ -118,7 +120,7 @@ const ResearchFindingDetails = () => {
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
-											<h4 className="widget-title">{resCommnets?.length} Comments</h4>
+											<h4 className="widget-title">{resCommnets?.length}<FormattedMessage id="omments" defaultMessage="Comments" /></h4>
 											<div className="clearfix">
 												<CommentList coments={resCommnets} />
 												<CommentRespond loading={loading} submit={submitFunc} />
@@ -130,16 +132,16 @@ const ResearchFindingDetails = () => {
 									<aside className="side-bar sticky-top aside-bx">
 										<ResearchFindingWidget data={reletedData} />
 										<div className="brochure-bx">
-											<h5 className="title-head">Research</h5>
+											<h5 className="title-head"><FormattedMessage id="Research" defaultMessage="Research" /></h5>
 											<Link to={`/${lang}`+"/contact-us" }className="download-link">
 												<img src={pdf} alt="" />
-												<h5 className="title">Publish Your Own</h5>
-												<h5 className="title">Research</h5>
+												<h5 className="title"><FormattedMessage id="PublishYour" defaultMessage="PublishYour" /></h5>
+												<h5 className="title"><FormattedMessage id="Research" defaultMessage="Research" /></h5>
 											</Link>
 											<a onClick={() => { saveFile() }} className="download-link">
 												<img src={doc} alt="" />
-												<h5 className="title">Download</h5>
-												<span>Research</span>
+												<h5 className="title"><FormattedMessage id="Download" defaultMessage="Download" /></h5>
+												<span><FormattedMessage id="Research" defaultMessage="Research" /></span>
 											</a>
 										</div>
 									</aside>

@@ -67,7 +67,10 @@ const BlogGrid = () => {
 						<div style={{ paddingTop: 40 }}>
 							<div className="container">
 								<div className="page-banner-entry text-center">
-									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>Blog</h2>
+									<h2 className='title-80' style={{ paddingBottom: 50, color: "white" }}>
+										
+										<FormattedMessage id="Blog" defaultMessage="Blog" />
+										</h2>
 								</div>
 							</div>
 						</div>
@@ -95,7 +98,7 @@ const BlogGrid = () => {
 											</div>
 										</div>
 									</div>
-								)) : pageData?.length !== 0 ? <LoadingComp /> : <EmptyComp title="We have no blogs for now" />
+								)) : pageData?.length !== 0 ? <LoadingComp /> :<FormattedMessage id="wehaveNo" defaultMessage="wehaveNo"> {(msg)=> (<EmptyComp title={msg}/>)}</FormattedMessage>
 							}
 						</div>
 						<div className="row">

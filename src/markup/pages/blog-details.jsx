@@ -7,7 +7,7 @@ import { getblogById, getBlogs, getBlogComment, postblogComment } from "../../st
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import LoadingComp from "../elements/loading";
-
+import { FormattedMessage } from 'react-intl';
 // Elements
 import CommentList from "../elements/comment-list";
 import CommentRespond from "../elements/comment-respond";
@@ -84,7 +84,7 @@ const BlogDetails = () => {
 											</div>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
-													<strong>Tag:</strong>
+													<strong><FormattedMessage id="Tag" defaultMessage="Tag" />:</strong>
 													{
 														blogItem?.tags.map((el) => (
 															<Link to="#">{el}</Link>
@@ -99,7 +99,7 @@ const BlogDetails = () => {
 
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
-											<h4 className="widget-title"> {coments?.length} Comments</h4>
+											<h4 className="widget-title"> {coments?.length} <FormattedMessage id="comments" defaultMessage="comments" /></h4>
 
 											<div className="clearfix">
 

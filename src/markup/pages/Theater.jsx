@@ -13,6 +13,7 @@ import CommentRespond from "../elements/comment-respond";
 import WidgetRecentPosts from "../elements/widget-recent-posts";
 import LoadingComp from "../elements/loading";
 import SocialMediaComp from '../elements/shareMedia'
+import { FormattedMessage } from 'react-intl';
 
 
 // Import Images
@@ -120,7 +121,7 @@ const UploadsDetails = () => {
 											</div>
 											<div className="ttr-post-footer">
 												<div className="post-tags">
-													<strong>Tags:</strong>
+													<strong> <FormattedMessage id="Tag" defaultMessage="Tag" />:</strong>
 													{
 														upload?.tags?.map(el => (
 															<Link to="#">{el}</Link>
@@ -133,7 +134,7 @@ const UploadsDetails = () => {
 									</div>
 									<div className="clear" id="comment-list">
 										<div className="comments-area" id="comments">
-											<h4 className="widget-title">{resComments?.length} Comments</h4>
+											<h4 className="widget-title">{resComments?.length} <FormattedMessage id="comments" defaultMessage="comments" /></h4>
 											<div className="clearfix">
 												<CommentList coments={resComments} />
 												<CommentRespond loading={loading} submit={submitFunc} placeholder="Comment" />

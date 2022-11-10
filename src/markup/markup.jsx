@@ -64,11 +64,10 @@ class Markup extends Component {
 						<ProtectRoute path='/:lang/apply' exact component={Apply} />
 						<ProtectRoute path='/:lang/book-appointment' exact component={BookAppointment} />
 						<ProtectRoute path='/:lang/our-services' exact component={OurServices} />
-						<ProtectRoute path='/:lang/our-services/:title/:id' exact component={ServiceDetails} />
+						<ProtectRoute path='/:lang/our-services/:title/:id' exact component={ServiceDetails} />'
 						<ProtectRoute path='/:lang/other-institutions-services' exact component={OtherInstitutionsServices} />
 						<ProtectRoute path='/:lang/other-institutions-services/:title/:id' exact component={OtherInstitutionsServicesDetails} />
 						<ProtectRoute path='/:lang/faq' exact component={Faq} />
-						<ProtectRoute path='/:lang/contact-us' exact component={ContactUs} />
 						<ProtectRoute path='/:lang/booking' exact component={Booking} />
 						<ProtectRoute path='/:lang/blog-grid' exact component={BlogGrid} />
 						<ProtectRoute path='/:lang/blog-grid/:title/:id' exact component={BlogDetails} />
@@ -76,7 +75,6 @@ class Markup extends Component {
 						<ProtectRoute path='/:lang/research-findings' exact component={ResearchFindings} />
 						<ProtectRoute path='/:lang/resources' exact component={Resources} />
 						<ProtectRoute path='/:lang/research-finding/:title/:id' exact component={ReasearchFindingDetails} />
-						<ProtectRoute path='/:lang/research-Findings/123' exact component={ResearchFindingsDetail} />
 						<ProtectRoute path='/:lang/story/:title/:id' exact component={Story} />
 						<ProtectRoute path='/:lang/stories' exact component={Stories} />
 						<ProtectRoute path='/:lang/upload/:title/:id' exact component={Upload} />
@@ -94,6 +92,7 @@ class Markup extends Component {
 						<ProtectRoute path='/:lang/successfull' exact component={PaymentThankyou} />
 						<ProtectRoute path='/:lang/payment-status' exact component={PaymentStatus} />
 						<ProtectRoute path='/:lang/terms' exact component={Terms} />
+						<ProtectRoute path='/:lang/contact-us' exact component={ContactUs} />
 						<ProtectRoute path='/:lang/self-evaluation' exact component={SelfEvaluation} />
 						<ProtectRoute path='/:lang/links' exact component={LinksComp} />
 						<ProtectRoute path='/:lang/thankyou' exact component={Thankyou} />
