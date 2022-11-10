@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -33,23 +34,26 @@ const AboutSection = () => {
           <div className='appointmentF'>
            <div>
             <h3 className="title">
-             Appointment booked successfully
+            <FormattedMessage id="AppointmentBook" defaultMessage="AppointmentBook" />.
             </h3>
            </div>
           </div>
           <div>
            <div className="work-content">
             <p>
-             Our team will contact you shortly about your appointment arrangements.
+            <FormattedMessage id="Ourteam" defaultMessage="Ourteam" />.
              <br /><br /><br />
-             Thank you.
+             <FormattedMessage id="Thankyou" defaultMessage="Thankyou" />.
+
             </p>
            </div>
            <div>
            </div>
           </div>
           <div>
-           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{ fontSize: 20, fontWeight: 700 }}>Go Home</button>
+           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{ fontSize: 20, fontWeight: 700 }}>
+           <FormattedMessage id="GoHome" defaultMessage="GoHome" />
+            </button>
           </div>
          </div>
         </div>

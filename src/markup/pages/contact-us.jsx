@@ -9,6 +9,7 @@ import { contactUsFunc } from "../../store/contact-us/actions";
 
 // Import Images
 import background from "../../images/background/aheza-bg-12-5.jpeg";
+import {FormattedMessage} from 'react-intl';
 
 
 const ContactUs = () => {
@@ -99,22 +100,33 @@ const ContactUs = () => {
 													{errors?.form}
 												</div>}
 												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
-													<input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="name" type="text" required className="form-control" placeholder="Name" />
+<FormattedMessage id="Name" defaultMessage="Name" >
+{(msg)=> (<input value={firstName} onChange={(e) => setFirstName(e.target.value)} name="name" type="text" required className="form-control" placeholder={msg}/>)}
+	</FormattedMessage>
+
 												</div>
 												{errors.firstName && <p className={"text-danger"}>{errors.firstName}</p>}
 
 												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
-													<input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder="Email" />
+												<FormattedMessage id="Email" defaultMessage="Email" >
+													{(msg)=> <input value={email} onChange={(e) => setEmail(e.target.value)} name="email" type="email" required className="form-control" placeholder={msg}/>}
+												</FormattedMessage>
 												</div>
 												{errors.email && <p className={"text-danger"}>{errors.email}</p>}
 
 												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
-													<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder="Phone Number" />
+												<FormattedMessage id="PhoneNumber" defaultMessage="PhoneNumber" >
+													{
+														(msg)=> (<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} name="phone" type="text" required className="form-control" placeholder={msg}/>)
+													}
+												</FormattedMessage>
 												</div>
 												{errors.phoneNumber && <p className={"text-danger"}>{errors.phoneNumber}</p>}
 
 												<div className="form-group col-md-12" style={{ marginBottom: 50 }}>
-													<textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" required className="form-control" placeholder="Message "></textarea>
+												<FormattedMessage id="Message" defaultMessage="Message" >
+													{(msg)=> (<textarea value={message} onChange={(e) => setMessage(e.target.value)} name="message" required className="form-control" placeholder={msg}></textarea>)}
+												</FormattedMessage>
 												</div>
 												{errors.message && <p className={"text-danger"}>{errors.message}</p>}
 
@@ -124,7 +136,7 @@ const ContactUs = () => {
 														type="submit"
 														value="Submit"
 														style={{ padding: "30px 35px" }}
-														className="btn w-100 btn-secondary btn-lg"><b style={{ fontSize: 20, color: "white" }}>{loading ? "Sending..." : "Send"}</b></button>
+														className="btn w-100 btn-secondary btn-lg"><b style={{ fontSize: 20, color: "white" }}>{loading ? <FormattedMessage id="Sending" defaultMessage="Sending" />:<FormattedMessage id="send" defaultMessage="send" />		}</b></button>
 												</div>
 											</div>
 

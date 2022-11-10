@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams, useLocation } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -28,23 +29,26 @@ let { lang } = useParams();
           <div className='appointmentF'>
            <div>
             <h3 className="title">
-             Failed to book appointment
+<FormattedMessage id="Failedto" defaultMessage="Failedto" />
             </h3>
            </div>
           </div>
           <div>
            <div className="work-content">
             <p>
-             We apologise for your inconvenience, Please try again or contact us for support.
+            <FormattedMessage id="Weapologise" defaultMessage="Weapologise" />
              <br /><br /><br />
-             Thank you.
+             <FormattedMessage id="Thankyou" defaultMessage="Thankyou" />
             </p>
            </div>
            <div>
            </div>
           </div>
           <div>
-           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{ fontSize: 20, fontWeight: 700 }}>Go Home</button>
+           <button onClick={() => gotoAheza()} type="submit" className="btn btn-secondary btn-lg" style={{ fontSize: 20, fontWeight: 700 }}>
+<FormattedMessage id="GoHome" defaultMessage="GoHome" />
+
+           </button>
           </div>
          </div>
         </div>

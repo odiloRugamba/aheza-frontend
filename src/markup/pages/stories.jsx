@@ -6,6 +6,7 @@ import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
 import { Dcore } from '../../api/index'
+import { FormattedMessage } from 'react-intl';
 
 // Layout
 import Header from "../layout/header";

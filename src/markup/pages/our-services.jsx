@@ -30,7 +30,9 @@ const Services = () => {
 					<div className="page-banner pageHeader">
 						<div className="container">
 							<div className="page-banner-entry text-center">
-								<h2 className='titleText' >Our Services</h2>
+								<h2 className='titleText' >
+<FormattedMessage id="OurServices" defaultMessage="OurServices" />
+									</h2>
 							</div>
 						</div>
 					</div>
@@ -53,8 +55,7 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
-													<Link to={ `/${lang}`+"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
-</Link>
+													<Link to={ `/${lang}`+"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}><FormattedMessage id="ReadMore" defaultMessage="ReadMore" /></Link>
 												</div>
 											</div>
 										</div>

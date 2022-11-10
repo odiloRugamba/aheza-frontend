@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { postDoctors } from "../../store/doctor/actions";
+import { FormattedMessage } from 'react-intl';
 
 import CheckImg from '../../images/checked.png'
 
@@ -49,34 +50,78 @@ const ApplyForm = ({ placeholder }) => {
 	return (
 		<>
 			<div className="comment-respond" id="respond">
-				<h4 className="widget-title">Apply to join our therapist network</h4>
+				<h4 className="widget-title">
+				<FormattedMessage id="Applyto" defaultMessage="Applyto" />
+					</h4>
 				<div className="comment-form" id="commentform">
 					<p className="comment-form-name">
-						<label for="name">First Name <span className="required">*</span></label>
-						<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder="First Name" name="firstName" id="firstName" />
+						<label for="name">
+				<FormattedMessage id="FirstName" defaultMessage="FirstName" />
+			 <span className="required">*</span></label>
+			 <FormattedMessage id="FirstName" defaultMessage="FirstName" >
+				{(msg)=> (<input value={firstName} onChange={(e) => setFirstName(e.target.value)} type="text" placeholder={msg} name="firstName" id="firstName"/>)}
+				</FormattedMessage>
+			 
+
 					</p>
 					<p className="comment-form-email">
-						<label for="email">Last Name <span className="required">*</span></label>
-						<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" placeholder="Last Name" name="lastName" id="lastName" />
+						<label for="email">
+				<FormattedMessage id="LastName" defaultMessage="LastName" />
+				
+						 <span className="required">*</span></label>
+						 <FormattedMessage id="LastName" defaultMessage="LastName" >
+				{(msg)=> (<input value={lastName} onChange={(e) => setLastName(e.target.value)} type="text" placeholder={msg} name="lastName" id="lastName"/>)}
+				</FormattedMessage>
+
+
 					</p>
 
 					<p className="comment-form-">
-						<label for="email">Phone Number <span className="required">*</span></label>
-						<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} type="text" placeholder="Phone Number" name="phoneNumber" id="phoneNumber" />
+						<label for="email">
+							
+				<FormattedMessage id="PhoneNumbe" defaultMessage="PhoneNumbe" />
+						
+						<span className="required">*</span></label>
+						<FormattedMessage id="FirstName" defaultMessage="FirstName" >
+				{(msg)=> (<input value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} type="text" placeholder={msg} name="phoneNumber" id="phoneNumber" />)}
+				</FormattedMessage>
+						
 					</p>
 
 					<p className="comment-form-">
-						<label for="email">Email <span className="required">*</span></label>
-						<input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder="Email" name="email" id="email" />
+						<label for="email">
+				<FormattedMessage id="Email" defaultMessage="Email" />
+						
+						 <span className="required">*</span></label>
+						 <FormattedMessage id="Email" defaultMessage="Email" >
+				{(msg)=> (<input value={email} onChange={(e) => setEmail(e.target.value)} type="text" placeholder={msg} name="email" id="email" />)}
+				</FormattedMessage>
+						
 					</p>
 
 					<p className="comment-form-">
 						<div className="form-group">
 							<select value={gender} onChange={(e) => setGender(e.target.value)} className="form-select form-control">
-								<option selected>Gender </option>
-								<option value="MALE">Male</option>
-								<option value="FEMALE">Female</option>
-								<option value="NONE">Not to mention</option>
+								<FormattedMessage id="Genders" defaultMessage="Genders" >
+									{(msg)=> (<option selected> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+				<FormattedMessage id="Males" defaultMessage="Males" >
+									{(msg)=> (<option value="MALE"> 
+									{msg}
+								</option>)}
+				 </FormattedMessage>
+				'<FormattedMessage id="Female" defaultMessage="Female" >
+									{(msg)=> (<option value="FEMALE"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+				<FormattedMessage id="NotTMention" defaultMessage="NotTMention" >
+									{(msg)=> (<option value="NONE"> 
+									{msg}
+								</option>)}
+				</FormattedMessage>
 							</select>
 						</div>
 					</p>
@@ -84,27 +129,61 @@ const ApplyForm = ({ placeholder }) => {
 						<div className="form-group">
 
 							<select value={expertise} onChange={(e) => setExpertise(e.target.value)} className="form-select form-control">
-								<option selected>Expertise</option>
-								<option value="CLINICAL-DEPRESSION">CLINICAL-DEPRESSION</option>
-								<option value="BIPOLAR-DISORDER">BIPOLAR-DISORDER</option>
-								<option value="ANXIETY-DISORDER">ANXIETY-DISORDER</option>
-								<option value="DEMENTIA">DEMENTIA</option>
-								<option value="SCHIZOPHRENIA">SCHIZOPHRENIA</option>
+							<FormattedMessage id="Expertise" defaultMessage="Expertise" >
+									{(msg)=> (<option selected> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+
+								<FormattedMessage id="CLINICAL" defaultMessage="CLINICAL" >
+									{(msg)=> (<option value="CLINICAL-DEPRESSION"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+								<FormattedMessage id="BIPOLAR" defaultMessage="BIPOLAR" >
+									{(msg)=> (<option value="BIPOLAR-DISORDER"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+								<FormattedMessage id="ANXIETY" defaultMessage="ANXIETY" >
+									{(msg)=> (<option value="ANXIETY-DISORDER"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+								<FormattedMessage id="DEMENTIA" defaultMessage="DEMENTIA" >
+									{(msg)=> (<option value="DEMENTIA"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
+								<FormattedMessage id="SCHIZOPHRENIA" defaultMessage="SCHIZOPHRENIA" >
+									{(msg)=> (<option value="SCHIZOPHRENIA"> 
+									{msg}
+								</option>)}
+								</FormattedMessage>
 							</select>
 						</div>
 					</p>
 
 					<p className="comment-form-comment">
-						<label for="comment">Why do you want to join</label>
+						<label for="comment">
+				<FormattedMessage id="WhyDo" defaultMessage="WhyDo" />
+						
+						</label>
 						<textarea value={reasonToJoin} onChange={(e) => setReasonToJoin(e.target.value)} rows="8" name="reason" placeholder="Why do you want to join?" id="reason"></textarea>
 					</p>
 					<p className="form-submit">
 						<button onClick={() => submitFunc()} type="submit" value="Submit Comment " className={+ loading ? "loading" : "submitComment"} id="submit" name="submit" disabled={loading && checked ? true : false}>
 							{
 								loading ? !checked ? <div className="spinner-border" role="status">
-									<span className="sr-only">Loading...</span>
+									<span className="sr-only">
+				<FormattedMessage id="Loading" defaultMessage="Loading" />
+									
+									</span>
 								</div> : <div style={{ display: "flex", justifyContent: "center" }}> <img style={{ height: 29, }} src={CheckImg} /></div>
-									: <div style={{ width: 110 }} >Apply</div>
+									: <div style={{ width: 110 }} >
+				<FormattedMessage id="Apply" defaultMessage="Apply" />
+									
+									</div>
 							}
 						</button>
 					</p>

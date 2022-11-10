@@ -7,6 +7,7 @@ import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -86,8 +87,14 @@ const ServiceDetail = () => {
 													<br />
 												</div> : null
 											}
-											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/appointment-assesement"}><span>Book Appointment</span></Link></li>
-											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/contact-us"}><span>Contact Us</span></Link></li>
+											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/appointment-assesement"}><span>
+<FormattedMessage id="BookAppointment" defaultMessage="Book Appointment" />
+												</span></Link></li>
+											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/contact-us"}><span>
+												
+<FormattedMessage id="contactUs" defaultMessage="Contact Us" />
+												
+												</span></Link></li>
 										</ul>
 									</div>
 								</aside>
@@ -111,8 +118,12 @@ const ServiceDetail = () => {
 									<br></br>
 									<br></br>
 									<p style={{ fontStyle: 'italic' }}>
-										Our services are designed to improve relationships, increase awareness and manage resources. In this regard, we will work with the client to choose a treatment (or a combination of treatments) which work best. All of the said services are in line with
-										<Link to='#' onClick={() => routeFunc('/terms')}> Aheza privacy statement</Link>.
+										
+<FormattedMessage id="OurServicesAre" defaultMessage="OurServicesAre" />
+										
+										<Link to='#' onClick={() => routeFunc('/terms')}>
+<FormattedMessage id="AhezaPrivacy" defaultMessage="AhezaPrivacy" />
+										</Link>.
 									</p>
 								</div>
 							</div>

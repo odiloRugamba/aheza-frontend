@@ -7,6 +7,7 @@ import { getDoctorByDay, postAppointmentData } from "../../store/appointment/act
 import { BsExclamationCircle } from "react-icons/bs";
 import Input from "./tag-widgets/input";
 import {useParams} from"react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 
 const AboutSection = () => {
@@ -112,38 +113,57 @@ const AboutSection = () => {
 							<div className="rowAppo">
 								<div className="col-xl-12 col-lg-12 col-md-12 ">
 									<div className="appointment-form form-wraper">
-										<h3 className="title">Book  Appointment</h3>
+										<h3 className="title">
+											<FormattedMessage id="BookAppointment" defaultMessage="Book Appointment" />
+										</h3>
 										<div className="form-group">
-											<Input
-												placeholder="First Name"
+										<FormattedMessage id="FirstName" defaultMessage="FirstName">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setFirstName(e.target.value) }}
 												value={firstName}
 												required={true}
 												errorMessage='Required'
 												id='firstName'
-											/>
-											<Input
-												placeholder="Last Name"
+											/>)}
+											</FormattedMessage>
+
+											<FormattedMessage id="LastName" defaultMessage="LastName">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setLastName(e.target.value) }}
 												value={lastName}
 												required={true}
 												errorMessage='Required'
 												id='lastName'
-											/>
+											/>)}
+											</FormattedMessage>
+										
+
+											
 										</div>
 										<div className="form-group">
 											<div>
 												<select value={gender} onChange={e => setGender(e.target.value)} className="form-select form-control">
-													<option selected>Gender </option>
-													<option value="Male">Male</option>
-													<option value="Female">Female</option>
-													<option value="NONE">Not to mention</option>
+											<FormattedMessage id="Gender" defaultMessage="Gender">
+												{(msg)=> (<option selected>{msg}</option>)}
+													</FormattedMessage>
+													<FormattedMessage id="Male" defaultMessage="Male">
+												{(msg)=> (<option value="Male">{msg}</option>)}
+													</FormattedMessage>
+													<FormattedMessage id="Female" defaultMessage="Female">
+												{(msg)=> (<option value="Female">{msg}</option>)}
+													</FormattedMessage>
+													<FormattedMessage id="NotTMention" defaultMessage="NotTMention">
+												{(msg)=> (<option value="NONE">{msg}</option>)}
+													</FormattedMessage>
 												</select>
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 												</div>
 											</div>
-											<Input
-												placeholder='Date of Birth'
+											<FormattedMessage id="DateofBirth" defaultMessage="DateofBirth">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setDateB(e.target.value) }}
 												value={dateB}
 												required={true}
@@ -151,12 +171,14 @@ const AboutSection = () => {
 												id='lastName'
 												type={dateCha}
 												onFocus={() => { setDateCha('date') }}
-											/>
+											/>)}
+											</FormattedMessage>
 
 										</div>
 										<div className="form-group">
-											<Input
-												placeholder="Phone Number"
+										<FormattedMessage id="PhoneNumber" defaultMessage="PhoneNumber">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setPhoneNumber(e.target.value) }}
 												value={phoneNumber}
 												required={true}
@@ -165,9 +187,12 @@ const AboutSection = () => {
 												id='lastName'
 												type='number'
 											// pattern='^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$'
-											/>
-											<Input
-												placeholder="Email"
+											/>)}
+											</FormattedMessage>
+
+											<FormattedMessage id="Email" defaultMessage="Email">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setEmail(e.target.value) }}
 												value={email}
 												required={true}
@@ -176,23 +201,46 @@ const AboutSection = () => {
 												id='lastName'
 												type='Email'
 												pattern='^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
-											/>
+											/>)}
+											</FormattedMessage>
+											
+											
 										</div>
 										<div className="form-group">
 											<div>
 												<select value={communicationMethod} onChange={(e) => { setCommunicationMethod(e.target.value) }} className="form-select form-control">
-													<option selected>Method of Communication</option>
-													<option value="IN-PERSON">In Person</option>
-													<option value="PHONE-CALL">Phone Call</option>
-													<option value="ZOOM-CALL">Zoom Video Call</option>
-													<option value="AHEZA-CHAT">Aheza Chat</option>
+<FormattedMessage id="Methodof" defaultMessage="Methodof">
+{(msg)=> (
+<option selected>{msg}</option>
+)}
+	</FormattedMessage>
+	<FormattedMessage id="InPerson" defaultMessage="InPerson">
+{(msg)=> (
+<option selected>{msg}</option>
+)}
+	</FormattedMessage>
+	<FormattedMessage id="PhoneCall" defaultMessage="PhoneCall">
+{(msg)=> (
+<option selected>{msg}</option>
+)}
+	</FormattedMessage>
+	<FormattedMessage id="ZoomVideo" defaultMessage="ZoomVideo">
+{(msg)=> (
+<option selected>{msg}</option>
+)}
+	</FormattedMessage>
+	<FormattedMessage id="AhezaChat" defaultMessage="AhezaChat">
+{(msg)=> (
+<option selected>{msg}</option>
+)}
+	</FormattedMessage>
 												</select>
 												<div style={{ color: '#F90221', textAlign: 'start', position: 'relative', bottom: 3, left: 10, height: 20 }}>
 												</div>
 											</div>
-
-											<Input
-												placeholder="Appointment day"
+											<FormattedMessage id="AppointmentDay" defaultMessage="AppointmentDay">
+											{(msg)=> (<Input
+												placeholder={msg}
 												onChange={(e) => { setSelectedDay(e.target.value) }}
 												value={selectedDay}
 												required={true}
@@ -200,7 +248,10 @@ const AboutSection = () => {
 												id='lastName'
 												type={dateChaApp}
 												onFocus={() => { setDateChaApp('date') }}
-											/>
+											/>)}
+											</FormattedMessage>
+											
+
 										</div>
 										<button
 											onClick={() => submitAppointment()}
@@ -208,7 +259,7 @@ const AboutSection = () => {
 											className="btn btn-secondary btn-lg"
 											disabled={!(firstName && lastName && gender && dateB && phoneNumber && communicationMethod && email && selectedDay)}>
 											<b style={{ fontSize: 20, color: "white" }}>
-												Book  Appointment
+												<FormattedMessage id="BookAppointment" defaultMessage="Book  Appointment" />
 											</b>
 										</button>
 									</div>

@@ -8,6 +8,8 @@ import Footer from "../layout/footer";
 import animateWave from "../../images/shap/wave-blue.png";
 import animateRotate from "../../images/shap/plus-blue.png";
 import {useParams} from"react-router-dom";
+import { FormattedMessage } from 'react-intl';
+
 
 
 const SelftEvaluation = ({ decline, accept }) => {
@@ -131,7 +133,10 @@ let { lang } = useParams();
             <div className="page-banner banner-lg contact-banner" style={{ maxHeight: 400 }}>
               <div className="container">
                 <div className="page-banner-entry text-center">
-                  <h2>Please take Self Assesment first</h2>
+                  <h2>
+<FormattedMessage id="PleaseTake" defaultMessage="PleaseTake" />
+
+                  </h2>
                 </div>
               </div>
               <img className="pt-img1 animate-wave" src={animateWave} alt="" />
@@ -158,7 +163,11 @@ let { lang } = useParams();
                             <input name="phone" type="text" required className="form-control" placeholder="Phone Numbers" />
                           </div>
                           <div className="col-lg-12">
-                            <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Start Booking</button>
+                            <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">
+                    
+<FormattedMessage id="StartBooking" defaultMessage="StartBooking" />
+
+                              </button>
                           </div>
                         </div>
                       </form>
@@ -191,10 +200,18 @@ let { lang } = useParams();
                               </div>
                               <div className='changeQuestionBtn'>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>Prevs</button>
+                                  <button onClick={() => nextAPrevFunc("prev")} className='positionBtn'>
+                                    
+<FormattedMessage id="Prevs" defaultMessage="Prevs" />
+
+                                    </button>
                                 </div>
                                 <div>
-                                  <button onClick={() => nextAPrevFunc("next")} className='positionBtn'>Next</button>
+                                  <button onClick={() => nextAPrevFunc("next")} className='positionBtn'>
+                                    
+<FormattedMessage id="Next" defaultMessage="Next" />
+
+                                    </button>
                                 </div>
                               </div>
                             </div>
@@ -203,14 +220,21 @@ let { lang } = useParams();
                       </SwipeableViews>
                     </div> : <>
                       <div className="page-banner-entry text-center">
-                        <h4>Thank you for your participation!</h4>
+                        <h4>
+<FormattedMessage id="participationThx" defaultMessage="participationThx" />
+
+                        </h4>
                         <div className='thnk-par'>
                           <p>
-                            Please go ahead and book your appointment. our therapists are waiting for you!
+<FormattedMessage id="Pleasego" defaultMessage="Pleasego" />
+                         
                           </p>
                         </div>
                         <div className="col-lg-12">
-                          <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">Submit</button>
+                          <button onClick={() => accept()} name="submit" type="submit" value="Submit" className="btn w-100 btn-secondary btn-lg">
+<FormattedMessage id="Submit" defaultMessage="Submit" />
+
+                            </button>
                         </div>
                       </div>
                     </>
@@ -228,27 +252,33 @@ let { lang } = useParams();
               <div className='rowCont'>
                 <div className="col-lg-0 mb-0">
                   <div className="page-banner-entry text-center">
-                    <h2>What is included in a meeting report? </h2>
+                    <h2>
+<FormattedMessage id="WhatIsIncluded" defaultMessage="WhatIsIncluded" />
+                    </h2>
                   </div>
                   <div className='mainContent'>
                     <p>
-                      Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.
-                      Additionally, if an executive transaction with a board member comes up for a vote, each attendee’s vote should be included in your board meeting report. So too should all information presented to attendees and the ultimate outcome of the vote. This documentation matters if the IRS requests documentation regarding corporate finances.
+                <FormattedMessage id="Everymeeting" defaultMessage="Everymeeting" />
+                   
                     </p>
-                    <p> Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.
-                      Additionally, if an executive transaction with a board member comes up for a vote, each attendee’s vote should be included in your board meeting report. So too should all information presented to attendees and the ultimate outcome of the vote. This documentation matters if the IRS requests documentation regarding corporate finances.
+                    <p> <FormattedMessage id="Everymeeting" defaultMessage="Everymeeting" />
+                   
                     </p>
                     <p>
-                      Every meeting report should have all the above items, but different companies, industries, and occasions may require additional info. For example, scientific research teams may require that their meeting reports include abstracts, consent and ethics approval, funding acknowledgments, and other points related to their research. Another example: Many construction companies include a section about the environmental impacts of their work in their meeting reports.
-                      Additionally, if an executive transaction with a board member comes up for a vote, each attendee’s vote should be included in your board meeting report. So too should all information presented to attendees and the ultimate outcome of the vote. This documentation matters if the IRS requests documentation regarding corporate finances.
+<FormattedMessage id="Everymeeting" defaultMessage="Everymeeting" />
+                    
                     </p>
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => decline()} className='positionBtn'>decline</button>
+                      <button onClick={() => decline()} className='positionBtn'>
+<FormattedMessage id="decline" defaultMessage="decline" />
+                        </button>
                     </div>
                     <div>
-                      <button onClick={() => CloseModel()} className='positionBtn'>Accept</button>
+                      <button onClick={() => CloseModel()} className='positionBtn'>
+<FormattedMessage id="Accept" defaultMessage="Accept" />
+                        </button>
                     </div>
                   </div>
                 </div>
