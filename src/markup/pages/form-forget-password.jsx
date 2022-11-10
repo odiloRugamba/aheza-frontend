@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory, useParams } from "react-router-dom";
 
 // Import Images
 import logo from "../../images/logo.png";
 
-class FormLogin extends Component{
-	
-	render(){
+const  FormLogin = () =>{
+	let { lang } = useParams();
+
 		return (
 			<>
 				<div className="section-area account-wraper2">
@@ -25,7 +26,7 @@ class FormLogin extends Component{
 											<input type="password" className="form-control" placeholder="New Password"/>
 										</div>						
 										<div className="form-group">
-											<Link to="/" type="button" className="btn btn-primary w-100 radius-xl">Submit</Link>
+											<Link to={`/${lang}`} type="button" className="btn btn-primary w-100 radius-xl">Submit</Link>
 										</div>													
 										<div className="text-center mt-40">						
 											<p className="mt-0">Already have an account?</p>
@@ -40,7 +41,7 @@ class FormLogin extends Component{
 				
 			</>
 		);
-	}
+	
 }
 
 export default FormLogin;

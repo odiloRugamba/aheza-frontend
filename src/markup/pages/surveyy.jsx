@@ -29,7 +29,7 @@ const SaveyPage = () => {
 
   const [data, setData] = useState([])
   const history = useHistory()
-  const { id } = useParams()
+  const { id, lang } = useParams()
   const dispatch = useDispatch()
   const resData = useSelector(state => state.SurveyReducers.data)
 
@@ -149,7 +149,7 @@ const SaveyPage = () => {
       phoneNumber: phoneNumber,
       questions: answerCopy
     }))
-    history.push('/suveryThankyou')
+    history.push(`/${lang}`+'/suveryThankyou')
   }
 
   const CloseModel = () => {
@@ -172,7 +172,7 @@ const SaveyPage = () => {
     <>
       <div className="page-content bg-white">
         <div className='logoImageCont'>
-          <Link to="/"><img className='logo' src={logo} alt="" /></Link>
+          <Link to={'/'+ lang}><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
           <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400,paddingTop:150  }}>
@@ -299,7 +299,7 @@ const SaveyPage = () => {
 
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push('/')} className='positionBtn'>Go Home</button>
+                      <button onClick={() => history.push(`/${lang}`)} className='positionBtn'>Go Home</button>
                     </div>
                     <div>
                       <button onClick={() => CloseModel()} className='positionBtn'>Start survey</button>

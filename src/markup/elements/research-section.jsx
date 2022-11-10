@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 // Import Images
 
 
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const LatestNewsSection = ({ title, content }) => {
 
 	content = content?.slice(0, 3)
+	let { lang } = useParams();
 
 
 	const convertData = (date) => {
@@ -24,14 +25,11 @@ const LatestNewsSection = ({ title, content }) => {
 			<section className="section-area section- blog-area" style={{ paddingTop: 20 }}>
 				<div className="container">
 					<div className="heading-bx" style={{ display: "flex", justifyContent: "space-between" }}>
-						<h2 className="title title-80" >Publications
-
-						</h2>
-
+						<h2 className="title title-80" >Publications</h2>
 						<div>
 							<br></br>
 							<Link
-								to='/research-findings'
+								to={`/${lang}`+'/research-findings'}
 								className="btn btn-outline-primary btn-sm big-screen-only "
 								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 							>
@@ -45,11 +43,11 @@ const LatestNewsSection = ({ title, content }) => {
 								<div className="col-xl-4 col-md-6">
 									<div className="blog-card mb-30">
 										<div className="post-info">
-											<p className="post-title max-lines-3" style={{ fontSize: 20 }}><a href={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</a></p>
+											<p className="post-title max-lines-3" style={{ fontSize: 20 }}><a href={`/${lang}`+"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</a></p>
 											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 												<li className="date">
 													{convertData(item?.updatedAt)}</li>
-												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 
 											</ul>
 										</div>
@@ -61,7 +59,7 @@ const LatestNewsSection = ({ title, content }) => {
 					<div className="mobile-only" style={{ paddingLeft: "10%" }}>
 
 						<Link
-							to='/research-findings'
+							to={`/${lang}`+'/research-findings'}
 							className="btn btn-outline-primary btn-sm"
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>

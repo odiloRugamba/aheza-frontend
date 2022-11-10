@@ -6,6 +6,7 @@ import { getDoctorByDay, postAppointmentData } from "../../store/appointment/act
 
 import { BsExclamationCircle } from "react-icons/bs";
 import Input from "./tag-widgets/input";
+import {useParams} from"react-router-dom";
 
 
 const AboutSection = () => {
@@ -32,6 +33,8 @@ const AboutSection = () => {
 	const [sessionData, setSessionData] = useState([])
 	const dispatch = useDispatch()
 	const data = useSelector(state => state.AppointmentReducers.data)
+	let { lang } = useParams();
+
 
 
 	const selectday = (e) => {
@@ -81,7 +84,7 @@ const AboutSection = () => {
 			// session: selectSession,
 			selfAssessmentAnsID: selfAssessmentAnsID
 		}))
-		history.push('/thankyou')
+		history.push(`${lang}/thankyou`)
 	}
 
 	const validateEmail = (email) => {

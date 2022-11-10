@@ -7,7 +7,7 @@ import Footer from "../layout/footer";
 // Import Images
 import animateWave from "../../images/shap/wave-blue.png";
 import animateRotate from "../../images/shap/plus-blue.png";
-
+import {useParams} from"react-router-dom";
 
 
 const SelftEvaluation = ({ decline, accept }) => {
@@ -15,6 +15,8 @@ const SelftEvaluation = ({ decline, accept }) => {
   const [pageIndex, setPageIndex] = useState(0)
   const [model, setModel] = useState(true)
   const [surveyDone, setSurveyDone] = useState(false)
+let { lang } = useParams();
+
   const [data, setData] = useState([
     {
       question: "What As, my compiler will require Rust to run in the  do?",
@@ -113,7 +115,7 @@ const SelftEvaluation = ({ decline, accept }) => {
     setData([...copyData])
   }
   const goToAheza = () => {
-    history.push('/')
+    history.push(`/${lang}`)
   }
   const CloseModel = () => {
     setModel(false)

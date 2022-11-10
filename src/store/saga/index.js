@@ -13,3 +13,4 @@ export { ContactUSSagas } from '../contact-us/saga';
 export { TipsSagas } from '../tips/saga';
 export { PaymnentSagas } from '../payment/saga';
 export { TheatersSagas } from '../theater/saga';
+export { langsSagas } from '../lang/sagas';

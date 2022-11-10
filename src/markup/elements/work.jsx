@@ -5,6 +5,7 @@ import applePhone from '../../images/apple.png';
 import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getTipsFunc } from "../../store/tips/actions";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -73,7 +74,9 @@ const AboutSection = () => {
 									<div className="work-num-bx" >1</div>
 									<div >
 										<br />
-										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Find Information</h4>
+										<h4 className="title  mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>
+										<FormattedMessage id="FindInformation" defaultMessage="FindInformation" />
+										</h4>
 									</div>
 								</div>
 							</div>
@@ -85,7 +88,9 @@ const AboutSection = () => {
 								<div className="work-num-bx">2</div>
 								<div className="work-content" >
 									<br />
-									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>Book Appointment</h5>
+									<h5 className="mb-10" style={{ fontSize: 25, color: "#fff", paddingLeft: 10, paddingBottom: 16 }}>
+													<FormattedMessage id="BookAppointment" defaultMessage="BookAppointment" />
+									</h5>
 								</div>
 							</div>
 						</a>
@@ -96,7 +101,9 @@ const AboutSection = () => {
 								<div className="work-num-bx">3</div>
 								<div className="work-content">
 									<br />
-									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>Connect with a Community</h5>
+									<h5 className="mb-10" style={{ fontSize: 25, color: "white", paddingLeft: 10, paddingBottom: 16 }}>
+									    	<FormattedMessage id="ConnectwithaCommunity" defaultMessage="ConnectwithaCommunity" />
+										</h5>
 								</div>
 							</div>
 						</a>

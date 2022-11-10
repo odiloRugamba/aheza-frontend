@@ -9,6 +9,7 @@ import testPic4 from "../../images/services/aheza/aheza-svc-6.jpeg"
 import testPic5 from "../../images/services/aheza/aheza-svc-10.jpeg"
 import testPic6 from "../../images/services/aheza/aheza-svc-9.jpeg"
 import logo from '../../images/logo-2.png';
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -27,7 +28,9 @@ class VisionSection extends Component {
 				<section className="section-area section-sp1 testimonial-wraper" style={{ backgroundImage: "url(" + background + ")", backgroundSize: 'cover' }}>
 					<div className="container">
 						<div className="heading-bx text-center">
-							<h1 className="title m-b0 gobalTitle">Vision</h1>
+							<h1 className="title m-b0 gobalTitle">
+							<FormattedMessage id="vision" defaultMessage="vision" />
+							</h1>
 						</div>
 						<div className="row align-items-center">
 							<div className="col-lg-6">
@@ -42,7 +45,6 @@ class VisionSection extends Component {
 										<li className='nthFive' data-member="5" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic5} alt="" /></Link></li>
 										<li className='nthSix' data-member="6" style={{ border: "4px solid #f17732", borderRadius: 100 }}><Link to="#"><img src={testPic6} alt="" /></Link></li>
 										<Link id='logoCont' to="/"><img className='logo' src={logo} alt="" /></Link>
-
 									</ul>
 								</div>
 							</div>
@@ -52,9 +54,7 @@ class VisionSection extends Component {
 										<div className="testimonial-content">
 											<p>
 												<b style={{ color: "white", fontSize: 20 }}>
-													Our vision is of a world where Rwandans receive
-													the mental health care they need; and go on to live productive and
-													fulfilling lives.
+														<FormattedMessage id="visionCont" defaultMessage="visionCont" />
 												</b>
 											</p>
 										</div>

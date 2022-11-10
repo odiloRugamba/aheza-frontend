@@ -5,13 +5,17 @@ import { useHistory, useParams } from "react-router-dom";
 
 
 
+
 const AboutSection = () => {
  const [money, setMoney] = useState(null)
  const history = useHistory()
  const routerData = useParams()
+ let { lang } = useParams();
+
  const gotoAheza = () => {
-  history.push('/')
+  history.push(`/${lang}`)
  }
+
 
  useEffect(() => {
   console.log(routerData)

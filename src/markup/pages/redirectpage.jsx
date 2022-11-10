@@ -10,18 +10,20 @@ const AboutSection = () => {
  const history = useHistory()
  const routerData = useParams()
  const routerLink = useLocation()
+ let { lang } = useParams();
+
  const gotoAheza = () => {
-  history.push('/')
+  history.push(`/${lang}`)
  }
 
  useEffect(() => {
   console.log(routerLink.search.split('&')[0].split('=')[1])
   if (routerLink.search.split('&')[0].split('=')[1] === "successful") {
    console.log('done suceesss')
-   history.push('/successful')
+   history.push(`/${lang}`+'/successful')
   } else if (routerLink.search.split('&')[0].split('=')[1] === "failed") {
    console.log('done failer')
-   history.push('/failed')
+   history.push(`/${lang}` + '/failed')
   }
  }, [])
 

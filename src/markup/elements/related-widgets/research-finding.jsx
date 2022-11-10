@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useHistory, useParams } from "react-router-dom";
+
 
 const ResearchFindingWidget = ({ title, data }) => {
+	let { lang } = useParams();
 
 	return (
 		<>
@@ -20,7 +23,7 @@ const ResearchFindingWidget = ({ title, data }) => {
 						) : null
 					}
 					<div className="more">
-						<Link to="/research-findings"  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
+						<Link to={`/${lang}`+"/research-findings"}  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
 					</div>
 				</div>
 			</div>

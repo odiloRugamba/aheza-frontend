@@ -11,15 +11,17 @@ import logo from '../../images/logo-2.png';
 
 const SaveyPage = () => {
   const history = useHistory()
+  let { lang } = useParams();
+
   const goToAheza = () => {
-    history.push('/')
+    history.push(`/${lang}`)
   }
 
   return (
     <>
       <div className="page-content bg-white">
         <div className='logoImageCont'>
-          <Link to="/"><img className='logo' src={logo} alt="" /></Link>
+          <Link to={'/'+ lang}><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
           <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400, paddingTop:150 }}>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Slider from "react-slick";
+import { useHistory, useParams } from "react-router-dom";
 
 
 
 const ServicesSliderSection = () => {
+let { lang } = useParams();
 
 
 	const settings = {
@@ -40,7 +42,7 @@ const ServicesSliderSection = () => {
 							<h2 className="title">Join our therapists network</h2>
 							<p>Are you a certified therapist? Please contribute by joining our team to deliver services to those vulnerable in our community</p>
 						</div>
-						<Link to="/apply" className="btn btn-secondary btn-lg shadow">Apply</Link>
+						<Link to={`/${lang}`+"/apply"} className="btn btn-secondary btn-lg shadow">Apply</Link>
 					</div>
 					<div className="col-xl-8 mb-15">
 						<Slider {...settings} className="service-slide slick-arrow-none">

@@ -4,9 +4,10 @@ import SwipeableViews from 'react-swipeable-views';
 import { useDispatch, useSelector } from "react-redux";
 import { getQuestions, answerQuestion } from "../../store/selfAssessment/actions";
 import LoadingComp from "../elements/loading";
-
 // Import Images
 import logo from '../../images/logo-2.png';
+
+
 
 
 
@@ -16,6 +17,7 @@ const SurveyPage = () => {
   const [model, setModel] = useState(true)
   const [surveyDone, setSurveyDone] = useState(false)
   const [questions, setQuestions] = useState([])
+  let { lang } = useParams();
 
   const [opendEndedAns, setOpendEndedAns] = useState(null)
   const [id, setId] = useState(null)
@@ -142,7 +144,7 @@ const SurveyPage = () => {
       selfAssessment: id,
       questions: cleanAnswers
     }))
-    history.push('/book-appointment')
+    history.push(`${lang}/book-appointment`)
   }
   const CloseModel = () => {
     setModel(false)
@@ -171,7 +173,7 @@ const SurveyPage = () => {
     <>
       <div className="page-content bg-white" >
         <div className='logoImageCont'>
-          <Link to="/"><img className='logo' src={logo} alt="" /></Link>
+          <Link to={'/'+ lang}><img className='logo' src={logo} alt="" /></Link>
         </div>
         <div className="banner-wraper">
           <div className="page-banne banner-lg contact-banne" style={{ maxHeight: 400,paddingTop:150 }}>
@@ -308,7 +310,7 @@ const SurveyPage = () => {
                   </div>
                   <div className='changeQuestionBtn'>
                     <div>
-                      <button onClick={() => history.push('/')} className='positionBtn'>Back to Home</button>
+                      <button onClick={() => history.push(`/${lang}`)} className='positionBtn'>Back to Home</button>
                     </div>
                     <div>
                       <button onClick={() => CloseModel()} className='positionBtn'>Yes, Continue</button>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion } from 'react-bootstrap';
-
+import { useHistory, useParams } from "react-router-dom";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -9,9 +9,10 @@ import Footer from "../layout/footer";
 // Import Images
 import servicesPic1 from "../../images/services/pic1.jpeg";
 
-class ServiceDetail extends Component {
+const  ServiceDetail = () =>{
 
-	render() {
+	let { lang } = useParams();
+
 		return (
 			<>
 
@@ -82,12 +83,12 @@ class ServiceDetail extends Component {
 
 											<h5 className="title-head">Services</h5>
 											<ul className="service-menu">
-												<li><Link to="/service-details"><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
-												<li><Link to="/service-details"><span>Lube Oil and Filters</span><i className="fa fa-angle-right"></i></Link></li>
-												<li><Link to="/service-details"><span>Belts and Hoses</span><i className="fa fa-angle-right"></i></Link></li>
-												<li><Link to="/service-details"><span>Air Conditioning</span><i className="fa fa-angle-right"></i></Link></li>
-												<li><Link to="/service-details"><span>Brake Repair</span><i className="fa fa-angle-right"></i></Link></li>
-												<li><Link to="/service-details"><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Lube Oil and Filters</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Belts and Hoses</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Air Conditioning</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Brake Repair</span><i className="fa fa-angle-right"></i></Link></li>
+												<li><Link to={`/${lang}`+"/service-details"}><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
 											</ul>
 										</div>
 									</aside>
@@ -100,7 +101,6 @@ class ServiceDetail extends Component {
 
 			</>
 		);
-	}
 }
 
 export default ServiceDetail;

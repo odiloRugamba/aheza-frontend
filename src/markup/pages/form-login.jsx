@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+
 
 // Import Images
 import logo from "../../images/logo.png";
 
-class FormLogin extends Component {
+const  FormLogin = ()=> {
 
-	render() {
+	let { lang } = useParams();
+	
 		return (
 			<>
 				<div className="section-area account-wraper2">
@@ -25,8 +28,8 @@ class FormLogin extends Component {
 											<input type="password" className="form-control" placeholder="Password" />
 										</div>
 										<div className="form-group">
-											<Link to="/" type="button" className="btn mb-30 btn-lg btn-primary w-100">login</Link>
-											<Link to="/form-forget-password" data-toggle="tab">Forgot Password</Link>
+											<Link to={`/${lang}`} type="button" className="btn mb-30 btn-lg btn-primary w-100">login</Link>
+											<Link to={`/${lang}`+"/form-forget-password"} data-toggle="tab">Forgot Password</Link>
 										</div>
 										<div className="text-center mt-40">
 											<p className="mt-0">Dont have any account?</p>
@@ -41,7 +44,6 @@ class FormLogin extends Component {
 
 			</>
 		);
-	}
 }
 
 export default FormLogin;

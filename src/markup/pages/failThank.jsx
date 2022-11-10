@@ -10,8 +10,10 @@ const AboutSection = () => {
  const history = useHistory()
  const routerData = useParams()
  const routerLink = useLocation()
+let { lang } = useParams();
+
  const gotoAheza = () => {
-  history.push('/')
+  history.push(`/${lang}`)
  }
 
  return (

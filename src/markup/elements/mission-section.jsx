@@ -1,6 +1,7 @@
 import React from 'react';
 // Import Images
 import background2 from "../../images/background/aheza-bg-9-4.jpeg"
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -25,19 +26,18 @@ const AboutSection = () => {
 								<div className="testimonial-content">
 									<p>
 										<b style={{ color: "white" }}>
-											Aheza's mission is to listen, understand and support its clients.
+											<FormattedMessage id="missionParaOne" defaultMessage="missionParaOne" />
 										</b>
 									</p>
 									<p>
 										<b style={{ color: "white" }}>
-											Our qualified, trained staff are experienced in dealing with the full range of mental health conditions.
-											We provide group therapy sessions; one-on-one counseling; and a range of holistic activities to compliment recovery.
+										<FormattedMessage id="missionParaTwo" defaultMessage="missionParaTwo" />
 										</b>
 
 									</p>
 									<p>
 										<b style={{ color: "white" }}>
-											We also provide career counseling and entrepreneurship training.
+										<FormattedMessage id="missionParaThree" defaultMessage="missionParaThree" />
 										</b>
 									</p>
 								</div>

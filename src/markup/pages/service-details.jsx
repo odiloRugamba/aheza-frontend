@@ -12,12 +12,14 @@ import Footer from "../layout/footer";
 
 
 
+
 const ServiceDetail = () => {
 	const { id } = useParams()
 	const dispatch = useDispatch()
 	const history = useHistory()
 	const [service, setService] = useState(null)
 	const res = useSelector(state => state.servicesReducers.service)
+	let { lang } = useParams();
 
 	useEffect(() => {
 		dispatch(getServiceById(id))
@@ -56,7 +58,7 @@ const ServiceDetail = () => {
 		}
 	}
 	const routeFunc = (link) => {
-		history.push(link)
+		history.push(`/${lang}`+link)
 		window.location.reload()
 	}
 
@@ -84,8 +86,8 @@ const ServiceDetail = () => {
 													<br />
 												</div> : null
 											}
-											<li style={{ padding: 0 }}><Link to="/appointment-assesement"><span>Book Appointment</span></Link></li>
-											<li style={{ padding: 0 }}><Link to="/contact-us"><span>Contact Us</span></Link></li>
+											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/appointment-assesement"}><span>Book Appointment</span></Link></li>
+											<li style={{ padding: 0 }}><Link to={'/'+ lang+ "/contact-us"}><span>Contact Us</span></Link></li>
 										</ul>
 									</div>
 								</aside>

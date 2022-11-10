@@ -6,12 +6,12 @@ import { getResearchs } from "../../store/research/actions";
 import Header from "../layout/header";
 import Footer from "../layout/footer";
 import donation from "../../images/donation.jpeg";
-
+import {useParams } from "react-router-dom";
 
 
 
 const ResearchFindings = () => {
-
+let { lang } = useParams();
  const [data, setData] = useState([])
  const [pageData, setPageData] = useState([])
  const [PageCount, setPageCount] = useState(10)
@@ -46,7 +46,7 @@ const ResearchFindings = () => {
  }
 
  const donateFunc = () => {
-  history.push('/payment')
+  history.push(`/${lang}`+'/payment')
  }
 
  return (

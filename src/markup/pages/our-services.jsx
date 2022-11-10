@@ -1,5 +1,5 @@
 import React, {  useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import LoadingComp from "../elements/loading";
 import EmptyComp from "../elements/empyt";
@@ -15,6 +15,7 @@ import Footer from "../layout/footer";
 const Services = () => {
 	const res = useSelector(state => state.servicesReducers.data);
 	const [data, setData] = useState([]);
+	const {lang}= useParams()
 
 	useEffect(() => {
 		setData(res)
@@ -51,7 +52,7 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
-													<Link to={"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</Link>
+													<Link to={ `/${lang}`+"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</Link>
 												</div>
 											</div>
 										</div>

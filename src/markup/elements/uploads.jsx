@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Dcore } from "../../api/index";
 
 
 const LatestNewsSection = ({ title, content }) => {
-
 	content = content?.slice(0, 3)
+	const {lang}= useParams()
+
 
 
 	const convertData = (date) => {
@@ -54,7 +55,7 @@ const LatestNewsSection = ({ title, content }) => {
 								<div className="col-xl-4 col-md-6">
 									<div className="blog-card mb-30">
 										<div className="post-media">
-											<Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+											<Link to={`/${lang}`+"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 												{
 													item?.youtubeVideoLink ?
 														<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -63,7 +64,7 @@ const LatestNewsSection = ({ title, content }) => {
 											</Link>
 										</div>
 										<div className="post-info">
-											<h6 className="post-title max-lines-2"><Link to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+											<h6 className="post-title max-lines-2"><Link to={`/${lang}`+"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 												<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
@@ -83,7 +84,7 @@ const LatestNewsSection = ({ title, content }) => {
 					<div className="mobile-only" style={{ paddingLeft: "10%" }}>
 
 						<Link
-							to='/stories'
+							to={`/${lang}`+'/stories'}
 							className="btn btn-outline-primary btn-sm"
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>

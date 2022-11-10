@@ -28,6 +28,7 @@
     "react-iframe": "^1.8.0",
     "react-image-and-background-image-fade": "^1.0.8",
     "react-instagram-embed": "^3.0.0",
+    "react-intl": "^6.2.1",
     "react-modal-video": "^1.2.8",
     "react-paginate": "^8.1.2",
     "react-redux": "^7.2.6",

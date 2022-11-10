@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchs } from "../../store/research/actions";
 import LoadingComp from "../elements/loading";
@@ -13,7 +13,7 @@ import bnrImg1 from "../../images/banner/aheza-barnner-12.jpeg";
 
 
 const ResearchFindings = () => {
-
+	const {lang}= useParams()
 	const [data, setData] = useState([])
 	const [pageData, setPageData] = useState([])
 	const [PageCount, setPageCount] = useState(10)
@@ -69,10 +69,10 @@ const ResearchFindings = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-info">
-												<p className="post-title max-lines-3" style={{ fontSize: 20 }}><Link to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
+												<p className="post-title max-lines-3" style={{ fontSize: 20 }}><Link to={`/${lang}`+ "/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} >{item.title}</Link></p>
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li className="date"> {convertData(item?.updatedAt)}</li>
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={ `/${lang}` + "/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 
 												</ul>
 											</div>

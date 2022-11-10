@@ -14,6 +14,7 @@ const ServiceDetail = () => {
 	const dispatch = useDispatch();
 	const { id } = useParams()
 	const response = useSelector(state => state?.HospitalReducers?.hospital)
+	let { lang } = useParams();
 
 
 	useEffect(() => {
@@ -53,7 +54,7 @@ const ServiceDetail = () => {
 										<ul className="service-menu">
 											{
 												hospital?.services.map(el =>
-													<li><Link to="/service-details"><span>{el}</span></Link></li>
+													<li><Link to={`/${lang}`+"/service-details"}><span>{el}</span></Link></li>
 												)
 											}
 										</ul>

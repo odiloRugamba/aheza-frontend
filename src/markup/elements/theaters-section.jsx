@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Dcore } from "../../api/index";
 
 
@@ -10,7 +10,7 @@ import { Dcore } from "../../api/index";
 
 
 const LatestNewsSection = ({ title, content }) => {
-
+	const {lang}= useParams()
 	content = content?.slice(0, 3)
 
 
@@ -45,7 +45,7 @@ const LatestNewsSection = ({ title, content }) => {
 						<div>
 							<br></br>
 							<Link
-								to='/theaters'
+								to={`/${lang}` +'/theaters'}
 								className="btn btn-outline-primary btn-sm big-screen-only"
 								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 							>
@@ -60,7 +60,7 @@ const LatestNewsSection = ({ title, content }) => {
 								<div className="col-xl-4 col-md-6">
 									<div className="blog-card mb-30">
 										<div className="post-media">
-											<Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
+											<Link to={`/${lang}`+"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>
 												{
 													item?.youtubeVideoLink ?
 														<img src={`http://img.youtube.com/vi/${getVideoId(item?.youtubeVideoLink)}/0.jpg`} alt="" />
@@ -69,14 +69,14 @@ const LatestNewsSection = ({ title, content }) => {
 											</Link>
 										</div>
 										<div className="post-info">
-											<h6 className="post-title max-lines-2"><Link to={"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
+											<h6 className="post-title max-lines-2"><Link to={`/${lang}`+"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id}>{item.title}</Link></h6>
 
 											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 												<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 													Aheza<br></br>
 													<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 												</li>
-												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}` +"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
 											</ul>
 										</div>
 									</div>
@@ -87,9 +87,8 @@ const LatestNewsSection = ({ title, content }) => {
 					</div>
 
 					<div className="mobile-only" style={{ paddingLeft: "10%" }}>
-
 						<Link
-							to='/theaters'
+							to={`/${lang}`+'/theaters'}
 							className="btn btn-outline-primary btn-sm"
 							style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 						>

@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 
 
 
 
 const Footer = () => {
+	let { lang } = useParams();
 	const services = useSelector(state => state.servicesReducers.data);
 	return (
 		<>
@@ -17,22 +20,27 @@ const Footer = () => {
 						<div className="footer-row row" style={{ paddingLeft: 40 }}>
 							<div className="col-xl-6 col-lg-3 col-md-6">
 								<div className="widget widget_info">
-									<h3 className="footer-title">Privacy</h3>
+									<h3 className="footer-title">
+									    <FormattedMessage id="privacy" defaultMessage="Privacy" />
+										</h3>
 									<div className="ft-contact">
 										<p>
-											We assure total privacy for everyone who uses our services. We utilize user's code
-											to seal your identity from the community and staff where necessary.
+										<FormattedMessage id="privacyCont" defaultMessage="keywords" />
 										</p>
 									</div>
 								</div>
 							</div>
 							<div className="col-xl-6 col-lg-3 col-md-6">
 								<div className="widget widget_info">
-									<h3 className="footer-title">Terms and Conditions</h3>
+									<h3 className="footer-title">
+										<FormattedMessage id="TermsandConditions" defaultMessage="Terms and Condition" />
+										</h3>
 									<div className="ft-contact">
 										<p>
-											By using this website you acknowledge that you have read and accepted our terms and conditions.
-											<Link to="/terms"> Read Terms and Conditions here.</Link>
+										<FormattedMessage id="TermsandConditionsCont" defaultMessage="TermsandConditionsCont" />
+											<Link to={`/${lang}`+"/terms"}>
+										<FormattedMessage id="readTerms" defaultMessage="readTerms" />
+											</Link>
 										</p>
 									</div>
 								</div>
@@ -45,38 +53,39 @@ const Footer = () => {
 			<div className='row footer-section'>
 				<div className='col-md-3' >
 					<span id='HeaderIcon' className="material-icons"></span>
-					<b style={{ color: "white" }}><u>Schedule:</u> </b>
-					Monday - Friday: 8:00 AM - 6:00 PM
+					<b style={{ color: "white" }}><u>
+					<FormattedMessage id="Schedule" defaultMessage="Schedule" />
+						:</u> </b>
+						<FormattedMessage id="ScheduleCont" defaultMessage="ScheduleCont" />
 				</div>
 
 				<div className='col-md-3' >
 					<div>
 						<span id='HeaderIcon' className="material-icons"></span>
-						<b style={{ color: "white" }}><u>Email:</u> </b>
-						info@aheza.org.rw
-
+						<b style={{ color: "white" }}><u>
+						<FormattedMessage id="email" defaultMessage="email" />:</u> </b>
+						<FormattedMessage id="emailCont" defaultMessage="emailCont" />
 					</div>
 				</div>
 
 				<div className='col-md-3' style={{ display: 'flex' }}>
 					<div style={{ marginRight: '10px' }}>
 						<span id='HeaderIcon' className="material-icons"></span>
-						<b style={{ color: "white" }}><u>Helpline:</u></b>
+						<b style={{ color: "white" }}><u><FormattedMessage id="helpline" defaultMessage="helpline" />:</u></b>
 						<a href="tel:+250788315809" style={{ color: "white" }}> 1024</a>
 					</div>
 					<div>
 						<span id='HeaderIcon' className="material-icons"></span>
-						<b style={{ color: "white" }}><u>Call:</u></b>
+						<b style={{ color: "white" }}><u><FormattedMessage id="call" defaultMessage="call" />:</u></b>
 						<a href="tel:+250788315809" style={{ color: "white" }}> (+250) 788 315 809</a>
 					</div>
-
 				</div>
 
 				<div style={{ cursor: 'pointer' }} onClick={() => window.open('https://www.google.com/maps/place/Nyarutarama,+Kigali/@-1.9399231,30.091306,15z/data=!3m1!4b1!4m5!3m4!1s0x19dca6c43a09d8a5:0xfb4f1ab02ad0cbab!8m2!3d-1.9388762!4d30.1040715')} className='col-md-3' >
 					<span id='HeaderIcon' className="material-icons"></span>
-					<b style={{ color: "white" }}><u>Place:</u> </b>
+					<b style={{ color: "white" }}><u><FormattedMessage id="place" defaultMessage="place" />:</u> </b>
 					<u>
-						Bugesera District, Ntarama Sector
+					<FormattedMessage id="placeCont" defaultMessage="placeCont" />
 					</u>
 				</div>
 			</div>

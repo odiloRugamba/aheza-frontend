@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 // Layout
 import Header from "../layout/header";
@@ -20,6 +20,7 @@ const ContactUs = () => {
 	const [completed, setCompleted] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const dispatch = useDispatch()
+	const {lang}= useParams()
 
 	const sendMessage = (event) => {
 		event.preventDefault();
@@ -88,7 +89,7 @@ const ContactUs = () => {
 									{completed ?
 										<>
 											<p className={"text-center h6"}>Thank you !!!</p>
-											<Link to={"/"}>
+											<Link to={`/${lang}`}>
 												<button className={"btn w-100 btn-secondary"}>Go Back</button>
 											</Link>
 										</> : <div className="form-wraper contact-form ajax-form">

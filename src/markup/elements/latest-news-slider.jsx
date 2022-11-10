@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { Dcore } from "../../api/index";
 import leftIcon from '../../images/appointment/left.png';
 import rightIcon from '../../images/appointment/right.png';
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -11,6 +12,7 @@ import rightIcon from '../../images/appointment/right.png';
 const LatestNewsSection = ({ title, content, isHomePage }) => {
 
 	content = content?.slice(0, 3)
+	const {lang}= useParams()
 
 	const settings = {
 		dots: true,
@@ -81,17 +83,19 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 				<div className="container">
 					{!isHomePage ?
 						<div className="heading-bx text-center" style={{ display: "flex", justifyContent: "space-between" }}>
-							<h2 className="title title-80">News</h2>
+							<h2 className="title title-80">
+							<FormattedMessage id="News" defaultMessage="news" />
+							</h2>
 							{
 								!isHomePage &&
 								<div>
 									<br></br>
 									<Link
-										to='/links'
+										to={`/${lang}`+'/links'}
 										className="btn btn-outline-primary btn-sm"
 										style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 									>
-										See More News
+							<FormattedMessage id="SeeMoreNews" defaultMessage="SeeMoreNews" />
 									</Link>
 								</div>
 							}
@@ -121,7 +125,9 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 												{item.publisherName} <br></br>
 												<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 											</li>
-											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</a>
+											<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+												</a>
 										</ul>
 									</div>
 								</div>
@@ -132,12 +138,12 @@ const LatestNewsSection = ({ title, content, isHomePage }) => {
 						isHomePage &&
 						<div className="blog-car" style={{ display: 'flex', justifyContent: 'center' }}>
 							<Link
-								to='links'
+								to={`/${lang}`+'/links'}
 								className="btn btn-outline-primary btn-sm"
 								style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}
 							>
 								<span>
-									See More News
+								<FormattedMessage id="SeeMoreNews" defaultMessage="SeeMoreNews" />
 								</span>
 							</Link>
 						</div>

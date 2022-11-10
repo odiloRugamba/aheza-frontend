@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 // Images
 import { createAppointment } from "../../store/appointment/actions";
+import {useParams} from"react-router-dom";
 
 
 
@@ -12,7 +13,7 @@ const AboutSection = () => {
     const [loading, setLoading] = useState(null)
     const data = useSelector(state => state.AppointmentReducers.postData)
     const paymentData = useSelector(state => state.AppointmentReducers.paymentData)
-
+	let { lang } = useParams();
     const [appointmentOps, setAppointmentOps] = useState([])
     const history = useHistory()
     const dispatch = useDispatch()
@@ -32,7 +33,7 @@ const AboutSection = () => {
             })
             setAppointmentOps(appOption)
         } else {
-            history.push('/book-appointment')
+            history.push(`${lang}/book-appointment`)
         }
     }, [data]);
     function numberWithCommas(x) {

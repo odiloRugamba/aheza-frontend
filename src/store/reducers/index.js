@@ -14,6 +14,7 @@ import { ContactUsReducers } from "../contact-us/reducers";
 import { TipsReducers } from "../tips/reducers";
 import { PaymentReducers } from "../payment/reducers";
 import { TheaterReducers } from "../theater/reducers";
+import { langReducers } from "../lang/reducers";
 
 const RootReducer = combineReducers({
     BlogsReducers,
@@ -30,7 +31,8 @@ const RootReducer = combineReducers({
     ContactUsReducers,
     TipsReducers,
     PaymentReducers,
-    TheaterReducers
+    TheaterReducers,
+    langReducers
 })
 
 export default RootReducer

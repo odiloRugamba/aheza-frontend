@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import {useParams} from"react-router-dom";
 import { Dcore } from '../../../api';
 
 const WidgetRelatedPosts = ({ title, data }) => {
-
+	let { lang } = useParams();
 	const history = useHistory()
 	const convertData = (date) => {
 		const day = new Date(date)
@@ -14,7 +14,7 @@ const WidgetRelatedPosts = ({ title, data }) => {
 		return `${da} ${mo} ${ye}`
 	}
 	const changeRoute = (link) => {
-		history.push(link)
+		history.push(`/${lang}`+link)
 		window.location.reload()
 	}
 
@@ -48,7 +48,7 @@ const WidgetRelatedPosts = ({ title, data }) => {
 						) : null
 					}
 					<div className="more">
-						<Link to={"/blog-grid"}  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
+						<Link to={`/${lang}`+"/blog-grid"}  style={{fontSize: 20, color: "white", textTransform: "initial", fontWeight: 700}}>See All</Link>
 					</div>
 				</div>
 			</div>

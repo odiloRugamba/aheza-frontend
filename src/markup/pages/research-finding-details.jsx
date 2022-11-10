@@ -19,7 +19,6 @@ import { Dcore } from '../../api';
 import htmlTopdf from 'html2pdf.js'
 
 
-
 const ResearchFindingDetails = () => {
 	const docc = new jsPDF();
 	const { id } = useParams()
@@ -30,6 +29,7 @@ const ResearchFindingDetails = () => {
 	const resetResearch = useSelector(state => state.ResearchReducers.data)
 	const resCommnets = useSelector(state => state.ResearchReducers.commnets)
 	const [loading, setLoading] = useState(false)
+	let { lang } = useParams();
 
 
 	useEffect(() => {
@@ -131,7 +131,7 @@ const ResearchFindingDetails = () => {
 										<ResearchFindingWidget data={reletedData} />
 										<div className="brochure-bx">
 											<h5 className="title-head">Research</h5>
-											<Link to="/contact-us" className="download-link">
+											<Link to={`/${lang}`+"/contact-us" }className="download-link">
 												<img src={pdf} alt="" />
 												<h5 className="title">Publish Your Own</h5>
 												<h5 className="title">Research</h5>

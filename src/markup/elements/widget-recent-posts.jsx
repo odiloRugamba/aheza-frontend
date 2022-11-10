@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import {useParams} from"react-router-dom";
 
 
 const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
+let { lang } = useParams();
 
 
 	const history = useHistory()
@@ -22,11 +24,11 @@ const WidgetRecentPosts = ({ title, data, currentPage, more }) => {
 	}
 
 	const moreFunc = () => {
-		history.push(more)
+		history.push('/'+lang+ more)
 	}
 
 	const seeChangePageFunc = (el) => {
-		history.push(currentPage + el?.title + '/' + el?._id)
+		history.push(`/${lang}`+currentPage + el?.title + '/' + el?._id)
 		window.location.reload()
 
 	}

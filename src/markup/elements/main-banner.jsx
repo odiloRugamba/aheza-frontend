@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { getTipsFunc } from "../../store/tips/actions";
 import bg1 from '../../images/main-banner/barner.jpeg';
+import { useHistory, useParams } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -10,7 +12,7 @@ import bg1 from '../../images/main-banner/barner.jpeg';
 
 const AboutSection = () => {
 	const [slideIndex, setSlideIndex] = useState(0)
-
+	let { lang } = useParams();
 	const [data, setData] = useState([])
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.TipsReducers.data)
@@ -57,10 +59,14 @@ const AboutSection = () => {
 								<br></br>
 								<br></br>
 								<br></br>
-								<h2 style={{ color: '#f17732' }}>"You can fall, but you can rise also." </h2>
+								<h2 style={{ color: '#f17732' }}>"
+								<FormattedMessage id="homeContent" defaultMessage="homeContent" />
+								." </h2>
 								<h6 style={{ textAlign: "center" }}><span style={{ fontSize: 20, color: '#f17732' }}>Angelique Kidjo</span></h6>
 
-								<Link to="/appointment-assesement" className="btn btn-secondary  shadow"><b style={{ color: "white", fontSize: 20 }}>Book Appointment</b></Link>
+								<Link to={lang + "/appointment-assesement" }className="btn btn-secondary  shadow"><b style={{ color: "white", fontSize: 20 }}>
+								 			<FormattedMessage id="BookAppointment" defaultMessage="BookAppointment" />
+									</b></Link>
 								<br></br>
 								<br></br>
 								<br></br>

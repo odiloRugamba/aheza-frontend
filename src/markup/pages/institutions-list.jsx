@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useHistory, useParams } from "react-router-dom";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -51,9 +51,10 @@ const content = [
 	}
 ]
 
-class ResearchFindings extends Component {
+const  ResearchFindings = ()=>  {
 
-	render() {
+	let { lang } = useParams();
+
 		return (
 			<>
 
@@ -80,11 +81,11 @@ class ResearchFindings extends Component {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-media">
-												<Link to="/institution-profile"><img src={item.thumb} alt="" /></Link>
+												<Link to={`${lang}`+"/institution-profile"}><img src={item.thumb} alt="" /></Link>
 											</div>
 											<div className="post-info">
-												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to="/institution-profile">{item.title}</Link></h4>
-												<Link to="/institution-profile" className="btn btn-outline-primary btn-sm">Read More </Link>
+												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={`${lang}`+"/institution-profile"}>{item.title}</Link></h4>
+												<Link to={`${lang}`+"/institution-profile"} className="btn btn-outline-primary btn-sm">Read More </Link>
 											</div>
 										</div>
 									</div>
@@ -112,7 +113,6 @@ class ResearchFindings extends Component {
 
 			</>
 		);
-	}
 }
 
 export default ResearchFindings;

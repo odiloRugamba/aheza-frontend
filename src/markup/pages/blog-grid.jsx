@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getBlogs } from "../../store/blog/actions";
 import { useDispatch, useSelector } from "react-redux";
 import LoadingComp from "../elements/loading";
@@ -26,6 +26,7 @@ const BlogGrid = () => {
 	const [PageCount, setPageCount] = useState(10)
 	const [pageData, setPageData] = useState([])
 	const blogs = useSelector(state => state.BlogsReducers.data)
+	const {lang}= useParams()
 
 	useEffect(() => {
 		dispatch(getBlogs())
@@ -80,14 +81,14 @@ const BlogGrid = () => {
 									<div className="col-xl-4 col-md-6">
 										<div className="blog-card mb-30">
 											<div className="post-info">
-												<h6 className="post-title max-lines-1"><Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h6>
+												<h6 className="post-title max-lines-1"><Link to={`/${lang}`+"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id}>{item.title}</Link></h6>
 
 												<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 													<li onClick={() => { routeChange(item.link) }} className="date" style={{ cursor: 'pointer' }}>
 														Aheza<br></br>
 														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
-													<Link to={"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
+													<Link to={`/${lang}`+"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
 												</ul>
 											</div>
 										</div>

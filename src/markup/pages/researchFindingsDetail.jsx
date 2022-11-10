@@ -21,6 +21,7 @@ const RsearchDetails = () => {
 	const { id } = useParams()
 	const [research, setResearch] = useState(null)
 	const dispatch = useDispatch()
+	let { lang } = useParams();
 
 
 
@@ -153,12 +154,12 @@ const RsearchDetails = () => {
 								<aside className="sticky-top pb-1">
 									<div className="widget">
 										<ul className="service-menu">
-											<li className="active"><Link to="/service-details"><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Lube Oil and Filters</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Belts and Hoses</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Air Conditioning</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Brake Repair</span><i className="fa fa-angle-right"></i></Link></li>
-											<li><Link to="/service-details"><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
+											<li className="active"><Link to={`/${lang}`+ "/service-details"}><span>Engine Diagnostics</span><i className="fa fa-angle-right"></i></Link></li>
+											<li><Link to={`/${lang}`+ "/service-details"}><span>Lube Oil and Filters</span><i className="fa fa-angle-right"></i></Link></li>
+											<li><Link to={`/${lang}`+ "/service-details"}><span>Belts and Hoses</span><i className="fa fa-angle-right"></i></Link></li>
+											<li><Link to={`/${lang}`+ "/service-details"}><span>Air Conditioning</span><i className="fa fa-angle-right"></i></Link></li>
+											<li><Link to={`/${lang}`+ "/service-details"}><span>Brake Repair</span><i className="fa fa-angle-right"></i></Link></li>
+											<li><Link to={`/${lang}`+ "/service-details"}><span>Tire and Wheel Services</span><i className="fa fa-angle-right"></i></Link></li>
 										</ul>
 									</div>
 									<div className="widget">

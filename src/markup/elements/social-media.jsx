@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Timeline } from 'react-twitter-widgets';
 import { FacebookProvider, Page } from 'react-facebook';
 import InstagramEmbed from 'react-instagram-embed';
-
+import { FormattedMessage } from 'react-intl';
 // Import Images
 import lingBg2 from "../../images/background/line-bg2.png"
 import animate1 from "../../images/shap/trangle-orange.png"
@@ -18,7 +18,9 @@ const SocialMediaSection = ({ title }) => {
 			<section className="section-area section-sp1 blog-area">
 				<div className="container g-header" >
 					<div className="heading-bx text-center g-space e-follow">
-						<h1 className="title m-b0 g-title">Follow Us on Social Media</h1>
+						<h1 className="title m-b0 g-title">
+							<FormattedMessage id="follow" defaultMessage="follow" />
+							</h1>
 					</div>
 					<div className='row'>
 						<div className="col-xl-4 col-md-6">

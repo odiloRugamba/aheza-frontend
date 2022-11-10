@@ -4,7 +4,8 @@ import { getLinks } from "../../store/links/actions";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
+import { changeLang } from "../../store/lang/actions";
+import { useParams } from 'react-router-dom';
 // Elements
 import MainBannerSection from "../elements/main-banner";
 import VisionSection from "../elements/vision";
@@ -14,13 +15,22 @@ import MissionSection from "../elements/mission-section";
 import LatestNewsSection from "../elements/latest-news-slider";
 import SocialMediaSection from '../elements/social-media';
 
+
+
+
+
 const Index = () => {
 	const [data, setData] = useState([])
+	const {lang}= useParams()
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.linksReducers.data)
+
 	useEffect(() => {
 		dispatch(getLinks())
+		dispatch(changeLang(lang == 'en' ? lang : "iny"))
 	}, []);
+
+
 	useEffect(() => {
 		// const da = []
 		// res.forEach(el => {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import {useParams } from "react-router-dom";
 
 
 
@@ -9,6 +10,7 @@ import SelfEvaluation from "../elements/selfEvaluation";
 
 const SelfEvaluationComp = () => {
  const history = useHistory()
+ let { lang } = useParams();
 
  const [selfCheckup, setSelfCheckup] = useState(false)
  const declineSelfEvaluation = () => {
@@ -17,7 +19,7 @@ const SelfEvaluationComp = () => {
  }
  const acceptSelfEvaluation = () => {
   // setSelfCheckup(false)
-  history.push('/')
+  history.push(`/${lang}`)
 
  }
  return (
