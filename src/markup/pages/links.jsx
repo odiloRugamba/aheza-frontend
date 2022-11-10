@@ -12,6 +12,7 @@ import Header from "../layout/header";
 import Footer from "../layout/footer";
 // Import Images
 import bnrImg1 from "../../images/banner/aheza-barnner-8.jpeg";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -110,7 +111,9 @@ const Uploads = () => {
 														<br></br>
 														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
-													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </a>
+													<a onClick={() => openNewWindow(item.link)} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+														 </a>
 												</ul>
 											</div>
 										</div>
@@ -140,7 +143,9 @@ const Uploads = () => {
 														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
 
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}` + "/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More</Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}` + "/upload/" + item.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + item?._id} className="btn btn-outline-primary btn-sm"> 
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+													</Link>
 												</ul>
 
 											</div>

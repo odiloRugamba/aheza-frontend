@@ -4,7 +4,7 @@ import { useHistory, useParams } from "react-router-dom";
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
-
+import { FormattedMessage } from 'react-intl';
 // Import Images
 import testPic1 from "../../images/testimonials/pic1.jpeg";
 import testPic2 from "../../images/testimonials/pic2.jpeg";
@@ -85,7 +85,9 @@ const  ResearchFindings = ()=>  {
 											</div>
 											<div className="post-info">
 												<h4 className="post-title max-lines-2" style={{ fontSize: 16 }}><Link to={`${lang}`+"/institution-profile"}>{item.title}</Link></h4>
-												<Link to={`${lang}`+"/institution-profile"} className="btn btn-outline-primary btn-sm">Read More </Link>
+												<Link to={`${lang}`+"/institution-profile"} className="btn btn-outline-primary btn-sm">
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+													 </Link>
 											</div>
 										</div>
 									</div>

@@ -14,6 +14,7 @@ import PartnerSection from "../elements/partner";
 import MissionSection from "../elements/mission-section";
 import LatestNewsSection from "../elements/latest-news-slider";
 import SocialMediaSection from '../elements/social-media';
+import { Link, useHistory } from 'react-router-dom';
 
 
 
@@ -24,10 +25,15 @@ const Index = () => {
 	const {lang}= useParams()
 	const dispatch = useDispatch()
 	const res = useSelector(state => state.linksReducers.data)
+	const history= useHistory()
 
 	useEffect(() => {
+		console.log('lang', lang)
 		dispatch(getLinks())
-		dispatch(changeLang(lang == 'en' ? lang : "iny"))
+		dispatch(changeLang(lang == 'en' ? lang : !lang? 'en':"iny"))
+		if(!lang){
+			history.push('/en')
+		}
 	}, []);
 
 

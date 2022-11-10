@@ -95,7 +95,8 @@ const Uploads = () => {
 													<li className="date">{
 														convertData(item?.updatedAt)
 													}</li>
-													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+													<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+"/theater/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+ </Link>
 												</ul>
 
 											</div>

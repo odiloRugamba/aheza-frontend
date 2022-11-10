@@ -7,6 +7,7 @@ import { Dcore } from '../../api';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -52,7 +53,8 @@ const Services = () => {
 												</div>
 												<div className="icon-content" style={{ padding: 20, paddingBottom: 20 }}>
 													<h5 className="ttr-title">{el?.title}</h5>
-													<Link to={ `/${lang}`+"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More</Link>
+													<Link to={ `/${lang}`+"/our-services/" + el?.title?.replaceAll(" ", "-").replaceAll('/', '') + '/' + el?._id} className="btn btn-primary light" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+</Link>
 												</div>
 											</div>
 										</div>

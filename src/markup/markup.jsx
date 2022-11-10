@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 // Elements
 import BackToTop from './elements/back-top';
@@ -57,7 +57,10 @@ class Markup extends Component {
 			<>
 				<BrowserRouter basename={''}>
 					<Switch>
-						<ProtectRoute path='/:lang' exact component={Index} />
+						<Route exact path='/' >
+							<Redirect to='/en'/>
+						</Route>
+						<ProtectRoute path='/:lang' exact component={Index}/>
 						<ProtectRoute path='/:lang/apply' exact component={Apply} />
 						<ProtectRoute path='/:lang/book-appointment' exact component={BookAppointment} />
 						<ProtectRoute path='/:lang/our-services' exact component={OurServices} />

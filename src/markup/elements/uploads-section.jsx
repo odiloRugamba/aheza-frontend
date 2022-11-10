@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Dcore } from "../../api/index";
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -77,7 +78,9 @@ const LatestNewsSection = ({ title, content }) => {
 													Aheza<br></br>
 													<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 												</li>
-												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}` +"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}` +"/upload/" + item.title?.replaceAll(" ", "-") + '/' + item?._id} className="btn btn-outline-primary btn-sm"> 
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+												 </Link>
 											</ul>
 										</div>
 									</div>

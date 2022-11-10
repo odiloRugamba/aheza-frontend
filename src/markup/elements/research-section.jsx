@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 // Import Images
+import { FormattedMessage } from 'react-intl';
 
 
 
@@ -47,7 +48,9 @@ const LatestNewsSection = ({ title, content }) => {
 											<ul className="post-meta" style={{ justifyContent: 'space-between' }}>
 												<li className="date">
 													{convertData(item?.updatedAt)}</li>
-												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">Read More </Link>
+												<Link style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }} to={`/${lang}`+"/research-finding/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm">
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+													 </Link>
 
 											</ul>
 										</div>

@@ -6,7 +6,7 @@ import LoadingComp from "../elements/loading";
 import ReactPaginate from "react-paginate";
 import EmptyComp from "../elements/empyt";
 import { Dcore } from '../../api';
-
+import { FormattedMessage } from 'react-intl';
 // Layout
 import Header from "../layout/header";
 import Footer from "../layout/footer";
@@ -88,7 +88,9 @@ const BlogGrid = () => {
 														Aheza<br></br>
 														<h5 style={{ fontSize: 15 }}>{convertData(item.updatedAt)} </h5>
 													</li>
-													<Link to={`/${lang}`+"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>Read More </Link>
+													<Link to={`/${lang}`+"/blog-grid/" + item.title?.replaceAll(" ", "-") + '/' + item._id} className="btn btn-outline-primary btn-sm" style={{ background: '#565ACF', color: '#fff', fontSize: 17, fontWeight: 700 }}>
+											<FormattedMessage id="ReadMore" defaultMessage="ReadMore" />
+														 </Link>
 												</ul>
 											</div>
 										</div>
